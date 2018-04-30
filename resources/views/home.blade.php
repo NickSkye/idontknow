@@ -14,9 +14,16 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Now let your friends know what you are up to!
+
+
+
+
+
                 </div>
-                <div class="card-footer">Footer</div>
+                <div class="card-footer">
+                    <div>UPLOAD IMAGE BUTTON HERE</div>
+                </div>
             </div>
         </div>
     </div>
