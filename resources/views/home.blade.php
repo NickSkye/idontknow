@@ -29,6 +29,7 @@
                         <div class="col-4">
                             <div class="frend-box">
                                 <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                                <p>{{$friend->id}}</p>
                                 {{--{{ $friend }}--}}
                             </div>
                         </div>
