@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->integer('dislikes');
             $table->integer('views');
             $table->dateTime('post_created_at');
-            $table->timestampsTz();
+            
             $table->timestamps();
 
 
