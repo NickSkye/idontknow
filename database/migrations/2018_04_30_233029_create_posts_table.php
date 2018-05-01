@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->integer('likes');
             $table->integer('dislikes');
             $table->integer('views');
-            $table->dateTime('created_at');
+            $table->dateTime('post_created_at');
             $table->timestampsTz();
             $table->timestamps();
 
