@@ -14,19 +14,21 @@ class SearchController extends Controller {
     public function index(Request $request)
     {
 
-//        $data = array(
-//            'query' => $request->query
-//
-//
-//        );
+        $data = array(
+            'query' => $request->query
+
+
+        );
 //$data['query']
 
-        $searchedusers = DB::table('users')->where('name', 'LIKE', $request->query)
-            ->orWhere('username', 'LIKE', $request->query)->orWhere('email', 'LIKE', $request->query)
+        $searchedusers = DB::table('users')->where('name', 'LIKE', $data['query'])
+            ->orWhere('username', 'LIKE', $data['query'])->orWhere('email', 'LIKE', $data['query'])
             ->get();
 
         return view('results', ['searchedusers'=> $searchedusers]);
     }
+
+
 
 }
 
