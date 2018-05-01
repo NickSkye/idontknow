@@ -20,6 +20,7 @@ class SearchController extends Controller {
 
         );
 //$data['query']
+        $data = json_decode( json_encode($data), true);
 
         $searchedusers = DB::table('users')->where('name', 'LIKE', $data['query'])
             ->orWhere('username', 'LIKE', $data['query'])->orWhere('email', 'LIKE', $data['query'])
