@@ -11,15 +11,15 @@ class SearchController extends Controller {
 
     public function index(Request $request)
     {
-        $query = $request->get('query');
 
-       // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
-        $users = User::where('name', 'LIKE', "%$query%")
-            ->orWhere('body', 'LIKE', "%$query%")
+
+
+        $searchedusers = DB::table('users')->where('name', 'LIKE', "%$query%")
+            ->orWhere('username', 'LIKE', "%$query%")->orWhere('email', 'LIKE', "%$query%")
             ->get();
 
-        return view('results', compact( 'users'));
+        return view('results', ['searchedusers'=> $searchedusers]);
     }
 
 }

@@ -8,15 +8,15 @@
 
 
 
-@if (count($users))
+@if (count($searchedusers))
 
     <h3>Users:</h3>
 
     <ul>
 
-        @foreach($users as $user)
+        @foreach($searchedusers as $user)
 
-            <li>{!! link_to_route('posts.show', $user->name, $post->username) !!}</li>
+            <li>{{ $user->name }} | {{ $user->username }}</li>
 
         @endforeach
 
