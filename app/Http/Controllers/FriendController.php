@@ -18,6 +18,6 @@ class FriendController extends Controller
 
 
 
-        return view('friendspage', $info);
+        return view('friendspage', ['info'=> $info]);
     }
 }
