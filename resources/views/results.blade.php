@@ -7,7 +7,7 @@
 
         @foreach($searchedusers as $user)
 
-            <li>{{ $user->name }} | {{ $user->username }}</li>
+            <li>{{ $user->name }}</li>
 
         @endforeach
 
