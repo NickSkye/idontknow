@@ -19,25 +19,10 @@
                             </div>
                         @endif
                         <div>
-                            Now let your friends know what you are up to!
+                            {{$info->username}}
                         </div>
 
-                        <div class="row frend-area">
 
-                            @foreach($friends as $friend)
-
-                                <div class="col-4">
-                                    <a href="/users/{{$friend->followsusername}}">
-                                        <div class="frend-box">
-                                            <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                                            <p>{{$friend->followsusername}}</p>
-                                            {{--{{ $friend }}--}}
-                                        </div>
-                                    </a>
-                                </div>
-                            @endforeach
-
-                        </div>
 
 
                     </div>

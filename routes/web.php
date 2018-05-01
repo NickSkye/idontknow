@@ -17,7 +17,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('user/{username?}', function ($username = null) {
-    return $username;
-});
+Route::get('users/{username?}', 'FriendController@index');
 Route::post('search', ['as' => 'search', 'uses' => 'SearchController@index']);

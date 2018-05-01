@@ -6,5 +6,14 @@ use Illuminate\Http\Request;
 
 class FriendController extends Controller
 {
-    //
+    public function index($username)
+    {
+        $info = DB::table('users')->where('username', $username)->get();
+
+        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+
+
+        return view('friendspage', $info);
+    }
 }
