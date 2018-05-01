@@ -7,8 +7,8 @@
 
         @foreach($searchedusers as $user)
 
-            <li>{{ $user->name }}</li>
-            {{-- | {{ $user->username }}--}}
+            <a href="/users/{{$user->username}}"><li>{{ $user->name }} | {{ $user->username }}</li></a>
+
 
         @endforeach
 
