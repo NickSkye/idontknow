@@ -8,6 +8,7 @@
         @foreach($searchedusers as $user)
 
             <li>{{ $user->name }}</li>
+            {{-- | {{ $user->username }}--}}
 
         @endforeach
 
