@@ -19,3 +19,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('users/{username?}', 'FriendController@index');
 Route::post('/search', 'SearchController@index');
+Route::post('/addfrend', 'FriendController@add');

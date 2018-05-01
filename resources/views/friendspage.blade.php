@@ -36,7 +36,14 @@
                         <div>
                             @foreach($info as $item)
                                 {{$item->username}}
+                                <form method="post" action="/addfrend">
+                                    <input type="hidden" name="{{$item->username}}" value="$item->username"/>
+                                    <button class="btn btn-lg btn-success" type="submit">
+                                        Add Friend
+                                    </button>
+                                </form>
                             @endforeach
+
                         </div>
 
 

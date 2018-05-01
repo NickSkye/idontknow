@@ -20,4 +20,17 @@ class FriendController extends Controller
 
         return view('friendspage', ['info'=> $info]);
     }
+
+    public function add($username)
+    {
+        DB::table('follows')->insert(
+            ['username' => Auth::user()->username, 'followsusername' => $username]
+        );
+
+        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+
+
+        return redirect()->back()->with('status', 'friend added');
+    }
 }
