@@ -17,3 +17,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('user/{username?}', function ($username = null) {
+    return $username;
+});

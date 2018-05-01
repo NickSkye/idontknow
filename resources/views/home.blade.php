@@ -13,8 +13,63 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <div>
+                        Now let your friends know what you are up to!
+                    </div>
 
-                    Now let your friends know what you are up to!
+                    <div class="row frend-area">
+
+                        <div class="col-4">
+                            <div class="frend-box">
+                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="frend-box">
+                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="frend-box">
+                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="frend-box">
+                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="frend-box">
+                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="frend-box">
+                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="frend-box">
+                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="frend-box">
+                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="frend-box">
+                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="frend-box">
+                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
 
 
 

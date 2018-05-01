@@ -3,6 +3,10 @@
   padding-right: 0 !important;
 }
 
+.frend-area .col-4 .frend-box {
+  background-color: #1b6d85;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
