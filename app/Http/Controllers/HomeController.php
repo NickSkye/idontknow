@@ -37,7 +37,9 @@ class HomeController extends Controller
 //        Storage::disk('s3')->get($storagePath).
 
 //        $storagePath = Storage::disk('s3')->put("uploads", $my_file, 'public');
-        $friends = DB::table('follows')->where('email', Auth::user()->email);
-        return view('home', ['friends' => $friends]);
+       $friends = DB::table('follows')->where('email', Auth::user()->email)->get();
+
+
+        return view('home', ['friends'=> $friends]);
     }
 }

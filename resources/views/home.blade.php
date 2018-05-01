@@ -5,7 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-10 col-sm-12 no-padding">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">{!! Form::open(['route' => 'search']) !!}
+
+                    {!! Form::text('query') !!}
+                    {!! Form::submit('Search') !!}
+
+                    {!! Form::close() !!}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -20,7 +25,7 @@
                     <div class="row frend-area">
 
                         @foreach($friends as $friend)
-
+{{$friend}}
                         <div class="col-4">
                             <div class="frend-box">
                                 <img src="/images/recflag.jpg" class="img-fluid" alt="">

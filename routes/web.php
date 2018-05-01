@@ -20,3 +20,4 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('user/{username?}', function ($username = null) {
     return $username;
 });
+Route::post('search', ['as' => 'search', 'uses' => 'SearchController@index']);
