@@ -6,8 +6,17 @@
 .frend-area {
     .col-4 {
         .frend-box {
-            background-color: #1b6d85;
+            background-color: white;
 
+            p{
+                position: absolute;
+                bottom: 16%;
+                left: 25%;
+                width: 200px;
+                /* margin-left: -100px; */
+                color: black;
+                font-size: 14pt;
+            }
         }
 
     }
