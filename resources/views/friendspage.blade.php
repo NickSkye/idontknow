@@ -19,10 +19,10 @@
                             </div>
                         @endif
                         <div>
-                            {{$info->username}}
+                            @foreach($info as $item)
+                                {{$item->username}}
+                            @endforeach
                         </div>
-
-
 
 
                     </div>
