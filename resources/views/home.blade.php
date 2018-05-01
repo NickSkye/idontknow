@@ -5,12 +5,27 @@
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
-                    <div class="card-header">{!! Form::open(['route' => 'search']) !!}
+                    <div class="card-header">
+                    
+                    <form action="/search" method="post">
+                        {{ csrf_field() }}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="query" name="query" value="{{ old('query') }}" required>
+                                        </div>
 
-                        {!! Form::text('query') !!}
-                        {!! Form::submit('Search') !!}
 
-                        {!! Form::close() !!}</div>
+
+                                        <input type="submit" value="Submit" class="send"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
 
                     <div class="card-body">
                         @if (session('status'))
