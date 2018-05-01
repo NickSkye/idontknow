@@ -31,6 +31,6 @@ class FriendController extends Controller
 
 
 
-        return redirect()->back()->with('status', 'friend added');
+        return redirect("home")->with('status', 'friend added');
     }
 }
