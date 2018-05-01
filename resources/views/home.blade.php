@@ -25,7 +25,7 @@
                     <div class="row frend-area">
 
                         @foreach($friends as $friend)
-{{$friend}}
+
                         <div class="col-4">
                             <div class="frend-box">
                                 <img src="/images/recflag.jpg" class="img-fluid" alt="">
