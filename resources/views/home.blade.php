@@ -19,56 +19,16 @@
 
                     <div class="row frend-area">
 
+                        @foreach($friends as $friend)
+
                         <div class="col-4">
                             <div class="frend-box">
                                 <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                                {{--{{ $friend }}--}}
                             </div>
                         </div>
-                        <div class="col-4">
-                            <div class="frend-box">
-                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="frend-box">
-                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="frend-box">
-                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="frend-box">
-                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="frend-box">
-                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="frend-box">
-                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="frend-box">
-                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="frend-box">
-                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="frend-box">
-                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
+                            @endforeach
+
                     </div>
 
 
