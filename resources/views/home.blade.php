@@ -32,11 +32,12 @@
 
                                             @if($info->username == $friend->followsusername)
                                                 <img src="{{$info->profileimage}}" class="img-fluid" alt="">
-
+                                            @else
+                                                        <img src="/images/recflag.jpg" class="img-fluid" alt="">
                                             @endif
 
                                     @endforeach
-                                        {{--<img src="/images/recflag.jpg" class="img-fluid" alt="">--}}
+
                                 @endforeach
                                     <p>{{$friend->followsusername}}</p>
                                     {{--{{ $friend }}--}}
