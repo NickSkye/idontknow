@@ -45,7 +45,7 @@ class FriendController extends Controller
     {
 
 
-        $first = DB::table('follows')->where(['username', Auth::user()->username])->where(['followsusername', $username])->delete();
+       DB::table('follows')->where('username', Auth::user()->username)->where('followsusername', $username)->delete();
 
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
