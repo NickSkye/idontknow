@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10 col-sm-12 no-padding">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Now let your friends know what you are up to!</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    Now let your friends know what you are up to!
+
+
+
 
 
 
