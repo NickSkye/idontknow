@@ -8,7 +8,7 @@
         .frend-box {
             background-color: white;
 
-            p{
+            p {
                 position: absolute;
                 bottom: 16%;
                 left: 25%;
@@ -16,6 +16,17 @@
                 /* margin-left: -100px; */
                 color: black;
                 font-size: 14pt;
+            }
+
+
+
+            img:before {
+                content: ' ';
+                display: block;
+                position: absolute;
+                height: 50px;
+                width: 50px;
+                background-image: url('/images/recflag.jpg');
             }
         }
         .frend-post-box {

@@ -17,6 +17,15 @@
   font-size: 14pt;
 }
 
+.frend-area .col-4 .frend-box img:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-image: url("/images/recflag.jpg");
+}
+
 .frend-area .col-4 .frend-post-box {
   background-color: white;
 }

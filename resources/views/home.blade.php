@@ -36,8 +36,9 @@
                                             @endif
 
                                     @endforeach
-                                        
+
                                 @endforeach
+                                    <img src="" class="img-fluid" alt="">
                                     <p>{{$friend->followsusername}}</p>
                                     {{--{{ $friend }}--}}
                                         </div>
