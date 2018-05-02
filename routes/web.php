@@ -19,6 +19,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('users/{username?}', 'FriendController@index')->middleware('auth');
 Route::get('/settings', 'PagesController@settings')->middleware('auth');
+Route::get('/me', 'PagesController@myprofile')->middleware('auth');
+
+
+
 Route::post('/search', 'SearchController@index')->middleware('auth');
 Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');
 Route::post('/removefrend/{username?}', 'FriendController@remove')->middleware('auth');
