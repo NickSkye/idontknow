@@ -29,10 +29,17 @@ class S3ImageController extends Controller
         $t = Storage::disk('s3')->put("profilepics/".$imageName, file_get_contents($image), 'public');
         $imageName = Storage::disk('s3')->url("profilepics/".$imageName);
 
+        if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
+            DB::table('profileinfo')->where('username', '=', Auth::user()->username)->update(
+                ['profileimage' => $imageName, 'aboutme' => $request->aboutme]
+            );
+        }else{
+            DB::table('profileinfo')->insert(
+                ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => $request->aboutme]
+            );
+        }
 
-        DB::table('profileinfo')->where('username', Auth::user()->username)->updateOrInsert(
-            ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => $request->aboutme]
-        );
+
 
         return back()
             ->with('success','Image Uploaded successfully.')
