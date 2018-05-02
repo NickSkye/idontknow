@@ -22,12 +22,10 @@ class FriendController extends Controller
                     $arefriends = true;
                     return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends]);
                 }
-                else{
-                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends]);
-                }
+
             }
         }
-
+        return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends]);
 
 
     }
