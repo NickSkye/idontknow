@@ -17,7 +17,7 @@
   font-size: 14pt;
 }
 
-.frend-area .col-4 .frend-box img:before {
+.frend-area .col-4 .frend-box .img-not:before {
   content: ' ';
   display: block;
   position: absolute;
