@@ -10,10 +10,15 @@ class PagesController extends Controller
 {
     public function settings()
     {
-        $info = DB::table('users')->where('username', Auth::user()->username)->get();
 
+        //if (Auth::check()) {
+            $info = DB::table('users')->where('username', Auth::user()->username)->get();
 
+            return view('settings', ['info'=> $info]);
+//        }
+//        else{
+//            return view('auth.login');
+//        }
 
-        return view('settings', ['info'=> $info]);
     }
 }
