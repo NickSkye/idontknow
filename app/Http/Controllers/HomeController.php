@@ -35,6 +35,13 @@ class HomeController extends Controller
 
 //        this portion sends the link to the db
 //        Storage::disk('s3')->get($storagePath).
+        if(!DB::table('profileinfo')->where('username', Auth::user()->username)->get()->exists()) {
+            $imageName = "https://frendgrid.s3.us-west-1.amazonaws.com/profilepics/1525299219.png";
+            DB::table('profileinfo')->insert(
+                ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => "There's nothing here yet"]
+            );
+
+        }
 
         $allfriendsinfo = [];
 //        $storagePath = Storage::disk('s3')->put("uploads", $my_file, 'public');
