@@ -33,7 +33,7 @@ class FriendController extends Controller
     public function add($username)
     {
         DB::table('follows')->insert(
-            ['username' => Auth::user()->username, 'followsusername' => $username]
+            ['username' => Auth::user()->username, 'followsusername' => $username, 'created_at' => date()]
         );
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
@@ -44,8 +44,9 @@ class FriendController extends Controller
     public function remove($username)
     {
 
-        error_log(Auth::user()->username);
-        DB::table('follows')->where(['username', Auth::user()->username], ['followsusername', $username])->get()->delete();
+
+        $first = DB::table('follows')->where(['username', Auth::user()->username])->where(['followsusername', $username])->delete();
+
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
