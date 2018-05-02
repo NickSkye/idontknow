@@ -17,12 +17,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('users/{username?}', 'FriendController@index');
+Route::get('users/{username?}', 'FriendController@index')->middleware('auth');
 Route::get('/settings', 'PagesController@settings')->middleware('auth');
-Route::post('/search', 'SearchController@index');
-Route::post('/addfrend/{username?}', 'FriendController@add');
-Route::post('/removefrend/{username?}', 'FriendController@remove');
+Route::post('/search', 'SearchController@index')->middleware('auth');
+Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');
+Route::post('/removefrend/{username?}', 'FriendController@remove')->middleware('auth');
 
 
 
-Route::post('s3-image-upload','S3ImageController@imageUploadPost');
+Route::post('s3-image-upload','S3ImageController@imageUploadPost')->middleware('auth');
