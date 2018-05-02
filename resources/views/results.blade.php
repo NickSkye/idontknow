@@ -8,7 +8,7 @@
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
                     <div class="card-header">
-                        @include('partials.friendsearch')
+                        {{--@include('partials.friendsearch')--}}
                         <div class="card-body">
                             @if (session('status'))
                                 <div class="alert alert-success">

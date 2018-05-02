@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">
 
-                        @include('partials.friendsearch')
+                       Header
                     </div>
 
                     <div class="card-body">

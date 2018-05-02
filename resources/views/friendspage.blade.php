@@ -6,7 +6,7 @@
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
                     <div class="card-header">
-                        @include('partials.friendsearch')
+                        {{--@include('partials.friendsearch')--}}
 
                         {{--info about friend--}}
                         @foreach($info as $item)
