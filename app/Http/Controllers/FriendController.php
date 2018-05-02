@@ -33,7 +33,7 @@ class FriendController extends Controller
     public function add($username)
     {
         DB::table('follows')->insert(
-            ['username' => Auth::user()->username, 'followsusername' => $username, 'created_at' => date()]
+            ['username' => Auth::user()->username, 'followsusername' => $username]
         );
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
