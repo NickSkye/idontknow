@@ -15,7 +15,29 @@ class S3ImageController extends Controller
 
 
 
+    public function imageUploadProfilePic(Request $request)
+    {
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
 
+
+
+
+        $imageName = time().'.'.$request->image->getClientOriginalExtension();
+        $image = $request->file('image');
+        $t = Storage::disk('s3')->put("profilepics", $imageName, file_get_contents($image), 'public');
+        $imageName = Storage::disk('s3')->url($imageName);
+
+
+        DB::table('profileinfo')->insert(
+            ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => $request->aboutme]
+        );
+
+        return back()
+            ->with('success','Image Uploaded successfully.')
+            ->with('path',$imageName);
+    }
 
     /**
      * Manage Post Request
@@ -33,7 +55,7 @@ class S3ImageController extends Controller
 
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
         $image = $request->file('image');
-        $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
+        $t = Storage::disk('s3')->put("posts", $imageName, file_get_contents($image), 'public');
         $imageName = Storage::disk('s3')->url($imageName);
 
 

@@ -23,7 +23,7 @@
                             </div>
                         @endif
                         <div>
-                            Now let your friends know what you are up to!
+                            @include('partials.uploadprofile')
                         </div>
 
                         <div class="row frend-area">
