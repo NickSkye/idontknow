@@ -37,6 +37,7 @@
                             @foreach($info as $item)
                                 {{$item->username}}
                                 <form method="post" action="/addfrend">
+                                    {{ csrf_field() }}
                                     <input type="hidden" name="{{$item->username}}" value="$item->username"/>
                                     <button class="btn btn-lg btn-success" type="submit">
                                         Add Friend
