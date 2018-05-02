@@ -8,41 +8,42 @@
                     <div class="card-header">
 
                         @include('partials.friendsearch')
+                    </div>
 
-                        <div class="card-body">
-                            @if (session('status'))
-                                <div class="alert alert-success">
-                                    {{ session('status') }}
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <div>
+                            Now let your friends know what you are up to!
+                        </div>
+
+                        <div class="row frend-area">
+
+                            @foreach($friends as $friend)
+
+                                <div class="col-4">
+                                    <a href="/users/{{$friend->followsusername}}">
+                                        <div class="frend-box">
+                                            <img src="/images/recflag.jpg" class="img-fluid" alt="">
+                                            <p>{{$friend->followsusername}}</p>
+                                            {{--{{ $friend }}--}}
+                                        </div>
+                                    </a>
                                 </div>
-                            @endif
-                            <div>
-                                Now let your friends know what you are up to!
-                            </div>
-
-                            <div class="row frend-area">
-
-                                @foreach($friends as $friend)
-
-                                    <div class="col-4">
-                                        <a href="/users/{{$friend->followsusername}}">
-                                            <div class="frend-box">
-                                                <img src="/images/recflag.jpg" class="img-fluid" alt="">
-                                                <p>{{$friend->followsusername}}</p>
-                                                {{--{{ $friend }}--}}
-                                            </div>
-                                        </a>
-                                    </div>
-                                @endforeach
-
-                            </div>
-
+                            @endforeach
 
                         </div>
-                        <div class="card-footer">
-                           @include('partials.uploadimage')
-                        </div>
+
+
+                    </div>
+                    <div class="card-footer">
+                        @include('partials.uploadimage')
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 @endsection

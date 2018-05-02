@@ -7,19 +7,13 @@
                 <div class="card">
                     <div class="card-header">
                         @include('partials.friendsearch')
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        <div>
-                            {{--info about friend--}}
-                            @foreach($info as $item)
-                                {{$item->username}}
+
+                        {{--info about friend--}}
+                        @foreach($info as $item)
+                            {{$item->username}}
                             {{--an array of users that you follow--}}
                             @if($arefriends)
-                                    {{$item->username}}
+                                {{$item->username}}
                                 <form method="post" action="/removefrend/{{$item->username}}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
@@ -27,18 +21,43 @@
                                         Remove Friend
                                     </button>
                                 </form>
-                                @else
-                                    <form method="post" action="/addfrend/{{$item->username}}">
-                                        {{ csrf_field() }}
-                                        <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
-                                        <button class="btn btn-lg btn-success" type="submit">
-                                            Add Friend
-                                        </button>
-                                    </form>
-@endif
+                            @else
+                                <form method="post" action="/addfrend/{{$item->username}}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
+                                    <button class="btn btn-lg btn-success" type="submit">
+                                        Add Friend
+                                    </button>
+                                </form>
+                            @endif
 
 
-                            @endforeach
+                        @endforeach
+                    </div>
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <div>
+
+                            {{--friends posts--}}
+                            <div class="row frend-area">
+                                @foreach($friendsposts as $post)
+                                    <div class="col-4">
+                                        <a href="/users/{{$friend->followsusername}}">
+                                            <div class="frend-post-box">
+                                                <img src="{{$post->imagepath}}" class="img-fluid" alt="">
+                                                <p>{{$post->description}}</p>
+                                                {{--{{ $friend }}--}}
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+                                @endforeach
+                            </div>
 
                         </div>
 

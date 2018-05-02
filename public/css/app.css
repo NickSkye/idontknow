@@ -17,6 +17,15 @@
   font-size: 14pt;
 }
 
+.frend-area .col-4 .frend-post-box {
+  background-color: white;
+}
+
+.frend-area .col-4 .frend-post-box p {
+  color: black;
+  font-size: 14pt;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
