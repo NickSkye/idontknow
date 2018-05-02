@@ -40,9 +40,9 @@ class HomeController extends Controller
 //        $storagePath = Storage::disk('s3')->put("uploads", $my_file, 'public');
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         foreach ($friends as $friend) {
-            $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->username);
+            $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->username)->get();
 
-            array_push($allfriendsinfo, $friendsinfo->username);
+            array_push($allfriendsinfo, $friendsinfo);
         }
             return view('home', ['friends' => $friends, 'allfriendsinfo' => $allfriendsinfo]);
         }
