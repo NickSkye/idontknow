@@ -45,10 +45,7 @@ class FriendController extends Controller
 
     public function remove($username)
     {
-        DB::table('follows')->where(
-            ['username', Auth::user()->username]
-            , ['followsusername', $username]
-        )->delete();
+        DB::table('follows')->where(['username','=', Auth::user()->username], ['followsusername', '=', $username])->delete();
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
