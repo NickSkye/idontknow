@@ -6,10 +6,13 @@
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
                     <div class="card-header">
+                        {{--@include('partials.friendsearch')--}}
+                        @foreach($mybio as $bio)
+                            <img src="{{$bio->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
+                        @endforeach
+                        {{--info about friend--}}
 
-                        Click on your name in the right corner then settings to upload profile pic
                     </div>
-
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success">
@@ -17,19 +20,30 @@
                             </div>
                         @endif
                         <div>
-                            Now let your friends know what you are up to!
-                        </div>
 
-                        <div class="row frend-area">
+                            {{--friends posts--}}
+                            <div class="row frend-area">
+                                @foreach($myposts as $post)
+                                    <div class="col-4">
+
+                                        <div class="frend-post-box">
+                                            <img src="{{$post->imagepath}}" class="img-fluid" alt="">
+                                            <p>{{$post->description}}</p>
+                                            {{--{{ $friend }}--}}
+                                        </div>
+
+                                    </div>
 
 
+                                @endforeach
+                            </div>
 
                         </div>
 
 
                     </div>
                     <div class="card-footer">
-                        @include('partials.uploadimage')
+                        <div>UPLOAD IMAGE BUTTON HERE</div>
                     </div>
                 </div>
             </div>
