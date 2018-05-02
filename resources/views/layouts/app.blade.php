@@ -16,6 +16,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+    <meta name=“description” content="Your friends at your fingertips"/>
+    <meta name=“keywords” content="social, media, social media, college, friends, near me, nearby, facebook, instagram"/>
+    <meta name="author" content="Intelliskye, LLC"/>
+    <link rel="canonical" href="https://frendgrid.com/"/>
+    <meta name="dc.language" content="en">
+    <meta http-equiv="Content-Language" content="en">
+
+    <link rel="publisher" href="https://intelliskye.com/" />
+    <meta name="robots" content="all"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="revisit-after" content="4 days"/>
+
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
