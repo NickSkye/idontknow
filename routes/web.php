@@ -18,6 +18,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('users/{username?}', 'FriendController@index');
+Route::get('/settings', 'PagesController@settings');
 Route::post('/search', 'SearchController@index');
 Route::post('/addfrend/{username?}', 'FriendController@add');
 Route::post('/removefrend/{username?}', 'FriendController@remove');
