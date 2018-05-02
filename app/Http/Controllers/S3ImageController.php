@@ -33,6 +33,10 @@ class S3ImageController extends Controller
         $imageName = Storage::disk('s3')->url($imageName);
 
 
+//        DB::table('follows')->insert(
+//            ['username' => Auth::user()->username, 'followsusername' => $username]
+//        );
+
         return back()
             ->with('success','Image Uploaded successfully.')
             ->with('path',$imageName);
