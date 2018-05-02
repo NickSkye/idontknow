@@ -12,10 +12,10 @@
                             @endforeach
                         {{--info about friend--}}
                         @foreach($info as $item)
-                            {{$item->username}}
+
                             {{--an array of users that you follow--}}
                             @if($arefriends)
-                                <p> is your friend</p>
+                                <p>{{$item->username}} is your friend</p>
                                 <form method="post" action="/removefrend/{{$item->username}}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
@@ -24,6 +24,7 @@
                                     </button>
                                 </form>
                             @else
+                                <p>{{$item->username}} is not your friend yet</p>
                                 <form method="post" action="/addfrend/{{$item->username}}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
