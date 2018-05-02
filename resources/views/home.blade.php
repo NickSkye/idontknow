@@ -25,7 +25,7 @@
                             @foreach($friends as $friend)
                                 @foreach($allfriendsinfo as $infos)
                                     @foreach($infos as $info)
-                                    {{$info}}
+                                    
                                 <div class="col-4">
                                     <a href="/users/{{$friend->followsusername}}">
                                         <div class="frend-box">
