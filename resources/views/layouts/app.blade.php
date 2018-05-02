@@ -78,6 +78,9 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/me">
+                                        {{ __('My Profile') }}
+                                    </a>
                                     <a class="dropdown-item" href="/settings">
                                         {{ __('Settings') }}
                                     </a>
