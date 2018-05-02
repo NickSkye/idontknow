@@ -27,15 +27,17 @@ class S3ImageController extends Controller
         ]);
 
 
+
+
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
         $image = $request->file('image');
         $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
         $imageName = Storage::disk('s3')->url($imageName);
 
 
-//        DB::table('follows')->insert(
-//            ['username' => Auth::user()->username, 'followsusername' => $username]
-//        );
+        DB::table('posts')->insert(
+            ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'likes' => 0, 'dislikes' => 0, 'views' => 0]
+        );
 
         return back()
             ->with('success','Image Uploaded successfully.')
