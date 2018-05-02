@@ -30,7 +30,7 @@ class S3ImageController extends Controller
         $imageName = Storage::disk('s3')->url("profilepics/".$imageName);
 
 
-        DB::table('profileinfo')->insert(
+        DB::table('profileinfo')->where('username', Auth::user()->username)->updateOrCreate(
             ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => $request->aboutme]
         );
 
