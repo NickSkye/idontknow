@@ -31,7 +31,7 @@
 
 
                                             @if($info->username == $friend->followsusername)
-                                                <img src="{{$info->profileimage}}" class="img-fluid" alt="">
+                                                <img src="{{$info->profileimage}}" class="img-fluid img-there" alt="">
 
                                             @endif
 

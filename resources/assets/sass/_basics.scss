@@ -28,6 +28,15 @@
                 width: 50px;
                 background-image: url('/images/recflag.jpg');
             }
+
+            .img-there:before{
+                content: ' ';
+                display: block;
+                position: absolute;
+                height: 50px;
+                width: 50px;
+                background-image: none;
+            }
         }
         .frend-post-box {
             background-color: white;
