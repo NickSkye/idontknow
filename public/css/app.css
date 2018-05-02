@@ -44,6 +44,11 @@
   font-size: 14pt;
 }
 
+.friend-page-image {
+  max-width: 400px;
+  max-height: 400px;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
