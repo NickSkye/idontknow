@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Storage;
+
+
 
 class HomeController extends Controller
 {
@@ -34,6 +37,9 @@ class HomeController extends Controller
 //        Storage::disk('s3')->get($storagePath).
 
 //        $storagePath = Storage::disk('s3')->put("uploads", $my_file, 'public');
-        return view('home');
+       $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+
+
+        return view('home', ['friends'=> $friends]);
     }
 }

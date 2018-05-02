@@ -15,9 +15,9 @@ class CreateFollowsTable extends Migration
     {
         Schema::create('follows', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email');
+
             $table->string('username');
-            $table->string('followsemail');
+
             $table->string('followsusername');
 
             $table->timestamps();
