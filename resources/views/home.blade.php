@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">
 
-                       Header
+                       Click on your name in the right corner then settings to upload profile pic
                     </div>
 
                     <div class="card-body">

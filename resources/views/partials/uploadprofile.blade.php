@@ -32,10 +32,11 @@
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-md-12">
+                        <p>Change your profile picture here</p>
                         <input type="file" name="image" />
                     </div>
                     <div class="col-md-12">
-                        <textarea rows="5" cols="40" placeholder="Tell your frends about yourself..." type="text" name="aboutme" ></textarea>
+                        <textarea rows="5" cols="40" placeholder="This is your bio and will be seen by everybody..." type="text" name="aboutme" value="{{ old('aboutme') }}"></textarea>
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-success">Upload</button>
