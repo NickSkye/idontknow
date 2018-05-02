@@ -39,10 +39,10 @@
                                 {{$item->username}}
                             {{--an array of users that you follow--}}
                             @if($arefriends)
-
+                                    {{$item->username}}
                                 <form method="post" action="/removefrend/{{$item->username}}">
                                     {{ csrf_field() }}
-                                    <input type="hidden" name="{{$item->username}}" value="$item->username"/>
+                                    <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
                                     <button class="btn btn-lg btn-warning" type="submit">
                                         Remove Friend
                                     </button>
@@ -50,7 +50,7 @@
                                 @else
                                     <form method="post" action="/addfrend/{{$item->username}}">
                                         {{ csrf_field() }}
-                                        <input type="hidden" name="{{$item->username}}" value="$item->username"/>
+                                        <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
                                         <button class="btn btn-lg btn-success" type="submit">
                                             Add Friend
                                         </button>
