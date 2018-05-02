@@ -35,7 +35,7 @@
                         <input type="file" name="image" />
                     </div>
                     <div class="col-md-12">
-                        <textarea rows="10" cols="30" type="text" name="description" ></textarea>
+                        <textarea rows="5" cols="50" type="text" name="description" ></textarea>
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-success">Upload</button>
