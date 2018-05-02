@@ -27,7 +27,7 @@ class S3ImageController extends Controller
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
         $image = $request->file('image');
         $t = Storage::disk('s3')->put("profilepics/".$imageName, file_get_contents($image), 'public');
-        $imageName = Storage::disk('s3')->url($imageName);
+        $imageName = Storage::disk('s3')->url("profilepics/".$imageName);
 
 
         DB::table('profileinfo')->insert(
@@ -56,7 +56,7 @@ class S3ImageController extends Controller
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
         $image = $request->file('image');
         $t = Storage::disk('s3')->put("posts/".$imageName, file_get_contents($image), 'public');
-        $imageName = Storage::disk('s3')->url($imageName);
+        $imageName = Storage::disk('s3')->url("posts/".$imageName);
 
 
         DB::table('posts')->insert(
