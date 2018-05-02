@@ -7,13 +7,15 @@
                 <div class="card">
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
-
+                        @foreach($friendsinfo as $frinfo)
+                            <img src="{{$frinfo->profileimage}}" class="img-fluid img-there" alt="">
+                            @endforeach
                         {{--info about friend--}}
                         @foreach($info as $item)
                             {{$item->username}}
                             {{--an array of users that you follow--}}
                             @if($arefriends)
-                                {{$item->username}}
+                                <p> is your friend</p>
                                 <form method="post" action="/removefrend/{{$item->username}}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>

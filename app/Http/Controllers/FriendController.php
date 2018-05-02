@@ -18,16 +18,18 @@ class FriendController extends Controller
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         $friendsposts = DB::table('posts')->where('username', $username)->get();
+        $friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
         foreach($info as $item) {
             foreach ($friends as $friend) {
                 if ($item->username === $friend->followsusername) {
                     $arefriends = true;
-                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts]);
+
+                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'friendsinfo'=> $friendsinfo]);
                 }
 
             }
         }
-        return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts]);
+        return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'friendsinfo'=> $friendsinfo]);
 
 
     }
