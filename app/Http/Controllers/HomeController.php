@@ -42,7 +42,7 @@ class HomeController extends Controller
         foreach ($friends as $friend) {
             $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->username);
 
-            array_push($allfriendsinfo, $friendsinfo);
+            array_push($allfriendsinfo, $friendsinfo->username);
         }
             return view('home', ['friends' => $friends, 'allfriendsinfo' => $allfriendsinfo]);
         }
