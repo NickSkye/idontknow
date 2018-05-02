@@ -23,7 +23,8 @@
                         <div class="row frend-area">
 
                             @foreach($friends as $friend)
-                                @foreach($allfriendsinfo as $info)
+                                @foreach($allfriendsinfo as $infos)
+                                    @foreach($infos as $info)
                                     {{$info}}
                                 <div class="col-4">
                                     <a href="/users/{{$friend->followsusername}}">
@@ -39,6 +40,7 @@
                                     </a>
                                 </div>
                                     @endforeach
+                                @endforeach
                             @endforeach
 
                         </div>
