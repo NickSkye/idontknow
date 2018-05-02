@@ -21,3 +21,7 @@ Route::get('users/{username?}', 'FriendController@index');
 Route::post('/search', 'SearchController@index');
 Route::post('/addfrend/{username?}', 'FriendController@add');
 Route::post('/removefrend/{username?}', 'FriendController@remove');
+
+
+
+Route::post('s3-image-upload','S3ImageController@imageUploadPost');
