@@ -60,7 +60,9 @@ class S3ImageController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-
+        if(is_null($request->description)){
+            $request->description = " ";
+        }
 
 
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
