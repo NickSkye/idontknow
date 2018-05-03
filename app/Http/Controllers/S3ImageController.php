@@ -18,7 +18,7 @@ class S3ImageController extends Controller
     public function imageUploadProfilePic(Request $request)
     {
         $this->validate($request, [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg', //|max:2048
         ]);
 
         if(is_null($request->aboutme)){
@@ -57,7 +57,7 @@ class S3ImageController extends Controller
     public function imageUploadPost(Request $request)
     {
         $this->validate($request, [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg', //|max:2048
         ]);
 
         if(is_null($request->description)){
