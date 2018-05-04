@@ -44,9 +44,7 @@ class S3ImageController extends Controller
 
 
 
-        return back()
-            ->with('success','Image Uploaded successfully.')
-            ->with('path',$imageName);
+        return view('myprofile')->with('success','Image Uploaded successfully.')->with('path',$imageName);
     }
 
     /**
@@ -75,8 +73,6 @@ class S3ImageController extends Controller
             ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'likes' => 0, 'dislikes' => 0, 'views' => 0]
         );
 
-        return back()
-            ->with('success','Image Uploaded successfully.')
-            ->with('path',$imageName);
+       return view('myprofile')->with('success','Image Uploaded successfully.')->with('path',$imageName);
     }
 }
