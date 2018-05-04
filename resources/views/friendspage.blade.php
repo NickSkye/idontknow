@@ -9,7 +9,7 @@
                         {{--@include('partials.friendsearch')--}}
                         @foreach($friendsinfo as $frinfo)
                             <img src="{{$frinfo->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
-                            @endforeach
+                        @endforeach
                         {{--info about friend--}}
                         @foreach($info as $item)
 
@@ -50,11 +50,13 @@
                                 @foreach($friendsposts as $post)
                                     <div class="col-4">
 
-                                            <div class="frend-post-box">
+                                        <div class="frend-post-box">
+                                            <a href="/post/{{$post->id}}">
                                                 <img src="{{$post->imagepath}}" class="img-fluid" alt="">
                                                 <p>{{$post->description}}</p>
-                                                {{--{{ $friend }}--}}
-                                            </div>
+                                            </a>
+                                            {{--{{ $friend }}--}}
+                                        </div>
 
                                     </div>
 

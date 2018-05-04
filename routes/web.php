@@ -20,7 +20,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('users/{username?}', 'FriendController@index')->middleware('auth');
 Route::get('/settings', 'PagesController@settings')->middleware('auth');
 Route::get('/me', 'PagesController@myprofile')->middleware('auth');
-
+Route::get('post/{post_id?}', 'PagesController@viewpost')->middleware('auth');
 
 
 Route::post('/search', 'SearchController@index')->middleware('auth');

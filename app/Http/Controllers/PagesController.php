@@ -36,4 +36,19 @@ class PagesController extends Controller
 
 
     }
+
+    public function viewpost($post_id)
+    {
+
+
+
+        $thepost = DB::table('posts')->where('id', $post_id)->get();
+
+
+
+        return view('post', ['thepost'=> $thepost]);
+
+
+    }
+
 }
