@@ -4,14 +4,14 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
-                    <div class="col-xs-8 col-sm-6">
+                    <div class="">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search for frends..." id="query" name="query" value="{{ old('query') }}">
                         </div>
-                    </div>
 
 
-                    <div class="col-xs-4 col-sm-6">
+
+
                         <button type="submit" value="Submit" class="send"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
