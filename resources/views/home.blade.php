@@ -51,7 +51,7 @@
 
                     </div>
                     <div class="card-footer">
-                        @include('partials.uploadimage')
+                        Footer
                     </div>
                 </div>
             </div>

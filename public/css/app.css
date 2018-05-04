@@ -90,6 +90,16 @@
   background: #0b7dda;
 }
 
+.permafooter {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  background-color: #fbad50;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
