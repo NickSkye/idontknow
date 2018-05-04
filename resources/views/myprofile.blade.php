@@ -8,7 +8,9 @@
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
                         @foreach($mybio as $bio)
+                            <a href="/settings">
                             <img src="{{$bio->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
+                            </a>
                         @endforeach
                         {{--info about friend--}}
 
