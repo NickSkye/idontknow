@@ -44,7 +44,7 @@ class S3ImageController extends Controller
 
 
 
-        return view('myprofile')->with('success','Image Uploaded successfully.')->with('path',$imageName);
+        return view('myprofile', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends])->with('success','Image Uploaded successfully.')->with('path',$imageName);
     }
 
     /**
@@ -73,6 +73,14 @@ class S3ImageController extends Controller
             ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'likes' => 0, 'dislikes' => 0, 'views' => 0]
         );
 
-       return view('myprofile')->with('success','Image Uploaded successfully.')->with('path',$imageName);
+        $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
+        $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
+        $myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
+        $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
+
+
+        return view('myprofile', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends])->with('success','Image Uploaded successfully.')->with('path',$imageName);
+
+
     }
 }
