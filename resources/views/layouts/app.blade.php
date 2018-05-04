@@ -109,9 +109,7 @@
         </div>
 
         @auth
-        <div class="permafooter">
-            @include('partials.uploadimage')
-        </div>
+        @include('partials.permafooter')
         @endauth
     </body>
 </html>
