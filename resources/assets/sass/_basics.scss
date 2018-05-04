@@ -57,3 +57,36 @@
     max-width: 400px;
     max-height: 400px;
 }
+
+.center-top-search{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+    top: 10px;
+    width: 40%;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 767px){
+        position: relative;
+    }
+
+    .send{
+        float: left;
+        width: 20%;
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+    }
+    .send:hover {
+        background: #0b7dda;
+    }
+}
