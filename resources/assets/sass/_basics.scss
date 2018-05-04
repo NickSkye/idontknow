@@ -75,16 +75,23 @@
         position: relative;
     }
 
+    span{
+        position: absolute;
+        top: 0px;
+        left: 97%;
+    }
     .send{
         float: left;
-
-        padding: 10px;
+        padding: 0px;
         background: #2196F3;
         color: white;
-        font-size: 17px;
-        border: 1px solid grey;
+        font-size: 23px;
+        /* border: 1px solid grey; */
         border-left: none;
+        border-radius: 3px;
         cursor: pointer;
+        padding-left: 3px;
+        padding-right: 5px;
     }
     .send:hover {
         background: #0b7dda;
