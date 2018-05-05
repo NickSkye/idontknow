@@ -106,10 +106,11 @@
             <main class="py-4">
                 @yield('content')
             </main>
+            @auth
+                @include('partials.permafooter')
+            @endauth
         </div>
 
-        @auth
-        @include('partials.permafooter')
-        @endauth
+
     </body>
 </html>
