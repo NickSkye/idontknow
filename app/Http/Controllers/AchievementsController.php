@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class AchievementsController extends Controller
 {
-    public function add()
+    public function add($achievement)
     {
 //        DB::table('follows')->insert(
 //            ['username' => Auth::user()->username, 'followsusername' => $username]
