@@ -31,9 +31,9 @@
 
 
                                             @if($info->username == $friend->followsusername)
-                                                {{--<img src="{{$info->profileimage}}" class="img-fluid img-there" alt="">--}}
+                                                <img src="{{$info->profileimage}}" class="img-fluid img-there" alt="">
                                                 {{--TEST HERE USING BACKGROUND IMAGE --}}
-                                                <div style="background-image: url('{{$info->profileimage}}'); width: 30vw; height: 30vw;"></div>
+                                                {{--<div style="background-image: url('{{$info->profileimage}}'); width: 30vw; height: 30vw;"></div>--}}
                                             @endif
 
                                     @endforeach
