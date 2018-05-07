@@ -28,7 +28,7 @@
                 <div class="card">
                     <div class="card-header">
 
-<h2>Frend Activity</h2>
+                        <h2>Frend Activity</h2>
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -50,27 +50,29 @@
                                                         @foreach($allfriendsinfo as $infos)
                                                             @foreach($infos as $info)
                                                                 @if($info->username == $post->username)
-                                                                    <p>{{$post->username}}</p>
+                                                                    <a href="/users/{{$post->username}}">
+                                                                        <p>{{$post->username}}</p>
+                                                                    </a>
                                                                 @endif
                                                             @endforeach
                                                         @endforeach
 
                                                     </div>
                                                     <div class="card-body">
-                                                        <a href="/users/{{$post->username}}">
-                                                        <img src="{{$post->imagepath}}" class="img-fluid" alt="">
-                                                        <p>{{$post->description}}</p>
+                                                        <a href="/post/{{$post->id}}">
+                                                            <img src="{{$post->imagepath}}" class="img-fluid" alt="">
+                                                            <p>{{$post->description}}</p>
                                                         </a>
                                                         {{--{{ $friend }}--}}
 
                                                         {{--<div class="comment-section">--}}
-                                                            {{--@foreach($thecomments as $comment)--}}
-                                                                {{--<div>--}}
-                                                                    {{--<a href="/users/{{$comment->username}}"><p class="comment-username">{{$comment->username}}  |  {{$comment->created_at}}</p></a>--}}
-                                                                    {{--<p class="comment">{{$comment->comment}}</p>--}}
+                                                        {{--@foreach($thecomments as $comment)--}}
+                                                        {{--<div>--}}
+                                                        {{--<a href="/users/{{$comment->username}}"><p class="comment-username">{{$comment->username}}  |  {{$comment->created_at}}</p></a>--}}
+                                                        {{--<p class="comment">{{$comment->comment}}</p>--}}
 
-                                                                {{--</div>--}}
-                                                            {{--@endforeach--}}
+                                                        {{--</div>--}}
+                                                        {{--@endforeach--}}
                                                         {{--</div>--}}
                                                     </div>
                                                     <div class="card-footer">
