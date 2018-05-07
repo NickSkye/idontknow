@@ -32,7 +32,7 @@
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-md-12">
-                        <p>Change your profile picture here</p>
+                        <p>Change your profile picture here (Squarer images work best)</p>
                         <input id="file-input" type="file" name="image" />
                         <img src="" id="profile-img-tag" width="200px" />
                     </div>
