@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('layouts.app', function($view) {
             $notifications = DB::table('notifications')->where('username', Auth::user()->username)->get();
-            $view->with('data', array('notifications' => $notifications));
+            $view->with('notifications', $notifications);
         });
     }
 
