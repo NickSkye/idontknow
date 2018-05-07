@@ -90,6 +90,10 @@
   background: #0b7dda;
 }
 
+#app {
+  overflow-x: hidden;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
@@ -99,6 +103,13 @@
   height: 55px;
   background-color: #fbad50;
   z-index: 3333;
+  text-align: center;
+}
+
+.permafooter .footer-button {
+  width: calc(100% / 5);
+  height: 100%;
+  border: 2px solid white;
 }
 
 .image-upload > input {
