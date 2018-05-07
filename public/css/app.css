@@ -138,6 +138,10 @@
   color: black;
 }
 
+.permafooter .footer-button .me-button i {
+  margin-top: 10px;
+}
+
 .image-upload > input {
   display: none;
 }
