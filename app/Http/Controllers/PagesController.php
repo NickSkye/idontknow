@@ -47,7 +47,7 @@ class PagesController extends Controller
         $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
         //$myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
         $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
-        $thecomments = DB::table('comments')->where('post_id', $post_id)->get();
+
         foreach ($myfriends as $friend) {
             $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->followsusername)->get();
             $friendsposts = DB::table('posts')->where('username', '=', $friend->followsusername)->get();
@@ -56,7 +56,7 @@ class PagesController extends Controller
             array_push($allfriendsposts, $friendsposts);
         }
 
-        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myfriends'=> $myfriends, 'allfriendsinfo' => $allfriendsinfo, 'allfriendsposts' => $allfriendsposts, 'thecomments' => $thecomments]);
+        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myfriends'=> $myfriends, 'allfriendsinfo' => $allfriendsinfo, 'allfriendsposts' => $allfriendsposts]);
 
 
     }
