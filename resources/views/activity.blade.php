@@ -57,9 +57,10 @@
 
                                                     </div>
                                                     <div class="card-body">
-
+                                                        <a href="/users/{{$post->username}}">
                                                         <img src="{{$post->imagepath}}" class="img-fluid" alt="">
                                                         <p>{{$post->description}}</p>
+                                                        </a>
                                                         {{--{{ $friend }}--}}
 
                                                         {{--<div class="comment-section">--}}
