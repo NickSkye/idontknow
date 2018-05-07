@@ -85,6 +85,10 @@ class RegisterController extends Controller
         ]);
 
         Mail::to($user->email)->send(new VerifyMail($user));
+        DB::table('profileinfo')->insert(
+            ['username' => $data['username'], 'profileimage' => "/images/default-avatar.jpg", 'aboutme' => "Default"]
+        );
+
 
         return $user;
     }
@@ -104,6 +108,8 @@ class RegisterController extends Controller
         }else{
             return redirect('/login')->with('warning', "Sorry your email cannot be identified.");
         }
+
+
 
         return redirect('/login')->with('status', $status);
     }
