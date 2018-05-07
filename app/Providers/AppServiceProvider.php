@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('layouts.app', function($view) {
+            $notifications = DB::table('notifications')->where('username', Auth::user()->username)->get();
+            $view->with('data', array('notifications' => $notifications));
+        });
     }
 
     /**
