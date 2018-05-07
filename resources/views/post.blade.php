@@ -9,8 +9,17 @@
                 <div class="card">
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
-
-                        {{--info about friend--}}
+                        @foreach($thepost as $post)
+                        <form action="/delete-post/{{$post->id}}" enctype="multipart/form-data" method="POST">
+                            {{ csrf_field() }}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="hidden" name="_method" value="DELETE" />
+                                    <button type="submit"><i class="fa fa-trash" ></i></button>
+                                </div>
+                            </div>
+                        </form>
+                            @endforeach
 
                     </div>
                     <div class="card-body">

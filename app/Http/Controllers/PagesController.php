@@ -75,4 +75,16 @@ class PagesController extends Controller
 
     }
 
+    public function deletepost($id)
+    {
+
+
+        DB::table('posts')->where('username', Auth::user()->username)->where('id', $id)->delete();
+
+
+        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+        return redirect("home")->with('status', 'post removed');
+    }
+
 }

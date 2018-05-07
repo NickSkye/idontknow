@@ -28,6 +28,7 @@ Route::get('post/{post_id?}', 'PagesController@viewpost')->middleware('auth');
 Route::post('/search', 'SearchController@index')->middleware('auth');
 Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');
 Route::post('/removefrend/{username?}', 'FriendController@remove')->middleware('auth');
+Route::post('/delete-post/{id?}', 'PagesController@deletepost')->middleware('auth');
 
 
 
