@@ -41,6 +41,8 @@ class HomeController extends Controller
 
         }
 
+        $notifications = DB::table('notifications')->where('username', Auth::user()->username)->get();
+
         $allfriendsinfo = [];
 //        $storagePath = Storage::disk('s3')->put("uploads", $my_file, 'public');
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
@@ -49,6 +51,6 @@ class HomeController extends Controller
 
             array_push($allfriendsinfo, $friendsinfo);
         }
-            return view('home', ['friends' => $friends, 'allfriendsinfo' => $allfriendsinfo]);
+            return view('home', ['friends' => $friends, 'allfriendsinfo' => $allfriendsinfo, 'notifications' => $notifications]);
         }
     }

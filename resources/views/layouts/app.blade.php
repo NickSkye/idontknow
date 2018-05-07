@@ -80,24 +80,12 @@
                                     </a>
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        @foreach($notifications as $notification)
                                         <a class="dropdown-item" href="/">
-                                            {{ __('Notification 1') }}
+                                            {{$notification->notification}}
                                         </a>
-                                        <a class="dropdown-item" href="/me">
-                                            {{ __('Notification 2') }}
-                                        </a>
-                                        <a class="dropdown-item" href="/settings">
-                                            {{ __('Settings') }}
-                                        </a>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
+                                        @endforeach
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
