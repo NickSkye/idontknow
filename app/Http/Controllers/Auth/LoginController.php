@@ -44,10 +44,7 @@ class LoginController extends Controller
             return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
         }
 
-        view()->composer('layouts.app', function ($view) {
-            $notifications = DB::table('notifications')->where('username', Auth::user()->username)->where('seen', false)->get();
-            $view->with('notifications', $notifications);
-        });
+
         return redirect()->intended($this->redirectPath());
     }
 }
