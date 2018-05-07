@@ -34,6 +34,6 @@ class VerifyMail extends Mailable
      */
     public function build()
     {
-        return $this->from('FrendGrid')->subject('Hello There!')->view('emails.verifyUser');
+        return $this->subject('Hello There!')->view('emails.verifyUser');
     }
 }
