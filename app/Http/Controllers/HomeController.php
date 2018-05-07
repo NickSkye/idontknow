@@ -42,7 +42,7 @@ class HomeController extends Controller
         }
 
 
-            $notifications = DB::table('notifications')->where('username', Auth::user()->username)->where('seen', false)->get();
+            $notifications = DB::table('notifications')->where('username', Auth::user()->username)->where('seen', 0)->get();
 
 
 
