@@ -63,7 +63,9 @@
                                                         {{--{{ $friend }}--}}
                                                     </div>
                                                     <div class="card-footer">
-                                                        <div>comments here</div>
+                                                        <div>
+                                                            @include('partials.commentfield')
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
