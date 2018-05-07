@@ -27,11 +27,26 @@
                             {{--<img src="{{ Session::get('path') }}">--}}
                         @endif
 
+                        <div class="row">
                         @foreach($mybio as $bio)
+                            <div class="col-6">
                             <a href="/settings">
                                 <img src="{{$bio->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
                             </a>
+                            </div>
                         @endforeach
+                            @foreach($generalinfo as $info)
+                                <div class="col-6">
+
+                                       <h2>{{$info->name}}</h2>
+                                    <h4>{{$info->username}}</h4>
+
+                                </div>
+                            @endforeach
+
+
+
+                        </div>
                         {{--info about friend--}}
 
                     </div>
