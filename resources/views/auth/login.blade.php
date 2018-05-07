@@ -35,7 +35,6 @@
 
                             </div>
                         </div>
-
 {{--WILL CHANGE THIS LATER TO ALLOW USERNAME OR EMAIL TO BE USED TO LOGIN--}}
                         {{--<div class="form-group row">--}}
                             {{--<label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('Username') }}</label>--}}
