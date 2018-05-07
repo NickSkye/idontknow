@@ -40,6 +40,8 @@ class PagesController extends Controller
     public function activity()
     {
 
+        $allfriendsinfo = [];
+        $allfriendsposts = [];
 
         $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
         $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
