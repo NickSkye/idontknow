@@ -114,6 +114,10 @@
   padding: 3px 8px 3px 8px;
 }
 
+.card-footer {
+  margin-bottom: 30px;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
