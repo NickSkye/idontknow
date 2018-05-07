@@ -55,7 +55,9 @@
 
                     </div>
                     <div class="card-footer">
-                        <div>UPLOAD IMAGE BUTTON HERE</div>
+                        @foreach($thepost as $post)
+                        <div> @include('partials.commentfield')</div>
+                        @endforeach
                     </div>
                 </div>
             </div>
