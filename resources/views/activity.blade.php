@@ -42,17 +42,19 @@
                             {{--friends posts--}}
                             <div class="row frend-area">
                                 @foreach($allfriendsposts as $friendspost)
+                                    @foreach($friendspost as $post)
                                     <div class="col-12">
 
                                         <div class="frend-post-box">
-                                            <img src="{{$friendspost->imagepath}}" class="img-fluid" alt="">
-                                            <p>{{$friendspost->description}}</p>
+                                            <img src="{{$post->imagepath}}" class="img-fluid" alt="">
+                                            <p>{{$post->description}}</p>
                                             {{--{{ $friend }}--}}
                                         </div>
 
                                     </div>
 
 
+                                @endforeach
                                 @endforeach
                             </div>
 
