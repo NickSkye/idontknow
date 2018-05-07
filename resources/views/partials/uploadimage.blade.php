@@ -18,6 +18,7 @@
                             <img src="http://goo.gl/pB9rpQ"/>
                         </label>
                         <input id="file-input" type="file" name="image" />
+                        <img src="" id="profile-img-tag" width="200px" />
                     </div>
                     <div class="col-md-12">
                         <textarea rows="3" cols="40" placeholder="Tell your frends about your post..." type="text" name="description" ></textarea>

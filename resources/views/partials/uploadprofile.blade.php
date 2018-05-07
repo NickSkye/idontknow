@@ -33,7 +33,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <p>Change your profile picture here</p>
-                        <input type="file" name="image" />
+                        <input id="file-input" type="file" name="image" />
+                        <img src="" id="profile-img-tag" width="200px" />
                     </div>
                     <div class="col-md-12">
                         <textarea rows="5" cols="40" placeholder="This is your bio and will be seen by everybody..." type="text" name="aboutme" value="{{ old('aboutme') }}"></textarea>
