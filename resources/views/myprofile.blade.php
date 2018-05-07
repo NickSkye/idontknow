@@ -51,6 +51,8 @@
                                         <div class="frend-post-box">
                                             <a href="/post/{{$post->id}}">
                                                 <img src="{{$post->imagepath}}" class="img-fluid" alt="">
+                                                
+                                                <p class="post-data">views: {{$post->views}}</p>
                                                 <p>{{$post->description}}</p>
                                             </a>
                                             {{--{{ $friend }}--}}
