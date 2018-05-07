@@ -24,7 +24,9 @@
     </div>
 
     <div class="footer-button">
-
+        <a href="/activity" class="list-button">
+            <i class="fa fa-list fa-2x" aria-hidden="true"></i>
+        </a>
     </div>
 
 
