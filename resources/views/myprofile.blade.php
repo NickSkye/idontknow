@@ -46,14 +46,15 @@
                             {{--my posts--}}
                             <div class="row frend-area">
                                 @foreach($myposts as $post)
-                                    <div class="col-12">
+                                    <div class="col-4">
 
                                         <div class="frend-post-box">
                                             <a href="/post/{{$post->id}}">
+                                                <p>{{$post->description}}</p>
                                                 <img src="{{$post->imagepath}}" class="img-fluid" alt="">
 
                                                 <p class="post-data">views: {{$post->views}}</p>
-                                                <p>{{$post->description}}</p>
+
                                             </a>
                                             {{--{{ $friend }}--}}
                                         </div>
