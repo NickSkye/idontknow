@@ -14,7 +14,6 @@
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-12">
-                                    <input type="hidden" name="_method" value="DELETE" />
                                     <button type="submit"><i class="fa fa-trash" ></i></button>
                                 </div>
                             </div>
