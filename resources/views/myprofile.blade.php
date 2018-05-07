@@ -29,7 +29,7 @@
 
                         @foreach($mybio as $bio)
                             <a href="/settings">
-                            <img src="{{$bio->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
+                                <img src="{{$bio->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
                             </a>
                         @endforeach
                         {{--info about friend--}}
@@ -43,14 +43,16 @@
                         @endif
                         <div>
 
-                            {{--friends posts--}}
+                            {{--my posts--}}
                             <div class="row frend-area">
                                 @foreach($myposts as $post)
                                     <div class="col-4">
 
                                         <div class="frend-post-box">
-                                            <img src="{{$post->imagepath}}" class="img-fluid" alt="">
-                                            <p>{{$post->description}}</p>
+                                            <a href="/post/{{$post->id}}">
+                                                <img src="{{$post->imagepath}}" class="img-fluid" alt="">
+                                                <p>{{$post->description}}</p>
+                                            </a>
                                             {{--{{ $friend }}--}}
                                         </div>
 
