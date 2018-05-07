@@ -43,7 +43,7 @@
                             <div class="row frend-area">
                                 @foreach($allfriendsposts as $friendspost)
                                     @foreach($friendspost as $post)
-                                    <div class="col-12">
+                                    <div class="col-12 frend-post-col card-body">
 
                                         <div class="frend-post-box">
                                             @foreach($allfriendsinfo as $infos)
