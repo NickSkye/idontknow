@@ -94,7 +94,9 @@ class PagesController extends Controller
 
         $notifs = DB::table('notifications')->where('id', $id)->get();
 
-
+        DB::table('notifications')->where('id', $id)->update(
+            ['seen' => true, 'updated_at' => date('Y-m-d H:i:s')]
+        );
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
         return view('notifications', ['notifs'=> $notifs]);
