@@ -28,6 +28,7 @@
 
                                         <div class="frend-post-box">
                                             <img src="{{$post->imagepath}}" class="img-fluid" alt="">
+                                            <p class="post-data">views: {{$post->views}}</p>
                                             <p>{{$post->description}}</p>
                                             {{--{{ $friend }}--}}
                                         </div>

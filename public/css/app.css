@@ -44,6 +44,11 @@
   font-size: 14pt;
 }
 
+.frend-area .col-4 .frend-post-box .post-data {
+  color: black;
+  font-size: 10pt;
+}
+
 .friend-page-image {
   max-width: 400px;
   max-height: 400px;
