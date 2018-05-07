@@ -47,7 +47,7 @@ class S3ImageController extends Controller
         $myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
         $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
 
-        return view('myprofile', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends])->with('success','Profile Image Uploaded successfully.')->with('path',$imageName);
+        return redirect('/me')->with( ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends])->with('success','Profile Image Uploaded successfully.')->with('path',$imageName);
     }
 
     /**
