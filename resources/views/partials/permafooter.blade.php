@@ -18,7 +18,9 @@
     </div>
 
     <div class="footer-button">
-
+        <a href="/" class="home-button">
+            <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+        </a>
     </div>
 
     <div class="footer-button">

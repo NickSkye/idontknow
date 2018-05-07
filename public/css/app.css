@@ -142,6 +142,16 @@
   margin-top: 10px;
 }
 
+.permafooter .footer-button .home-button {
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+
+.permafooter .footer-button .home-button i {
+  margin-top: 10px;
+}
+
 .image-upload > input {
   display: none;
 }
