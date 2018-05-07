@@ -82,7 +82,7 @@
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         @foreach($notifications as $notification)
-                                        <a class="dropdown-item" href="/">
+                                        <a class="dropdown-item" href="/notifications/{{$notification->id}}">
                                             {{$notification->notification}}
                                         </a>
                                         @endforeach

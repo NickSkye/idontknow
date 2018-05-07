@@ -88,4 +88,16 @@ class PagesController extends Controller
         return redirect("home")->with('status', 'post removed');
     }
 
+    public function notifications($id)
+    {
+
+
+        $notifs = DB::table('notifications')->where('id', $id)->get();
+
+
+        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+        return view('notifications', ['notifs'=> $notifs]);
+    }
+
 }

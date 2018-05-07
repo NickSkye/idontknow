@@ -23,6 +23,7 @@ Route::get('/settings', 'PagesController@settings')->middleware('auth');
 Route::get('/me', 'PagesController@myprofile')->middleware('auth');
 Route::get('/activity', 'PagesController@activity')->middleware('auth');
 Route::get('post/{post_id?}', 'PagesController@viewpost')->middleware('auth');
+Route::get('/notifications/{id?}', 'PagesController@notifications')->middleware('auth');
 
 
 Route::post('/search', 'SearchController@index')->middleware('auth');
