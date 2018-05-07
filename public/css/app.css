@@ -132,6 +132,11 @@
   height: 100%;
 }
 
+.permafooter .footer-button .me-button {
+  width: 100%;
+  height: 100%;
+}
+
 .image-upload > input {
   display: none;
 }

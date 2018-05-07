@@ -6,7 +6,9 @@
     </div>
 
     <div class="footer-button">
-
+        <a href="/me" class="me-button">
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </a>
     </div>
 
     <div class="footer-button">
