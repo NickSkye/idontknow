@@ -105,6 +105,7 @@
 
             <main class="py-4">
                 @yield('content')
+                @include('partials.modals')
             </main>
             @auth
                 @include('partials.permafooter')
