@@ -80,6 +80,9 @@
                                     </a>
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/">
+                                            {{ __('Home') }}
+                                        </a>
                                         <a class="dropdown-item" href="/me">
                                             {{ __('My Profile') }}
                                         </a>
