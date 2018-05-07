@@ -9,7 +9,9 @@
                 <div class="card">
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
+
                         @foreach($thepost as $post)
+                            @if($post->username === Auth::user()->username)
                         <form action="/delete-post/{{$post->id}}" enctype="multipart/form-data" method="POST">
                             {{ csrf_field() }}
                             <div class="row">
@@ -18,6 +20,7 @@
                                 </div>
                             </div>
                         </form>
+                            @endif
                             @endforeach
 
                     </div>
