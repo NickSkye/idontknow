@@ -16,7 +16,7 @@
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button type="submit"><i class="fa fa-trash" ></i></button>
+                                    <button type="submit" class="delete-post-button"><i class="fa fa-trash fa-2x" ></i></button>
                                 </div>
                             </div>
                         </form>

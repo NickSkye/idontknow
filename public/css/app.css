@@ -107,6 +107,13 @@
   overflow-x: hidden;
 }
 
+.delete-post-button {
+  background: red;
+  float: right;
+  border-radius: 4px;
+  padding: 3px 8px 3px 8px;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
