@@ -48,7 +48,7 @@
                                         <div class="frend-post-box">
                                             @foreach($allfriendsinfo as $infos)
                                                 @foreach($infos as $info)
-                                                @if($info->username == $friend->username)
+                                                @if($info->username == $post->username)
                                                     <p>{{$post->username}}</p>
                                                     @endif
                                                 @endforeach
