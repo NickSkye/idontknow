@@ -58,6 +58,7 @@ class PagesController extends Controller
 
 
         $thepost = DB::table('posts')->where('id', $post_id)->get();
+        DB::table('posts')->where('id', $post_id)->increment('views');
 
 
 
