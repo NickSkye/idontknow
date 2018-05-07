@@ -39,7 +39,12 @@
                                 <div class="col-6">
 
                                        <h2>{{$info->name}}</h2>
-                                    <h4>{{@$info->username}}</h4>
+                                    <h4>@{{$info->username}}</h4>
+
+                                    <div class="achievements-box">
+
+
+                                    </div>
 
                                 </div>
                             @endforeach
