@@ -23,17 +23,19 @@
                         <div class="row frend-area">
 
                             @foreach($friends as $friend)
-                                <a href="/users/{{$friend->followsusername}}">
-                                <div class="col-4">
 
-                                        <div class="frend-box">
                                 @foreach($allfriendsinfo as $infos)
                                     @foreach($infos as $info)
 
 
                                             @if($info->username == $friend->followsusername)
                                                 {{--<img src="{{$info->profileimage}}" class="img-fluid img-there" alt="">--}}
-                                                <div class="frend-img" style="background-image: url('{{$info->profileimage}}')"></div>
+                                            <div class="col-4" style="background-image: url('{{$info->profileimage}}');">
+                                                <a href="/users/{{$friend->followsusername}}">
+                                                    <div class="frend-box">
+                                                    </div>
+                                                </a>
+                                            </div>
                                             @endif
 
                                     @endforeach
@@ -42,10 +44,7 @@
 
                                     <p>{{$friend->followsusername}}</p>
                                     {{--{{ $friend }}--}}
-                                        </div>
 
-                                </div>
-                                </a>
                             @endforeach
 
                         </div>
