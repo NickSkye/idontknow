@@ -67,10 +67,10 @@ class PagesController extends Controller
 
         $thepost = DB::table('posts')->where('id', $post_id)->get();
         DB::table('posts')->where('id', $post_id)->increment('views');
+        $thecomments = DB::table('comments')->where('post_id', $post_id)->get();
 
 
-
-        return view('post', ['thepost'=> $thepost]);
+        return view('post', ['thepost'=> $thepost, 'thecomments' => $thecomments]);
 
 
     }

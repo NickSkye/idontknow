@@ -51,6 +51,15 @@
                             </div>
 
                         </div>
+                        <div class="comment-section">
+                            @foreach($thecomments as $comment)
+                                <div>
+                                    <a href="/users/{{$comment->username}}"><p class="comment-username">{{$comment->username}}  |  {{$comment->created_at}}</p></a>
+                                    <p class="comment">{{$comment->comment}}</p>
+
+                                </div>
+                            @endforeach
+                        </div>
 
 
                     </div>

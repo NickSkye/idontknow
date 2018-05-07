@@ -19,14 +19,5 @@ class CommentsController extends Controller
         return redirect()->back();
     }
 
-    public function getcomments(Request $request)
-    {
-        DB::table('comments')->insert(
-            ['username' => Auth::user()->username, 'post_id' => $request->post_id, 'comment' => $request->comment, 'likes' => 0, 'dislikes' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
-        );
-//
-//        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
-//
-        return redirect()->back();
-    }
+
 }
