@@ -81,10 +81,10 @@
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="/">
-                                            {{ __('Home') }}
+                                            {{ __('Notification 1') }}
                                         </a>
                                         <a class="dropdown-item" href="/me">
-                                            {{ __('My Profile') }}
+                                            {{ __('Notification 2') }}
                                         </a>
                                         <a class="dropdown-item" href="/settings">
                                             {{ __('Settings') }}
