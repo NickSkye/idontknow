@@ -28,7 +28,7 @@
                 <div class="card">
                     <div class="card-header">
 
-
+<h2>Frend Activity</h2>
                     </div>
                     <div class="card-body">
                         @if (session('status'))

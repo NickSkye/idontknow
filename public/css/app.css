@@ -49,6 +49,10 @@
   font-size: 10pt;
 }
 
+.frend-area .col-4 .frend-post-box .card {
+  margin-bottom: 50px;
+}
+
 .friend-page-image {
   max-width: 400px;
   max-height: 400px;
