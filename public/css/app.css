@@ -104,9 +104,15 @@
   background-color: #fbad50;
   z-index: 3333;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .permafooter .footer-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: calc(100% / 5);
   height: 100%;
   border: 2px solid white;
