@@ -30,7 +30,7 @@
 
                                             @if($info->username == $friend->followsusername)
                                                 {{--<img src="{{$info->profileimage}}" class="img-fluid img-there" alt="">--}}
-                                            <a href="/users/{{$friend->followsusername}}" class="col-4" style="background-image: url('{{$info->profileimage}}'); padding-bottom: 33%; width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat;">
+                                            <a href="/users/{{$friend->followsusername}}" class="col-4" style="max-width: 31.333333%; background-image: url('{{$info->profileimage}}'); padding-bottom: 31.33333333%; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; margin: 1%;">
 
                                                     <div class="frend-box">
                                                         <p>{{$friend->followsusername}}</p>
