@@ -52,6 +52,7 @@
                                                     <p>{{$post->username}}</p>
                                                     @endif
                                                 @endforeach
+                                            @endforeach
                                             <img src="{{$post->imagepath}}" class="img-fluid" alt="">
                                             <p>{{$post->description}}</p>
                                             {{--{{ $friend }}--}}
