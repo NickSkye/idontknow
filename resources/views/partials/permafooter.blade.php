@@ -10,7 +10,7 @@
     </div>
 
     <div class="footer-button">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadImage">
+        <button type="button" class="btn upload-button" data-toggle="modal" data-target="#uploadImage">
             <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
     </div>
