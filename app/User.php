@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         $this->friends()->detach($user->id);
     }
+
+    public function verifyUser()
+    {
+        return $this->hasOne('App\VerifyUser');
+    }
 }
