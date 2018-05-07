@@ -46,6 +46,11 @@
                                     <div class="col-12">
 
                                         <div class="frend-post-box">
+                                            @foreach($allfriendsinfo as $info)
+                                                @if($info->username == $friend->username)
+                                                    <p>{{$post->username}}</p>
+                                                    @endif
+                                                @endforeach
                                             <img src="{{$post->imagepath}}" class="img-fluid" alt="">
                                             <p>{{$post->description}}</p>
                                             {{--{{ $friend }}--}}
