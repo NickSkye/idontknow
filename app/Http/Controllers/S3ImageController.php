@@ -34,11 +34,11 @@ class S3ImageController extends Controller
 
         if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
             DB::table('profileinfo')->where('username', '=', Auth::user()->username)->update(
-                ['profileimage' => $imageName, 'aboutme' => $request->aboutme]
+                ['profileimage' => $imageName, 'aboutme' => $request->aboutme, 'updated_at' => date('Y-m-d H:i:s')]
             );
         }else{
             DB::table('profileinfo')->insert(
-                ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => $request->aboutme]
+                ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => $request->aboutme, 'created_at' => date('Y-m-d H:i:s')]
             );
         }
 
@@ -73,7 +73,7 @@ class S3ImageController extends Controller
 
 
         DB::table('posts')->insert(
-            ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'likes' => 0, 'dislikes' => 0, 'views' => 0]
+            ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'likes' => 0, 'dislikes' => 0, 'views' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
         $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
