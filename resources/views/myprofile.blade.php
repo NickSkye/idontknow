@@ -46,7 +46,7 @@
                             {{--my posts--}}
                             <div class="row frend-area">
                                 @foreach($myposts as $post)
-                                    <div class="col-4">
+                                    <div class="col-12">
 
                                         <div class="frend-post-box">
                                             <a href="/post/{{$post->id}}">
