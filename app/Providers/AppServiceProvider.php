@@ -14,12 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if(auth()->check()) {
-            view()->composer('layouts.app', function ($view) {
-                $notifications = DB::table('notifications')->where('username', Auth::user()->username)->where('seen', false)->get();
-                $view->with('notifications', $notifications);
-            });
-        }
+
+
+
     }
 
     /**
