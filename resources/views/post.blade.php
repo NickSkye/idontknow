@@ -54,14 +54,8 @@
                         </div>
                         <div class="comment-section">
                             @foreach($thecomments as $comment)
-                                <div style="display: flex; align-items: center;">
-                                    @foreach($allcommentersinfo as $infos)
+                                <div >
 
-                                            @if($infos->username === $comment->username)
-                                                <img src="{{$info->profileimage}}" style="max-width: 100px; max-height: 100px;" alt="">
-                                            @endif
-
-                                    @endforeach
 
                                     <a href="/users/{{$comment->username}}"><p
                                                 class="comment-username">{{$comment->username}}
