@@ -55,10 +55,10 @@ class HomeController extends Controller
             array_push($allfriendsinfo, $friendsinfo);
         }
 
-        $notifications = DB::table('notifications')->where([
+        $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
-            return view('home', ['friends' => $friends, 'allfriendsinfo' => $allfriendsinfo, 'notifications', $notifications]);
+            return view('home', ['friends' => $friends, 'allfriendsinfo' => $allfriendsinfo, 'notifs'=> $notifs]);
         }
     }
