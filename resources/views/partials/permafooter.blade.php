@@ -3,10 +3,17 @@
 
     <div class="footer-button">
 
+        <a href="/messages" class="me-button <?php if ($page == 'messages') {
+            echo 'on-page';
+        } ?>">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </a>
     </div>
 
     <div class="footer-button">
-        <a href="/me" class="me-button <?php if ($page == 'me') {echo 'on-page';} ?>">
+        <a href="/me" class="me-button <?php if ($page == 'me') {
+            echo 'on-page';
+        } ?>">
             <i class="fa fa-user fa-2x" aria-hidden="true"></i>
         </a>
     </div>
@@ -18,13 +25,17 @@
     </div>
 
     <div class="footer-button">
-        <a href="/" class="home-button <?php if ($page == 'home') {echo 'on-page';} ?>">
+        <a href="/" class="home-button <?php if ($page == 'home') {
+            echo 'on-page';
+        } ?>">
             <i class="fa fa-home fa-2x" aria-hidden="true"></i>
         </a>
     </div>
 
     <div class="footer-button">
-        <a href="/activity" class="list-button <?php if ($page == 'activity') {echo 'on-page';} ?>">
+        <a href="/activity" class="list-button <?php if ($page == 'activity') {
+            echo 'on-page';
+        } ?>">
             <i class="fa fa-list fa-2x" aria-hidden="true"></i>
         </a>
     </div>

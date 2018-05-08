@@ -24,6 +24,7 @@ Route::get('/me', 'PagesController@myprofile')->middleware('auth');
 Route::get('/activity', 'PagesController@activity')->middleware('auth');
 Route::get('post/{post_id?}', 'PagesController@viewpost')->middleware('auth');
 Route::get('/notifications/{id?}', 'PagesController@notifications')->middleware('auth');
+Route::get('/messages/{username?}', 'MessagesController@messages')->middleware('auth');
 
 
 Route::post('/search', 'SearchController@index')->middleware('auth');
