@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function friends()
     {
-        return $this->belongsToMany('User', 'follows', 'email', 'follows_email');
+        return $this->belongsToMany('User', 'follows', 'username', 'followsusername');
     }
 
     public function addFriend(User $user)
