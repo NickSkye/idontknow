@@ -58,7 +58,7 @@
                                     @foreach($allcommentersinfo as $infos)
                                         @foreach($infos as $info)
                                             @if($info->username === $comment->username)
-                                                <img src="{{$info->profileimage}}" alt="">
+                                                <img src="{{$info->profileimage}}" style="max-width: 100px; max-height: 100px;" alt="">
                                             @endif
                                         @endforeach
                                     @endforeach
