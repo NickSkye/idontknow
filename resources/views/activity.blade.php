@@ -62,6 +62,7 @@
                                                         <a href="/post/{{$post->id}}">
                                                             <img src="{{$post->imagepath}}" class="img-fluid activity-image" alt="">
                                                             <p>{{$post->description}}</p>
+                                                            <p>view comments&nbsp;&gt;</p>
                                                         </a>
                                                         {{--{{ $friend }}--}}
 
