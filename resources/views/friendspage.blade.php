@@ -7,7 +7,10 @@
                 <div class="card">
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
+                        <div class="row">
+                            <div class="col-6">
                         @foreach($friendsinfo as $frinfo)
+
                             <img src="{{$frinfo->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
                         @endforeach
                         {{--info about friend--}}
@@ -36,6 +39,23 @@
 
 
                         @endforeach
+                            </div>
+                            <div class="col-6">
+                                @foreach($info as $item)
+
+
+                                        <h2>{{$item->name}}</h2>
+                                        <h4>{{$item->username}}</h4>
+
+                                        <div class="achievements-box">
+
+
+                                        </div>
+
+
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         @if (session('status'))
