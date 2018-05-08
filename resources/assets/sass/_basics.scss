@@ -98,7 +98,7 @@
     .send{
         float: left;
         padding: 0px;
-        background: #F62E55;
+        background: $accent-color;
         color: white;
         font-size: 23px;
         /* border: 1px solid grey; */
@@ -118,7 +118,7 @@
 }
 
 .delete-post-button{
-    background: red;
+    background: $accent-color;
     float: right;
     border-radius: 4px;
     padding: 3px 8px 3px 8px;

@@ -108,7 +108,7 @@
 }
 
 .delete-post-button {
-  background: red;
+  background: #F62E55;
   float: right;
   border-radius: 4px;
   padding: 3px 8px 3px 8px;
@@ -133,7 +133,7 @@ a {
   left: 0;
   right: 0;
   height: 55px;
-  background-color: #70F2F5;
+  background-color: #70F3FF;
   z-index: 3333;
   text-align: center;
   display: -webkit-box;
@@ -156,6 +156,7 @@ a {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  color: #F62E55;
 }
 
 .permafooter .footer-button .upload-button {
@@ -10594,7 +10595,7 @@ a.text-dark:focus {
 }
 
 .navbar-laravel {
-  background-color: #70F2F5;
+  background-color: #70F3FF;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }

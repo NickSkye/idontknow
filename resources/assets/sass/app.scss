@@ -11,6 +11,6 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-  background-color: #70F3FF; //#fbad50; //#34baf4 //#c8f442
+  background-color: $main-color; //#fbad50; //#34baf4 //#c8f442
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
