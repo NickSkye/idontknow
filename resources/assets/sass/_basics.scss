@@ -133,7 +133,10 @@
 }
 
 a{
-    color: black;
+    color: black !important;
+    p{
+        color: black !important;
+    }
 }
 
 .comment-button{
