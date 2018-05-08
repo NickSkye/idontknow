@@ -20,14 +20,14 @@ class MessagesController extends Controller
 
     }
 
-    public function shout(Request $request, $username)
+    public function shout(Request $request)
     {
 
         $messages = DB::table('messages')->where('username', Auth::user()->username)->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
 
         DB::table('messages')->insert(
-            ['username' => $username, 'from_username' => Auth::user()->username, 'message' => $request->shout, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            ['username' => $request->sendtousername, 'from_username' => Auth::user()->username, 'message' => $request->shout, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
         return view('messages', ['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');

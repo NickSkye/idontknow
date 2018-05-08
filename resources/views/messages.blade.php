@@ -38,7 +38,7 @@
                                     @include('partials.viewshout')
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Shout Back!</button>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
                                     <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
@@ -57,10 +57,10 @@
                                 <div class="modal-body">
                                     @include('partials.shout')
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Shout Back!</button>
-                                    <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
-                                </div>
+                                {{--<div class="modal-footer">--}}
+                                    {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
+                                    {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
+                                {{--</div>--}}
                             </div>
                         </div>
                     </div>

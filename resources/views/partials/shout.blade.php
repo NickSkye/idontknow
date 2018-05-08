@@ -10,21 +10,21 @@
 
 
 
-            <form action="{{ url('shout') }}" enctype="multipart/form-data" method="POST">
+            <form action="{{ url('shout') }}"  method="POST">
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-12">
-                        <select>
+                        <select name="sendtousername">
                             @foreach($friends as $friend)
-                            <option value="{{$friend->username}}">{{$friend->followsusername}}</option>
+                            <option value="{{$friend->followsusername}}">{{$friend->followsusername}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="col-12">
-                        <textarea rows="4" cols="50" placeholder="Tell your frends about your post..." type="text" name="description" ></textarea>
+                        <textarea rows="4" cols="50" placeholder="Shout at your frend..." type="text" name="shout" ></textarea>
                     </div>
                     <div class="col-md-4" style="align-self: flex-end;">
-                        <button type="submit" class="btn btn-success" style="float: right;">Upload</button>
+                        <button type="submit" class="btn btn-success" style="float: right;">Shout!</button>
                     </div>
                 </div>
             </form>
