@@ -126,6 +126,10 @@ a {
   color: black;
 }
 
+.comment-button {
+  background: #0b7dda;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
