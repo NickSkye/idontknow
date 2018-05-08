@@ -17,7 +17,7 @@
                         <textarea rows="4" cols="50" placeholder="Tell your frends about your post..." type="text" name="description" ></textarea>
                     </div>
                     <div class="col-6 offset-2 image-upload" style="align-self: flex-end;">
-                        <label for="file-input" style="float: right; margin-bottom: 0;">
+                        <label for="file-input" style="float: right; margin-bottom: 0; cursor: pointer;">
                             <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
                         </label>
                         <input id="file-input" type="file" name="image" />
