@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<?php $page = 'activity'; ?>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

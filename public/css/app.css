@@ -126,6 +126,10 @@ a {
   color: black;
 }
 
+a p {
+  color: black;
+}
+
 .comment-button {
   background: #0b7dda;
   color: white;
@@ -162,6 +166,10 @@ a {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+}
+
+.permafooter .footer-button .on-page {
+  color: #F62E55 !important;
 }
 
 .permafooter .footer-button .upload-button {

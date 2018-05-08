@@ -19,6 +19,9 @@
         justify-content: center;
         align-content: center;
 
+        .on-page{
+            color: $accent-color !important;
+        }
 
         .upload-button{
             background-color: transparent;
