@@ -64,14 +64,19 @@ class PagesController extends Controller
     public function viewpost($post_id)
     {
 
-
+        $allcommentersinfo = [];
 
         $thepost = DB::table('posts')->where('id', $post_id)->get();
         DB::table('posts')->where('id', $post_id)->increment('views');
         $thecomments = DB::table('comments')->where('post_id', $post_id)->get();
 
+        foreach($thecomments as $comment){
+            $profinfos = DB::table('profileinfo')->where('username', $comment->username)->get();
+            array_push($allcommentersinfo, $profinfos);
+        }
+        $profinfos = DB::table('profileinfo')->where('id', $post_id)->get();
 
-        return view('post', ['thepost'=> $thepost, 'thecomments' => $thecomments]);
+        return view('post', ['thepost'=> $thepost, 'thecomments' => $thecomments, 'allcommentersinfo' => $allcommentersinfo]);
 
 
     }

@@ -60,7 +60,7 @@
                                                     </div>
                                                     <div class="card-body">
                                                         <a href="/post/{{$post->id}}">
-                                                            <img src="{{$post->imagepath}}" class="img-fluid" alt="">
+                                                            <img src="{{$post->imagepath}}" class="img-fluid activity-image" alt="">
                                                             <p>{{$post->description}}</p>
                                                         </a>
                                                         {{--{{ $friend }}--}}
