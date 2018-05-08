@@ -133,7 +133,7 @@ a {
   left: 0;
   right: 0;
   height: 55px;
-  background-color: #70CFF4;
+  background-color: #34baf4;
   z-index: 3333;
   text-align: center;
   display: -webkit-box;
@@ -10594,7 +10594,7 @@ a.text-dark:focus {
 }
 
 .navbar-laravel {
-  background-color: #70CFF4;
+  background-color: #34baf4;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
