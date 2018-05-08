@@ -78,7 +78,7 @@
                                 <li class="nav-item dropdown">
                                     @if (!$notifs->isEmpty())
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: red;"></i> <span class="caret"></span>
+                                        <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: #F62E55;"></i> <span class="caret"></span>
                                     </a>
                                     @else
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
