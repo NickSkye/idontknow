@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-6 offset-2 image-upload">
                         <label for="file-input" style="float: right; margin-bottom: 0;">
-                            <img src="http://goo.gl/pB9rpQ"/>
+                            <i class="fa fa-picture-o" aria-hidden="true"></i>
                         </label>
                         <input id="file-input" type="file" name="image" />
                         <img src="" id="profile-img-tag" width="200px" />
