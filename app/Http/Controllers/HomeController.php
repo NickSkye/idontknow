@@ -43,7 +43,7 @@ class HomeController extends Controller
         }
 
 
-$user = User::where;
+
 
 
 
