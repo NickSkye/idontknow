@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Http\Middleware\Cache;
 
+
 class LogLastUserActivity
 {
     /**
