@@ -86,7 +86,7 @@ class RegisterController extends Controller
 
         Mail::to($user->email)->send(new VerifyMail($user));
         DB::table('profileinfo')->insert(
-            ['username' => $data['username'], 'profileimage' => "/images/default-avatar.jpg", 'aboutme' => "Default"]
+            ['username' => $data['username'], 'profileimage' => "/images/default-avatar.jpg", 'aboutme' => "This is your bio and will be seen by everybody..."]
         );
 
 

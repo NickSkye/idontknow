@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-md-12">
                         @foreach($profileinfo as $prof)
-                        <textarea rows="5" cols="40" placeholder="This is your bio and will be seen by everybody..." type="text" name="aboutme" value="{{ $prof->aboutme }}"></textarea>
+                        <textarea rows="5" cols="40" placeholder="{{ $prof->aboutme }}" type="text" name="aboutme" value="{{ $prof->aboutme }}"></textarea>
                             @endforeach
                     </div>
                     <div class="col-md-12">
