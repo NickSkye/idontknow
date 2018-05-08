@@ -3,7 +3,7 @@
 
     <div class="footer-button">
 
-        <a href="/messages" class="me-button <?php if ($page == 'messages') {
+        <a href="/shouts" class="me-button <?php if ($page == 'messages') {
             echo 'on-page';
         } ?>">
             <i class="fa fa-bullhorn fa-2x" aria-hidden="true"></i>
