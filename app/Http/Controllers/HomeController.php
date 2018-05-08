@@ -43,14 +43,14 @@ class HomeController extends Controller
         }
 
 
-$user = User::all();
+$user = User::where;
 
 
 
         $allfriendsinfo = [];
 //        $storagePath = Storage::disk('s3')->put("uploads", $my_file, 'public');
-       // $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
-       $friends = $user->friends()->get();
+        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+       //$friends = $user->friends()->get();
         foreach ($friends as $friend) {
             $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->followsusername)->get();
 
