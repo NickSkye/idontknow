@@ -10,7 +10,7 @@
 
 
 
-            <form action="{{ url('shout') }}"  method="POST">
+            <form action="{{ url('shouts') }}"  method="POST">
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-12">
