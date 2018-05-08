@@ -64,10 +64,16 @@ class S3ImageController extends Controller
         if(is_null($request->description)){
             $request->description = " ";
         }
-//        if(is_null($request->image)){
-//            $request->image = " ";
-//
-//        }
+
+
+
+
+//IF HAS IMAGE DO SOMETHING, IF JUST TEXT DO SOMETHING ELSE
+if ($request->hasFile('image')) {
+    //
+}
+
+
 
             $imageName = time().'.'.$request->image->getClientOriginalExtension();
             $image = $request->file('image');
