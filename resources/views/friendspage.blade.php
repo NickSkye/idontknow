@@ -54,6 +54,10 @@
 
 
                                 @endforeach
+                                    @foreach($friendsinfo as $frinfo)
+
+                                        <p>{{$frinfo->aboutme}}</p>
+                                    @endforeach
                             </div>
                         </div>
                     </div>
