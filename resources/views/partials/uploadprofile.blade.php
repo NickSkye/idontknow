@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <p>Change your profile picture here (Squarer images work best)</p>
-                        <label for="file-input" style="float: right; margin-bottom: 0;">
+                        <label for="file-input" style="float: left; margin-bottom: 0;">
                             <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
                         </label>
                         <input id="file-input" type="file" name="image" />
