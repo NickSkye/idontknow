@@ -6,7 +6,7 @@
         <a href="/messages" class="me-button <?php if ($page == 'messages') {
             echo 'on-page';
         } ?>">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
         </a>
     </div>
 
