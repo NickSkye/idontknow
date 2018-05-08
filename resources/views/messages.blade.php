@@ -28,7 +28,7 @@
                 <div class="card">
                     <div class="card-header">
 
-                        <h2>Notifications</h2>
+                        <h2>Shouts</h2>
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -40,11 +40,15 @@
 
                             {{--friends posts--}}
                             <div class="row frend-area">
-                                {{--@foreach($notifs as $notif)--}}
-                                    {{--<div>--}}
-                                        {{--{{$notif->notification}}--}}
-                                    {{--</div>--}}
-                                {{--@endforeach--}}
+                                @foreach($messages as $mess)
+                                    <div>
+                                        {{$mess->from_username}}
+                                        {{$mess->message}}
+                                        {{$mess->created_at}}
+
+                                    </div>
+                                    <hr>
+                                @endforeach
                             </div>
 
                         </div>
