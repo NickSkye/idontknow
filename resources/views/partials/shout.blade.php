@@ -23,7 +23,7 @@
                     <div class="col-12">
                         <textarea rows="4" cols="50" placeholder="Shout at your frend..." type="text" name="shout" ></textarea>
                     </div>
-                    <div class="col-md-4" style="align-self: flex-end;">
+                    <div class="col-12" style="align-self: flex-end;">
                         <button type="submit" class="btn btn-success" style="float: right;">Shout!</button>
                     </div>
                 </div>

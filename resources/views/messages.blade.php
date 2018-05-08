@@ -86,10 +86,10 @@
                             {{--friends posts--}}
                             <div class="row frend-area">
                                 @foreach($messages as $mess)
-                                    <div>
-                                        {{$mess->from_username}}
-                                        {{$mess->message}}
-                                        {{$mess->created_at}}
+                                    <div class="col-12">
+                                        <p>Your friend {{$mess->from_username}} shouted:</p>
+                                        <p>{{$mess->message}}</p>
+                                        <p>at: {{$mess->created_at}}</p>
 
                                     </div>
                                     <hr>
