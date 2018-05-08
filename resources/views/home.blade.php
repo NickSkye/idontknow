@@ -5,10 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
-                    <div class="card-header">
+                    {{--<div class="card-header">--}}
 
-                       Click on your name in the right corner then settings to upload profile pic
-                    </div>
+                       {{--Click on your name in the right corner then settings to upload profile pic--}}
+                    {{--</div>--}}
 
                     <div class="card-body">
                         @if (session('status'))
