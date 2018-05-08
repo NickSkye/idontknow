@@ -12,16 +12,17 @@
 
                         @foreach($thepost as $post)
                             @if($post->username === Auth::user()->username)
-                        <form action="/delete-post/{{$post->id}}" enctype="multipart/form-data" method="POST">
-                            {{ csrf_field() }}
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button type="submit" class="delete-post-button"><i class="fa fa-trash fa-2x" ></i></button>
-                                </div>
-                            </div>
-                        </form>
+                                <form action="/delete-post/{{$post->id}}" enctype="multipart/form-data" method="POST">
+                                    {{ csrf_field() }}
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="delete-post-button"><i
+                                                        class="fa fa-trash fa-2x"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
                             @endif
-                            @endforeach
+                        @endforeach
 
                     </div>
                     <div class="card-body">
@@ -53,11 +54,22 @@
                         </div>
                         <div class="comment-section">
                             @foreach($thecomments as $comment)
-                                <div>
-                                    <a href="/users/{{$comment->username}}"><p class="comment-username">{{$comment->username}}  |  {{$comment->created_at}}</p></a>
+                                <div style="display: flex; align-items: center;">
+                                    @foreach($allcommentersinfo as $infos)
+                                        @foreach($infos as $info)
+                                            @if($info->username === $comment->username)
+                                                <img src="{{$info->profileimage}}" alt="">
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+
+                                    <a href="/users/{{$comment->username}}"><p
+                                                class="comment-username">{{$comment->username}}
+                                            | {{$comment->created_at}}</p></a>
                                     <p class="comment">{{$comment->comment}}</p>
 
                                 </div>
+                                <hr>
                             @endforeach
                         </div>
 
@@ -65,7 +77,7 @@
                     </div>
                     <div class="card-footer">
                         @foreach($thepost as $post)
-                        <div> @include('partials.commentfield')</div>
+                            <div> @include('partials.commentfield')</div>
                         @endforeach
                     </div>
                 </div>
