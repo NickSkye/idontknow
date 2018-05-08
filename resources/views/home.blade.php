@@ -16,9 +16,9 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <div>
-                            Now let your friends know what you are up to!
-                        </div>
+                        {{--<div>--}}
+                            {{--Now let your friends know what you are up to!--}}
+                        {{--</div>--}}
 
                         <div class="row frend-area">
 

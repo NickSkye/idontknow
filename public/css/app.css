@@ -118,6 +118,14 @@
   margin-bottom: 30px;
 }
 
+.activity-image {
+  max-height: 200px;
+}
+
+a {
+  color: black;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
