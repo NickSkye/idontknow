@@ -6,7 +6,9 @@
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
                     <div class="card-header">
-
+                        @if($user->isOnline())
+                            user is online!!
+                        @endif
                        Click on your name in the right corner then settings to upload profile pic
                     </div>
 
