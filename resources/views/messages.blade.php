@@ -40,11 +40,11 @@
 
                             {{--friends posts--}}
                             <div class="row frend-area">
-                                @foreach($notifs as $notif)
-                                    <div>
-                                        {{$notif->notification}}
-                                    </div>
-                                @endforeach
+                                {{--@foreach($notifs as $notif)--}}
+                                    {{--<div>--}}
+                                        {{--{{$notif->notification}}--}}
+                                    {{--</div>--}}
+                                {{--@endforeach--}}
                             </div>
 
                         </div>
