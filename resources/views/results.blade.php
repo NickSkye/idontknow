@@ -1,7 +1,7 @@
 
 
 @extends('layouts.app')
-
+<?php $page = 'search'; ?>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

@@ -1,7 +1,7 @@
 {{--THIS PAGE WILL BE AN INDIVIDUAL CLICKED ON POST WITH COMMENT SECTION AND VOTES--}}
 
 @extends('layouts.app')
-
+<?php $page = 'post'; ?>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
