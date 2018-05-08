@@ -29,6 +29,9 @@
                     <div class="card-header">
 
                         <h2>Shouts</h2>
+                        <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
+                            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                        </button>
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -56,7 +59,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <div>Activity Page will show a list of all friends recent activity</div>
+                        <div>Shouts page on its way</div>
                     </div>
                 </div>
             </div>

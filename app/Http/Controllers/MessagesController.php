@@ -11,14 +11,54 @@ class MessagesController extends Controller
     public function messages()
     {
 
-        //if (Auth::check()) {
-        $messages = DB::table('messages')->where('username', Auth::user()->username)->get();
 
-        return view('messages', ['messages'=> $messages]);
-//        }
-//        else{
-//            return view('auth.login');
-//        }
+        $messages = DB::table('messages')->where('username', Auth::user()->username)->where('seen', false)->get();
+        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+
+        return view('messages', ['messages'=> $messages, 'friends'=>$friends]);
+
+
+    }
+
+    public function shout(Request $request, $username)
+    {
+
+        $messages = DB::table('messages')->where('username', Auth::user()->username)->get();
+        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+
+        DB::table('messages')->insert(
+            ['username' => $username, 'from_username' => Auth::user()->username, 'message' => $request->shout, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+        );
+
+        return view('messages', ['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
+
+
+    }
+
+    public function getShout($shoutid)
+    {
+
+        $messages = DB::table('messages')->where('username', Auth::user()->username)->get();
+        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+        $shouts = DB::table('messages')->where('id', $shoutid)->first();
+
+
+
+        return view('messages', ['messages'=> $messages, 'friends'=>$friends, 'shouts'=> $shouts]);
+
+
+    }
+
+    public function shoutSeen($shoutid)
+    {
+
+        $messages = DB::table('messages')->where('username', Auth::user()->username)->get();
+        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+
+        DB::table('messages')->where('id', $shoutid)->update('seen', true);
+
+        return view('messages', ['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
+
 
     }
 }

@@ -24,8 +24,10 @@ Route::get('/me', 'PagesController@myprofile')->middleware('auth');
 Route::get('/activity', 'PagesController@activity')->middleware('auth');
 Route::get('post/{post_id?}', 'PagesController@viewpost')->middleware('auth');
 Route::get('/notifications/{id?}', 'PagesController@notifications')->middleware('auth');
-Route::get('/messages', 'MessagesController@messages')->middleware('auth');
+Route::get('/shouts', 'MessagesController@messages')->middleware('auth');
 
+
+Route::post('/shouts/{shoutid?}', 'MessagesController@shout')->middleware('auth');
 
 Route::post('/search', 'SearchController@index')->middleware('auth');
 Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');
