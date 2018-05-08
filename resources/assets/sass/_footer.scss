@@ -18,17 +18,18 @@
         align-items: center;
         justify-content: center;
         align-content: center;
-        color: $accent-color;
+
 
         .upload-button{
             background-color: transparent;
             width: 100%;
             height: 100%;
+            color: $secondary-color;
         }
         .me-button{
             width: 100%;
             height: 100%;
-            color: black;
+            color: $secondary-color;
             i{
                 margin-top: 10px;
             }
@@ -37,7 +38,7 @@
         .home-button{
             width: 100%;
             height: 100%;
-            color: black;
+            color: $secondary-color;
             i{
                 margin-top: 10px;
             }
@@ -46,7 +47,7 @@
         .list-button{
             width: 100%;
             height: 100%;
-            color: black;
+            color: $secondary-color;
             i{
                 margin-top: 10px;
             }
