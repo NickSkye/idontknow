@@ -40,7 +40,9 @@
                         <img src="" id="profile-img-tag" width="200px" />
                     </div>
                     <div class="col-md-12">
-                        <textarea rows="5" cols="40" placeholder="This is your bio and will be seen by everybody..." type="text" name="aboutme" value="{{ old('aboutme') }}"></textarea>
+                        @foreach($profileinfo as $prof)
+                        <textarea rows="5" cols="40" placeholder="This is your bio and will be seen by everybody..." type="text" name="aboutme" value="{{ $prof->aboutme }}"></textarea>
+                            @endforeach
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-success">Upload</button>
