@@ -30,7 +30,7 @@ class MessagesController extends Controller
             ['username' => $request->sendtousername, 'from_username' => Auth::user()->username, 'message' => $request->shout, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
-        return view('messages', ['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
+        return redirect('/shouts')->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
 
 
     }
