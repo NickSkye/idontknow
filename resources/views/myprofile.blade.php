@@ -46,9 +46,13 @@
 
                                     </div>
 
-                                </div>
-                            @endforeach
 
+                            @endforeach
+                                    @foreach($mybio as $bio)
+
+                                            <p>{{$bio->aboutme}}</p>
+                                        </div>
+                                    @endforeach
 
 
                         </div>
