@@ -25,25 +25,7 @@
                 @endif
 
                     {{--MODAL FOR SHOUTS--}}
-                    <div class="modal fade" id="viewShout" tabindex="-1" role="dialog" aria-labelledby="viewshoutModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="viewshoutModalLabel">Shout!</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    @include('partials.viewshout')
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
-                                    <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -86,10 +68,34 @@
                             {{--friends posts--}}
                             <div class="row frend-area">
                                 @foreach($messages as $mess)
+                                    <div class="modal fade" id="viewShout-{{$mess->id}}" tabindex="-1" role="dialog" aria-labelledby="viewshoutModalLabel-{{$mess->id}}" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">Shout!</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {{--@include('partials.viewshout')--}}
+                                                    <p>Your friend {{$mess->from_username}} shouted:</p>
+                                                    <p>{{$mess->message}}</p>
+                                                    <p>at: {{$mess->created_at}}</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
+                                                    <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-12">
-                                        <p>Your friend {{$mess->from_username}} shouted:</p>
-                                        <p>{{$mess->message}}</p>
-                                        <p>at: {{$mess->created_at}}</p>
+                                        <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
+                                            <p>Shout from your friend {{$mess->from_username}} at: {{$mess->created_at}}</p>
+                                        </button>
+                                        
                                         <hr>
                                     </div>
 
