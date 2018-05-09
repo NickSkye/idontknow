@@ -100,7 +100,7 @@
                             {{--friends posts--}}
                             <div class="row frend-area">
                                 @foreach($friendsposts as $post)
-                                    <div class="col-4">
+                                    <div class="col-12">
 
                                         <div class="frend-post-box">
                                             <a href="/post/{{$post->id}}">
@@ -108,6 +108,7 @@
                                                 <p>{{$post->description}}</p>
                                             </a>
                                             {{--{{ $friend }}--}}
+                                            <hr>
                                         </div>
 
                                     </div>
