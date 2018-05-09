@@ -28,7 +28,7 @@ Route::get('/shouts', 'MessagesController@messages')->middleware('auth');
 
 
 Route::post('/shouts/send', 'MessagesController@shout')->middleware('auth');
-Route::post('/shouts', 'MessagesController@getShout')->middleware('auth');
+Route::post('/shouts/shoutseen', 'MessagesController@shoutSeen')->middleware('auth');
 
 Route::post('/search', 'SearchController@index')->middleware('auth');
 Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');

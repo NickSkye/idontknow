@@ -69,12 +69,15 @@
                             <div class="row frend-area">
                                 @foreach($messages as $mess)
                                     {{--MODAL START--}}
+                                    <form action="/shouts/shoutseen" method="post">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
                                     <div class="modal fade" id="viewShout-{{$mess->id}}" tabindex="-1" role="dialog" aria-labelledby="viewshoutModalLabel-{{$mess->id}}" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">Shout!</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
@@ -86,20 +89,19 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
-                                                    <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    </form>
                                     {{--MODAL END--}}
                                     <div class="col-12">
-                                        <form action="/shouts" method="post">
-                                            {{ csrf_field() }}
-                                            <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
-                                            <button type="submit" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
+
+                                            <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
                                                 <p>Shout from your friend {{$mess->from_username}} at: {{$mess->created_at}}</p>
                                             </button>
-                                        </form>
+
 
                                         <hr>
                                     </div>

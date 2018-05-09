@@ -54,15 +54,19 @@ class MessagesController extends Controller
 
     }
 
-    public function shoutSeen($shoutid)
+    public function shoutSeen(Request $request)
     {
 
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+        $theshout = DB::table('messages')->where('id', $request->shoutid)->get();
+        DB::table('messages')->where('id', $request->shoutid)->update(
+            ['seen' => true,'updated_at' => date('Y-m-d H:i:s')]
+        );
 
-        DB::table('messages')->where('id', $shoutid)->update('seen', true);
 
-        return view('messages', ['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
+
+        return view('messages', ['theshout'=> $theshout, 'messages'=> $messages, 'friends'=>$friends]);
 
 
     }
