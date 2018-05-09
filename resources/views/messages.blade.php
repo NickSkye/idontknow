@@ -101,7 +101,7 @@
                                     <div class="col-12">
 
                                         <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
-                                            <p>Shout from your friend {{$mess->from_username}} at: {{$mess->created_at}}</p>
+                                            <p>Shout from {{$mess->from_username}} at: {{$mess->created_at}}</p>
                                         </button>
 
 
