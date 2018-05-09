@@ -35,3 +35,7 @@ function readURL(input) {
 $("#file-input").change(function(){
     readURL(this);
 });
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})

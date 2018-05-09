@@ -13911,6 +13911,10 @@ $("#file-input").change(function () {
     readURL(this);
 });
 
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
