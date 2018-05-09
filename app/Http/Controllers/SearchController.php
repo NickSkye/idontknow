@@ -8,7 +8,7 @@ use App\Page;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use Mail;
 
 
 class SearchController extends Controller {
