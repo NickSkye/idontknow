@@ -23,7 +23,7 @@ class MessagesController extends Controller
     public function shout(Request $request)
     {
 
-        $messages = DB::table('messages')->where('username', Auth::user()->username)->get();
+        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
 
         DB::table('messages')->insert(
@@ -40,7 +40,7 @@ class MessagesController extends Controller
 
     public function getShout(Request $request)
     {
-        $messages = DB::table('messages')->where('username', Auth::user()->username)->get();
+        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         $theshout = DB::table('messages')->where('id', $request->shoutid)->get();
         DB::table('messages')->where('id', $request->shoutid)->update(
@@ -57,7 +57,7 @@ class MessagesController extends Controller
     public function shoutSeen($shoutid)
     {
 
-        $messages = DB::table('messages')->where('username', Auth::user()->username)->get();
+        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
 
         DB::table('messages')->where('id', $shoutid)->update('seen', true);
