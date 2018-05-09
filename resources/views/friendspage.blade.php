@@ -30,6 +30,9 @@
                                     </button>
                                 </form>
 
+                                    <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
+                                        <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
+                                    </button>
                                     {{--SHOUT MODAL--}}
                                     <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
