@@ -33,7 +33,7 @@ Route::post('/shouts/sendonpage', 'MessagesController@shoutonpage')->middleware(
 Route::post('/shouts/shoutseen', 'MessagesController@shoutSeen')->middleware('auth');
 Route::post('/sendinvite', 'SearchController@sendinvite')->middleware('auth');
 
-Route::get('/search', 'SearchController@index')->middleware('auth');
+Route::post('/search', 'SearchController@index')->middleware('auth');
 Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');
 Route::post('/removefrend/{username?}', 'FriendController@remove')->middleware('auth');
 Route::post('/delete-post/{id?}', 'PagesController@deletepost')->middleware('auth');
