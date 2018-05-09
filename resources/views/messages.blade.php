@@ -78,7 +78,7 @@
                                                         <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">Shout!</h5>
-                                                        <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <button type="submit" class="close" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
