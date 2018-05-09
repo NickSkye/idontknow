@@ -38,6 +38,24 @@ class MessagesController extends Controller
 
     }
 
+    public function shoutonpage(Request $request)
+    {
+
+        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
+        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+
+        DB::table('messages')->insert(
+            ['username' => $request->sendtousername, 'from_username' => Auth::user()->username, 'message' => $request->shout, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+        );
+        DB::table('notifications')->insert(
+            ['username' => $request->sendtousername, 'notification' => 'You got a new shout', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+        );
+
+        return redirect()->back()->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
+
+
+    }
+
     public function getShout(Request $request)
     {
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();

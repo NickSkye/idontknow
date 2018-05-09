@@ -28,6 +28,7 @@ Route::get('/shouts', 'MessagesController@messages')->middleware('auth');
 
 
 Route::post('/shouts/send', 'MessagesController@shout')->middleware('auth');
+Route::post('/shouts/sendonpage', 'MessagesController@shoutonpage')->middleware('auth');
 Route::post('/shouts/shoutseen', 'MessagesController@shoutSeen')->middleware('auth');
 
 Route::post('/search', 'SearchController@index')->middleware('auth');
