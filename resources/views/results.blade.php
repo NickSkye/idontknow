@@ -1,7 +1,7 @@
 
 
 @extends('layouts.app')
-<?php $page = 'search'; ?>
+<?php $page = 'activity'; ?>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -20,7 +20,7 @@
 
                                 <ul>
 
-                                    @foreach($users as $user)
+                                    @foreach($searchedusers as $user)
 
                                         <a href="/users/{{$user->username}}"><li>{{ $user->name }} | {{ $user->username }}</li></a>
 
