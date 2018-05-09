@@ -41,6 +41,9 @@
                     </div>
                     <div class="col-md-12">
                         @foreach($profileinfo as $prof)
+                            <label for="aboutme">
+                                Description
+                            </label>
                         <textarea rows="5" cols="40" placeholder="{{ $prof->aboutme }}" type="text" name="aboutme" value="{{ $prof->aboutme }}">{{ $prof->aboutme }}</textarea>
                             @endforeach
                     </div>
