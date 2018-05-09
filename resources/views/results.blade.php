@@ -67,7 +67,7 @@
 
                             </div>
 
-                                {{ $users->links() }}
+                                {{ $searchedusers->links() }}
                         </div>
                         <div class="card-footer">
                             <div>
