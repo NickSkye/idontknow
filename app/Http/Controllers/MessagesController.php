@@ -12,7 +12,7 @@ class MessagesController extends Controller
     {
 
 
-        $messages = DB::table('messages')->where('username', Auth::user()->username)->where('seen', false)->get();
+        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
 
         return view('messages', ['messages'=> $messages, 'friends'=>$friends]);
