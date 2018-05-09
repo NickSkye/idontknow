@@ -11,6 +11,9 @@ class Profileinfo extends Model
     protected $table = 'profileinfo';
 
 
+    public function getProfileInfo(){
+
+    }
 
 
 }

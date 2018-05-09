@@ -68,7 +68,9 @@ class PagesController extends Controller
 
         $thepost = DB::table('posts')->where('id', $post_id)->get();
         DB::table('posts')->where('id', $post_id)->increment('views');
-        $thecomments = DB::table('comments')->where('post_id', $post_id)->get();
+//        $thecomments = DB::table('comments')->where('post_id', $post_id)->get();
+
+        $thecomments = Post::where('id', $post_id)->comments();
 
         foreach($thecomments as $comment){
             $profinfos = DB::table('profileinfo')->where('username', $comment->username)->get();
