@@ -39,7 +39,7 @@
                         <div>
 
                             {{--friends posts--}}
-                            <div class="row frend-area">
+                            <div class="row frend-area infinite-scroll">
                                 @foreach($allfriendsinfo as $friendspost)
 
                                         <div class="col-12 frend-post-col">
