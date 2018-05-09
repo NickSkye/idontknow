@@ -4,7 +4,6 @@
     <div class="container">
 
 
-
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
@@ -12,80 +11,85 @@
                         {{--@include('partials.friendsearch')--}}
                         <div class="row">
                             <div class="col-6">
-                        @foreach($friendsinfo as $frinfo)
+                                @foreach($friendsinfo as $frinfo)
 
-                            <img src="{{$frinfo->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
-                        @endforeach
-                        {{--info about friend--}}
-                        @foreach($info as $item)
+                                    <img src="{{$frinfo->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
+                                @endforeach
+                                {{--info about friend--}}
+                                @foreach($info as $item)
 
-                            {{--an array of users that you follow--}}
-                            @if($arefriends)
-                                <p>{{$item->username}} is your friend</p>
-                                <form method="post" action="/removefrend/{{$item->username}}">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
-                                    <button class="btn btn-lg btn-warning" type="submit">
-                                        Remove Friend
-                                    </button>
-                                </form>
-
-                                    <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
-                                        <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
-                                    </button>
-                                    {{--SHOUT MODAL--}}
-                                    <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
+                                    {{--an array of users that you follow--}}
+                                    @if($arefriends)
+                                        <p>{{$item->username}} is your friend</p>
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <form method="post" action="/removefrend/{{$item->username}}">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
+                                                    <button class="btn btn-lg btn-warning" type="submit">
+                                                        Remove Friend
                                                     </button>
+                                                </form>
+                                            </div>
+                                            <div class="col-4">
+                                                <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
+                                                    <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
+                                                </button>
+                                                {{--SHOUT MODAL--}}
+                                                <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                @include('partials.shoutonfriendspage')
+                                                            </div>
+                                                            {{--<div class="modal-footer">--}}
+                                                            {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
+                                                            {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
+                                                            {{--</div>--}}
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="modal-body">
-                                                    @include('partials.shoutonfriendspage')
-                                                </div>
-                                                {{--<div class="modal-footer">--}}
-                                                {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
-                                                {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
-                                                {{--</div>--}}
+                                                {{--END SHOUT MODAL--}}
                                             </div>
                                         </div>
-                                    </div>
-                                    {{--END SHOUT MODAL--}}
-                            @else
-                                <p>{{$item->username}} is not your friend yet</p>
-                                <form method="post" action="/addfrend/{{$item->username}}">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
-                                    <button class="btn btn-lg btn-success" type="submit">
-                                        Add Friend
-                                    </button>
-                                </form>
-                            @endif
+                                    @else
+                                        <p>{{$item->username}} is not your friend yet</p>
+                                        <form method="post" action="/addfrend/{{$item->username}}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="{{$item->username}}" value="{{$item->username}}"/>
+                                            <button class="btn btn-lg btn-success" type="submit">
+                                                Add Friend
+                                            </button>
+                                        </form>
+                                    @endif
 
 
-                        @endforeach
+                                @endforeach
                             </div>
                             <div class="col-6">
                                 @foreach($info as $item)
 
 
-                                        <h2>{{$item->name}}</h2>
-                                        <h4>{{$item->username}}</h4>
+                                    <h2>{{$item->name}}</h2>
+                                    <h4>{{$item->username}}</h4>
 
-                                        <div class="achievements-box">
+                                    <div class="achievements-box">
 
 
-                                        </div>
+                                    </div>
 
 
                                 @endforeach
-                                    @foreach($friendsinfo as $frinfo)
+                                @foreach($friendsinfo as $frinfo)
 
-                                        <p>{{$frinfo->aboutme}}</p>
-                                    @endforeach
+                                    <p>{{$frinfo->aboutme}}</p>
+                                @endforeach
                             </div>
                         </div>
                     </div>
