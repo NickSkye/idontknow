@@ -1,5 +1,3 @@
-
-
 @extends('layouts.app')
 <?php $page = 'activity'; ?>
 @section('content')
@@ -52,15 +50,17 @@
                             <div>
                                 <h3>Users:</h3>
 
-                                <ul>
 
-                                    @foreach($searchedusers as $user)
+                                @foreach($searchedusers as $user)
+                                    <div>
+                                        <a href="/users/{{$user->username}}">
+                                            <p>{{ $user->name }}</p>
+                                            <p>@@{{ $user->username }}</p>
+                                        </a>
 
-                                        <a href="/users/{{$user->username}}"><li>{{ $user->name }} | {{ $user->username }}</li></a>
-
-                                    @endforeach
-
-                                </ul>
+                                        <hr>
+                                    </div>
+                                @endforeach
 
 
                             </div>
