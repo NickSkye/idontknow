@@ -55,7 +55,7 @@
                                     <div>
                                         <a href="/users/{{$user->username}}">
                                             <p>{{ $user->name }}</p>
-                                            <p>@@{{ $user->username }}</p>
+                                            <p>@@ {{ $user->username }}</p>
                                         </a>
 
                                         <hr>
