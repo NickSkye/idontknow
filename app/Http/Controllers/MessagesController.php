@@ -41,13 +41,14 @@ class MessagesController extends Controller
     public function getShout($shoutid)
     {
 
-        $messages = DB::table('messages')->where('username', Auth::user()->username)->get();
-        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
-        $shouts = DB::table('messages')->where('id', $shoutid)->first();
+        $theshout = DB::table('messages')->where('id', $shoutid)->get();
+        DB::table('messages')->where('id', $shoutid)->update(
+            ['seen' => true,'updated_at' => date('Y-m-d H:i:s')]
+        );
 
 
 
-        return view('messages', ['messages'=> $messages, 'friends'=>$friends, 'shouts'=> $shouts]);
+        return view('messages', ['theshout'=> $theshout]);
 
 
     }
