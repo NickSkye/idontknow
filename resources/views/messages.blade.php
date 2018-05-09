@@ -90,9 +90,9 @@
                                         <p>Your friend {{$mess->from_username}} shouted:</p>
                                         <p>{{$mess->message}}</p>
                                         <p>at: {{$mess->created_at}}</p>
-
+                                        <hr>
                                     </div>
-                                    <hr>
+
                                 @endforeach
                             </div>
 
