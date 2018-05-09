@@ -108,7 +108,9 @@
                                         <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
                                            
                                             @foreach($friends as $friend)
+                                                @if($friend->username === $mess->from_username)
                                                 <img src="{{$friend->profileimage}}" alt="" style="width: 200px;">
+                                                @endif
                                                 @endforeach
                                             <p>Shout from {{$mess->from_username}} at: {{$mess->created_at}}</p>
                                         </button>
