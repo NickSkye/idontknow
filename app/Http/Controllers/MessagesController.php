@@ -27,7 +27,7 @@ class MessagesController extends Controller
 
 
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
-        $friends = getFriendsInfo(); // = DB::table('follows')->where('username', Auth::user()->username)->get();
+        $friends = $this->getFriendsInfo(); // = DB::table('follows')->where('username', Auth::user()->username)->get();
 
         return view('messages', ['messages'=> $messages, 'friends'=>$friends]);
 
