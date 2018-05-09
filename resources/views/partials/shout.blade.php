@@ -13,6 +13,7 @@
             <form action="{{ url('shouts/send') }}"  method="POST">
                 {{ csrf_field() }}
                 <div class="row">
+
                     <div class="col-12">
                         <select name="sendtousername">
                             @foreach($friends as $friend)

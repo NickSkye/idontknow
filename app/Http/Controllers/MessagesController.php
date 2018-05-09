@@ -46,7 +46,7 @@ class MessagesController extends Controller
     {
 
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
-        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+        $friends = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 
         DB::table('messages')->insert(
             ['username' => $request->sendtousername, 'from_username' => Auth::user()->username, 'message' => $request->shout, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
@@ -55,7 +55,9 @@ class MessagesController extends Controller
             ['username' => $request->sendtousername, 'notification' => 'You got a new shout', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
-//        Mail::to( $request->email)->send(new NotificationMail());
+        $emails = $this->getSpecificFriendsInfo($request->sendtousername);
+
+       Mail::to($emails->email)->send(new NotificationMail());
 
         return redirect('/shouts')->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
 
