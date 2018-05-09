@@ -51,11 +51,16 @@
 
                 <div class="card">
                     <div class="card-header">
-
+                        <div class="row">
+                            <div class="col-6">
                         <h2>Shouts</h2>
+                            </div>
+                            <div class="col-6">
                         <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
                             <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                         </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         @if (session('status'))
