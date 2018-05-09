@@ -45,7 +45,7 @@
                             @endforeach
                     </div>
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-success">Upload</button>
+                        <button type="submit" class="btn upload-button">Upload</button>
                     </div>
                 </div>
             </form>
