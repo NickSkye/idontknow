@@ -24,6 +24,7 @@
   color: #000;
   font-size: 1rem;
   background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
 }
 
 .frend-area .col-4 .frend-box .img-not:before {
