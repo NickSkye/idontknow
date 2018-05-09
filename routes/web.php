@@ -25,6 +25,7 @@ Route::get('/activity', 'PagesController@activity')->middleware('auth');
 Route::get('post/{post_id?}', 'PagesController@viewpost')->middleware('auth');
 Route::get('/notifications/{id?}', 'PagesController@notifications')->middleware('auth');
 Route::get('/shouts', 'MessagesController@messages')->middleware('auth');
+Route::get('/results', 'SearchController@show')->middleware('auth');
 
 
 Route::post('/shouts/send', 'MessagesController@shout')->middleware('auth');
@@ -32,7 +33,7 @@ Route::post('/shouts/sendonpage', 'MessagesController@shoutonpage')->middleware(
 Route::post('/shouts/shoutseen', 'MessagesController@shoutSeen')->middleware('auth');
 Route::post('/sendinvite', 'SearchController@sendinvite')->middleware('auth');
 
-Route::get('/search', 'SearchController@index')->middleware('auth');
+Route::post('/search', 'SearchController@index')->middleware('auth');
 Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');
 Route::post('/removefrend/{username?}', 'FriendController@remove')->middleware('auth');
 Route::post('/delete-post/{id?}', 'PagesController@deletepost')->middleware('auth');

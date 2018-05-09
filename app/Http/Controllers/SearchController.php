@@ -26,7 +26,23 @@ class SearchController extends Controller {
 
         $searchedusers = User::where('name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('email', 'LIKE', '%' . $request->input('query') . '%')->paginate(3);
 
-        return view('results')->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
+        return redirect('results')->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
+    }
+
+    public function show(Request $request)
+    {
+
+        $data = array(
+            'query' => $request->query
+
+
+        );
+        //$users = User::all();
+
+
+        $searchedusers = User::where('name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('email', 'LIKE', '%' . $request->input('query') . '%')->paginate(3);
+
+        return redirect('results')->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
     }
 
 
