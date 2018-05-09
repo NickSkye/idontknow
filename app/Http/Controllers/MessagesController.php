@@ -6,6 +6,12 @@ use App\Mail\NotificationMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Mail;
+
+
+
+
+use Illuminate\Mail\Mailer;
 
 class MessagesController extends Controller
 {
