@@ -69,38 +69,40 @@
                             <div class="row frend-area">
                                 @foreach($messages as $mess)
                                     {{--MODAL START--}}
-                                    <form action="/shouts/shoutseen" method="post">
-                                        {{ csrf_field() }}
-                                        <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
-                                    <div class="modal fade" id="viewShout-{{$mess->id}}" tabindex="-1" role="dialog" aria-labelledby="viewshoutModalLabel-{{$mess->id}}" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">Shout!</h5>
-                                                    <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    {{--@include('partials.viewshout')--}}
-                                                    <p>Your friend {{$mess->from_username}} shouted:</p>
-                                                    <p>{{$mess->message}}</p>
-                                                    <p>at: {{$mess->created_at}}</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
-                                                    <button type="submit" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
+
+                                        <div class="modal fade" id="viewShout-{{$mess->id}}" tabindex="-1" role="dialog" aria-labelledby="viewshoutModalLabel-{{$mess->id}}" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <form action="/shouts/shoutseen" method="post">
+                                                        {{ csrf_field() }}
+                                                        <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">Shout!</h5>
+                                                        <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        {{--@include('partials.viewshout')--}}
+                                                        <p>Your friend {{$mess->from_username}} shouted:</p>
+                                                        <p>{{$mess->message}}</p>
+                                                        <p>at: {{$mess->created_at}}</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
+                                                        <button type="submit" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    </form>
+
                                     {{--MODAL END--}}
                                     <div class="col-12">
 
-                                            <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
-                                                <p>Shout from your friend {{$mess->from_username}} at: {{$mess->created_at}}</p>
-                                            </button>
+                                        <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
+                                            <p>Shout from your friend {{$mess->from_username}} at: {{$mess->created_at}}</p>
+                                        </button>
 
 
                                         <hr>
