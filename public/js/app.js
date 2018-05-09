@@ -13915,20 +13915,6 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-$('ul.pagination').hide();
-$(function () {
-    $('.infinite-scroll').jscroll({
-        autoTrigger: true,
-        loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',
-        padding: 0,
-        nextSelector: '.pagination li.active + li a',
-        contentSelector: 'div.infinite-scroll',
-        callback: function callback() {
-            $('ul.pagination').remove();
-        }
-    });
-});
-
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {

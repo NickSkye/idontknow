@@ -1,6 +1,22 @@
 @extends('layouts.app')
 <?php $page = 'activity'; ?>
 @section('content')
+
+    <script type="text/javascript">
+    $('ul.pagination').hide();
+    $(function() {
+        $('.infinite-scroll').jscroll({
+            autoTrigger: true,
+            loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',
+            padding: 0,
+            nextSelector: '.pagination li.active + li a',
+            contentSelector: 'div.infinite-scroll',
+            callback: function() {
+                $('ul.pagination').remove();
+            }
+        });
+    });
+    </script>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
