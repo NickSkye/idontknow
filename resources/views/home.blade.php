@@ -16,38 +16,16 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        {{--<div>--}}
-                            {{--Now let your friends know what you are up to!--}}
-                        {{--</div>--}}
+
 
                         <div class="row frend-area">
-
-                            {{--@foreach($friends as $friend)--}}
-
                                 @foreach($allfriendsinfo as $infos)
-                                    {{--@foreach($infos as $info)--}}
-
-
-                                            {{--@if($info->username == $friend->followsusername)--}}
-                                                {{--<img src="{{$info->profileimage}}" class="img-fluid img-there" alt="">--}}
                                             <a href="/users/{{$infos->followsusername}}" class="col-4" style="max-width: 31.333333%; background-image: url('{{$infos->profileimage}}'); padding-bottom: 31.33333333%; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; margin: 1%;">
-
                                                     <div class="frend-box">
                                                         <p>{{$infos->followsusername}}</p>
                                                     </div>
-
                                             </a>
-                                            {{--@endif--}}
-
-                                    {{--@endforeach--}}
-
                                 @endforeach
-
-
-                                    {{--{{ $friend }}--}}
-
-                            {{--@endforeach--}}
-
                         </div>
 
 

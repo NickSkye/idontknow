@@ -54,12 +54,6 @@ class HomeController extends Controller
 
 
         $allfriendsinfo = $this->getFriendsInfo();
-//        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
-//        foreach ($friends as $friend) {
-//            $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->followsusername)->get();
-//
-//            array_push($allfriendsinfo, $friendsinfo);
-//        }
 
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
