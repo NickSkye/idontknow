@@ -38,11 +38,11 @@ class MessagesController extends Controller
 
     }
 
-    public function getShout($shoutid)
+    public function getShout(Request $request)
     {
         $messages = DB::table('messages')->where('username', Auth::user()->username)->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
-        $theshout = DB::table('messages')->where('id', $shoutid)->get();
+        $theshout = DB::table('messages')->where('id', $request->)->get();
         DB::table('messages')->where('id', $shoutid)->update(
             ['seen' => true,'updated_at' => date('Y-m-d H:i:s')]
         );
