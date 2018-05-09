@@ -56,6 +56,7 @@
                                 @foreach($searchedusers as $user)
                                     <div>
                                         <a href="/users/{{$user->username}}">
+                                            <img src="{{$user->profileimage}}" alt="" style="width: 200px;">
                                             <p>{{ $user->name }}</p>
                                             <p>{{ $user->username }}</p>
                                         </a>
