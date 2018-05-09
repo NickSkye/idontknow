@@ -20,7 +20,7 @@
 
                                 <ul>
 
-                                    @foreach($searchedusers as $user)
+                                    @foreach($users as $user)
 
                                         <a href="/users/{{$user->username}}"><li>{{ $user->name }} | {{ $user->username }}</li></a>
 
