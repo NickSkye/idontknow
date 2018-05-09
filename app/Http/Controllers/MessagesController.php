@@ -23,7 +23,7 @@ class MessagesController extends Controller
     }
 
     public function getSpecificFriendsInfo($friendsusername){
-        $friends_info_full = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', $friendsusername)->get();
+        $friends_info_full = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', $friendsusername)->first();
 
         return $friends_info_full;
     }
@@ -56,6 +56,7 @@ class MessagesController extends Controller
         );
 
         $emails = $this->getSpecificFriendsInfo($request->sendtousername);
+
 
        Mail::to($emails->email)->send(new NotificationMail());
 
