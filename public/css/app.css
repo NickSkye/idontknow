@@ -136,6 +136,12 @@ a p {
   float: right;
 }
 
+.shout-button {
+  background: #0b7dda;
+  color: white;
+  float: right;
+}
+
 .tiny-img {
   max-width: 200px;
   max-height: 200px;
