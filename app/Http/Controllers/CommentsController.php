@@ -14,7 +14,7 @@ class CommentsController extends Controller
             ['username' => Auth::user()->username, 'post_id' => $request->post_id, 'comment' => $request->comment, 'likes' => 0, 'dislikes' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
-        DB::table('posts')->where('id' => $request->post_id)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        DB::table('posts')->where('id', $request->post_id)->update(['updated_at' => date('Y-m-d H:i:s')]);
         $user = DB::table('posts')->where('id', $request->post_id)->value('username');
         DB::table('notifications')->insert(
             ['username' => $user, 'notification' => 'New comment on your post ', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
