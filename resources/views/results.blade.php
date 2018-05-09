@@ -67,8 +67,6 @@
 
                             </div>
 
-                                {{--{{ $searchedusers->links() }}--}}
-                                {{ $searchedusers->appends(request()->input())->links() }}
                         </div>
                         <div class="card-footer">
                             <div>
