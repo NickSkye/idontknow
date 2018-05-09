@@ -22,12 +22,20 @@ class MessagesController extends Controller
         return $friends_info_full;
     }
 
+    public function getSpecificFriendsInfo($friendsusername){
+        $friends_info_full = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', $friendsusername)->get();
+
+        return $friends_info_full;
+    }
+
+
+
     public function messages()
     {
 
 
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
-        $friends = $this->getFriendsInfo(); // = DB::table('follows')->where('username', Auth::user()->username)->get();
+        $friends  = DB::table('follows')->where('username', Auth::user()->username)->get();
 
         return view('messages', ['messages'=> $messages, 'friends'=>$friends]);
 

@@ -21,6 +21,12 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function getFriendsInfo(){
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
+
+        return $friends_info_full;
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -47,15 +53,13 @@ class HomeController extends Controller
 
 
 
-        $allfriendsinfo = [];
-//        $storagePath = Storage::disk('s3')->put("uploads", $my_file, 'public');
-        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
-       //$friends = $user->friends()->get();
-        foreach ($friends as $friend) {
-            $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->followsusername)->get();
-
-            array_push($allfriendsinfo, $friendsinfo);
-        }
+        $allfriendsinfo = $this->getFriendsInfo();
+//        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+//        foreach ($friends as $friend) {
+//            $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->followsusername)->get();
+//
+//            array_push($allfriendsinfo, $friendsinfo);
+//        }
 
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
