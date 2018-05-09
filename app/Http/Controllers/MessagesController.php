@@ -78,6 +78,11 @@ class MessagesController extends Controller
             ['username' => $request->sendtousername, 'notification' => 'You got a new shout', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
+        $emails = $this->getSpecificFriendsInfo($request->sendtousername);
+
+
+        Mail::to($emails->email)->send(new NotificationMail());
+
         return redirect()->back()->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
 
 
