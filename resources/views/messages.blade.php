@@ -93,7 +93,7 @@
                                     </div>
                                     {{--MODAL END--}}
                                     <div class="col-12">
-                                        <form action="/shouts/shoutfrom" method="post">
+                                        <form action="/shouts" method="post">
                                             {{ csrf_field() }}
                                             <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
                                             <button type="submit" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
