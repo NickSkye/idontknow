@@ -40,28 +40,29 @@
 
                             {{--friends posts--}}
                             <div class="row frend-area">
-                                @foreach($allfriendsposts as $friendspost)
-                                    @foreach($friendspost as $post)
+                                @foreach($allfriendsinfo as $friendspost)
+                                    {{--@foreach($friendspost as $post)--}}
                                         <div class="col-12 frend-post-col">
 
                                             <div class="frend-post-box">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        @foreach($allfriendsinfo as $infos)
-                                                            @foreach($infos as $info)
-                                                                @if($info->username == $post->username)
-                                                                    <a href="/users/{{$post->username}}">
-                                                                        <p>{{$post->username}}</p>
+                                                        {{--@foreach($allfriendsinfo as $infos)--}}
+                                                            {{--@foreach($infos as $info)--}}
+                                                                {{--@if($info->username == $post->username)--}}
+                                                                    <a href="/users/{{$friendspost->username}}">
+                                                                        <p>{{$friendspost->username}}</p>
                                                                     </a>
-                                                                @endif
-                                                            @endforeach
-                                                        @endforeach
+                                                                {{--@endif--}}
+                                                            {{--@endforeach--}}
+                                                        {{--@endforeach--}}
 
                                                     </div>
                                                     <div class="card-body">
-                                                        <a href="/post/{{$post->id}}">
-                                                            <img src="{{$post->imagepath}}" class="img-fluid activity-image" alt="">
-                                                            <p>{{$post->description}}</p>
+                                                        {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
+                                                        <a href="/post/{{$friendspost->id}}">
+                                                            <img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">
+                                                            <p>{{$friendspost->description}}</p>
                                                             <p>view comments&nbsp;&gt;</p>
                                                         </a>
                                                         {{--{{ $friend }}--}}
@@ -88,7 +89,7 @@
                                         </div>
 
 
-                                    @endforeach
+                                    {{--@endforeach--}}
                                 @endforeach
                             </div>
 

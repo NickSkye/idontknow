@@ -38,8 +38,8 @@ class PagesController extends Controller
 
     }
 
-    public function getFriendsInfo(){
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
+    public function getFriendsInfoWithPosts(){
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->where('follows.username', Auth::user()->username)->get();
 
         return $friends_info_full;
     }
@@ -47,23 +47,24 @@ class PagesController extends Controller
     public function activity()
     {
 
-        $allfriendsinfo = [];
-        $allfriendsposts = [];
+//        TEST
+        $allfriendsinfo = $this->getFriendsInfoWithPosts();
+//        $allfriendsposts = [];
 
         $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
         $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
         //$myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
-        $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
+//        $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
 
-        foreach ($myfriends as $friend) {
-            $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->followsusername)->get();
-            $friendsposts = DB::table('posts')->where('username', '=', $friend->followsusername)->get();
+//        foreach ($myfriends as $friend) {
+//            $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->followsusername)->get();
+//            $friendsposts = DB::table('posts')->where('username', '=', $friend->followsusername)->get();
+//
+//            array_push($allfriendsinfo, $friendsinfo);
+//            array_push($allfriendsposts, $friendsposts);
+//        }
 
-            array_push($allfriendsinfo, $friendsinfo);
-            array_push($allfriendsposts, $friendsposts);
-        }
-
-        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myfriends'=> $myfriends, 'allfriendsinfo' => $allfriendsinfo, 'allfriendsposts' => $allfriendsposts]);
+        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo]);
 
 
     }
