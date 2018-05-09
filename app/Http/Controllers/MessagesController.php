@@ -66,7 +66,7 @@ class MessagesController extends Controller
 
 
 
-        return view('messages', ['theshout'=> $theshout, 'messages'=> $messages, 'friends'=>$friends]);
+        return redirect('/shouts')->with(['theshout'=> $theshout, 'messages'=> $messages, 'friends'=>$friends]);
 
 
     }
