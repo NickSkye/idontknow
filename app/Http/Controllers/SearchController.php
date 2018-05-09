@@ -24,7 +24,7 @@ class SearchController extends Controller {
         //$users = User::all();
 
 
-        $searchedusers = User::where('name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('email', 'LIKE', '%' . $request->input('query') . '%')->profileinfo->get();
+        $searchedusers = User::where('name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('email', 'LIKE', '%' . $request->input('query') . '%')->get();
 
         return view('results')->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
     }
