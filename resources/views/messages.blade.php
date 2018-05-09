@@ -84,7 +84,7 @@
                                                     <p>at: {{$mess->created_at}}</p>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
                                                     <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
@@ -95,7 +95,7 @@
                                         <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
                                             <p>Shout from your friend {{$mess->from_username}} at: {{$mess->created_at}}</p>
                                         </button>
-                                        
+
                                         <hr>
                                     </div>
 
