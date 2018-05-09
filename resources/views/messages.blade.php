@@ -116,7 +116,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <div>Shouts page on its way</div>
+                        <div>Shouts get deleted once viewed</div>
                     </div>
                 </div>
             </div>
