@@ -22,7 +22,7 @@
 
                         <div class="row frend-area">
 
-                            @foreach($friends as $friend)
+                            {{--@foreach($friends as $friend)--}}
 
                                 @foreach($allfriendsinfo as $infos)
                                     @foreach($infos as $info)
@@ -46,7 +46,7 @@
 
                                     {{--{{ $friend }}--}}
 
-                            @endforeach
+                            {{--@endforeach--}}
 
                         </div>
 
