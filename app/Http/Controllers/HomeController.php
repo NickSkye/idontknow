@@ -65,6 +65,6 @@ class HomeController extends Controller
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
-            return view('home', 'allfriendsinfo' => $allfriendsinfo, 'notifs'=> $notifs]);
+            return view('home', ['allfriendsinfo' => $allfriendsinfo, 'notifs'=> $notifs]);
         }
     }
