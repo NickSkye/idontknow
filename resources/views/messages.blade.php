@@ -94,7 +94,7 @@
                                     {{--MODAL END--}}
                                     <div class="col-12">
                                         <form action="/shouts/shoutfrom/{{$mess->id}}" method="post">
-                                            <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
+                                            <button type="submit" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
                                                 <p>Shout from your friend {{$mess->from_username}} at: {{$mess->created_at}}</p>
                                             </button>
                                         </form>
