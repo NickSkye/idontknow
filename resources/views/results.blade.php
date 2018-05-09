@@ -72,7 +72,7 @@
                         </div>
                         <div class="card-footer">
                             <div>
-                                <button type="button" class="btn comment-button" data-toggle="modal" data-target="#mailModal">
+                                <button type="button" class="btn invite-button" data-toggle="modal" data-target="#mailModal">
                                     Can't find your frends here? Send them an E-mail to sign up
                                 </button>
 
