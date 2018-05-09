@@ -35,7 +35,7 @@ class SearchController extends Controller {
         $user = DB::table('users')->where('username', Auth::user()->username)->get();
 
         Mail::to($request->email)->send(new Signup($user));
-        return view('home')->with('message', 'invite sent');
+        return redirect('/')->with('message', 'invite sent');
     }
 
 
