@@ -20,12 +20,12 @@ class SearchController extends Controller {
 
 
         );
-        $users = User::all();
+        //$users = User::all();
 
 
-//        $searchedusers = DB::table('users')->where('name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('email', 'LIKE', '%' . $request->input('query') . '%')->get();
+        $searchedusers = User::where('name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('email', 'LIKE', '%' . $request->input('query') . '%')->get();
 
-        return view('results')->with('users', $users);//['searchedusers'=> $searchedusers]);
+        return view('results')->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
     }
 
 
