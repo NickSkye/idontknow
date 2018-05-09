@@ -15,12 +15,19 @@ use Illuminate\Mail\Mailer;
 
 class MessagesController extends Controller
 {
+
+    public function getFriendsInfo(){
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
+
+        return $friends_info_full;
+    }
+
     public function messages()
     {
 
 
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
-        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+        $friends = getFriendsInfo(); // = DB::table('follows')->where('username', Auth::user()->username)->get();
 
         return view('messages', ['messages'=> $messages, 'friends'=>$friends]);
 

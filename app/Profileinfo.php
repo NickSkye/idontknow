@@ -12,7 +12,7 @@ class Profileinfo extends Model
 
 
     public function getProfileInfo(){
-
+        return $this->belongsTo('App\User');
     }
 
 
