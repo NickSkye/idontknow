@@ -148,6 +148,11 @@ a p {
   float: right;
 }
 
+.invite-button {
+  background: #0b7dda;
+  color: white;
+}
+
 .tiny-img {
   max-width: 200px;
   max-height: 200px;

@@ -32,10 +32,10 @@ class SearchController extends Controller {
 
 
     public function sendinvite(Request $request){
-        $user = DB::table('users')->where('username', Auth::user()->username)->first();
+        $user = DB::table('users')->where('username', Auth::user()->username)->get();
 
         Mail::to($request->email)->send(new Signup($user));
-        return view('results')->with('searchedusers', $searchedusers);
+        return view('home')->with('message', 'invite sent');
     }
 
 
