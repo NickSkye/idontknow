@@ -15,12 +15,19 @@
 
                                     <img src="{{$item->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
 
-                                {{--info about friend--}}
+                                    {{--info about friend--}}
 
 
                                     {{--an array of users that you follow--}}
                                     @if($arefriends)
-                                        <p>{{$item->username}} is your friend</p>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6">
+                                            <p>{{$item->username}} is your friend</p>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <p>last activity: {{$item->users->updated_at}}</p>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
                                                 <form method="post" action="/removefrend/{{$item->username}}">
@@ -70,24 +77,20 @@
                                     @endif
 
 
-
                             </div>
                             <div class="col-6">
 
 
+                                <h2>{{$item->name}}</h2>
+                                <h4>{{$item->username}}</h4>
 
-                                    <h2>{{$item->name}}</h2>
-                                    <h4>{{$item->username}}</h4>
-
-                                    <div class="achievements-box">
-
-
-                                    </div>
+                                <div class="achievements-box">
 
 
+                                </div>
 
 
-                                    <p>{{$item->aboutme}}</p>
+                                <p>{{$item->aboutme}}</p>
                                 @endforeach
                             </div>
                         </div>
