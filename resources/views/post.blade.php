@@ -87,7 +87,7 @@
                                             <img src="{{$comment->profileimage}}" alt="" style="width: 75px;">
                                             </a>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-5">
                                             <a href="/users/{{$comment->username}}">
                                             <p class="comment-username">{{$comment->username}}</p>
                                             </a>
@@ -99,7 +99,7 @@
 
                                     </div>
                                     <div class="row">
-                                        <div class="offset-2 col-8">
+                                        <div class="offset-1 col-8">
                                             <p class="comment">{{$comment->comment}}</p>
                                         </div>
                                     </div>
