@@ -77,7 +77,7 @@
 
                         </div>
                         <div class="card-footer">
-                            <div>
+                            <div class="text-center">
                                 <button type="button" class="btn invite-button" data-toggle="modal" data-target="#mailModal">
                                     <p>Can't find your frends here?<br>Send them an E-mail to sign up</p>
                                 </button>
