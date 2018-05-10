@@ -169,6 +169,10 @@ a p {
   margin-right: 0;
 }
 
+.infinite-scroll .jscroll-inner {
+  width: 100%;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
