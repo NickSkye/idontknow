@@ -61,6 +61,8 @@
                         <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
                             <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                         </button>
+                                        @else
+                                        <p>You have to add frends before you can shout at them</p>
                                     @endif
                                     @endforeach
                             </div>
