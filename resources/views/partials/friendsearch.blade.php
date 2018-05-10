@@ -1,5 +1,5 @@
 <div class="center-top-search">
-    <form action="/search" method="post">
+    <form action="/search" method="get">
         {{ csrf_field() }}
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search for frends..." id="query" name="query" value="{{ old('query') }}">
