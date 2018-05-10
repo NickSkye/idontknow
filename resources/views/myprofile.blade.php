@@ -28,19 +28,19 @@
                         @endif
 
                         <div class="row">
-                            @foreach($generalinfo as $info)
+
                             <div class="col-6">
                             <a href="/settings">
-                                <img src="{{$info->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
+                                <img src="{{$generalinfo->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
                             </a>
                             </div>
 
 
                                 <div class="col-6">
 
-                                       <h2>{{$info->name}}</h2>
-                                    <h4>{{$info->username}}</h4>
-                                    <p>last activity{{$info->updated_at}}</p>
+                                       <h2>{{$generalinfo->name}}</h2>
+                                    <h4>{{$generalinfo->username}}</h4>
+                                    <p>last activity{{$generalinfo->updated_at}}</p>
                                     <div class="achievements-box">
 
 
@@ -49,9 +49,9 @@
 
 
 
-                                            <p>{{$info->aboutme}}</p>
+                                            <p>{{$generalinfo->aboutme}}</p>
                                         </div>
-                                    @endforeach
+
 
 
                         </div>
