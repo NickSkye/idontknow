@@ -99,7 +99,7 @@
 
                                     </div>
                                     <div class="row">
-                                        <div class="col-12">
+                                        <div class="offset-2 col-8">
                                             <p class="comment">{{$comment->comment}}</p>
                                         </div>
                                     </div>
