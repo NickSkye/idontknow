@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<?php $page = 'activity'; ?>
+<?php $page = 'results'; ?>
 @section('content')
     <div class="container">
 
