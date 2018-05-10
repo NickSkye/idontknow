@@ -82,7 +82,7 @@
                                     <div class="row">
 
 
-                                        <div class="col-3">
+                                        <div class="col-1">
                                             <a href="/users/{{$comment->username}}">
                                             <img src="{{$comment->profileimage}}" alt="" style="width: 75px;">
                                             </a>
