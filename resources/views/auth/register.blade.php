@@ -11,8 +11,8 @@
                             {{ __('Register') }}
 
                         </div>
-                        <div class="col-6 pull-right" >
-                            <a href="/login">{{ __('Login') }}</a>
+                        <div class="col-6 " >
+                            <a href="/login" class="pull-right">{{ __('Login') }}</a>
                         </div>
                     </div>
                 </div>
