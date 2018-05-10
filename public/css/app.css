@@ -161,8 +161,8 @@ a p {
 }
 
 @media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 950px !important;
+  .post-area .modal-dialog {
+    max-width: 800px !important;
     margin: 1.75rem auto;
   }
 }
