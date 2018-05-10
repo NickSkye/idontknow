@@ -39,7 +39,7 @@
                         <input id="file-input" type="file" name="image" />
                         <img src="" id="profile-img-tag" width="200px" />
                     </div>
-                    <div class="col-xs-12 col-sm-8 col-sm-offset-4">
+                    <div class="col-xs-12 col-sm-8  offset-sm-4">
                         @foreach($profileinfo as $prof)
                             <label for="aboutme">
                                 Bio
