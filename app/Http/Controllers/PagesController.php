@@ -50,7 +50,7 @@ class PagesController extends Controller
     }
 
     public function getFriendsInfoWithPosts(){
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->where('follows.username', Auth::user()->username)->orderBy('posts.created_at', 'desc')->paginate(10);; //'posts.updated_at'
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->where('follows.username', Auth::user()->username)->orWhere('posts.username',  Auth::user()->username)->orderBy('posts.created_at', 'desc')->paginate(10);; //'posts.updated_at'
 
         return $friends_info_full;
     }
