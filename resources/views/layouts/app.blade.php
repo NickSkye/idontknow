@@ -85,7 +85,7 @@
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                             @else
-                                @if(Request::is('/') or Request::is('/me') or Request::is('/shouts') or Request::is('/activity') or Request::is('/home'))
+                                @if(Request::has(['/', '/me', '/shouts', '/activity', '/home']))
 
                                 <li class="nav-item dropdown">
                                     @if (!$notifs->isEmpty())
