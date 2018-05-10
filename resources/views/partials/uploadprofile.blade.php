@@ -32,7 +32,7 @@
                 {{ csrf_field() }}
                 <div class="row">
                     @foreach($profileinfo as $prof)
-                    <div class="col-12">
+                    <div class="col-xs-12 col-sm-4">
                         <p>Change your profile picture here (Squarer images work best)</p>
                         <label for="file-input" style="float: left; margin-bottom: 0; cursor: pointer;">
                             <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
