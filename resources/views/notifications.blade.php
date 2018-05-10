@@ -42,7 +42,7 @@
                             <div class="row frend-area">
                                 @foreach($notifs as $notif)
                                     <div>
-                                        {{$notif->notification}}
+                                        {!! $notif->notification !!}
                                     </div>
                                 @endforeach
                             </div>
