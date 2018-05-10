@@ -48,7 +48,7 @@
                                 </div>
                             @endif
                             <div>
-                                <h3>Users:</h3>
+                                <h3>User Search Results:</h3>
                                 <hr>
                                 <br>
 
