@@ -34,38 +34,39 @@
                     @foreach($profileinfo as $prof)
                     <div class="col-xs-12 col-sm-4">
                         <p>Change your profile picture here (Squarer images work best)</p>
-                        <label for="file-input" style="float: left; margin-bottom: 0; cursor: pointer;">
-                            <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
-                        </label>
-                        <input id="file-input" type="file" name="image" />
+
                         <img src="{{ $prof->profileimage }}" id="profile-img-tag" width="200px" />
+                        <input id="file-input" type="file" name="image" />
                     </div>
                     <div class="col-xs-12 col-sm-8">
 
-                            <label for="aboutme">
-                                Bio
-                            </label>
-                        <textarea rows="5" cols="40" placeholder="{{ $prof->aboutme }}" type="text" name="aboutme" value="{{ $prof->aboutme }}">{{ $prof->aboutme }}</textarea>
 
+                        <textarea rows="5" cols="40" placeholder="{{ $prof->aboutme }}" type="text" class="form-control" name="aboutme" value="{{ $prof->aboutme }}">{{ $prof->aboutme }}</textarea>
+
+                        <div class="form-group">
+                            <label for="aboutme">Bio</label>
+                            <textarea rows="5" cols="40" placeholder="{{ $prof->aboutme }}" type="text" class="form-control" name="aboutme" value="{{ $prof->aboutme }}">{{ $prof->aboutme }}</textarea>
+                        </div>
 
                             <div class="form-group">
-                                <label for="name">*Name</label>
-                                <input type="text" class="form-control book-form" id="name" name="name" value="{{ old('name') }}" required>
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control book-form" id="name" name="name" value="{{ $prof->name }}" >
+
                             </div>
 
-                            <div class="form-group">
-                                <label for="email">*Email</label>
-                                <input type="email" class="form-control book-form" id="email" name="email" value="{{ old('email') }}" required>
-                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<label for="email">*Email</label>--}}
+                                {{--<input type="email" class="form-control book-form" id="email" name="email" value="{{ old('email') }}" required>--}}
+                            {{--</div>--}}
 
                             <div class="form-group">
-                                <label for="phone">*Phone Number</label>
+                                <label for="phone">Phone Number</label>
                                 <input type="text" class="form-control book-form" id="phone" name="phone" value="{{ old('phone') }}" required>
                             </div>
 
                             <label for="datepicker">Select Date</label>
                             <div class="input-group date">
-                                <input type="date" class="form-control book-form" id="datepicker" name="datepicker" value="{{ old('datepicker') }}" />
+                                <input type="date" class="form-control book-form" id="datepicker" name="birthday" value="{{ old('birthday') }}" />
                                 <div class="input-group-addon">
                                     <span class="glyphicon glyphicon-th"></span>
                                 </div>
