@@ -79,11 +79,27 @@
                             @foreach($thecomments as $comment)
                                 <div >
 
+                                    <div class="row">
 
-                                    <a href="/users/{{$comment->username}}"><p
-                                                class="comment-username">{{$comment->username}}
-                                            | {{$comment->created_at}}</p></a>
-                                    <p class="comment">{{$comment->comment}}</p>
+                                    <a href="/users/{{$comment->username}}">
+                                        <div class="col-3">
+                                            <img src="{{$comment->profileimage}}" alt="">
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="comment-username">{{$comment->username}}</p>
+                                        </div>
+                                    </a>
+                                        <div class="col-3">
+                                            <p>{{$comment->created_at}}</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p class="comment">{{$comment->comment}}</p>
+                                        </div>
+                                    </div>
+
 
                                 </div>
                                 <hr>
