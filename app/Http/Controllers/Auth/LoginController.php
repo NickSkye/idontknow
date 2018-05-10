@@ -45,7 +45,7 @@ class LoginController extends Controller
             return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
         }
 
-        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        DB::table('users')->where('username', $user->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
         return redirect()->intended($this->redirectPath());
