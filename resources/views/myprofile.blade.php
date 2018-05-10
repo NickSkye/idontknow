@@ -40,7 +40,7 @@
 
                                        <h2>{{$info->name}}</h2>
                                     <h4>{{$info->username}}</h4>
-
+                                    <p>last activity{{$info->updated_at}}</p>
                                     <div class="achievements-box">
 
 
