@@ -41,7 +41,7 @@
                     <div class="col-xs-12 col-sm-8">
 
 
-                   
+
 
                         <div class="form-group">
                             <label for="aboutme">Bio</label>

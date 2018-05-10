@@ -9,7 +9,7 @@
 
                         {{--@foreach($profileinfo as $item)--}}
                             {{$profileinfo->username}}
-                            an array of users that you follow
+                            
 
 
 
