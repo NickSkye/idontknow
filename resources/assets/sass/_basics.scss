@@ -5,8 +5,8 @@
 
 .frend-area {
 
-    .frend-post-col{
-        .card{
+    .frend-post-col {
+        .card {
             margin-bottom: 50px;
         }
     }
@@ -25,11 +25,9 @@
                 height: 25px;
                 color: #000;
                 font-size: 1rem;
-                background-color: rgba(255,255,255,0.5);
+                background-color: rgba(255, 255, 255, 0.5);
                 text-align: center;
             }
-
-
 
             .img-not:before {
                 content: ' ';
@@ -40,7 +38,7 @@
                 background-image: url('/images/recflag.jpg');
             }
 
-            .img-there:before{
+            .img-there:before {
                 content: ' ';
                 display: block;
                 position: absolute;
@@ -52,30 +50,28 @@
         .frend-post-box {
             background-color: white;
 
-            p{
+            p {
 
                 color: black;
                 font-size: 14pt;
             }
-            .post-data{
+            .post-data {
                 color: black;
                 font-size: 10pt;
             }
 
-
         }
-
 
     }
 
 }
 
-.friend-page-image{
+.friend-page-image {
     max-width: 400px;
     max-height: 400px;
 }
 
-.center-top-search{
+.center-top-search {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -88,16 +84,16 @@
     //align-content: center;
     //align-items: center;
     //justify-content: center;
-    @media (max-width: 767px){
+    @media (max-width: 767px) {
         position: relative;
     }
 
-    span{
+    span {
         position: absolute;
         top: 0px;
         left: 97%;
     }
-    .send{
+    .send {
         float: left;
         padding: 0px;
         background: $accent-color;
@@ -115,56 +111,64 @@
     }
 }
 
-#app{
+#app {
     overflow-x: hidden;
 }
 
-.delete-post-button{
+.delete-post-button {
     background: $accent-color;
     float: right;
     border-radius: 4px;
     padding: 3px 8px 3px 8px;
 }
 
-.card-footer{
+.card-footer {
     margin-bottom: 30px;
 }
 
-.activity-image{
+.activity-image {
     max-height: 200px;
 }
 
-a{
-    color: black ;
-    p{
+a {
+    color: black;
+    p {
         color: black;
     }
 }
 
-.comment-button{
+.comment-button {
     background: $secondary-color;
     color: white;
     float: right;
 }
 
-.shout-button{
+.shout-button {
     background: $secondary-color;
     color: white;
     float: right;
 }
 
-.upload-button{
+.upload-button {
     background: $secondary-color;
     color: white;
     float: right;
 }
-.invite-button{
+
+.invite-button {
     background: $secondary-color;
     color: white;
 
 }
 
-.tiny-img{
+.tiny-img {
     max-width: 200px;
     max-height: 200px;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 950px !important;
+        margin: 1.75rem auto;
+    }
 }
