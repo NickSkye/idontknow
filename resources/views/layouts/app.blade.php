@@ -97,7 +97,7 @@
                                         </a>
                                     @endif
 
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="overflow-y: scroll; max-height: 400px;">
                                         @foreach($notifs as $notif)
                                         <a class="dropdown-item" href="/notifications/{{$notif->id}}">
                                             {{$notif->notification}}
