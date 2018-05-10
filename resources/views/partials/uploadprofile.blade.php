@@ -31,11 +31,11 @@
             <form action="{{ url('s3-image-upload-profilepic') }}" enctype="multipart/form-data" method="POST">
                 {{ csrf_field() }}
                 <div class="row">
-                    @foreach($profileinfo as $prof)
+                    {{--@foreach($profileinfo as $prof)--}}
                     <div class="col-xs-12 col-sm-4">
                         <p>Change your profile picture here (Squarer images work best)</p>
 
-                        <img src="{{ $prof->profileimage }}" id="profile-img-tag" width="200px" />
+                        <img src="{{ $profileinfo->profileimage }}" id="profile-img-tag" width="200px" />
                         <input id="file-input" type="file" name="image" />
                     </div>
                     <div class="col-xs-12 col-sm-8">

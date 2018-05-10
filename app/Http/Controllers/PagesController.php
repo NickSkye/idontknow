@@ -11,9 +11,9 @@ class PagesController extends Controller
 {
 
     public function getMySettingsInfo(){
-        $friends_info_full = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', Auth::user()->username)->first();
+        $my_info_full = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', Auth::user()->username)->first();
 
-        return $friends_info_full;
+        return $my_info_full;
     }
 
 
