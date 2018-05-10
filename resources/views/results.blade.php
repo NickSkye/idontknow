@@ -53,7 +53,7 @@
                                 <br>
 
                                 <div class="infinite-scroll">
-                                    <div class="row">
+                                    <div class="row frend-area">
                                     @foreach($searchedusers as $user)
 
                                         <a href="/users/{{$user->followsusername}}" class="col-4" style="max-width: 31.333333%; background-image: url('{{$user->profileimage}}'); padding-bottom: 31.33333333%; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; margin: 1%;">

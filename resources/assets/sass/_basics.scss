@@ -29,23 +29,22 @@
                 text-align: center;
             }
 
-            .img-not:before {
-                content: ' ';
-                display: block;
+        }
+        .frend-box-name {
+            background-color: white;
+
+            p {
                 position: absolute;
-                height: 50px;
-                width: 50px;
-                background-image: url('/images/recflag.jpg');
+                top: 0px;
+                left: 0;
+                width: 100%;
+                height: 25px;
+                color: #000;
+                font-size: 1rem;
+                background-color: rgba(255, 255, 255, 0.5);
+                text-align: center;
             }
 
-            .img-there:before {
-                content: ' ';
-                display: block;
-                position: absolute;
-                height: 50px;
-                width: 50px;
-                background-image: none;
-            }
         }
         .frend-post-box {
             background-color: white;
