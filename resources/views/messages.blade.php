@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-6">
                                 @foreach($friends as $friend)
-                                    @if (!$friend->isEmpty())
+                                    @if(!$friend->isEmpty())
                         <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
                             <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                         </button>
