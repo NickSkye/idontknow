@@ -39,9 +39,12 @@ class PagesController extends Controller
         $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
         $myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
         $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
+        $notifs = DB::table('notifications')->where([
+            ['username', Auth::user()->username],
+            ['seen', false],
+        ])->get();
 
-
-        return view('myprofile', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends]);
+        return view('myprofile', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs]);
 
 
     }
@@ -61,18 +64,12 @@ class PagesController extends Controller
 
         $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
         $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
-        //$myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
-//        $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
+        $notifs = DB::table('notifications')->where([
+            ['username', Auth::user()->username],
+            ['seen', false],
+        ])->get();
 
-//        foreach ($myfriends as $friend) {
-//            $friendsinfo = DB::table('profileinfo')->where('username', '=', $friend->followsusername)->get();
-//            $friendsposts = DB::table('posts')->where('username', '=', $friend->followsusername)->get();
-//
-//            array_push($allfriendsinfo, $friendsinfo);
-//            array_push($allfriendsposts, $friendsposts);
-//        }
-
-        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo]);
+        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs]);
 
 
     }

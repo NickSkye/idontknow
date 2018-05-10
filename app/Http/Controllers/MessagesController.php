@@ -38,8 +38,12 @@ class MessagesController extends Controller
         $friends  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 
        $hasfriends = $friends->isNotEmpty();
+        $notifs = DB::table('notifications')->where([
+            ['username', Auth::user()->username],
+            ['seen', false],
+        ])->get();
 
-        return view('messages', ['messages'=> $messages, 'friends'=>$friends, 'hasfriends'=>$hasfriends]);
+        return view('messages', ['messages'=> $messages, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs]);
 
 
     }
