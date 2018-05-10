@@ -52,9 +52,9 @@
                                 <hr>
                                 <br>
 
-                                <div class="infinite-scroll">
+                                <div class="infinite-scroll row">
                                     @foreach($searchedusers as $user)
-                                        <div class="row">
+
                                         <a href="/users/{{$user->followsusername}}" class="col-4" style="max-width: 31.333333%; background-image: url('{{$user->profileimage}}'); padding-bottom: 31.33333333%; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; margin: 1%;">
                                             <div class="frend-box-name">
                                                 <p>{{$user->name}}</p>
@@ -63,7 +63,7 @@
                                                 <p>{{$user->followsusername}}</p>
                                             </div>
                                         </a>
-                                        </div>
+
                                         {{--<div>--}}
                                             {{--<a href="/users/{{$user->username}}">--}}
                                                 {{--<div class="row">--}}
