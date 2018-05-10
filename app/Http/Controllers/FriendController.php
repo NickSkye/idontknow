@@ -31,7 +31,7 @@ class FriendController extends Controller
         $arefriends = false;
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
-        $friendsposts = DB::table('posts')->where('username', $username)->get();
+        $friendsposts = DB::table('posts')->where('username', $username)->orderBy('created_at', 'desc')->get();
         //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
         foreach($info as $item) {
             foreach ($friends as $friend) {
