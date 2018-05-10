@@ -61,7 +61,7 @@
 
                                         <div class="frend-post-box">
                                             <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
-                                            <img src="{{$post->imagepath}}" class="img-fluid" alt="">
+                                            <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
                                             </button>
                                             <p class="post-data">views: {{$post->views}}</p>
                                             <p>{{$post->description}}</p>
