@@ -54,7 +54,7 @@ class MessagesController extends Controller
             ['username' => $request->sendtousername, 'from_username' => Auth::user()->username, 'message' => $request->shout, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
         DB::table('notifications')->insert(
-            ['username' => $request->sendtousername, 'notification' => '<a href="/shouts">You got a new shout</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            ['username' => $request->sendtousername, 'notification' => '<a href="/shouts" class="dropdown-item">You got a new shout</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
         $emails = $this->getSpecificFriendsInfo($request->sendtousername);
