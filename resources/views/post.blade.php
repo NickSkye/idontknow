@@ -75,7 +75,7 @@
                             </div>
 
                         </div>
-                        <div class="comment-section">
+                        <div class="comment-section infinite-scroll">
                             @foreach($thecomments as $comment)
                                 <div >
 
@@ -88,6 +88,7 @@
                                 </div>
                                 <hr>
                             @endforeach
+                            {{ $thecomments->links() }}
                         </div>
 
 
