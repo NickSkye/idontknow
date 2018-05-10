@@ -14,14 +14,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (Auth::check()) {
+
             $notifs = DB::table('notifications')->where([
                 ['username', Auth::user()->username],
                 ['seen', false],
             ])->get();
             view()->share('notifs', $notifs);
-        }
-        
+
+
     }
 
     /**
