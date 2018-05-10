@@ -103,7 +103,7 @@
                                             {{$notif->notification}}
                                         </a>
                                         @endforeach
-                                            <a class="dropdown-item" href="/clear-notifications">
+                                            <a class="dropdown-item" href="/clear-notifications" style="background-color: #F62E55;">
                                                 Clear all notifications
                                             </a>
                                     </div>

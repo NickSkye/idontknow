@@ -133,7 +133,7 @@ class PagesController extends Controller
         ])->update(['seen' => true]);
 
 
-        return redirect("home")->with('status', 'post removed');
+        return redirect("home")->with('status', 'Notifications cleared');
     }
 
 }
