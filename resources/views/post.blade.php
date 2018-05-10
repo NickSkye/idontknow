@@ -105,8 +105,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
-                                            <a href="javascript:;" class="special_field_link">{{$comment->username}}<a>
-                                            {{--<a href=""><p class="comment">reply</p></a>--}}
+
+                                            <a href=""><p class="comment">reply</p></a>
                                         </div>
                                     </div>
 

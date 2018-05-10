@@ -13916,12 +13916,6 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-$(function () {
-    $('.special_field_link').live('click', function () {
-        $("#a_input_id").val($(this).html());
-    });
-});
-
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
