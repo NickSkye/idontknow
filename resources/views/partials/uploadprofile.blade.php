@@ -31,16 +31,17 @@
             <form action="{{ url('s3-image-upload-profilepic') }}" enctype="multipart/form-data" method="POST">
                 {{ csrf_field() }}
                 <div class="row">
-                    <div class="col-md-12">
+                    @foreach($profileinfo as $prof)
+                    <div class="col-12">
                         <p>Change your profile picture here (Squarer images work best)</p>
                         <label for="file-input" style="float: left; margin-bottom: 0; cursor: pointer;">
                             <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
                         </label>
                         <input id="file-input" type="file" name="image" />
-                        <img src="" id="profile-img-tag" width="200px" />
+                        <img src="{{ $prof->profileimage }}" id="profile-img-tag" width="200px" />
                     </div>
                     <div class="col-xs-12 col-sm-8  offset-sm-4">
-                        @foreach($profileinfo as $prof)
+
                             <label for="aboutme">
                                 Bio
                             </label>
@@ -69,8 +70,9 @@
                                     <span class="glyphicon glyphicon-th"></span>
                                 </div>
                             </div>
-                            @endforeach
+
                     </div>
+                    @endforeach
                     <div class="col-md-12">
                         <button type="submit" class="btn upload-button">Save Changes</button>
                     </div>
