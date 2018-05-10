@@ -8,8 +8,8 @@
                     <div class="card-header">
 
                         {{--@foreach($profileinfo as $item)--}}
-                            {{$profileinfo->username}}
-                            
+                            <h2>{{$profileinfo->username}}</h2>
+
 
 
 
