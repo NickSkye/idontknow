@@ -25,7 +25,7 @@ Route::get('/activity', 'PagesController@activity')->middleware('auth');
 Route::get('post/{post_id?}', 'PagesController@viewpost')->middleware('auth');
 Route::get('/notifications/{id?}', 'PagesController@notifications')->middleware('auth');
 Route::get('/shouts', 'MessagesController@messages')->middleware('auth');
-//Route::get('/results', 'SearchController@show')->middleware('auth');
+
 
 
 Route::post('/shouts/send', 'MessagesController@shout')->middleware('auth');
