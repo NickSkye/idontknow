@@ -37,6 +37,7 @@ Route::get('/search', 'SearchController@index')->middleware('auth');
 Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');
 Route::post('/removefrend/{username?}', 'FriendController@remove')->middleware('auth');
 Route::post('/delete-post/{id?}', 'PagesController@deletepost')->middleware('auth');
+Route::post('/clear-notifications', 'PagesController@clearnotifications')->middleware('auth');
 Route::post('/comment', 'CommentsController@addcomment')->middleware('auth');
 
 

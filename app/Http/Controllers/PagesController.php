@@ -125,4 +125,15 @@ class PagesController extends Controller
         return view('notifications', ['notifs'=> $notifs]);
     }
 
+    public function clearnotifications(){
+
+        DB::table('notifications')->where([
+            ['username', Auth::user()->username],
+            ['seen', false],
+        ])->update(['seen' => true]);
+
+
+        return redirect("home")->with('status', 'post removed');
+    }
+
 }

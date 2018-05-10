@@ -103,8 +103,8 @@
                                             {{$notif->notification}}
                                         </a>
                                         @endforeach
-                                            <a class="dropdown-item" href="/">
-                                                End of notifications
+                                            <a class="dropdown-item" href="/clear-notifications">
+                                                Clear all notifications
                                             </a>
                                     </div>
                                 </li>
