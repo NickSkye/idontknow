@@ -91,6 +91,7 @@
 
 
                                 @endforeach
+                                    {{ $allfriendsinfo->links() }}
                             </div>
 
                         </div>
