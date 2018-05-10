@@ -53,17 +53,23 @@
                                 <br>
 
                                 <div class="infinite-scroll">
-                                @foreach($searchedusers as $user)
-                                    <div>
-                                        <a href="/users/{{$user->username}}">
-                                            <img src="{{$user->profileimage}}" alt="" style="width: 200px;">
-                                            <p>{{ $user->name }}</p>
-                                            <p>{{ $user->username }}</p>
-                                        </a>
+                                    @foreach($searchedusers as $user)
+                                        <div>
+                                            <a href="/users/{{$user->username}}">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <img src="{{$user->profileimage}}" alt="" style="width: 200px;">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <p>{{ $user->name }}</p>
+                                                        <p>{{ $user->username }}</p>
+                                                    </div>
+                                                </div>
+                                            </a>
 
-                                        <hr>
-                                    </div>
-                                @endforeach
+                                            <hr>
+                                        </div>
+                                    @endforeach
                                     {{ $searchedusers->links() }}
                                 </div>
 
@@ -73,7 +79,7 @@
                         <div class="card-footer">
                             <div>
                                 <button type="button" class="btn invite-button" data-toggle="modal" data-target="#mailModal">
-                                    Can't find your frends here? Send them an E-mail to sign up
+                                    <p>Can't find your frends here?<br>Send them an E-mail to sign up</p>
                                 </button>
 
                             </div>
