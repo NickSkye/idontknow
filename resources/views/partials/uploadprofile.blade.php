@@ -41,16 +41,16 @@
                     <div class="col-xs-12 col-sm-8">
 
 
-                        <textarea rows="5" cols="40" placeholder="{{ $prof->aboutme }}" type="text" class="form-control" name="aboutme" value="{{ $prof->aboutme }}">{{ $prof->aboutme }}</textarea>
+                        <textarea rows="5" cols="40" placeholder="{{ $profileinfo->aboutme }}" type="text" class="form-control" name="aboutme" value="{{ $profileinfo->aboutme }}">{{ $profileinfo->aboutme }}</textarea>
 
                         <div class="form-group">
                             <label for="aboutme">Bio</label>
-                            <textarea rows="5" cols="40" placeholder="{{ $prof->aboutme }}" type="text" class="form-control" name="aboutme" value="{{ $prof->aboutme }}">{{ $prof->aboutme }}</textarea>
+                            <textarea rows="5" cols="40" placeholder="{{ $profileinfo->aboutme }}" type="text" class="form-control" name="aboutme" value="{{ $profileinfo->aboutme }}">{{ $profileinfo->aboutme }}</textarea>
                         </div>
 
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control book-form" id="name" name="name" value="{{ $prof->name }}" >
+                                <input type="text" class="form-control book-form" id="name" name="name" value="{{ $profileinfo->name }}" >
 
                             </div>
 
@@ -73,7 +73,7 @@
                             </div>
 
                     </div>
-                    @endforeach
+                    {{--@endforeach--}}
                     <div class="col-md-12">
                         <button type="submit" class="btn upload-button">Save Changes</button>
                     </div>
