@@ -34,7 +34,7 @@
                         <div>
                             {{--THIS PAGE WILL BE AN INDIVIDUAL CLICKED ON POST WITH COMMENT SECTION AND VOTES--}}
                             {{--friends posts--}}
-                            <div class="row frend-area">
+                            <div class="row frend-area post-area">
                                 @foreach($thepost as $post)
                                     {{--POST MODAL--}}
                                     <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

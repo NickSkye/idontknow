@@ -166,9 +166,11 @@ a {
     max-height: 200px;
 }
 
-@media (min-width: 576px) {
-    .modal-dialog {
-        max-width: 950px !important;
-        margin: 1.75rem auto;
+.post-area {
+    @media (min-width: 576px) {
+        .modal-dialog {
+            max-width: 950px !important;
+            margin: 1.75rem auto;
+        }
     }
 }
