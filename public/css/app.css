@@ -165,6 +165,10 @@ a p {
   }
 }
 
+.navbar-brand {
+  margin-right: 0;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
