@@ -56,15 +56,17 @@
                         <h2>Shouts</h2>
                             </div>
                             <div class="col-6">
+                                @if($hasfriends)
                                 @foreach($friends as $friend)
-                                    @if(!$friend->isEmpty())
+
                         <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
                             <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                         </button>
-                                        @elseif($friend->isEmpty())
-                                        <p>You have to add frends before you can shout at them</p>
-                                    @endif
+
                                     @endforeach
+                                @else
+                                    <p>You have to add frends before you can shout at them</p>
+                                    @endif
                             </div>
                         </div>
                     </div>
