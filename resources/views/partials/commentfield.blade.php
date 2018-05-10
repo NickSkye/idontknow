@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-12">
             {{ Form::hidden('post_id', $post->id) }}
-            <textarea rows="3" cols="40" placeholder="Comment on this post..." type="text" name="comment" style="width: 100%;"></textarea>
+            <textarea id="a_input_id" rows="3" cols="40" placeholder="Comment on this post..." type="text" name="comment" style="width: 100%;"></textarea>
 
         </div>
         <div class="col-12">
