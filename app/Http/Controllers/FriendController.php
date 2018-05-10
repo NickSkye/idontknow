@@ -13,7 +13,7 @@ class FriendController extends Controller
 
 
     public function getFriendsInfoWithPosts(){
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->where('follows.username', Auth::user()->username)->orderBy('posts.created_at', 'desc')->paginate(10);; //'posts.updated_at'
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->where('follows.username', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->paginate(10);; //'posts.updated_at'
 
         return $friends_info_full;
     }
@@ -31,7 +31,7 @@ class FriendController extends Controller
         $arefriends = false;
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
-        $friendsposts = DB::table('posts')->where('username', $username)->orderBy('created_at', 'desc')->get();
+        $friendsposts = DB::table('posts')->where('username', $username)->where('deleted', false)->orderBy('created_at', 'desc')->get();
         //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
         foreach($info as $item) {
             foreach ($friends as $friend) {
