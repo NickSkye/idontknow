@@ -80,21 +80,21 @@ class PagesController extends Controller
     public function viewpost($post_id)
     {
 
-        $allcommentersinfo = [];
+        //$allcommentersinfo = [];
 
         $thepost = DB::table('posts')->where('id', $post_id)->where('deleted', false)->get();
         DB::table('posts')->where('id', $post_id)->increment('views');
-        $thecomments = DB::table('comments')->where('post_id', $post_id)->get();
+        $thecomments = DB::table('comments')->join('profileinfo', 'comments.username', '=', 'profileinfo.username')->where('post_id', $post_id)->get();
 
 //        $thecomments = Post::where('id', $post_id)->comments();
 
-        foreach($thecomments as $comment){
-            $profinfos = DB::table('profileinfo')->where('username', $comment->username)->get();
-            array_push($allcommentersinfo, $profinfos);
-        }
-        $profinfos = DB::table('profileinfo')->where('id', $post_id)->get();
+//        foreach($thecomments as $comment){
+//            $profinfos = DB::table('profileinfo')->where('username', $comment->username)->get();
+//            array_push($allcommentersinfo, $profinfos);
+//        }
+//        $profinfos = DB::table('profileinfo')->where('id', $post_id)->get();
 
-        return view('post', ['thepost'=> $thepost, 'thecomments' => $thecomments, 'allcommentersinfo' => $allcommentersinfo]);
+        return view('post', ['thepost'=> $thepost, 'thecomments' => $thecomments]);
 
 
     }
