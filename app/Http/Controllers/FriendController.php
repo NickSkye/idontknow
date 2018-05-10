@@ -18,8 +18,8 @@ class FriendController extends Controller
         return $friends_info_full;
     }
 
-    public function getSpecificFriendsInfowithPosts($friendsusername){
-        $friends_info_full = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->join('posts', 'profileinfo.username', '=', 'posts.username')->where('users.username', $friendsusername)->get();
+    public function getSpecificFriendsInfo($friendsusername){
+        $friends_info_full = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', $friendsusername)->get();
 
         return $friends_info_full;
     }
@@ -27,23 +27,23 @@ class FriendController extends Controller
     public function index($username)
     {
 //        $info = DB::table('users')->where('username', $username)->get();
-            $info = $this->getSpecificFriendsInfowithPosts($username);
+            $info = $this->getSpecificFriendsInfo($username);
         $arefriends = false;
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
-        //$friendsposts = DB::table('posts')->where('username', $username)->get();
+        $friendsposts = DB::table('posts')->where('username', $username)->get();
         //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
         foreach($info as $item) {
             foreach ($friends as $friend) {
                 if ($item->username === $friend->followsusername) {
                     $arefriends = true;
 
-                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends]);
+                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts]);
                 }
 
             }
         }
-        return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends]);
+        return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts]);
 
 
     }

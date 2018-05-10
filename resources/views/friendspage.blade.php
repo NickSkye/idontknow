@@ -102,7 +102,7 @@
 
                             {{--friends posts--}}
                             <div class="row frend-area">
-                                @foreach($info as $post)
+                                @foreach($friendsposts as $post)
                                     <div class="col-12">
 
                                         <div class="frend-post-box">
