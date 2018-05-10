@@ -28,14 +28,14 @@
                         @endif
 
                         <div class="row">
-                        @foreach($mybio as $bio)
+                            @foreach($generalinfo as $info)
                             <div class="col-6">
                             <a href="/settings">
-                                <img src="{{$bio->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
+                                <img src="{{$info->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
                             </a>
                             </div>
-                        @endforeach
-                            @foreach($generalinfo as $info)
+
+
                                 <div class="col-6">
 
                                        <h2>{{$info->name}}</h2>
@@ -47,10 +47,9 @@
                                     </div>
 
 
-                            @endforeach
-                                    @foreach($mybio as $bio)
 
-                                            <p>{{$bio->aboutme}}</p>
+
+                                            <p>{{$info->aboutme}}</p>
                                         </div>
                                     @endforeach
 

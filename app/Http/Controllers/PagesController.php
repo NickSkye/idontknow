@@ -34,9 +34,9 @@ class PagesController extends Controller
     public function myprofile()
     {
 
-
-        $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
-        $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
+        $generalinfo = $this->getMySettingsInfo();
+//        $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
+//        $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
         $myposts = DB::table('posts')->where('username', Auth::user()->username)->orderBy('created_at', 'desc')->get();
         $myfriends = DB::table('follows')->where('username', Auth::user()->username)->orderBy('updated_at', 'desc')->get();
         $notifs = DB::table('notifications')->where([
@@ -44,7 +44,7 @@ class PagesController extends Controller
             ['seen', false],
         ])->get();
 
-        return view('myprofile', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs]);
+        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs]);
 
 
     }
