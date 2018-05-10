@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-12 col-md-4">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 
                                         <div class="frend-post-box">
                                             <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
