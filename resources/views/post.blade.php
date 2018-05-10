@@ -82,18 +82,18 @@
                                     <div class="row">
 
 
-                                        <div class="col-1">
+                                        <div class="col-1" style="min-width: 85px;">
                                             <a href="/users/{{$comment->username}}">
                                             <img src="{{$comment->profileimage}}" alt="" style="width: 75px;">
                                             </a>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-4">
                                             <a href="/users/{{$comment->username}}">
                                             <p class="comment-username">{{$comment->username}}</p>
                                             </a>
                                         </div>
 
-                                        <div class="col-3">
+                                        <div class="col-6">
                                             <p>{{$comment->created_at}}</p>
                                         </div>
 
