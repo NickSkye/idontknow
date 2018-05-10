@@ -2,7 +2,21 @@
 <?php $page = 'activity'; ?>
 @section('content')
     <div class="container">
-
+        <script type="text/javascript">
+        $('ul.pagination').hide();
+        $(function() {
+            $('.infinite-scroll').jscroll({
+                autoTrigger: true,
+                loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',
+                padding: 0,
+                nextSelector: '.pagination li.active + li a',
+                contentSelector: 'div.infinite-scroll',
+                callback: function() {
+                    $('ul.pagination').remove();
+                }
+            });
+        });
+        </script>
         <!-- Modal -->
         <div class="modal fade" id="mailModal" tabindex="-1" role="dialog" aria-labelledby="mailModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -52,7 +66,7 @@
                                 <hr>
                                 <br>
 
-
+                                <div class="infinite-scroll">
                                 @foreach($searchedusers as $user)
                                     <div>
                                         <a href="/users/{{$user->username}}">
@@ -64,7 +78,8 @@
                                         <hr>
                                     </div>
                                 @endforeach
-
+                                    {{ $searchedusers->links() }}
+                                </div>
 
                             </div>
 
