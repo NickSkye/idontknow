@@ -9,13 +9,21 @@ use App\Post;
 
 class PagesController extends Controller
 {
+
+    public function getMySettingsInfo(){
+        $friends_info_full = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', Auth::user()->username)->first();
+
+        return $friends_info_full;
+    }
+
+
     public function settings()
     {
 
         //if (Auth::check()) {
-            $info = DB::table('users')->where('username', Auth::user()->username)->get();
-        $profileinfo = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
-            return view('settings', ['info'=> $info, 'profileinfo' => $profileinfo]);
+//            $info = DB::table('users')->where('username', Auth::user()->username)->get();
+        $profileinfo = $this->getMySettingsInfo(); //DB::table('profileinfo')->where('username', Auth::user()->username)->get();
+            return view('settings', ['profileinfo' => $profileinfo]);
 //        }
 //        else{
 //            return view('auth.login');

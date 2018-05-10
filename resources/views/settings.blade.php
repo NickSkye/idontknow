@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">
 
-                        @foreach($info as $item)
+                        @foreach($profileinfo as $item)
                             {{$item->username}}
                             {{--an array of users that you follow--}}
 
