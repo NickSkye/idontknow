@@ -16,7 +16,7 @@
                                     {{ csrf_field() }}
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <button type="submit" class="delete-post-button"><i
+                                            <button type="submit" class="delete-post-button" style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Delete Your Post? There's No Going Back!"><i
                                                         class="fa fa-trash fa-2x"></i></button>
                                         </div>
                                     </div>
