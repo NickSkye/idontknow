@@ -56,9 +56,13 @@
                         <h2>Shouts</h2>
                             </div>
                             <div class="col-6">
+                                @foreach($friends as $friend)
+                                    @if (!$friend->isEmpty())
                         <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
                             <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                         </button>
+                                    @endif
+                                    @endforeach
                             </div>
                         </div>
                     </div>
