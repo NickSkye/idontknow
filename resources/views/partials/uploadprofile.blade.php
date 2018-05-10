@@ -41,7 +41,7 @@
                     <div class="col-xs-12 col-sm-8">
 
 
-                        <textarea rows="5" cols="40" placeholder="{{ $profileinfo->aboutme }}" type="text" class="form-control" name="aboutme" value="{{ $profileinfo->aboutme }}">{{ $profileinfo->aboutme }}</textarea>
+                   
 
                         <div class="form-group">
                             <label for="aboutme">Bio</label>
