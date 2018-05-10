@@ -11,12 +11,12 @@
                         {{--@include('partials.friendsearch')--}}
                         <div class="row">
                             <div class="col-6">
-                                @foreach($friendsinfo as $frinfo)
-
-                                    <img src="{{$frinfo->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
-                                @endforeach
-                                {{--info about friend--}}
                                 @foreach($info as $item)
+
+                                    <img src="{{$item->profileimage}}" class="img-fluid img-there friend-page-image" alt="">
+
+                                {{--info about friend--}}
+
 
                                     {{--an array of users that you follow--}}
                                     @if($arefriends)
@@ -70,10 +70,10 @@
                                     @endif
 
 
-                                @endforeach
+
                             </div>
                             <div class="col-6">
-                                @foreach($info as $item)
+
 
 
                                     <h2>{{$item->name}}</h2>
@@ -85,10 +85,9 @@
                                     </div>
 
 
-                                @endforeach
-                                @foreach($friendsinfo as $frinfo)
 
-                                    <p>{{$frinfo->aboutme}}</p>
+
+                                    <p>{{$item->aboutme}}</p>
                                 @endforeach
                             </div>
                         </div>
@@ -103,7 +102,7 @@
 
                             {{--friends posts--}}
                             <div class="row frend-area">
-                                @foreach($friendsposts as $post)
+                                @foreach($info as $post)
                                     <div class="col-12">
 
                                         <div class="frend-post-box">

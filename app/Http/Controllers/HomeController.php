@@ -11,6 +11,18 @@ use Storage;
 
 class HomeController extends Controller
 {
+
+ /*  LIST OF COMMON DB QUERIES
+  *
+  * Updates the users updated at field whenever they post or comment or add or remove friend or shout
+  * DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+  *
+  *
+  */
+
+
+
+
     /**
      * Create a new controller instance.
      *

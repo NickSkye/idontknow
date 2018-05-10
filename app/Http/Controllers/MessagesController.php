@@ -61,6 +61,8 @@ class MessagesController extends Controller
             ['username' => $request->sendtousername, 'notification' => '<a href="/shouts" class="dropdown-item">You got a new shout</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
         $emails = $this->getSpecificFriendsInfo($request->sendtousername);
 
 
