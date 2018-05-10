@@ -61,7 +61,7 @@
                                                 <p>{{$user->name}}</p>
                                             </div>
                                             <div class="frend-box">
-                                                <p>{{$user->followsusername}}</p>
+                                                <p>{{$user->username}}</p>
                                             </div>
                                         </a>
 
