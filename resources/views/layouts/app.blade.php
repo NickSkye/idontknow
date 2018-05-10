@@ -79,7 +79,8 @@
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'idontknow') }}
+                        {{--{{ config('app.name', 'idontknow') }}--}}
+                        <img src="/images/frendgridlogo.png" alt="FrendGrid">
                     </a>
                     @auth
                     @include('partials.friendsearch')
