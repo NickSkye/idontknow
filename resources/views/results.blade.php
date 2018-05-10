@@ -54,21 +54,29 @@
 
                                 <div class="infinite-scroll">
                                     @foreach($searchedusers as $user)
-                                        <div>
-                                            <a href="/users/{{$user->username}}">
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <img src="{{$user->profileimage}}" alt="" style="width: 200px;">
-                                                    </div>
-                                                    <div class="col-sm-8">
-                                                        <p>{{ $user->name }}</p>
-                                                        <p>{{ $user->username }}</p>
-                                                    </div>
-                                                </div>
-                                            </a>
+                                        <a href="/users/{{$user->followsusername}}" class="col-4" style="max-width: 31.333333%; background-image: url('{{$infos->profileimage}}'); padding-bottom: 31.33333333%; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; margin: 1%;">
+                                            <div class="frend-box-name">
+                                                <p>{{$user->name}}</p>
+                                            </div>
+                                            <div class="frend-box">
+                                                <p>{{$user->followsusername}}</p>
+                                            </div>
+                                        </a>
+                                        {{--<div>--}}
+                                            {{--<a href="/users/{{$user->username}}">--}}
+                                                {{--<div class="row">--}}
+                                                    {{--<div class="col-sm-4">--}}
+                                                        {{--<img src="{{$user->profileimage}}" alt="" style="width: 200px;">--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-sm-8">--}}
+                                                        {{--<p>{{ $user->name }}</p>--}}
+                                                        {{--<p>{{ $user->username }}</p>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</a>--}}
 
-                                            <hr>
-                                        </div>
+                                            {{--<hr>--}}
+                                        {{--</div>--}}
                                     @endforeach
                                     {{ $searchedusers->links() }}
                                 </div>
