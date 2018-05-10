@@ -19,7 +19,7 @@ class FriendController extends Controller
     }
 
     public function getSpecificFriendsInfo($friendsusername){
-        $friends_info_full = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', $friendsusername)->get();
+        $friends_info_full = DB::table('profileinfo')->join('users', 'profileinfo.username', '=', 'users.username')->where('users.username', $friendsusername)->get();
 
         return $friends_info_full;
     }
