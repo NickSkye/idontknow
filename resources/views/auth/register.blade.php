@@ -8,8 +8,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-6">
-                            {{ __('Register') }}
-
+                            <h2>{{ __('Register') }}</h2>
                         </div>
                         <div class="col-6 " >
                             <a href="/login" class="pull-right">{{ __('Login') }}</a>
