@@ -21,8 +21,7 @@ class AppServiceProvider extends ServiceProvider
             ])->get();
             view()->share('notifs', $notifs);
         }
-
-
+        
     }
 
     /**
