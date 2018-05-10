@@ -100,7 +100,7 @@
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="overflow-y: scroll; max-height: 400px;">
                                         @foreach($notifs as $notif)
                                         <a class="dropdown-item" href="/notifications/{{$notif->id}}">
-                                            {{$notif->notification}}
+                                            {!! $notif->notification !!}
                                         </a>
                                         @endforeach
                                             <a class="dropdown-item" href="/clear-notifications" style="background-color: #F62E55;">
