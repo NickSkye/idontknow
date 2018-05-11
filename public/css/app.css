@@ -267,6 +267,10 @@ a p {
   text-align: center;
 }
 
+.flex-footer .on-page {
+  color: #F62E55 !important;
+}
+
 .flex-footer a {
   width: calc(100% /5);
   -ms-flex-item-align: center;

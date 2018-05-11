@@ -76,6 +76,9 @@
     align-content: center;
     align-items: center;
     text-align: center;
+    .on-page{
+        color: $accent-color !important;
+    }
     a{
         width: calc(100% /5);
         align-self: center;

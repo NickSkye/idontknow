@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<?php $page = 'messages'; ?>
+<?php $page = 'suggestions'; ?>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
