@@ -51,7 +51,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        @include('partials.footerlinks')
+                       Support
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -71,7 +71,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <div>Shouts get deleted once viewed</div>
+                        @include('partials.footerlinks')
                     </div>
                 </div>
             </div>

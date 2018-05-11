@@ -52,7 +52,7 @@
                 <div class="card">
                     <div class="card-header">
 
-                            @include('partials.footerlinks')
+                            About
 
                     </div>
                     <div class="card-body">
@@ -73,7 +73,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <div>Shouts get deleted once viewed</div>
+                        @include('partials.footerlinks')
                     </div>
                 </div>
             </div>
