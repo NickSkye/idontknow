@@ -13928,6 +13928,7 @@ var x = document.getElementById("demo");
 
 function getLocation() {
     if (navigator.geolocation) {
+        console.log("here");
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
