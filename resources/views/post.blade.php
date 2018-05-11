@@ -123,9 +123,9 @@
 
                     </div>
                     <div class="card-footer">
-                        @foreach($thepost as $post)
+
                             <div> @include('partials.commentfield')</div>
-                        @endforeach
+
                     </div>
                 </div>
             </div>
