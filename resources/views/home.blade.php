@@ -13,6 +13,7 @@
                     <div class="card-body">
                         <div id="latitude"></div>
                         <div id="longitude"></div>
+                        <div id="demo"></div>
                         @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}
