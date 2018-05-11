@@ -13,7 +13,8 @@
             <form action="{{ url('shouts/send') }}"  method="POST">
                 {{ csrf_field() }}
                 <div class="row">
-
+                    <input type="hidden" name="latitude" value=""/>
+                    <input  type="hidden" name="longitude" value=""/>
                     <div class="col-12">
                         <select name="sendtousername">
                             @foreach($friends as $friend)
