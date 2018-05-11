@@ -9,8 +9,11 @@
                 <div class="card">
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
+                        <div class="pull-right">
 
-                        @foreach($thepost as $post)
+                        </div>
+
+
                             @if($post->username === Auth::user()->username)
                                 <form action="/delete-post/{{$post->id}}" enctype="multipart/form-data" method="POST">
                                     {{ csrf_field() }}
@@ -22,7 +25,7 @@
                                     </div>
                                 </form>
                             @endif
-                        @endforeach
+
 
                     </div>
                     <div class="card-body">
@@ -35,7 +38,7 @@
                             {{--THIS PAGE WILL BE AN INDIVIDUAL CLICKED ON POST WITH COMMENT SECTION AND VOTES--}}
                             {{--friends posts--}}
                             <div class="row frend-area post-area">
-                                @foreach($thepost as $post)
+
                                     {{--POST MODAL--}}
                                     <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -71,7 +74,7 @@
                                     </div>
 
                                     {{--THIS PAGE WILL BE AN INDIVIDUAL CLICKED ON POST WITH COMMENT SECTION AND VOTES--}}
-                                @endforeach
+
                             </div>
 
                         </div>
