@@ -9,9 +9,7 @@
                 <div class="card">
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
-                        <div class="pull-right">
-                            <a href="/">report</a>
-                        </div>
+
 
 
                             @if($post->username === Auth::user()->username)
@@ -24,6 +22,10 @@
                                         </div>
                                     </div>
                                 </form>
+                                @else
+                            <div class="pull-right">
+                                <a href="/">report</a>
+                            </div>
                             @endif
 
 
