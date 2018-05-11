@@ -13972,7 +13972,12 @@ function showError(error) {
 
 $(document).ready(function () {
     console.log("ready!");
-    getLocation();
+    var yetVisited = localStorage['visited'];
+    if (!yetVisited) {
+        // open popup
+        getLocation();
+        localStorage['visited'] = "yes";
+    }
 });
 
 /***/ }),
