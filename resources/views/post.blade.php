@@ -99,7 +99,7 @@
                                         <div class="col-4" style="max-width: 175px;">
                                             <p class="pull-right">{{$comment->created_at}}</p>
                                         </div>
-                                        <div class="col-1" style="max-width: 100px;">
+                                        <div class="" style="max-width: 100px; position: absolute; right: 10px;">
                                             <p class="pull-right"><a href="">report</a></p>
                                         </div>
 
