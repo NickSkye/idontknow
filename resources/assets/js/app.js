@@ -50,7 +50,7 @@ $(function () {
 //User location
 var x = document.getElementById("demo");
 
-function  {
+function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
