@@ -13943,6 +13943,8 @@ function showPosition(position) {
     //  +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
     // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
     console.log(position.coords.latitude);
+    localStorage['latitude'] = position.coords.latitude;
+    localStorage['longitude'] = position.coords.longitude;
     $('input[name=latitude]').val(position.coords.latitude);
     $('input[name=longitude]').val(position.coords.longitude);
     // document.getElementById('latitude').value = position.coords.latitude;
@@ -13977,6 +13979,9 @@ $(document).ready(function () {
         // open popup
         getLocation();
         localStorage['visited'] = "yes";
+    } else {
+        $('input[name=latitude]').val(localStorage['latitude']);
+        $('input[name=longitude]').val(localStorage['longitude']);
     }
 });
 
