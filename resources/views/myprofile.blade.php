@@ -6,7 +6,7 @@
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
                     <div class="card-header">
-                        
+
                         {{--@include('partials.friendsearch')--}}
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">

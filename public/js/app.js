@@ -13941,10 +13941,9 @@ function showPosition(position) {
     // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
     //  +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
     // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
-    var a = document.getElementById("latitude");
-    a.value = position.coords.latitude;
-    var b = document.getElementById("longitude");
-    b.value = position.coords.longitude;
+    document.getElementById('latitude').value = position.coords.latitude;
+    document.getElementById('longitude').value = position.coords.longitude;
+
     //return latilong;
 }
 //To use this code on your website, get a free API key from Google.
