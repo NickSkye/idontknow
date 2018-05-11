@@ -92,6 +92,7 @@ function showError(error) {
     }
 }
 
-window.onload = function() {
+
+$( document ).ready(function() {
     getLocation();
-};
+});
