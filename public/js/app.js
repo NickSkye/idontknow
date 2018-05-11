@@ -13941,8 +13941,10 @@ function showPosition(position) {
     // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
     //  +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
     // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
-    document.getElementById('latitude').value = position.coords.latitude;
-    document.getElementById('longitude').value = position.coords.longitude;
+    $('input[name=latitude]').val(position.coords.latitude);
+    $('input[name=longitude]').val(position.coords.longitude);
+    // document.getElementById('latitude').value = position.coords.latitude;
+    // document.getElementById('longitude').value = position.coords.longitude;
 
     //return latilong;
 }
