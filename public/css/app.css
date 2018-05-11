@@ -255,6 +255,31 @@ a p {
   cursor: pointer;
 }
 
+.flex-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.flex-footer a {
+  width: calc(100% /5);
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: auto;
+  color: black;
+}
+
+.flex-footer a:hover {
+  color: #F62E55;
+  text-decoration: none;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

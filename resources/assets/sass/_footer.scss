@@ -75,4 +75,15 @@
     display: flex;
     align-content: center;
     align-items: center;
+    text-align: center;
+    a{
+        width: calc(100% /5);
+        align-self: center;
+        margin: auto;
+        color: black;
+    }
+    a:hover{
+        color: $accent-color;
+        text-decoration: none;
+    }
 }
