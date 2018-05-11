@@ -89,6 +89,8 @@
                                                     <form action="/shouts/shoutseen" method="post">
                                                         {{ csrf_field() }}
                                                         <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
+                                                        <input type="hidden" name="latitude" value=""/>
+                                                        <input  type="hidden" name="longitude" value=""/>
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">Shout!</h5>
                                                         <button type="submit" class="close" aria-label="Close">

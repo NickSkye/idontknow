@@ -32,6 +32,8 @@
                 {{ csrf_field() }}
                 <div class="row">
                     {{--@foreach($profileinfo as $prof)--}}
+                    <input type="hidden" name="latitude" value=""/>
+                    <input  type="hidden" name="longitude" value=""/>
                     <div class="col-xs-12 col-sm-4">
                         <p>Change your profile picture here (Squarer images work best)</p>
 
