@@ -32,7 +32,12 @@
 
                     </div>
                     <div class="card-footer">
-                        Footer
+                       <div class="flex-footer">
+                           <a href="/">test</a>
+                           <a href="/">test</a>
+                           <a href="/">test</a>
+                           <a href="/">test</a>
+                       </div>
                     </div>
                 </div>
             </div>
