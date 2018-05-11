@@ -136,4 +136,24 @@ class PagesController extends Controller
         return redirect("home")->with('status', 'Notifications cleared');
     }
 
+    public function about(){
+        return view('about');
+    }
+
+    public function donate(){
+        return view('donate');
+    }
+
+    public function legal(){
+        return view('legal');
+    }
+
+    public function suggestions(){
+        return view('suggestions');
+    }
+
+    public function support(){
+        return view('support');
+    }
+
 }

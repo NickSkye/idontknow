@@ -26,6 +26,12 @@ Route::get('post/{post_id?}', 'PagesController@viewpost')->middleware('auth');
 Route::get('/notifications/{id?}', 'PagesController@notifications')->middleware('auth');
 Route::get('/shouts', 'MessagesController@messages')->middleware('auth');
 
+//footer legal pages
+Route::get('/about', 'PagesController@about')->middleware('auth');
+Route::get('/donate', 'PagesController@donate')->middleware('auth');
+Route::get('/legal', 'PagesController@legal')->middleware('auth');
+Route::get('/suggestions', 'PagesController@suggestions')->middleware('auth');
+Route::get('/support', 'PagesController@support')->middleware('auth');
 
 
 Route::post('/shouts/send', 'MessagesController@shout')->middleware('auth');
