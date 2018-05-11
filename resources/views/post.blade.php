@@ -10,7 +10,7 @@
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
                         <div class="pull-right">
-
+                            <a href="/">report</a>
                         </div>
 
 
