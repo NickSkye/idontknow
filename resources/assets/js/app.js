@@ -94,5 +94,6 @@ function showError(error) {
 
 
 $( document ).ready(function() {
+    console.log( "ready!" );
     getLocation();
 });
