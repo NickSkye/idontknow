@@ -11,8 +11,7 @@
                     {{--</div>--}}
 
                     <div class="card-body">
-                            <div id="latitude" ></div>
-                            <div id="longitude"></div>
+                           
                         @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}

@@ -67,7 +67,7 @@ function showPosition(position) {
     // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
     document.getElementById('latitude').value = position.coords.latitude;
     document.getElementById('longitude').value = position.coords.longitude;
-    
+
     //return latilong;
 }
 //To use this code on your website, get a free API key from Google.
