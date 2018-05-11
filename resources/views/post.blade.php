@@ -90,7 +90,7 @@
                                             <img src="{{$comment->profileimage}}" alt="" style="width: 75px;">
                                             </a>
                                         </div>
-                                        <div class="col-5">
+                                        <div class="col-4">
                                             <a href="/users/{{$comment->username}}">
                                             <p class="comment-username">{{$comment->username}}</p>
                                             </a>
@@ -98,6 +98,9 @@
 
                                         <div class="col-4" style="max-width: 175px;">
                                             <p class="pull-right">{{$comment->created_at}}</p>
+                                        </div>
+                                        <div class="col-1" style="max-width: 100px;">
+                                            <p class="pull-right"><a href="">report</a></p>
                                         </div>
 
                                     </div>
@@ -109,7 +112,7 @@
                                     <div class="row">
                                         <div class="col-12">
 
-                                            <a href=""><p class="comment">reply</p></a>
+                                            <a href=""><p class="comment pull-right">reply</p></a>
                                         </div>
                                     </div>
 
