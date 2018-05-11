@@ -14,6 +14,8 @@
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-12">
+                        <input id="latitude" type="hidden" name="latitude" value=""/>
+                        <input id="longitude" type="hidden" name="longitude" value=""/>
                         <textarea rows="4" cols="50" placeholder="Tell your frends about your post..." type="text" name="description" ></textarea>
                     </div>
                     <div class="col-6 offset-2 image-upload" style="align-self: flex-end;">
