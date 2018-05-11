@@ -45,12 +45,12 @@ $(function () {
 // $( document ).ready(function() {
 //     console.log( "ready!" );
 // });
-window.onload = getLocation();
+
 
 //User location
 var x = document.getElementById("demo");
 
-function getLocation() {
+function  {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
@@ -90,3 +90,7 @@ function showError(error) {
             break;
     }
 }
+
+window.onload = function() {
+    getLocation();
+};
