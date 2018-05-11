@@ -13945,6 +13945,7 @@ function showPosition(position) {
     console.log(position.coords.latitude);
     localStorage['latitude'] = position.coords.latitude;
     localStorage['longitude'] = position.coords.longitude;
+    localStorage['visited'] = "yes";
     $('input[name=latitude]').val(position.coords.latitude);
     $('input[name=longitude]').val(position.coords.longitude);
     // document.getElementById('latitude').value = position.coords.latitude;
@@ -13978,7 +13979,6 @@ $(document).ready(function () {
     if (!yetVisited) {
         // open popup
         getLocation();
-        localStorage['visited'] = "yes";
     } else {
         $('input[name=latitude]').val(localStorage['latitude']);
         $('input[name=longitude]').val(localStorage['longitude']);
