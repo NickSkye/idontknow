@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Storage;
+use Torann\GeoIP\Facades\GeoIP;
 
 
 class HomeController extends Controller
