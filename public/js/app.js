@@ -13974,7 +13974,7 @@ function showError(error) {
 }
 
 $(document).ready(function () {
-    console.log("ready!");
+    console.log("You Found Me!");
     var yetVisited = sessionStorage['visited'];
     if (!yetVisited) {
         // open popup
