@@ -51,9 +51,9 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
+
                             @include('partials.footerlinks')
-                        </div>
+
                     </div>
                     <div class="card-body">
                         @if (session('status'))
