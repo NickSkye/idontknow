@@ -52,12 +52,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-6">
-                                <h2>Shouts</h2>
-                            </div>
-                            <div class="col-6">
-
-                            </div>
+                            @include('partials.footerlinks')
                         </div>
                     </div>
                     <div class="card-body">

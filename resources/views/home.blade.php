@@ -32,13 +32,7 @@
 
                     </div>
                     <div class="card-footer">
-                       <div class="flex-footer">
-                           <a href="/about">About</a>
-                           <a href="/legal">Legal</a>
-                           <a href="/support">Support</a>
-                           <a href="/donate">Donate</a>
-                           <a href="/suggestions">Suggest</a>
-                       </div>
+                       @include('partials.footerlinks')
                     </div>
                 </div>
             </div>
