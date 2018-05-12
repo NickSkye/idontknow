@@ -76,8 +76,8 @@
     </head>
     <body>
         <div id="app">
-            <div class="d-sm-none" style="width: 100%; height: 50px; background-color: black; color: white">
-                <a href="#download app" style="width: 100%; height: 50px; background-color: black; color: white">
+            <div class="d-sm-none mobile-app-div" >
+                <a href="#download app" >
                     Download our Mobile App
                 </a>
             </div>
