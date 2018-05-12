@@ -76,6 +76,10 @@
     </head>
     <body>
         <div id="app">
+            <a href="#download app" class="visible-xs" style="width: 100%; height: 50px; background-color: black; color: white">
+                Download our Mobile App
+            </a>
+
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
