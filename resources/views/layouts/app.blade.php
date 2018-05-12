@@ -76,9 +76,12 @@
     </head>
     <body>
         <div id="app">
-            <a href="#download app" class="visible-xs hidden-sm hidden-md hidden-lg" style="width: 100%; height: 50px; background-color: black; color: white">
-                Download our Mobile App
-            </a>
+            <div class="visible-xs hidden-sm hidden-md hidden-lg" style="width: 100%; height: 50px; background-color: black; color: white">
+                <a href="#download app" style="width: 100%; height: 50px; background-color: black; color: white">
+                    Download our Mobile App
+                </a>
+            </div>
+
 
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
