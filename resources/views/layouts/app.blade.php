@@ -76,10 +76,10 @@
     </head>
     <body>
         <div id="app">
-            <div class="d-sm-none mobile-app-div" >
-                <a href="#download app" >
+            <div id="mobile-app-button" class="d-sm-none mobile-app-div" >
+
                     Download our Mobile App
-                </a>
+
             </div>
 
 
