@@ -12,11 +12,12 @@
     </div>
 
     <div class="footer-button">
-        <a href="/shouts" class="me-button <?php if ($page == 'messages') {
+        <a href="/activity" class="list-button <?php if ($page == 'activity') {
             echo 'on-page';
-        } ?>" data-toggle="tooltip" data-placement="top" title="Send messages to friends that disappear once opened">
-            <i class="fa fa-bullhorn fa-2x" aria-hidden="true"></i>
+        } ?>" data-toggle="tooltip" data-placement="top" title="View all recent activity">
+            <i class="fa fa-list fa-2x" aria-hidden="true"></i>
         </a>
+
 
     </div>
 
@@ -27,10 +28,10 @@
     </div>
 
     <div class="footer-button">
-        <a href="/activity" class="list-button <?php if ($page == 'activity') {
+        <a href="/shouts" class="me-button <?php if ($page == 'messages') {
             echo 'on-page';
-        } ?>" data-toggle="tooltip" data-placement="top" title="View all recent activity">
-            <i class="fa fa-list fa-2x" aria-hidden="true"></i>
+        } ?>" data-toggle="tooltip" data-placement="top" title="Send messages to friends that disappear once opened">
+            <i class="fa fa-bullhorn fa-2x" aria-hidden="true"></i>
         </a>
     </div>
 
