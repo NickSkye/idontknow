@@ -196,5 +196,12 @@ a {
     a{
         width: 100%;
         height: 30px;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
+        align-self: center;
+        display: flex;
+        color: white;
     }
 }
