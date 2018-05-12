@@ -38,9 +38,9 @@ $("#file-input").change(function(){
 });
 
 //Tooltip
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-})
+// $(function () {
+//     $('[data-toggle="tooltip"]').tooltip()
+// })
 
 // $( document ).ready(function() {
 //     console.log( "ready!" );
