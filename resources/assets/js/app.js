@@ -108,8 +108,8 @@ $( document ).ready(function() {
     console.log( "You Found Me!" );
     var yetVisited = sessionStorage['visited'];
     var hasVisited = localStorage['hasvisited'];
-    if (hasVisited){
-        $('#mobile-app-button').addClass('d-none')
+    if (!hasVisited){
+        $('#mobile-app-button').addClass('.d-none .d-sm-block .d-md-none')
 
     }
     if (!yetVisited) {
