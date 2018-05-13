@@ -99,7 +99,7 @@ function showError(error) {
 }
 
 $('#mobile-app-button').click(function(){
-    localStorage['visited'] = "yes";
+    localStorage['hasvisited'] = "yes";
     window.location.href='https://www.frendgrid.com/about';
 })
 
