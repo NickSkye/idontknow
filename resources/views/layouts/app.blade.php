@@ -87,7 +87,7 @@
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{--{{ config('app.name', 'idontknow') }}--}}
-                        <img src="/images/frendgrid.png" alt="FrendGrid" style="max-width: 100px;">
+                        <img src="/images/frendgriddark.png" alt="FrendGrid" style="max-width: 100px;">
                     </a>
                     @auth
                     @include('partials.friendsearch')
