@@ -176,6 +176,11 @@ a {
 
 .navbar-brand{
     margin-right: 0;
+
+    @media (max-width: 767px){
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .infinite-scroll{
