@@ -331,7 +331,15 @@ ul.tabs li.current {
 
 @media (max-width: 767px) {
   .hidden-on-small {
-    display: none;
+    display: none !important;
+  }
+}
+
+@media (min-width: 767px) {
+  .visible-on-small {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
   }
 }
 
