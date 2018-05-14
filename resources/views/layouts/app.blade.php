@@ -87,7 +87,7 @@
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{--{{ config('app.name', 'idontknow') }}--}}
-                        <img src="/images/frendgriddark.png" alt="FrendGrid" style="max-width: 45px;">
+                        <img src="/images/frendgriddarknoborder.png" alt="FrendGrid" style="max-width: 45px;">
 
                     </a>
                     @auth
