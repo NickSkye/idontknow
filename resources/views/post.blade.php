@@ -98,29 +98,28 @@
                                 <div>
 
 
-
-<div class="post-comment-header">
+                                    <div class="post-comment-header">
                                         <a href="/users/{{$comment->username}}">
                                             <div style=" background-image: url('{{$comment->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
                                             </div>
                                         </a>
 
+                                        <div class="post-col">
+                                            <a href="/users/{{$comment->username}}">
+                                                <p class="comment-username">{{$comment->username}} </p>
+                                            </a>
+                                            <p class="pull-right"> - {{$comment->created_at}}</p>
+                                            <br>
+                                            <p class="comment">{{$comment->comment}}</p>
 
-                                        <a href="/users/{{$comment->username}}">
-                                            <p class="comment-username">{{$comment->username}} </p>
-                                        </a>
-                                        <p class="pull-right"> - {{$comment->created_at}}</p>
-                                        <br>
-                                        <p class="comment">{{$comment->comment}}</p>
-
-
+                                        </div>
 
 
                                         <div class="" style="max-width: 100px; position: absolute; right: 10px;">
                                             <p class="pull-right"><a href="">report</a></p>
                                         </div>
 
-</div>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-12">

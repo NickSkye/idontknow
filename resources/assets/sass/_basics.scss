@@ -231,3 +231,13 @@ a {
         border: none;
     }
 }
+
+.comment-section{
+    .post-comment-header{
+        .post-col{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
