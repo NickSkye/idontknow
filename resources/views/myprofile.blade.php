@@ -41,7 +41,7 @@
 
                                        <h2>{{$generalinfo->name}}</h2>
                                     <h4>{{$generalinfo->username}}</h4>
-                                    <p>last activity: {{$generalinfo->updated_at}}</p>
+                                    <p>last active: {{Carbon\Carbon::parse($generalinfo->updated_at)->format('d M Y g:i A')}}</p>
                                     <div class="achievements-box">
 
 
