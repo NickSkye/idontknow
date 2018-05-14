@@ -25,7 +25,8 @@
                                             <p>{{$item->username}} is your friend</p>
                                             </div>
                                             <div class="col-xs-12 col-sm-6">
-                                                <p>last activity: {{$item->updated_at}}</p>
+
+                                                <p>last activity: {{Carbon\Carbon::parse($item->updated_at)->format('d M Y g:i A')}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
