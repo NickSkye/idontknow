@@ -48,15 +48,19 @@
 
                                             <div class="frend-post-box">
                                                 <div class="card">
-                                                    <div class="card-header">
+                                                    {{--<div class="card-header">--}}
 
-                                                                    <a href="/users/{{$friendspost->username}}">
-                                                                        <p>{{$friendspost->username}}</p>
-                                                                    </a>
+                                                                    {{----}}
 
 
-                                                    </div>
+                                                    {{--</div>--}}
                                                     <div class="card-body">
+                                                        <a href="/users/{{$friendspost->username}}">
+                                                            <img src="{{$friendspost->profileimage}}" class="img-fluid activity-image" alt="">
+                                                        </a>
+                                                        <a href="/users/{{$friendspost->username}}">
+                                                            <p>{{$friendspost->username}}</p>
+                                                        </a>
                                                         {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
                                                         <a href="/post/{{$friendspost->id}}">
                                                             <img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">
