@@ -110,8 +110,10 @@ $( document ).ready(function() {
     var hasVisited = localStorage['hasvisited'];
     if (!hasVisited){
         $('#mobile-app-button').addClass('d-none d-sm-block d-md-none')
+        $('#mobile-app-button').removeClass('d-none')
 
     }
+
     if (!yetVisited) {
         // open popup
         getLocation();
