@@ -21,7 +21,7 @@
 
                         <div class="row frend-area">
                                 @foreach($allfriendsinfo as $infos)
-                                            <a href="/users/{{$infos->followsusername}}" class="col-4" style="max-width: 31.333333%; background-image: url('{{$infos->profileimage}}'); padding-bottom: 31.33333333%; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; margin: 1%;">
+                                            <a href="/users/{{$infos->followsusername}}" class="col-4 home-frends-images" style="background-image: url('{{$infos->profileimage}}');">
                                                     <div class="frend-box">
                                                         <p>{{$infos->followsusername}}</p>
                                                     </div>
