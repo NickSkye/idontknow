@@ -13997,11 +13997,6 @@ $(document).ready(function () {
     }
 });
 
-$('p').linkify();
-$('#sidebar').linkify({
-    target: "_blank"
-});
-
 $(document).ready(function () {
 
     $('ul.tabs li').click(function () {
