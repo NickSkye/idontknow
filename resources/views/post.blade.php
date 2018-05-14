@@ -63,19 +63,29 @@
                                     </div>
 
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                        {{--HERE--}}
 
                                         <div class="frend-post-box">
+                                            <div class="activity-post-header">
+                                                <a href="/users/{{$post->username}}"><div style=" background-image: url('{{$post->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
+                                                    </div></a>
+                                                <a href="/users/{{$post->username}}">
+                                                    <p>{{$post->username}}</p>
+                                                    <p>shared at: {{$friendspost->created_at}}</p>
+                                                </a>
+                                            </div>
+                                            <p>{{$post->description}}</p>
                                             <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
                                             <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
                                             </button>
                                             <p class="post-data">views: {{$post->views}}</p>
-                                            <p>{{$post->description}}</p>
+
                                             {{--{{ $friend }}--}}
                                         </div>
 
                                     </div>
 
-                                    {{--THIS PAGE WILL BE AN INDIVIDUAL CLICKED ON POST WITH COMMENT SECTION AND VOTES--}}
+                                    {{--THIS PAGE WILL BE AN INDIVIDUAL CLICKED ON POST WITH COMMENT SECTION AND VOTES --}}
 
                             </div>
 

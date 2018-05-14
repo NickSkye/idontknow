@@ -82,7 +82,7 @@ class PagesController extends Controller
 
         //$allcommentersinfo = [];
 
-        $post = DB::table('posts')->where('id', $post_id)->where('deleted', false)->first();
+        $post = DB::table('posts')->join('profileinfo', 'posts.username', '=', 'profileinfo.username')->where('id', $post_id)->where('deleted', false)->first();
         DB::table('posts')->where('id', $post_id)->increment('views');
         $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
 
