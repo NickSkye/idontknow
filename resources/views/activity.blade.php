@@ -55,8 +55,8 @@
 
                                                     {{--</div>--}}
                                                     <div class="card-body">
-                                                        <a href="/users/{{$friendspost->username}}"  style=" background-image: url('{{$friendspost->profileimage}}'); padding-bottom: 50px; width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin: 1%;">
-                                                        </a>
+                                                        <a href="/users/{{$friendspost->username}}"><div style=" background-image: url('{{$friendspost->profileimage}}'); padding-bottom: 50px; width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin: 1%;">
+                                                            </div></a>
                                                         <a href="/users/{{$friendspost->username}}">
                                                             <p>{{$friendspost->username}}</p>
                                                         </a>
