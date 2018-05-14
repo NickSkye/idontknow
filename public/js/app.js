@@ -13914,9 +13914,9 @@ $("#file-input").change(function () {
 });
 
 //Tooltip
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-});
+// $(function () {
+//     $('[data-toggle="tooltip"]').tooltip()
+// })
 
 // $( document ).ready(function() {
 //     console.log( "ready!" );
@@ -13946,6 +13946,7 @@ function showPosition(position) {
     sessionStorage['latitude'] = position.coords.latitude;
     sessionStorage['longitude'] = position.coords.longitude;
     sessionStorage['visited'] = "yes";
+
     $('input[name=latitude]').val(position.coords.latitude);
     $('input[name=longitude]').val(position.coords.longitude);
     // document.getElementById('latitude').value = position.coords.latitude;
@@ -13973,9 +13974,18 @@ function showError(error) {
     }
 }
 
+$('#mobile-app-button').click(function () {
+    localStorage['hasvisited'] = "yes";
+    window.location.href = 'https://www.frendgrid.com/about';
+});
+
 $(document).ready(function () {
     console.log("You Found Me!");
     var yetVisited = sessionStorage['visited'];
+    var hasVisited = localStorage['hasvisited'];
+    if (!hasVisited) {
+        $('#mobile-app-button').addClass('d-none d-sm-block d-md-none');
+    }
     if (!yetVisited) {
         // open popup
         getLocation();
