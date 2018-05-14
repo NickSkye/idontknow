@@ -109,17 +109,19 @@
                                         <a href="/users/{{$comment->username}}">
                                             <p class="comment-username">{{$comment->username}}</p>
                                         </a>
+                                        <p class="pull-right"> - {{$comment->created_at}}</p>
+                                        <br>
                                         <p class="comment">{{$comment->comment}}</p>
 
 
-                                        <p class="pull-right">{{$comment->created_at}}</p>
+
 
                                         <div class="" style="max-width: 100px; position: absolute; right: 10px;">
                                             <p class="pull-right"><a href="">report</a></p>
                                         </div>
 
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="col-12">
 
