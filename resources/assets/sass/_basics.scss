@@ -234,6 +234,7 @@ a {
 
 .comment-section{
     .post-comment-header{
+        display: flex;
         .post-col{
             display: flex;
             flex-direction: column;

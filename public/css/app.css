@@ -237,6 +237,10 @@ a p {
   border: none;
 }
 
+.comment-section .post-comment-header {
+  display: flexl;
+}
+
 .comment-section .post-comment-header .post-col {
   display: -webkit-box;
   display: -ms-flexbox;
