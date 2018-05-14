@@ -109,7 +109,7 @@ $( document ).ready(function() {
     var yetVisited = sessionStorage['visited'];
     var hasVisited = localStorage['hasvisited'];
     if (!hasVisited){
-        $('#mobile-app-button').addClass('d-none d-sm-block d-md-none')
+        $('#mobile-app-button').addClass('d-block d-sm-block d-md-none')
         $('#mobile-app-button').removeClass('d-none')
 
     }
