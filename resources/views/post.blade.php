@@ -99,7 +99,7 @@
 
 
 
-
+<div class="post-comment-header">
                                         <a href="/users/{{$comment->username}}">
                                             <div style=" background-image: url('{{$comment->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
                                             </div>
@@ -120,7 +120,7 @@
                                             <p class="pull-right"><a href="">report</a></p>
                                         </div>
 
-                                   
+</div>
 
                                     <div class="row">
                                         <div class="col-12">
