@@ -320,7 +320,7 @@ ul.tabs li.current{
 
 .visible-on-small{
 
-    @media (min-width: 767px){
+    @media (min-width: 768px){
         display: none !important;
     }
 }
