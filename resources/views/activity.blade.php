@@ -60,7 +60,7 @@
                                                             </div></a>
                                                         <a href="/users/{{$friendspost->username}}">
                                                             <p>{{$friendspost->username}}</p>
-                                                            <p>{{$friendspost->created_at}}</p>
+                                                            <p>shared at: {{$friendspost->created_at}}</p>
                                                         </a>
                                                         </div>
                                                         {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
