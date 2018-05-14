@@ -222,13 +222,6 @@ a p {
   margin-right: 0;
 }
 
-@media (max-width: 767px) {
-  .navbar-brand {
-    width: 100%;
-    text-align: center;
-  }
-}
-
 .infinite-scroll .jscroll-inner {
   width: 100%;
 }
@@ -334,6 +327,12 @@ ul.tabs li.current {
 
 .tab-content.current {
   display: inherit;
+}
+
+@media (max-width: 767px) {
+  .hidden-on-small {
+    display: none;
+  }
 }
 
 .permafooter {

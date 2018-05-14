@@ -310,3 +310,10 @@ ul.tabs li.current{
 .tab-content.current{
     display: inherit;
 }
+
+.hidden-on-small{
+    
+    @media (max-width: 767px){
+        display: none;
+    }
+}
