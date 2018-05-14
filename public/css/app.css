@@ -13,6 +13,13 @@
   margin: 1%;
 }
 
+@media (max-width: 767px) {
+  .frend-area .search-image {
+    max-width: 100%;
+    padding-bottom: 100%;
+  }
+}
+
 .frend-area .frend-post-col .card {
   margin-bottom: 50px;
 }

@@ -13,6 +13,10 @@
         background-size: cover;
         background-repeat: no-repeat;
         margin: 1%;
+        @media (max-width: 767px){
+            max-width: 100%;
+            padding-bottom: 100%;
+        }
     }
 
     .frend-post-col {
