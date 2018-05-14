@@ -91,7 +91,7 @@
                     </div>
                     <div class="card-footer">
                         @foreach($real as $r)
-                            <div>{{$r->username}}</div>
+                            <div>{{$r->username}} - {{$r->followsusername}}</div>
                             @endforeach
                     </div>
                 </div>
