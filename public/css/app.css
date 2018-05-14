@@ -226,6 +226,17 @@ a p {
   border: none;
 }
 
+.post-post .post-post-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.post-post .card {
+  border: none;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
