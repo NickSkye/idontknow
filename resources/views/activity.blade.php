@@ -46,7 +46,7 @@
 
                                         <div class="col-12 frend-post-col">
 
-                                            <div class="frend-post-box">
+                                            <div class="frend-post-box activity-post">
                                                 <div class="card">
                                                     {{--<div class="card-header">--}}
 
@@ -66,7 +66,7 @@
                                                         <p>{{$friendspost->description}}</p>
                                                         <a href="/post/{{$friendspost->id}}">
                                                             <img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">
-                                                            
+
                                                             <p>view comments&nbsp;&gt;</p>
                                                         </a>
 
@@ -93,6 +93,8 @@
 
 
                                         </div>
+
+                                    <hr>
 
 
 

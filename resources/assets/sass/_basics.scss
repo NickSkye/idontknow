@@ -210,8 +210,13 @@ a {
         color: white;
     }
 }
+.activity-post{
+    .activity-post-header{
+        display: flex;
+        margin-bottom: 20px;
+    }
 
-.activity-post-header{
-    display: flex;
-    margin-bottom: 20px;
+    .card{
+        border: none;
+    }
 }
