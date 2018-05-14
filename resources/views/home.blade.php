@@ -53,9 +53,9 @@
                                 <div class="row frend-area">
 
                                     @foreach($allfollowersinfo as $followerinfos)
-                                        <a href="/users/{{$followerinfos->followsusername}}" class="col-4 home-frends-images" style="background-image: url('{{$infos->profileimage}}');">
+                                        <a href="/users/{{$followerinfos->username}}" class="col-4 home-frends-images" style="background-image: url('{{$infos->profileimage}}');">
                                             <div class="frend-box">
-                                                <p>{{$followerinfos->followsusername}}</p>
+                                                <p>{{$followerinfos->username}}</p>
                                             </div>
                                         </a>
                                     @endforeach
