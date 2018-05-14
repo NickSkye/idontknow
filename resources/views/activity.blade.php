@@ -82,7 +82,7 @@
 
                                                                     </div>
                                                                     <div class="col-3 " style="display: flex;">
-                                                                        <button type="submit" class="btn comment-button"><i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i></button>
+                                                                        <button type="submit" class="btn comment-button" style="height: 41px; align-self: flex-end;"><i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i></button>
                                                                     </div>
                                                                 </div>
                                                             </form>
