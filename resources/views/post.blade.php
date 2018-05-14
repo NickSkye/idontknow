@@ -74,7 +74,7 @@
                                             </a>
                                             <a href="/users/{{$post->username}}">
                                                 <p>{{$post->username}}</p>
-                                                <p>shared at: {{$post->created_at}}</p>
+                                                <p>shared: {{Carbon\Carbon::parse($post->created_at)->format('d M Y g:i A')}}</p>
                                             </a>
                                         </div>
                                         <p>{{$post->description}}</p>
