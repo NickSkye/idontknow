@@ -115,7 +115,7 @@
 
 
                                         <div class="" style="max-width: 100px; position: absolute; right: 10px;">
-                                            <p class="pull-right"><a href="">report</a></p>
+                                            <p class="pull-right"><a href="" style="color: red;">report</a></p>
                                         </div>
 
                                     </div>
