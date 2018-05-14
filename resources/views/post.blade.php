@@ -107,7 +107,7 @@
 
 
                                         <a href="/users/{{$comment->username}}">
-                                            <p class="comment-username">{{$comment->username}}</p>
+                                            <p class="comment-username">{{$comment->username}} </p>
                                         </a>
                                         <p class="pull-right"> - {{$comment->created_at}}</p>
                                         <br>
