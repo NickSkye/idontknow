@@ -71,7 +71,7 @@
                                                     </div></a>
                                                 <a href="/users/{{$post->username}}">
                                                     <p>{{$post->username}}</p>
-                                                    <p>shared at: {{$friendspost->created_at}}</p>
+                                                    <p>shared at: {{$post->created_at}}</p>
                                                 </a>
                                             </div>
                                             <p>{{$post->description}}</p>
