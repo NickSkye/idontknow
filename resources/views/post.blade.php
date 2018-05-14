@@ -65,8 +65,8 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                                         {{--HERE--}}
 
-                                        <div class="frend-post-box">
-                                            <div class="activity-post-header">
+                                        <div class="frend-post-box post-post">
+                                            <div class="post-post-header">
                                                 <a href="/users/{{$post->username}}"><div style=" background-image: url('{{$post->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
                                                     </div></a>
                                                 <a href="/users/{{$post->username}}">
