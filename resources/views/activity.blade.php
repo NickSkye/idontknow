@@ -30,7 +30,7 @@
                 <div class="card">
                     <div class="card-header">
 
-                        <h2>Frend Activity</h2>
+                        <h2>Recent Activity</h2>
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -41,9 +41,9 @@
                         <div>
 
                             <ul class="tabs">
-                                <li class="tab-link current" data-tab="tab-1">Frend Activity</li>
-                                <li class="tab-link" data-tab="tab-2">Following Activity</li>
-                                <li class="tab-link" data-tab="tab-3">Follower Activity</li>
+                                <li class="tab-link current" data-tab="tab-1">Frends</li>
+                                <li class="tab-link" data-tab="tab-2">Following</li>
+                                <li class="tab-link" data-tab="tab-3">Followers</li>
 
                             </ul>
 
