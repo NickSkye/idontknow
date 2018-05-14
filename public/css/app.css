@@ -25,15 +25,6 @@
   margin-bottom: 50px;
 }
 
-@media (min-width: 576px) {
-  .frend-area .col-4,
-  .frend-area .col-sm-12,
-  .frend-area .col-12,
-  .frend-area .col-sm-4 {
-    padding: 15px;
-  }
-}
-
 .frend-area .col-4 .frend-box,
 .frend-area .col-sm-12 .frend-box,
 .frend-area .col-12 .frend-box,
