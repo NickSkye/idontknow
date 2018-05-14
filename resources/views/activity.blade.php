@@ -55,9 +55,7 @@
 
                                                     {{--</div>--}}
                                                     <div class="card-body">
-                                                        <a href="/users/{{$friendspost->username}}">
-                                                            <img src="{{$friendspost->profileimage}}" class="img-fluid activity-image" alt="">
-                                                        </a>
+                                                        <a href="/users/{{$friendspost->username}}" class="col-4" style="max-width: 31.333333%; background-image: url('{{$friendspost->profileimage}}'); padding-bottom: 31.33333333%; width: 75px; height: 75px; background-size: cover; background-repeat: no-repeat; margin: 1%;">
                                                         <a href="/users/{{$friendspost->username}}">
                                                             <p>{{$friendspost->username}}</p>
                                                         </a>
