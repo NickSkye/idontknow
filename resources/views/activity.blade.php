@@ -40,9 +40,19 @@
                         @endif
                         <div>
 
-                            {{--friends posts--}}
-                            <div class="row frend-area infinite-scroll">
-                                @foreach($allfriendsinfo as $friendspost)
+                            <ul class="tabs">
+                                <li class="tab-link current" data-tab="tab-1">Frend Activity</li>
+                                <li class="tab-link" data-tab="tab-2">Following Activity</li>
+                                <li class="tab-link" data-tab="tab-3">Follower Activity</li>
+
+                            </ul>
+
+                            <div id="tab-1" class="tab-content current">
+
+                            </div>
+                            <div id="tab-2" class="tab-content">
+                                <div class="row frend-area infinite-scroll">
+                                    @foreach($allfriendsinfo as $friendspost)
 
                                         <div class="col-12 frend-post-col">
 
@@ -50,18 +60,18 @@
                                                 <div class="card">
                                                     {{--<div class="card-header">--}}
 
-                                                                    {{----}}
+                                                    {{----}}
 
 
                                                     {{--</div>--}}
                                                     <div class="card-body">
                                                         <div class="activity-post-header">
-                                                        <a href="/users/{{$friendspost->username}}"><div style=" background-image: url('{{$friendspost->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
-                                                            </div></a>
-                                                        <a href="/users/{{$friendspost->username}}">
-                                                            <p>{{$friendspost->username}}</p>
-                                                            <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($friendspost->created_at)->format('d M Y g:i A')}}</p>
-                                                        </a>
+                                                            <a href="/users/{{$friendspost->username}}"><div style=" background-image: url('{{$friendspost->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
+                                                                </div></a>
+                                                            <a href="/users/{{$friendspost->username}}">
+                                                                <p>{{$friendspost->username}}</p>
+                                                                <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($friendspost->created_at)->format('d M Y g:i A')}}</p>
+                                                            </a>
                                                         </div>
                                                         {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
                                                         <p>{{$friendspost->description}}</p>
@@ -97,13 +107,83 @@
 
                                         </div>
 
-                                    <hr>
+                                        <hr>
 
 
 
-                                @endforeach
+                                    @endforeach
                                     {{ $allfriendsinfo->links() }}
+                                </div>
                             </div>
+                            <div id="tab-3" class="tab-content">
+
+                            </div>
+
+
+                            {{--friends posts--}}
+                            {{--<div class="row frend-area infinite-scroll">--}}
+                                {{--@foreach($allfriendsinfo as $friendspost)--}}
+
+                                        {{--<div class="col-12 frend-post-col">--}}
+
+                                            {{--<div class="frend-post-box activity-post">--}}
+                                                {{--<div class="card">--}}
+                                                    {{--<div class="card-header">--}}
+
+                                                                    {{----}}
+
+
+                                                    {{--</div>--}}
+                                                    {{--<div class="card-body">--}}
+                                                        {{--<div class="activity-post-header">--}}
+                                                        {{--<a href="/users/{{$friendspost->username}}"><div style=" background-image: url('{{$friendspost->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">--}}
+                                                            {{--</div></a>--}}
+                                                        {{--<a href="/users/{{$friendspost->username}}">--}}
+                                                            {{--<p>{{$friendspost->username}}</p>--}}
+                                                            {{--<p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($friendspost->created_at)->format('d M Y g:i A')}}</p>--}}
+                                                        {{--</a>--}}
+                                                        {{--</div>--}}
+                                                        {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
+                                                        {{--<p>{{$friendspost->description}}</p>--}}
+                                                        {{--<a href="/post/{{$friendspost->id}}">--}}
+                                                            {{--<img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">--}}
+
+                                                            {{--<p>view comments&nbsp;&gt;</p>--}}
+                                                        {{--</a>--}}
+
+                                                    {{--</div>--}}
+                                                    {{--<div class="card-footer">--}}
+                                                        {{--<div>--}}
+                                                            {{--<form action="{{ url('comment') }}" method="POST">--}}
+                                                                {{--{{ csrf_field() }}--}}
+                                                                {{--<div class="row">--}}
+                                                                    {{--<div class="col-9">--}}
+                                                                        {{--{{ Form::hidden('post_id', $friendspost->id) }}--}}
+                                                                        {{--<input type="hidden" name="latitude" value=""/>--}}
+                                                                        {{--<input  type="hidden" name="longitude" value=""/>--}}
+                                                                        {{--<textarea rows="2" cols="40" placeholder="Comment on this post..." type="text" name="comment" style="width: 100%;"></textarea>--}}
+
+                                                                    {{--</div>--}}
+                                                                    {{--<div class="col-3 " style="display: flex;">--}}
+                                                                        {{--<button type="submit" class="btn comment-button" style="height: 41px; align-self: flex-end;"><i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i></button>--}}
+                                                                    {{--</div>--}}
+                                                                {{--</div>--}}
+                                                            {{--</form>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+
+
+                                        {{--</div>--}}
+
+                                    {{--<hr>--}}
+
+
+
+                                {{--@endforeach--}}
+                                    {{--{{ $allfriendsinfo->links() }}--}}
+                            {{--</div>--}}
 
                         </div>
 
