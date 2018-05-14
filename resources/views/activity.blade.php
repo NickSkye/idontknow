@@ -60,7 +60,7 @@
                                                             </div></a>
                                                         <a href="/users/{{$friendspost->username}}">
                                                             <p>{{$friendspost->username}}</p>
-                                                            <p>shared at: {{$friendspost->created_at}}</p>
+                                                            <p style="font-size: 10pt;">shared at: {{Carbon\Carbon::parse($friendspost->created_at)->format('d M Y g:i A')}}</p>
                                                         </a>
                                                         </div>
                                                         {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
