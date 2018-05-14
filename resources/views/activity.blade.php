@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                             <div id="tab-3" class="tab-content">
-                                <div class="row frend-area infinite-scroll">
+                                <div class="row frend-area infinite-scroll-two">
                                     @foreach($allfollowersinfo as $followerspost)
 
                                         <div class="col-12 frend-post-col">
