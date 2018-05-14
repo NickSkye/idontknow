@@ -55,11 +55,13 @@
 
                                                     {{--</div>--}}
                                                     <div class="card-body">
-                                                        <a href="/users/{{$friendspost->username}}"><div style=" background-image: url('{{$friendspost->profileimage}}'); padding-bottom: 50px; width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin: 1%;">
+                                                        <div class="activity-post-header">
+                                                        <a href="/users/{{$friendspost->username}}"><div style=" background-image: url('{{$friendspost->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat;">
                                                             </div></a>
                                                         <a href="/users/{{$friendspost->username}}">
                                                             <p>{{$friendspost->username}}</p>
                                                         </a>
+                                                        </div>
                                                         {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
                                                         <a href="/post/{{$friendspost->id}}">
                                                             <img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">

@@ -215,6 +215,12 @@ a p {
   color: white;
 }
 
+.activity-post-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
