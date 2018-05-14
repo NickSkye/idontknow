@@ -110,8 +110,9 @@
 
                                         <div class="frend-post-box">
                                             <a href="/post/{{$post->id}}">
-                                                <img src="{{$post->imagepath}}" class="img-fluid tiny-img" alt="">
                                                 <p>{{$post->description}}</p>
+                                                <img src="{{$post->imagepath}}" class="img-fluid tiny-img" alt="">
+
                                             </a>
                                             {{--{{ $friend }}--}}
                                             <hr>
