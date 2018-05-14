@@ -27,7 +27,10 @@
     }
 
     .col-4, .col-sm-12, .col-12, .col-sm-4 {
-        padding: 15px;
+        @media (min-width: 576px){
+            padding: 15px;
+        }
+
 
         .frend-box {
             background-color: white;
