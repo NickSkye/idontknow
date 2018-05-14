@@ -26,23 +26,23 @@
 }
 
 .frend-area .col-4,
-.frend-area col-sm-12,
-.frend-area col-12,
-.frend-area col-sm-4 {
+.frend-area .col-sm-12,
+.frend-area .col-12,
+.frend-area .col-sm-4 {
   padding: 15px;
 }
 
 .frend-area .col-4 .frend-box,
-.frend-area col-sm-12 .frend-box,
-.frend-area col-12 .frend-box,
-.frend-area col-sm-4 .frend-box {
+.frend-area .col-sm-12 .frend-box,
+.frend-area .col-12 .frend-box,
+.frend-area .col-sm-4 .frend-box {
   background-color: white;
 }
 
 .frend-area .col-4 .frend-box p,
-.frend-area col-sm-12 .frend-box p,
-.frend-area col-12 .frend-box p,
-.frend-area col-sm-4 .frend-box p {
+.frend-area .col-sm-12 .frend-box p,
+.frend-area .col-12 .frend-box p,
+.frend-area .col-sm-4 .frend-box p {
   position: absolute;
   bottom: -16px;
   left: 0;
@@ -55,16 +55,16 @@
 }
 
 .frend-area .col-4 .frend-box-name,
-.frend-area col-sm-12 .frend-box-name,
-.frend-area col-12 .frend-box-name,
-.frend-area col-sm-4 .frend-box-name {
+.frend-area .col-sm-12 .frend-box-name,
+.frend-area .col-12 .frend-box-name,
+.frend-area .col-sm-4 .frend-box-name {
   background-color: white;
 }
 
 .frend-area .col-4 .frend-box-name p,
-.frend-area col-sm-12 .frend-box-name p,
-.frend-area col-12 .frend-box-name p,
-.frend-area col-sm-4 .frend-box-name p {
+.frend-area .col-sm-12 .frend-box-name p,
+.frend-area .col-12 .frend-box-name p,
+.frend-area .col-sm-4 .frend-box-name p {
   position: absolute;
   top: 0px;
   left: 0;
@@ -77,24 +77,24 @@
 }
 
 .frend-area .col-4 .frend-post-box,
-.frend-area col-sm-12 .frend-post-box,
-.frend-area col-12 .frend-post-box,
-.frend-area col-sm-4 .frend-post-box {
+.frend-area .col-sm-12 .frend-post-box,
+.frend-area .col-12 .frend-post-box,
+.frend-area .col-sm-4 .frend-post-box {
   background-color: white;
 }
 
 .frend-area .col-4 .frend-post-box p,
-.frend-area col-sm-12 .frend-post-box p,
-.frend-area col-12 .frend-post-box p,
-.frend-area col-sm-4 .frend-post-box p {
+.frend-area .col-sm-12 .frend-post-box p,
+.frend-area .col-12 .frend-post-box p,
+.frend-area .col-sm-4 .frend-post-box p {
   color: black;
   font-size: 14pt;
 }
 
 .frend-area .col-4 .frend-post-box .post-data,
-.frend-area col-sm-12 .frend-post-box .post-data,
-.frend-area col-12 .frend-post-box .post-data,
-.frend-area col-sm-4 .frend-post-box .post-data {
+.frend-area .col-sm-12 .frend-post-box .post-data,
+.frend-area .col-12 .frend-post-box .post-data,
+.frend-area .col-sm-4 .frend-post-box .post-data {
   color: black;
   font-size: 10pt;
 }
