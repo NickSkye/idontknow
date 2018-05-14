@@ -3,6 +3,16 @@
   padding-right: 0 !important;
 }
 
+.frend-area .search-image {
+  max-width: 31.333333%;
+  padding-bottom: 31.33333333%;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 1%;
+}
+
 .frend-area .frend-post-col .card {
   margin-bottom: 50px;
 }
