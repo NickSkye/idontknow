@@ -14002,6 +14002,10 @@ $('#sidebar').linkify({
     target: "_blank"
 });
 
+$(function () {
+    $("#tabs").tabs();
+});
+
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {

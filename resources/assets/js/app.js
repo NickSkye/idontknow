@@ -130,3 +130,7 @@ $('p').linkify();
 $('#sidebar').linkify({
     target: "_blank"
 });
+
+$( function() {
+    $( "#tabs" ).tabs();
+} );
