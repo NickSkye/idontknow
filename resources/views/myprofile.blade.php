@@ -82,7 +82,7 @@
 
 
                                 @endforeach
-                                    {{--{{ $myposts->links() }}--}}
+                                    {{ $myposts->links() }}
                             </div>
 
                         </div>
