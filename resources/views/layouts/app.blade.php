@@ -76,7 +76,7 @@
     </head>
     <body>
         <div id="app">
-            <div id="mobile-app-button" class=".d-none mobile-app-div" >
+            <div id="mobile-app-button" class="d-none mobile-app-div" >
 
                     Download our Mobile App
 
