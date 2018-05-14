@@ -76,7 +76,7 @@
                                             {{--<p class="post-data">views: {{$post->views}}</p>--}}
                                         {{--</div>--}}
                                     {{--</a>--}}
-                                    <a href="/post/{{$post->id}}" class="col-4" style="max-width: 31.333333%; background-image: url('{{$post->imagepath}}'); padding-bottom: 31.33333333%; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; margin: 1%;"></a>
+                                    <a href="/post/{{$post->id}}" class="col-4 my-images" style="background-image: url('{{$post->imagepath}}'); "></a>
 
 
 
