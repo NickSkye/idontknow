@@ -101,7 +101,7 @@
                                                         {{--@include('partials.viewshout')--}}
                                                         <p>Your friend {{$mess->from_username}} shouted:</p>
                                                         <p>{{$mess->message}}</p>
-                                                        <p>at: {{$mess->created_at}}</p>
+                                                        <p>at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
@@ -122,7 +122,7 @@
                                                 <img src="{{$friend->profileimage}}" alt="" style="width: 200px;">
                                                 @endif
                                                 @endforeach
-                                            <p>Shout from {{$mess->from_username}} at: {{$mess->created_at}}</p>
+                                            <p>Shout from {{$mess->from_username}} at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
                                         </button>
 
 
