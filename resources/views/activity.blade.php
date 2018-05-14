@@ -79,6 +79,8 @@
                                                                 <div class="row">
                                                                     <div class="col-9">
                                                                         {{ Form::hidden('post_id', $friendspost->id) }}
+                                                                        <input type="hidden" name="latitude" value=""/>
+                                                                        <input  type="hidden" name="longitude" value=""/>
                                                                         <textarea rows="2" cols="40" placeholder="Comment on this post..." type="text" name="comment" style="width: 100%;"></textarea>
 
                                                                     </div>
