@@ -34,8 +34,14 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    public function getFriendsInfo(){
+    public function getFollowingsInfo(){
         $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+
+        return $friends_info_full;
+    }
+
+    public function getFollowersInfo(){
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.followsusername', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
 
         return $friends_info_full;
     }
@@ -65,13 +71,14 @@ class HomeController extends Controller
 
 
 
-
-        $allfriendsinfo = $this->getFriendsInfo();
+        //all people who you follows info
+        $allfriendsinfo = $this->getFollowingsInfo();
+        $allfollowersinfo = $this->getFollowersInfo();
 
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
-            return view('home', ['allfriendsinfo' => $allfriendsinfo, 'notifs'=> $notifs]);
+            return view('home', ['allfriendsinfo' => $allfriendsinfo, 'notifs'=> $notifs, 'allfollowersinfo' => $allfollowersinfo]);
         }
     }
