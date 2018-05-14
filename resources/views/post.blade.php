@@ -109,7 +109,6 @@
                                                 <p class="comment-username">{{$comment->username}} - {{$comment->created_at}}</p>
                                             </a>
 
-                                            <br>
                                             <p class="comment">{{$comment->comment}}</p>
 
                                         </div>

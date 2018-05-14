@@ -238,7 +238,9 @@ a p {
 }
 
 .comment-section .post-comment-header {
-  display: flexl;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .comment-section .post-comment-header .post-col {
