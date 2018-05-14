@@ -21,13 +21,11 @@
                                     {{--an array of users that you follow--}}
                                     @if($arefriends)
                                         <div class="row">
-                                            <div class="col-xs-12 col-sm-6">
+                                            <div class="col-xs-12">
                                             <p>{{$item->username}} is your friend</p>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-6">
-
                                                 <p>last activity: {{Carbon\Carbon::parse($item->updated_at)->format('d M Y g:i A')}}</p>
                                             </div>
+
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
