@@ -115,6 +115,7 @@
 
                                             </a>
                                             {{--{{ $friend }}--}}
+                                            @include('partials.commentfield')
                                             <hr>
                                         </div>
 
