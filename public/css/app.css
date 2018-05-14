@@ -337,9 +337,7 @@ ul.tabs li.current {
 
 @media (min-width: 767px) {
   .visible-on-small {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
+    display: none !important;
   }
 }
 
