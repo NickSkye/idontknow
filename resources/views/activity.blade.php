@@ -56,7 +56,7 @@
                                                     {{--</div>--}}
                                                     <div class="card-body">
                                                         <div class="activity-post-header">
-                                                        <a href="/users/{{$friendspost->username}}"><div style=" background-image: url('{{$friendspost->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat;">
+                                                        <a href="/users/{{$friendspost->username}}"><div style=" background-image: url('{{$friendspost->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
                                                             </div></a>
                                                         <a href="/users/{{$friendspost->username}}">
                                                             <p>{{$friendspost->username}}</p>
