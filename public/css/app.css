@@ -317,6 +317,7 @@ ul.tabs {
   margin: 0px;
   padding: 0px;
   list-style: none;
+  text-align: center;
 }
 
 ul.tabs li {
@@ -328,14 +329,11 @@ ul.tabs li {
 }
 
 ul.tabs li.current {
-  background: #ededed;
-  color: #222;
+  color: #F62E55;
 }
 
 .tab-content {
   display: none;
-  background: #ededed;
-  padding: 15px;
 }
 
 .tab-content.current {

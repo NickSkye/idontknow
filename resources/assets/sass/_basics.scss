@@ -300,14 +300,13 @@ ul.tabs li{
 }
 
 ul.tabs li.current{
-    background: #ededed;
-    color: #222;
+
+    color: $accent-color;
 }
 
 .tab-content{
     display: none;
-    background: #ededed;
-    padding: 15px;
+
 }
 
 .tab-content.current{

@@ -19,9 +19,9 @@
                         @endif
 
                             <ul class="tabs">
-                                <li class="tab-link current" data-tab="tab-1">Tab One</li>
-                                <li class="tab-link" data-tab="tab-2">Tab Two</li>
-                                <li class="tab-link" data-tab="tab-3">Tab Three</li>
+                                <li class="tab-link current" data-tab="tab-1">FrendGrid</li>
+                                <li class="tab-link" data-tab="tab-2">FollowerGrid</li>
+                                <li class="tab-link" data-tab="tab-3">FollowGrid</li>
 
                             </ul>
 
