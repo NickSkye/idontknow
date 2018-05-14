@@ -90,7 +90,9 @@
 
                     </div>
                     <div class="card-footer">
-                        <div>UPLOAD IMAGE BUTTON HERE</div>
+                        @foreach($real as $r)
+                            <div>{{$r->username}}</div>
+                            @endforeach
                     </div>
                 </div>
             </div>

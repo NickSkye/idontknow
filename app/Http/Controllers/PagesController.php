@@ -16,6 +16,18 @@ class PagesController extends Controller
         return $my_info_full;
     }
 
+//gets all people who follow eachother
+    public function getFrends(){
+        $frends = DB::table('follows as f1')
+            ->join('follows as f2','f1.username', '=', 'f2.followsusername')
+            ->where('f1.username', Auth::user()->username)->where('f2.username', 'f1.username')
+            ->distinct()
+            ->get();
+
+        return $frends;
+    }
+
+
 
     public function settings()
     {
@@ -38,13 +50,16 @@ class PagesController extends Controller
 //        $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
 //        $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
         $myposts = DB::table('posts')->where('username', Auth::user()->username)->where('deleted', false)->orderBy('created_at', 'desc')->get();
+        //gets people you follow
         $myfriends = DB::table('follows')->where('username', Auth::user()->username)->orderBy('updated_at', 'desc')->get();
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
 
-        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs]);
+        $real = $this->getFrends();
+
+        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs, 'real' => $real]);
 
 
     }
