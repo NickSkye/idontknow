@@ -63,9 +63,10 @@
                                                         </a>
                                                         </div>
                                                         {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
+                                                        <p>{{$friendspost->description}}</p>
                                                         <a href="/post/{{$friendspost->id}}">
                                                             <img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">
-                                                            <p>{{$friendspost->description}}</p>
+                                                            
                                                             <p>view comments&nbsp;&gt;</p>
                                                         </a>
 
