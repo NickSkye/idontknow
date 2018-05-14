@@ -106,9 +106,9 @@
 
                                         <div class="post-col">
                                             <a href="/users/{{$comment->username}}">
-                                                <p class="comment-username">{{$comment->username}} </p>
+                                                <p class="comment-username">{{$comment->username}} - {{$comment->created_at}}</p>
                                             </a>
-                                            <p class="pull-right"> - {{$comment->created_at}}</p>
+                                            
                                             <br>
                                             <p class="comment">{{$comment->comment}}</p>
 
