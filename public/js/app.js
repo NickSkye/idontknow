@@ -13997,6 +13997,11 @@ $(document).ready(function () {
     }
 });
 
+$('p').linkify();
+$('#sidebar').linkify({
+    target: "_blank"
+});
+
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {

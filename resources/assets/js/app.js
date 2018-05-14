@@ -125,3 +125,8 @@ $( document ).ready(function() {
     }
 
 });
+
+$('p').linkify();
+$('#sidebar').linkify({
+    target: "_blank"
+});
