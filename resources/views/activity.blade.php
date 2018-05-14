@@ -78,7 +78,7 @@
                                                                 <div class="row">
                                                                     <div class="col-9">
                                                                         {{ Form::hidden('post_id', $friendspost->id) }}
-                                                                        <textarea rows="3" cols="40" placeholder="Comment on this post..." type="text" name="comment" style="width: 100%;"></textarea>
+                                                                        <textarea rows="2" cols="40" placeholder="Comment on this post..." type="text" name="comment" style="width: 100%;"></textarea>
 
                                                                     </div>
                                                                     <div class="col-3 " style="display: flex;">
