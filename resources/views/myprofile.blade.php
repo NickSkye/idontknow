@@ -68,7 +68,7 @@
                         <div>
 
                             {{--my posts--}}
-                            <div class="row frend-area">
+                            <div class="row frend-area infinite-scroll">
                                 @foreach($myposts as $post)
                                     {{--<a href="/post/{{$post->id}}">--}}
                                         {{--<div class="frend-post-box">--}}
@@ -82,6 +82,7 @@
 
 
                                 @endforeach
+                                    {{ $myposts->links() }}
                             </div>
 
                         </div>
