@@ -18,11 +18,7 @@ class PagesController extends Controller
 
 //gets all people who follow eachother
     public function getFrends(){
-        $frends = DB::table('follows as f1')
-            ->join('follows as f2','f1.username', '=', 'f2.followsusername')
-            ->where('f1.username', Auth::user()->username)->where('f2.username', 'f1.username')
-            ->distinct()
-            ->get();
+        $frends = DB::table('follows as f1')->join('follows as f2','f1.username', '=', 'f2.followsusername')->where('f1.username', Auth::user()->username)->get();
 
         return $frends;
     }
