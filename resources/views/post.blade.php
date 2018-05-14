@@ -97,7 +97,7 @@
                             @foreach($thecomments as $comment)
                                 <div>
 
-                                    <div class="row">
+
 
 
                                         <a href="/users/{{$comment->username}}">
@@ -120,7 +120,7 @@
                                             <p class="pull-right"><a href="">report</a></p>
                                         </div>
 
-                                    </div>
+                                   
 
                                     <div class="row">
                                         <div class="col-12">
