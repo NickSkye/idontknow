@@ -60,7 +60,7 @@ class PagesController extends Controller
 
     }
 
-    public function getFriendsInfoWithPosts(){
+    public function getFollowingInfoWithPosts(){
 
 //        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
 
@@ -69,11 +69,21 @@ class PagesController extends Controller
         return $friends_info_full;
     }
 
+    public function getFollowersInfoWithPosts(){
+
+//        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
+
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.username', '=', 'profileinfo.username')->join('users', 'follows.username', '=', 'users.username')->join('posts', 'follows.username', '=', 'posts.username')->where('follows.followsusername', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->paginate(10); //'posts.updated_at'
+
+        return $friends_info_full;
+    }
+
     public function activity()
     {
 
 //        TEST
-        $allfriendsinfo = $this->getFriendsInfoWithPosts();
+        $allfriendsinfo = $this->getFollowingInfoWithPosts();
+        $allfollowersinfo = $this->getFollowersInfoWithPosts();
 //        $allfriendsposts = [];
 
         $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
@@ -83,7 +93,7 @@ class PagesController extends Controller
             ['seen', false],
         ])->get();
 
-        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs]);
+        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo]);
 
 
     }
