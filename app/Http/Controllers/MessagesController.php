@@ -51,7 +51,7 @@ class MessagesController extends Controller
     public function shout(Request $request)
     {
 
-        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
+        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->orderBy('created_at', 'desc')->get();
         $friends = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 
         DB::table('messages')->insert(
