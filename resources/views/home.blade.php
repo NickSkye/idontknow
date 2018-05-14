@@ -38,6 +38,7 @@
                             </div>
                             <div id="tab-2" class="tab-content">
                                 <div class="row frend-area">
+                                    test
                                     @foreach($allfriendsinfo as $infos)
                                         <a href="/users/{{$infos->followsusername}}" class="col-4 home-frends-images" style="background-image: url('{{$infos->profileimage}}');">
                                             <div class="frend-box">
@@ -49,6 +50,7 @@
                             </div>
                             <div id="tab-3" class="tab-content">
                                 <div class="row frend-area">
+                                    test3
                                     @foreach($allfriendsinfo as $infos)
                                         <a href="/users/{{$infos->followsusername}}" class="col-4 home-frends-images" style="background-image: url('{{$infos->profileimage}}');">
                                             <div class="frend-box">
