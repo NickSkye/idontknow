@@ -41,7 +41,7 @@
                             {{--friends posts--}}
                             <div class="row frend-area">
                                 @foreach($notifs as $notif)
-                                    <div col-12>
+                                    <div class="col-12">
                                         {!! $notif->notification !!}
                                     </div>
                                 @endforeach
