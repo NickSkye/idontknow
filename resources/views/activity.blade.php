@@ -206,12 +206,31 @@
                                                         </a>
                                                         </div>
                                                         {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
-                                                        <p>{{$friendspost->description}}</p>
-                                                        <a href="/post/{{$friendspost->id}}">
-                                                            <img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">
 
-                                                            <p>view comments&nbsp;&gt;</p>
-                                                        </a>
+
+                                                        @if (is_null($friendspost->imagepath))
+                                                            <a href="/post/{{$friendspost->id}}">
+                                                            <div class='square-box'>
+                                                                <div class='square-content'>
+                                                                    <div>
+                                                                        <span>{{$friendspost->description}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </a>
+                                                        @else
+                                                            <p>{{$friendspost->description}}</p>
+                                                            <a href="/post/{{$friendspost->id}}">
+                                                                <img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">
+
+                                                                <p>view comments&nbsp;&gt;</p>
+                                                            </a>
+
+                                                        @endif
+
+
+
+
 
                                                     </div>
                                                     <div class="card-footer">
