@@ -53,5 +53,4 @@ Route::post('s3-image-upload-profilepic','S3ImageController@imageUploadProfilePi
 
 
 //TEST
-Route::get('select2-autocomplete', 'SearchController@layout');
-Route::get('select2-autocomplete-ajax', 'SearchController@dataAjax');
+Route::get('search/autocomplete', 'SearchController@autocomplete');

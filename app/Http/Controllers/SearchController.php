@@ -40,25 +40,23 @@ class SearchController extends Controller {
         return redirect('/')->with('status', 'invite sent');
     }
 
+    public function autocomplete(){
+        $term = Input::get('term');
 
-    public function dataAjax(Request $request)
-    {
-        $data = [];
+        $results = array();
 
+        $queries = DB::table('users')
+            ->where('name', 'LIKE', '%'.$term.'%')
+            ->orWhere('username', 'LIKE', '%'.$term.'%')
+            ->take(5)->get();
 
-        if($request->has('q')){
-            $search = $request->q;
-            $data = DB::table("users")
-                ->select("name","usernamename")
-                ->where('verified', true)
-                ->where('account_active', true)
-                ->where('name','LIKE',"%$search%")
-                ->get();
+        foreach ($queries as $query)
+        {
+            $results[] = [ 'id' => $query->id, 'value' => $query->first_name.' '.$query->last_name ];
         }
-
-
-        return response()->json($data);
+        return Response::json($results);
     }
+
 
 
 

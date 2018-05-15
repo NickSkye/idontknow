@@ -138,4 +138,16 @@ $(document).ready(function(){
         $("#"+tab_id).addClass('current');
     })
 
-})
+});
+
+//Javascript
+$(function()
+{
+    $( "#q" ).autocomplete({
+        source: "search/autocomplete",
+        minLength: 3,
+        select: function(event, ui) {
+            $('#q').val(ui.item.value);
+        }
+    });
+});

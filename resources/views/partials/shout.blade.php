@@ -1,38 +1,15 @@
 {{--start trial upload--}}
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-<script type="text/javascript">
 
-
-$('.itemName').select2({
-    placeholder: 'Select an item',
-    ajax: {
-        url: '/select2-autocomplete-ajax',
-        dataType: 'json',
-        delay: 250,
-        processResults: function (data) {
-            return {
-                results:  $.map(data, function (item) {
-                    return {
-                        text: item.name,
-                        id: item.id
-                    }
-                })
-            };
-        },
-        cache: true
-    }
-});
-
-
-</script>
 <div class="container">
     <div class="panel panel-primary">
 
 
 
         <div class="panel-body">
-
+            {{ Form::open(['action' => ['SearchController@searchUser'], 'method' => 'GET']) }}
+            {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Enter name'])}}
+            {{ Form::submit('Search', array('class' => 'button expand')) }}
+            {{ Form::close() }}
 
 
 
@@ -43,7 +20,7 @@ $('.itemName').select2({
                     <input type="hidden" name="latitude" value=""/>
                     <input  type="hidden" name="longitude" value=""/>
                     <div class="col-12">
-                        <select class="itemName form-control" style="width:500px;" name="sendtousername"></select>
+
                         {{--<select name="sendtousername">--}}
                             {{--@foreach($friends as $friend)--}}
                             {{--<option value="{{$friend->followsusername}}">{{$friend->followsusername}}</option>--}}
