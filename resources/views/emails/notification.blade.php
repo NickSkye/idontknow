@@ -5,9 +5,9 @@
     </head>
 
     <body>
-        <h2>You have a new notification</h2>
+        <h2>You have a new notification from {{ Auth::user()->name }}</h2>
         <br/>
-        <a href="https://frendgrid.com/">Click here and then check your notifications</a>
+        <a href="https://frendgrid.com/notification">Click here and then check your notifications</a>
         <br/>
 
     </body>
