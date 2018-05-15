@@ -42,8 +42,12 @@
                                 <h2>{{$generalinfo->name}}</h2>
                                 <h4>{{$generalinfo->username}}</h4>
                                 <p>last active: {{Carbon\Carbon::parse($generalinfo->updated_at)->format('d M Y g:i A')}}</p>
-                                <div class="achievements-box">
-
+                                <div class="achievements-box row">
+                                    <div class="col-2 col-sm-1">
+                                        @if($generalinfo->birthday->isToday())
+                                            <img src="/images/birthday_gif.gif" alt="" style="width: 50px; height: 50px;">
+                                            @endif
+                                    </div>
 
                                 </div>
 
