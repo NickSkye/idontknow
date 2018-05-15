@@ -50,3 +50,8 @@ Route::post('/comment', 'CommentsController@addcomment')->middleware('auth');
 
 Route::post('s3-image-upload','S3ImageController@imageUploadPost')->middleware('auth');
 Route::post('s3-image-upload-profilepic','S3ImageController@imageUploadProfilePic')->middleware('auth');
+
+
+//TEST
+Route::get('select2-autocomplete', 'SearchController@layout');
+Route::get('select2-autocomplete-ajax', 'SearchController@dataAjax');
