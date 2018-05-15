@@ -106,28 +106,34 @@
         </div>
         @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home') or Request::is('settings'))
         <div class="header-button">
-            <a class="header-notification-button" href="{{ url('/') }}">
+
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 @if(!$notifs->isEmpty())
+                <a class="header-notification-button" href="{{ url('/') }}">
                     <a id="navbarDropdown" class="nav-link " href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
 
                     </a>
+                </a>
                 @else
+                <a class="header-notification-button" href="{{ url('/') }}">
                     <a id="navbarDropdown" class="nav-link" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
                     </a>
+            </a>
                 @endif
 
-                    @else
+                @else
+                <a class="header-notification-button" href="{{ url('/') }}">
                         <a id="navbarDropdown" class="nav-link " href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
                         </a>
+                </a>
                 @endif
 
-            </a>
+
         </div>
 
         <div class="header-button">
