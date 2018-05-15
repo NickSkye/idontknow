@@ -104,7 +104,7 @@
                 <i class="fa fa-search fa-2x" aria-hidden="true"></i>
             </a>
         </div>
-
+        @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home'))
         <div class="header-button">
             <a class="header-notification-button" href="{{ url('/') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
@@ -122,7 +122,7 @@
 
             </a>
         </div>
-
+@endif
         <div class="header-button">
             <a class="header-settings-button" href="{{ url('/settings') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
