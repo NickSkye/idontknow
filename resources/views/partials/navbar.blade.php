@@ -111,14 +111,14 @@
                 @if(!$notifs->isEmpty())
                 <div class="header-button">
 
-                    <a class="header-notification-button" href="/notifications">
+                    <a class="header-notification-button" href="/notification">
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
 
                 </a>
                 </div>
                 @else
                 <div class="header-button">
-                <a class="header-notification-button" href="/notifications">
+                <a class="header-notification-button" href="/notification">
 
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
@@ -129,7 +129,7 @@
 
                 @else
             <div class="header-button">
-                <a class="header-notification-button" href="/notifications">
+                <a class="header-notification-button" href="/notification">
 
                             <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
