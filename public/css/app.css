@@ -335,7 +335,7 @@ ul.tabs li.current {
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .visible-on-small {
     display: none !important;
   }
