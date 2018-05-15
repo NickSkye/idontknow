@@ -102,7 +102,7 @@
 
             @include('partials.navbar')
 
-            <div class="collapse" id="collapseExample">
+            <div class="collapse visible-on-small" id="collapseExample" >
                 <div class="card card-body">
                     @include('partials.friendsearch')
                 </div>
