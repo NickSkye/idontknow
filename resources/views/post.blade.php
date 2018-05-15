@@ -83,9 +83,11 @@
                                         @if (is_null($post->imagepath))
                                             <p>{{$post->description}}</p>
                                         @else
+                                            <div class="col-lg-6">
                                             <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
                                                 <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
                                             </button>
+                                            </div>
 
                                         @endif
 
