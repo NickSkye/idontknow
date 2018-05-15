@@ -109,19 +109,19 @@
             <a class="header-notification-button" href="{{ url('/') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 @if(!$notifs->isEmpty())
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link " href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
 
                     </a>
                 @else
-                    <a id="navbarDropdown" class="nav-link" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
                     </a>
                 @endif
 
                     @else
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link " href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
                         </a>
