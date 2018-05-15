@@ -91,7 +91,7 @@
 
 
         <div class="header-button">
-            <a class="navbar-brand logo-button" href="{{ url('/') }}">
+            <a class=" logo-button" href="{{ url('/') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 <img src="/images/frendgriddark.png" alt="FrendGrid" style="max-width: 45px;">
 
@@ -152,7 +152,7 @@
 
 
 
-    
+
 
 </nav>
 
