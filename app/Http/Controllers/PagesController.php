@@ -160,10 +160,7 @@ class PagesController extends Controller
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
-//        DB::table('notifications')->where('id', $id)->update(
-//            ['seen' => true, 'updated_at' => date('Y-m-d H:i:s')]
-//        );
-        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
 
         return view('notifications', ['notifs'=> $notifs]);
     }
