@@ -113,14 +113,14 @@
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
 
                     </a>
-                @else
+                @elseif
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
                     </a>
                 @endif
 
-                    @else
+                    @elseif
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
@@ -129,7 +129,7 @@
 
             </a>
         </div>
-@endif
+@endauth
         <div class="header-button">
             <a class="header-settings-button" href="{{ url('/settings') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
