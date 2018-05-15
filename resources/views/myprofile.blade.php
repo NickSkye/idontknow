@@ -75,15 +75,13 @@
                                     {{--</a>--}}
                                     @if (is_null($post->imagepath))
 
-                                        <div class='square-box'>
+                                        <a href="/post/{{$post->id}}" class='square-box'>
                                             <div class='square-content'>
                                                 <div>
-                                                    <a href="/post/{{$post->id}}">
                                                     <span>{{$post->description}}</span>
-                                                    </a>
                                                 </div>
                                             </div>
-                                        </div>
+                                        
                                         </a>
                                     @else
                                         <a href="/post/{{$post->id}}" class="col-4 my-images" style="background-image: url('{{$post->imagepath}}'); "></a>
