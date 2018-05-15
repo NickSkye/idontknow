@@ -82,7 +82,10 @@
 
                                 <h2>{{$item->name}}</h2>
                                 <h4>{{$item->username}}</h4>
-
+                                
+                                <h4>Followers: {{$numfollowers}}</h4>
+                                <h4>Following: {{$numfollowing}}</h4>
+                                <h4>Posts: {{$numposts}}</h4>
                                 <div class="achievements-box">
 
 

@@ -34,18 +34,27 @@ class FriendController extends Controller
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         $friendsposts = DB::table('posts')->where('username', $username)->where('deleted', false)->orderBy('created_at', 'desc')->get();
+
+        //User follow and post meta data
+        $numfollowers = DB::table('follows')->where('followsusername', $username)->count();
+        $numposts = DB::table('posts')->where('username', $username)->where('deleted', false)->count();
+        $numfollowing = DB::table('follows')->where('username', $username)->count();
         //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
         foreach($info as $item) {
             foreach ($friends as $friend) {
                 if ($item->username === $friend->followsusername) {
                     $arefriends = true;
 
-                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts]);
+                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing]);
                 }
 
             }
         }
-        return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts]);
+
+
+
+
+        return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing]);
 
 
     }

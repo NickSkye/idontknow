@@ -56,7 +56,7 @@ class PagesController extends Controller
 
         $real = $this->getFrends();
 
-
+        //User follow and post meta data
         $numfollowers = DB::table('follows')->where('followsusername', Auth::user()->username)->count();
         $numposts = DB::table('posts')->where('username', Auth::user()->username)->where('deleted', false)->count();
         $numfollowing = DB::table('follows')->where('username', Auth::user()->username)->count();
