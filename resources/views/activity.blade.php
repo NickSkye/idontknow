@@ -190,12 +190,12 @@
 
                                             <div class="frend-post-box activity-post">
                                                 <div class="card">
-                                                    <div class="card-header">
+                                                    {{--<div class="card-header">--}}
 
 
 
 
-                                                    </div>
+                                                    {{--</div>--}}
                                                     <div class="card-body">
                                                         <div class="activity-post-header">
                                                         <a href="/users/{{$friendspost->username}}"><div style=" background-image: url('{{$friendspost->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
