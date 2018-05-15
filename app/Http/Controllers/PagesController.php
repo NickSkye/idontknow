@@ -137,7 +137,7 @@ class PagesController extends Controller
     {
 
 
-        $notifs = DB::table('notifications')->where('id', $id)->orderBy('created_at', 'desc')->get();
+        $notifs = DB::table('notifications')->where('id', $id)->orderBy('created_at', 'asc')->get();
 
 
         DB::table('notifications')->where('id', $id)->update(
