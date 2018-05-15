@@ -42,6 +42,6 @@ class CommentsController extends Controller
 //        }
 //        $profinfos = DB::table('profileinfo')->where('id', $post_id)->get();
 
-return view('post', ['post'=> $post, 'thecomments' => $thecomments]);
+
 
 }
