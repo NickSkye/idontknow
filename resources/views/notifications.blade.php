@@ -29,6 +29,9 @@
                     <div class="card-header">
 
                         <h2>Notifications</h2>
+                        <a class="" href="/clear-notifications" style="float: right;">
+                            Clear all notifications
+                        </a>
                     </div>
                     <div class="card-body">
                         @if (session('status'))

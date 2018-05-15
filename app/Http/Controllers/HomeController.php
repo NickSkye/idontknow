@@ -46,6 +46,13 @@ class HomeController extends Controller
         return $friends_info_full;
     }
 
+    public function getFrendsInfo(){
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.username', '=', 'profileinfo.username')->join('users', 'follows.username', '=', 'users.username')->where('follows.followsusername', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+
+        return $friends_info_full;
+    }
+
+
     /**
      * Show the application dashboard.
      *

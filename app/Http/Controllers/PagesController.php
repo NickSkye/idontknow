@@ -36,10 +36,7 @@ class PagesController extends Controller
             ['seen', false],
         ])->get();
         return view('settings', ['profileinfo' => $profileinfo, 'notifs' => $notifs]);
-//        }
-//        else{
-//            return view('auth.login');
-//        }
+
 
     }
 
