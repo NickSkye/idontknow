@@ -105,32 +105,38 @@
             </a>
         </div>
         @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home') or Request::is('settings'))
-        <div class="header-button">
+
 
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 @if(!$notifs->isEmpty())
+                <div class="header-button">
                 <a class="header-notification-button" href="{{ url('/') }}">
                     <a id="navbarDropdown" class="nav-link " href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
 
                     </a>
                 </a>
+                </div>
                 @else
+                <div class="header-button">
                 <a class="header-notification-button" href="{{ url('/') }}">
                     <a id="navbarDropdown" class="nav-link" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
                     </a>
             </a>
+                </div>
                 @endif
 
                 @else
+            <div class="header-button">
                 <a class="header-notification-button" href="{{ url('/') }}">
                         <a id="navbarDropdown" class="nav-link " href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
                         </a>
                 </a>
+            </div>
                 @endif
 
 
