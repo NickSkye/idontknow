@@ -113,14 +113,14 @@
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
 
                     </a>
-                @elseif
+                @else
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
                     </a>
                 @endif
 
-                    @elseif
+                    @else
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
