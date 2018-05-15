@@ -29,6 +29,6 @@ class Signup extends Mailable
      */
     public function build()
     {
-        return $this->subject('FrendGrid Signup')->view('emails.signup');
+        return $this->subject('FrendGrid Signup')->view('emails.signup')->with('user', $this->user);
     }
 }
