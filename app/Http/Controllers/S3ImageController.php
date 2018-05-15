@@ -26,21 +26,43 @@ class S3ImageController extends Controller
         }
 
 
+        if ($request->hasFile('image')) {
+            $imageName = time().'.'.$request->image->getClientOriginalExtension();
+            $image = $request->file('image');
+            $t = Storage::disk('s3')->put("profilepics/".$imageName, file_get_contents($image), 'public');
+            $imageName = Storage::disk('s3')->url("profilepics/".$imageName);
+            if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
+                DB::table('profileinfo')->where('username', '=', Auth::user()->username)->update(
+                    ['profileimage' => $imageName, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday,'updated_at' => date('Y-m-d H:i:s')]
+                );
+            }else{
+                DB::table('profileinfo')->insert(
+                    ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday, 'created_at' => date('Y-m-d H:i:s')]
+                );
+            }
+        } else{
+            if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
+                DB::table('profileinfo')->where('username', '=', Auth::user()->username)->update(
+                    ['aboutme' => $request->aboutme, 'birthday' => $request->birthday,'updated_at' => date('Y-m-d H:i:s')]
+                );
+            }else{
+                DB::table('profileinfo')->insert(
+                    ['username' => Auth::user()->username, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday, 'created_at' => date('Y-m-d H:i:s')]
+                );
+            }
 
-        $imageName = time().'.'.$request->image->getClientOriginalExtension();
-        $image = $request->file('image');
-        $t = Storage::disk('s3')->put("profilepics/".$imageName, file_get_contents($image), 'public');
-        $imageName = Storage::disk('s3')->url("profilepics/".$imageName);
-
-        if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
-            DB::table('profileinfo')->where('username', '=', Auth::user()->username)->update(
-                ['profileimage' => $imageName, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday,'updated_at' => date('Y-m-d H:i:s')]
-            );
-        }else{
-            DB::table('profileinfo')->insert(
-                ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday, 'created_at' => date('Y-m-d H:i:s')]
-            );
         }
+
+
+//        if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
+//            DB::table('profileinfo')->where('username', '=', Auth::user()->username)->update(
+//                ['profileimage' => $imageName, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday,'updated_at' => date('Y-m-d H:i:s')]
+//            );
+//        }else{
+//            DB::table('profileinfo')->insert(
+//                ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday, 'created_at' => date('Y-m-d H:i:s')]
+//            );
+//        }
 
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'phonenumber'=> $request->phone, 'updated_at' => date('Y-m-d H:i:s')]);
 

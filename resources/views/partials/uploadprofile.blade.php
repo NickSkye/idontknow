@@ -63,12 +63,12 @@
 
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
-                                <input type="text" class="form-control book-form" id="phone" name="phone" value="{{ old('phone') }}" required>
+                                <input type="text" class="form-control book-form" id="phone" name="phone" value="{{ $profileinfo->phonenumber }}">
                             </div>
 
                             <label for="datepicker">Select Date</label>
                             <div class="input-group date">
-                                <input type="date" class="form-control book-form" id="datepicker" name="birthday" value="{{ old('birthday') }}" />
+                                <input type="date" class="form-control book-form" id="datepicker" name="birthday" value="{{ $profileinfo->birthday }}" />
                                 <div class="input-group-addon">
                                     <span class="glyphicon glyphicon-th"></span>
                                 </div>
@@ -76,7 +76,7 @@
 
                     </div>
                     {{--@endforeach--}}
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="margin-top: 50px;">
                         <button type="submit" class="btn upload-button">Save Changes</button>
                     </div>
                 </div>
