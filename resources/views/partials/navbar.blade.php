@@ -88,7 +88,7 @@
 {{--MOBILE NAV--}}
 @auth
 <nav class="navbar mobile-navbar navbar-light navbar-laravel visible-on-small">
-    <div class="container">
+
 
         <div class="header-button">
             <a class="navbar-brand logo-button" href="{{ url('/') }}">
@@ -152,7 +152,7 @@
 
 
 
-    </div>
+    
 
 </nav>
 
