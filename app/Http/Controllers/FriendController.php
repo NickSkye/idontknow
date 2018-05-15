@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use Mail;
 use Storage;
 
 class FriendController extends Controller
@@ -63,7 +63,7 @@ class FriendController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
         $email = DB::table('users')->where('username', $username)->first();
-        Mail::to($email)->send(new NotificationMail());
+        Mail::to($email->email)->send(new NotificationMail());
 
         return redirect("home")->with('status', 'friend added');
     }
