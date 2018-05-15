@@ -87,7 +87,7 @@
 
 {{--MOBILE NAV--}}
 @auth
-<nav class="navbar navbar-light navbar-laravel visible-on-small">
+<nav class="navbar mobile-navbar navbar-light navbar-laravel visible-on-small">
     <div class="container">
 
         <div class="header-button">
@@ -100,7 +100,9 @@
 
         {{--@include('partials.friendsearch')--}}
         <div class="header-button">
-
+            <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="list-button " >
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
         </div>
 
         <div class="header-button">
