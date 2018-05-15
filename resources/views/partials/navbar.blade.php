@@ -104,20 +104,26 @@
                 <i class="fa fa-search fa-2x" aria-hidden="true"></i>
             </a>
         </div>
-        @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home'))
+        @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home') or Request::is('settings'))
         <div class="header-button">
             <a class="header-notification-button" href="{{ url('/') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 @if (!$notifs->isEmpty())
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
-                        <span class="caret"></span>
+
                     </a>
                 @else
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
-                        <span class="caret"></span>
+
                     </a>
+
+                    @else
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
+
+                        </a>
                 @endif
 
             </a>
