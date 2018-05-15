@@ -342,6 +342,11 @@ ul.tabs li.current {
   }
 }
 
+.modal.show .modal-dialog {
+  -webkit-transform: translate(0, 50%);
+  transform: translate(0, 50%);
+}
+
 .permafooter {
   position: fixed;
   width: 100%;

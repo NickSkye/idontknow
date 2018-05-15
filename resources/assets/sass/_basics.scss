@@ -325,3 +325,8 @@ ul.tabs li.current{
         display: none !important;
     }
 }
+
+.modal.show .modal-dialog {
+    -webkit-transform: translate(0, 50%) !important;
+    transform: translate(0, 50%) !important;
+}
