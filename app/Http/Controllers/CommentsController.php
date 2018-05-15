@@ -23,11 +23,25 @@ class CommentsController extends Controller
         );
 
 
+
+
 //
 //        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 //
-        return redirect('/post/' . $request->post_id)->back();
+        return redirect('/post/' . $request->post_id);
     }
 
+
+
+
+//        $thecomments = Post::where('id', $post_id)->comments();
+
+//        foreach($thecomments as $comment){
+//            $profinfos = DB::table('profileinfo')->where('username', $comment->username)->get();
+//            array_push($allcommentersinfo, $profinfos);
+//        }
+//        $profinfos = DB::table('profileinfo')->where('id', $post_id)->get();
+
+return view('post', ['post'=> $post, 'thecomments' => $thecomments]);
 
 }
