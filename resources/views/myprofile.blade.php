@@ -74,6 +74,7 @@
                                     {{--</div>--}}
                                     {{--</a>--}}
                                     @if (is_null($post->imagepath))
+                                        <a href="/post/{{$post->id}}">
                                         <div class='square-box'>
                                             <div class='square-content'>
                                                 <div>
@@ -81,6 +82,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        </a>
                                     @else
                                         <a href="/post/{{$post->id}}" class="col-4 my-images" style="background-image: url('{{$post->imagepath}}'); "></a>
 
