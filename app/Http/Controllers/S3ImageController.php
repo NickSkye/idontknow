@@ -54,16 +54,6 @@ class S3ImageController extends Controller
         }
 
 
-//        if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
-//            DB::table('profileinfo')->where('username', '=', Auth::user()->username)->update(
-//                ['profileimage' => $imageName, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday,'updated_at' => date('Y-m-d H:i:s')]
-//            );
-//        }else{
-//            DB::table('profileinfo')->insert(
-//                ['username' => Auth::user()->username, 'profileimage' => $imageName, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday, 'created_at' => date('Y-m-d H:i:s')]
-//            );
-//        }
-
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'phonenumber'=> $request->phone, 'updated_at' => date('Y-m-d H:i:s')]);
 
         $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
@@ -71,7 +61,7 @@ class S3ImageController extends Controller
         $myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
         $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
 
-        return redirect('/me')->with( ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends])->with('success','Profile Image Uploaded successfully.')->with('path',$imageName);
+        return redirect('/me')->with( ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends])->with('success','Profile Updated successfully.');
     }
 
     /**
