@@ -19,15 +19,15 @@
                         @endif
 
                             <ul class="tabs">
-                                <li class="tab-link current" data-tab="tab-1">FrendGrid</li>
-                                <li class="tab-link" data-tab="tab-2">FollowGrid</li>
+                                {{--<li class="tab-link current" data-tab="tab-1">FrendGrid</li>--}}
+                                <li class="tab-link current" data-tab="tab-2">FrendGrid</li>
                                 <li class="tab-link" data-tab="tab-3">FollowerGrid</li>
 
                             </ul>
 
-                            <div id="tab-1" class="tab-content current">
-                                <div class="row frend-area">
-                                    need to include people who follow you that you also follow
+                            {{--<div id="tab-1" class="tab-content current">--}}
+                                {{--<div class="row frend-area">--}}
+                                    {{--need to include people who follow you that you also follow--}}
                                     {{--@foreach($allfriendsinfo as $infos)--}}
                                         {{--<a href="/users/{{$infos->followsusername}}" class="col-4 home-frends-images" style="background-image: url('{{$infos->profileimage}}');">--}}
                                             {{--<div class="frend-box">--}}
@@ -35,8 +35,8 @@
                                             {{--</div>--}}
                                         {{--</a>--}}
                                     {{--@endforeach--}}
-                                </div>
-                            </div>
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <div id="tab-2" class="tab-content">
                                 <div class="row frend-area">
 
