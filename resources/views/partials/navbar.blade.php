@@ -110,17 +110,16 @@
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 @if(!$notifs->isEmpty())
                 <div class="header-button">
-                <a class="header-notification-button" href="{{ url('/notifications') }}">
-                    <a id="navbarDropdown" class="nav-link " href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    <a class="header-notification-button" href="/notifications">
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
 
-                    </a>
                 </a>
                 </div>
                 @else
                 <div class="header-button">
-                <a class="header-notification-button" href="{{ url('/notifications') }}">
-                    <a id="navbarDropdown" class="nav-link" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <a class="header-notification-button" href="/notifications">
+
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
                     </a>
@@ -130,11 +129,10 @@
 
                 @else
             <div class="header-button">
-                <a class="header-notification-button" href="{{ url('/notifications') }}">
-                        <a id="navbarDropdown" class="nav-link " href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <a class="header-notification-button" href="/notifications">
+
                             <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
-                        </a>
                 </a>
             </div>
                 @endif
@@ -143,7 +141,7 @@
 
 
         <div class="header-button">
-            <a class="header-settings-button" href="{{ url('/settings') }}">
+            <a class="header-settings-button" href="/settings">
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 
