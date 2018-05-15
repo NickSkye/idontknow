@@ -74,11 +74,13 @@
                                     {{--</div>--}}
                                     {{--</a>--}}
                                     @if (is_null($post->imagepath))
-                                        <a href="/post/{{$post->id}}">
+
                                         <div class='square-box'>
                                             <div class='square-content'>
                                                 <div>
+                                                    <a href="/post/{{$post->id}}">
                                                     <span>{{$post->description}}</span>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
