@@ -152,6 +152,7 @@ class PagesController extends Controller
     {
 
 
+        $notifs = DB::table('notifications')->where('id', $id)->orderBy('created_at', 'asc')->get();
 //        $notifs = DB::table('notifications')->where('username', $id)->get();
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
