@@ -55,8 +55,9 @@ class PagesController extends Controller
         ])->get();
 
         $real = $this->getFrends();
+        $numfollowers = DB::table('follows')->where('username', Auth::user()->username)->count();
 
-        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs, 'real' => $real]);
+        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs, 'real' => $real, 'numfollowers'=> $numfollowers]);
 
 
     }

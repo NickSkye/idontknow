@@ -41,14 +41,19 @@
 
                                 <h2>{{$generalinfo->name}}</h2>
                                 <h4>{{$generalinfo->username}}</h4>
+                                {{--BIRTHDAY STUFF--}}
+                                {{--{{$generalinfo->birthday}}--}}
+                                {{--{{Carbon\Carbon::today()}}--}}
+                                {{--@if($generalinfo->birthday == Carbon\Carbon::today())--}}
+                                    {{--<img src="/images/birthday_gif.gif" alt="" style="width: 50px; height: 50px;">--}}
+                                {{--@endif--}}
+                                {{--END BIRTHDAY STUFF--}}
                                 <p>last active: {{Carbon\Carbon::parse($generalinfo->updated_at)->format('d M Y g:i A')}}</p>
+
+                                <h4>Followers: {{$numfollowers}}</h4>
                                 <div class="achievements-box row">
                                     <div class="col-2 col-sm-1">
-                                        {{$generalinfo->birthday}}
-                                        {{Carbon\Carbon::today()}}
-                                        @if($generalinfo->birthday == Carbon\Carbon::today())
-                                            <img src="/images/birthday_gif.gif" alt="" style="width: 50px; height: 50px;">
-                                            @endif
+
                                     </div>
 
                                 </div>
