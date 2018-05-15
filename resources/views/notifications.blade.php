@@ -46,6 +46,7 @@
                                 @foreach($notifs as $notif)
                                     <div class="col-12">
                                         {!! $notif->notification !!}
+                                        {{ $notif->created_at }}
                                         <hr>
                                     </div>
                                 @endforeach
