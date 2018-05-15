@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Mail;
 use Storage;
+use App\Mail\NotificationMail;
 
 class FriendController extends Controller
 {
