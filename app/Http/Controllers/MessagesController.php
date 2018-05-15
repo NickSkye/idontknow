@@ -48,6 +48,23 @@ class MessagesController extends Controller
 
     }
 
+    public function autocomplete(){
+        $term = Input::get('term');
+
+        $results = array();
+
+        $queries = DB::table('users')
+            ->where('name', 'LIKE', '%'.$term.'%')
+            ->orWhere('username', 'LIKE', '%'.$term.'%')
+            ->take(5)->get();
+
+        foreach ($queries as $query)
+        {
+            $results[] = [ 'id' => $query->id, 'value' => $query->first_name.' '.$query->last_name ];
+        }
+        return Response::json($results);
+    }
+
     public function shout(Request $request)
     {
 

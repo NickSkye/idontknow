@@ -6,10 +6,6 @@
 
 
         <div class="panel-body">
-            {{ Form::open(['action' => ['SearchController@searchUser'], 'method' => 'GET']) }}
-            {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Enter name'])}}
-            {{ Form::submit('Search', array('class' => 'button expand')) }}
-            {{ Form::close() }}
 
 
 
@@ -21,11 +17,11 @@
                     <input  type="hidden" name="longitude" value=""/>
                     <div class="col-12">
 
-                        {{--<select name="sendtousername">--}}
-                            {{--@foreach($friends as $friend)--}}
-                            {{--<option value="{{$friend->followsusername}}">{{$friend->followsusername}}</option>--}}
-                            {{--@endforeach--}}
-                        {{--</select>--}}
+                        <select name="sendtousername">
+                            @foreach($friends as $friend)
+                            <option value="{{$friend->followsusername}}">{{$friend->followsusername}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="col-12">
                         <textarea rows="4" cols="50" placeholder="Shout at your frend..." type="text" name="shout" ></textarea>
