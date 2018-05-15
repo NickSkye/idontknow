@@ -20,8 +20,8 @@
 
                             <ul class="tabs">
                                 {{--<li class="tab-link current" data-tab="tab-1">FrendGrid</li>--}}
-                                <li class="tab-link current" data-tab="tab-2">FrendGrid</li>
-                                <li class="tab-link" data-tab="tab-3">FollowerGrid</li>
+                                <li class="tab-link current" data-tab="tab-1">FrendGrid</li>
+                                <li class="tab-link" data-tab="tab-2">FollowerGrid</li>
 
                             </ul>
 
@@ -37,7 +37,7 @@
                                     {{--@endforeach--}}
                                 {{--</div>--}}
                             {{--</div>--}}
-                            <div id="tab-2" class="tab-content">
+                            <div id="tab-1" class="tab-content current">
                                 <div class="row frend-area">
 
                                     @foreach($allfriendsinfo as $infos)
@@ -49,7 +49,7 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <div id="tab-3" class="tab-content">
+                            <div id="tab-2" class="tab-content">
                                 <div class="row frend-area">
 
                                     @foreach($allfollowersinfo as $followerinfos)
