@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Mail;
 use Storage;
 use App\Mail\NotificationMail;
+use App\Mail\AddFrendMail;
 
 class FriendController extends Controller
 {
@@ -64,7 +65,7 @@ class FriendController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
         $email = DB::table('users')->where('username', $username)->first();
-        Mail::to($email->email)->send(new NotificationMail());
+        Mail::to($email->email)->send(new AddFrendMail());
 
         return redirect("home")->with('status', 'friend added');
     }
