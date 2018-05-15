@@ -77,17 +77,11 @@
                                                 <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($post->created_at)->format('d M Y g:i A')}}</p>
                                             </a>
                                         </div>
-                                        <p>{{$post->description}}</p>
+
 
 
                                         @if (is_null($post->imagepath))
-                                            <div class='square-box'>
-                                                <div class='square-content'>
-                                                    <div>
-                                                        <span>{{$post->description}}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <p>{{$post->description}}</p>
                                         @else
                                             <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
                                                 <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
