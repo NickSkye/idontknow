@@ -101,7 +101,7 @@
         {{--@include('partials.friendsearch')--}}
         <div class="header-button">
             <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="header-search-button " >
-                <i class="fa fa-search" aria-hidden="true"></i>
+                <i class="fa fa-search fa-2x" aria-hidden="true"></i>
             </a>
         </div>
 
@@ -110,7 +110,7 @@
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 @if (!$notifs->isEmpty())
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: #F62E55;"></i>
+                        <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
                         <span class="caret"></span>
                     </a>
                 @else
@@ -126,7 +126,7 @@
         <div class="header-button">
             <a class="header-settings-button" href="{{ url('/settings') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
-                <i class="fa fa-bars" aria-hidden="true"></i>
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 
             </a>
         </div>
