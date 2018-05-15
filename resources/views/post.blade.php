@@ -78,9 +78,27 @@
                                             </a>
                                         </div>
                                         <p>{{$post->description}}</p>
-                                        <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
-                                            <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
-                                        </button>
+
+
+                                        @if (is_null($post->imagepath))
+                                            <div class='square-box'>
+                                                <div class='square-content'>
+                                                    <div>
+                                                        <span>{{$post->description}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @else
+                                            <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
+                                                <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
+                                            </button>
+
+                                        @endif
+
+
+
+
+
                                         <p class="post-data">views: {{$post->views}}</p>
 
                                         {{--{{ $friend }}--}}
