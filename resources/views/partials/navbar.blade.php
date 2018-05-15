@@ -140,7 +140,7 @@
                 @endif
 
 
-        </div>
+
 
         <div class="header-button">
             <a class="header-settings-button" href="{{ url('/settings') }}">
