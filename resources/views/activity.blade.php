@@ -182,7 +182,7 @@
                             {{--</div>--}}
 
 
-                            friends posts
+                            {{--friends posts--}}
                             <div class="row frend-area infinite-scroll">
                                 @foreach($allfriendsinfo as $friendspost)
 
