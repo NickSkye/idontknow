@@ -102,6 +102,12 @@
 
             @include('partials.navbar')
 
+            <div class="collapse visible-on-small" id="collapseExample" >
+                <div class="card card-body">
+                    @include('partials.friendsearch')
+                </div>
+            </div>
+
             <main class="py-4">
                 @yield('content')
                 @include('partials.modals')

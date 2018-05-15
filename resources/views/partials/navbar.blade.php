@@ -25,7 +25,7 @@
                 <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                 <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                 @else
-                    @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home'))
+                    @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home') or Request::is('settings'))
 
                         <li class="nav-item dropdown">
                             @if (!$notifs->isEmpty())
@@ -87,11 +87,11 @@
 
 {{--MOBILE NAV--}}
 @auth
-<nav class="navbar navbar-light navbar-laravel visible-on-small">
-    <div class="container">
+<nav class="navbar mobile-navbar navbar-light navbar-laravel visible-on-small">
+
 
         <div class="header-button">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class=" logo-button" href="{{ url('/') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 <img src="/images/frendgriddark.png" alt="FrendGrid" style="max-width: 45px;">
 
@@ -100,22 +100,60 @@
 
         {{--@include('partials.friendsearch')--}}
         <div class="header-button">
-
+            <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="header-search-button " >
+                <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+            </a>
         </div>
+        @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home') or Request::is('settings'))
+
+
+                {{--{{ config('app.name', 'idontknow') }}--}}
+                @if(!$notifs->isEmpty())
+                <div class="header-button">
+
+                    <a class="header-notification-button" href="/notification">
+                        <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
+
+                </a>
+                </div>
+                @else
+                <div class="header-button">
+                <a class="header-notification-button" href="/notification">
+
+                        <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
+
+                    </a>
+            </a>
+                </div>
+                @endif
+
+                @else
+            <div class="header-button">
+                <a class="header-notification-button" href="/notification">
+
+                            <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
+
+                </a>
+            </div>
+                @endif
+
+
+
 
         <div class="header-button">
+            <a class="header-settings-button" href="/settings">
+                {{--{{ config('app.name', 'idontknow') }}--}}
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 
+            </a>
         </div>
 
-        <div class="header-button">
-
-        </div>
 
 
 
-    </div>
 
 </nav>
+
 @else
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel ">
         <div class="container">
@@ -147,7 +185,7 @@
                         @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home'))
 
                             <li class="nav-item dropdown">
-                                @if (!$notifs->isEmpty())
+                                @if(!$notifs->isEmpty())
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: #F62E55;"></i>
                                         <span class="caret"></span>
@@ -158,6 +196,8 @@
                                         <span class="caret"></span>
                                     </a>
                                 @endif
+
+                                @else
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="overflow-y: scroll; max-height: 400px;">
                                     @foreach($notifs as $notif)

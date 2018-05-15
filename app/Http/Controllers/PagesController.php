@@ -31,11 +31,12 @@ class PagesController extends Controller
         //if (Auth::check()) {
 //            $info = DB::table('users')->where('username', Auth::user()->username)->get();
         $profileinfo = $this->getMySettingsInfo(); //DB::table('profileinfo')->where('username', Auth::user()->username)->get();
-            return view('settings', ['profileinfo' => $profileinfo]);
-//        }
-//        else{
-//            return view('auth.login');
-//        }
+        $notifs = DB::table('notifications')->where([
+            ['username', Auth::user()->username],
+            ['seen', false],
+        ])->get();
+        return view('settings', ['profileinfo' => $profileinfo, 'notifs' => $notifs]);
+
 
     }
 
@@ -138,10 +139,25 @@ class PagesController extends Controller
 
         $notifs = DB::table('notifications')->where('id', $id)->get();
 
+
         DB::table('notifications')->where('id', $id)->update(
             ['seen' => true, 'updated_at' => date('Y-m-d H:i:s')]
         );
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+        return view('notifications', ['notifs'=> $notifs]);
+    }
+
+    public function allnotifications()
+    {
+
+
+//        $notifs = DB::table('notifications')->where('username', $id)->get();
+        $notifs = DB::table('notifications')->where([
+            ['username', Auth::user()->username],
+            ['seen', false],
+        ])->get();
+
 
         return view('notifications', ['notifs'=> $notifs]);
     }

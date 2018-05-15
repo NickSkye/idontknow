@@ -29,6 +29,9 @@
                     <div class="card-header">
 
                         <h2>Notifications</h2>
+                        <a class="" href="/clear-notifications" style="float: right;">
+                            Clear all notifications
+                        </a>
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -41,8 +44,9 @@
                             {{--friends posts--}}
                             <div class="row frend-area">
                                 @foreach($notifs as $notif)
-                                    <div>
+                                    <div class="col-12">
                                         {!! $notif->notification !!}
+                                        <hr>
                                     </div>
                                 @endforeach
                             </div>
