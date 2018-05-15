@@ -108,7 +108,7 @@
         <div class="header-button">
             <a class="header-notification-button" href="{{ url('/') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
-                @if (!$notifs->isEmpty())
+                @if(!$notifs->isEmpty())
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
 
@@ -129,7 +129,7 @@
 
             </a>
         </div>
-@endauth
+
         <div class="header-button">
             <a class="header-settings-button" href="{{ url('/settings') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
@@ -143,6 +143,7 @@
     </div>
 
 </nav>
+
 @else
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel ">
         <div class="container">
