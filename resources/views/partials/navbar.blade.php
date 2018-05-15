@@ -115,7 +115,7 @@
                     </a>
                 @else
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
                         <span class="caret"></span>
                     </a>
                 @endif
