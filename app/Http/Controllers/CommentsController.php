@@ -26,7 +26,7 @@ class CommentsController extends Controller
 //
 //        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 //
-        return redirect()->back();
+        return redirect('/post/' . $request->post_id)->back();
     }
 
 

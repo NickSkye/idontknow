@@ -81,7 +81,7 @@
                                                     <span>{{$post->description}}</span>
                                                 </div>
                                             </div>
-                                        
+
                                         </a>
                                     @else
                                         <a href="/post/{{$post->id}}" class="col-4 my-images" style="background-image: url('{{$post->imagepath}}'); "></a>
