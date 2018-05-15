@@ -55,9 +55,13 @@ class PagesController extends Controller
         ])->get();
 
         $real = $this->getFrends();
-        $numfollowers = DB::table('follows')->where('username', Auth::user()->username)->count();
 
-        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs, 'real' => $real, 'numfollowers'=> $numfollowers]);
+
+        $numfollowers = DB::table('follows')->where('followsusername', Auth::user()->username)->count();
+        $numposts = DB::table('posts')->where('username', Auth::user()->username)->where('deleted', false)->count();
+        $numfollowing = DB::table('follows')->where('username', Auth::user()->username)->count();
+
+        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs, 'real' => $real, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing]);
 
 
     }
