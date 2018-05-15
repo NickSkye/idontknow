@@ -212,12 +212,12 @@ class PagesController extends Controller
         );
 
 
-        Mail::send(new AddFrendMail($data));
+        Mail::send(new ReportForm($data));
 
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
-        return redirect("home")->with('status', 'post removed');
+        return redirect("/")->with('status', 'post reported');
     }
     public function reportcomment($id)
     {
