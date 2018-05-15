@@ -25,7 +25,13 @@
                             </form>
                         @else
                             <div class="pull-right">
-                                <a href="/">report</a>
+                                <form method="post" action="/report-post/{{$post->id}}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
+                                    <button class="btn btn-danger" type="submit">
+                                        Report
+                                    </button>
+                                </form>
                             </div>
                         @endif
 

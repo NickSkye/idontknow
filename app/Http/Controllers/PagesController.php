@@ -199,4 +199,35 @@ class PagesController extends Controller
         return view('support');
     }
 
+
+
+
+    public function reportpost($id)
+    {
+
+        $data = array(
+            'id' => $id,
+        );
+
+
+        Mail::send(new AddFrendMail($data));
+
+
+        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+        return redirect("home")->with('status', 'post removed');
+    }
+    public function reportcomment($id)
+    {
+
+
+        DB::table('posts')->where('username', Auth::user()->username)->where('id', $id)->update(['deleted' => true]);
+
+
+        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+        return redirect("home")->with('status', 'post removed');
+    }
+
+
 }

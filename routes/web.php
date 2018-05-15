@@ -47,6 +47,8 @@ Route::post('/delete-post/{id?}', 'PagesController@deletepost')->middleware('aut
 Route::get('/clear-notifications', 'PagesController@clearnotifications')->middleware('auth');
 Route::post('/comment', 'CommentsController@addcomment')->middleware('auth');
 
+Route::post('/report-post/{id?}', 'PagesController@reportpost')->middleware('auth');
+Route::post('/report-comment/{id?}', 'PagesController@reportcomment')->middleware('auth');
 
 Route::post('s3-image-upload','S3ImageController@imageUploadPost')->middleware('auth');
 Route::post('s3-image-upload-profilepic','S3ImageController@imageUploadProfilePic')->middleware('auth');
