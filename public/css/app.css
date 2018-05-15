@@ -368,7 +368,13 @@ ul.tabs li.current {
   bottom: 0;
   right: 0;
   color: white;
-  padding: 25px;
+  padding: 5px;
+}
+
+@media (min-width: 767px) {
+  .square-content {
+    padding: 25px;
+  }
 }
 
 .square-content div {

@@ -24,7 +24,7 @@
                         </select>
                     </div>
                     <div class="col-12">
-                        <textarea rows="4" cols="50" placeholder="Shout at your frend..." type="text" name="shout" ></textarea>
+                        <textarea rows="4" cols="40" placeholder="Shout at your frend..." type="text" name="shout" style="width: 100%;"></textarea>
                     </div>
                     <div class="col-12" style="align-self: flex-end;">
                         <button type="submit" class="btn shout-button" style="float: right;">Shout!</button>
