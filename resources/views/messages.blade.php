@@ -89,6 +89,7 @@
                                                     <form action="/shouts/shoutseen" method="post">
                                                         {{ csrf_field() }}
                                                         <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
+                                                        <input type="hidden" name="from_user" value="{{$mess->from_username}}"/>
                                                         <input type="hidden" name="latitude" value=""/>
                                                         <input  type="hidden" name="longitude" value=""/>
                                                     <div class="modal-header">

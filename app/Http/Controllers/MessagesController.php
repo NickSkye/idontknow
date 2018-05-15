@@ -140,6 +140,10 @@ class MessagesController extends Controller
         );
 
 
+        $email = DB::table('users')->where('username', $request->from_user)->first();
+        Mail::to($email)->send(new NotificationMail());
+
+
 
         return redirect('/shouts')->with(['theshout'=> $theshout, 'messages'=> $messages, 'friends'=>$friends]);
 
