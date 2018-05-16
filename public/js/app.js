@@ -14015,14 +14015,15 @@ $(document).ready(function () {
     });
 
     //Slick
-    $('.multiple-items').slick({
-        infinite: false,
-        slidesToShow: 5,
-        slidesToScroll: 3,
-        swipeToSlide: true,
-        swipe: true
+    //     $('.multiple-items').slick({
+    //         infinite: false,
+    //         slidesToShow: 5,
+    //         slidesToScroll: 3,
+    //         swipeToSlide: true,
+    //         swipe: true
+    //
+    //     });
 
-    });
 });
 
 //Javascript
