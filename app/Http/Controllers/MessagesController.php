@@ -88,7 +88,7 @@ class MessagesController extends Controller
        }
 
 
-        return redirect('/shouts')->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
+        return redirect('/shouts')->with(['messages'=> $messages, 'friends'=>$friends, 'getsemails' => $getsemails])->with('message', 'Shout delivered!');
 
 
     }
@@ -112,7 +112,7 @@ class MessagesController extends Controller
         if($getsemails){
             Mail::to($emails->email)->send(new NotificationMail());
         }
-        
+
 
         return redirect()->back()->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
 
