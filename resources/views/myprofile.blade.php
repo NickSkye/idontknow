@@ -50,9 +50,31 @@
                                 {{--END BIRTHDAY STUFF--}}
                                 <p>last active: {{Carbon\Carbon::parse($generalinfo->updated_at)->format('d M Y g:i A')}}</p>
 
-                                <h4>Followers: {{$numfollowers}}</h4>
-                                <h4>Following: {{$numfollowing}}</h4>
-                                <h4>Posts: {{$numposts}}</h4>
+                                <div>
+                                    <span>
+                                        {{$numposts}}
+                                    </span>
+                                    <span>
+                                        {{$numfollowers}}
+                                    </span>
+                                    <span>
+                                        {{$numfollowing}}
+                                    </span>
+
+                                </div>
+                                <div>
+                                    <span>
+                                        Posts
+                                    </span>
+                                    <span>
+                                        Followers
+                                    </span>
+                                    <span>
+                                        Following
+                                    </span>
+
+                                </div>
+                            
 
                                 <div class="achievements-box row">
                                     <div class="col-2 col-sm-1">
