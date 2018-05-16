@@ -402,3 +402,15 @@ ul.tabs li.current{
     border: none !important;
 
 }
+
+.profile-stats{
+    p{
+        margin-bottom: 0;
+    }
+    .numbers{
+        font-size: 16pt;
+    }
+    .words{
+        font-size: 10pt;
+    }
+}

@@ -50,29 +50,29 @@
                                 {{--END BIRTHDAY STUFF--}}
                                 <p>last active: {{Carbon\Carbon::parse($generalinfo->updated_at)->format('d M Y g:i A')}}</p>
 
-                                <div style="display: flex;">
+                                <div class="profile-stats" style="display: flex;">
                                     <div style="text-align: center; width: 75px;">
                                         <div>
-                                            <p>{{$numposts}}</p>
+                                            <p class="numbers">{{$numposts}}</p>
                                         </div>
                                         <div>
-                                            <p>Posts</p>
+                                            <p class="words">Posts</p>
                                         </div>
                                     </div>
                                     <div style="text-align: center; width: 75px;">
                                         <div>
-                                            <p>{{$numfollowers}}</p>
+                                            <p class="numbers">{{$numfollowers}}</p>
                                         </div>
                                         <div>
-                                            <p>Followers</p>
+                                            <p class="words">Followers</p>
                                         </div>
                                     </div>
                                     <div style="text-align: center; width: 75px;">
                                         <div>
-                                            <p>{{$numfollowing}}</p>
+                                            <p class="numbers">{{$numfollowing}}</p>
                                         </div>
                                         <div>
-                                            <p>Following</p>
+                                            <p class="words">Following</p>
                                         </div>
                                     </div>
                                 </div>

@@ -408,6 +408,18 @@ ul.tabs li.current {
   border: none !important;
 }
 
+.profile-stats p {
+  margin-bottom: 0;
+}
+
+.profile-stats .numbers {
+  font-size: 16pt;
+}
+
+.profile-stats .words {
+  font-size: 10pt;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
