@@ -148,8 +148,8 @@ $(document).ready(function(){
 //Slick
     $('.multiple-items').slick({
         infinite: false,
-        slidesToShow: 9,
-        slidesToScroll: 6,
+        slidesToShow: 5,
+        slidesToScroll: 3,
         swipeToSlide: true,
         swipe: true
 
