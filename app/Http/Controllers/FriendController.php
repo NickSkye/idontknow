@@ -74,7 +74,13 @@ class FriendController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
         $email = DB::table('users')->where('username', $username)->first();
-        Mail::to($email->email)->send(new AddFrendMail());
+
+
+        $getsemails = DB::table('profileinfo')->select('get_email_notifications')->where('username', $username)->first();
+        if($getsemails){
+            Mail::to($email->email)->send(new AddFrendMail());
+        }
+
 
         return redirect("home")->with('status', 'friend added');
     }
