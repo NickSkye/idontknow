@@ -42,7 +42,7 @@ class MessagesController extends Controller
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
-        $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $request->sendtousername)->first();
+        $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', Auth::user()->username)->first();
 
         return view('messages', ['messages'=> $messages, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs , 'getsemails' => $getsemails]);
 
