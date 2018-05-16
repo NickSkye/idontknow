@@ -138,6 +138,12 @@ $(document).ready(function(){
         $("#"+tab_id).addClass('current');
     })
 
+
+    $(".modal-button").click(function() {  //use a class, since your ID gets mangled
+        $('.modal-dialog').hide();      //add the class to the clicked element
+    });
+
+
 });
 
 //Javascript
