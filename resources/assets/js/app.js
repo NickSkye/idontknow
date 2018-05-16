@@ -153,7 +153,7 @@ $(document).ready(function(){
 
     });
 
-    if ($(".shout-text").val().length > 0) {
+    if ($.trim($(".shout-text").val()).length > 0) {
     $(".shout-button").click(function() {  //use a class, since your ID gets mangled
         $('.shout-button').toggleClass("loading-button");     //add the class to the clicked element
         $('.shout-button i.fa').toggleClass("fa-bullhorn");     //add the class to the clicked element
