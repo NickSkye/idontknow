@@ -48,6 +48,10 @@
         <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
 
         <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+        <!-- Add the slick-theme.css if you want default styling -->
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.css"/>
+        <!-- Add the slick-theme.css if you want default styling -->
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick-theme.css"/>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="/js/jquery.jscroll.js"></script>
@@ -119,6 +123,6 @@
             @endauth
         </div>
 
-
+        <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js"></script>
     </body>
 </html>
