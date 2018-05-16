@@ -47,8 +47,8 @@ class FriendController extends Controller
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         $friendsposts = DB::table('posts')->where('username', $username)->where('deleted', false)->orderBy('created_at', 'desc')->get();
 
-        $allfriendsinfo = $this->getFollowingsInfo();
-        $allfollowersinfo = $this->getFollowersInfo();
+        $allfriendsinfo = $this->getFollowingsInfo($username);
+        $allfollowersinfo = $this->getFollowersInfo($username);
 
         //User follow and post meta data
         $numfollowers = DB::table('follows')->where('followsusername', $username)->count();
