@@ -153,15 +153,16 @@ $(document).ready(function(){
 
     });
 
-    if ($(".shout-text").val()) {
+
     $(".shout-button").click(function() {  //use a class, since your ID gets mangled
+        if ($(".shout-text").val()) {
         $('.shout-button').toggleClass("loading-button");     //add the class to the clicked element
         $('.shout-button i.fa').toggleClass("fa-bullhorn");     //add the class to the clicked element
         $('.shout-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
        // $('.shout-button').prop("disabled",true);
-
+        }
     });
-    }
+
 
     $(".upload-button").click(function() {  //use a class, since your ID gets mangled
         $('.upload-button').toggleClass("loading-button");     //add the class to the clicked element
