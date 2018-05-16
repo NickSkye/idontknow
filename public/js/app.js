@@ -14013,6 +14013,16 @@ $(document).ready(function () {
         //use a class, since your ID gets mangled
         $('.modal-dialog').hide(); //add the class to the clicked element
     });
+
+    //Slick
+    $('.multiple-items').slick({
+        infinite: false,
+        slidesToShow: 9,
+        slidesToScroll: 6,
+        swipeToSlide: true,
+        swipe: true
+
+    });
 });
 
 //Javascript

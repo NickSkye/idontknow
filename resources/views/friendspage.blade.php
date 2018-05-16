@@ -129,7 +129,7 @@
                                 followers
                                 <div class="row frend-area frends-frends-row">
                                     @foreach($allfollowersinfo as $followerinfos)
-                                        <a href="/users/{{$followerinfos->username}}" class="col-4 frends-frends-images" style="background-image: url('{{$followerinfos->profileimage}}');">
+                                        <a href="/users/{{$followerinfos->username}}" class="col-4 frends-frends-images multiple-items" style="background-image: url('{{$followerinfos->profileimage}}');">
                                             <div class="frend-box">
                                                 <p>{{$followerinfos->username}}</p>
                                             </div>
@@ -146,7 +146,7 @@
                                following
                                 <div class="row frend-area frends-frends-row">
                                 @foreach($allfriendsinfo as $infos)
-                                    <a href="/users/{{$infos->followsusername}}" class="col-4 frends-frends-images" style="background-image: url('{{$infos->profileimage}}');">
+                                    <a href="/users/{{$infos->followsusername}}" class="col-4 frends-frends-images multiple-items" style="background-image: url('{{$infos->profileimage}}');">
                                         <div class="frend-box">
                                             <p>{{$infos->followsusername}}</p>
                                         </div>

@@ -45,7 +45,9 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
 
+        <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="/js/jquery.jscroll.js"></script>
