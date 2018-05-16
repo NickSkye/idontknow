@@ -74,8 +74,8 @@
                         <div class="form-group" style="margin-top: 1rem;">
                             <label for="email_notifications">Receive E-mail Notifications?</label>
                             <select name="email_notifications">
-                                <option value="true">Yes</option>
-                                <option value="false">No</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
 
                             </select>
                         </div>
