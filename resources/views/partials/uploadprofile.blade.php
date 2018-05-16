@@ -35,7 +35,7 @@
                     <input type="hidden" name="latitude" value=""/>
                     <input  type="hidden" name="longitude" value=""/>
                     <div class="col-xs-12 col-sm-4">
-                        <p>Change your profile picture here (Squarer images work best)</p>
+                        <p>Profile Picture</p>
 
                         <img src="{{ $profileinfo->profileimage }}" id="profile-img-tag" width="200px" />
                         <input id="file-input" type="file" name="image" />
