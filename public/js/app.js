@@ -14021,7 +14021,7 @@ $(document).ready(function () {
         $('.comment-button').toggleClass("loading-button"); //add the class to the clicked element
         $('.comment-button i.fa').toggleClass("fa-paper-plane"); //add the class to the clicked element
         $('.comment-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
-        $('.comment-button').prop("disabled", true);
+        //$('.comment-button').prop("disabled",true);
     });
 
     $(".shout-button").click(function () {
@@ -14029,7 +14029,7 @@ $(document).ready(function () {
         $('.shout-button').toggleClass("loading-button"); //add the class to the clicked element
         $('.shout-button i.fa').toggleClass("fa-bullhorn"); //add the class to the clicked element
         $('.shout-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
-        $('.shout-button').prop("disabled", true);
+        // $('.shout-button').prop("disabled",true);
     });
 
     $(".upload-button").click(function () {
@@ -14037,7 +14037,7 @@ $(document).ready(function () {
         $('.upload-button').toggleClass("loading-button"); //add the class to the clicked element
         $('.upload-button i.fa').toggleClass("fa-share"); //add the class to the clicked element
         $('.upload-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
-        $('.upload-button').prop("disabled", true);
+        //$('.upload-button').prop("disabled",true);
     });
 
     $(".followerCollapser").click(function () {
