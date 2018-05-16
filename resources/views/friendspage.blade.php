@@ -38,7 +38,7 @@
                                                 </form>
                                             </div>
                                             <div class="col-xs-12 col-sm-4">
-                                                <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
+                                                <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
                                                     <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
                                                 </button>
                                                 {{--SHOUT MODAL--}}
