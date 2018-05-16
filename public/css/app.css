@@ -3,6 +3,11 @@
   padding-right: 0 !important;
 }
 
+.frends-frends-row {
+  max-height: 150px;
+  overflow-x: scroll;
+}
+
 .frend-area .home-frends-images {
   max-width: 31.333333%;
   padding-bottom: 31.33333333%;
