@@ -69,6 +69,10 @@ class MessagesController extends Controller
     public function shout(Request $request)
     {
 
+        $this->validate($request, [
+            'shout' => 'required', //|max:2048
+        ]);
+
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->orderBy('created_at', 'desc')->get();
         $friends = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 
