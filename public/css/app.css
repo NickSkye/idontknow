@@ -432,6 +432,14 @@ ul.tabs li.current {
   text-decoration: none;
 }
 
+.profile-stats a {
+  text-decoration: none;
+}
+
+.profile-stats a:hover {
+  text-decoration: none;
+}
+
 .profile-stats .numbers {
   font-size: 16pt;
 }

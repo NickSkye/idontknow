@@ -14014,6 +14014,11 @@ $(document).ready(function () {
         $('.modal-dialog').hide(); //add the class to the clicked element
     });
 
+    $(".modal-button").click(function () {
+        //use a class, since your ID gets mangled
+        $('.modal-dialog').hide(); //add the class to the clicked element
+    });
+
     //Slick
     //     $('.multiple-items').slick({
     //         infinite: false,
