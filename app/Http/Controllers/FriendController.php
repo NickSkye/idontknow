@@ -76,7 +76,7 @@ class FriendController extends Controller
         $email = DB::table('users')->where('username', $username)->first();
 
 
-        $getsemails = DB::table('profileinfo')->select('get_email_notifications')->where('username', $username)->first();
+        $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $username)->first();
         if($getsemails){
             Mail::to($email->email)->send(new AddFrendMail());
         }
