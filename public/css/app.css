@@ -12,6 +12,8 @@
   background-repeat: no-repeat;
   margin: 1%;
   background-position: center;
+  -webkit-box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
+  box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
 }
 
 .frend-area .my-images {
@@ -23,6 +25,8 @@
   background-repeat: no-repeat;
   margin: 1%;
   background-position: center;
+  -webkit-box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
+  box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
 }
 
 .frend-area .search-image {
@@ -34,6 +38,8 @@
   background-repeat: no-repeat;
   margin: 1%;
   background-position: center;
+  -webkit-box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
+  box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
 }
 
 @media (max-width: 576px) {
@@ -343,8 +349,8 @@ ul.tabs li.current {
 }
 
 .modal.show .modal-dialog {
-  -webkit-transform: translate(0, 50%) !important;
-  transform: translate(0, 50%) !important;
+  -webkit-transform: translate(0, 100px) !important;
+  transform: translate(0, 100px) !important;
 }
 
 .square-box {
@@ -353,6 +359,8 @@ ul.tabs li.current {
   overflow: hidden;
   background: #0b7dda;
   margin: 1%;
+  -webkit-box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
+  box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
 }
 
 .square-box:before {
@@ -369,6 +377,7 @@ ul.tabs li.current {
   right: 0;
   color: white;
   padding: 5px;
+  overflow-y: scroll;
 }
 
 @media (min-width: 767px) {
@@ -389,6 +398,14 @@ ul.tabs li.current {
   vertical-align: middle;
   color: white;
   font-size: 14pt;
+}
+
+.profile-page .card-header {
+  background-color: white;
+}
+
+.card {
+  border: none;
 }
 
 .permafooter {
