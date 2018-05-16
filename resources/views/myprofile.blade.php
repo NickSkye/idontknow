@@ -51,28 +51,28 @@
                                 <p>last active: {{Carbon\Carbon::parse($generalinfo->updated_at)->format('d M Y g:i A')}}</p>
 
                                 <div style="display: flex;">
-                                    <div style="text-align: center">
+                                    <div style="text-align: center; width: 75px;">
                                         <div>
-                                            {{$numposts}}
+                                            <p>{{$numposts}}</p>
                                         </div>
                                         <div>
-                                            Posts
-                                        </div>
-                                    </div>
-                                    <div style="text-align: center">
-                                        <div>
-                                            {{$numfollowers}}
-                                        </div>
-                                        <div>
-                                            Followers
+                                            <p>Posts</p>
                                         </div>
                                     </div>
-                                    <div style="text-align: center">
+                                    <div style="text-align: center; width: 75px;">
                                         <div>
-                                            {{$numfollowing}}
+                                            <p>{{$numfollowers}}</p>
                                         </div>
                                         <div>
-                                            Following
+                                            <p>Followers</p>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center; width: 75px;">
+                                        <div>
+                                            <p>{{$numfollowing}}</p>
+                                        </div>
+                                        <div>
+                                            <p>Following</p>
                                         </div>
                                     </div>
                                 </div>
