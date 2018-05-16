@@ -261,6 +261,9 @@
                         <div>Activity Page will show a list of all friends recent activity</div>
                     </div>
                 </div>
+
+                <div class="online-frends" style="position: fixed;"></div>
+
             </div>
         </div>
     </div>
