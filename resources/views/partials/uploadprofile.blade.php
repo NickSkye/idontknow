@@ -40,7 +40,7 @@
                         <img src="{{ $profileinfo->profileimage }}" id="profile-img-tag" width="200px" />
                         <input id="file-input" type="file" name="image" />
                     </div>
-                    <div class="col-xs-12 col-sm-8">
+                    <div class="col-xs-12 offset-sm-1 col-sm-7">
 
 
 
