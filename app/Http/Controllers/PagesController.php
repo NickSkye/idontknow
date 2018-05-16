@@ -37,6 +37,9 @@ class PagesController extends Controller
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
+
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
         return view('settings', ['profileinfo' => $profileinfo, 'notifs' => $notifs]);
 
 
@@ -51,6 +54,8 @@ class PagesController extends Controller
         $myposts = DB::table('posts')->where('username', Auth::user()->username)->where('deleted', false)->orderBy('created_at', 'desc')->get();
         //gets people you follow
         $myfriends = DB::table('follows')->where('username', Auth::user()->username)->orderBy('updated_at', 'desc')->get();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
             ['seen', false],
@@ -101,6 +106,8 @@ class PagesController extends Controller
             ['seen', false],
         ])->get();
 
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
         return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo]);
 
 
@@ -115,13 +122,7 @@ class PagesController extends Controller
         DB::table('posts')->where('id', $post_id)->increment('views');
         $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
 
-//        $thecomments = Post::where('id', $post_id)->comments();
-
-//        foreach($thecomments as $comment){
-//            $profinfos = DB::table('profileinfo')->where('username', $comment->username)->get();
-//            array_push($allcommentersinfo, $profinfos);
-//        }
-//        $profinfos = DB::table('profileinfo')->where('id', $post_id)->get();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
         return view('post', ['post'=> $post, 'thecomments' => $thecomments]);
 
@@ -178,26 +179,32 @@ class PagesController extends Controller
         ])->update(['seen' => true]);
 
 
+
         return redirect("home")->with('status', 'Notifications cleared');
     }
 
     public function about(){
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         return view('about');
     }
 
     public function donate(){
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         return view('donate');
     }
 
     public function legal(){
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         return view('legal');
     }
 
     public function suggestions(){
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         return view('suggestions');
     }
 
     public function support(){
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         return view('support');
     }
 
@@ -213,17 +220,20 @@ class PagesController extends Controller
 
 
         Mail::send(new ReportForm($data));
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
         return redirect("/")->with('status', 'post reported');
     }
+//    STILL NEED TO WORK ON THIS. COPY REPORT POST
     public function reportcomment($id)
     {
 
 
         DB::table('posts')->where('username', Auth::user()->username)->where('id', $id)->update(['deleted' => true]);
+
 
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();

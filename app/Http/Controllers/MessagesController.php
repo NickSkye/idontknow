@@ -42,6 +42,7 @@ class MessagesController extends Controller
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
         return view('messages', ['messages'=> $messages, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs ]);

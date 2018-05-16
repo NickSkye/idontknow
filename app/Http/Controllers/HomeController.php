@@ -75,7 +75,7 @@ class HomeController extends Controller
         }
 
 
-
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
         //all people who you follows info
