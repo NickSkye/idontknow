@@ -451,3 +451,16 @@ ul.tabs li.current{
         font-size: 10pt;
     }
 }
+
+.online-frends{
+    @media (min-width: 767px){
+        position: fixed;
+        right: 0;
+        top: 161px;
+        width: 20%;
+        height: 500px;
+        background: blue;
+    }
+    display: none;
+
+}
