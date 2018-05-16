@@ -53,7 +53,6 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-6">
-                                {{$getsemails->email_notifications}}
                         <h2>Shouts</h2>
                             </div>
                             <div class="col-6">

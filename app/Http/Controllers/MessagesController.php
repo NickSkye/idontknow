@@ -42,7 +42,7 @@ class MessagesController extends Controller
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
-        
+
 
         return view('messages', ['messages'=> $messages, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs ]);
 
