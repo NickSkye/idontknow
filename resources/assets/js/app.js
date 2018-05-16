@@ -144,8 +144,12 @@ $(document).ready(function(){
     });
 
 
-    $(".modal-button").click(function() {  //use a class, since your ID gets mangled
-        $('.modal-dialog').hide();      //add the class to the clicked element
+    $("#followerCollapser").click(function() {  //use a class, since your ID gets mangled
+        $('#followingCollapse').hide();      //add the class to the clicked element
+    });
+
+    $("#followingCollapser").click(function() {  //use a class, since your ID gets mangled
+        $('#followerCollapse').hide();      //add the class to the clicked element
     });
 
 

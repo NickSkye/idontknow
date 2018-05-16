@@ -93,7 +93,7 @@
                                         </div>
                                     </div>
                                     <div style="text-align: center; width: 75px;">
-                                        <a class="frendcollapse" data-toggle="collapse" href="#followerCollapse" role="button" aria-expanded="false" aria-controls="followerCollapse">
+                                        <a class="frendcollapse followerCollapser" data-toggle="collapse" href="#followerCollapse" role="button" aria-expanded="false" aria-controls="followerCollapse">
                                         <div>
                                             <p class="numbers">{{$numfollowers}}</p>
                                         </div>
@@ -103,7 +103,7 @@
                                         </a>
                                     </div>
                                     <div style="text-align: center; width: 75px;">
-                                        <a class=".frendcollapse" data-toggle="collapse" href="#followingCollapse" role="button" aria-expanded="false" aria-controls="followingCollapse">
+                                        <a class=".frendcollapse followingCollapser" data-toggle="collapse" href="#followingCollapse" role="button" aria-expanded="false" aria-controls="followingCollapse">
                                         <div>
                                             <p class="numbers">{{$numfollowing}}</p>
                                         </div>

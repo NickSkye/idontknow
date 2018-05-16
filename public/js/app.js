@@ -14014,9 +14014,14 @@ $(document).ready(function () {
         $('.modal-dialog').hide(); //add the class to the clicked element
     });
 
-    $(".modal-button").click(function () {
+    $("#followerCollapser").click(function () {
         //use a class, since your ID gets mangled
-        $('.modal-dialog').hide(); //add the class to the clicked element
+        $('#followingCollapse').hide(); //add the class to the clicked element
+    });
+
+    $("#followingCollapser").click(function () {
+        //use a class, since your ID gets mangled
+        $('#followerCollapse').hide(); //add the class to the clicked element
     });
 
     //Slick
