@@ -140,8 +140,8 @@ class MessagesController extends Controller
         );
 
 
-        $email = DB::table('users')->where('username', $request->from_user)->first();
-        Mail::to($email)->send(new NotificationMail());
+//        $email = DB::table('users')->where('username', $request->from_user)->first();
+//        Mail::to($email)->send(new NotificationMail());
 
 
 
