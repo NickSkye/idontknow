@@ -82,8 +82,11 @@ class MessagesController extends Controller
 
         $emails = $this->getSpecificFriendsInfo($request->sendtousername);
 
+        $getemails = DB::table('profileinfo')->select('get_email_notifications')->where('username', Auth::user()->username)->first();
+       if($getemails){
+           Mail::to($emails->email)->send(new NotificationMail());
+       }
 
-       Mail::to($emails->email)->send(new NotificationMail());
 
         return redirect('/shouts')->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
 
