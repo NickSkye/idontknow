@@ -83,9 +83,32 @@
                                 <h2>{{$item->name}}</h2>
                                 <h4>{{$item->username}}</h4>
 
-                                <h4>Followers: {{$numfollowers}}</h4>
-                                <h4>Following: {{$numfollowing}}</h4>
-                                <h4>Posts: {{$numposts}}</h4>
+                                <div class="profile-stats" style="display: flex; margin-bottom: 30px;">
+                                    <div style="text-align: center; width: 75px;">
+                                        <div>
+                                            <p class="numbers">{{$numposts}}</p>
+                                        </div>
+                                        <div>
+                                            <p class="words">Posts</p>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center; width: 75px;">
+                                        <div>
+                                            <p class="numbers">{{$numfollowers}}</p>
+                                        </div>
+                                        <div>
+                                            <p class="words">Followers</p>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center; width: 75px;">
+                                        <div>
+                                            <p class="numbers">{{$numfollowing}}</p>
+                                        </div>
+                                        <div>
+                                            <p class="words">Following</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="achievements-box">
 
 
