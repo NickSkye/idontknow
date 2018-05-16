@@ -1,10 +1,10 @@
 @extends('layouts.app')
 <?php $page = 'me'; ?>
 @section('content')
-    <div class="container">
+    <div class="container profile-page">
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
-                <div class="card profile-page">
+                <div class="card ">
                     <div class="card-header">
 
                         {{--@include('partials.friendsearch')--}}
