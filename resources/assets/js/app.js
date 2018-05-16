@@ -143,6 +143,10 @@ $(document).ready(function(){
         $('.modal-dialog').hide();      //add the class to the clicked element
     });
 
+    $('.frendcollapse').click( function() {
+        $('.frendcollapse').collapse('hide');
+    });
+
 
 });
 

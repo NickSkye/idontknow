@@ -14013,6 +14013,10 @@ $(document).ready(function () {
         //use a class, since your ID gets mangled
         $('.modal-dialog').hide(); //add the class to the clicked element
     });
+
+    $('.frendcollapse').click(function () {
+        $('.frendcollapse').collapse('hide');
+    });
 });
 
 //Javascript
