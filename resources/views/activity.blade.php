@@ -268,6 +268,8 @@
                             Online Frends
                         </div>
                         <ul class="list-group list-group-flush">
+
+                            {{--   @foreach($users as $user)@if(DateTime($user->updated_at) + 5minutes < DateTime("now") do below   --}}
                             <li class="list-group-item">Cras justo odio</li>
                             <li class="list-group-item">Dapibus ac facilisis in</li>
                             <li class="list-group-item">Vestibulum at eros</li>
