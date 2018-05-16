@@ -143,9 +143,7 @@ $(document).ready(function(){
         $('.modal-dialog').hide();      //add the class to the clicked element
     });
 
-    $('.frendcollapse').click( function() {
-        $('.collapse').removeClass('show');
-    });
+    
 
 
 });
