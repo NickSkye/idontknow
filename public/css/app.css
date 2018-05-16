@@ -215,7 +215,7 @@ a p {
 }
 
 .loading-button {
-  background: lime;
+  background: lime !important;
   color: white;
   float: right;
 }
