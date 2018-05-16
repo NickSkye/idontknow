@@ -145,6 +145,8 @@ $(document).ready(function(){
 
     $(".comment-button").click(function() {  //use a class, since your ID gets mangled
         $('.comment-button').toggleClass("loading-button");     //add the class to the clicked element
+        $('.comment-button i.fa').toggleClass("fa-paper-plane");     //add the class to the clicked element
+        $('.comment-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");     //add the class to the clicked element
     });
 
 
