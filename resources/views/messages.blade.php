@@ -59,7 +59,7 @@
                                 @if($hasfriends)
 
 
-                        <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
+                        <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
                             <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                         </button>
 
