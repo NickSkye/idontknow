@@ -14009,16 +14009,35 @@ $(document).ready(function () {
         $("#" + tab_id).addClass('current');
     });
 
-    $(".modal-button").click(function () {
-        //use a class, since your ID gets mangled
-        $('.modal-dialog').hide(); //add the class to the clicked element
-    });
+    //one way to disable extra clicks after shouting or posting
+    // $(".modal-button").click(function() {  //use a class, since your ID gets mangled
+    //     $('.modal-dialog').hide();      //add the class to the clicked element
+    // });
 
+
+    //next three are the other ways to disable extra clicks after shouting or posting
     $(".comment-button").click(function () {
         //use a class, since your ID gets mangled
         $('.comment-button').toggleClass("loading-button"); //add the class to the clicked element
         $('.comment-button i.fa').toggleClass("fa-paper-plane"); //add the class to the clicked element
-        $('.comment-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw"); //add the class to the clicked element
+        $('.comment-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        $('.comment-button').prop("disabled", true);
+    });
+
+    $(".shout-button").click(function () {
+        //use a class, since your ID gets mangled
+        $('.shout-button').toggleClass("loading-button"); //add the class to the clicked element
+        $('.shout-button i.fa').toggleClass("fa-bullhorn"); //add the class to the clicked element
+        $('.shout-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        $('.shout-button').prop("disabled", true);
+    });
+
+    $(".upload-button").click(function () {
+        //use a class, since your ID gets mangled
+        $('.upload-button').toggleClass("loading-button"); //add the class to the clicked element
+        $('.upload-button i.fa').toggleClass("fa-share"); //add the class to the clicked element
+        $('.upload-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        $('.upload-button').prop("disabled", true);
     });
 
     $(".followerCollapser").click(function () {

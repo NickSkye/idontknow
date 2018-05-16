@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="col-md-4" style="align-self: flex-end;">
-                        <button type="submit" class="btn upload-button modal-button" style="float: right;" >Upload</button>
+                        <button type="submit" class="btn upload-button modal-button" style="float: right;" ><i aria-hidden="true" class="fa fa-share fa-2x"></i></button>
                     </div>
                 </div>
             </form>
