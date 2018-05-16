@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
-                <div class="card">
+                <div class="card profile-page">
                     <div class="card-header">
 
                         {{--@include('partials.friendsearch')--}}
