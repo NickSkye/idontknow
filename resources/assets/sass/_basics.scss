@@ -327,8 +327,8 @@ ul.tabs li.current{
 }
 
 .modal.show .modal-dialog {
-    -webkit-transform: translate(0, 50%) !important;
-    transform: translate(0, 50%) !important;
+    -webkit-transform: translate(0, 100px) !important;
+    transform: translate(0, 100px) !important;
 }
 
 
