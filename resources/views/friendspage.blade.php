@@ -127,6 +127,16 @@
                         <div class="collapse" id="followerCollapse">
                             <div class="card card-body">
                                 followers
+                                <div class="row frend-area">
+                                    @foreach($allfollowersinfo as $followerinfos)
+                                        <a href="/users/{{$followerinfos->username}}" class="col-4 frends-frends-images" style="background-image: url('{{$followerinfos->profileimage}}');">
+                                            <div class="frend-box">
+                                                <p>{{$followerinfos->username}}</p>
+                                            </div>
+                                        </a>
+                                    @endforeach
+
+                                </div>
                             </div>
                         </div>
 
@@ -134,6 +144,15 @@
                         <div class="collapse" id="followingCollapse">
                             <div class="card card-body">
                                following
+                                <div class="row frend-area">
+                                @foreach($allfriendsinfo as $infos)
+                                    <a href="/users/{{$infos->followsusername}}" class="col-4 frends-frends-images" style="background-image: url('{{$infos->profileimage}}');">
+                                        <div class="frend-box">
+                                            <p>{{$infos->followsusername}}</p>
+                                        </div>
+                                    </a>
+                                @endforeach
+                                </div>
                             </div>
                         </div>
 

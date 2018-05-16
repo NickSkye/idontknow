@@ -26,6 +26,18 @@ class FriendController extends Controller
         return $friends_info_full;
     }
 
+    public function getFollowingsInfo($friendsusername){
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', $friendsusername)->orderBy('users.updated_at', 'desc')->get();
+
+        return $friends_info_full;
+    }
+
+    public function getFollowersInfo($friendsusername){
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.username', '=', 'profileinfo.username')->join('users', 'follows.username', '=', 'users.username')->where('follows.followsusername', $friendsusername)->orderBy('users.updated_at', 'desc')->get();
+
+        return $friends_info_full;
+    }
+
     public function index($username)
     {
 //        $info = DB::table('users')->where('username', $username)->get();
@@ -34,6 +46,9 @@ class FriendController extends Controller
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         $friendsposts = DB::table('posts')->where('username', $username)->where('deleted', false)->orderBy('created_at', 'desc')->get();
+
+        $allfriendsinfo = $this->getFollowingsInfo();
+        $allfollowersinfo = $this->getFollowersInfo();
 
         //User follow and post meta data
         $numfollowers = DB::table('follows')->where('followsusername', $username)->count();
@@ -45,7 +60,7 @@ class FriendController extends Controller
                 if ($item->username === $friend->followsusername) {
                     $arefriends = true;
 
-                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing]);
+                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo]);
                 }
 
             }
