@@ -232,6 +232,12 @@ a p {
   float: right;
 }
 
+.add-button {
+  background: #0b7dda;
+  color: white;
+  float: right;
+}
+
 .invite-button {
   background: #0b7dda;
   color: white;
