@@ -33,7 +33,7 @@ class S3ImageController extends Controller
             $imageName = Storage::disk('s3')->url("profilepics/".$imageName);
             if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
                 DB::table('profileinfo')->where('username', '=', Auth::user()->username)->update(
-                    ['profileimage' => $imageName, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday,'updated_at' => date('Y-m-d H:i:s')]
+                    ['profileimage' => $imageName, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday, 'email_notifications'=> $request->email_notifications, 'updated_at' => date('Y-m-d H:i:s')]
                 );
             }else{
                 DB::table('profileinfo')->insert(
@@ -47,7 +47,7 @@ class S3ImageController extends Controller
                 );
             }else{
                 DB::table('profileinfo')->insert(
-                    ['username' => Auth::user()->username, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday, 'created_at' => date('Y-m-d H:i:s')]
+                    ['username' => Auth::user()->username, 'aboutme' => $request->aboutme, 'birthday' => $request->birthday, 'email_notifications'=> $request->email_notifications, 'created_at' => date('Y-m-d H:i:s')]
                 );
             }
 
