@@ -10,6 +10,10 @@ class CommentsController extends Controller
 {
     public function addcomment(Request $request)
     {
+
+        $this->validate($request, [
+            'comment' => 'required', //|max:2048
+        ]);
         DB::table('comments')->insert(
             ['username' => Auth::user()->username, 'post_id' => $request->post_id, 'comment' => $request->comment, 'likes' => 0, 'dislikes' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
