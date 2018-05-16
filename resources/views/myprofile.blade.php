@@ -50,8 +50,8 @@
                                 {{--END BIRTHDAY STUFF--}}
                                 <p>last active: {{Carbon\Carbon::parse($generalinfo->updated_at)->format('d M Y g:i A')}}</p>
 
-                                <div>
-                                    <div>
+                                <div style="display: flex;">
+                                    <div style="text-align: center">
                                         <div>
                                             {{$numposts}}
                                         </div>
@@ -59,7 +59,7 @@
                                             Posts
                                         </div>
                                     </div>
-                                    <div>
+                                    <div style="text-align: center">
                                         <div>
                                             {{$numfollowers}}
                                         </div>
@@ -67,7 +67,7 @@
                                             Followers
                                         </div>
                                     </div>
-                                    <div>
+                                    <div style="text-align: center">
                                         <div>
                                             {{$numfollowing}}
                                         </div>
