@@ -22,9 +22,9 @@
     </div>
 
     <div class="footer-button" data-toggle="tooltip" data-placement="top" title="Upload a new post">
-        <a type="button" class="btn upload-post-button" data-toggle="modal" href="#uploadImage" >
+        <button type="button" class="btn upload-post-button" data-toggle="modal" data-target="#uploadImage" >
             <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-        </a>
+        </button>
     </div>
 
     <div class="footer-button">
