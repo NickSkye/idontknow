@@ -144,11 +144,11 @@ $(document).ready(function(){
     });
 
 
-    $(".collapse").click(function() {  //use a class, since your ID gets mangled
+    $(".followerCollapser").click(function() {  //use a class, since your ID gets mangled
         $('#followingCollapse').removeClass('show');      //add the class to the clicked element
     });
 
-    $(".collapse").click(function() {  //use a class, since your ID gets mangled
+    $(".followingCollapser").click(function() {  //use a class, since your ID gets mangled
         $('#followerCollapse').removeClass('show');      //add the class to the clicked element
     });
 

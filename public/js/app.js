@@ -14014,12 +14014,12 @@ $(document).ready(function () {
         $('.modal-dialog').hide(); //add the class to the clicked element
     });
 
-    $(".collapse").click(function () {
+    $(".followerCollapser").click(function () {
         //use a class, since your ID gets mangled
         $('#followingCollapse').removeClass('show'); //add the class to the clicked element
     });
 
-    $(".collapse").click(function () {
+    $(".followingCollapser").click(function () {
         //use a class, since your ID gets mangled
         $('#followerCollapse').removeClass('show'); //add the class to the clicked element
     });
