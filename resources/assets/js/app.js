@@ -144,7 +144,7 @@ $(document).ready(function(){
     });
 
     $('.frendcollapse').click( function() {
-        $('.frendcollapse').collapse('hide');
+        $('.collapse').collapse('hide');
     });
 
 
