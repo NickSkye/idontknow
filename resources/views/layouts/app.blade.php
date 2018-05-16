@@ -119,6 +119,6 @@
             @endauth
         </div>
 
-        <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js"></script>
+
     </body>
 </html>
