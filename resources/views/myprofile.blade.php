@@ -45,36 +45,39 @@
                                 {{--{{$generalinfo->birthday}}--}}
                                 {{--{{Carbon\Carbon::today()}}--}}
                                 {{--@if($generalinfo->birthday == Carbon\Carbon::today())--}}
-                                    {{--<img src="/images/birthday_gif.gif" alt="" style="width: 50px; height: 50px;">--}}
+                                {{--<img src="/images/birthday_gif.gif" alt="" style="width: 50px; height: 50px;">--}}
                                 {{--@endif--}}
                                 {{--END BIRTHDAY STUFF--}}
                                 <p>last active: {{Carbon\Carbon::parse($generalinfo->updated_at)->format('d M Y g:i A')}}</p>
 
                                 <div>
-                                    <span>
-                                        {{$numposts}}
-                                    </span>
-                                    <span>
-                                        {{$numfollowers}}
-                                    </span>
-                                    <span>
-                                        {{$numfollowing}}
-                                    </span>
-
+                                    <div>
+                                        <div>
+                                            {{$numposts}}
+                                        </div>
+                                        <div>
+                                            Posts
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            {{$numfollowers}}
+                                        </div>
+                                        <div>
+                                            Followers
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            {{$numfollowing}}
+                                        </div>
+                                        <div>
+                                            Following
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span>
-                                        Posts
-                                    </span>
-                                    <span>
-                                        Followers
-                                    </span>
-                                    <span>
-                                        Following
-                                    </span>
 
-                                </div>
-                            
+
 
                                 <div class="achievements-box row">
                                     <div class="col-2 col-sm-1">
