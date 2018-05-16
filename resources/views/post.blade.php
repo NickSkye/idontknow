@@ -59,7 +59,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 100%;">
+                                                <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
