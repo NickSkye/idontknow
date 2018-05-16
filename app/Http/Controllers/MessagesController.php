@@ -84,7 +84,7 @@ class MessagesController extends Controller
         $emails = $this->getSpecificFriendsInfo($request->sendtousername);
 
         $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $request->sendtousername)->first();
-       if($getsemails){
+       if($getsemails->email_notifications){
            Mail::to($emails->email)->send(new NotificationMail());
        }
 
