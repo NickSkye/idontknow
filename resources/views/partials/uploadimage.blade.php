@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="col-md-4" style="align-self: flex-end;">
-                        <button type="submit" class="btn upload-button" style="float: right;" data-dismiss="modal">Upload</button>
+                        <button type="submit" class="btn upload-button" style="float: right;" >Upload</button>
                     </div>
                 </div>
             </form>
