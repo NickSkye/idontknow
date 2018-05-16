@@ -93,20 +93,24 @@
                                         </div>
                                     </div>
                                     <div style="text-align: center; width: 75px;">
+                                        <a class="" data-toggle="collapse" href="#followerCollapse" role="button" aria-expanded="false" aria-controls="followerCollapse">
                                         <div>
                                             <p class="numbers">{{$numfollowers}}</p>
                                         </div>
                                         <div>
                                             <p class="words">Followers</p>
                                         </div>
+                                        </a>
                                     </div>
                                     <div style="text-align: center; width: 75px;">
+                                        <a class="" data-toggle="collapse" href="#followingCollapse" role="button" aria-expanded="false" aria-controls="followingCollapse">
                                         <div>
                                             <p class="numbers">{{$numfollowing}}</p>
                                         </div>
                                         <div>
                                             <p class="words">Following</p>
                                         </div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="achievements-box">
@@ -119,6 +123,22 @@
                                 @endforeach
                             </div>
                         </div>
+                        {{--Friends followers--}}
+                        <div class="collapse" id="followerCollapse">
+                            <div class="card card-body">
+                                followers
+                            </div>
+                        </div>
+
+                        {{--Friends following--}}
+                        <div class="collapse" id="followingCollapse">
+                            <div class="card card-body">
+                               following
+                            </div>
+                        </div>
+
+
+
                     </div>
                     <div class="card-body">
                         @if (session('status'))
