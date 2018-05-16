@@ -173,7 +173,7 @@
                                     <div class="col-12">
 
                                         <div class="frend-post-box">
-                                            <p>{{$post->created_at}}</p>
+                                            <p>{{Carbon\Carbon::parse($post->created_at)->format('d M Y g:i A')}}</p>
                                             <a href="/post/{{$post->id}}">
                                                 <p>{{$post->description}}</p>
                                                 <img src="{{$post->imagepath}}" class="img-fluid tiny-img" alt="" style="margin-bottom: 30px;">
