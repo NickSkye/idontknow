@@ -82,6 +82,15 @@ class PagesController extends Controller
         return $friends_info_full;
     }
 
+    public function getFrendsOnline(){
+
+//        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
+
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get(); //'posts.updated_at'
+
+        return $friends_online;
+    }
+
     public function getFollowersInfoWithPosts(){
 
 //        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
@@ -107,10 +116,11 @@ class PagesController extends Controller
         ])->get();
 
         $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
 
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now]);
+        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
 
 
     }
