@@ -453,13 +453,16 @@ ul.tabs li.current{
 }
 
 .toggleon-online-frends{
+
     @media (min-width: 767px){
         position: fixed;
         right: 0;
-        top: 114px;
-        width: 20%;
-        height: 40px;
-        background: transparent;
+        top: 125px;
+        width: 30px;
+        height: 30px;
+        padding: 3px;
+        background: $secondary-color;
+        color: $accent-color;
         display: block;
 
         transition: 0.5s transform ease-in-out;
