@@ -456,9 +456,10 @@ ul.tabs li.current{
 
     @media (min-width: 767px){
         position: fixed;
-        right: 0;
+        right: -10px;
         top: 125px;
-        width: 30px;
+        border-radius: 10px;
+        width: 45px;
         height: 30px;
         padding: 3px;
         background: $secondary-color;
@@ -483,6 +484,12 @@ ul.tabs li.current{
         display: block;
         overflow-y: scroll;
         transition: 0.5s transform ease-in-out;
+
+        .toggle-online-frends{
+            i{
+                color: $accent-color;
+            }
+        }
 
         &.frends-closed{
             transform: translateX(100%);
