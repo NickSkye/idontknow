@@ -184,7 +184,7 @@
   color: #F62E55;
 }
 
-.center-top-search input:focus .send {
+.center-top-search input:focus ~ .send {
   color: #70F3FF !important;
 }
 

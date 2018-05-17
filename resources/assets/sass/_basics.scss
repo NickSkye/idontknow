@@ -176,10 +176,10 @@
         color: $accent-color;
     }
 
-    input:focus .send{
+    input:focus ~ .send{
 
             color: $main-color !important;
-        
+
     }
 
     #query:focus{
