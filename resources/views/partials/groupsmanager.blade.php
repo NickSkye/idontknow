@@ -1,4 +1,4 @@
-<div class="toggleon-online-frends">
+<div class="toggleon-groups-manager">
     <i class="fa fa-caret-left" aria-hidden="true"></i>
 </div>
 <div class="groups-manager" style="position: fixed;">
