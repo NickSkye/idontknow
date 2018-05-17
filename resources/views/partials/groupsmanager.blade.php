@@ -1,11 +1,11 @@
 <div class="toggleon-groups-manager">
-    <i class="fa fa-caret-left" aria-hidden="true"></i>
+    <i class="fa fa-caret-right" aria-hidden="true"></i>
 </div>
 <div class="groups-manager" style="position: fixed;">
 
     <div class="card" style="width: 100%;">
         <div class="card-header">
-            <span class="toggle-online-frends"><i class="fa fa-caret-right" aria-hidden="true"></i></span> Groups
+             Groups <span class="toggle-groups-manager"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
         </div>
         <ul class="list-group list-group-flush">
 
