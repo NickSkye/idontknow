@@ -44,11 +44,11 @@
                             <div id="tab-1" class="tab-content current">
                                 <div class="row frend-area">
 
-
+                                    @foreach($allfriendsinfo as $infos)
 
                                         <a href="/users/{{$infos->followsusername}}" class="col-4 home-frends-images" style="background-image: url('{{$infos->profileimage}}');">
                                            <div class="online-status">
-                                               @foreach($allfriendsinfo as $infos)
+
 
                                                    @foreach($online_frends as $frend)
                                                        {{--now {{Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))}}--}}
