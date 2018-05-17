@@ -33,6 +33,6 @@ class ReportForm extends Mailable
         $this->from(['FrendGrid' => 'frendgrid@gmail.com']);
         $this->to('frendgrid@gmail.com');
 
-        return $this->view('emails.report')->with($this->data);
+        return $this->view('emails.report')->with('data', $this->data);
     }
 }
