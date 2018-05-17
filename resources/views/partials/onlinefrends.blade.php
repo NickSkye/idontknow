@@ -23,7 +23,7 @@
                     @else
                         <i class="fa fa-circle" style="color: red;" aria-hidden="true"></i>
                     @endif
-                    {{$frend->username}}
+                        <a href="/users/{{$frend->username}}">{{$frend->username}}</a>
                     @if($frend->username ===  Auth::user()->username )
                         (you)
                     @endif
