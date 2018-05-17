@@ -86,7 +86,7 @@ class PagesController extends Controller
 
 //        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
 
-        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get(); //'posts.updated_at'
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get(); //'posts.updated_at'
 
         return $friends_online;
     }
