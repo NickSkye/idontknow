@@ -567,8 +567,31 @@ ul.tabs li.current{
     }
 }
 
-//.frend-search-down{
-//    @media(max-width: 767px){
-//        padding-top: 3.5rem!important;
-//    }
-//}
+.groups-manager{
+    @media (min-width: 767px){
+        position: fixed;
+        left: 0;
+        top: 114px;
+        width: 20%;
+        height: 500px;
+        background: transparent;
+        display: block;
+        overflow-y: scroll;
+        transition: 0.5s transform ease-in-out;
+
+        .toggle-online-frends{
+            i{
+                color: $accent-color;
+            }
+        }
+
+        &.frends-closed{
+            transform: translateX(100%);
+
+        }
+    }
+    display: none;
+
+
+
+}

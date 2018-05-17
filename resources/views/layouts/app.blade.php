@@ -116,6 +116,7 @@
             </main>
             @auth
                 @include('partials.onlinefrends')
+                @include('partials.groupsmanager')
                 @include('partials.permafooter')
             @endauth
         </div>

@@ -569,6 +569,36 @@ ul.tabs li.current {
   line-height: 1.6;
 }
 
+.groups-manager {
+  display: none;
+}
+
+@media (min-width: 767px) {
+  .groups-manager {
+    position: fixed;
+    left: 0;
+    top: 114px;
+    width: 20%;
+    height: 500px;
+    background: transparent;
+    display: block;
+    overflow-y: scroll;
+    -webkit-transition: 0.5s -webkit-transform ease-in-out;
+    transition: 0.5s -webkit-transform ease-in-out;
+    transition: 0.5s transform ease-in-out;
+    transition: 0.5s transform ease-in-out, 0.5s -webkit-transform ease-in-out;
+  }
+
+  .groups-manager .toggle-online-frends i {
+    color: #F62E55;
+  }
+
+  .groups-manager.frends-closed {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
