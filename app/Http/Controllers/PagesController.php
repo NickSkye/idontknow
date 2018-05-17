@@ -271,7 +271,7 @@ class PagesController extends Controller
         );
 
 
-        Mail::send(new ReportForm($data));
+        Mail::send(new ReportCommentForm($data));
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 

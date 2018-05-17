@@ -139,7 +139,7 @@
                                             <div class="pull-right">
                                             <form method="post" action="/report-comment/{{$comment->id}}">
                                                 {{ csrf_field() }}
-                                                <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
+                                                <input type="hidden" name="postid" value="{{$post->id}}"/>
                                                 <button class="btn btn-danger" type="submit">
                                                     Report
                                                 </button>
