@@ -12,6 +12,15 @@ use App\Mail\ReportForm;
 class PagesController extends Controller
 {
 
+    public function getFrendsOnline(){
+
+//        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
+
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get(); //'posts.updated_at'
+
+        return $friends_online;
+    }
+
     public function getMySettingsInfo(){
         $my_info_full = DB::table('profileinfo')->join('users', 'profileinfo.username', '=', 'users.username')->where('profileinfo.username', Auth::user()->username)->first();
 
@@ -38,9 +47,12 @@ class PagesController extends Controller
             ['seen', false],
         ])->get();
 
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('settings', ['profileinfo' => $profileinfo, 'notifs' => $notifs]);
+        return view('settings', ['profileinfo' => $profileinfo, 'notifs' => $notifs, 'now'=> $now, 'online_frends'=> $online_frends]);
 
 
     }
@@ -63,12 +75,15 @@ class PagesController extends Controller
 
         $real = $this->getFrends();
 
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+
         //User follow and post meta data
         $numfollowers = DB::table('follows')->where('followsusername', Auth::user()->username)->count();
         $numposts = DB::table('posts')->where('username', Auth::user()->username)->where('deleted', false)->count();
         $numfollowing = DB::table('follows')->where('username', Auth::user()->username)->count();
 
-        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs, 'real' => $real, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing]);
+        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs, 'real' => $real, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing, 'now'=> $now, 'online_frends'=> $online_frends]);
 
 
     }
@@ -82,14 +97,7 @@ class PagesController extends Controller
         return $friends_info_full;
     }
 
-    public function getFrendsOnline(){
 
-//        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
-
-        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get(); //'posts.updated_at'
-
-        return $friends_online;
-    }
 
     public function getFollowersInfoWithPosts(){
 
@@ -133,10 +141,11 @@ class PagesController extends Controller
         $post = DB::table('profileinfo')->join('posts', 'profileinfo.username', '=', 'posts.username')->where('posts.id', $post_id)->where('posts.deleted', false)->first();
         DB::table('posts')->where('id', $post_id)->increment('views');
         $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
-
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('post', ['post'=> $post, 'thecomments' => $thecomments]);
+        return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends]);
 
 
     }
@@ -158,20 +167,22 @@ class PagesController extends Controller
 
 
         $notifs = DB::table('notifications')->where('id', $id)->orderBy('created_at', 'asc')->get();
-
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
 
         DB::table('notifications')->where('id', $id)->update(
             ['seen' => true, 'updated_at' => date('Y-m-d H:i:s')]
         );
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
-        return view('notifications', ['notifs'=> $notifs]);
+        return view('notifications', ['notifs'=> $notifs, 'now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function allnotifications()
     {
 
-
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
 //        $notifs = DB::table('notifications')->where('username', Auth::user()->username)->orderBy('created_at', 'asc')->get();
 //        $notifs = DB::table('notifications')->where('username', $id)->get();
         $notifs = DB::table('notifications')->where([
@@ -180,7 +191,7 @@ class PagesController extends Controller
         ])->orderBy('created_at', 'desc')->get();
 
 
-        return view('notifications', ['notifs'=> $notifs]);
+        return view('notifications', ['notifs'=> $notifs, 'now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function clearnotifications(){
@@ -196,28 +207,38 @@ class PagesController extends Controller
     }
 
     public function about(){
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('about');
+        return view('about', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function donate(){
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('donate');
+        return view('donate', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function legal(){
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('legal');
+        return view('legal', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function suggestions(){
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('suggestions');
+        return view('suggestions', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function support(){
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('support');
+        return view('support', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
 
 

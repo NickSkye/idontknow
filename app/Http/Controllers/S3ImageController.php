@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\DB;
 class S3ImageController extends Controller
 {
 
+    public function getFrendsOnline(){
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+        return $friends_online;
+    }
 
 
     public function imageUploadProfilePic(Request $request)
@@ -60,6 +64,10 @@ class S3ImageController extends Controller
         $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
         $myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
         $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
+
+
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
 
         return redirect('/me')->with( ['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends])->with('success','Profile Updated successfully.');
     }

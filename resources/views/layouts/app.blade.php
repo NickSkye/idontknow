@@ -115,6 +115,7 @@
                 @include('partials.modals')
             </main>
             @auth
+                @include('partials.onlinefrends')
                 @include('partials.permafooter')
             @endauth
         </div>

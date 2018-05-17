@@ -140,6 +140,9 @@
                     <div class="card-footer">
                         <div>Shouts get deleted once viewed</div>
                     </div>
+
+
+
                 </div>
             </div>
         </div>

@@ -13,6 +13,10 @@ use App\Mail\AddFrendMail;
 class FriendController extends Controller
 {
 
+    public function getFrendsOnline(){
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+        return $friends_online;
+    }
 
     public function getFriendsInfoWithPosts(){
         $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->where('follows.username', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->paginate(10);; //'posts.updated_at'
@@ -49,7 +53,8 @@ class FriendController extends Controller
 
         $allfriendsinfo = $this->getFollowingsInfo($username);
         $allfollowersinfo = $this->getFollowersInfo($username);
-
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
         //User follow and post meta data
         $numfollowers = DB::table('follows')->where('followsusername', $username)->count();
         $numposts = DB::table('posts')->where('username', $username)->where('deleted', false)->count();
@@ -69,7 +74,7 @@ class FriendController extends Controller
 
 
 
-        return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing]);
+        return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing, 'now'=> $now, 'online_frends'=> $online_frends]);
 
 
     }

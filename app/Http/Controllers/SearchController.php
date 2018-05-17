@@ -13,6 +13,11 @@ use Mail;
 
 class SearchController extends Controller {
 
+    public function getFrendsOnline(){
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+        return $friends_online;
+    }
+
     public function index(Request $request)
     {
 
@@ -23,10 +28,13 @@ class SearchController extends Controller {
         );
         //$users = User::all();
 
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+
 
         $searchedusers = User::join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.email', 'LIKE', '%' . $request->input('query') . '%')->paginate(10);
 
-        return view('results')->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
+        return view('results', ['now'=> $now, 'online_frends'=> $online_frends])->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
     }
 
 
