@@ -282,6 +282,9 @@
                                     <i class="fa fa-circle" style="color: red;" aria-hidden="true"></i>
                                 @endif
                                 {{$frend->username}}
+                                @if($frend->username === @auth()->username)
+                                     (you)
+                                    @endif
                             </li>
 
         @endforeach
