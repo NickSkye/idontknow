@@ -88,7 +88,7 @@
 @endauth
 {{--MOBILE NAV--}}
 @auth
-<nav class="navbar mobile-navbar navbar-light navbar-laravel visible-on-small" style="position: fixed; top: 0;">
+<nav class="navbar mobile-navbar navbar-light navbar-laravel visible-on-small">
 
 
         <div class="header-button">
