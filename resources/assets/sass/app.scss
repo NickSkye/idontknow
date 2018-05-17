@@ -17,5 +17,8 @@
 }
 
 .py-4{
-  padding-top: 3.5rem!important;
+  @media(max-width: 767px){
+    padding-top: 3.5rem!important;
+  }
+
 }
