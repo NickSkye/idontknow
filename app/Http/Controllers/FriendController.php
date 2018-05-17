@@ -50,7 +50,7 @@ class FriendController extends Controller
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         $friendsposts = DB::table('posts')->where('username', $username)->where('deleted', false)->orderBy('created_at', 'desc')->get();
-
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         $allfriendsinfo = $this->getFollowingsInfo($username);
         $allfollowersinfo = $this->getFollowersInfo($username);
         $now = new \DateTime();
