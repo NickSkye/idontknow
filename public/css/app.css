@@ -184,6 +184,10 @@
   color: #F62E55;
 }
 
+.center-top-search input:focus .send {
+  color: #70F3FF !important;
+}
+
 .center-top-search #query:focus .send {
   color: #70F3FF !important;
 }

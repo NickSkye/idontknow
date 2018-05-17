@@ -176,6 +176,12 @@
         color: $accent-color;
     }
 
+    input:focus {
+        .send {
+            color: $main-color !important;
+        }
+    }
+
     #query:focus{
         .send {
             color: $main-color !important;
