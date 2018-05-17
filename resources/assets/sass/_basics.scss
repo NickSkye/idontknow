@@ -171,6 +171,16 @@
     .send:hover {
         color: $main-color;
     }
+
+    .send:active {
+        color: $accent-color;
+    }
+
+    &:active{
+        .send {
+            color: $main-color;
+        }
+    }
 }
 
 #app {
