@@ -96,7 +96,7 @@
                                         @else
                                             <i class="fa fa-circle" style="color: red;" aria-hidden="true"></i>
                                         @endif
-                                        <h4>{{$item->username}}</h4>
+                                        <span><h4>{{$item->username}}</h4></span>
                                         @if($item->username ===  Auth::user()->username )
                                             (you)
                                         @endif
