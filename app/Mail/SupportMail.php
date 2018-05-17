@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ReportForm extends Mailable
+class SupportMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -29,10 +29,10 @@ class ReportForm extends Mailable
      */
     public function build()
     {
-        $this->subject('Reported Content');
+        $this->subject('Support Email');
         $this->from(['FrendGrid' => 'frendgrid@gmail.com']);
         $this->to('frendgrid@gmail.com');
 
-        return $this->view('emails.report')->with($this->data);
+        return $this->view('emails.support')->with($this->data);
     }
 }
