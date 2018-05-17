@@ -159,26 +159,33 @@
 
 .center-top-search span {
   position: absolute;
-  top: 0px;
-  left: 97%;
+  top: 0;
+  right: 0px;
 }
 
 .center-top-search .send {
   float: left;
-  padding: 0px;
-  background: #F62E55;
-  color: white;
-  font-size: 23px;
-  /* border: 1px solid grey; */
-  border-left: none;
-  border-radius: 3px;
+  padding: 0;
+  color: #F62E55;
+  background: transparent;
+  font-size: 22px;
+  border: none;
+  border-radius: .25rem;
   cursor: pointer;
-  padding-left: 3px;
+  padding-left: 5px;
   padding-right: 5px;
 }
 
 .center-top-search .send:hover {
-  background: #0b7dda;
+  color: #70F3FF;
+}
+
+.center-top-search .send:active {
+  color: #F62E55;
+}
+
+.center-top-search:focus .send {
+  color: #70F3FF;
 }
 
 #app {
@@ -460,6 +467,29 @@ ul.tabs li.current {
   font-size: 10pt;
 }
 
+.toggleon-online-frends {
+  display: none;
+}
+
+@media (min-width: 767px) {
+  .toggleon-online-frends {
+    position: fixed;
+    right: -10px;
+    top: 125px;
+    border-radius: 10px;
+    width: 45px;
+    height: 30px;
+    padding: 3px;
+    background: #0b7dda;
+    color: #F62E55;
+    display: block;
+    -webkit-transition: 0.5s -webkit-transform ease-in-out;
+    transition: 0.5s -webkit-transform ease-in-out;
+    transition: 0.5s transform ease-in-out;
+    transition: 0.5s transform ease-in-out, 0.5s -webkit-transform ease-in-out;
+  }
+}
+
 .online-frends {
   display: none;
 }
@@ -468,12 +498,59 @@ ul.tabs li.current {
   .online-frends {
     position: fixed;
     right: 0;
-    top: 161px;
+    top: 114px;
     width: 20%;
     height: 500px;
-    background: whitesmoke;
+    background: transparent;
     display: block;
+    overflow-y: scroll;
+    -webkit-transition: 0.5s -webkit-transform ease-in-out;
+    transition: 0.5s -webkit-transform ease-in-out;
+    transition: 0.5s transform ease-in-out;
+    transition: 0.5s transform ease-in-out, 0.5s -webkit-transform ease-in-out;
   }
+
+  .online-frends .toggle-online-frends i {
+    color: #F62E55;
+  }
+
+  .online-frends.frends-closed {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+.online-status {
+  position: absolute;
+  left: 5px;
+  top: -3px;
+}
+
+@media (min-width: 767px) {
+  .online-status {
+    display: none;
+  }
+}
+
+.online-status i {
+  font-size: 10px;
+}
+
+.report-form .report-button {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0;
+  font-size: .9rem;
+  color: #F62E55;
+  line-height: 1.6;
 }
 
 .permafooter {

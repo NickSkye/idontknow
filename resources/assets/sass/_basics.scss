@@ -176,7 +176,7 @@
         color: $accent-color;
     }
 
-    &:active{
+    &:focus{
         .send {
             color: $main-color;
         }
