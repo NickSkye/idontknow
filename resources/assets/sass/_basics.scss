@@ -468,5 +468,14 @@ ul.tabs li.current{
 }
 
 .online-status{
+    @media (min-width: 767px){
+        display: none;
+    }
     position: absolute;
+    left: 5px;
+    top: -3px;
+    i{
+        font-size: 10px;
+    }
+
 }
