@@ -270,9 +270,12 @@
                         <ul class="list-group list-group-flush">
 
     @foreach($allfriendsinfo as $frend)
-                                @if(\DateTime($frend->updated_at) + 300 < \DateTime("now") )
+
+                                @if($frend->updated_at + 300 < $now )
+
+
                             <li class="list-group-item">{{$frend->username}}</li>
-                            @endif
+@endif
         @endforeach
                         </ul>
                     </div>
