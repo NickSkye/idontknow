@@ -50,12 +50,12 @@
 
 
                                         <div class="form-group">
-                                            <label for="mess">Message</label>
+                                            <label for="mess">Message us with any Questions or Concerns you may have and we will get back to you ASAP :)</label>
                                             <textarea class="form-control book-form" id="mess" name="mess" cols="30" rows="10">{{ old('mess') }}</textarea>
                                         </div>
 
 
-                                        <input type="submit" value="Submit" class="send"/>
+                                        <button type="submit" class="btn upload-button modal-button" style="float: right;"><i aria-hidden="true" class="fa fa-share fa-2x"></i></button>
 
                                     </div>
 
