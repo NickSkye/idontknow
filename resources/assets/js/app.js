@@ -181,7 +181,9 @@ $(document).ready(function(){
         $('#followerCollapse').removeClass('show');      //add the class to the clicked element
     });
 
-
+    $(".toggle-online-frends").click(function() {  //use a class, since your ID gets mangled
+        $('.online-frends').toggleClass('close');
+    });
 
 //Slick
 //     $('.multiple-items').slick({

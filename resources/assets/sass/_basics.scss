@@ -462,8 +462,15 @@ ul.tabs li.current{
         background: transparent;
         display: block;
         overflow-y: scroll;
+        transition: 0.5s transform ease-in-out;
+
+        &.closed{
+            transform: translateX(100%);
+        }
     }
     display: none;
+
+
 
 }
 
