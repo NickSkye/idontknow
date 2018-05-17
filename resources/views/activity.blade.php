@@ -270,9 +270,9 @@
                         <ul class="list-group list-group-flush">
 
     @foreach($allfriendsinfo as $frend)
-now {{$now->format('Y-m-d H:i:s')}}
-                            carbon {{$frend->username}} {{Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)}}
-                                @if(Carbon\Carbon::parse($frend->updated_at)->addMinutes(5) > $now )
+now {{Carbon\Carbon::parse($now)->format('Y-m-d H:i:s')}}
+                            carbon {{$frend->username}} {{Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s')}}
+                                @if(Carbon\Carbon::parse($now)->format('Y-m-d H:i:s') < Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s') )
 
 
                             <li class="list-group-item">{{$frend->username}}</li>
