@@ -196,6 +196,10 @@
   color: #70F3FF !important;
 }
 
+.center-top-search .form-control:focus .send {
+  color: #70F3FF !important;
+}
+
 #app {
   overflow-x: hidden;
 }

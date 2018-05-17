@@ -192,6 +192,12 @@
             color: $main-color !important;
         }
     }
+
+    .form-control:focus{
+        .send {
+            color: $main-color !important;
+        }
+    }
 }
 
 #app {
