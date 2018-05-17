@@ -13,12 +13,20 @@ use App\Mail\SupportMail;
 
 class PagesController extends Controller
 {
-
+    /*
+     * GETS ALL USERS FRENDS WHO ARE ONLINE
+     */
     public function getFrendsOnline(){
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
 
-//        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
+        return $friends_online;
+    }
 
-        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get(); //'posts.updated_at'
+/*
+ * GETS ALL THE GROUPS THE USER IS A PART OF
+ */
+    public function getGroups(){
+        $friends_online = DB::table('groups')->where('username', Auth::user()->username)->orderBy('updated_at', 'desc')->get();
 
         return $friends_online;
     }
