@@ -14052,6 +14052,7 @@ $(document).ready(function () {
         $('#followerCollapse').removeClass('show'); //add the class to the clicked element
     });
 
+    //online friends
     $(".toggle-online-frends").click(function () {
         //use a class, since your ID gets mangled
         $('.online-frends').addClass('frends-closed');
@@ -14059,6 +14060,16 @@ $(document).ready(function () {
     $(".toggleon-online-frends").click(function () {
         //use a class, since your ID gets mangled
         $('.online-frends').removeClass('frends-closed');
+    });
+
+    //groups manager
+    $(".toggle-groups-manager").click(function () {
+        //use a class, since your ID gets mangled
+        $('.groups-manager').addClass('groups-closed');
+    });
+    $(".toggleon-groups-manager").click(function () {
+        //use a class, since your ID gets mangled
+        $('.groups-manager').removeClass('groups-closed');
     });
 
     //Slick

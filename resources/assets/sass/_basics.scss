@@ -586,7 +586,7 @@ ul.tabs li.current{
         }
 
         &.groups-closed{
-            transform: translateX(100%);
+            transform: translateX(-100%);
 
         }
     }
