@@ -460,6 +460,22 @@ ul.tabs li.current {
   font-size: 10pt;
 }
 
+.online-frends {
+  display: none;
+}
+
+@media (min-width: 767px) {
+  .online-frends {
+    position: fixed;
+    right: 0;
+    top: 161px;
+    width: 20%;
+    height: 500px;
+    background: blue;
+    display: block;
+  }
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
