@@ -176,7 +176,7 @@
         color: $accent-color;
     }
 
-    &:focus{
+    #query:focus{
         .send {
             color: $main-color;
         }
