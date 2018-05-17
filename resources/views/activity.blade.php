@@ -282,7 +282,7 @@
                                     <i class="fa fa-circle" style="color: red;" aria-hidden="true"></i>
                                 @endif
                                 {{$frend->username}}
-                                @if($frend->username === @auth()->username)
+                                @if($frend->username ===  Auth::user()->username )
                                      (you)
                                     @endif
                             </li>
