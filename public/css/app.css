@@ -589,7 +589,7 @@ ul.tabs li.current {
     transition: 0.5s transform ease-in-out, 0.5s -webkit-transform ease-in-out;
   }
 
-  .groups-manager .toggle-online-frends i {
+  .groups-manager .toggle-groups-manager i {
     color: #F62E55;
   }
 
