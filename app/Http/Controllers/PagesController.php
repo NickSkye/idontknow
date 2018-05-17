@@ -261,17 +261,23 @@ class PagesController extends Controller
         return redirect("/")->with('status', 'post reported');
     }
 //    STILL NEED TO WORK ON THIS. COPY REPORT POST
-    public function reportcomment($id)
+    public function reportcomment(Request $request, $commentid)
     {
 
 
-        DB::table('posts')->where('username', Auth::user()->username)->where('id', $id)->update(['deleted' => true]);
+        $data = array(
+            'postid' => $request->postid,
+            'commentid' => $commentid,
+        );
 
+
+        Mail::send(new ReportForm($data));
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
-        return redirect("home")->with('status', 'post removed');
+        return redirect("/")->with('status', 'comment reported');
     }
 
 

@@ -136,7 +136,15 @@
 
 
                                         <div class="" style="max-width: 100px; position: absolute; right: 10px;">
-                                            <p class="pull-right"><a href="" style="color: red;">report</a></p>
+                                            <div class="pull-right">
+                                            <form method="post" action="/report-comment/{{$comment->id}}">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
+                                                <button class="btn btn-danger" type="submit">
+                                                    Report
+                                                </button>
+                                            </form>
+                                            </p>
                                         </div>
 
                                     </div>
