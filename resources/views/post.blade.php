@@ -85,21 +85,17 @@
                                         </div>
 
 
-
                                         @if (is_null($post->imagepath))
                                             <p>{{$post->description}}</p>
                                         @else
                                             <div class="col-lg-6">
                                                 <p>{{$post->description}}</p>
-                                            <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
-                                                <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
-                                            </button>
+                                                <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
+                                                    <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
+                                                </button>
                                             </div>
 
                                         @endif
-
-
-
 
 
                                         <p class="post-data">views: {{$post->views}}</p>
@@ -135,44 +131,44 @@
                                         </div>
 
 
-                                        <div class="" style="max-width: 100px; position: absolute; right: 10px;">
+                                        <div class="report-form" style="max-width: 100px; position: absolute; right: 10px;">
                                             <div class="pull-right">
-                                            <form method="post" action="/report-comment/{{$comment->id}}">
-                                                {{ csrf_field() }}
-                                                <input type="hidden" name="postid" value="{{$post->id}}"/>
-                                                <button class="btn btn-danger" type="submit">
-                                                    Report
-                                                </button>
-                                            </form>
-                                            </p>
+                                                <form method="post" action="/report-comment/{{$comment->id}}">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" name="postid" value="{{$post->id}}"/>
+                                                    <button class="btn report-button" type="submit">
+                                                        Report
+                                                    </button>
+                                                </form>
+                                                </p>
+                                            </div>
+
                                         </div>
 
-                                    </div>
+                                        <div class="row">
+                                            <div class="col-12">
 
-                                    <div class="row">
-                                        <div class="col-12">
-
-                                            <a href=""><p class="comment pull-right">reply</p></a>
+                                                <a href=""><p class="comment pull-right">reply</p></a>
+                                            </div>
                                         </div>
+
+
                                     </div>
-
-
+                                    <hr>
+                                    @endforeach
+                                    {{ $thecomments->links() }}
                                 </div>
-                                <hr>
-                            @endforeach
-                            {{ $thecomments->links() }}
+
+
                         </div>
+                        <div class="card-footer">
 
+                            <div> @include('partials.commentfield')</div>
 
-                    </div>
-                    <div class="card-footer">
-
-                        <div> @include('partials.commentfield')</div>
-
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 @endsection
 {{--THIS PAGE WILL BE AN INDIVIDUAL CLICKED ON POST WITH COMMENT SECTION AND VOTES--}}
