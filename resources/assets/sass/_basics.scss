@@ -464,7 +464,7 @@ ul.tabs li.current{
         overflow-y: scroll;
         transition: 0.5s transform ease-in-out;
 
-        &.close{
+        &.frends-closed{
             transform: translateX(100%);
         }
     }

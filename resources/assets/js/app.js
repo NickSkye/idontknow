@@ -182,7 +182,7 @@ $(document).ready(function(){
     });
 
     $(".toggle-online-frends").click(function() {  //use a class, since your ID gets mangled
-        $('.online-frends').toggleClass('close');
+        $('.online-frends').toggleClass('frends-closed');
     });
 
 //Slick
