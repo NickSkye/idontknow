@@ -153,24 +153,22 @@
 
     span {
         position: absolute;
-        top: 0px;
-        left: 97%;
+        top: 0;
+        right: 0px;
     }
     .send {
         float: left;
-        padding: 0px;
-        background: $accent-color;
-        color: white;
-        font-size: 23px;
-        /* border: 1px solid grey; */
+        padding: 0;
+        color: $accent-color;
+        font-size: 22px;
         border-left: none;
-        border-radius: 3px;
+        border-radius: .25rem;
         cursor: pointer;
-        padding-left: 3px;
+        padding-left: 5px;
         padding-right: 5px;
     }
     .send:hover {
-        background: #0b7dda;
+        color: $main-color;
     }
 }
 
