@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Post;
 use Mail;
 use App\Mail\ReportForm;
+use App\Mail\ReportCommentForm;
 
 class PagesController extends Controller
 {
