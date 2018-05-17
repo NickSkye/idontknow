@@ -452,6 +452,23 @@ ul.tabs li.current{
     }
 }
 
+.toggleon-online-frends{
+    @media (min-width: 767px){
+        position: fixed;
+        right: 0;
+        top: 114px;
+        width: 20%;
+        height: 40px;
+        background: transparent;
+        display: block;
+
+        transition: 0.5s transform ease-in-out;
+
+
+    }
+    display: none;
+}
+
 .online-frends{
     @media (min-width: 767px){
         position: fixed;
@@ -466,6 +483,7 @@ ul.tabs li.current{
 
         &.frends-closed{
             transform: translateX(100%);
+
         }
     }
     display: none;

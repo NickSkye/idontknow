@@ -1,4 +1,7 @@
 <div class="online-frends" style="position: fixed;">
+    <div class="toggleon-online-frends">
+        <i class="fa fa-arrows-h" aria-hidden="true"></i>
+    </div>
     <div class="card" style="width: 100%;">
         <div class="card-header">
             <span class="toggle-online-frends"><i class="fa fa-arrows-h" aria-hidden="true"></i></span>Online Frends

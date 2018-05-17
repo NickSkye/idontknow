@@ -182,7 +182,10 @@ $(document).ready(function(){
     });
 
     $(".toggle-online-frends").click(function() {  //use a class, since your ID gets mangled
-        $('.online-frends').toggleClass('frends-closed');
+        $('.online-frends').addClass('frends-closed');
+    });
+    $(".toggleon-online-frends").click(function() {  //use a class, since your ID gets mangled
+        $('.online-frends').removeClass('frends-closed');
     });
 
 //Slick
