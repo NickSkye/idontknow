@@ -182,7 +182,7 @@
 
     }
 
-    #query:focus{
+    &:focus{
         .send {
             color: $main-color !important;
         }

@@ -188,7 +188,7 @@
   color: #70F3FF !important;
 }
 
-.center-top-search #query:focus .send {
+.center-top-search:focus .send {
   color: #70F3FF !important;
 }
 
