@@ -178,7 +178,18 @@
 
     #query:focus{
         .send {
-            color: $main-color;
+            color: $main-color !important;
+        }
+    }
+
+    #query:active{
+        .send {
+            color: $main-color !important;
+        }
+    }
+    #query:hover{
+        .send {
+            color: $main-color !important;
         }
     }
 }
