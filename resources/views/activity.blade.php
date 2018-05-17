@@ -271,7 +271,7 @@
 
     @foreach($allfriendsinfo as $frend)
 
-                                @if($frend->updated_at + 300 < $now )
+                                @if(Carbon\Carbon::parse($frend->updated_at) + 300 < $now )
 
 
                             <li class="list-group-item">{{$frend->username}}</li>
