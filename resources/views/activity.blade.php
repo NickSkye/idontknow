@@ -270,7 +270,8 @@
                         <ul class="list-group list-group-flush">
 
     @foreach($allfriendsinfo as $frend)
-
+{{$now}}
+                            {{Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)}}
                                 @if(Carbon\Carbon::parse($frend->updated_at)->addMinutes(5) > $now )
 
 
