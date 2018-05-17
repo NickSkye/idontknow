@@ -272,11 +272,18 @@
     @foreach($online_frends as $frend)
 {{--now {{Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))}}--}}
                             {{--carbon {{$frend->username}} {{Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s')}}--}}
+
+
+
+                            <li class="list-group-item">
                                 @if(Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))->format('Y-m-d H:i:s') < Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s') )
+                                    <i class="fa fa-circle" style="color: lime;" aria-hidden="true"></i>
+                                    @else
+                                    <i class="fa fa-circle" style="color: red;" aria-hidden="true"></i>
+                                @endif
+                                {{$frend->username}}
+                            </li>
 
-
-                            <li class="list-group-item">{{$frend->username}}</li>
-@endif
         @endforeach
                         </ul>
                     </div>
