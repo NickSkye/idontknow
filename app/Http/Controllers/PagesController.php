@@ -9,6 +9,7 @@ use App\Post;
 use Mail;
 use App\Mail\ReportForm;
 use App\Mail\ReportCommentForm;
+use App\Mail\SupportMail;
 
 class PagesController extends Controller
 {
@@ -240,6 +241,23 @@ class PagesController extends Controller
         $online_frends = $this->getFrendsOnline();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         return view('support', ['now'=> $now, 'online_frends'=> $online_frends]);
+    }
+
+    public function supportrequest(Request $request){
+        $this->validate($request, [
+            'mess' => 'required',
+
+
+        ]);
+
+        $data = array(
+            'mess' => $request->mess,
+        );
+        Mail::send(new SupportMail($data));
+
+        session()->flash('status', 'Successfully sent message!');
+
+        return redirect('/');
     }
 
 

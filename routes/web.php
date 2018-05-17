@@ -33,6 +33,7 @@ Route::get('/donate', 'PagesController@donate')->middleware('auth');
 Route::get('/legal', 'PagesController@legal')->middleware('auth');
 Route::get('/suggestions', 'PagesController@suggestions')->middleware('auth');
 Route::get('/support', 'PagesController@support')->middleware('auth');
+Route::post('/support-request', 'PagesController@supportrequest')->middleware('auth');
 
 
 Route::post('/shouts/send', 'MessagesController@shout')->middleware('auth');

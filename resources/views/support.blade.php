@@ -27,31 +27,13 @@
                 {{--MODAL FOR SHOUTS--}}
 
 
-                <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
 
-                            </div>
-                            {{--<div class="modal-footer">--}}
-                            {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
-                            {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
-                            {{--</div>--}}
-                        </div>
-                    </div>
-                </div>
 
                 {{--END MODALS FOR SHOUTS--}}
 
                 <div class="card">
                     <div class="card-header">
-                       Support
+                        Support
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -61,10 +43,24 @@
                         @endif
                         <div>
 
-                            {{--friends posts--}}
-                            <div class="row frend-area">
+                            <form action="/support-request" method="post">
+                                {{ csrf_field() }}
+                                <div class="row">
+                                    <div class="col-sm-12">
 
-                            </div>
+
+                                        <div class="form-group">
+                                            <label for="mess">Message</label>
+                                            <textarea class="form-control book-form" id="mess" name="mess" cols="30" rows="10">{{ old('mess') }}</textarea>
+                                        </div>
+
+
+                                        <input type="submit" value="Submit" class="send"/>
+
+                                    </div>
+
+                                </div>
+                            </form>
 
                         </div>
 

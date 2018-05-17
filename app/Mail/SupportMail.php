@@ -33,6 +33,6 @@ class SupportMail extends Mailable
         $this->from(['FrendGrid' => 'frendgrid@gmail.com']);
         $this->to('frendgrid@gmail.com');
 
-        return $this->view('emails.support')->with($this->data);
+        return $this->view('emails.support')->with('data', $this->data);
     }
 }
