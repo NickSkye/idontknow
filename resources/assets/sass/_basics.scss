@@ -456,11 +456,12 @@ ul.tabs li.current{
     @media (min-width: 767px){
         position: fixed;
         right: 0;
-        top: 161px;
+        top: 114px;
         width: 20%;
         height: 500px;
         background: whitesmoke;
         display: block;
+        overflow-y: scroll;
     }
     display: none;
 
