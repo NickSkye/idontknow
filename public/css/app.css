@@ -337,6 +337,22 @@ a p {
   border: none;
 }
 
+.frend-post .frend-post-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.frend-post .frend-post-header p {
+  margin-top: 0;
+  margin-bottom: 0rem;
+}
+
+.frend-post .card {
+  border: none;
+}
+
 .post-post .post-post-header {
   display: -webkit-box;
   display: -ms-flexbox;
