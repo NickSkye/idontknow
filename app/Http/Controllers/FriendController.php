@@ -25,7 +25,7 @@ class FriendController extends Controller
     }
 
     public function getSpecificFriendsInfo($friendsusername){
-        $friends_info_full = DB::table('profileinfo')->join('users', 'profileinfo.username', '=', 'users.username')->where('users.username', $friendsusername)->get();
+        $friends_info_full = DB::table('profileinfo')->join('users', 'profileinfo.username', '=', 'users.username')->where('users.username', $friendsusername)->first();
 
         return $friends_info_full;
     }
@@ -60,16 +60,16 @@ class FriendController extends Controller
         $numposts = DB::table('posts')->where('username', $username)->where('deleted', false)->count();
         $numfollowing = DB::table('follows')->where('username', $username)->count();
         //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
-        foreach($info as $item) {
+
             foreach ($friends as $friend) {
-                if ($item->username === $friend->followsusername) {
+                if ($info->username === $friend->followsusername) {
                     $arefriends = true;
 
                     return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
                 }
 
             }
-        }
+
 
 
 

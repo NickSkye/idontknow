@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-12">
 
-                        <input type="hidden" name="sendtousername" value="{{$item->username}}"/>
+                        <input type="hidden" name="sendtousername" value="{{$info->username}}"/>
                     </div>
                     <div class="col-12">
                         <textarea rows="4" cols="40" class="shout-text" placeholder="Shout at your frend..." type="text" name="shout" style="width: 100%;" required></textarea>

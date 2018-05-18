@@ -191,10 +191,6 @@
                                             <div class="frend-post-box activity-post">
                                                 <div class="card">
                                                     {{--<div class="card-header">--}}
-
-
-
-
                                                     {{--</div>--}}
                                                     <div class="card-body">
                                                         <div class="activity-post-header">
