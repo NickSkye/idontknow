@@ -149,7 +149,7 @@
 
 @media (min-width: 767px) {
   .post-meta .post-data {
-    width: calc(100% / 8);
+    width: calc(100% / 7);
   }
 }
 
