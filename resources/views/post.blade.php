@@ -114,7 +114,7 @@
                             @foreach($thecomments as $comment)
                                 <div>
 
-<div class="row">
+
                                     <div class="post-comment-header">
                                         <a href="/users/{{$comment->username}}">
                                             <div style=" background-image: url('{{$comment->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
@@ -145,30 +145,30 @@
 
                                         </div>
                                     </div>
-                                        <div class="row">
-                                            <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12">
 
-                                                <a href=""><p class="comment pull-right">reply</p></a>
-                                            </div>
+                                            <a href=""><p class="comment pull-right">reply</p></a>
                                         </div>
-
-
                                     </div>
-                                    <hr>
-                                    @endforeach
-                                    {{ $thecomments->links() }}
+
+
                                 </div>
-
-
+                                <hr>
+                            @endforeach
+                            {{ $thecomments->links() }}
                         </div>
-                        <div class="card-footer">
 
-                            <div> @include('partials.commentfield')</div>
 
-                        </div>
+                    </div>
+                    <div class="card-footer">
+
+                        <div> @include('partials.commentfield')</div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 @endsection
 {{--THIS PAGE WILL BE AN INDIVIDUAL CLICKED ON POST WITH COMMENT SECTION AND VOTES--}}
