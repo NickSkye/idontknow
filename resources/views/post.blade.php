@@ -28,7 +28,7 @@
                                 <form method="post" action="/report-post/{{$post->id}}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
-                                    <button class="btn btn-danger" type="submit">
+                                    <button class="btn report-post-button" type="submit">
                                         Report
                                     </button>
                                 </form>
