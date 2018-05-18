@@ -23,7 +23,7 @@
                                         <div class="row">
                                             <div class="col-xs-12">
                                             <p>{{$item->username}} is your friend</p>
-                                                <p style="font-size: 10px;">last active: {{Carbon\Carbon::parse($item->updated_at)->format('d M Y g:i A')}}</p>
+                                                <p style="font-size: 10px;">last active: {{Carbon\Carbon::parse($item->updated_at)->diffForHumans()}}</p>
                                             </div>
 
                                         </div>
