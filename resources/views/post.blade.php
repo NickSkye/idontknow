@@ -114,7 +114,7 @@
                             @foreach($thecomments as $comment)
                                 <div>
 
-
+<div class="row">
                                     <div class="post-comment-header">
                                         <a href="/users/{{$comment->username}}">
                                             <div style=" background-image: url('{{$comment->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
@@ -144,7 +144,7 @@
                                             </div>
 
                                         </div>
-
+                                    </div>
                                         <div class="row">
                                             <div class="col-12">
 
