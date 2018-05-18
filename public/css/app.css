@@ -339,6 +339,11 @@ a p {
   margin-bottom: 20px;
 }
 
+.post-post .post-post-header p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .post-post .card {
   border: none;
 }
