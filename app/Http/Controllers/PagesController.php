@@ -148,7 +148,11 @@ class PagesController extends Controller
 
         //$allcommentersinfo = [];
 
-        $post = DB::table('profileinfo')->join('posts', 'profileinfo.username', '=', 'posts.username')->join('post_votes', 'post_votes.post_id', '=', $post_id)->where('posts.id', $post_id)->where('posts.deleted', false)->first();
+        $post = DB::table('profileinfo')->join('posts', 'profileinfo.username', '=', 'posts.username')->where('posts.id', $post_id)->where('posts.deleted', false)->first();
+        if(DB::table('post_votes')->where('post_id', $post_id)->exists()){
+            $votes_total = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
+        }
+
         DB::table('posts')->where('id', $post_id)->increment('views');
         $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
         $now = new \DateTime();
