@@ -123,7 +123,7 @@
 
                                         <div class="post-col">
                                             <a href="/users/{{$comment->username}}">
-                                                <p class="comment-username">{{$comment->username}} - {{Carbon\Carbon::parse($comment->created_at)->format('d M Y g:i A')}}</p>
+                                                <p class="comment-username">{{$comment->username}} - {{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</p>
                                             </a>
 
                                             <p class="comment">{{$comment->comment}}</p>
