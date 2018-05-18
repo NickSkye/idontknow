@@ -109,7 +109,7 @@ if ($request->hasFile('image')) {
 
 //upload post
         DB::table('posts')->insert(
-            ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'likes' => 0, 'dislikes' => 0, 'views' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'views' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
         //update location
