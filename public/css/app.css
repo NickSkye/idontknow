@@ -126,10 +126,13 @@
   font-size: 14pt;
 }
 
-.frend-area .col-4 .frend-post-box .post-data,
-.frend-area .col-sm-12 .frend-post-box .post-data,
-.frend-area .col-12 .frend-post-box .post-data,
-.frend-area .col-sm-4 .frend-post-box .post-data {
+.post-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.post-meta .post-data {
   color: black;
   font-size: 10pt;
 }
