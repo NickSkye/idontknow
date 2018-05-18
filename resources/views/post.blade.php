@@ -94,12 +94,7 @@
                                                 <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
                                                     <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
                                                 </button>
-                                                <div class="post-meta">
-                                                    <p class="post-data">views: {{$post->views}}</p>
-                                                    <p>upvote</p>
-                                                    <p>downvote</p>
-                                                    <p>Share (copy link, email, ...)</p>
-                                                </div>
+
 
                                             </div>
 
@@ -109,6 +104,13 @@
 
 
                                         {{--{{ $friend }}--}}
+
+                                        <div class="post-meta">
+                                            <p class="post-data">views: {{$post->views}}</p>
+                                            <p>upvote</p>
+                                            <p>downvote</p>
+                                            <p>Share (copy link, email, ...)</p>
+                                        </div>
                                     </div>
 
                                 </div>
