@@ -48,7 +48,7 @@
                                 {{--<img src="/images/birthday_gif.gif" alt="" style="width: 50px; height: 50px;">--}}
                                 {{--@endif--}}
                                 {{--END BIRTHDAY STUFF--}}
-                                <p>last active: {{Carbon\Carbon::parse($generalinfo->updated_at)->format('d M Y g:i A')}}</p>
+                                <p>last active: {{Carbon\Carbon::parse($generalinfo->updated_at)->diffForHumans()}}</p>
 
                                 <div class="profile-stats" style="display: flex; margin-bottom: 30px;">
                                     <div style="text-align: center; width: 75px;">
