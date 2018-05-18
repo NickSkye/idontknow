@@ -147,6 +147,12 @@
   margin-bottom: 0 !important;
 }
 
+@media (min-width: 767px) {
+  .post-meta .post-data {
+    width: calc(100% / 8);
+  }
+}
+
 .friend-page-image {
   max-width: 400px;
   max-height: 400px;

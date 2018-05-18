@@ -138,6 +138,9 @@
         font-size: 10pt !important;
         width: calc(100% / 4);
         margin-bottom: 0 !important;
+        @media (min-width: 767px){
+            width: calc(100% / 8);
+        }
     }
 }
 
