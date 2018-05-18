@@ -137,8 +137,8 @@
 }
 
 .post-meta .post-data {
-  color: black;
-  font-size: 10pt;
+  color: black !important;
+  font-size: 10pt !important;
 }
 
 .friend-page-image {

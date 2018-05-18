@@ -107,9 +107,9 @@
 
                                         <div class="post-meta">
                                             <p class="post-data">views: {{$post->views}}</p>
-                                            <p>upvote</p>
-                                            <p>downvote</p>
-                                            <p>Share (copy link, email, ...)</p>
+                                            <p class="post-data"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></p>
+                                            <p class="post-data"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i></p>
+                                            <p class="post-data"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></p>
                                         </div>
 
                                     </div>
