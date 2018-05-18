@@ -212,7 +212,7 @@
                                                         <a href="/post/{{$friendspost->id}}">
                                                             <img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">
 
-                                                            <p>view comments&nbsp;&gt;</p>
+                                                            <p style="font-size: 10pt;">view comments&nbsp;&gt;</p>
                                                         </a>
 
                                                     </div>

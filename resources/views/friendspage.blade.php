@@ -217,7 +217,7 @@
                                                     <a href="/post/{{$post->id}}">
                                                         <img src="{{$post->imagepath}}" class="img-fluid activity-image" alt="">
 
-                                                        <p>view comments&nbsp;&gt;</p>
+                                                        <p style="font-size: 10pt;">view comments&nbsp;&gt;</p>
                                                     </a>
 
                                                 </div>
