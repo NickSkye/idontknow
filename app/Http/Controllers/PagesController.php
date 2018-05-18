@@ -149,6 +149,7 @@ class PagesController extends Controller
         //$allcommentersinfo = [];
 
         $post = DB::table('profileinfo')->join('posts', 'profileinfo.username', '=', 'posts.username')->where('posts.id', $post_id)->where('posts.deleted', false)->first();
+
         if(DB::table('post_votes')->where('post_id', $post_id)->exists()){
             $votes_total = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
         }

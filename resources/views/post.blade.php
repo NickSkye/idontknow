@@ -96,6 +96,9 @@
                                                 </button>
                                                 <div class="post-meta">
                                                     <p class="post-data">views: {{$post->views}}</p>
+                                                    <p>upvote</p>
+                                                    <p>downvote</p>
+                                                    <p>Share (copy link, email, ...)</p>
                                                 </div>
 
                                             </div>
