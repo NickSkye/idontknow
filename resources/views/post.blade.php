@@ -25,7 +25,13 @@
                             </form>
                         @else
                             <div class="pull-right">
-                                <a href="/">report</a>
+                                <form method="post" action="/report-post/{{$post->id}}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
+                                    <button class="btn btn-danger" type="submit">
+                                        Report
+                                    </button>
+                                </form>
                             </div>
                         @endif
 
@@ -53,7 +59,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <img src="{{$post->imagepath}}" class="img-fluid" alt="">
+                                                <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 50vh;">
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -63,7 +69,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                <div class="col-xs-12 col-sm-12 col-md-12 ">
                                     {{--HERE--}}
 
                                     <div class="frend-post-box post-post">
@@ -77,10 +83,21 @@
                                                 <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($post->created_at)->format('d M Y g:i A')}}</p>
                                             </a>
                                         </div>
-                                        <p>{{$post->description}}</p>
-                                        <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
-                                            <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
-                                        </button>
+
+
+                                        @if (is_null($post->imagepath))
+                                            <p>{{$post->description}}</p>
+                                        @else
+                                            <div class="col-lg-6">
+                                                <p>{{$post->description}}</p>
+                                                <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
+                                                    <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
+                                                </button>
+                                            </div>
+
+                                        @endif
+
+
                                         <p class="post-data">views: {{$post->views}}</p>
 
                                         {{--{{ $friend }}--}}
@@ -114,36 +131,44 @@
                                         </div>
 
 
-                                        <div class="" style="max-width: 100px; position: absolute; right: 10px;">
-                                            <p class="pull-right"><a href="" style="color: red;">report</a></p>
+                                        <div class="report-form" style="max-width: 100px; position: absolute; right: 10px;">
+                                            <div class="pull-right">
+                                                <form method="post" action="/report-comment/{{$comment->id}}">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" name="postid" value="{{$post->id}}"/>
+                                                    <button class="btn report-button" type="submit">
+                                                        Report
+                                                    </button>
+                                                </form>
+                                                </p>
+                                            </div>
+
                                         </div>
 
-                                    </div>
+                                        <div class="row">
+                                            <div class="col-12">
 
-                                    <div class="row">
-                                        <div class="col-12">
-
-                                            <a href=""><p class="comment pull-right">reply</p></a>
+                                                <a href=""><p class="comment pull-right">reply</p></a>
+                                            </div>
                                         </div>
+
+
                                     </div>
-
-
+                                    <hr>
+                                    @endforeach
+                                    {{ $thecomments->links() }}
                                 </div>
-                                <hr>
-                            @endforeach
-                            {{ $thecomments->links() }}
+
+
                         </div>
+                        <div class="card-footer">
 
+                            <div> @include('partials.commentfield')</div>
 
-                    </div>
-                    <div class="card-footer">
-
-                        <div> @include('partials.commentfield')</div>
-
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 @endsection
 {{--THIS PAGE WILL BE AN INDIVIDUAL CLICKED ON POST WITH COMMENT SECTION AND VOTES--}}

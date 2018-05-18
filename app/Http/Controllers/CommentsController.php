@@ -8,8 +8,18 @@ use Illuminate\Support\Facades\DB;
 
 class CommentsController extends Controller
 {
+
+    public function getFrendsOnline(){
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+        return $friends_online;
+    }
+
     public function addcomment(Request $request)
     {
+
+        $this->validate($request, [
+            'comment' => 'required', //|max:2048
+        ]);
         DB::table('comments')->insert(
             ['username' => Auth::user()->username, 'post_id' => $request->post_id, 'comment' => $request->comment, 'likes' => 0, 'dislikes' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
@@ -23,11 +33,25 @@ class CommentsController extends Controller
         );
 
 
+
+
 //
 //        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 //
-        return redirect()->back();
+        return redirect('/post/' . $request->post_id);
     }
+
+
+
+
+//        $thecomments = Post::where('id', $post_id)->comments();
+
+//        foreach($thecomments as $comment){
+//            $profinfos = DB::table('profileinfo')->where('username', $comment->username)->get();
+//            array_push($allcommentersinfo, $profinfos);
+//        }
+//        $profinfos = DB::table('profileinfo')->where('id', $post_id)->get();
+
 
 
 }

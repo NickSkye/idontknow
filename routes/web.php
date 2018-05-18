@@ -33,6 +33,7 @@ Route::get('/donate', 'PagesController@donate')->middleware('auth');
 Route::get('/legal', 'PagesController@legal')->middleware('auth');
 Route::get('/suggestions', 'PagesController@suggestions')->middleware('auth');
 Route::get('/support', 'PagesController@support')->middleware('auth');
+Route::post('/support-request', 'PagesController@supportrequest')->middleware('auth');
 
 
 Route::post('/shouts/send', 'MessagesController@shout')->middleware('auth');
@@ -47,6 +48,11 @@ Route::post('/delete-post/{id?}', 'PagesController@deletepost')->middleware('aut
 Route::get('/clear-notifications', 'PagesController@clearnotifications')->middleware('auth');
 Route::post('/comment', 'CommentsController@addcomment')->middleware('auth');
 
+Route::post('/report-post/{id?}', 'PagesController@reportpost')->middleware('auth');
+Route::post('/report-comment/{id?}', 'PagesController@reportcomment')->middleware('auth');
 
 Route::post('s3-image-upload','S3ImageController@imageUploadPost')->middleware('auth');
 Route::post('s3-image-upload-profilepic','S3ImageController@imageUploadProfilePic')->middleware('auth');
+
+
+//TEST

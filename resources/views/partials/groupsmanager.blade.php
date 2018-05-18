@@ -1,0 +1,35 @@
+<div class="toggleon-groups-manager">
+    <i class="fa fa-caret-right" aria-hidden="true"></i>
+</div>
+<div class="groups-manager" style="position: fixed;">
+
+    <div class="card" style="width: 100%;">
+        <div class="card-header">
+             Groups <span class="toggle-groups-manager"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
+        </div>
+        <ul class="list-group list-group-flush">
+
+            {{--@foreach($online_frends as $frend)--}}
+                {{--now {{Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))}}--}}
+                {{--carbon {{$frend->username}} {{Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s')}}--}}
+
+
+
+                {{--<li class="list-group-item">--}}
+                    {{--@if(Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))->format('Y-m-d H:i:s') < Carbon\Carbon::parse($frend->updated_at)->addMinutes(2)->format('Y-m-d H:i:s') )--}}
+                        {{--<i class="fa fa-circle" style="color: lime;" aria-hidden="true"></i>--}}
+                    {{--@elseif(Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))->format('Y-m-d H:i:s') < Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s') )--}}
+                        {{--<i class="fa fa-circle" style="color: orange;" aria-hidden="true"></i>--}}
+                    {{--@else--}}
+                        {{--<i class="fa fa-circle" style="color: red;" aria-hidden="true"></i>--}}
+                    {{--@endif--}}
+                        {{--<a href="/users/{{$frend->username}}">{{$frend->username}}</a>--}}
+                    {{--@if($frend->username ===  Auth::user()->username )--}}
+                        {{--(you)--}}
+                    {{--@endif--}}
+                {{--</li>--}}
+
+            {{--@endforeach--}}
+        </ul>
+    </div>
+</div>

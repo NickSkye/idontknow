@@ -5,9 +5,9 @@
     </head>
 
     <body>
-        <h2>Your friend is inviting you to join FrendGrid</h2>
+        <h2>Your friend {{ Auth::user()->name }} wants to connect with you on FrendGrid!</h2>
         <br/>
-        <a href="{{url('https://frendgrid.com/register')}}">Follow this link to sign up Now!</a>
+        <a href="{{url('https://frendgrid.com/register')}}">Click Here to sign up Now!</a>
         <br/>
 
     </body>

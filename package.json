@@ -20,6 +20,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "linkifyjs": "^2.1.6"
+        "linkifyjs": "^2.1.6",
+        "slick-carousel": "^1.8.1"
     }
 }

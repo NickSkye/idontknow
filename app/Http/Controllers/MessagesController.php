@@ -29,12 +29,17 @@ class MessagesController extends Controller
     }
 
 
+    public function getFrendsOnline(){
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+        return $friends_online;
+    }
+
 
     public function messages()
     {
 
 
-        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
+        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->orderBy('created_at', 'desc')->get();
         $friends  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 
        $hasfriends = $friends->isNotEmpty();
@@ -43,13 +48,41 @@ class MessagesController extends Controller
             ['seen', false],
         ])->get();
 
-        return view('messages', ['messages'=> $messages, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs]);
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+
+
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
+
+        return view('messages', ['messages'=> $messages, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
 
 
     }
 
+    public function autocomplete(){
+        $term = Input::get('term');
+
+        $results = array();
+
+        $queries = DB::table('users')
+            ->where('name', 'LIKE', '%'.$term.'%')
+            ->orWhere('username', 'LIKE', '%'.$term.'%')
+            ->take(5)->get();
+
+        foreach ($queries as $query)
+        {
+            $results[] = [ 'id' => $query->id, 'value' => $query->first_name.' '.$query->last_name ];
+        }
+        return Response::json($results);
+    }
+
     public function shout(Request $request)
     {
+
+        $this->validate($request, [
+            'shout' => 'required', //|max:2048
+        ]);
 
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->orderBy('created_at', 'desc')->get();
         $friends = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
@@ -65,10 +98,13 @@ class MessagesController extends Controller
 
         $emails = $this->getSpecificFriendsInfo($request->sendtousername);
 
+        $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $request->sendtousername)->first();
+       if($getsemails->email_notifications){
+           Mail::to($emails->email)->send(new NotificationMail());
+       }
 
-       Mail::to($emails->email)->send(new NotificationMail());
 
-        return redirect('/shouts')->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
+        return redirect('/shouts')->with(['messages'=> $messages, 'friends'=>$friends, 'getsemails' => $getsemails])->with('message', 'Shout delivered!');
 
 
     }
@@ -88,8 +124,11 @@ class MessagesController extends Controller
 
         $emails = $this->getSpecificFriendsInfo($request->sendtousername);
 
+        $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $request->sendtousername)->first();
+        if($getsemails->email_notifications){
+            Mail::to($emails->email)->send(new NotificationMail());
+        }
 
-        Mail::to($emails->email)->send(new NotificationMail());
 
         return redirect()->back()->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
 
@@ -121,6 +160,10 @@ class MessagesController extends Controller
         DB::table('messages')->where('id', $request->shoutid)->update(
             ['seen' => true,'updated_at' => date('Y-m-d H:i:s')]
         );
+
+
+//        $email = DB::table('users')->where('username', $request->from_user)->first();
+//        Mail::to($email)->send(new NotificationMail());
 
 
 

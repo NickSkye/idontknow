@@ -53,6 +53,11 @@ class HomeController extends Controller
     }
 
 
+
+    public function getFrendsOnline(){
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+        return $friends_online;
+    }
     /**
      * Show the application dashboard.
      *
@@ -75,8 +80,9 @@ class HomeController extends Controller
         }
 
 
-
-
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
 
         //all people who you follows info
         $allfriendsinfo = $this->getFollowingsInfo();
@@ -86,6 +92,6 @@ class HomeController extends Controller
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
-            return view('home', ['allfriendsinfo' => $allfriendsinfo, 'notifs'=> $notifs, 'allfollowersinfo' => $allfollowersinfo]);
+            return view('home', ['allfriendsinfo' => $allfriendsinfo, 'notifs'=> $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
         }
     }

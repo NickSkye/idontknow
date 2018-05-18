@@ -16,7 +16,7 @@
                     <div class="col-12">
                         <input type="hidden" name="latitude" value=""/>
                         <input  type="hidden" name="longitude" value=""/>
-                        <textarea rows="4" cols="50" placeholder="Tell your frends about your post..." type="text" name="description" ></textarea>
+                        <textarea rows="4" cols="40" style="width: 100%;" placeholder="Whatcha thinkin about..." type="text" name="description" ></textarea>
                     </div>
                     <div class="col-6 offset-2 image-upload" style="align-self: flex-end;">
                         <label for="file-input" style="float: right; margin-bottom: 0; cursor: pointer;">
@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="col-md-4" style="align-self: flex-end;">
-                        <button type="submit" class="btn upload-button" style="float: right;">Upload</button>
+                        <button type="submit" class="btn upload-button modal-button" style="float: right;" ><i aria-hidden="true" class="fa fa-share fa-2x"></i></button>
                     </div>
                 </div>
             </form>

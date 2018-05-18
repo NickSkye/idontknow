@@ -7,19 +7,19 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class Signup extends Mailable
+class ReportForm extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct(array $data)
     {
-        $this->user = $user;
+        $this->data = $data;
+
     }
 
     /**
@@ -29,6 +29,10 @@ class Signup extends Mailable
      */
     public function build()
     {
-        return $this->subject('FrendGrid Signup')->view('emails.signup')->with('user', $this->user);
+        $this->subject('Reported Content');
+        $this->from(['FrendGrid' => 'frendgrid@gmail.com']);
+        $this->to('frendgrid@gmail.com');
+
+        return $this->view('emails.report')->with('data', $this->data);
     }
 }

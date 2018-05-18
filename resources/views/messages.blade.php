@@ -59,7 +59,7 @@
                                 @if($hasfriends)
 
 
-                        <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
+                        <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
                             <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                         </button>
 
@@ -89,6 +89,7 @@
                                                     <form action="/shouts/shoutseen" method="post">
                                                         {{ csrf_field() }}
                                                         <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
+                                                        <input type="hidden" name="from_user" value="{{$mess->from_username}}"/>
                                                         <input type="hidden" name="latitude" value=""/>
                                                         <input  type="hidden" name="longitude" value=""/>
                                                     <div class="modal-header">
@@ -105,7 +106,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
-                                                        <button type="submit" class="btn btn-secondary pull-left" >Close</button>
+                                                        <button type="submit" class="btn btn-secondary pull-left modal-button" >Close</button>
                                                     </div>
                                                     </form>
                                                 </div>
@@ -139,6 +140,9 @@
                     <div class="card-footer">
                         <div>Shouts get deleted once viewed</div>
                     </div>
+
+
+
                 </div>
             </div>
         </div>

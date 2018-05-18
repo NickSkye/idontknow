@@ -138,4 +138,86 @@ $(document).ready(function(){
         $("#"+tab_id).addClass('current');
     })
 
-})
+//one way to disable extra clicks after shouting or posting
+    // $(".modal-button").click(function() {  //use a class, since your ID gets mangled
+    //     $('.modal-dialog').hide();      //add the class to the clicked element
+    // });
+
+
+    //next three are the other ways to disable extra clicks after shouting or posting
+    $(".comment-button").click(function() {  //use a class, since your ID gets mangled
+        $('.comment-button').toggleClass("loading-button");     //add the class to the clicked element
+        $('.comment-button i.fa').toggleClass("fa-paper-plane");     //add the class to the clicked element
+        $('.comment-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        //$('.comment-button').prop("disabled",true);
+
+    });
+
+
+    $(".shout-button").click(function() {  //use a class, since your ID gets mangled
+        if ($(".shout-text").val()) {
+        $('.shout-button').toggleClass("loading-button");     //add the class to the clicked element
+        $('.shout-button i.fa').toggleClass("fa-bullhorn");     //add the class to the clicked element
+        $('.shout-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+       // $('.shout-button').prop("disabled",true);
+        }
+    });
+
+
+    $(".upload-button").click(function() {  //use a class, since your ID gets mangled
+        $('.upload-button').toggleClass("loading-button");     //add the class to the clicked element
+        $('.upload-button i.fa').toggleClass("fa-share");     //add the class to the clicked element
+        $('.upload-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        //$('.upload-button').prop("disabled",true);
+
+    });
+
+
+    $(".followerCollapser").click(function() {  //use a class, since your ID gets mangled
+        $('#followingCollapse').removeClass('show');      //add the class to the clicked element
+    });
+
+    $(".followingCollapser").click(function() {  //use a class, since your ID gets mangled
+        $('#followerCollapse').removeClass('show');      //add the class to the clicked element
+    });
+
+    //online friends
+    $(".toggle-online-frends").click(function() {  //use a class, since your ID gets mangled
+        $('.online-frends').addClass('frends-closed');
+    });
+    $(".toggleon-online-frends").click(function() {  //use a class, since your ID gets mangled
+        $('.online-frends').removeClass('frends-closed');
+    });
+
+    //groups manager
+    $(".toggle-groups-manager").click(function() {  //use a class, since your ID gets mangled
+        $('.groups-manager').addClass('groups-closed');
+    });
+    $(".toggleon-groups-manager").click(function() {  //use a class, since your ID gets mangled
+        $('.groups-manager').removeClass('groups-closed');
+    });
+
+//Slick
+//     $('.multiple-items').slick({
+//         infinite: false,
+//         slidesToShow: 5,
+//         slidesToScroll: 3,
+//         swipeToSlide: true,
+//         swipe: true
+//
+//     });
+
+
+});
+
+//Javascript
+$(function()
+{
+    $( "#q" ).autocomplete({
+        source: "search/autocomplete",
+        minLength: 3,
+        select: function(event, ui) {
+            $('#q').val(ui.item.value);
+        }
+    });
+});

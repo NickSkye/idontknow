@@ -1,3 +1,4 @@
+@auth
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel hidden-on-small">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
@@ -84,7 +85,7 @@
         </div>
     </div>
 </nav>
-
+@endauth
 {{--MOBILE NAV--}}
 @auth
 <nav class="navbar mobile-navbar navbar-light navbar-laravel visible-on-small">
@@ -154,7 +155,8 @@
 
 </nav>
 
-@else
+@endauth
+@guest
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel ">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -243,4 +245,4 @@
             </div>
         </div>
     </nav>
-    @endauth
+    @endguest

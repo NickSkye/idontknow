@@ -6,9 +6,30 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Post;
+use Mail;
+use App\Mail\ReportForm;
+use App\Mail\ReportCommentForm;
+use App\Mail\SupportMail;
 
 class PagesController extends Controller
 {
+    /*
+     * GETS ALL USERS FRENDS WHO ARE ONLINE
+     */
+    public function getFrendsOnline(){
+        $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+
+        return $friends_online;
+    }
+
+/*
+ * GETS ALL THE GROUPS THE USER IS A PART OF
+ */
+    public function getGroups(){
+        $friends_online = DB::table('groups')->where('username', Auth::user()->username)->orderBy('updated_at', 'desc')->get();
+
+        return $friends_online;
+    }
 
     public function getMySettingsInfo(){
         $my_info_full = DB::table('profileinfo')->join('users', 'profileinfo.username', '=', 'users.username')->where('profileinfo.username', Auth::user()->username)->first();
@@ -35,7 +56,13 @@ class PagesController extends Controller
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
-        return view('settings', ['profileinfo' => $profileinfo, 'notifs' => $notifs]);
+
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
+        return view('settings', ['profileinfo' => $profileinfo, 'notifs' => $notifs, 'now'=> $now, 'online_frends'=> $online_frends]);
 
 
     }
@@ -49,6 +76,8 @@ class PagesController extends Controller
         $myposts = DB::table('posts')->where('username', Auth::user()->username)->where('deleted', false)->orderBy('created_at', 'desc')->get();
         //gets people you follow
         $myfriends = DB::table('follows')->where('username', Auth::user()->username)->orderBy('updated_at', 'desc')->get();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
             ['seen', false],
@@ -56,7 +85,15 @@ class PagesController extends Controller
 
         $real = $this->getFrends();
 
-        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs, 'real' => $real]);
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+
+        //User follow and post meta data
+        $numfollowers = DB::table('follows')->where('followsusername', Auth::user()->username)->count();
+        $numposts = DB::table('posts')->where('username', Auth::user()->username)->where('deleted', false)->count();
+        $numfollowing = DB::table('follows')->where('username', Auth::user()->username)->count();
+
+        return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs, 'real' => $real, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing, 'now'=> $now, 'online_frends'=> $online_frends]);
 
 
     }
@@ -69,6 +106,8 @@ class PagesController extends Controller
 
         return $friends_info_full;
     }
+
+
 
     public function getFollowersInfoWithPosts(){
 
@@ -94,7 +133,12 @@ class PagesController extends Controller
             ['seen', false],
         ])->get();
 
-        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo]);
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
+        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
 
 
     }
@@ -107,16 +151,11 @@ class PagesController extends Controller
         $post = DB::table('profileinfo')->join('posts', 'profileinfo.username', '=', 'posts.username')->where('posts.id', $post_id)->where('posts.deleted', false)->first();
         DB::table('posts')->where('id', $post_id)->increment('views');
         $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-//        $thecomments = Post::where('id', $post_id)->comments();
-
-//        foreach($thecomments as $comment){
-//            $profinfos = DB::table('profileinfo')->where('username', $comment->username)->get();
-//            array_push($allcommentersinfo, $profinfos);
-//        }
-//        $profinfos = DB::table('profileinfo')->where('id', $post_id)->get();
-
-        return view('post', ['post'=> $post, 'thecomments' => $thecomments]);
+        return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends]);
 
 
     }
@@ -137,29 +176,32 @@ class PagesController extends Controller
     {
 
 
-        $notifs = DB::table('notifications')->where('id', $id)->get();
-
+        $notifs = DB::table('notifications')->where('id', $id)->orderBy('created_at', 'asc')->get();
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
 
         DB::table('notifications')->where('id', $id)->update(
             ['seen' => true, 'updated_at' => date('Y-m-d H:i:s')]
         );
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
-        return view('notifications', ['notifs'=> $notifs]);
+        return view('notifications', ['notifs'=> $notifs, 'now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function allnotifications()
     {
 
-
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+//        $notifs = DB::table('notifications')->where('username', Auth::user()->username)->orderBy('created_at', 'asc')->get();
 //        $notifs = DB::table('notifications')->where('username', $id)->get();
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
             ['seen', false],
-        ])->get();
+        ])->orderBy('created_at', 'desc')->get();
 
 
-        return view('notifications', ['notifs'=> $notifs]);
+        return view('notifications', ['notifs'=> $notifs, 'now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function clearnotifications(){
@@ -170,27 +212,100 @@ class PagesController extends Controller
         ])->update(['seen' => true]);
 
 
+
         return redirect("home")->with('status', 'Notifications cleared');
     }
 
     public function about(){
-        return view('about');
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        return view('about', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function donate(){
-        return view('donate');
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        return view('donate', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function legal(){
-        return view('legal');
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        return view('legal', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function suggestions(){
-        return view('suggestions');
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        return view('suggestions', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function support(){
-        return view('support');
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        return view('support', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
+
+    public function supportrequest(Request $request){
+        $this->validate($request, [
+            'mess' => 'required',
+
+
+        ]);
+
+        $data = array(
+            'mess' => $request->mess,
+        );
+        Mail::send(new SupportMail($data));
+
+        session()->flash('status', 'Successfully sent message!');
+
+        return redirect('/');
+    }
+
+
+
+
+    public function reportpost($id)
+    {
+
+        $data = array(
+            'id' => $id,
+        );
+
+
+        Mail::send(new ReportForm($data));
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
+
+        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+        return redirect("/")->with('status', 'post reported');
+    }
+//    STILL NEED TO WORK ON THIS. COPY REPORT POST
+    public function reportcomment(Request $request, $commentid)
+    {
+
+
+        $data = array(
+            'postid' => $request->postid,
+            'commentid' => $commentid,
+        );
+
+
+        Mail::send(new ReportCommentForm($data));
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
+
+        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+        return redirect("/")->with('status', 'comment reported');
+    }
+
 
 }

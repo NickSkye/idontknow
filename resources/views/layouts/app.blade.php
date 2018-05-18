@@ -51,6 +51,8 @@
         <script src="/js/jquery.jscroll.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
         <script type="text/javascript">
         $('ul.pagination').hide();
         $(function() {
@@ -102,7 +104,7 @@
 
             @include('partials.navbar')
 
-            <div class="collapse visible-on-small" id="collapseExample" >
+            <div class="collapse visible-on-small frend-search-down" id="collapseExample" >
                 <div class="card card-body">
                     @include('partials.friendsearch')
                 </div>
@@ -113,6 +115,8 @@
                 @include('partials.modals')
             </main>
             @auth
+                @include('partials.onlinefrends')
+                @include('partials.groupsmanager')
                 @include('partials.permafooter')
             @endauth
         </div>

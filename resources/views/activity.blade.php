@@ -206,6 +206,12 @@
                                                         </a>
                                                         </div>
                                                         {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
+
+
+
+
+
+
                                                         <p>{{$friendspost->description}}</p>
                                                         <a href="/post/{{$friendspost->id}}">
                                                             <img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">
@@ -255,6 +261,9 @@
                         <div>Activity Page will show a list of all friends recent activity</div>
                     </div>
                 </div>
+
+
+
             </div>
         </div>
     </div>

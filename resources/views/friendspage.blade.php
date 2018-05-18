@@ -38,7 +38,7 @@
                                                 </form>
                                             </div>
                                             <div class="col-xs-12 col-sm-4">
-                                                <button type="button" class="btn upload-button" data-toggle="modal" data-target="#sendShout">
+                                                <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
                                                     <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
                                                 </button>
                                                 {{--SHOUT MODAL--}}
@@ -80,9 +80,64 @@
                             <div class="col-6">
 
 
-                                <h2>{{$item->name}}</h2>
-                                <h4>{{$item->username}}</h4>
 
+
+
+                                <h2>{{$item->name}}</h2>
+                                @foreach($online_frends as $frend)
+                                    {{--now {{Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))}}--}}
+                                    {{--carbon {{$frend->username}} {{Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s')}}--}}
+
+                                    @if($frend->username === $item->username)
+                                        @if(Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))->format('Y-m-d H:i:s') < Carbon\Carbon::parse($frend->updated_at)->addMinutes(2)->format('Y-m-d H:i:s') )
+                                            <i class="fa fa-circle" style="color: lime;" aria-hidden="true"></i>
+                                        @elseif(Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))->format('Y-m-d H:i:s') < Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s') )
+                                            <i class="fa fa-circle" style="color: orange;" aria-hidden="true"></i>
+                                        @else
+                                            <i class="fa fa-circle" style="color: red;" aria-hidden="true"></i>
+                                        @endif
+                                        {{$item->username}}
+                                        @if($item->username ===  Auth::user()->username )
+                                            (you)
+                                        @endif
+                                    @endif
+
+
+
+
+
+                                @endforeach
+
+                                <div class="profile-stats" style="display: flex; margin-bottom: 30px;">
+                                    <div style="text-align: center; width: 75px;">
+                                        <div>
+                                            <p class="numbers">{{$numposts}}</p>
+                                        </div>
+                                        <div>
+                                            <p class="words">Posts</p>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center; width: 75px;">
+                                        <a class="frendcollapse followerCollapser" data-toggle="collapse" href="#followerCollapse" role="button" aria-expanded="false" aria-controls="followerCollapse">
+                                        <div>
+                                            <p class="numbers">{{$numfollowers}}</p>
+                                        </div>
+                                        <div>
+                                            <p class="words">Followers</p>
+                                        </div>
+                                        </a>
+                                    </div>
+                                    <div style="text-align: center; width: 75px;">
+                                        <a class=".frendcollapse followingCollapser" data-toggle="collapse" href="#followingCollapse" role="button" aria-expanded="false" aria-controls="followingCollapse">
+                                        <div>
+                                            <p class="numbers">{{$numfollowing}}</p>
+                                        </div>
+                                        <div>
+                                            <p class="words">Following</p>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
                                 <div class="achievements-box">
 
 
@@ -93,6 +148,41 @@
                                 @endforeach
                             </div>
                         </div>
+                        {{--Friends followers--}}
+                        <div class="collapse" id="followerCollapse">
+                            <div class="card card-body">
+                                followers
+                                <div class="row frend-area frends-frends-row multiple-items">
+                                    @foreach($allfollowersinfo as $followerinfos)
+                                        <a href="/users/{{$followerinfos->username}}" class="col-4 frends-frends-images " style="background-image: url('{{$followerinfos->profileimage}}');">
+                                            <div class="frend-box">
+                                                <p>{{$followerinfos->username}}</p>
+                                            </div>
+                                        </a>
+                                    @endforeach
+
+                                </div>
+                            </div>
+                        </div>
+
+                        {{--Friends following--}}
+                        <div class="collapse" id="followingCollapse">
+                            <div class="card card-body">
+                               following
+                                <div class="row frend-area frends-frends-row multiple-items">
+                                @foreach($allfriendsinfo as $infos)
+                                    <a href="/users/{{$infos->followsusername}}" class="col-4 frends-frends-images " style="background-image: url('{{$infos->profileimage}}');">
+                                        <div class="frend-box">
+                                            <p>{{$infos->followsusername}}</p>
+                                        </div>
+                                    </a>
+                                @endforeach
+                                </div>
+                            </div>
+                        </div>
+
+
+
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -108,9 +198,10 @@
                                     <div class="col-12">
 
                                         <div class="frend-post-box">
+                                            <p>{{Carbon\Carbon::parse($post->created_at)->format('d M Y g:i A')}}</p>
                                             <a href="/post/{{$post->id}}">
                                                 <p>{{$post->description}}</p>
-                                                <img src="{{$post->imagepath}}" class="img-fluid tiny-img" alt="">
+                                                <img src="{{$post->imagepath}}" class="img-fluid tiny-img" alt="" style="margin-bottom: 30px;">
 
                                             </a>
                                             {{--{{ $friend }}--}}
