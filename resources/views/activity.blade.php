@@ -202,7 +202,7 @@
                                                             </div></a>
                                                         <a href="/users/{{$friendspost->username}}">
                                                             <p>{{$friendspost->username}}</p>
-                                                            <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($friendspost->created_at)->format('d M Y g:i A')}}</p>
+                                                            <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($friendspost->created_at)->diffForHumans()}}</p>
                                                         </a>
                                                         </div>
                                                         {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
