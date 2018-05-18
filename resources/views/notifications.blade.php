@@ -29,7 +29,7 @@
                     <div class="card-header">
 
                         <h2>Notifications</h2>
-                        <a class="" href="/clear-notifications" style="float: right;">
+                        <a class="" href="/clear-notifications" style="float: right; color: red;">
                             Clear all notifications
                         </a>
                     </div>
