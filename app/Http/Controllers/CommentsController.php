@@ -21,7 +21,7 @@ class CommentsController extends Controller
             'comment' => 'required', //|max:2048
         ]);
         DB::table('comments')->insert(
-            ['username' => Auth::user()->username, 'post_id' => $request->post_id, 'comment' => $request->comment, 'likes' => 0, 'dislikes' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            ['username' => Auth::user()->username, 'post_id' => $request->post_id, 'comment' => $request->comment, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
