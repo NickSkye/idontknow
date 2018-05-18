@@ -30,7 +30,7 @@
         <meta name="robots" content="all"/>
         <meta name="robots" content="index, follow"/>
         <meta name="revisit-after" content="4 days"/>
-        <link rel="icon" href="{{ asset('images/frendgrid.png') }}">
+        <link rel="icon" href="{{ asset('images/frendgriddark.png') }}">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
