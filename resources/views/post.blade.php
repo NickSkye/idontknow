@@ -75,7 +75,7 @@
                                     <div class="frend-post-box post-post">
                                         <div class="post-post-header">
                                             <a href="/users/{{$post->username}}">
-                                                <div style=" background-image: url('{{$post->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
+                                                <div style=" background-image: url('{{$post->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px; background-position: center;">
                                                 </div>
                                             </a>
                                             <a href="/users/{{$post->username}}">
@@ -125,7 +125,7 @@
 
                                     <div class="post-comment-header">
                                         <a href="/users/{{$comment->username}}">
-                                            <div style=" background-image: url('{{$comment->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px;">
+                                            <div style=" background-image: url('{{$comment->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px; background-position: center;">
                                             </div>
                                         </a>
 
