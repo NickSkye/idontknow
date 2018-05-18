@@ -65,21 +65,7 @@
                                             </div>
                                         </a>
 
-                                        {{--<div>--}}
-                                            {{--<a href="/users/{{$user->username}}">--}}
-                                                {{--<div class="row">--}}
-                                                    {{--<div class="col-sm-4">--}}
-                                                        {{--<img src="{{$user->profileimage}}" alt="" style="width: 200px;">--}}
-                                                    {{--</div>--}}
-                                                    {{--<div class="col-sm-8">--}}
-                                                        {{--<p>{{ $user->name }}</p>--}}
-                                                        {{--<p>{{ $user->username }}</p>--}}
-                                                    {{--</div>--}}
-                                                {{--</div>--}}
-                                            {{--</a>--}}
 
-                                            {{--<hr>--}}
-                                        {{--</div>--}}
                                     @endforeach
                                     </div>
                                     {{ $searchedusers->links() }}
