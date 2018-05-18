@@ -193,14 +193,14 @@
                                 @foreach($friendsposts as $post)
                                     <div class="col-12">
 
-                                        <div class="frend-post-box">
+                                        <div class="frend-post-box frend-post">
 
 
                                             <div class="card">
                                                 {{--<div class="card-header">--}}
                                                 {{--</div>--}}
                                                 <div class="card-body">
-                                                    <div class="activity-post-header">
+                                                    <div class="frend-post-header">
                                                         <a href="/users/{{$info->username}}">
                                                             <div style=" background-image: url('{{$info->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px; background-position: center;">
                                                             </div>

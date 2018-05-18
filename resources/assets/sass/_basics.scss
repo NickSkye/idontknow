@@ -334,6 +334,22 @@ a {
     }
 }
 
+.frend-post{
+    .frend-post-header{
+        display: flex;
+        margin-bottom: 20px;
+
+        p {
+            margin-top: 0;
+            margin-bottom: 0rem;
+        }
+    }
+
+    .card{
+        border: none;
+    }
+}
+
 .post-post{
     .post-post-header{
         display: flex;
