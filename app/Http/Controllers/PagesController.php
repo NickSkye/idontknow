@@ -11,6 +11,8 @@ use App\Mail\ReportForm;
 use App\Mail\ReportCommentForm;
 use App\Mail\SupportMail;
 
+use Illuminate\Http\Response;
+
 class PagesController extends Controller
 {
     /*
