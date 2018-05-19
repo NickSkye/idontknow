@@ -70,7 +70,7 @@ class PagesController extends Controller
 
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        $totalvote = DB::table('post_votes')->sum('vote')->where(['post_id', $request->postid]);
+        $totalvote = DB::table('post_votes')->sum('vote');
 //        return Response::json(['done']);
         return response($totalvote);
 
