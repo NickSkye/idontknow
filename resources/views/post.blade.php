@@ -108,6 +108,7 @@
                                         <div class="post-meta">
                                             <p class="post-data">views: {{$post->views}}</p>
                                             <form action="/like" method="post" id="like_form">
+                                                {{ csrf_field() }}
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
                                                 <input type="hidden" name="username" value="{{$post->username}}"/>
                                                 <input class="post-data" type="submit" name="submit" value="Submit Form"/>
