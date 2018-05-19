@@ -50,8 +50,8 @@ class PagesController extends Controller
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
 
-        if(!DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $request->postid],])->exists()){
-            DB::table('post_votes')->insert(['username'=> Auth::user()->username, 'post_id'=> $request->postid, 'vote'=> 1]);
+        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $request->postid],])->doesntExist()){
+            DB::table('post_votes')->insert(['username'=> Auth::user()->username, 'post_id'=> $request->postid, 'vote'=> 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
 
         }
         else{
