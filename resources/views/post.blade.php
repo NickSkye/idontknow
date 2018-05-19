@@ -111,7 +111,7 @@
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
-                                                <button class="post-data like" type="submit" name="submit" value=""/>
+                                                <button class="post-data like" type="submit" name="submit" value="" style="background: none; "/>
                                                             <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
                                                 </button>
                                                 <div id="server-results"><!-- For server results --></div>
