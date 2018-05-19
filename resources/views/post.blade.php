@@ -87,7 +87,7 @@
 
                                         @if (is_null($post->imagepath))
                                             <p>{{$post->description}}</p>
-                                            <p class="post-data">views: {{$post->views}}</p>
+                                            {{--<p class="post-data">views: {{$post->views}}</p>--}}
                                         @else
                                             <div class="col-lg-6">
                                                 <p>{{$post->description}}</p>
