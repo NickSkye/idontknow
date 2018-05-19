@@ -110,9 +110,9 @@
                                             <form action="/like" method="post" id="like_form">
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
                                                 <input type="hidden" name="username" value="{{$post->username}}"/>
-                                                <button class="post-data" type="submit" name="submit" value="Submit Form">
+                                                <input class="post-data" type="submit" name="submit" value="Submit Form">
                                                             <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
-                                                </button>
+                                                </input>
                                                 <div id="server-results"><!-- For server results --></div>
                                             </form>
 
