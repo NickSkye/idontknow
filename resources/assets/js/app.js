@@ -219,7 +219,7 @@ $("#like_form").submit(function(event){
     var form_data = $(this).serialize(); //Encode form elements for submission
 
     $.ajax({
-        url : 'like',
+        url : '/post/like',
         type: request_method,
         data : form_data
     }).done(function(response){ //
