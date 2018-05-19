@@ -68,7 +68,8 @@ class PagesController extends Controller
 
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return response()->json(['response' => 'ok']);
+        return Response::json(['done']);
+//        return response()->json(['response' => 'ok']);
 
     }
 
