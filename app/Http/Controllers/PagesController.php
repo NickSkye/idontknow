@@ -71,6 +71,32 @@ class PagesController extends Controller
 
     }
 
+    public function dislike(Request $request)
+    {
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+
+
+        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $request->postid],])->doesntExist()){
+            DB::table('post_votes')->insert(['username'=> Auth::user()->username, 'post_id'=> $request->postid, 'vote'=> -1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+
+        }
+        else{
+            $thevote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $request->postid],])->first();
+            if(( $thevote->vote == 1) or ($thevote->vote == -1)){
+                DB::table('post_votes')->where(['username'=> Auth::user()->username, 'post_id'=> $request->postid, ])->update(['vote'=> 0]);
+            }
+            else{
+                DB::table('post_votes')->where(['username'=> Auth::user()->username, 'post_id'=> $request->postid, ])->update(['vote'=> -1]);
+            }
+        }
+
+
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
+
+    }
+
 
 
     public function settings()

@@ -116,7 +116,16 @@
                                                 </button>
                                                 <div id="server-results"><!-- For server results --></div>
                                             </form>
-                                            <p class="post-data"><a href="#"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i></a></p>
+                                            <form action="/dislike" method="post" id="dislike_form" class="post-data">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="postid" value="{{$post->id}}"/>
+                                                {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
+                                                <button class="post-data like" type="submit" name="submit" value="" style="background: none; "/>
+                                                <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
+                                                </button>
+                                                <div id="server-results-dislike"><!-- For server results --></div>
+                                            </form>
+                                            {{--<p class="post-data"><a href="#"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i></a></p>--}}
                                             <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
                                         </div>
