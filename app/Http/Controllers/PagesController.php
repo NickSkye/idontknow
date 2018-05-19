@@ -57,7 +57,7 @@ class PagesController extends Controller
         }
         else{
             $thevote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $request->postid],])->first();
-            if(( $thevote->vote == 1) or ($thevote->vote == -1)){
+            if($thevote->vote == 1){
                 DB::table('post_votes')->where(['username'=> Auth::user()->username, 'post_id'=> $request->postid, ])->update(['vote'=> 0]);
             }
             else{
@@ -83,7 +83,7 @@ class PagesController extends Controller
         }
         else{
             $thevote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $request->postid],])->first();
-            if(( $thevote->vote == 1) or ($thevote->vote == -1)){
+            if($thevote->vote == -1){
                 DB::table('post_votes')->where(['username'=> Auth::user()->username, 'post_id'=> $request->postid, ])->update(['vote'=> 0]);
             }
             else{
