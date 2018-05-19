@@ -223,7 +223,7 @@ $("#like_form").submit(function(event){
         type: request_method,
         data : form_data
     }).done(function(response){ //
-        $("#server-results").html(response[0]);
+        $("#server-results").html(response);
     });
 });
 
