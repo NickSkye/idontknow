@@ -107,12 +107,12 @@
 
                                         <div class="post-meta">
                                             <p class="post-data">views: {{$post->views}}</p>
-                                            <form action="/like" method="post" id="like_form">
+                                            <form action="/like" method="post" id="like_form" class="post-data">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                 <button class="post-data like" type="submit" name="submit" value="" style="background: none; "/>
-                                                            <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+                                                <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
                                                 </button>
                                                 <div id="server-results"><!-- For server results --></div>
                                             </form>
