@@ -45,6 +45,21 @@ class PagesController extends Controller
     }
 
 
+    public function like(Request $request)
+    {
+
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        DB::table('post_votes')->insert(['username'=> $request->username, 'post_id'=> $request->postid, 'vote'=> 1]);
+
+//        return view('settings', ['now'=> $now, 'online_frends'=> $online_frends]);
+
+
+    }
+
+
 
     public function settings()
     {

@@ -107,9 +107,18 @@
 
                                         <div class="post-meta">
                                             <p class="post-data">views: {{$post->views}}</p>
-                                            <p class="post-data"><a href="#"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></a></p>
+                                            <form action="/like" method="post" id="like_form">
+                                                <input type="hidden" name="postid" value="{{$post->id}}"/>
+                                                <input type="hidden" name="username" value="{{$post->username}}"/>
+                                                <button class="post-data" type="submit" name="submit" value="Submit Form">
+                                                            <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+                                                </button>
+                                                <div id="server-results"><!-- For server results --></div>
+                                            </form>
+
                                             <p class="post-data"><a href="#"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i></a></p>
                                             <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
+
                                         </div>
 
                                     </div>
