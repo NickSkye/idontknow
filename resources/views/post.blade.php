@@ -116,7 +116,6 @@
                                                 {{--</button>--}}
                                                 <div id="server-results"><!-- For server results --></div>
                                             </form>
-
                                             <p class="post-data"><a href="#"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i></a></p>
                                             <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
