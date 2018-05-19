@@ -112,18 +112,27 @@
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                 <button class="post-data like" type="submit" name="submit" value="" style="background: none; "/>
-                                                <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+                                                @if($post_vote == 1)
+                                                <i class="fa fa-heart-o fa-2x" style="color: red;" aria-hidden="true"></i>
+                                                @else
+                                                    <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+                                                @endif
                                                 </button>
-                                                <div id="server-results"><!-- For server results --></div>
+
                                             </form>
+                                            <div id="server-results" class="post-data"><!-- For server results --></div>
                                             <form action="/dislike" method="post" id="dislike_form" class="post-data">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                 <button class="post-data like" type="submit" name="submit" value="" style="background: none; "/>
-                                                <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
+                                                @if($post_vote == -1)
+                                                <i class="fa fa-thumbs-o-down fa-2x" style="color: blue;" aria-hidden="true"></i>
+                                                @else
+                                                    <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
+                                                    @endif
                                                 </button>
-                                                <div id="server-results-dislike"><!-- For server results --></div>
+
                                             </form>
                                             {{--<p class="post-data"><a href="#"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i></a></p>--}}
                                             <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>

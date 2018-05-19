@@ -68,6 +68,7 @@ class PagesController extends Controller
 
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
+        //return response()->json(['response' => 'ok']);
 
     }
 
@@ -207,13 +208,19 @@ class PagesController extends Controller
             $votes_total = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
         }
 
+        $post_vote = 0;
+
+        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
+            $post_vote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->first()->vote;
+        }
+
         DB::table('posts')->where('id', $post_id)->increment('views');
         $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends]);
+        return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote]);
 
 
     }

@@ -238,7 +238,7 @@ $("#dislike_form").submit(function(event){
         type: request_method,
         data : form_data
     }).done(function(response){ //
-        $("#server-results-dislike").html(response);
+        $("#server-results").html(response);
     });
 });
 
