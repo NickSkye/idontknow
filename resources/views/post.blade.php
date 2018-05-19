@@ -110,8 +110,8 @@
                                             <form action="/like" method="post" id="like_form">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
-                                                <label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>
-                                                <input class="post-data" type="submit" name="submit" value="Submit Form"/>
+                                                {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
+                                                <input class="post-data like" type="submit" name="submit" value="Submit Form"/>
                                                             {{--<i class="fa fa-heart fa-2x" aria-hidden="true"></i>--}}
                                                 {{--</button>--}}
                                                 <div id="server-results"><!-- For server results --></div>
