@@ -110,7 +110,6 @@
                                             <form action="/like" method="post" id="like_form">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
-                                                <input type="hidden" name="username" value="{{$post->username}}"/>
                                                 <input class="post-data" type="submit" name="submit" value="Submit Form"/>
                                                             {{--<i class="fa fa-heart fa-2x" aria-hidden="true"></i>--}}
                                                 {{--</input>--}}
