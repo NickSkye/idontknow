@@ -118,9 +118,9 @@
                                                     <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
                                                 @endif
                                                 </button>
-
+                                                    <div id="server-results" class="post-data"><!-- For server results --></div>
                                             </form>
-                                            <div id="server-results" class="post-data"><!-- For server results --></div>
+
                                             <form action="/dislike" method="post" id="dislike_form" class="post-data">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
