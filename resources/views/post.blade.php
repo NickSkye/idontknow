@@ -137,7 +137,7 @@
                                             </form>
                                             </div>
 
-                                            <p class="post-data"><a href="#"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i></a></p>
+                                            <p class="post-data"><a data-toggle="collapse" href="#commentCollapse" role="button" aria-expanded="false" aria-controls="commentCollapse"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i></a></p>
                                             <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
                                         </div>
@@ -203,8 +203,9 @@
 
                     </div>
                     <div class="card-footer">
-
+                        <div class="collapse multi-collapse" id="commentCollapse">
                         <div style="position: fixed; bottom: 55px; background: white; width: 100%; margin-left: -20px; height: 80px; padding: 10px;"> @include('partials.commentfield')</div>
+                        </div>
 
                     </div>
                 </div>
