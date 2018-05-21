@@ -262,7 +262,7 @@ $("#dislike_form").submit(function(event){
 $("#add_frend_form").submit(function(event){
     event.preventDefault(); //prevent default action
 
-    $(".add_frend_button").attr("disabled", "disabled");
+    $(".add_frend_button").prop('disabled', true);
     var post_url = $(this).attr("action"); //get form action url
     var request_method = $(this).attr("method"); //get form GET/POST method
     var form_data = $(this).serialize(); //Encode form elements for submission
