@@ -124,13 +124,21 @@
     }
 
 }
+.post-views {
+    color: black !important;
+    font-size: 10pt !important;
+    margin-bottom: 0 !important;
+    margin-top: 20px;
 
+
+
+
+    }
 .post-meta{
     display: flex;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
-    margin-top: 20px;
     align-items: center;
     height: 55px;
     #server-results{
@@ -139,7 +147,7 @@
     .post-data {
         color: black !important;
         font-size: 10pt !important;
-        width: calc(100% / 4);
+        width: calc(100% / 3);
         margin-bottom: 0 !important;
         align-items: center;
         text-align: center;

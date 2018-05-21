@@ -104,7 +104,7 @@
 
 
                                         {{--{{ $friend }}--}}
-                                        <p class="post-data">views: {{$post->views}}</p>
+                                        <p class="post-views">views: {{$post->views}}</p>
                                         <div class="post-meta">
 
                                             <div class="post-data like-dislike-vote">
