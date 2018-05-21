@@ -19,12 +19,12 @@ class SearchController extends Controller {
     }
 
 
-    public function scopeIsWithinMaxDistance() {
+    public function peopleWithinFiveMiles() {
 
         $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
 
 
-        return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 1)->orderBy('distance')->get();
+        return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 5)->join('profileinfo', 'profileinfo.followsusername', '=', 'users.username')->join('follows', 'follows.username', '!=', Auth::user()->username)->orderBy('distance')->get();
     }
 
     public function index(Request $request)
@@ -42,7 +42,7 @@ class SearchController extends Controller {
 
 
 
-        $suggest = $this->scopeIsWithinMaxDistance();
+        $suggest = $this->peopleWithinFiveMiles();
 
         $searchedusers = User::join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.email', 'LIKE', '%' . $request->input('query') . '%')->paginate(10);
 
