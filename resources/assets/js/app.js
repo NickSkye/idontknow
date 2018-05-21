@@ -317,6 +317,13 @@ $("#remove_frend_form").submit(function(event){
 });
 
 
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 600) {
+        $('#commentCollapse').show();
+    }
+});
+
+
 //Javascript
 $(function()
 {
@@ -328,3 +335,6 @@ $(function()
         }
     });
 });
+
+
+
