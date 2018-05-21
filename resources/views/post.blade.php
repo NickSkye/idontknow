@@ -136,7 +136,7 @@
 
                                             </form>
                                             </div>
-                                         
+
                                             <p class="post-data"><a href="#"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i></a></p>
                                             <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
