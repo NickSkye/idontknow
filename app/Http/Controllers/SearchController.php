@@ -28,17 +28,7 @@ class SearchController extends Controller {
 $lng = $location->longitude;
 
         return $candidates = DB::select(
-            'SELECT * FROM
-                    (SELECT id, name, address, phone, latitude, longitude, (' . $circle_radius . ' * acos(cos(radians(' . $lat . ')) * cos(radians(latitude)) *
-                    cos(radians(longitude) - radians(' . $lng . ')) +
-                    sin(radians(' . $lat . ')) * sin(radians(latitude))))
-                    AS distance
-                    FROM candidates) AS distances
-                WHERE distance < ' . $max_distance . '
-                ORDER BY distance
-                OFFSET 0
-                LIMIT 20;
-            ');
+            'SELECT * FROM(SELECT *, (' . $circle_radius . ' * acos(cos(radians(' . $lat . ')) * cos(radians(latitude)) * cos(radians(longitude) - radians(' . $lng . ')) + sin(radians(' . $lat . ')) * sin(radians(latitude)))) AS distance FROM users) AS distances WHERE distance < ' . $max_distance . ' ORDER BY distance OFFSET 0 LIMIT 20;');
     }
 
     public function index(Request $request)
