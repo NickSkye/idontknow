@@ -51,7 +51,7 @@
                                 <h4>Suggested Frends</h4>
                                 <div class="row frend-area">
                                 @foreach($suggest as $sug)
-                                        <a href="/users/{{$sug->username}}" class="col-2 search-image" style="background-image: url('{{$sug->profileimage}}');">
+                                        <a href="/users/{{$sug->username}}" class="col-2 search-image" style="background-image: url('{{$sug->profileimage}}'); padding-bottom: 7%;">
                                             <div class="frend-box-name">
                                                 <p>{{$sug->name}}</p>
                                             </div>
