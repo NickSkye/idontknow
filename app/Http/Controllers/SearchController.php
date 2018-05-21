@@ -22,16 +22,23 @@ class SearchController extends Controller {
     public function scopeIsWithinMaxDistance($radius = 5) {
 
         $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
+        $circle_radius = 3959;
+        $max_distance = 20;
+        $lat = $location['latitude'];
+$lng = $location['longitude'];
 
-
-        $haversine = "(6371 * acos(cos(radians($location->latitude)) 
-                     * cos(radians(users.latitude)) 
-                     * cos(radians(users.longitude1
-                     - radians($location->longitude)) 
-                     + sin(radians($location->latitude)) 
-                     * sin(radians(users.latitude))))";
-        $query = DB::table('users')->select('users.*')->selectRaw("{$haversine} AS distance")->whereRaw("{$haversine} < ?", [$radius])->get();
-        return $query;
+        return $candidates = DB::select(
+            'SELECT * FROM
+                    (SELECT id, name, address, phone, latitude, longitude, (' . $circle_radius . ' * acos(cos(radians(' . $lat . ')) * cos(radians(latitude)) *
+                    cos(radians(longitude) - radians(' . $lng . ')) +
+                    sin(radians(' . $lat . ')) * sin(radians(latitude))))
+                    AS distance
+                    FROM candidates) AS distances
+                WHERE distance < ' . $max_distance . '
+                ORDER BY distance
+                OFFSET 0
+                LIMIT 20;
+            ');
     }
 
     public function index(Request $request)
