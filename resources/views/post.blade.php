@@ -189,7 +189,7 @@
                                     <div class="row">
                                         <div class="col-12">
 
-                                            <a href=""><p class="comment pull-right">reply</p></a>
+                                            <a data-toggle="collapse" href="#commentCollapse" role="button" aria-expanded="false" aria-controls="commentCollapse"><p class="comment pull-right">reply</p></a>
                                         </div>
                                     </div>
 
