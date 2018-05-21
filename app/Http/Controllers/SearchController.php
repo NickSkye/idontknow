@@ -24,7 +24,7 @@ class SearchController extends Controller {
         $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
 
 
-        return $candidates = DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 1)->orderBy('distance')->get();
+        return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 1)->orderBy('distance')->get();
     }
 
     public function index(Request $request)
