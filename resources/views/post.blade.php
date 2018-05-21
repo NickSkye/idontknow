@@ -107,7 +107,8 @@
 
                                         <div class="post-meta">
                                             <p class="post-data">views: {{$post->views}}</p>
-                                            <form action="/like" method="post" id="like_form" class="post-data">
+                                            <div class="post-data like-dislike-vote">
+                                            <form action="/like" method="post" id="like_form" class="">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
@@ -120,8 +121,8 @@
                                                 </button>
 
                                             </form>
-                                            <div id="server-results" style="text-align: center;" class="post-data">{{$totalvote}}</div>
-                                            <form action="/dislike" method="post" id="dislike_form" class="post-data">
+                                            <div id="server-results" style="text-align: center;" class="">{{$totalvote}}</div>
+                                            <form action="/dislike" method="post" id="dislike_form" class="">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
@@ -134,7 +135,9 @@
                                                 </button>
 
                                             </form>
-                                            {{--<p class="post-data"><a href="#"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i></a></p>--}}
+                                            </div>
+                                         
+                                            <p class="post-data"><a href="#"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i></a></p>
                                             <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
                                         </div>
