@@ -14191,8 +14191,10 @@ $("#remove_frend_form").submit(function (event) {
 });
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() > 600) {
+    if ($(window).scrollTop() > 1000) {
         $('#commentCollapse').show();
+    } else {
+        $('#commentCollapse').hide();
     }
 });
 
