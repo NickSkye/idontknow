@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Intervention\Image;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class S3ImageController extends Controller
 {
