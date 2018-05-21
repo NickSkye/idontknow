@@ -321,7 +321,7 @@ $(window).scroll(function () {
     if ($(window).scrollTop() > 1000) {
         $('#commentCollapse').addClass('show');
     }
-    else if($(window).scrollTop() < 600){
+    else if($(window).scrollTop() < 200){
         $('#commentCollapse').removeClass('show');
     }
 });
