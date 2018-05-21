@@ -9,7 +9,7 @@ use Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Imagick;
-use Intervention\Image\Imagick;
+
 
 
 
