@@ -19,7 +19,7 @@ class SearchController extends Controller {
     }
 
 
-    public function scopeIsWithinMaxDistance($query, $radius = 25) {
+    public function scopeIsWithinMaxDistance($radius = 25) {
 
         $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
 
@@ -30,7 +30,8 @@ class SearchController extends Controller {
                      - radians($location->longitude)) 
                      + sin(radians($location->latitude)) 
                      * sin(radians(users.latitude))))";
-        return $query->select()->selectRaw("{$haversine} AS distance")->whereRaw("{$haversine} < ?", [$radius]);
+        $query = DB::table('users')->selectRaw("{$haversine} AS distance")->whereRaw("{$haversine} < ?", [$radius])->get();
+        return $query;
     }
 
     public function index(Request $request)
@@ -47,8 +48,8 @@ class SearchController extends Controller {
         $online_frends = $this->getFrendsOnline();
 
 
-        $query = DB::table('users')->get();
-        $suggest = $this->scopeIsWithinMaxDistance($query, $radius = 25);
+
+        $suggest = $this->scopeIsWithinMaxDistance($radius = 25);
 
         $searchedusers = User::join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.email', 'LIKE', '%' . $request->input('query') . '%')->paginate(10);
 
