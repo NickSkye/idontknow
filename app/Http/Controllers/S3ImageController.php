@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Intervention\Image\Image;
 use Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Intervention\Image\Imagick;
+
 
 
 
@@ -103,8 +104,7 @@ class S3ImageController extends Controller
 if ($request->hasFile('image')) {
     //
     $imageName = time().'.'.$request->image->getClientOriginalExtension();
-    $image = new \Imagick($request->file('image'));
-    $image = $image->stripImage();
+    $image = $request->file('image');
     $t = Storage::disk('s3')->put("posts/".$imageName, file_get_contents($image), 'public');
     $imageName = Storage::disk('s3')->url("posts/".$imageName);
 } else{
