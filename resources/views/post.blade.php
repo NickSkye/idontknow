@@ -104,9 +104,9 @@
 
 
                                         {{--{{ $friend }}--}}
-
+                                        <p class="post-data">views: {{$post->views}}</p>
                                         <div class="post-meta">
-                                            <p class="post-data">views: {{$post->views}}</p>
+
                                             <div class="post-data like-dislike-vote">
                                             <form action="/like" method="post" id="like_form" class="">
                                                 {{ csrf_field() }}
