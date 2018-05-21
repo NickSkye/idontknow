@@ -71,7 +71,7 @@
                                         <form method="post"  id="add_frend_form" action="/addfrend/{{$info->username}}">
                                             {{ csrf_field() }}
                                             <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
-                                            <button class="btn btn-lg btn-success" type="submit">
+                                            <button class="btn btn-lg btn-success add_frend_button" type="submit">
                                                 Add Friend
                                             </button>
                                         </form>
