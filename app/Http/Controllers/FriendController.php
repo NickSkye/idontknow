@@ -102,7 +102,7 @@ class FriendController extends Controller
         }
 
 
-        return redirect("home")->with('status', 'friend added');
+//        return redirect("home")->with('status', 'friend added');
     }
 
     public function remove($username)

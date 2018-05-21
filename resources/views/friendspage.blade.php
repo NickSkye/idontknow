@@ -29,7 +29,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-8">
-                                            <form method="post" action="/removefrend/{{$info->username}}">
+                                            <form method="post"  id="remove_frend_form" action="/removefrend/{{$info->username}}">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
                                                 <button class="btn btn-lg btn-warning" type="submit">
@@ -66,7 +66,7 @@
                                     </div>
                                 @else
                                     <p>{{$info->username}} is not your friend yet</p>
-                                    <form method="post" action="/addfrend/{{$info->username}}">
+                                    <form method="post"  id="add_frend_form" action="/addfrend/{{$info->username}}">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
                                         <button class="btn btn-lg btn-success" type="submit">
