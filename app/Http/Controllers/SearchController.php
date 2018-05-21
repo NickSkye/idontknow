@@ -19,7 +19,7 @@ class SearchController extends Controller {
     }
 
 
-    public function scopeIsWithinMaxDistance($radius = 1) {
+    public function scopeIsWithinMaxDistance($radius = 5) {
 
         $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
 
