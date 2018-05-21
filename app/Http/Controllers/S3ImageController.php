@@ -102,7 +102,8 @@ class S3ImageController extends Controller
 if ($request->hasFile('image')) {
     //
     $imageName = time().'.'.$request->image->getClientOriginalExtension();
-    $image = $request->file('image');
+    $image = new \Imagick($request->file('image'));
+    $image = $image->stripImage();
     $t = Storage::disk('s3')->put("posts/".$imageName, file_get_contents($image), 'public');
     $imageName = Storage::disk('s3')->url("posts/".$imageName);
 } else{
