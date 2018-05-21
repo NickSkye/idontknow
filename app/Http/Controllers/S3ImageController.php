@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use Intervention;
 
 class S3ImageController extends Controller
 {
@@ -100,7 +100,7 @@ if ($request->hasFile('image')) {
     //
     $imageName = time().'.'.$request->image->getClientOriginalExtension();
     $image = $request->file('image');
-    $t = Storage::disk('s3')->put("posts/".$imageName, file_get_contents($image), 'public');
+    $t = Storage::disk('s3')->put("posts/".$imageName, file_get_contents(Image::make($image)->orientate()), 'public');
     $imageName = Storage::disk('s3')->url("posts/".$imageName);
 } else{
     $imageName = null;
