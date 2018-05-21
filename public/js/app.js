@@ -14141,8 +14141,8 @@ $("#add_frend_form").submit(function (event) {
         data: form_data
     }).done(function (response) {
         //
-        $(".are-frends").removeClass(hidden);
-        $(".arent-frends").addClass(hidden);
+        $(".are-frends").removeClass('d-none');
+        $(".arent-frends").addClass('d-none');
         // if(response[1]){
         //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
         //     $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
@@ -14165,8 +14165,8 @@ $("#remove_frend_form").submit(function (event) {
         data: form_data
     }).done(function (response) {
         //
-        $(".arent-frends").removeClass(hidden);
-        $(".are-frends").addClass(hidden);
+        $(".arent-frends").removeClass('d-none');
+        $(".are-frends").addClass('d-none');
         // $("#server-results").html(response[0]);
         // if(response[1]){
         //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');

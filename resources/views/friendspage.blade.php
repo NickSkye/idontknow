@@ -66,7 +66,7 @@
                                         </div>
                                     </div>
                                     </div>
-                                    <div class="arent-frends hidden">
+                                    <div class="arent-frends d-none">
                                         <p>{{$info->username}} is not your friend yet</p>
                                         <form method="post"  id="add_frend_form" action="/addfrend/{{$info->username}}">
                                             {{ csrf_field() }}
@@ -77,7 +77,7 @@
                                         </form>
                                     </div>
                                 @else
-                                    <div class="are-frends hidden">
+                                    <div class="are-frends d-none">
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 <p>{{$info->username}} is your friend</p>
