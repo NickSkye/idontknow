@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 use Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\ImageManager;
+
+
 
 class S3ImageController extends Controller
 {
@@ -92,14 +94,15 @@ class S3ImageController extends Controller
             }
         }
 
-
+// create an image manager instance with favored driver
+        $manager = new ImageManager(array('driver' => 'imagick'));
 
 
 //IF HAS IMAGE DO SOMETHING, IF JUST TEXT DO SOMETHING ELSE
 if ($request->hasFile('image')) {
     //
     $imageName = time().'.'.$request->image->getClientOriginalExtension();
-    $image = Image::make($request->file('image'))->orientate();
+    $image = $manager->make($request->file('image'))->orientate();
     $t = Storage::disk('s3')->put("posts/".$imageName, file_get_contents($image), 'public');
     $imageName = Storage::disk('s3')->url("posts/".$imageName);
 } else{
