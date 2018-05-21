@@ -101,8 +101,9 @@ class FriendController extends Controller
             Mail::to($email->email)->send(new AddFrendMail());
         }
 
-
+        $arefrends = true;
 //        return redirect("home")->with('status', 'friend added');
+        return response($arefrends);
     }
 
     public function remove($username)
@@ -114,6 +115,9 @@ class FriendController extends Controller
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
-        return redirect("home")->with('status', 'friend removed');
+//        return redirect("home")->with('status', 'friend removed');
+        $arefrends = false;
+//        return redirect("home")->with('status', 'friend added');
+        return response($arefrends);
     }
 }

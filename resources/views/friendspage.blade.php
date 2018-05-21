@@ -20,6 +20,7 @@
 
                                 {{--an array of users that you follow--}}
                                 @if($arefriends)
+                                    <div class="are-frends">
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <p>{{$info->username}} is your friend</p>
@@ -64,7 +65,65 @@
                                             {{--END SHOUT MODAL--}}
                                         </div>
                                     </div>
+                                    </div>
+                                    <div class="arent-frends hidden">
+                                        <p>{{$info->username}} is not your friend yet</p>
+                                        <form method="post"  id="add_frend_form" action="/addfrend/{{$info->username}}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
+                                            <button class="btn btn-lg btn-success" type="submit">
+                                                Add Friend
+                                            </button>
+                                        </form>
+                                    </div>
                                 @else
+                                    <div class="are-frends hidden">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <p>{{$info->username}} is your friend</p>
+                                                <p style="font-size: 10px;">last active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8">
+                                                <form method="post"  id="remove_frend_form" action="/removefrend/{{$info->username}}">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
+                                                    <button class="btn btn-lg btn-warning" type="submit">
+                                                        Remove Friend
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
+                                                    <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
+                                                </button>
+                                                {{--SHOUT MODAL--}}
+                                                <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                @include('partials.shoutonfriendspage')
+                                                            </div>
+                                                            {{--<div class="modal-footer">--}}
+                                                            {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
+                                                            {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
+                                                            {{--</div>--}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{--END SHOUT MODAL--}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="arent-frends">
                                     <p>{{$info->username}} is not your friend yet</p>
                                     <form method="post"  id="add_frend_form" action="/addfrend/{{$info->username}}">
                                         {{ csrf_field() }}
@@ -73,6 +132,7 @@
                                             Add Friend
                                         </button>
                                     </form>
+                                    </div>
                                 @endif
 
 

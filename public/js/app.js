@@ -14139,8 +14139,10 @@ $("#add_frend_form").submit(function (event) {
         url: post_url,
         type: request_method,
         data: form_data
-    }).done(function (response) {//
-        // $("#server-results").html(response[0]);
+    }).done(function (response) {
+        //
+        $(".are-frends").removeClass(hidden);
+        $(".arent-frends").addClass(hidden);
         // if(response[1]){
         //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
         //     $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
@@ -14161,7 +14163,10 @@ $("#remove_frend_form").submit(function (event) {
         url: post_url,
         type: request_method,
         data: form_data
-    }).done(function (response) {//
+    }).done(function (response) {
+        //
+        $(".arent-frends").removeClass(hidden);
+        $(".are-frends").addClass(hidden);
         // $("#server-results").html(response[0]);
         // if(response[1]){
         //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
