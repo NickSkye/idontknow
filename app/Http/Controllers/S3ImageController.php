@@ -95,7 +95,7 @@ class S3ImageController extends Controller
         }
 
 // create an image manager instance with favored driver
-        $manager = new ImageManager();
+
 
 
 //IF HAS IMAGE DO SOMETHING, IF JUST TEXT DO SOMETHING ELSE
