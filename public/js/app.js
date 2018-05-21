@@ -14192,9 +14192,9 @@ $("#remove_frend_form").submit(function (event) {
 
 $(window).scroll(function () {
     if ($(window).scrollTop() > 1000) {
-        $('#commentCollapse').show();
+        $('#commentCollapse').addClass('show');
     } else {
-        $('#commentCollapse').hide();
+        $('#commentCollapse').removeClass('show');
     }
 });
 
