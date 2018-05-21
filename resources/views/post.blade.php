@@ -120,7 +120,7 @@
                                                 </button>
 
                                             </form>
-                                            <div id="server-results" class="post-data">{{$totalvote}}</div>
+                                            <div id="server-results" style="text-align: center;" class="post-data">{{$totalvote}}</div>
                                             <form action="/dislike" method="post" id="dislike_form" class="post-data">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="postid" value="{{$post->id}}"/>
