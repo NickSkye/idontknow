@@ -24,8 +24,8 @@ class SearchController extends Controller {
         $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
         $circle_radius = 3959;
         $max_distance = 20;
-        $lat = $location['latitude'];
-$lng = $location['longitude'];
+        $lat = $location->latitude;
+$lng = $location->longitude;
 
         return $candidates = DB::select(
             'SELECT * FROM
