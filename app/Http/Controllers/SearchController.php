@@ -19,14 +19,14 @@ class SearchController extends Controller {
     }
 
 
-    public function scopeIsWithinMaxDistance($radius = 25) {
+    public function scopeIsWithinMaxDistance($radius = 1) {
 
         $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
 
 
         $haversine = "(6371 * acos(cos(radians($location->latitude)) 
                      * cos(radians(users.latitude)) 
-                     * cos(radians(users.longitude) 
+                     * cos(radians(users.longitude1
                      - radians($location->longitude)) 
                      + sin(radians($location->latitude)) 
                      * sin(radians(users.latitude))))";
