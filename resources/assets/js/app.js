@@ -259,7 +259,7 @@ $("#dislike_form").submit(function(event){
 });
 
 $(".add_frend_button").click(function() {  //use a class, since your ID gets mangled
-    
+
     $('.add_frend_button').toggleClass("loading-button");     //add the class to the clicked element
     $('.add_frend_button i.fa').toggleClass("fa-user-plus");     //add the class to the clicked element
     $('.add_frend_button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
@@ -279,6 +279,9 @@ $("#add_frend_form").submit(function(event){
     }).done(function(response){ //
         $(".are-frends").removeClass('d-none');
         $(".arent-frends").addClass('d-none');
+        $('.add_frend_button').toggleClass("loading-button");     //add the class to the clicked element
+        $('.add_frend_button i.fa').toggleClass("fa-user-plus");     //add the class to the clicked element
+        $('.add_frend_button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
         // if(response[1]){
         //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
         //     $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
