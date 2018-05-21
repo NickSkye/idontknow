@@ -48,9 +48,14 @@
                                 </div>
                             @endif
                             <div>
+                                <h4>Suggested Frends</h4>
+                                @foreach($suggest as $sug)
+                                    {{$sug->username}}
+                                    @endforeach
                                 <h3>User Search Results:</h3>
                                 <hr>
                                 <br>
+
 
                                 <div class="infinite-scroll">
                                     <div class="row frend-area">
