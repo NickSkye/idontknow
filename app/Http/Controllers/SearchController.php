@@ -30,7 +30,7 @@ class SearchController extends Controller {
                      - radians($location->longitude)) 
                      + sin(radians($location->latitude)) 
                      * sin(radians(users.latitude))))";
-        $query = DB::table('users')->selectRaw("{$haversine} AS distance")->whereRaw("{$haversine} < ?", [$radius])->get();
+        $query = DB::table('users')->select('username')->selectRaw("{$haversine} AS distance")->whereRaw("{$haversine} < ?", [$radius])->get();
         return $query;
     }
 
