@@ -141,7 +141,7 @@
 }
 
 .post-meta #server-results {
-  width: 35px;
+  min-width: 35px;
 }
 
 .post-meta .post-data {
