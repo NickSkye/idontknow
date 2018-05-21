@@ -259,7 +259,10 @@ $("#dislike_form").submit(function(event){
 });
 
 $(".add_frend_button").click(function() {  //use a class, since your ID gets mangled
-    $(".add_frend_button").addClass('d-none');
+    $(".add_frend_button").attr("disabled", true);
+    $('.add_frend_button').toggleClass("loading-button");     //add the class to the clicked element
+    $('.add_frend_button i.fa').toggleClass("fa-user-plus");     //add the class to the clicked element
+    $('.add_frend_button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
 });
 $("#add_frend_form").submit(function(event){
     event.preventDefault(); //prevent default action

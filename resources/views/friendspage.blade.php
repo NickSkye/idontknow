@@ -34,7 +34,7 @@
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
                                                 <button class="btn btn-lg btn-warning" type="submit">
-                                                    Remove Friend
+                                                    <i class="fa fa-user-times fa-2x" aria-hidden="true"></i>
                                                 </button>
                                             </form>
                                         </div>
@@ -72,7 +72,7 @@
                                             {{ csrf_field() }}
                                             <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
                                             <button class="btn btn-lg btn-success add_frend_button" type="submit">
-                                                Add Friend
+                                                <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
                                             </button>
                                         </form>
                                     </div>
@@ -91,7 +91,7 @@
                                                     {{ csrf_field() }}
                                                     <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
                                                     <button class="btn btn-lg btn-warning" type="submit">
-                                                        Remove Friend
+                                                        <i class="fa fa-user-times fa-2x" aria-hidden="true"></i>
                                                     </button>
                                                 </form>
                                             </div>
@@ -129,7 +129,7 @@
                                         {{ csrf_field() }}
                                         <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
                                         <button class="btn btn-lg btn-success add_frend_button" type="submit">
-                                            Add Friend
+                                            <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
                                         </button>
                                     </form>
                                     </div>
