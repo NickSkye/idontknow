@@ -49,9 +49,18 @@
                             @endif
                             <div>
                                 <h4>Suggested Frends</h4>
+                                <div class="row frend-area">
                                 @foreach($suggest as $sug)
-                                    {{$sug->username}}
+                                        <a href="/users/{{$sug->username}}" class="col-2 search-image" style="background-image: url('{{$sug->profileimage}}');">
+                                            <div class="frend-box-name">
+                                                <p>{{$sug->name}}</p>
+                                            </div>
+                                            <div class="frend-box">
+                                                <p>{{$sug->username}}</p>
+                                            </div>
+                                        </a>
                                     @endforeach
+                                </div>
                                 <h3>User Search Results:</h3>
                                 <hr>
                                 <br>
