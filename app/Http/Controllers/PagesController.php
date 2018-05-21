@@ -231,9 +231,10 @@ class PagesController extends Controller
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
         $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
+        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote]);
+        return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment]);
 
 
     }
