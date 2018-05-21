@@ -223,7 +223,15 @@ $("#like_form").submit(function(event){
         type: request_method,
         data : form_data
     }).done(function(response){ //
-        $("#server-results").html(response);
+        $("#server-results").html(response[0]);
+        if(response[1]){
+            $("button.like").html('<i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>');
+        }
+        else{
+            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
+        }
+
+
     });
 });
 

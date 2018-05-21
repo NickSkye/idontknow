@@ -51,19 +51,22 @@ class PagesController extends Controller
     {
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
-
+        $isred = false;
 
         if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $request->postid],])->doesntExist()){
             DB::table('post_votes')->insert(['username'=> Auth::user()->username, 'post_id'=> $request->postid, 'vote'=> 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+            $isred = true;
 
         }
         else{
             $thevote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $request->postid],])->first();
             if($thevote->vote == 1){
                 DB::table('post_votes')->where(['username'=> Auth::user()->username, 'post_id'=> $request->postid, ])->update(['vote'=> 0]);
+                $isred = false;
             }
             else{
                 DB::table('post_votes')->where(['username'=> Auth::user()->username, 'post_id'=> $request->postid, ])->update(['vote'=> 1]);
+                $isred = true;
             }
         }
 
@@ -72,7 +75,7 @@ class PagesController extends Controller
 
         $totalvote = DB::table('post_votes')->sum('vote');
 //        return Response::json(['done']);
-        return response($totalvote);
+        return response([$totalvote, $isred]);
 
     }
 
