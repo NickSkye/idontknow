@@ -14004,6 +14004,7 @@ $(document).ready(function () {
     } else {
         $('input[name=latitude]').val(sessionStorage['latitude']);
         $('input[name=longitude]').val(sessionStorage['longitude']);
+
         $.ajax({
             url: '/update-location',
             type: 'POST',
@@ -14214,7 +14215,9 @@ $(window).scroll(function () {
     if ($(window).scrollTop() > 1000) {
         $('#commentCollapse').addClass('show');
     } else if ($(window).scrollTop() < 200) {
-        $('#commentCollapse').removeClass('show');
+        if (!$('input[name=comment]').val()) {
+            $('#commentCollapse').removeClass('show');
+        }
     }
 });
 
