@@ -135,6 +135,9 @@ $( document ).ready(function() {
         $.ajax({
             url : '/update-location',
             type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             data : {latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude']}
         }).done(function(response){ //
 alert('response');
