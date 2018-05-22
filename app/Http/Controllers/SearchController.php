@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Mail;
+use Illuminate\Session;
 
 
 class SearchController extends Controller {
@@ -23,8 +24,15 @@ class SearchController extends Controller {
 
         $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
         if(is_null($location->latitude) or is_null($location->longitude)){
-            $location->latitude = 0;
-            $location->longitude = 0;
+            if(is_null(Session::get('latitude')) or is_null(Session::get('longitude'))){
+                $location->latitude = 0;
+                $location->longitude = 0;
+        }
+        else{
+            $location->latitude = Session::get('latitude');
+            $location->longitude = Session::get('longitude');
+        }
+
         }
 
         return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 5)->join('profileinfo', 'profileinfo.username', '=', 'users.username')->orderBy('distance')->get();
