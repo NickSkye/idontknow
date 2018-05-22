@@ -241,7 +241,7 @@
 
                                                             </form>
                                                             <div id="server-results-{{$friendspost->id}}" style="text-align: center;" class="">{{$friendspost->votes}}</div>
-                                                            <form action="/dislike" method="post" id="dislike_form-{{$friendspost->id}}" class="">
+                                                            <form action="/dislike" method="post" id="dislike_form-{{$friendspost->id}}" class="activity-dislike-form">
                                                                 {{ csrf_field() }}
                                                                 <input type="hidden" name="postid" value="{{$friendspost->id}}"/>
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
