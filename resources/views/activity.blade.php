@@ -221,22 +221,21 @@
                                                     {{--TEST--}}
                                                     <p class="post-views">views: {{$friendspost->views}}</p>
                                                     <div class="post-meta">
-
+                                                        @foreach($post_vote as $pv)
+                                                            @if($friendspost->id === $pv->post_id)
                                                         <div class="post-data like-dislike-vote">
                                                             <form action="/like" method="post" id="like_form" class="">
                                                                 {{ csrf_field() }}
                                                                 <input type="hidden" name="postid" value="{{$friendspost->id}}"/>
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                                 <button class="post-data like" type="submit" name="submit" value="" style="background: none; "/>
-                                                               @foreach($post_vote as $pv)
-                                                                @if($friendspost->id === $pv->post_id)
+
                                                                 @if($pv->vote == 1)
                                                                     <i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>
                                                                 @else
                                                                     <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
                                                                     @endif
-                                                                            @endif
-                                                                            @endforeach
+
                                                                     </button>
 
                                                             </form>
@@ -246,20 +245,19 @@
                                                                 <input type="hidden" name="postid" value="{{$friendspost->id}}"/>
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                                 <button class="post-data dislike" type="submit" name="submit" value="" style="background: none; "/>
-                                                                @foreach($post_vote as $pv)
-                                                                    @if($friendspost->id === $pv->post_id)
+
                                                                 @if($pv->vote == -1)
                                                                     <i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>
                                                                 @else
                                                                     <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
                                                                     @endif
-                                                                    @endif
-                                                                    @endforeach
+
                                                                     </button>
 
                                                             </form>
                                                         </div>
-
+                                                            @endif
+                                                        @endforeach
                                                         <p class="post-data"><a data-toggle="collapse" href="#commentCollapse" role="button" aria-expanded="false" aria-controls="commentCollapse"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>{{$totalcomment}}</a></p>
                                                         <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
