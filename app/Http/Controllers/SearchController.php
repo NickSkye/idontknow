@@ -9,7 +9,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Mail;
-use Illuminate\Session;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 
 class SearchController extends Controller {
