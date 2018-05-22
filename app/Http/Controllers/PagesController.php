@@ -204,14 +204,14 @@ class PagesController extends Controller
         $online_frends = $this->getFrendsOnline();
         $post_vote = 0;
 
-        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
-            $post_vote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->first()->vote;
-        }
-        $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
-        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
+//        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
+            $post_votes = DB::table('post_votes')->where(['username', Auth::user()->username])->first()->vote;
+//        }
+//        $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
+//        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment]);
+        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'post_votes'=> $post_votes]);
 
 
     }
