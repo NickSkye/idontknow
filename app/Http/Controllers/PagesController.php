@@ -241,7 +241,8 @@ class PagesController extends Controller
 
     public function updatelocation(Request $request){
 
-        DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request['latitude'], 'longitude' => $request['latitude'], 'updated_at' => date('Y-m-d H:i:s')]);
+        DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->latitude, 'updated_at' => date('Y-m-d H:i:s')]);
+        return view('home')->with('status', $request);
     }
 
     public function deletepost($id)
