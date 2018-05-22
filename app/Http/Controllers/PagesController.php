@@ -239,6 +239,10 @@ class PagesController extends Controller
 
     }
 
+    public function updatelocation(Request $request){
+        DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
+    }
+
     public function deletepost($id)
     {
 
