@@ -13998,7 +13998,7 @@ $(document).ready(function () {
         $.ajax({
             url: '/update-location',
             type: 'POST',
-            data: { "latitude": sessionStorage['latitude'], "longitude": sessionStorage['longitude'] }
+            data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
         }).done(function (response) {//
 
             // $("#server-results").html(response[0]);
