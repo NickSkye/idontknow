@@ -44,8 +44,8 @@ class CommentsController extends Controller
 //
 //        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 //
-//        return redirect('/post/' . $request->post_id);
-        return view('post')->with('post_id', $request->post_id);
+        return redirect('/post/' . $request->post_id);
+//        return view('post')->with('post_id', $request->post_id);
     }
 
 
