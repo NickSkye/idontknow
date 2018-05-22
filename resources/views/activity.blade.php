@@ -223,7 +223,7 @@
                                                     <div class="post-meta">
 
                                                         <div class="post-data like-dislike-vote">
-                                                            <form action="/like" method="post" id="like_form" class="">
+                                                            <form action="/like" method="post" id="like_form-{{$friendspost->id}}" class="">
                                                                 {{ csrf_field() }}
                                                                 <input type="hidden" name="postid" value="{{$friendspost->id}}"/>
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
@@ -240,8 +240,8 @@
                                                                     </button>
 
                                                             </form>
-                                                            <div id="server-results" style="text-align: center;" class="">{{$friendspost->votes}}</div>
-                                                            <form action="/dislike" method="post" id="dislike_form" class="">
+                                                            <div id="server-results-{{$friendspost->id}}" style="text-align: center;" class="">{{$friendspost->votes}}</div>
+                                                            <form action="/dislike" method="post" id="dislike_form-{{$friendspost->id}}" class="">
                                                                 {{ csrf_field() }}
                                                                 <input type="hidden" name="postid" value="{{$friendspost->id}}"/>
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
@@ -260,7 +260,7 @@
                                                             </form>
                                                         </div>
 
-                                                        <p class="post-data"><a data-toggle="collapse" href="#commentCollapse" role="button" aria-expanded="false" aria-controls="commentCollapse"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>{{$friendspost->comments}}</a></p>
+                                                        <p class="post-data"><a data-toggle="collapse" href="#commentCollapse-{{$friendspost->id}}" role="button" aria-expanded="false" aria-controls="commentCollapse-{{$friendspost->id}}"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>{{$friendspost->comments}}</a></p>
                                                         <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
                                                     </div>
