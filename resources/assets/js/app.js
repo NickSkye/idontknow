@@ -343,7 +343,7 @@ $(window).scroll(function () {
         $('#commentCollapse').addClass('show');
     }
     else if($(window).scrollTop() < 200){
-        if( !$('input[name=comment]').val()){
+        if( !($('input[name=comment]').val().length > 0)){
             $('#commentCollapse').removeClass('show');
         }
 
