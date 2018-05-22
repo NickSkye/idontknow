@@ -14000,7 +14000,7 @@ $(document).ready(function () {
             data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
         }).done(function (response) {
             //
-            alert(response);
+            alert('done');
         });
     } else {
         $('input[name=latitude]').val(sessionStorage['latitude']);
@@ -14011,7 +14011,7 @@ $(document).ready(function () {
             data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
         }).done(function (response) {
             //
-            alert(response);
+            alert('response');
         });
     }
 });
