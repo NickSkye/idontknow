@@ -119,11 +119,11 @@ $( document ).ready(function() {
         getLocation();
         //var post_url = $(this).attr("action"); //get form action url
         // var request_method = $(this).attr("method"); //get form GET/POST method
-        
+
         $.ajax({
             url : '/update-location',
             type: 'POST',
-            data : {latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude']}.serialize()
+            data : {latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude']}
         }).done(function(response){ //
 
         });
@@ -135,7 +135,7 @@ $( document ).ready(function() {
         $.ajax({
             url : '/update-location',
             type: 'POST',
-            data : {latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude']}.serialize()
+            data : {latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude']}
         }).done(function(response){ //
 
         });

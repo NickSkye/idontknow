@@ -13997,7 +13997,7 @@ $(document).ready(function () {
         $.ajax({
             url: '/update-location',
             type: 'POST',
-            data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }.serialize()
+            data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
         }).done(function (response) {//
 
         });
@@ -14007,7 +14007,7 @@ $(document).ready(function () {
         $.ajax({
             url: '/update-location',
             type: 'POST',
-            data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }.serialize()
+            data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
         }).done(function (response) {//
 
         });
