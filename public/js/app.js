@@ -14215,7 +14215,7 @@ $(window).scroll(function () {
     if ($(window).scrollTop() > 1000) {
         $('#commentCollapse').addClass('show');
     } else if ($(window).scrollTop() < 200) {
-        if (!($('input[name=comment]').val().length > 0)) {
+        if (!$('.comment-field').val()) {
             $('#commentCollapse').removeClass('show');
         }
     }
