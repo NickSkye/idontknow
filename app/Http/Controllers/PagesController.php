@@ -202,7 +202,7 @@ class PagesController extends Controller
 
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
-        $post_vote = 0;
+        $post_votes = 0;
 
 //        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
             $post_votes = DB::table('post_votes')->where('username', Auth::user()->username)->get();

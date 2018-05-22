@@ -221,7 +221,7 @@
                                                     {{--TEST--}}
                                                     <p class="post-views">views: {{$friendspost->views}}</p>
                                                     <div class="post-meta">
-                                                        @foreach($post_vote as $pv)
+                                                        @foreach($post_votes as $pv)
                                                             @if($friendspost->id === $pv->post_id)
                                                         <div class="post-data like-dislike-vote">
                                                             <form action="/like" method="post" id="like_form" class="">
