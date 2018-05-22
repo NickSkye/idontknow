@@ -20,17 +20,17 @@ class SearchController extends Controller {
     }
 
 
-    public function peopleWithinFiveMiles() {
+    public function peopleWithinFiveMiles(Request $request) {
 
         $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
         if(is_null($location->latitude) or is_null($location->longitude)){
-            if(is_null(\Session::get('latitude')) or is_null(\Session::get('longitude'))){
+            if(is_null($request->session()->get('latitude')) or is_null($request->session()->get('longitude'))){
                 $location->latitude = 0;
                 $location->longitude = 0;
         }
         else{
-            $location->latitude = \Session::get('latitude');
-            $location->longitude = \Session::get('longitude');
+            $location->latitude = $request->session()->get('latitude');
+            $location->longitude = $request->session()->get('longitude');
         }
 
         }
