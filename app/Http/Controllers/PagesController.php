@@ -107,7 +107,7 @@ class PagesController extends Controller
         DB::table('posts')->where('id', $request->postid)->update(['votes' => $totalvote]);
 
 //        return Response::json(['done']);
-        return response([$totalvote, $isblue]);
+        return response([$totalvote, $isblue, $request->postid]);
 
     }
 
