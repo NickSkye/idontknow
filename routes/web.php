@@ -36,6 +36,8 @@ Route::get('/support', 'PagesController@support')->middleware('auth');
 Route::post('/support-request', 'PagesController@supportrequest')->middleware('auth');
 Route::post('/post/like', 'PagesController@like')->middleware('auth');
 Route::post('/post/dislike', 'PagesController@dislike')->middleware('auth');
+Route::post('/like', 'PagesController@like')->middleware('auth');
+Route::post('/dislike', 'PagesController@dislike')->middleware('auth');
 Route::post('/update-location', 'PagesController@updatelocation')->middleware('auth');
 
 
