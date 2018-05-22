@@ -76,7 +76,7 @@ class PagesController extends Controller
 
 
 //        return Response::json(['done']);
-        return response([$totalvote, $isred]);
+        return response([$totalvote, $isred, $request->postid]);
 
     }
 

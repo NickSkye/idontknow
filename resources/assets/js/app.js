@@ -232,6 +232,32 @@ $(document).ready(function(){
 });
 
 
+
+//AJAX
+$(".activity-like-form").submit(function(event){
+    event.preventDefault(); //prevent default action
+    var post_url = $(this).attr("action"); //get form action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = $(this).serialize(); //Encode form elements for submission
+
+    $.ajax({
+        url : '/activity/like',
+        type: request_method,
+        data : form_data
+    }).done(function(response){ //
+        $("#server-results-" +response[3]).html(response[0]);
+        if(response[1]){
+            $("button.like").html('<i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>');
+            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
+        }
+        else{
+            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
+        }
+
+
+    });
+});
+
 //AJAX
 $("#like_form").submit(function(event){
     event.preventDefault(); //prevent default action
