@@ -13998,8 +13998,9 @@ $(document).ready(function () {
             url: '/update-location',
             type: 'POST',
             data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
-        }).done(function (response) {//
-
+        }).done(function (response) {
+            //
+            alert(response);
         });
     } else {
         $('input[name=latitude]').val(sessionStorage['latitude']);
@@ -14008,8 +14009,9 @@ $(document).ready(function () {
             url: '/update-location',
             type: 'POST',
             data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
-        }).done(function (response) {//
-
+        }).done(function (response) {
+            //
+            alert(response);
         });
     }
 });
