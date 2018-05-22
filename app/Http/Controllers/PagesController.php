@@ -205,7 +205,7 @@ class PagesController extends Controller
         $post_vote = 0;
 
 //        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
-            $post_votes = DB::table('post_votes')->where(['username', Auth::user()->username])->first()->vote;
+            $post_votes = DB::table('post_votes')->where(['username', Auth::user()->username])->first();
 //        }
 //        $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
 //        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
