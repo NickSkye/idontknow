@@ -229,7 +229,7 @@
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                                 <button class="post-data like" type="submit" name="submit" value="" style="background: none; "/>
                                                                @foreach($post_vote as $pv)
-                                                                @if($friendspost->id == $pv->post_id)
+                                                                @if($friendspost->id === $pv->post_id)
                                                                 @if($pv->vote == 1)
                                                                     <i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>
                                                                 @else
@@ -247,7 +247,7 @@
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                                 <button class="post-data dislike" type="submit" name="submit" value="" style="background: none; "/>
                                                                 @foreach($post_vote as $pv)
-                                                                    @if($friendspost->id == $pv->post_id)
+                                                                    @if($friendspost->id === $pv->post_id)
                                                                 @if($pv->vote == -1)
                                                                     <i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>
                                                                 @else
