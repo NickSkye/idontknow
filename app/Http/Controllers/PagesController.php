@@ -69,11 +69,12 @@ class PagesController extends Controller
                 $isred = true;
             }
         }
-
+        $totalvote = DB::table('post_votes')->where('post_id', $request->postid)->sum('vote');
 
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        DB::table('posts')->where('id', $request->postid)->update(['votes' => $totalvote]);
 
-        $totalvote = DB::table('post_votes')->where('post_id', $request->postid)->sum('vote');
+
 //        return Response::json(['done']);
         return response([$totalvote, $isred]);
 
@@ -101,10 +102,10 @@ class PagesController extends Controller
             }
         }
 
-
-        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-
         $totalvote = DB::table('post_votes')->where('post_id', $request->postid)->sum('vote');
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        DB::table('posts')->where('id', $request->postid)->update(['votes' => $totalvote]);
+
 //        return Response::json(['done']);
         return response([$totalvote, $isblue]);
 
@@ -201,10 +202,16 @@ class PagesController extends Controller
 
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
+        $post_vote = 0;
 
+        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
+            $post_vote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->first()->vote;
+        }
+        $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
+        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
+        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment]);
 
 
     }

@@ -26,7 +26,13 @@ class CommentsController extends Controller
 
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
 
-        DB::table('posts')->where('id', $request->post_id)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
+        $totalcomment = DB::table('comments')->where('post_id', $request->postid)->count();
+
+
+
+
+        DB::table('posts')->where('id', $request->post_id)->update(['updated_at' => date('Y-m-d H:i:s'), 'comments' => $totalcomment]);
         $user = DB::table('posts')->where('id', $request->post_id)->value('username');
         DB::table('notifications')->insert(
             ['username' => $user, 'notification' => '<a class="dropdown-item" href="/post/' . $request->post_id . '">' . ' New Comment on your post</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
