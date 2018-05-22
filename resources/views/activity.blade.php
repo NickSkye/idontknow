@@ -300,7 +300,7 @@
 
 
                                 @endforeach
-                                    {{ $allfriendsinfo->links() }}
+                                    {{--{{ $allfriendsinfo->links() }}--}}
                             </div>
 
                         </div>
