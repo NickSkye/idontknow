@@ -240,7 +240,7 @@ class PagesController extends Controller
     }
 
     public function updatelocation(Request $request){
-        $data = $request->all()
+        $data = $request->all();
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $data['latitude'], 'longitude' => $data['latitude'], 'updated_at' => date('Y-m-d H:i:s')]);
     }
 
