@@ -13998,9 +13998,8 @@ $(document).ready(function () {
             url: '/update-location',
             type: 'POST',
             data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
-        }).done(function (response) {
-            //
-            alert('done');
+        }).done(function (response) {//
+
         });
     } else {
         $('input[name=latitude]').val(sessionStorage['latitude']);
@@ -14012,9 +14011,8 @@ $(document).ready(function () {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
-        }).done(function (response) {
-            //
-            alert('response');
+        }).done(function (response) {//
+
         });
     }
 });

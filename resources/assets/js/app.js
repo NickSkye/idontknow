@@ -125,7 +125,7 @@ $( document ).ready(function() {
             type: 'POST',
             data : {latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude']}
         }).done(function(response){ //
-            alert('done');
+            
         });
 
     }
@@ -140,7 +140,7 @@ $( document ).ready(function() {
             },
             data : {latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude']}
         }).done(function(response){ //
-alert('response');
+
         });
     }
 
