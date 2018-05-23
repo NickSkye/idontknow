@@ -14272,7 +14272,7 @@ $(".activity-comment").submit(function (event) {
     }).done(function (response) {
         //
 
-        $("#commentCollapse-" + response[0]).removeClass('show');
+        $(".collapse").removeClass('show');
         $('.comment-button').removeClass("loading-button"); //add the class to the clicked element
         $('.comment-button i.fa').addClass("fa-paper-plane"); //add the class to the clicked element
         $('.comment-button i.fa').removeClass("fa-spinner fa-pulse fa-fw");
