@@ -219,7 +219,7 @@
 
 
                                                     {{--TEST--}}
-                                                    <p class="post-views">views: {{$friendspost->views}}</p>
+                                                    <p class="post-views activity-post-views">views: {{$friendspost->views}}</p>
                                                     <div class="post-meta activity-meta">
 
                                                         <div class="post-data like-dislike-vote">
