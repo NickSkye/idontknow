@@ -48,7 +48,7 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     @if($post->username === Auth::user()->username)
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#trashModal">
+                                        <button type="button" class="" style="color: red; width: 100%;" data-toggle="modal" data-target="#trashModal">
                                             Delete
                                         </button>
                                     @else
@@ -56,7 +56,7 @@
                                             <form method="post" action="/report-post/{{$post->id}}">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
-                                                <button class="btn report-post-button dropdown-item" type="submit">
+                                                <button class="" style="color: red; width: 100%;" type="submit">
                                                     Report
                                                 </button>
                                             </form>
