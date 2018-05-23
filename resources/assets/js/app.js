@@ -405,6 +405,7 @@ $(".activity-comment").submit(function(event){
         $('.comment-button').removeClass("loading-button");     //add the class to the clicked element
         $('.comment-button i.fa').addClass("fa-paper-plane");     //add the class to the clicked element
         $('.comment-button i.fa').removeClass("fa-spinner fa-pulse fa-fw");
+        $('.activity-text').val('');
         // $("#server-results").html(response[0]);
         // if(response[1]){
         //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
