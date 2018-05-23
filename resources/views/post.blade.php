@@ -13,8 +13,8 @@
 
 
 
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class="nav-item dropdown pull-right">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
                                 </a>
 
@@ -24,7 +24,7 @@
                                             {{ csrf_field() }}
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <button type="submit" class="delete-post-button dropdown-item" style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Delete Your Post? There's No Going Back!">
+                                                    <button type="submit" class="delete-post-button dropdown-item" style="cursor: pointer;" >
                                                         <i
                                                                 class="fa fa-trash"></i></button>
                                                 </div>
