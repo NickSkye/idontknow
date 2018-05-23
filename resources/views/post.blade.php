@@ -119,7 +119,8 @@
                                             </a>
                                             <a href="/users/{{$post->username}}">
                                                 <p>{{$post->username}}</p>
-                                                <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($post->created_at)->format('d M Y g:i A')}}</p>
+                                                <p style="font-size: 10pt; margin-bottom: 0;">shared: {{Carbon\Carbon::parse($post->created_at)->format('d M Y g:i A')}}</p>
+                                                <p style="font-size: 10pt;">about: {{round($post_location->distance, 2)}} miles from you</p>
                                             </a>
                                         </div>
 

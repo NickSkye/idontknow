@@ -24,6 +24,18 @@ class PagesController extends Controller
         return $friends_online;
     }
 
+    public function postLocation($postlocid) {
+
+
+        $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
+        if(is_null($location->latitude) or is_null($location->longitude)){
+            $location->latitude = 0;
+            $location->longitude = 0;
+        }
+
+        return DB::table('posts')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->where('post.id', $postlocid)->first();
+    }
+
     /*
      * GETS SPECIFIC USER LOCATION Takes Frends Username as argument
      */
@@ -249,6 +261,8 @@ class PagesController extends Controller
             $post_vote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->first()->vote;
         }
 
+        $post_location = $this->postLocation($post_id);
+
         DB::table('posts')->where('id', $post_id)->increment('views');
         $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
         $now = new \DateTime();
@@ -257,7 +271,7 @@ class PagesController extends Controller
         $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment]);
+        return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment, 'post_location'=> $post_location]);
 
 
     }
