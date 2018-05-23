@@ -65,7 +65,7 @@ class CommentsController extends Controller
             ['username' => $user, 'notification' => '<a class="dropdown-item" href="/post/' . $request->post_id . '">' . ' New Comment on your post</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
-
+        return response([$request->post_id]);
 
     }
 
