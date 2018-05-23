@@ -48,7 +48,7 @@
                             @endif
                             <div>
                                 <h5>Suggested Frends</h5>
-                                <div class="infinite-scroll" style="overflow-x: scroll; overflow-y: hidden;">
+                                <div class="infinite-scroll" style="overflow-x: scroll; overflow-y: hidden; width: 123%; margin-left: -41px; padding: 15px;">
                                 <div class="row frend-area" style="flex-wrap: nowrap;">
                                 @foreach($suggest as $sug)
                                         <a href="/users/{{$sug->username}}" class="col-4 suggest-image" style="background-image: url('{{$sug->profileimage}}');">
@@ -56,7 +56,7 @@
                                                 <p>{{$sug->name}}</p>
                                             </div>
                                             <div class="frend-box" style="height: 25%;">
-                                                <p>{{round($sug->distance, 2)}} miles away.</p>
+                                                <p>{{round($sug->distance, 1)}} miles</p>
 
                                             </div>
                                         </a>
