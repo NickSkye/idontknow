@@ -34,8 +34,7 @@
                 </div>
             </div>
         </div>
-
-
+        
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
