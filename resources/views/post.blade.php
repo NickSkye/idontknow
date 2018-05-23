@@ -12,28 +12,56 @@
 
 
 
-                        @if($post->username === Auth::user()->username)
-                            <form action="/delete-post/{{$post->id}}" enctype="multipart/form-data" method="POST">
-                                {{ csrf_field() }}
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <button type="submit" class="delete-post-button" style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Delete Your Post? There's No Going Back!">
-                                            <i
-                                                    class="fa fa-trash fa-2x"></i></button>
-                                    </div>
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @if($post->username === Auth::user()->username)
+                                        <form action="/delete-post/{{$post->id}}" enctype="multipart/form-data" method="POST">
+                                            {{ csrf_field() }}
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <button type="submit" class="delete-post-button dropdown-item" style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Delete Your Post? There's No Going Back!">
+                                                        <i
+                                                                class="fa fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    @else
+                                        <div class="pull-right">
+                                            <form method="post" action="/report-post/{{$post->id}}">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
+                                                <button class="btn report-post-button dropdown-item" type="submit">
+                                                    Report
+                                                </button>
+                                            </form>
+                                        </div>
+                                    @endif
+                                    <a class="dropdown-item" href="/me">
+                                        {{ __('My Profile') }}
+                                    </a>
+                                    <a class="dropdown-item" href="/settings">
+                                        {{ __('Settings') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </div>
-                            </form>
-                        @else
-                            <div class="pull-right">
-                                <form method="post" action="/report-post/{{$post->id}}">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
-                                    <button class="btn report-post-button" type="submit">
-                                        Report
-                                    </button>
-                                </form>
-                            </div>
-                        @endif
+                            </li>
+
+
+
+
 
 
                     </div>
