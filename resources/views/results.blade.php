@@ -56,7 +56,7 @@
                                             </div>
                                             <div class="frend-box">
                                                 <p>{{$sug->username}}</p>
-                                                <p>is {{$sug->distance}} miles away.</p>
+                                                <p>is {{round($sug->distance, 2)}} miles away.</p>
                                             </div>
                                         </a>
                                     @endforeach
