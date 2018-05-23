@@ -114,8 +114,12 @@ if ($request->hasFile('image')) {
 
 //upload post
         DB::table('posts')->insert(
-            ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'views' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'views' => 1, 'votes' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
+
+        $post_id = DB::table('posts')->where('username', Auth::user()->username)->orderBy('id', 'desc')->first();
+
+        DB::table('post_votes')->insert(['username'=> Auth::user()->username, 'post_id'=> $post_id->id, 'vote'=> 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
 
         //update location
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
