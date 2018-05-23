@@ -29,7 +29,7 @@
                                                 <div class="col-md-12">
                                                     <button type="submit" class="delete-post-button " style="cursor: pointer;" >
                                                         <i
-                                                                class="fa fa-trash"></i></button>
+                                                                class="fa fa-trash fa-2x"></i></button>
                                                 </div>
                                             </div>
                                         </form>
@@ -49,7 +49,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     @if($post->username === Auth::user()->username)
                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#trashModal">
-                                            <i class="fa fa-trash"></i>
+                                            Delete
                                         </button>
                                     @else
                                         <div class="pull-right">
@@ -62,21 +62,11 @@
                                             </form>
                                         </div>
                                     @endif
-                                    <a class="dropdown-item" href="/me">
-                                        {{ __('My Profile') }}
-                                    </a>
-                                    <a class="dropdown-item" href="/settings">
-                                        {{ __('Settings') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                    <a class="dropdown-item" href="#">
+                                        {{ __('Edit') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+
                                 </div>
                             </li>
 
