@@ -27,10 +27,10 @@ class CommentsController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
 
 
-        $totalcomment = DB::table('comments')->select(DB::raw('SUM(IF(post_id = ' . $request->post_id . '70, 1, 0)) '));
+        $totalcomment = DB::table('comments')->select(DB::raw('SUM(IF(post_id = ' . $request->post_id . ', 1, 0)) as passed'));
 
 
-        DB::table('posts')->where('id', $request->post_id)->update(['comments' => $totalcomment, 'updated_at' => date('Y-m-d H:i:s')]);
+        DB::table('posts')->where('id', $request->post_id)->update(['comments' => $totalcomment->passed, 'updated_at' => date('Y-m-d H:i:s')]);
         $user = DB::table('posts')->where('id', $request->post_id)->value('username');
         DB::table('notifications')->insert(
             ['username' => $user, 'notification' => '<a class="dropdown-item" href="/post/' . $request->post_id . '">' . ' New Comment on your post</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
