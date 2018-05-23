@@ -42,7 +42,7 @@ class CommentsController extends Controller
 //
 //        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 //
-        return redirect('/post/' . $request->post_id)->with('totalcomment', $totalcomment);
+        return redirect('/post/' . $request->post_id .$totalcomment);
 //        return view('post')->with('post_id', $request->post_id);
     }
 
