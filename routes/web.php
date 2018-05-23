@@ -52,6 +52,7 @@ Route::post('/removefrend/{username?}', 'FriendController@remove')->middleware('
 Route::post('/delete-post/{id?}', 'PagesController@deletepost')->middleware('auth');
 Route::get('/clear-notifications', 'PagesController@clearnotifications')->middleware('auth');
 Route::post('/comment', 'CommentsController@addcomment')->middleware('auth');
+Route::post('/activitycomment', 'CommentsController@addactivitycomment')->middleware('auth');
 
 Route::post('/report-post/{id?}', 'PagesController@reportpost')->middleware('auth');
 Route::post('/report-comment/{id?}', 'PagesController@reportcomment')->middleware('auth');

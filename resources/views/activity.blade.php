@@ -268,7 +268,7 @@
 
 
                                                         <div class="collapse"  id="commentCollapse-{{$friendspost->id}}">
-                                                            <form action="{{ url('comment') }}" method="POST">
+                                                            <form action="{{ url('activitycomment') }}" method="POST" class="activity-comment">
                                                                 {{ csrf_field() }}
                                                                 <div class="row">
                                                                     <div class="col-9">
