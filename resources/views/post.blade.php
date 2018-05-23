@@ -9,7 +9,35 @@
                 <div class="card">
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
+                        <div class="modal fade" id="trashModal" tabindex="-1" role="dialog" aria-labelledby="trashModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this post?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        There is no going back. Once deleted this content is gone FOREVER!
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <form action="/delete-post/{{$post->id}}" enctype="multipart/form-data" method="POST">
+                                            {{ csrf_field() }}
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <button type="submit" class="delete-post-button " style="cursor: pointer;" >
+                                                        <i
+                                                                class="fa fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
 
@@ -20,16 +48,9 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     @if($post->username === Auth::user()->username)
-                                        <form action="/delete-post/{{$post->id}}" enctype="multipart/form-data" method="POST">
-                                            {{ csrf_field() }}
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <button type="submit" class="delete-post-button dropdown-item" style="cursor: pointer;" >
-                                                        <i
-                                                                class="fa fa-trash"></i></button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#trashModal">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
                                     @else
                                         <div class="pull-right">
                                             <form method="post" action="/report-post/{{$post->id}}">
