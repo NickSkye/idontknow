@@ -27,7 +27,7 @@ class CommentsController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
 
 
-        $totalcomment = DB::table('comments')->select(DB::raw('SUM(IF(post_id = ' . $request->post_id . ', 1, 0))'));
+        $totalcomment = DB::table('comments')->select(DB::raw('SUM(IF(post_id = ' . $request->post_id . ', 1, 0))'))->first();
 
 
         DB::table('posts')->where('id', $request->post_id)->update(['comments' => $totalcomment, 'updated_at' => date('Y-m-d H:i:s')]);
