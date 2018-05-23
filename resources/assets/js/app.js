@@ -248,11 +248,11 @@ $(".activity-like-form").submit(function(event){
 
         $("#server-results-" + response[2]).html(response[0]);
         if(response[1]){
-            $("button.like").html('<i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>');
-            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
+            $("button.like-" + response[2]).html('<i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>');
+            $("button.dislike-" + response[2]).html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
         }
         else{
-            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
+            $("button.like-" + response[2]).html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
         }
 
 
@@ -274,11 +274,11 @@ $(".activity-dislike-form").submit(function(event){
 
         $("#server-results-" + response[2]).html(response[0]);
         if(response[1]){
-            $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
-            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
+            $("button.dislike-" + response[2]).html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
+            $("button.like-" + response[2]).html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
         }
         else {
-            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
+            $("button.dislike-" + response[2]).html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
         }
 
     });
