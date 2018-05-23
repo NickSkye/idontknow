@@ -169,7 +169,7 @@ class PagesController extends Controller
 
 //        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
 
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')->where('follows.username', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->get(); //'posts.updated_at'
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')->where('follows.username', Auth::user()->username)->where('post_votes.username', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->get(); //'posts.updated_at'
 
         return $friends_info_full;
     }
