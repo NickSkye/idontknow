@@ -8,14 +8,13 @@
                     <div class="card-header">
 
                         {{--@include('partials.friendsearch')--}}
-                        @if (count($errors) > 0)
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @elseif(session('error'))
                             <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
+                                {{ session('error') }}
                             </div>
                         @endif
 

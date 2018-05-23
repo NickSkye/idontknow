@@ -262,7 +262,7 @@ class PagesController extends Controller
 
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
-        return redirect("home")->with('status', 'post removed');
+        return redirect("myprofile")->with('status', 'post removed');
     }
 
     public function notifications($id)
