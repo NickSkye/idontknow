@@ -57,7 +57,7 @@
                                             </div>
                                             <div class="frend-box">
                                                 <p>{{$sug->username}}</p>
-                                                <p>{{$sug->distance}}</p>
+                                                <p>d: {{$sug->distance}}</p>
                                             </div>
                                         </a>
                                     @endforeach
