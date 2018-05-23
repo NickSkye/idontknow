@@ -228,15 +228,13 @@
                                                                 <input type="hidden" name="postid" value="{{$friendspost->id}}"/>
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                                 <button class="post-data like" type="submit" name="submit" value="" style="background: none; "/>
-                                                                @foreach($post_votes as $pv)
-                                                                    @if($friendspost->id === $pv->post_id)
-                                                                @if($pv->vote == 1)
+
+                                                                @if($friendspost->vote == 1)
                                                                     <i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>
                                                                 @else
                                                                     <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
                                                                     @endif
-                                                                    @endif
-                                                                    @endforeach
+
                                                                     </button>
 
                                                             </form>
@@ -246,15 +244,13 @@
                                                                 <input type="hidden" name="postid" value="{{$friendspost->id}}"/>
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                                 <button class="post-data dislike" type="submit" name="submit" value="" style="background: none; "/>
-                                                                @foreach($post_votes as $pv)
-                                                                    @if($friendspost->id === $pv->post_id)
-                                                                @if($pv->vote == -1)
+
+                                                                @if($friendspost->vote == -1)
                                                                     <i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>
                                                                 @else
                                                                     <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
                                                                     @endif
-                                                                    @endif
-                                                                    @endforeach
+
                                                                     </button>
 
                                                             </form>

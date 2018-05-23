@@ -169,7 +169,7 @@ class PagesController extends Controller
 
 //        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
 
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->where('follows.username', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->get(); //'posts.updated_at'
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')->where('follows.username', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->get(); //'posts.updated_at'
 
         return $friends_info_full;
     }
@@ -202,16 +202,17 @@ class PagesController extends Controller
 
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
-        $post_votes = 0;
+//        $post_votes = 0;
 
 //        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
-            $post_votes = DB::table('post_votes')->where('username', Auth::user()->username)->get();
+//            $post_votes = DB::table('post_votes')->where('username', Auth::user()->username)->get();
+
 //        }
 //        $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
 //        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'post_votes'=> $post_votes]);
+        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
 
 
     }
