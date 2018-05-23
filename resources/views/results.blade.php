@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
@@ -56,7 +56,7 @@
                                             </div>
                                             <div class="frend-box">
                                                 <p>{{$sug->username}}</p>
-                                                <p>d: {{$sug->distance}}</p>
+                                                <p>is {{$sug->distance}} miles away.</p>
                                             </div>
                                         </a>
                                     @endforeach
