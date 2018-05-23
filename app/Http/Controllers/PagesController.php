@@ -33,7 +33,7 @@ class PagesController extends Controller
             $location->longitude = 0;
         }
 
-        return DB::table('posts')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->where('post.id', $postlocid)->first();
+        return DB::table('posts')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->where('posts.id', $postlocid)->first();
     }
 
     /*
