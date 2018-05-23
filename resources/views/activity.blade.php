@@ -223,9 +223,9 @@
                                                     <div class="post-meta">
 
                                                         <div class="post-data like-dislike-vote">
-                                                            <form action="/like" method="post" id="like_form-{{$friendspost->post_id}}" class="activity-like-form">
+                                                            <form action="/like" method="post" id="like_form-{{$friendspost->posts->id}}" class="activity-like-form">
                                                                 {{ csrf_field() }}
-                                                                <input type="hidden" name="postid" value="{{$friendspost->post_id}}"/>
+                                                                <input type="hidden" name="postid" value="{{$friendspost->posts->post_id}}"/>
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                                 <button class="post-data like" type="submit" name="submit" value="" style="background: none; "/>
 
