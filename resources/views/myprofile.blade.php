@@ -96,7 +96,7 @@
                         {{--info about friend--}}
 
                     </div>
-                    <div class="card-body" style="padding: 1rem;">
+                    <div class="card-body" style="padding: 0 1rem 0 1rem;">
 
                         <div>
 
