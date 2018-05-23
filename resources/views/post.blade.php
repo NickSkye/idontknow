@@ -10,15 +10,7 @@
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
 
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @elseif(session('error'))
-                            <div class="alert alert-danger">
-                                {{ session('error') }}
-                            </div>
-                        @endif
+
 
                         @if($post->username === Auth::user()->username)
                             <form action="/delete-post/{{$post->id}}" enctype="multipart/form-data" method="POST">
