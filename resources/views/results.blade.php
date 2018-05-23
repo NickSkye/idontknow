@@ -56,7 +56,7 @@
                                                 <p>{{$sug->name}}</p>
                                             </div>
                                             <div class="frend-box" style="height: 25%;">
-                                                <p>{{$sug->username}} is {{round($sug->distance, 2)}} miles away.</p>
+                                                <p>{{$sug->username}}<br>is {{round($sug->distance, 2)}} miles away.</p>
 
                                             </div>
                                         </a>
