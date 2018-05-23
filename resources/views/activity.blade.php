@@ -227,7 +227,7 @@
                                                                 {{ csrf_field() }}
                                                                 <input type="hidden" name="postid" value="{{$friendspost->post_id}}"/>
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
-                                                                <button class="post-data like-{{$friendspost->id}}" type="submit" name="submit" value="" style="background: none; "/>
+                                                                <button class="post-data like like-{{$friendspost->id}}" type="submit" name="submit" value="" style="background: none; "/>
 
                                                                 @if($friendspost->vote == 1)
                                                                     <i class="fa fa-heart fa-2x " style="color: red;" aria-hidden="true"></i>
@@ -243,7 +243,7 @@
                                                                 {{ csrf_field() }}
                                                                 <input type="hidden" name="postid" value="{{$friendspost->id}}"/>
                                                                 {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
-                                                                <button class="post-data dislike-{{$friendspost->id}}" type="submit" name="submit" value="" style="background: none; "/>
+                                                                <button class="post-data dislike dislike-{{$friendspost->id}}" type="submit" name="submit" value="" style="background: none; "/>
 
                                                                 @if($friendspost->vote == -1)
                                                                     <i class="fa fa-thumbs-down fa-2x " style="color: blue;" aria-hidden="true"></i>
