@@ -266,8 +266,8 @@
                                                     {{--END TEST--}}
 
 
-                                                    <div class="card-footer collapse"  id="commentCollapse-{{$friendspost->id}}">
-                                                        <div>
+
+                                                        <div class="collapse"  id="commentCollapse-{{$friendspost->id}}">
                                                             <form action="{{ url('comment') }}" method="POST">
                                                                 {{ csrf_field() }}
                                                                 <div class="row">
@@ -284,7 +284,7 @@
                                                                 </div>
                                                             </form>
                                                         </div>
-                                                    </div>
+
                                                 </div>
                                             </div>
 
