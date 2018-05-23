@@ -51,7 +51,7 @@
                                 <div class="infinite-scroll" style="overflow-x: scroll;">
                                 <div class="row frend-area" style="flex-wrap: nowrap;">
                                 @foreach($suggest as $sug)
-                                        <a href="/users/{{$sug->username}}" class="col-4 search-image" style="background-image: url('{{$sug->profileimage}}');">
+                                        <a href="/users/{{$sug->username}}" class="col-4 suggest-image" style="background-image: url('{{$sug->profileimage}}');">
                                             <div class="frend-box-name">
                                                 <p>{{$sug->name}}</p>
                                             </div>

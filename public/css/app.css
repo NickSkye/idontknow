@@ -67,6 +67,19 @@
   }
 }
 
+.frend-area .suggest-image {
+  max-width: 32.7%;
+  padding-bottom: 32.7%;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0.3%;
+  background-position: center;
+  -webkit-box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
+  box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
+}
+
 .frend-area .col-4 .frend-box,
 .frend-area .col-sm-12 .frend-box,
 .frend-area .col-12 .frend-box,
