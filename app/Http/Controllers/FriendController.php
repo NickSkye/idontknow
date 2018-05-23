@@ -18,6 +18,21 @@ class FriendController extends Controller
         return $friends_online;
     }
 
+    /*
+     * GETS SPECIFIC USER LOCATION Takes Frends Username as argument
+     */
+    public function frendsLocation($frend) {
+
+
+        $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
+        if(is_null($location->latitude) or is_null($location->longitude)){
+            $location->latitude = 0;
+            $location->longitude = 0;
+        }
+
+        return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->where('users.username', $frend)->join('profileinfo', 'profileinfo.username', '=', 'users.username')->first();
+    }
+
     public function getFriendsInfoWithPosts(){
         $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->where('follows.username', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->paginate(10);; //'posts.updated_at'
 
@@ -59,13 +74,14 @@ class FriendController extends Controller
         $numfollowers = DB::table('follows')->where('followsusername', $username)->count();
         $numposts = DB::table('posts')->where('username', $username)->where('deleted', false)->count();
         $numfollowing = DB::table('follows')->where('username', $username)->count();
+        $frendsloc = $this->frendsLocation($username);
         //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
 
             foreach ($friends as $friend) {
                 if ($info->username === $friend->followsusername) {
                     $arefriends = true;
 
-                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
+                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'frendsloc'=> $frendsloc]);
                 }
 
             }

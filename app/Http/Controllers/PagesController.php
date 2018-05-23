@@ -24,6 +24,21 @@ class PagesController extends Controller
         return $friends_online;
     }
 
+    /*
+     * GETS SPECIFIC USER LOCATION Takes Frends Username as argument
+     */
+    public function frendsLocation($frend) {
+
+
+        $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
+        if(is_null($location->latitude) or is_null($location->longitude)){
+            $location->latitude = 0;
+            $location->longitude = 0;
+        }
+
+        return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->where('users.username', $frend)->join('profileinfo', 'profileinfo.username', '=', 'users.username')->first();
+    }
+
 /*
  * GETS ALL THE GROUPS THE USER IS A PART OF
  */

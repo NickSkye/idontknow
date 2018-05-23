@@ -25,6 +25,7 @@
                                         <div class="col-xs-12">
                                             <p>{{$info->username}} is your friend</p>
                                             <p style="font-size: 10px;">last active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
+                                            <p style="font-size: 10px;">and {{round($frendsloc, 2)}} miles from you </p>
                                         </div>
 
                                     </div>
