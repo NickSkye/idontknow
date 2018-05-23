@@ -60,446 +60,18 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(1);
-module.exports = __webpack_require__(2);
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-__webpack_require__(18);
-__webpack_require__(41);
-
-window.Vue = __webpack_require__(42);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example-component', __webpack_require__(45));
-
-var app = new Vue({
-    el: '#app'
-});
-
-//Show image before upload
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#profile-img-tag').attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-$("#file-input").change(function () {
-    readURL(this);
-});
-
-//Tooltip
-// $(function () {
-//     $('[data-toggle="tooltip"]').tooltip()
-// })
-
-// $( document ).ready(function() {
-//     console.log( "ready!" );
-// });
-
-
-//User location
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        console.log("here");
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    var latilong = [position.coords.latitude, position.coords.longitude];
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
-    //Will do this later once everything else is set up
-    // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-    //  +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
-    // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
-    console.log(position.coords.latitude);
-    sessionStorage['latitude'] = position.coords.latitude;
-    sessionStorage['longitude'] = position.coords.longitude;
-    sessionStorage['visited'] = "yes";
-
-    $('input[name=latitude]').val(position.coords.latitude);
-    $('input[name=longitude]').val(position.coords.longitude);
-    // document.getElementById('latitude').value = position.coords.latitude;
-    // document.getElementById('longitude').value = position.coords.longitude;
-
-    //return latilong;
-}
-//To use this code on your website, get a free API key from Google.
-//Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
-
-function showError(error) {
-    switch (error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation.";
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable.";
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out.";
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred.";
-            break;
-    }
-}
-
-$('#mobile-app-button').click(function () {
-    localStorage['hasvisited'] = "yes";
-    window.location.href = 'https://www.frendgrid.com/about';
-});
-
-$(document).ready(function () {
-    console.log("You Found Me!");
-    var yetVisited = sessionStorage['visited'];
-    var hasVisited = localStorage['hasvisited'];
-    if (!hasVisited) {
-        $('#mobile-app-button').addClass('d-block d-sm-block d-md-none');
-        $('#mobile-app-button').removeClass('d-none');
-    }
-
-    if (!yetVisited) {
-        // open popup
-        getLocation();
-        //var post_url = $(this).attr("action"); //get form action url
-        // var request_method = $(this).attr("method"); //get form GET/POST method
-
-        $.ajax({
-            url: '/update-location',
-            type: 'POST',
-            data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
-        }).done(function (response) {//
-
-        });
-    } else {
-        $('input[name=latitude]').val(sessionStorage['latitude']);
-        $('input[name=longitude]').val(sessionStorage['longitude']);
-
-        $.ajax({
-            url: '/update-location',
-            type: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
-        }).done(function (response) {//
-
-        });
-    }
-});
-
-$(document).ready(function () {
-
-    $('ul.tabs li').click(function () {
-        var tab_id = $(this).attr('data-tab');
-
-        $('ul.tabs li').removeClass('current');
-        $('.tab-content').removeClass('current');
-
-        $(this).addClass('current');
-        $("#" + tab_id).addClass('current');
-    });
-
-    //one way to disable extra clicks after shouting or posting
-    // $(".modal-button").click(function() {  //use a class, since your ID gets mangled
-    //     $('.modal-dialog').hide();      //add the class to the clicked element
-    // });
-
-
-    //next three are the other ways to disable extra clicks after shouting or posting
-    $(".comment-button").click(function () {
-        //use a class, since your ID gets mangled
-        $('.comment-button').toggleClass("loading-button"); //add the class to the clicked element
-        $('.comment-button i.fa').toggleClass("fa-paper-plane"); //add the class to the clicked element
-        $('.comment-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
-        //$('.comment-button').prop("disabled",true);
-    });
-
-    $(".shout-button").click(function () {
-        //use a class, since your ID gets mangled
-        if ($(".shout-text").val()) {
-            $('.shout-button').toggleClass("loading-button"); //add the class to the clicked element
-            $('.shout-button i.fa').toggleClass("fa-bullhorn"); //add the class to the clicked element
-            $('.shout-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
-            // $('.shout-button').prop("disabled",true);
-        }
-    });
-
-    $(".upload-button").click(function () {
-        //use a class, since your ID gets mangled
-        $('.upload-button').toggleClass("loading-button"); //add the class to the clicked element
-        $('.upload-button i.fa').toggleClass("fa-share"); //add the class to the clicked element
-        $('.upload-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
-        //$('.upload-button').prop("disabled",true);
-    });
-
-    $(".followerCollapser").click(function () {
-        //use a class, since your ID gets mangled
-        $('#followingCollapse').removeClass('show'); //add the class to the clicked element
-    });
-
-    $(".followingCollapser").click(function () {
-        //use a class, since your ID gets mangled
-        $('#followerCollapse').removeClass('show'); //add the class to the clicked element
-    });
-
-    //online friends
-    $(".toggle-online-frends").click(function () {
-        //use a class, since your ID gets mangled
-        $('.online-frends').addClass('frends-closed');
-    });
-    $(".toggleon-online-frends").click(function () {
-        //use a class, since your ID gets mangled
-        $('.online-frends').removeClass('frends-closed');
-    });
-
-    //groups manager
-    $(".toggle-groups-manager").click(function () {
-        //use a class, since your ID gets mangled
-        $('.groups-manager').addClass('groups-closed');
-    });
-    $(".toggleon-groups-manager").click(function () {
-        //use a class, since your ID gets mangled
-        $('.groups-manager').removeClass('groups-closed');
-    });
-
-    //Slick
-    //     $('.multiple-items').slick({
-    //         infinite: false,
-    //         slidesToShow: 5,
-    //         slidesToScroll: 3,
-    //         swipeToSlide: true,
-    //         swipe: true
-    //
-    //     });
-
-});
-
-//AJAX
-$(".activity-like-form").submit(function (event) {
-    event.preventDefault(); //prevent default action
-    var post_url = $(this).attr("action"); //get form action url
-    var request_method = $(this).attr("method"); //get form GET/POST method
-    var form_data = $(this).serialize(); //Encode form elements for submission
-
-    $.ajax({
-        url: '/like',
-        type: request_method,
-        data: form_data
-    }).done(function (response) {
-        //
-        alert("#server-results-" + response[2]);
-        $("#server-results-" + response[2]).html(response[0]);
-        if (response[1]) {
-            $("button.like").html('<i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>');
-            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
-        } else {
-            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
-        }
-    });
-});
-
-//AJAX
-$(".activity-dislike-form").submit(function (event) {
-    event.preventDefault(); //prevent default action
-    var post_url = $(this).attr("action"); //get form action url
-    var request_method = $(this).attr("method"); //get form GET/POST method
-    var form_data = $(this).serialize(); //Encode form elements for submission
-
-    $.ajax({
-        url: '/dislike',
-        type: request_method,
-        data: form_data
-    }).done(function (response) {
-        //
-        alert("#server-results-" + response[2]);
-        $("#server-results-" + response[2]).html(response[0]);
-        if (response[1]) {
-            $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
-            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
-        } else {
-            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
-        }
-    });
-});
-
-//AJAX
-$("#like_form").submit(function (event) {
-    event.preventDefault(); //prevent default action
-    var post_url = $(this).attr("action"); //get form action url
-    var request_method = $(this).attr("method"); //get form GET/POST method
-    var form_data = $(this).serialize(); //Encode form elements for submission
-
-    $.ajax({
-        url: '/post/like',
-        type: request_method,
-        data: form_data
-    }).done(function (response) {
-        //
-        $("#server-results").html(response[0]);
-        if (response[1]) {
-            $("button.like").html('<i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>');
-            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
-        } else {
-            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
-        }
-    });
-});
-
-$("#dislike_form").submit(function (event) {
-    event.preventDefault(); //prevent default action
-    var post_url = $(this).attr("action"); //get form action url
-    var request_method = $(this).attr("method"); //get form GET/POST method
-    var form_data = $(this).serialize(); //Encode form elements for submission
-
-    $.ajax({
-        url: '/post/dislike',
-        type: request_method,
-        data: form_data
-    }).done(function (response) {
-        //
-        $("#server-results").html(response[0]);
-        if (response[1]) {
-            $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
-            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
-        } else {
-            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
-        }
-    });
-});
-
-$(".add_frend_button").click(function () {
-    //use a class, since your ID gets mangled
-
-    $('.add_frend_button').toggleClass("loading-button"); //add the class to the clicked element
-    $('.add_frend_button i.fa').toggleClass("fa-user-plus"); //add the class to the clicked element
-    $('.add_frend_button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
-});
-$("#add_frend_form").submit(function (event) {
-    event.preventDefault(); //prevent default action
-
-
-    var post_url = $(this).attr("action"); //get form action url
-    var request_method = $(this).attr("method"); //get form GET/POST method
-    var form_data = $(this).serialize(); //Encode form elements for submission
-
-    $.ajax({
-        url: post_url,
-        type: request_method,
-        data: form_data
-    }).done(function (response) {
-        //
-        $(".are-frends").removeClass('d-none');
-        $(".arent-frends").addClass('d-none');
-        $('.add_frend_button').toggleClass("loading-button"); //add the class to the clicked element
-        $('.add_frend_button i.fa').toggleClass("fa-user-plus"); //add the class to the clicked element
-        $('.add_frend_button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
-        // if(response[1]){
-        //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
-        //     $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
-        // }
-        // else{
-        //     $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
-        // }
-    });
-});
-
-$("#remove_frend_form").submit(function (event) {
-    event.preventDefault(); //prevent default action
-    var post_url = $(this).attr("action"); //get form action url
-    var request_method = $(this).attr("method"); //get form GET/POST method
-    var form_data = $(this).serialize(); //Encode form elements for submission
-
-    $.ajax({
-        url: post_url,
-        type: request_method,
-        data: form_data
-    }).done(function (response) {
-        //
-        $(".arent-frends").removeClass('d-none');
-        $(".are-frends").addClass('d-none');
-        // $("#server-results").html(response[0]);
-        // if(response[1]){
-        //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
-        //     $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
-        // }
-        // else{
-        //     $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
-        // }
-    });
-});
-
-$(window).scroll(function () {
-    if ($(window).scrollTop() > 1000) {
-        $('#commentCollapse').addClass('show');
-    } else if ($(window).scrollTop() < 200) {
-        if (!$('.comment-field').val()) {
-            $('#commentCollapse').removeClass('show');
-        }
-    }
-});
-
-//Javascript
-$(function () {
-    $("#q").autocomplete({
-        source: "search/autocomplete",
-        minLength: 3,
-        select: function select(event, ui) {
-            $('#q').val(ui.item.value);
-        }
-    });
-});
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 
-var bind = __webpack_require__(12);
-var isBuffer = __webpack_require__(24);
+var bind = __webpack_require__(5);
+var isBuffer = __webpack_require__(19);
 
 /*global toString:true*/
 
@@ -802,7 +374,7 @@ module.exports = {
 
 
 /***/ }),
-/* 8 */
+/* 1 */
 /***/ (function(module, exports) {
 
 var g;
@@ -829,14 +401,14 @@ module.exports = g;
 
 
 /***/ }),
-/* 9 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(7);
-var normalizeHeaderName = __webpack_require__(26);
+var utils = __webpack_require__(0);
+var normalizeHeaderName = __webpack_require__(21);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -852,10 +424,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(14);
+    adapter = __webpack_require__(7);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(14);
+    adapter = __webpack_require__(7);
   }
   return adapter;
 }
@@ -930,10 +502,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 10 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3459,10 +3031,10 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
-/* 11 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -13833,7 +13405,7 @@ return jQuery;
 
 
 /***/ }),
-/* 12 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13851,7 +13423,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 13 */
+/* 6 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -14041,19 +13613,19 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 14 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
-var settle = __webpack_require__(27);
-var buildURL = __webpack_require__(29);
-var parseHeaders = __webpack_require__(30);
-var isURLSameOrigin = __webpack_require__(31);
-var createError = __webpack_require__(15);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(32);
+var utils = __webpack_require__(0);
+var settle = __webpack_require__(22);
+var buildURL = __webpack_require__(24);
+var parseHeaders = __webpack_require__(25);
+var isURLSameOrigin = __webpack_require__(26);
+var createError = __webpack_require__(8);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(27);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -14150,7 +13722,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(33);
+      var cookies = __webpack_require__(28);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -14228,13 +13800,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 15 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(28);
+var enhanceError = __webpack_require__(23);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -14253,7 +13825,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 16 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14265,7 +13837,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 17 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14291,12 +13863,430 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 18 */
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(12);
+module.exports = __webpack_require__(44);
+
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(19);
-window.Popper = __webpack_require__(10).default;
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
+__webpack_require__(13);
+__webpack_require__(36);
+
+window.Vue = __webpack_require__(37);
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+Vue.component('example-component', __webpack_require__(40));
+
+var app = new Vue({
+    el: '#app'
+});
+
+//Show image before upload
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#profile-img-tag').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#file-input").change(function () {
+    readURL(this);
+});
+
+//Tooltip
+// $(function () {
+//     $('[data-toggle="tooltip"]').tooltip()
+// })
+
+// $( document ).ready(function() {
+//     console.log( "ready!" );
+// });
+
+
+//User location
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        console.log("here");
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    var latilong = [position.coords.latitude, position.coords.longitude];
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+    //Will do this later once everything else is set up
+    // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+    //  +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+    // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+    console.log(position.coords.latitude);
+    sessionStorage['latitude'] = position.coords.latitude;
+    sessionStorage['longitude'] = position.coords.longitude;
+    sessionStorage['visited'] = "yes";
+
+    $('input[name=latitude]').val(position.coords.latitude);
+    $('input[name=longitude]').val(position.coords.longitude);
+    // document.getElementById('latitude').value = position.coords.latitude;
+    // document.getElementById('longitude').value = position.coords.longitude;
+
+    //return latilong;
+}
+//To use this code on your website, get a free API key from Google.
+//Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable.";
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out.";
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred.";
+            break;
+    }
+}
+
+$('#mobile-app-button').click(function () {
+    localStorage['hasvisited'] = "yes";
+    window.location.href = 'https://www.frendgrid.com/about';
+});
+
+$(document).ready(function () {
+    console.log("You Found Me!");
+    var yetVisited = sessionStorage['visited'];
+    var hasVisited = localStorage['hasvisited'];
+    if (!hasVisited) {
+        $('#mobile-app-button').addClass('d-block d-sm-block d-md-none');
+        $('#mobile-app-button').removeClass('d-none');
+    }
+
+    if (!yetVisited) {
+        // open popup
+        getLocation();
+        //var post_url = $(this).attr("action"); //get form action url
+        // var request_method = $(this).attr("method"); //get form GET/POST method
+
+        $.ajax({
+            url: '/update-location',
+            type: 'POST',
+            data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
+        }).done(function (response) {//
+
+        });
+    } else {
+        $('input[name=latitude]').val(sessionStorage['latitude']);
+        $('input[name=longitude]').val(sessionStorage['longitude']);
+
+        $.ajax({
+            url: '/update-location',
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
+        }).done(function (response) {//
+
+        });
+    }
+});
+
+$(document).ready(function () {
+
+    $('ul.tabs li').click(function () {
+        var tab_id = $(this).attr('data-tab');
+
+        $('ul.tabs li').removeClass('current');
+        $('.tab-content').removeClass('current');
+
+        $(this).addClass('current');
+        $("#" + tab_id).addClass('current');
+    });
+
+    //one way to disable extra clicks after shouting or posting
+    // $(".modal-button").click(function() {  //use a class, since your ID gets mangled
+    //     $('.modal-dialog').hide();      //add the class to the clicked element
+    // });
+
+
+    //next three are the other ways to disable extra clicks after shouting or posting
+    $(".comment-button").click(function () {
+        //use a class, since your ID gets mangled
+        $('.comment-button').toggleClass("loading-button"); //add the class to the clicked element
+        $('.comment-button i.fa').toggleClass("fa-paper-plane"); //add the class to the clicked element
+        $('.comment-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        //$('.comment-button').prop("disabled",true);
+    });
+
+    $(".shout-button").click(function () {
+        //use a class, since your ID gets mangled
+        if ($(".shout-text").val()) {
+            $('.shout-button').toggleClass("loading-button"); //add the class to the clicked element
+            $('.shout-button i.fa').toggleClass("fa-bullhorn"); //add the class to the clicked element
+            $('.shout-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+            // $('.shout-button').prop("disabled",true);
+        }
+    });
+
+    $(".upload-button").click(function () {
+        //use a class, since your ID gets mangled
+        $('.upload-button').toggleClass("loading-button"); //add the class to the clicked element
+        $('.upload-button i.fa').toggleClass("fa-share"); //add the class to the clicked element
+        $('.upload-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        //$('.upload-button').prop("disabled",true);
+    });
+
+    $(".followerCollapser").click(function () {
+        //use a class, since your ID gets mangled
+        $('#followingCollapse').removeClass('show'); //add the class to the clicked element
+    });
+
+    $(".followingCollapser").click(function () {
+        //use a class, since your ID gets mangled
+        $('#followerCollapse').removeClass('show'); //add the class to the clicked element
+    });
+
+    //online friends
+    $(".toggle-online-frends").click(function () {
+        //use a class, since your ID gets mangled
+        $('.online-frends').addClass('frends-closed');
+    });
+    $(".toggleon-online-frends").click(function () {
+        //use a class, since your ID gets mangled
+        $('.online-frends').removeClass('frends-closed');
+    });
+
+    //groups manager
+    $(".toggle-groups-manager").click(function () {
+        //use a class, since your ID gets mangled
+        $('.groups-manager').addClass('groups-closed');
+    });
+    $(".toggleon-groups-manager").click(function () {
+        //use a class, since your ID gets mangled
+        $('.groups-manager').removeClass('groups-closed');
+    });
+
+    //Slick
+    //     $('.multiple-items').slick({
+    //         infinite: false,
+    //         slidesToShow: 5,
+    //         slidesToScroll: 3,
+    //         swipeToSlide: true,
+    //         swipe: true
+    //
+    //     });
+
+});
+
+//AJAX
+$(".activity-like-form").submit(function (event) {
+    event.preventDefault(); //prevent default action
+    var post_url = $(this).attr("action"); //get form action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = $(this).serialize(); //Encode form elements for submission
+
+    $.ajax({
+        url: '/like',
+        type: request_method,
+        data: form_data
+    }).done(function (response) {
+        //
+
+        $("#server-results-" + response[2]).html(response[0]);
+        if (response[1]) {
+            $("button.like").html('<i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>');
+            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
+        } else {
+            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
+        }
+    });
+});
+
+//AJAX
+$(".activity-dislike-form").submit(function (event) {
+    event.preventDefault(); //prevent default action
+    var post_url = $(this).attr("action"); //get form action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = $(this).serialize(); //Encode form elements for submission
+
+    $.ajax({
+        url: '/dislike',
+        type: request_method,
+        data: form_data
+    }).done(function (response) {
+        //
+
+        $("#server-results-" + response[2]).html(response[0]);
+        if (response[1]) {
+            $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
+            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
+        } else {
+            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
+        }
+    });
+});
+
+//AJAX
+$("#like_form").submit(function (event) {
+    event.preventDefault(); //prevent default action
+    var post_url = $(this).attr("action"); //get form action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = $(this).serialize(); //Encode form elements for submission
+
+    $.ajax({
+        url: '/post/like',
+        type: request_method,
+        data: form_data
+    }).done(function (response) {
+        //
+        $("#server-results").html(response[0]);
+        if (response[1]) {
+            $("button.like").html('<i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>');
+            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
+        } else {
+            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
+        }
+    });
+});
+
+$("#dislike_form").submit(function (event) {
+    event.preventDefault(); //prevent default action
+    var post_url = $(this).attr("action"); //get form action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = $(this).serialize(); //Encode form elements for submission
+
+    $.ajax({
+        url: '/post/dislike',
+        type: request_method,
+        data: form_data
+    }).done(function (response) {
+        //
+        $("#server-results").html(response[0]);
+        if (response[1]) {
+            $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
+            $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
+        } else {
+            $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
+        }
+    });
+});
+
+$(".add_frend_button").click(function () {
+    //use a class, since your ID gets mangled
+
+    $('.add_frend_button').toggleClass("loading-button"); //add the class to the clicked element
+    $('.add_frend_button i.fa').toggleClass("fa-user-plus"); //add the class to the clicked element
+    $('.add_frend_button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+});
+$("#add_frend_form").submit(function (event) {
+    event.preventDefault(); //prevent default action
+
+
+    var post_url = $(this).attr("action"); //get form action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = $(this).serialize(); //Encode form elements for submission
+
+    $.ajax({
+        url: post_url,
+        type: request_method,
+        data: form_data
+    }).done(function (response) {
+        //
+        $(".are-frends").removeClass('d-none');
+        $(".arent-frends").addClass('d-none');
+        $('.add_frend_button').toggleClass("loading-button"); //add the class to the clicked element
+        $('.add_frend_button i.fa').toggleClass("fa-user-plus"); //add the class to the clicked element
+        $('.add_frend_button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        // if(response[1]){
+        //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
+        //     $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
+        // }
+        // else{
+        //     $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
+        // }
+    });
+});
+
+$("#remove_frend_form").submit(function (event) {
+    event.preventDefault(); //prevent default action
+    var post_url = $(this).attr("action"); //get form action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = $(this).serialize(); //Encode form elements for submission
+
+    $.ajax({
+        url: post_url,
+        type: request_method,
+        data: form_data
+    }).done(function (response) {
+        //
+        $(".arent-frends").removeClass('d-none');
+        $(".are-frends").addClass('d-none');
+        // $("#server-results").html(response[0]);
+        // if(response[1]){
+        //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
+        //     $("button.like").html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
+        // }
+        // else{
+        //     $("button.dislike").html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
+        // }
+    });
+});
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 1000) {
+        $('#commentCollapse').addClass('show');
+    } else if ($(window).scrollTop() < 200) {
+        if (!$('.comment-field').val()) {
+            $('#commentCollapse').removeClass('show');
+        }
+    }
+});
+
+//Javascript
+$(function () {
+    $("#q").autocomplete({
+        source: "search/autocomplete",
+        minLength: 3,
+        select: function select(event, ui) {
+            $('#q').val(ui.item.value);
+        }
+    });
+});
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+window._ = __webpack_require__(14);
+window.Popper = __webpack_require__(3).default;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -14305,9 +14295,9 @@ window.Popper = __webpack_require__(10).default;
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(11);
+  window.$ = window.jQuery = __webpack_require__(4);
 
-  __webpack_require__(21);
+  __webpack_require__(16);
 } catch (e) {}
 
 /**
@@ -14316,7 +14306,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(22);
+window.axios = __webpack_require__(17);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -14352,7 +14342,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 19 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -31462,10 +31452,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(20)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(15)(module)))
 
 /***/ }),
-/* 20 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -31493,16 +31483,16 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 21 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
-  * Bootstrap v4.1.1 (https://getbootstrap.com/)
+  * Bootstrap v4.1.0 (https://getbootstrap.com/)
   * Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(11), __webpack_require__(10)) :
+   true ? factory(exports, __webpack_require__(4), __webpack_require__(3)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -31568,7 +31558,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): util.js
+   * Bootstrap (v4.1.0): util.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -31701,7 +31691,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): alert.js
+   * Bootstrap (v4.1.0): alert.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -31713,7 +31703,7 @@ module.exports = function(module) {
      * ------------------------------------------------------------------------
      */
     var NAME = 'alert';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.0';
     var DATA_KEY = 'bs.alert';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -31750,11 +31740,9 @@ module.exports = function(module) {
 
       // Public
       _proto.close = function close(element) {
-        var rootElement = this._element;
+        element = element || this._element;
 
-        if (element) {
-          rootElement = this._getRootElement(element);
-        }
+        var rootElement = this._getRootElement(element);
 
         var customEvent = this._triggerCloseEvent(rootElement);
 
@@ -31876,7 +31864,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): button.js
+   * Bootstrap (v4.1.0): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -31888,7 +31876,7 @@ module.exports = function(module) {
      * ------------------------------------------------------------------------
      */
     var NAME = 'button';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.0';
     var DATA_KEY = 'bs.button';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -32040,7 +32028,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): carousel.js
+   * Bootstrap (v4.1.0): carousel.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -32052,7 +32040,7 @@ module.exports = function(module) {
      * ------------------------------------------------------------------------
      */
     var NAME = 'carousel';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.0';
     var DATA_KEY = 'bs.carousel';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -32541,7 +32529,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): collapse.js
+   * Bootstrap (v4.1.0): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -32553,7 +32541,7 @@ module.exports = function(module) {
      * ------------------------------------------------------------------------
      */
     var NAME = 'collapse';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.0';
     var DATA_KEY = 'bs.collapse';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -32824,7 +32812,7 @@ module.exports = function(module) {
           var $this = $$$1(this);
           var data = $this.data(DATA_KEY);
 
-          var _config = _objectSpread({}, Default, $this.data(), typeof config === 'object' && config ? config : {});
+          var _config = _objectSpread({}, Default, $this.data(), typeof config === 'object' && config);
 
           if (!data && _config.toggle && /show|hide/.test(config)) {
             _config.toggle = false;
@@ -32901,7 +32889,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): dropdown.js
+   * Bootstrap (v4.1.0): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -32913,7 +32901,7 @@ module.exports = function(module) {
      * ------------------------------------------------------------------------
      */
     var NAME = 'dropdown';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.0';
     var DATA_KEY = 'bs.dropdown';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -33383,7 +33371,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): modal.js
+   * Bootstrap (v4.1.0): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -33395,7 +33383,7 @@ module.exports = function(module) {
      * ------------------------------------------------------------------------
      */
     var NAME = 'modal';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.0';
     var DATA_KEY = 'bs.modal';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -33871,7 +33859,7 @@ module.exports = function(module) {
         return this.each(function () {
           var data = $$$1(this).data(DATA_KEY);
 
-          var _config = _objectSpread({}, Default, $$$1(this).data(), typeof config === 'object' && config ? config : {});
+          var _config = _objectSpread({}, Modal.Default, $$$1(this).data(), typeof config === 'object' && config);
 
           if (!data) {
             data = new Modal(this, _config);
@@ -33961,7 +33949,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): tooltip.js
+   * Bootstrap (v4.1.0): tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -33973,7 +33961,7 @@ module.exports = function(module) {
      * ------------------------------------------------------------------------
      */
     var NAME = 'tooltip';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.0';
     var DATA_KEY = 'bs.tooltip';
     var EVENT_KEY = "." + DATA_KEY;
     var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
@@ -34478,7 +34466,7 @@ module.exports = function(module) {
       };
 
       _proto._getConfig = function _getConfig(config) {
-        config = _objectSpread({}, this.constructor.Default, $$$1(this.element).data(), typeof config === 'object' && config ? config : {});
+        config = _objectSpread({}, this.constructor.Default, $$$1(this.element).data(), config);
 
         if (typeof config.delay === 'number') {
           config.delay = {
@@ -34628,7 +34616,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): popover.js
+   * Bootstrap (v4.1.0): popover.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -34640,7 +34628,7 @@ module.exports = function(module) {
      * ------------------------------------------------------------------------
      */
     var NAME = 'popover';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.0';
     var DATA_KEY = 'bs.popover';
     var EVENT_KEY = "." + DATA_KEY;
     var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
@@ -34825,7 +34813,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): scrollspy.js
+   * Bootstrap (v4.1.0): scrollspy.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -34837,7 +34825,7 @@ module.exports = function(module) {
      * ------------------------------------------------------------------------
      */
     var NAME = 'scrollspy';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.0';
     var DATA_KEY = 'bs.scrollspy';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -34964,7 +34952,7 @@ module.exports = function(module) {
 
 
       _proto._getConfig = function _getConfig(config) {
-        config = _objectSpread({}, Default, typeof config === 'object' && config ? config : {});
+        config = _objectSpread({}, Default, config);
 
         if (typeof config.target !== 'string') {
           var id = $$$1(config.target).attr('id');
@@ -35137,7 +35125,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): tab.js
+   * Bootstrap (v4.1.0): tab.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -35149,7 +35137,7 @@ module.exports = function(module) {
      * ------------------------------------------------------------------------
      */
     var NAME = 'tab';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.0';
     var DATA_KEY = 'bs.tab';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -35385,7 +35373,7 @@ module.exports = function(module) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): index.js
+   * Bootstrap (v4.0.0): index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -35426,22 +35414,22 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 22 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(23);
+module.exports = __webpack_require__(18);
 
 /***/ }),
-/* 23 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
-var bind = __webpack_require__(12);
-var Axios = __webpack_require__(25);
-var defaults = __webpack_require__(9);
+var utils = __webpack_require__(0);
+var bind = __webpack_require__(5);
+var Axios = __webpack_require__(20);
+var defaults = __webpack_require__(2);
 
 /**
  * Create an instance of Axios
@@ -35474,15 +35462,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(17);
-axios.CancelToken = __webpack_require__(39);
-axios.isCancel = __webpack_require__(16);
+axios.Cancel = __webpack_require__(10);
+axios.CancelToken = __webpack_require__(34);
+axios.isCancel = __webpack_require__(9);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(40);
+axios.spread = __webpack_require__(35);
 
 module.exports = axios;
 
@@ -35491,7 +35479,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 24 */
+/* 19 */
 /***/ (function(module, exports) {
 
 /*!
@@ -35518,16 +35506,16 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 25 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(9);
-var utils = __webpack_require__(7);
-var InterceptorManager = __webpack_require__(34);
-var dispatchRequest = __webpack_require__(35);
+var defaults = __webpack_require__(2);
+var utils = __webpack_require__(0);
+var InterceptorManager = __webpack_require__(29);
+var dispatchRequest = __webpack_require__(30);
 
 /**
  * Create a new instance of Axios
@@ -35604,13 +35592,13 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 26 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(0);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -35623,13 +35611,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 27 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(15);
+var createError = __webpack_require__(8);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -35656,7 +35644,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 28 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35684,13 +35672,13 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 29 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(0);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -35757,13 +35745,13 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 30 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(0);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -35817,13 +35805,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 31 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(0);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -35892,7 +35880,7 @@ module.exports = (
 
 
 /***/ }),
-/* 32 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35935,13 +35923,13 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 33 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(0);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -35995,13 +35983,13 @@ module.exports = (
 
 
 /***/ }),
-/* 34 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(0);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -36054,18 +36042,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 35 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
-var transformData = __webpack_require__(36);
-var isCancel = __webpack_require__(16);
-var defaults = __webpack_require__(9);
-var isAbsoluteURL = __webpack_require__(37);
-var combineURLs = __webpack_require__(38);
+var utils = __webpack_require__(0);
+var transformData = __webpack_require__(31);
+var isCancel = __webpack_require__(9);
+var defaults = __webpack_require__(2);
+var isAbsoluteURL = __webpack_require__(32);
+var combineURLs = __webpack_require__(33);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -36147,13 +36135,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 36 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(0);
 
 /**
  * Transform the data for a request or a response
@@ -36174,7 +36162,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 37 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36195,7 +36183,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 38 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36216,13 +36204,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 39 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(17);
+var Cancel = __webpack_require__(10);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -36280,7 +36268,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 40 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36314,7 +36302,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 41 */
+/* 36 */
 /***/ (function(module, exports) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -36547,7 +36535,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 })(jQuery);
 
 /***/ }),
-/* 42 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47510,10 +47498,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(43).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(38).setImmediate))
 
 /***/ }),
-/* 43 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -47569,7 +47557,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(44);
+__webpack_require__(39);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -47580,10 +47568,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 44 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -47773,18 +47761,18 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(13)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(6)))
 
 /***/ }),
-/* 45 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(46)
+var normalizeComponent = __webpack_require__(41)
 /* script */
-var __vue_script__ = __webpack_require__(47)
+var __vue_script__ = __webpack_require__(42)
 /* template */
-var __vue_template__ = __webpack_require__(48)
+var __vue_template__ = __webpack_require__(43)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47823,7 +47811,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 46 */
+/* 41 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -47932,7 +47920,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 47 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47961,7 +47949,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 48 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48002,6 +47990,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
   }
 }
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
