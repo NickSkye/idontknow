@@ -146,6 +146,10 @@
   height: 55px;
 }
 
+.post-meta.activity-meta {
+  margin-bottom: 0;
+}
+
 .post-meta #server-results {
   min-width: 15px;
 }

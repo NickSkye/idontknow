@@ -141,6 +141,9 @@
     margin-bottom: 30px;
     align-items: center;
     height: 55px;
+    &.activity-meta{
+        margin-bottom: 0;
+    }
     #server-results{
         min-width: 15px;
     }

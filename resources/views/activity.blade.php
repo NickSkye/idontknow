@@ -220,7 +220,7 @@
 
                                                     {{--TEST--}}
                                                     <p class="post-views">views: {{$friendspost->views}}</p>
-                                                    <div class="post-meta">
+                                                    <div class="post-meta activity-meta">
 
                                                         <div class="post-data like-dislike-vote">
                                                             <form action="/like" method="post" id="like_form-{{$friendspost->id}}" class="activity-like-form">
