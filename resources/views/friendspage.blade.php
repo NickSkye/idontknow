@@ -241,48 +241,48 @@
 
 
                     </div>
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        <div>
+                    {{--<div class="card-body">--}}
+                        {{--@if (session('status'))--}}
+                            {{--<div class="alert alert-success">--}}
+                                {{--{{ session('status') }}--}}
+                            {{--</div>--}}
+                        {{--@endif--}}
+                        {{--<div>--}}
 
                             {{--friends posts--}}
-                            <div class="row frend-area">
-                                @foreach($friendsposts as $post)
-                                    <div class="col-12">
+                            {{--<div class="row frend-area">--}}
+                                {{--@foreach($friendsposts as $post)--}}
+                                    {{--<div class="col-12">--}}
 
-                                        <div class="frend-post-box frend-post">
+                                        {{--<div class="frend-post-box frend-post">--}}
 
 
-                                            <div class="card">
+                                            {{--<div class="card">--}}
                                                 {{--<div class="card-header">--}}
                                                 {{--</div>--}}
-                                                <div class="card-body">
-                                                    <div class="frend-post-header">
-                                                        <a href="/users/{{$info->username}}">
-                                                            <div style=" background-image: url('{{$info->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px; background-position: center;">
-                                                            </div>
-                                                        </a>
-                                                        <a href="/users/{{$info->username}}">
-                                                            <p>{{$info->username}}</p>
-                                                            <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</p>
-                                                        </a>
-                                                    </div>
+                                                {{--<div class="card-body">--}}
+                                                    {{--<div class="frend-post-header">--}}
+                                                        {{--<a href="/users/{{$info->username}}">--}}
+                                                            {{--<div style=" background-image: url('{{$info->profileimage}}');  width: 50px; height: 50px; background-size: cover; background-repeat: no-repeat; margin-right: 20px; background-position: center;">--}}
+                                                            {{--</div>--}}
+                                                        {{--</a>--}}
+                                                        {{--<a href="/users/{{$info->username}}">--}}
+                                                            {{--<p>{{$info->username}}</p>--}}
+                                                            {{--<p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</p>--}}
+                                                        {{--</a>--}}
+                                                    {{--</div>--}}
                                                     {{--PUT LIKE POST AND DISLIKE POST FORMS HERE. ONE FORM FOR EACH--}}
 
 
-                                                    <p>{{$post->description}}</p>
-                                                    <a href="/post/{{$post->id}}">
-                                                        <img src="{{$post->imagepath}}" class="img-fluid activity-image" alt="">
+                                                    {{--<p>{{$post->description}}</p>--}}
+                                                    {{--<a href="/post/{{$post->id}}">--}}
+                                                        {{--<img src="{{$post->imagepath}}" class="img-fluid activity-image" alt="">--}}
 
-                                                        <p style="font-size: 10pt;">view comments&nbsp;&gt;</p>
-                                                    </a>
+                                                        {{--<p style="font-size: 10pt;">view comments&nbsp;&gt;</p>--}}
+                                                    {{--</a>--}}
 
-                                                </div>
-                                                @include('partials.commentfield')
+                                                {{--</div>--}}
+                                                {{--@include('partials.commentfield')--}}
                                                 {{--<div class="card-footer">--}}
                                                 {{--<div>--}}
                                                 {{--<form action="{{ url('comment') }}" method="POST">--}}
@@ -302,20 +302,60 @@
                                                 {{--</form>--}}
                                                 {{--</div>--}}
                                                 {{--</div>--}}
-                                                <hr>
-                                            </div>
+                                                {{--<hr>--}}
+                                            {{--</div>--}}
 
 
 
 
                                             {{--{{ $friend }}--}}
 
-                                        </div>
+                                        {{--</div>--}}
 
-                                    </div>
+                                    {{--</div>--}}
+
+
+                                {{--@endforeach--}}
+                            {{--</div>--}}
+
+                        {{--</div>--}}
+
+
+                    {{--</div>--}}
+                    <div class="card-body" style="padding: 0 1rem 0 1rem;">
+
+                        <div>
+
+                            {{--my posts--}}
+                            <div class="row frend-area ">
+                                {{--@foreach($myposts as $post)--}}
+                                @foreach($friendsposts as $post)
+                                    {{--<a href="/post/{{$post->id}}">--}}
+                                    {{--<div class="frend-post-box">--}}
+                                    {{--<p>{{$post->description}}</p>--}}
+                                    {{--<p class="post-data">views: {{$post->views}}</p>--}}
+                                    {{--</div>--}}
+                                    {{--</a>--}}
+                                    @if (is_null($post->imagepath))
+
+                                        <a href="/post/{{$post->id}}" class='square-box'>
+                                            <div class='square-content'>
+                                                <div>
+                                                    <span>{{$post->description}}</span>
+                                                </div>
+                                            </div>
+
+                                        </a>
+                                    @else
+                                        <a href="/post/{{$post->id}}" class="col-4 my-images" style="background-image: url('{{$post->imagepath}}'); "></a>
+
+                                    @endif
+
+
 
 
                                 @endforeach
+                                {{--{{ $myposts->links() }}--}}
                             </div>
 
                         </div>
