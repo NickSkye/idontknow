@@ -165,7 +165,7 @@ $(document).ready(function(){
     // });
 
     //        $thedescription = preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $request->description);
-    $(/@([\w\-]+)/g).replaceAll('<a href="/users/$1">$0</a>');
+    // $(/@([\w\-]+)/g).replaceAll('<a href="/users/$1">$0</a>');
 
 
     //next three are the other ways to disable extra clicks after shouting or posting
