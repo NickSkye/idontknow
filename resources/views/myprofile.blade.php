@@ -114,7 +114,7 @@
                                         <a href="/post/{{$post->id}}" class='square-box'>
                                             <div class='square-content'>
                                                 <div>
-                                                    <span>{{$post->description}}</span>
+                                                    <span>{!! $post->description !!}</span>
                                                 </div>
                                             </div>
 
