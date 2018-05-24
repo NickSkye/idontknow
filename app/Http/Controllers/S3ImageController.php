@@ -147,7 +147,7 @@ if ($request->hasFile('image')) {
         if(!is_null($thedescription)){
             foreach($thedescription[1] as $users){
                 DB::table('notifications')->insert(
-                    ['username' => $users, 'notification' => '<a class="dropdown-item" href="/post/' . $this_post . '">' . ' New Comment on your post</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                    ['username' => $users, 'notification' => '<a class="dropdown-item" href="/post/' . $this_post->id . '">' . ' New Comment on your post</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
                 );
             }
         }
