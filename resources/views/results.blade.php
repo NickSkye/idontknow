@@ -44,6 +44,12 @@
                             @if (session('status'))
                                 <div class="alert alert-success">
                                     {{ session('status') }}
+                                    <a class="close" data-dismiss="alert">×</a>
+                                </div>
+                            @elseif(session('error'))
+                                <div class="alert alert-danger">
+                                    {{ session('error') }}
+                                    <a class="close" data-dismiss="alert">×</a>
                                 </div>
                             @endif
                             <div>

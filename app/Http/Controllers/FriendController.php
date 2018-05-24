@@ -92,7 +92,7 @@ class FriendController extends Controller
 
         }
         catch(\Exception $e){
-            return redirect('/search');
+            return redirect('/search')->with('error', 'Tagged user does not exist. Search or invite them to Join.');
         }
 
     }
