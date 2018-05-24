@@ -39,7 +39,9 @@ class S3ImageController extends Controller
         if ($request->hasFile('image')) {
             $imageName = time().'.'.$request->image->getClientOriginalExtension();
             $image = $request->file('image');
-            $t = Storage::disk('s3')->put("profilepics/".$imageName, file_get_contents($image), 'public');
+            $image = Image::make($image)->orientate();
+            $image = $image->stream();
+            $t = Storage::disk('s3')->put("profilepics/".$imageName, $image->__toString(), 'public');
             $imageName = Storage::disk('s3')->url("profilepics/".$imageName);
             if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
                 DB::table('profileinfo')->where('username', '=', Auth::user()->username)->update(
