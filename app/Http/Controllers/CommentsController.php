@@ -93,6 +93,30 @@ class CommentsController extends Controller
             ['username' => $user, 'notification' => '<a class="dropdown-item" href="/post/' . $request->post_id . '">' . ' New Comment on your post</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
+
+        $this_post = DB::table('posts')->where('id', $request->post_id)->first();
+        preg_match_all('/@([\w\-]+)/', $request->comment, $thedescription);
+
+        if(!is_null($thedescription)){
+            foreach($thedescription[1] as $users){
+                try {
+                    DB::table('notifications')->insert(
+                        ['username' => $users, 'notification' => '<a class="dropdown-item" href="/post/'.$this_post->id.'">'.' You got mentioned</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                    );
+                    $email = DB::table('users')->where('username', $users)->first();
+
+
+                    $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $users)->first();
+                    if ($getsemails->email_notifications) {
+                        Mail::to($email->email)->send(new NotificationMail());
+                    }
+                }
+                catch(\Exception $e){
+
+                }
+            }
+        }
+
         return response([$request->post_id]);
 
     }
