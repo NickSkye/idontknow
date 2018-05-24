@@ -24,6 +24,19 @@ class PagesController extends Controller
         return $friends_online;
     }
 
+    public function nearbyPosts() {
+
+        $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
+        if(is_null($location->latitude) or is_null($location->longitude)){
+            $location->latitude = 0;
+            $location->longitude = 0;
+        }
+
+        return DB::table('posts')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'), 'posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'post_votes.post_id as post_id', 'post_votes.vote as vote', 'posts.votes as votes', 'posts.comments as comments')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->join('posts', 'follows.followsusername', '=', 'posts.username')->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')->where('follows.username', Auth::user()->username)->where('post_votes.username', Auth::user()->username)->where('deleted', false)->orderBy('distance')->get();
+    }
+
+
+
     public function postLocation($postlocid) {
 
 
@@ -248,7 +261,7 @@ class PagesController extends Controller
     {
 
 //        TEST
-        $allfriendsinfo = $this->getFollowingInfoWithPosts();
+        $allfriendsinfo = $this->nearbyPosts();
         $allfollowersinfo = $this->getFollowersInfoWithPosts();
 //        $allfriendsposts = [];
 
