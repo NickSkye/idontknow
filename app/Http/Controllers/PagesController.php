@@ -244,6 +244,38 @@ class PagesController extends Controller
 
     }
 
+    public function nearby()
+    {
+
+//        TEST
+        $allfriendsinfo = $this->getFollowingInfoWithPosts();
+        $allfollowersinfo = $this->getFollowersInfoWithPosts();
+//        $allfriendsposts = [];
+
+        $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
+        $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
+        $notifs = DB::table('notifications')->where([
+            ['username', Auth::user()->username],
+            ['seen', false],
+        ])->get();
+
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+//        $post_votes = 0;
+
+//        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
+//            $post_votes = DB::table('post_votes')->where('username', Auth::user()->username)->get();
+
+//        }
+//        $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
+//        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+
+        return view('nearby', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
+
+
+    }
+
     public function viewpost($post_id)
     {
 

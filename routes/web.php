@@ -22,6 +22,7 @@ Route::get('users/{username?}', 'FriendController@index')->middleware('auth');
 Route::get('/settings', 'PagesController@settings')->middleware('auth');
 Route::get('/me', 'PagesController@myprofile')->middleware('auth');
 Route::get('/activity', 'PagesController@activity')->middleware('auth');
+Route::get('/nearby', 'PagesController@nearby')->middleware('auth');
 Route::get('post/{post_id?}', 'PagesController@viewpost')->middleware('auth');
 Route::get('/notifications/{id?}', 'PagesController@notifications')->middleware('auth');
 Route::get('/notification', 'PagesController@allnotifications')->middleware('auth');

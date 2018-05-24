@@ -241,6 +241,7 @@
 
 
                     </div>
+                    {{--OLD WAY OF DOING IT--}}
                     {{--<div class="card-body">--}}
                         {{--@if (session('status'))--}}
                             {{--<div class="alert alert-success">--}}
