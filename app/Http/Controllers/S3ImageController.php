@@ -3,7 +3,8 @@
 
 namespace App\Http\Controllers;
 
-
+use Mail;
+use App\Mail\NotificationMail;
 use Illuminate\Http\Request;
 
 use Storage;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use Image;
+
 
 
 
@@ -147,8 +149,15 @@ if ($request->hasFile('image')) {
         if(!is_null($thedescription)){
             foreach($thedescription[1] as $users){
                 DB::table('notifications')->insert(
-                    ['username' => $users, 'notification' => '<a class="dropdown-item" href="/post/' . $this_post->id . '">' . ' New Comment on your post</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                    ['username' => $users, 'notification' => '<a class="dropdown-item" href="/post/' . $this_post->id . '">' . ' You got mentioned</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
                 );
+                $email = DB::table('users')->where('username', $users)->first();
+
+
+                $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $users)->first();
+                if($getsemails->email_notifications){
+                    Mail::to($email->email)->send(new NotificationMail());
+                }
             }
         }
 
