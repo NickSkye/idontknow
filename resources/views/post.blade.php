@@ -207,7 +207,7 @@
                                                 <p class="comment-username">{{$comment->username}} - {{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</p>
                                             </a>
 
-                                            <p class="comment">{{$comment->comment}}</p>
+                                            <p class="comment">{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $comment->comment) !!}</p>
 
                                         </div>
 
