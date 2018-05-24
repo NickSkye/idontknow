@@ -84,7 +84,9 @@
         <script>
 
         $( function() {
-            $( "#datepicker" ).datepicker();
+            $( "#datepicker" ).datepicker({
+                yearRange: "-100:+0"
+            });
         } );
         </script>
         <script src="linkify.min.js"></script>

@@ -64,7 +64,7 @@
                             <input type="text" class="form-control book-form" id="phone" name="phone" value="{{ $profileinfo->phonenumber }}">
                         </div>
 
-                        <label for="datepicker">Select Date</label>
+                        <label for="datepicker">Birthday</label>
                         <div class="input-group date">
                             <input type="date" class="form-control book-form" id="datepicker" name="birthday" value="{{ $profileinfo->birthday }}"/>
                             <div class="input-group-addon">
