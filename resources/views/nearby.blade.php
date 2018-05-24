@@ -30,7 +30,7 @@
                 <div class="card">
                     <div class="card-header">
 
-                        <h3><a href="/activity">Frend Activity</a> | <a href="/nearby">Nearby Activity</a></h3>
+                        <h4><a href="/activity">Frend Activity</a> | <a href="/nearby">Nearby Activity</a></h4>
                     </div>
                     <div class="card-body">
                         @if (session('status'))
