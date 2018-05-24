@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use Intervention\Image\Image;
+
 use Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
+use Image;
 
 
 
@@ -105,6 +107,7 @@ if ($request->hasFile('image')) {
     //
     $imageName = time().'.'.$request->image->getClientOriginalExtension();
     $image = $request->file('image');
+    $image = Image::make($image)->orientate();
     $t = Storage::disk('s3')->put("posts/".$imageName, file_get_contents($image), 'public');
     $imageName = Storage::disk('s3')->url("posts/".$imageName);
 } else{
