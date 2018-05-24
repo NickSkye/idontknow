@@ -108,7 +108,7 @@ if ($request->hasFile('image')) {
     $imageName = time().'.'.$request->image->getClientOriginalExtension();
     $image = $request->file('image');
     $image = Image::make($image)->orientate();
-    $t = Storage::disk('s3')->put("posts/".$imageName, $image->__toString(), 'public');
+    $t = Storage::disk('s3')->put("posts/".$imageName, file_get_contents($image->__toString()), 'public');
     $imageName = Storage::disk('s3')->url("posts/".$imageName);
 } else{
     $imageName = null;
