@@ -100,8 +100,8 @@ class S3ImageController extends Controller
             }
         }
 
-        $thedescription = preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $request->description);
-
+//        $thedescription = preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $request->description);
+//        $('body').text()
 // create an image manager instance with favored driver
 
 
@@ -124,7 +124,7 @@ if ($request->hasFile('image')) {
 
 //upload post
         DB::table('posts')->insert(
-            ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $thedescription, 'views' => 1, 'votes' => 1, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'views' => 1, 'votes' => 1, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
         $post_id = DB::table('posts')->where('username', Auth::user()->username)->orderBy('id', 'desc')->first();

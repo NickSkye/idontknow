@@ -164,6 +164,9 @@ $(document).ready(function(){
     //     $('.modal-dialog').hide();      //add the class to the clicked element
     // });
 
+    //        $thedescription = preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $request->description);
+    $('body').replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>');
+
 
     //next three are the other ways to disable extra clicks after shouting or posting
     $(".comment-button").click(function() {  //use a class, since your ID gets mangled
