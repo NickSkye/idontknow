@@ -100,7 +100,8 @@ class S3ImageController extends Controller
             }
         }
 
-//        $thedescription = preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $request->description);
+
+
 //        $('body').text()
 // create an image manager instance with favored driver
 
@@ -138,6 +139,20 @@ if ($request->hasFile('image')) {
         $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
         $myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
         $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
+
+
+        $this_post = DB::table('posts')->where('username', Auth::user()->username)->latest()->first();
+        preg_match_all('/@([\w\-]+)/', $request->description, $thedescription);
+
+        if(!is_null($thedescription)){
+            foreach($thedescription[1] as $users){
+                DB::table('notifications')->insert(
+                    ['username' => $users, 'notification' => '<a class="dropdown-item" href="/post/' . $this_post . '">' . ' New Comment on your post</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                );
+            }
+        }
+
+
 
 
         return redirect('/me')->with(['generalinfo'=> $generalinfo, 'mybio'=> $mybio,'myposts'=> $myposts,'myfriends'=> $myfriends])->with('success','Image Uploaded successfully.')->with('path',$imageName);
