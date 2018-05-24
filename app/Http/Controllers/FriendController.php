@@ -60,38 +60,40 @@ class FriendController extends Controller
     public function index($username)
     {
 //        $info = DB::table('users')->where('username', $username)->get();
+        try {
             $info = $this->getSpecificFriendsInfo($username);
-        $arefriends = false;
-        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
-        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
-        $friendsposts = DB::table('posts')->where('username', $username)->where('deleted', false)->orderBy('created_at', 'desc')->get();
-        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        $allfriendsinfo = $this->getFollowingsInfo($username);
-        $allfollowersinfo = $this->getFollowersInfo($username);
-        $now = new \DateTime();
-        $online_frends = $this->getFrendsOnline();
-        //User follow and post meta data
-        $numfollowers = DB::table('follows')->where('followsusername', $username)->count();
-        $numposts = DB::table('posts')->where('username', $username)->where('deleted', false)->count();
-        $numfollowing = DB::table('follows')->where('username', $username)->count();
-        $frendsloc = $this->frendsLocation($username);
-        //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
+            $arefriends = false;
+            // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+            $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+            $friendsposts = DB::table('posts')->where('username', $username)->where('deleted', false)->orderBy('created_at', 'desc')->get();
+            DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+            $allfriendsinfo = $this->getFollowingsInfo($username);
+            $allfollowersinfo = $this->getFollowersInfo($username);
+            $now = new \DateTime();
+            $online_frends = $this->getFrendsOnline();
+            //User follow and post meta data
+            $numfollowers = DB::table('follows')->where('followsusername', $username)->count();
+            $numposts = DB::table('posts')->where('username', $username)->where('deleted', false)->count();
+            $numfollowing = DB::table('follows')->where('username', $username)->count();
+            $frendsloc = $this->frendsLocation($username);
+            //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
 
             foreach ($friends as $friend) {
                 if ($info->username === $friend->followsusername) {
                     $arefriends = true;
 
-                    return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'frendsloc'=> $frendsloc]);
+                    return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'frendsloc' => $frendsloc]);
                 }
 
             }
 
 
+            return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends]);
 
-
-
-        return view('friendspage', ['info'=> $info, 'arefriends'=> $arefriends, 'friendsposts'=> $friendsposts, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo,'now'=> $now, 'online_frends'=> $online_frends]);
-
+        }
+        catch(\Exception $e){
+            return redirect('/search');
+        }
 
     }
 
