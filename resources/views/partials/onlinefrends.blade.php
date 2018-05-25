@@ -1,7 +1,7 @@
 <div class="toggleon-online-frends">
     <i class="fa fa-caret-left" aria-hidden="true"></i>
 </div>
-<div class="online-frends" style="position: fixed;">
+<div class="online-frends frends-closed" style="position: fixed;">
 
     <div class="card" style="width: 100%;">
         <div class="card-header">
