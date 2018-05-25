@@ -122,23 +122,6 @@ class CommentsController extends Controller
     }
 
 
-    public function searchResponse(Request $request){
-        $query = $request->get('term','');
-        $countries=\DB::table('follows');
-
-            $countries->where('username','LIKE','%'.$query.'%');
-
-
-        $countries=$countries->get();
-        $data=array();
-        foreach ($countries as $country) {
-            $data[]=array('name'=>$country->username,'sortname'=>$country->username);
-        }
-        if(count($data))
-            return $data;
-        else
-            return ['name'=>'','sortname'=>''];
-    }
 
 
 
