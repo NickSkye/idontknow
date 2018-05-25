@@ -218,16 +218,21 @@ class PagesController extends Controller
 
 //        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
 
-        $friends_info_full = DB::table('posts')->select('posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'post_votes.post_id as post_id', 'post_votes.vote as vote', 'posts.votes as votes', 'posts.comments as comments')
+        $friends_info_full = DB::table('posts')
+            ->select('posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'post_votes.post_id as post_id', 'post_votes.vote as vote', 'posts.votes as votes', 'posts.comments as comments')
             ->leftJoin('profileinfo', 'posts.username', '=', 'profileinfo.username')
             ->leftJoin('users', 'posts.username', '=', 'users.username')
             ->leftJoin('follows', 'posts.username', '=', 'follows.followsusername')
             ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
-            ->whereRaw('(follows.username =' . Auth::user()->username . ') or (posts.username =' . Auth::user()->username . ')')->where('deleted', false)
+            ->where(function ($query) {
+                $query->where('follows.username', Auth::user()->username)
+                    ->orWhere('posts.username', Auth::user()->username);
+            })->where('deleted', false)
             ->orderBy('posts.created_at', 'desc')->distinct()->get(); //'posts.updated_at'
 
 
-        
+
+
 
 
         return $friends_info_full;
