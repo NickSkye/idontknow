@@ -172,7 +172,7 @@
                                             <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
                                         </a>
 
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="text-align: center;">
                                             @if($info->username != Auth::user()->username)
                                                 <a  style="color: red; width: 100%;" data-toggle="modal" href="#deleteModal">
                                                     Remove Frend
