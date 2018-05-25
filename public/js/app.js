@@ -14325,62 +14325,6 @@ $(function () {
     });
 });
 
-$("#target").keydown(function (e) {
-
-    if (e.which === 50 && e.shiftKey === true) {
-        //Prevent this event from actually typing the @
-        e.preventDefault();
-
-        //console.log( window.getSelection() );
-        var sel = window.getSelection();
-
-        var offset = sel.baseOffset;
-        var node = sel.focusNode.parentNode;
-
-        //Get the text before and after the caret
-        var firsttext = node.innerHTML.substr(0, sel.baseOffset);
-        var nexttext = sel.baseOffset != sel.focusNode.length ? node.innerHTML.substr(sel.baseOffset, sel.focusNode.length) : "";
-
-        //Add in @ + dummy, because @ is not in there yet on keydown
-        node.innerHTML = firsttext + '@<div id="dummy"></div>' + nexttext;
-
-        //Transfer all relevant data to the dropdown menu
-
-        $('.dropdown').css('left', $('#dummy')[0].offsetLeft).css('top', $('#dummy')[0].offsetTop).prop('x-custom-offset', offset + 1);
-
-        //Delete the dummy to keep it clean
-        //This will split the contents into two text nodes, which we don't want
-        //$('#dummy').remove();
-        node.innerHTML = firsttext + '@' + nexttext;
-
-        //Put the caret back in place where we left off
-        //...I can't seem to figure out how to correctly set the range correctly...
-
-        $('#dropdown').removeClass('hide').addClass('show');
-    } else {
-        $('#dropdown').removeClass('show').addClass('hide');
-        $('.dropdown').removeProp('x-custom-offset');
-    }
-});
-
-$('#dropdown').on('click', 'li a', function (e) {
-    e.preventDefault();
-
-    $('#target').html(function (i, oldtext) {
-        var firsttext = oldtext.substr(0, $('.dropdown').prop('x-custom-offset'));
-        var nexttext = oldtext.substr($('.dropdown').prop('x-custom-offset'), oldtext.length);
-
-        console.log(e);
-
-        var inserttext = e.target.innerText;
-
-        //Cleanup
-        $('#dropdown').removeClass('show').addClass('hide');
-
-        return firsttext + inserttext + nexttext;
-    });
-});
-
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
