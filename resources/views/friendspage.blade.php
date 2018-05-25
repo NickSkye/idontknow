@@ -165,10 +165,10 @@
 
                             </div>
                             <div class="col-6">
-                                <div class="pull-right" style="position: absolute;">
+                                <div class="pull-right" >
                                     <li class="nav-item dropdown pull-right">
                                         <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"  aria-expanded="false" >
-                                            
+
                                             <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
                                         </a>
 
