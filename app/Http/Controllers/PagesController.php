@@ -39,6 +39,10 @@ class PagesController extends Controller
             ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
             ->where('deleted', false)
             ->orderBy('distance')->distinct()->get();
+
+
+
+
     }
 
 
