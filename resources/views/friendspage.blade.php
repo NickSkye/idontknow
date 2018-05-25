@@ -409,7 +409,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <div>UPLOAD IMAGE BUTTON HERE</div>
+                        <div>The beginning of a beautiful FrendGrid</div>
                     </div>
                 </div>
             </div>
