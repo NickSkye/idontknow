@@ -159,6 +159,8 @@ $(document).ready(function(){
         $("#"+tab_id).addClass('current');
     })
 
+
+
 //one way to disable extra clicks after shouting or posting
     // $(".modal-button").click(function() {  //use a class, since your ID gets mangled
     //     $('.modal-dialog').hide();      //add the class to the clicked element
@@ -423,21 +425,21 @@ $(".activity-comment").submit(function(event){
 
 
 
-// var oldVal = "";
-// $("textarea").on("change keyup paste", function() {
-//     var currentVal = $(this).val();
-//     // /@([\w\-]+)/', '<a href="/users/$1">$0</a>
-//     if(currentVal.match(/@([\w\-]+)/)){
-//         alert('yes');
-//     }
-//     if(currentVal == oldVal) {
-//         return; //check to prevent multiple simultaneous triggers
-//     }
-//
-//     oldVal = currentVal;
-//     //action to be performed on textarea changed
-//     // alert("changed!");
-// });
+var oldVal = "";
+$("textarea").on("change keyup paste", function() {
+    var currentVal = $(this).val();
+    // /@([\w\-]+)/', '<a href="/users/$1">$0</a>
+    if(currentVal.match(/@([\w\-]+)/)){
+        $('.suggestionMentions').addClass('show');
+    }
+    if(currentVal == oldVal) {
+        return; //check to prevent multiple simultaneous triggers
+    }
+
+    oldVal = currentVal;
+    //action to be performed on textarea changed
+    // alert("changed!");
+});
 
 
 
@@ -467,9 +469,7 @@ $(function()
 });
 
 
-    function addToText(name) {
-        $('textarea').append('@' + name);
-    }
+
 
 
 
