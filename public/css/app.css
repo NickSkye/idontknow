@@ -9,7 +9,7 @@
 }
 
 @media (max-width: 767px) {
-  .py-4 {
+  .main.py-4 {
     padding-top: 0 !important;
   }
 }

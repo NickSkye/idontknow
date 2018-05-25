@@ -112,7 +112,7 @@
                 </div>
             </div>
 
-            <main class="py-4" >
+            <main class="main py-4" >
                 @yield('content')
                 @include('partials.modals')
             </main>
