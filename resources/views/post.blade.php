@@ -41,7 +41,7 @@
 
 
                         <div class="pull-left">
-                            <a href="{{ URL::previous() }}"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                            <a href="{{ URL::previous() }}"><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></a>
                         </div>
                             <div class="nav-item dropdown pull-right" style="list-style-type: none;">
                                 <a id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
