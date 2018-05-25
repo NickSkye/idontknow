@@ -174,7 +174,7 @@
 
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             @if($info->username != Auth::user()->username)
-                                                <a type="button" class="" style="color: red; width: 100%;" data-toggle="modal" href="#deleteModal">
+                                                <a  style="color: red; width: 100%;" data-toggle="modal" href="#deleteModal">
                                                     Remove Frend
                                                 </a>
 

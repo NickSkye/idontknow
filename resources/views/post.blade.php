@@ -48,9 +48,9 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     @if($post->username === Auth::user()->username)
-                                        <button type="button" class="" style="color: red; width: 100%;" data-toggle="modal" data-target="#trashModal">
+                                        <a style="color: red; width: 100%;" data-toggle="modal" href="#trashModal">
                                             Delete
-                                        </button>
+                                        </a>
                                     @else
                                         <div class="pull-right">
                                             <form method="post" action="/report-post/{{$post->id}}">
