@@ -14324,16 +14324,17 @@ $(window).scroll(function () {
     }
 });
 
-//Javascript
-$(function () {
-    $("#q").autocomplete({
-        source: "search/autocomplete",
-        minLength: 3,
-        select: function select(event, ui) {
-            $('#q').val(ui.item.value);
-        }
-    });
-});
+// //Javascript
+// $(function()
+// {
+//     $( "#q" ).autocomplete({
+//         source: "search/autocomplete",
+//         minLength: 3,
+//         select: function(event, ui) {
+//             $('#q').val(ui.item.value);
+//         }
+//     });
+// });
 
 /***/ }),
 /* 13 */
