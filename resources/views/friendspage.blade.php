@@ -4,6 +4,38 @@
     <div class="container">
 
 
+
+
+
+        <div class="modal fade" id="trashModal" tabindex="-1" role="dialog" aria-labelledby="trashModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Remove Frend</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to remove {{$info->username}} from your frends?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <form method="post" id="remove_frend_form" action="/removefrend/{{$info->username}}">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
+                            <button class="btn btn-warning" type="submit">
+                                <i class="fa fa-user-times fa-2x" aria-hidden="true"></i>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
@@ -31,15 +63,15 @@
 
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 col-sm-8">
-                                            <form method="post"  id="remove_frend_form" action="/removefrend/{{$info->username}}">
-                                                {{ csrf_field() }}
-                                                <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
-                                                <button class="btn btn-warning" type="submit">
-                                                    <i class="fa fa-user-times fa-2x" aria-hidden="true"></i>
-                                                </button>
-                                            </form>
-                                        </div>
+                                        {{--<div class="col-xs-12 col-sm-8">--}}
+                                            {{--<form method="post"  id="remove_frend_form" action="/removefrend/{{$info->username}}">--}}
+                                                {{--{{ csrf_field() }}--}}
+                                                {{--<input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>--}}
+                                                {{--<button class="btn btn-warning" type="submit">--}}
+                                                    {{--<i class="fa fa-user-times fa-2x" aria-hidden="true"></i>--}}
+                                                {{--</button>--}}
+                                            {{--</form>--}}
+                                        {{--</div>--}}
                                         <div class="col-xs-12 col-sm-4">
                                             <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
                                                 <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
@@ -88,15 +120,15 @@
 
                                         </div>
                                         <div class="row">
-                                            <div class="col-xs-12 col-sm-8">
-                                                <form method="post"  id="remove_frend_form" action="/removefrend/{{$info->username}}">
-                                                    {{ csrf_field() }}
-                                                    <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
-                                                    <button class="btn btn-warning" type="submit">
-                                                        <i class="fa fa-user-times fa-2x" aria-hidden="true"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
+                                            {{--<div class="col-xs-12 col-sm-8">--}}
+                                                {{--<form method="post"  id="remove_frend_form" action="/removefrend/{{$info->username}}">--}}
+                                                    {{--{{ csrf_field() }}--}}
+                                                    {{--<input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>--}}
+                                                    {{--<button class="btn btn-warning" type="submit">--}}
+                                                        {{--<i class="fa fa-user-times fa-2x" aria-hidden="true"></i>--}}
+                                                    {{--</button>--}}
+                                                {{--</form>--}}
+                                            {{--</div>--}}
                                             <div class="col-xs-12 col-sm-4">
                                                 <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
                                                     <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
@@ -141,31 +173,19 @@
 
                             </div>
                             <div class="col-6">
-                                <div style="position: absolute;">
+                                <div class="pull-right" style="position: absolute;">
                                     <li class="nav-item dropdown pull-right">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                             <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            @if($post->username === Auth::user()->username)
-                                                <button type="button" class="" style="color: red; width: 100%;" data-toggle="modal" data-target="#trashModal">
-                                                    Delete
+                                            @if($info->username != Auth::user()->username)
+                                                <button type="button" class="" style="color: red; width: 100%;" data-toggle="modal" data-target="#deleteModal">
+                                                    Remove Frend
                                                 </button>
-                                            @else
-                                                <div class="pull-right">
-                                                    <form method="post" action="/report-post/{{$post->id}}">
-                                                        {{ csrf_field() }}
-                                                        <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
-                                                        <button class="" style="color: red; width: 100%;" type="submit">
-                                                            Report
-                                                        </button>
-                                                    </form>
-                                                </div>
+
                                             @endif
-                                            <a class="dropdown-item" href="#">
-                                                {{ __('Edit') }}
-                                            </a>
 
 
                                         </div>
