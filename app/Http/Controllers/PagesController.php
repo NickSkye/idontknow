@@ -224,10 +224,7 @@ class PagesController extends Controller
             ->leftJoin('users', 'posts.username', '=', 'users.username')
             ->leftJoin('follows', 'posts.username', '=', 'follows.followsusername')
             ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
-            ->where(function ($query) {
-                $query->where('follows.username', Auth::user()->username)
-                    ->orWhere('posts.username', Auth::user()->username);
-            })->where('deleted', false)
+            ->whereRaw('(follows.username =' . Auth::user()->username . ') or (posts.username =' . Auth::user()->username . ')')->where('deleted', false)
             ->orderBy('posts.created_at', 'desc')->distinct()->get(); //'posts.updated_at'
 
 
