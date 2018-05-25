@@ -25,7 +25,7 @@
             </div>
             <div class="modal-body">
                 @foreach($friends as $friend)
-                    <button id="frend-{{$friend->id}}" onclick="addToText({{$friend->username}})"type="button" class="btn"> {{$friend->username}}</button>
+                    <button id="frend-{{$friend->id}}" onclick="addToText({{$friend->followsusername}})"type="button" class="btn"> {{$friend->followsusername}}</button>
                     @endforeach
             </div>
             <div class="modal-footer">
