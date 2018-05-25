@@ -51,6 +51,9 @@
                                         <a style="color: red; width: 100%;" data-toggle="modal" href="#trashModal">
                                             Delete
                                         </a>
+                                        <a class="dropdown-item" href="#">
+                                            {{ __('Edit') }}
+                                        </a>
                                     @else
                                         <div class="">
                                             <form method="post" action="/report-post/{{$post->id}}">
@@ -62,9 +65,7 @@
                                             </form>
                                         </div>
                                     @endif
-                                    <a class="dropdown-item" href="#">
-                                        {{ __('Edit') }}
-                                    </a>
+
 
 
                                 </div>
