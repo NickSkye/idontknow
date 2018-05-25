@@ -344,7 +344,7 @@ class PagesController extends Controller
         $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        $friends = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->where('username', Auth::user()->username)->get();
+        $friends = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
 
         return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment, 'post_location'=> $post_location, 'friends'=> $friends]);
 
