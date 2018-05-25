@@ -471,6 +471,49 @@ $(function()
 });
 
 
+//autocomplete script
+$(document).on('focus','.autocomplete_txt',function(){
+    type = $(this).data('type');
+
+    if(type =='countryname' )autoType='name';
+    if(type =='country_code' )autoType='sortname';
+
+    $(this).autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+            $.ajax({
+                url: "{{ route('searchajax') }}",
+                dataType: "json",
+                data: {
+                    term : request.term,
+                    type : type,
+                },
+                success: function(data) {
+                    var array = $.map(data, function (item) {
+                        return {
+                            label: item[autoType],
+                            value: item[autoType],
+                            data : item
+                        }
+                    });
+                    response(array)
+                }
+            });
+        },
+        select: function( event, ui ) {
+            var data = ui.item.data;
+            id_arr = $(this).attr('id');
+            id = id_arr.split("_");
+            elementId = id[id.length-1];
+            $('#countryname_'+elementId).val(data.name);
+            $('#country_code_'+elementId).val(data.sortname);
+        }
+    });
+
+
+});
+
+
 
 
 

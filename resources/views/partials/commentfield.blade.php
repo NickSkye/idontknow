@@ -41,6 +41,16 @@
     <button id="frend-{{$friend->id}}" onclick="addToText({{$friend->followsusername}})"type="button" class="btn"> {{$friend->followsusername}}</button><br>
     @endforeach
 </div>
+{!! Form::open() !!}
+<table class="table table-bordered">
+
+    <tr>
+
+        <td><input class="form-control autocomplete_txt" type='text' data-type="countryname" id='countryname_1' name='countryname[]'/></td>
+        <td><input class="form-control autocomplete_txt" type='text' data-type="country_code" id='country_code_1' name='country_code[]'/> </td>
+    </tr>
+</table>
+{!! Form::close() !!}
 
 <form action="{{ url('comment') }}" method="POST">
     {{ csrf_field() }}
