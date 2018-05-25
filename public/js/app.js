@@ -14292,6 +14292,10 @@ $(".activity-comment").submit(function (event) {
     });
 });
 
+$(".frend-butt").click(function () {
+    $('.comment-field').append($(this).text());
+});
+
 var oldVal = "";
 $("textarea").on("change keyup paste", function () {
     var currentVal = $(this).val();

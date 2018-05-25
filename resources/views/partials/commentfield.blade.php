@@ -36,17 +36,11 @@
     {{--</div>--}}
 {{--</div>--}}
 
-<script>
-function input(username){
 
-
-    $('.comment-field').append($('#frend-' + username).text());
-}
-</script>
 
 <div class="suggestionMentions d-none" style="position: absolute; top: -205px;">
     @foreach($friends as $friend)
-    <button id="frend-{{$friend->username}}" onclick="input('nickskye')"type="button" class="btn"> {{$friend->followsusername}}</button><br>
+    <button id="frend-{{$friend->username}}" type="button" class="btn frend-butt"> {{$friend->followsusername}}</button><br>
     @endforeach
 </div>
 
