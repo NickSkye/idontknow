@@ -36,7 +36,7 @@
     {{--</div>--}}
 {{--</div>--}}
 
-<div class="suggestionMentions hidden">
+<div class="suggestionMentions d-none" style="position: absolute; top: -205px;">
     @foreach($friends as $friend)
     <button id="frend-{{$friend->id}}" onclick="addToText({{$friend->followsusername}})"type="button" class="btn"> {{$friend->followsusername}}</button><br>
     @endforeach
