@@ -467,6 +467,11 @@ $(function()
 });
 
 
+    function addToText(name) {
+        $('textarea').append('@' + name);
+    }
+
+
 
 
 

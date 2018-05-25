@@ -14330,6 +14330,10 @@ $(function () {
     });
 });
 
+function addToText(name) {
+    $('textarea').append('@' + name);
+}
+
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
