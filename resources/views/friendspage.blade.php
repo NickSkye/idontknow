@@ -141,6 +141,36 @@
 
                             </div>
                             <div class="col-6">
+                                <div style="position: absolute;">
+                                    <li class="nav-item dropdown pull-right">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                            <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
+                                        </a>
+
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            @if($post->username === Auth::user()->username)
+                                                <button type="button" class="" style="color: red; width: 100%;" data-toggle="modal" data-target="#trashModal">
+                                                    Delete
+                                                </button>
+                                            @else
+                                                <div class="pull-right">
+                                                    <form method="post" action="/report-post/{{$post->id}}">
+                                                        {{ csrf_field() }}
+                                                        <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
+                                                        <button class="" style="color: red; width: 100%;" type="submit">
+                                                            Report
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            @endif
+                                            <a class="dropdown-item" href="#">
+                                                {{ __('Edit') }}
+                                            </a>
+
+
+                                        </div>
+                                    </li>
+                                </div>
 
 
                                 <h2>{{$info->name}}</h2>
