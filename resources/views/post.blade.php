@@ -42,7 +42,7 @@
 
 
                             <li class="nav-item dropdown pull-right" style="list-style-type: none;">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                <a id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
                                 </a>
 
