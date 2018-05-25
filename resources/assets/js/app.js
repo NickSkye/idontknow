@@ -424,8 +424,12 @@ $(".activity-comment").submit(function(event){
 
 
 var oldVal = "";
-$("#textarea").on("change keyup paste", function() {
+$("textarea").on("change keyup paste", function() {
     var currentVal = $(this).val();
+    // /@([\w\-]+)/', '<a href="/users/$1">$0</a>
+    if(currentVal.match(/@([\w\-]+)/)){
+        alert($0 + 'yes');
+    }
     if(currentVal == oldVal) {
         return; //check to prevent multiple simultaneous triggers
     }
