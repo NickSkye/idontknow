@@ -52,13 +52,13 @@
                                             Delete
                                         </a>
                                     @else
-                                        <div class="pull-right">
+                                        <div class="">
                                             <form method="post" action="/report-post/{{$post->id}}">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="{{$post->id}}" value="{{$post->id}}"/>
-                                                <button class="" style="color: red; width: 100%;" type="submit">
+                                                <a class="" style="color: red; width: 100%;" type="submit">
                                                     Report
-                                                </button>
+                                                </a>
                                             </form>
                                         </div>
                                     @endif
