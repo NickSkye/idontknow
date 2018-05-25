@@ -428,7 +428,7 @@ $("textarea").on("change keyup paste", function() {
     var currentVal = $(this).val();
     // /@([\w\-]+)/', '<a href="/users/$1">$0</a>
     if(currentVal.match(/@([\w\-]+)/)){
-        alert($0 + 'yes');
+        alert('yes');
     }
     if(currentVal == oldVal) {
         return; //check to prevent multiple simultaneous triggers
@@ -436,7 +436,7 @@ $("textarea").on("change keyup paste", function() {
 
     oldVal = currentVal;
     //action to be performed on textarea changed
-    alert("changed!");
+    // alert("changed!");
 });
 
 
