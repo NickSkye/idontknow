@@ -381,6 +381,7 @@ $("#remove_frend_form").submit(function(event){
     }).done(function(response){ //
         $(".arent-frends").removeClass('d-none');
         $(".are-frends").addClass('d-none');
+        $('#deleteModal').modal('toggle');
         // $("#server-results").html(response[0]);
         // if(response[1]){
         //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');

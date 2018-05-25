@@ -63,15 +63,7 @@
 
                                     </div>
                                     <div class="row">
-                                        {{--<div class="col-xs-12 col-sm-8">--}}
-                                            {{--<form method="post"  id="remove_frend_form" action="/removefrend/{{$info->username}}">--}}
-                                                {{--{{ csrf_field() }}--}}
-                                                {{--<input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>--}}
-                                                {{--<button class="btn btn-warning" type="submit">--}}
-                                                    {{--<i class="fa fa-user-times fa-2x" aria-hidden="true"></i>--}}
-                                                {{--</button>--}}
-                                            {{--</form>--}}
-                                        {{--</div>--}}
+
                                         <div class="col-xs-12 col-sm-4">
                                             <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
                                                 <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
