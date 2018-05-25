@@ -14293,7 +14293,7 @@ $(".activity-comment").submit(function (event) {
 });
 
 $(".frend-butt").click(function () {
-    $('.comment-field').append("$(this).text()");
+    $('.comment-field').append("penus");
 });
 
 var oldVal = "";
