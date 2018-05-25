@@ -19,6 +19,7 @@
 
 
                                 {{--an array of users that you follow--}}
+                                @if($info->username == Auth::user()->username)
                                 @if($arefriends)
                                     <div class="are-frends">
                                     <div class="row">
@@ -135,6 +136,7 @@
                                     </form>
                                     </div>
                                 @endif
+                                    @endif
 
 
                             </div>
