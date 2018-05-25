@@ -26,13 +26,19 @@ class PagesController extends Controller
 
     public function nearbyPosts() {
 
-        $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
+        $location = DB::table('users')->select('latitude', 'longitude')
+            ->where('username', Auth::user()->username)->first();
         if(is_null($location->latitude) or is_null($location->longitude)){
             $location->latitude = 0;
             $location->longitude = 0;
         }
 
-        return DB::table('posts')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( posts.latitude ) ) * cos( radians( posts.longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( posts.latitude ) ) ) ) AS distance'), 'posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'post_votes.post_id as post_id', 'post_votes.vote as vote', 'posts.votes as votes', 'posts.deleted as deleted', 'posts.comments as comments')->join('users', 'posts.username', '=', 'users.username')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')->where('deleted', false)->orderBy('distance')->get();
+        return DB::table('posts')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( posts.latitude ) ) * cos( radians( posts.longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( posts.latitude ) ) ) ) AS distance'), 'posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'post_votes.post_id as post_id', 'post_votes.vote as vote', 'posts.votes as votes', 'posts.deleted as deleted', 'posts.comments as comments')
+            ->leftJoin('users', 'posts.username', '=', 'users.username')
+            ->leftJoin('profileinfo', 'users.username', '=', 'profileinfo.username')
+            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
+            ->where('deleted', false)
+            ->orderBy('distance')->distinct()->get();
     }
 
 
