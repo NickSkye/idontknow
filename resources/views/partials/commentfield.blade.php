@@ -39,8 +39,8 @@
 <script>
 function input(username){
 
-    
-    $('.comment-field').append($(username));
+
+    $('.comment-field').append(username);
 }
 </script>
 
