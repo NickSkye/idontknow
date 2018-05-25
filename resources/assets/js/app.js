@@ -425,7 +425,7 @@ $(".activity-comment").submit(function(event){
 
 $(".frend-butt").click( function()
     {
-        $('.comment-field').append( "penus");
+        $('.comment-field').append( "penus".text());
     }
 );
 
