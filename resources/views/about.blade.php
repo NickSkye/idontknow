@@ -52,7 +52,16 @@
                 <div class="card">
                     <div class="card-header">
 
-                            About
+                        <div id="target" contentEditable="true">Type @ to see the dropdown.... </div>
+                        <div class="dropdown">
+                            <ul id="dropdown" class="dropdown-menu hide" role="menu" aria-labelledby="dropdownMenu">
+                                <li><a>One</a> </li>
+                                <li><a>Two</a></li>
+                                <li><a>Three</a></li>
+                                <li><a>Four</a> </li>
+
+                            </ul>
+                        </div>
 
                     </div>
                     <div class="card-body">

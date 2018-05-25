@@ -746,6 +746,22 @@ ul.tabs li.current {
   background: transparent;
 }
 
+#target {
+  height: 100px;
+  border: 1px solid black;
+  margin-top: 50px;
+}
+
+#dummy {
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;

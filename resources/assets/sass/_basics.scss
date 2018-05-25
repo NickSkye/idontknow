@@ -735,3 +735,21 @@ ul.tabs li.current{
     line-height: 1.6;
     background: transparent;
 }
+
+
+
+#target {
+    height: 100px;
+    border: 1px solid black;
+    margin-top: 50px;
+}
+
+#dummy {
+    display: inline-block;
+}
+
+.dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
