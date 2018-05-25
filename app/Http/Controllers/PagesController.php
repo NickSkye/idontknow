@@ -216,7 +216,7 @@ class PagesController extends Controller
             ->leftJoin('follows', 'posts.username', '=', 'follows.followsusername')
             ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
             ->where('follows.username', Auth::user()->username)->where('deleted', false)
-            ->orderBy('posts.created_at', 'desc')->get(); //'posts.updated_at'
+            ->orderBy('posts.created_at', 'desc')->distinct()->get(); //'posts.updated_at'
 
         return $friends_info_full;
     }
