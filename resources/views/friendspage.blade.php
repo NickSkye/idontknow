@@ -57,7 +57,8 @@
                                     <div class="are-frends">
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <p>{{$info->username}} is your friend</p>
+                                            {{--<p>{{$info->username}} is your friend</p>--}}
+                                            @include('partials.useronline')
                                             <p style="font-size: 10px; margin-bottom: 0;">last active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
                                             <p style="font-size: 10px;">and {{round($frendsloc->distance, 2)}} miles from you </p>
                                         </div>
@@ -107,7 +108,8 @@
                                     <div class="are-frends d-none">
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <p>{{$info->username}} is your friend</p>
+                                                {{--<p>{{$info->username}} is your friend</p>--}}
+                                                @include('partials.useronline')
                                                 <p style="font-size: 10px;">last active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
                                             </div>
 
@@ -188,29 +190,25 @@
 
 
                                 <h2>{{$info->name}}</h2>
-                                @foreach($online_frends as $frend)
+                                {{--@foreach($online_frends as $frend)--}}
                                     {{--now {{Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))}}--}}
                                     {{--carbon {{$frend->username}} {{Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s')}}--}}
 
-                                    @if($frend->username === $info->username)
-                                        @if(Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))->format('Y-m-d H:i:s') < Carbon\Carbon::parse($frend->updated_at)->addMinutes(2)->format('Y-m-d H:i:s') )
-                                            <i class="fa fa-circle" style="color: lime;" aria-hidden="true"></i>
-                                        @elseif(Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))->format('Y-m-d H:i:s') < Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s') )
-                                            <i class="fa fa-circle" style="color: orange;" aria-hidden="true"></i>
-                                        @else
-                                            <i class="fa fa-circle" style="color: red;" aria-hidden="true"></i>
-                                        @endif
-                                        {{$info->username}}
-                                        @if($info->username ===  Auth::user()->username )
-                                            (you)
-                                        @endif
-                                    @endif
+                                    {{--@if($frend->username === $info->username)--}}
+                                        {{--@if(Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))->format('Y-m-d H:i:s') < Carbon\Carbon::parse($frend->updated_at)->addMinutes(2)->format('Y-m-d H:i:s') )--}}
+                                            {{--<i class="fa fa-circle" style="color: lime;" aria-hidden="true"></i>--}}
+                                        {{--@elseif(Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))->format('Y-m-d H:i:s') < Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s') )--}}
+                                            {{--<i class="fa fa-circle" style="color: orange;" aria-hidden="true"></i>--}}
+                                        {{--@else--}}
+                                            {{--<i class="fa fa-circle" style="color: red;" aria-hidden="true"></i>--}}
+                                        {{--@endif--}}
+                                        {{--{{$info->username}}--}}
+                                        {{--@if($info->username ===  Auth::user()->username )--}}
+                                            {{--(you)--}}
+                                        {{--@endif--}}
+                                    {{--@endif--}}
 
-
-
-
-
-                                @endforeach
+                                {{--@endforeach--}}
 
                                 <div class="profile-stats" style="display: flex; margin-bottom: 30px;">
                                     <div style="text-align: center; width: 75px;">
