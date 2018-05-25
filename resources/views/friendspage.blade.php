@@ -46,7 +46,7 @@
 
 
                                 {{--<img src="{{$info->profileimage}}" class="img-fluid img-there friend-page-image" alt="">--}}
-                                <div href="/users/{{$followerinfos->username}}" class=" profile-image-frends-page " style="background-image: url('{{$info->profileimage}}');"></div>
+                                <div  class=" profile-image-frends-page " style="background-image: url('{{$info->profileimage}}');"></div>
 
                                 {{--info about friend--}}
 
