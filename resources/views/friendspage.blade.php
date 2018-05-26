@@ -93,35 +93,7 @@
                                             <p style="font-size: 10px; margin-bottom: 0;">last active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
                                             <p style="font-size: 10px;">and {{round($frendsloc->distance, 2)}} miles from you </p>
 
-                                    <div class="row">
 
-                                        <div class="col-xs-12 col-sm-4">
-                                            <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
-                                                <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
-                                            </button>
-                                            {{--SHOUT MODAL--}}
-                                            <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            @include('partials.shoutonfriendspage')
-                                                        </div>
-                                                        {{--<div class="modal-footer">--}}
-                                                        {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
-                                                        {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
-                                                        {{--</div>--}}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {{--END SHOUT MODAL--}}
-                                        </div>
-                                    </div>
                                     </div>
                                     <div class="arent-frends d-none">
                                         <p>{{$info->username}} is not your friend yet</p>
@@ -140,7 +112,7 @@
                                                 {{--@include('partials.useronline')--}}
                                                 <p style="font-size: 10px;">last active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
 
-                                        <div class="row">
+                                        {{--<div class="row">--}}
                                             {{--<div class="col-xs-12 col-sm-8">--}}
                                                 {{--<form method="post"  id="remove_frend_form" action="/removefrend/{{$info->username}}">--}}
                                                     {{--{{ csrf_field() }}--}}
@@ -150,33 +122,33 @@
                                                     {{--</button>--}}
                                                 {{--</form>--}}
                                             {{--</div>--}}
-                                            <div class="col-xs-12 col-sm-4">
-                                                <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
-                                                    <i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i>
-                                                </button>
+                                            {{--<div class="col-xs-12 col-sm-4">--}}
+                                                {{--<button type="button" class="add-button" data-toggle="modal" data-target="#sendShout">--}}
+                                                    {{--Shout!--}}
+                                                {{--</button>--}}
                                                 {{--SHOUT MODAL--}}
-                                                <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                @include('partials.shoutonfriendspage')
-                                                            </div>
+                                                {{--<div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">--}}
+                                                    {{--<div class="modal-dialog" role="document">--}}
+                                                        {{--<div class="modal-content">--}}
+                                                            {{--<div class="modal-header">--}}
+                                                                {{--<h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>--}}
+                                                                {{--<button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+                                                                    {{--<span aria-hidden="true">&times;</span>--}}
+                                                                {{--</button>--}}
+                                                            {{--</div>--}}
+                                                            {{--<div class="modal-body">--}}
+                                                                {{--@include('partials.shoutonfriendspage')--}}
+                                                            {{--</div>--}}
                                                             {{--<div class="modal-footer">--}}
                                                             {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
                                                             {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
                                                             {{--</div>--}}
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
                                                 {{--END SHOUT MODAL--}}
-                                            </div>
-                                        </div>
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                     </div>
                                     <div class="arent-frends">
                                     <p>{{$info->username}} is not your friend yet</p>
@@ -255,6 +227,37 @@
 
 
                                 <p>{{$info->aboutme}}</p>
+                                @if($arefriends)
+                                <div class="row">
+
+                                    <div class="col-xs-12 col-sm-4">
+                                        <button type="button" class="add-button" data-toggle="modal" data-target="#sendShout">
+                                            Shout!
+                                        </button>
+                                        {{--SHOUT MODAL--}}
+                                        <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        @include('partials.shoutonfriendspage')
+                                                    </div>
+                                                    {{--<div class="modal-footer">--}}
+                                                    {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
+                                                    {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
+                                                    {{--</div>--}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{--END SHOUT MODAL--}}
+                                    </div>
+                                </div>
+                                    @endif
 
                             </div>
                         </div>
