@@ -226,6 +226,7 @@
                                         {{--</form>--}}
                                     {{--</div>--}}
                                     @else
+                                    <div class="arent-frends">
                                     <form method="post" id="add_frend_form"
                                           action="/addfrend/{{$info->username}}">
                                         {{ csrf_field() }}
@@ -235,6 +236,7 @@
                                             <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
                                         </button>
                                     </form>
+                                    </div>
 
 
                                 @endif
