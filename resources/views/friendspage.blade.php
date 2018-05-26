@@ -39,7 +39,7 @@
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="padding: 0;">
                         {{--@include('partials.friendsearch')--}}
 
 
@@ -87,15 +87,12 @@
                                 @if($info->username != Auth::user()->username)
                                 @if($arefriends)
                                     <div class="are-frends">
-                                    <div class="row">
-                                        <div class="col-xs-12">
+
                                             {{--<p>{{$info->username}} is your friend</p>--}}
                                             {{--@include('partials.useronline')--}}
                                             <p style="font-size: 10px; margin-bottom: 0;">last active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
                                             <p style="font-size: 10px;">and {{round($frendsloc->distance, 2)}} miles from you </p>
-                                        </div>
 
-                                    </div>
                                     <div class="row">
 
                                         <div class="col-xs-12 col-sm-4">
@@ -138,14 +135,11 @@
                                     </div>
                                 @else
                                     <div class="are-frends d-none">
-                                        <div class="row">
-                                            <div class="col-xs-12">
+
                                                 {{--<p>{{$info->username}} is your friend</p>--}}
                                                 {{--@include('partials.useronline')--}}
                                                 <p style="font-size: 10px;">last active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
-                                            </div>
 
-                                        </div>
                                         <div class="row">
                                             {{--<div class="col-xs-12 col-sm-8">--}}
                                                 {{--<form method="post"  id="remove_frend_form" action="/removefrend/{{$info->username}}">--}}
