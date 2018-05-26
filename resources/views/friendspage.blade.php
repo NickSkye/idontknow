@@ -81,10 +81,8 @@
                                 <div class=" profile-image-frends-page "
                                      style="background-image: url('{{$info->profileimage}}');"></div>
 
-                                {{--info about friend--}}
 
-
-                                {{--an array of users that you follow--}}
+                                {{--Under Profile pic left side--}}
                                 @if($info->username != Auth::user()->username)
                                     @if($arefriends)
                                         <div class="are-frends">
@@ -110,10 +108,17 @@
                                                 </button>
                                             </form>
                                         </div>
+                                    @else
+                                        <form method="post" id="add_frend_form" action="/addfrend/{{$info->username}}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
+                                            <button class="btn btn-lg btn-success add_frend_button" type="submit">
+                                                <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
+                                            </button>
+                                        </form>
 
                                     @endif
-                                    @endif
-
+                                @endif
 
 
                             </div>
@@ -182,7 +187,7 @@
 
 
                                 <p>{{$info->aboutme}}</p>
-                                @if(!$arefriends)
+                                @if($arefriends)
                                     <div class="row">
 
                                         <div class="col-xs-12 col-sm-4">
@@ -215,40 +220,8 @@
                                             {{--END SHOUT MODAL--}}
                                         </div>
                                     </div>
-                                @else
 
-                                    <div class="row are-frends d-none">
 
-                                        <div class="col-xs-12 col-sm-4">
-                                            <button type="button" class="add-button" data-toggle="modal"
-                                                    data-target="#sendShout">
-                                                Shout!
-                                            </button>
-                                            {{--SHOUT MODAL--}}
-                                            <div class="modal fade" id="sendShout" tabindex="-1" role="dialog"
-                                                 aria-labelledby="sendshoutModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                    aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            @include('partials.shoutonfriendspage')
-                                                        </div>
-                                                        {{--<div class="modal-footer">--}}
-                                                        {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
-                                                        {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
-                                                        {{--</div>--}}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {{--END SHOUT MODAL--}}
-                                        </div>
-                                    </div>
                                 @endif
 
                             </div>
