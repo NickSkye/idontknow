@@ -239,7 +239,41 @@
 
                                 <p>{{$info->aboutme}}</p>
                                 @if($arefriends)
-                                    <div class="row ">
+                                    <div class="row">
+
+                                        <div class="col-xs-12 col-sm-4">
+                                            <button type="button" class="add-button" data-toggle="modal"
+                                                    data-target="#sendShout">
+                                                Shout!
+                                            </button>
+                                            {{--SHOUT MODAL--}}
+                                            <div class="modal fade" id="sendShout" tabindex="-1" role="dialog"
+                                                 aria-labelledby="sendshoutModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            @include('partials.shoutonfriendspage')
+                                                        </div>
+                                                        {{--<div class="modal-footer">--}}
+                                                        {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
+                                                        {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
+                                                        {{--</div>--}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{--END SHOUT MODAL--}}
+                                        </div>
+                                    </div>
+                                    @else
+                                    none
+                                    <div class="row arent-frends d-none">
 
                                         <div class="col-xs-12 col-sm-4">
                                             <button type="button" class="add-button" data-toggle="modal"
