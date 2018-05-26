@@ -238,8 +238,8 @@
 
 
                                 <p>{{$info->aboutme}}</p>
-
-                                    <div class="row are-frends d-none">
+                                @if($arefriends)
+                                    <div class="row ">
 
                                         <div class="col-xs-12 col-sm-4">
                                             <button type="button" class="add-button" data-toggle="modal"
@@ -271,7 +271,7 @@
                                             {{--END SHOUT MODAL--}}
                                         </div>
                                     </div>
-
+                                @endif
 
                             </div>
                         </div>
