@@ -44,13 +44,13 @@
 
 
                         <div class="header-controls">
-                            <div class="pull-left">
+                            <div class="pull-left left">
                                 <a href="{{ URL::previous() }}"><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></a>
                             </div>
-                            <div style="text-align: center;">
+                            <div style="text-align: center;" class="center">
                                 @include('partials.useronline')
                             </div>
-                            <div class="pull-right" >
+                            <div class="pull-right right">
                                 <li class="nav-item dropdown pull-right" style="list-style-type: none;">
                                     <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"  aria-expanded="false" >
 

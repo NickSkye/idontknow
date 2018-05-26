@@ -763,6 +763,32 @@ ul.tabs li.current {
   background: transparent;
 }
 
+.header-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 45px;
+  background: purple;
+}
+
+.header-controls .left {
+  width: 20%;
+}
+
+.header-controls .center {
+  width: 70%;
+}
+
+.header-controls .right {
+  width: 10%;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;

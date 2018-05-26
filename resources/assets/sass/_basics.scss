@@ -760,3 +760,20 @@ ul.tabs li.current{
 }
 
 
+.header-controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    background: purple;
+
+    .left{
+        width: 20%;
+    }
+    .center{
+        width: 70%;
+    }
+    .right{
+        width: 10%;
+    }
+}
