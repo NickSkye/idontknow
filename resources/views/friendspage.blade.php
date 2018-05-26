@@ -39,7 +39,7 @@
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
-                    <div class="card-header" style="padding: 0;">
+                    <div class="card-header" style="padding: 0; background-color: white;">
                         {{--@include('partials.friendsearch')--}}
 
 
