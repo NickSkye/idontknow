@@ -272,8 +272,8 @@
                                         </div>
                                     </div>
                                     @else
-                                    none
-                                    <div class="row arent-frends d-none">
+
+                                    <div class="row are-frends d-none">
 
                                         <div class="col-xs-12 col-sm-4">
                                             <button type="button" class="add-button" data-toggle="modal"
