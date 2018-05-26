@@ -197,7 +197,7 @@
 
 
 
-                                <h2>{{$info->name}}</h2>
+                                <h3>{{$info->name}}</h3>
                                 {{--@foreach($online_frends as $frend)--}}
                                     {{--now {{Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))}}--}}
                                     {{--carbon {{$frend->username}} {{Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s')}}--}}
