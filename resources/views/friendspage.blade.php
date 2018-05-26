@@ -181,7 +181,7 @@
 
                                 <p>{{$info->aboutme}}</p>
                                 @if($arefriends)
-                                    <div class="row">
+                                    <div class="row are-frends">
 
                                         <div class="col-xs-12 col-sm-4">
                                             <button type="button" class="add-button" data-toggle="modal"
