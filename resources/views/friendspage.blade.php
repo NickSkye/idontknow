@@ -41,6 +41,38 @@
                 <div class="card">
                     <div class="card-header">
                         {{--@include('partials.friendsearch')--}}
+
+
+                        <div class="header-controls">
+                            <div class="pull-left">
+                                <a href="{{ URL::previous() }}"><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></a>
+                            </div>
+                            <div style="text-align: center;">
+                                @include('partials.useronline')
+                            </div>
+                            <div class="pull-right" >
+                                <li class="nav-item dropdown pull-right" style="list-style-type: none;">
+                                    <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"  aria-expanded="false" >
+
+                                        <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
+                                    </a>
+
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="text-align: center;">
+                                        @if($info->username != Auth::user()->username)
+                                            <a  style="color: red; width: 100%;" data-toggle="modal" href="#deleteModal">
+                                                Remove Frend
+                                            </a>
+
+                                        @endif
+
+
+                                    </div>
+                                </li>
+                            </div>
+
+                        </div>
+
+
                         <div class="row">
                             <div class="col-6">
 
@@ -58,7 +90,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             {{--<p>{{$info->username}} is your friend</p>--}}
-                                            @include('partials.useronline')
+                                            {{--@include('partials.useronline')--}}
                                             <p style="font-size: 10px; margin-bottom: 0;">last active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
                                             <p style="font-size: 10px;">and {{round($frendsloc->distance, 2)}} miles from you </p>
                                         </div>
@@ -109,7 +141,7 @@
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 {{--<p>{{$info->username}} is your friend</p>--}}
-                                                @include('partials.useronline')
+                                                {{--@include('partials.useronline')--}}
                                                 <p style="font-size: 10px;">last active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
                                             </div>
 
@@ -168,25 +200,7 @@
 
                             </div>
                             <div class="col-6">
-                                <div class="pull-right" >
-                                    <li class="nav-item dropdown pull-right" style="list-style-type: none;">
-                                        <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"  aria-expanded="false" >
 
-                                            <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
-                                        </a>
-
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="text-align: center;">
-                                            @if($info->username != Auth::user()->username)
-                                                <a  style="color: red; width: 100%;" data-toggle="modal" href="#deleteModal">
-                                                    Remove Frend
-                                                </a>
-
-                                            @endif
-
-
-                                        </div>
-                                    </li>
-                                </div>
 
 
                                 <h2>{{$info->name}}</h2>
