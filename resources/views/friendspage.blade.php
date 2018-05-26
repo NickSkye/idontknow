@@ -109,6 +109,18 @@
                                             </form>
                                         </div>
 
+                                        @else
+                                        <div class="arent-frends">
+                                        <form method="post" id="add_frend_form"
+                                              action="/addfrend/{{$info->username}}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="{{$info->username}}"
+                                                   value="{{$info->username}}"/>
+                                            <button class="btn btn-success add_frend_button" type="submit">
+                                                <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
+                                            </button>
+                                        </form>
+                                    </div>
 
                                     @endif
                                 @endif
@@ -226,17 +238,7 @@
                                         {{--</form>--}}
                                     {{--</div>--}}
                                     @else
-                                    <div class="arent-frends">
-                                    <form method="post" id="add_frend_form"
-                                          action="/addfrend/{{$info->username}}">
-                                        {{ csrf_field() }}
-                                        <input type="hidden" name="{{$info->username}}"
-                                               value="{{$info->username}}"/>
-                                        <button class="btn btn-success add_frend_button" type="submit">
-                                            <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
-                                        </button>
-                                    </form>
-                                    </div>
+
 
 
                                 @endif
