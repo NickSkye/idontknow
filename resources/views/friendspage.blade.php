@@ -73,7 +73,7 @@
                         </div>
 
 
-                        <div class="row">
+                        <div class="row under-control" >
                             <div class="col-6">
 
 
