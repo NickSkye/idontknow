@@ -778,11 +778,12 @@ ul.tabs li.current {
 }
 
 .header-controls .left {
-  width: 20%;
+  width: 10%;
+  padding-left: 20px;
 }
 
 .header-controls .center {
-  width: 70%;
+  width: 80%;
 }
 
 .header-controls .right {

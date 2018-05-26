@@ -768,10 +768,11 @@ ul.tabs li.current{
     background: purple;
 
     .left{
-        width: 20%;
+        width: 10%;
+        padding-left: 20px;
     }
     .center{
-        width: 70%;
+        width: 80%;
     }
     .right{
         width: 10%;
