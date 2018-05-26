@@ -111,8 +111,9 @@
                                             </form>
                                         </div>
 
-                                @endif
                                     @endif
+                                    @endif
+
 
 
                             </div>
@@ -214,7 +215,7 @@
                                             {{--END SHOUT MODAL--}}
                                         </div>
                                     </div>
-                                    @else
+                                @else
 
                                     <div class="row are-frends d-none">
 
@@ -252,6 +253,8 @@
 
                             </div>
                         </div>
+
+
                         {{--Friends followers--}}
                         <div class="collapse" id="followerCollapse">
                             <div class="card card-body">
