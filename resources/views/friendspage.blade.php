@@ -108,14 +108,7 @@
                                                 </button>
                                             </form>
                                         </div>
-                                    @else
-                                        <form method="post" id="add_frend_form" action="/addfrend/{{$info->username}}">
-                                            {{ csrf_field() }}
-                                            <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
-                                            <button class="btn btn-lg btn-success add_frend_button" type="submit">
-                                                <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
-                                            </button>
-                                        </form>
+
 
                                     @endif
                                 @endif
@@ -220,6 +213,28 @@
                                             {{--END SHOUT MODAL--}}
                                         </div>
                                     </div>
+                                    <div class="arent-frends d-none">
+                                        <p>{{$info->username}} is not your friend yet</p>
+                                        <form method="post" id="add_frend_form"
+                                              action="/addfrend/{{$info->username}}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="{{$info->username}}"
+                                                   value="{{$info->username}}"/>
+                                            <button class="btn btn-success add_frend_button" type="submit">
+                                                <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                    @else
+                                    <form method="post" id="add_frend_form"
+                                          action="/addfrend/{{$info->username}}">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="{{$info->username}}"
+                                               value="{{$info->username}}"/>
+                                        <button class="btn btn-success add_frend_button" type="submit">
+                                            <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
 
 
                                 @endif
