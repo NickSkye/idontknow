@@ -116,7 +116,7 @@
                                     {{--MODAL END--}}
                                     <div class="col-12">
 
-                                        <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}">
+                                        <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}" style="display: flex; align-items: center;">
                                            
                                             @foreach($friends as $friend)
                                                 @if($friend->username === $mess->from_username)
