@@ -74,7 +74,7 @@
 
 
                         <div class="row under-control">
-                            <div class="col-6">
+                            <div class="" style="width: 40%;">
 
 
                                 {{--<img src="{{$info->profileimage}}" class="img-fluid img-there friend-page-image" alt="">--}}
@@ -128,7 +128,7 @@
 
 
                             </div>
-                            <div class="col-6">
+                            <div class="" style="width: 60%;">
 
 
                                 {{--<h3>{{$info->name}}</h3>--}}
