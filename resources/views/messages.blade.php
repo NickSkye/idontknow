@@ -72,11 +72,9 @@
 
                             @if($hasfriends)
 
-                                <div class="toggleon-online-frends">
-                                    <i class="fa fa-caret-left" aria-hidden="true"></i>
-                                </div>
+
                                 <button type="button" class="shout-fixed-button" data-toggle="modal" data-target="#sendShout">
-                                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                                    <i class="fa fa-bullhorn fa-2x" aria-hidden="true"></i>
                                 </button>
 
                             @endif
