@@ -15,7 +15,7 @@
                         <div class="col-12">
                             <input type="hidden" name="latitude" value=""/>
                             <input  type="hidden" name="longitude" value=""/>
-                            <textarea rows="4" cols="40" style="width: 100%;"  type="text" name="description" >@@{{Auth::user()->username}} and @@{{$info->username}} are hanging out!</textarea>
+                            <textarea rows="4" cols="40" style="width: 100%;"  type="text" name="description" >{{@Auth::user()->username}} and {{@$info->username}} are hanging out!</textarea>
                         </div>
                         <div class="col-6 offset-2 image-upload" style="align-self: flex-end;">
                             <label for="file-input" style="float: right; margin-bottom: 0; cursor: pointer;">
