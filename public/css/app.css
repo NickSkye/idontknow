@@ -352,6 +352,12 @@ a p {
   float: right;
 }
 
+.hangout-button {
+  background: gold;
+  color: white;
+  float: left;
+}
+
 .invite-button {
   background: #0b7dda;
   color: white;
