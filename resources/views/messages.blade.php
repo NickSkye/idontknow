@@ -56,15 +56,8 @@
                         <h2>Shouts</h2>
                             </div>
                             <div class="col-6">
-                                @if($hasfriends)
+                                @if(!$hasfriends)
 
-
-                        <button type="button" class="btn add-button" data-toggle="modal" data-target="#sendShout">
-                            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                        </button>
-
-                                   
-                                @else
                                     <p>You have to add frends before you can shout at them</p>
                                     @endif
                             </div>
@@ -76,6 +69,19 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+
+                            @if($hasfriends)
+
+                                <div class="toggleon-online-frends">
+                                    <i class="fa fa-caret-left" aria-hidden="true"></i>
+                                </div>
+                                <button type="button" class="shout-fixed-button" data-toggle="modal" data-target="#sendShout">
+                                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                                </button>
+
+                            @endif
+
+
                         <div>
 
                             {{--friends posts--}}

@@ -646,6 +646,24 @@ ul.tabs li.current{
     display: none;
 }
 
+.shout-fixed-button{
+
+
+        position: fixed;
+        right: -10px;
+        bottom: 125px;
+        border-radius: 10px;
+        width: 45px;
+        height: 30px;
+        padding: 3px;
+        background: $secondary-color;
+        color: $accent-color;
+        display: block;
+
+        transition: 0.5s transform ease-in-out;
+
+}
+
 .online-frends{
     @media (min-width: 767px){
         position: fixed;
