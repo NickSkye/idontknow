@@ -120,7 +120,8 @@
                                            
                                             @foreach($friends as $friend)
                                                 @if($friend->username === $mess->from_username)
-                                                <img src="{{$friend->profileimage}}" alt="" style="width: 200px;">
+                                                    <div class=" profile-image-shout-page "
+                                                         style="background-image: url('{{$friend->profileimage}}');"></div>
                                                 @endif
                                                 @endforeach
                                             <p>Shout from {{$mess->from_username}} at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
