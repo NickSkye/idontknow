@@ -95,6 +95,11 @@
                                             @if(round($frendsloc->distance, 2) < 0.3)
                                             <p style="font-size: 10px; color: gold;">and {{round($frendsloc->distance, 2)}} miles
                                                 from you </p>
+                                                <button type="button" class="add-button" data-toggle="modal"
+                                                        data-target="#hangout">
+                                                    Hang Out
+                                                </button>
+                                                @include('partials.hangout')
                                                 @else
                                                 <p style="font-size: 10px;">and {{round($frendsloc->distance, 2)}} miles
                                                     from you </p>
