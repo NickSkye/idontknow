@@ -80,6 +80,7 @@
                                 {{--<img src="{{$info->profileimage}}" class="img-fluid img-there friend-page-image" alt="">--}}
                                 <div class=" profile-image-frends-page "
                                      style="background-image: url('{{$info->profileimage}}');"></div>
+                                <p>{{$info->name}}</p>
 
 
                                 {{--Under Profile pic left side--}}
@@ -130,7 +131,8 @@
                             <div class="col-6">
 
 
-                                <h3>{{$info->name}}</h3>
+                                {{--<h3>{{$info->name}}</h3>--}}
+
                                 {{--@foreach($online_frends as $frend)--}}
                                 {{--now {{Carbon\Carbon::parse($now->format('Y-m-d H:i:s'))}}--}}
                                 {{--carbon {{$frend->username}} {{Carbon\Carbon::parse($frend->updated_at)->addMinutes(5)->format('Y-m-d H:i:s')}}--}}
