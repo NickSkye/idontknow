@@ -56,7 +56,12 @@
                         <h2>Shouts</h2>
                             </div>
                             <div class="col-6">
-                                @if(!$hasfriends)
+                                @if($hasfriends)
+                                    <button type="button" class="shout-button" data-toggle="modal" data-target="#sendShout">
+                                        <i class="fa fa-bullhorn fa-2x" aria-hidden="true"></i>
+                                    </button>
+
+                                @else
 
                                     <p>You have to add frends before you can shout at them</p>
                                     @endif

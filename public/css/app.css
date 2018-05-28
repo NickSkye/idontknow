@@ -646,20 +646,38 @@ ul.tabs li.current {
 }
 
 .shout-fixed-button {
-  position: fixed;
-  right: -10px;
-  bottom: 125px;
-  border-radius: 10px;
-  width: 60px;
-  height: 60px;
-  padding: 3px;
-  background: #0b7dda;
-  color: #F62E55;
-  display: block;
-  -webkit-transition: 0.5s -webkit-transform ease-in-out;
-  transition: 0.5s -webkit-transform ease-in-out;
-  transition: 0.5s transform ease-in-out;
-  transition: 0.5s transform ease-in-out, 0.5s -webkit-transform ease-in-out;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .shout-fixed-button {
+    position: fixed;
+    right: -10px;
+    bottom: 125px;
+    border-radius: 10px;
+    width: 90px;
+    height: 60px;
+    padding: 3px;
+    background: #0b7dda;
+    color: #F62E55;
+    display: block;
+    -webkit-transition: 0.5s -webkit-transform ease-in-out;
+    transition: 0.5s -webkit-transform ease-in-out;
+    transition: 0.5s transform ease-in-out;
+    transition: 0.5s transform ease-in-out, 0.5s -webkit-transform ease-in-out;
+  }
+}
+
+.shout-button {
+  display: none;
+}
+
+@media (min-width: 767px) {
+  .shout-button {
+    display: block;
+    background: #0b7dda;
+    color: #F62E55;
+  }
 }
 
 .online-frends {

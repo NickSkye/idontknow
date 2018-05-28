@@ -648,12 +648,12 @@ ul.tabs li.current{
 
 .shout-fixed-button{
 
-
+    @media (max-width: 767px) {
         position: fixed;
         right: -10px;
         bottom: 125px;
         border-radius: 10px;
-        width: 60px;
+        width: 90px;
         height: 60px;
         padding: 3px;
         background: $secondary-color;
@@ -661,6 +661,19 @@ ul.tabs li.current{
         display: block;
 
         transition: 0.5s transform ease-in-out;
+    }
+    display: none;
+
+}
+
+.shout-button{
+
+    @media (min-width: 767px) {
+        display: block;
+        background: $secondary-color;
+        color: $accent-color;
+    }
+    display: none;
 
 }
 
