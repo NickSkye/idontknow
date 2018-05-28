@@ -55,7 +55,7 @@
                             </div>
                             <div class="nav-item dropdown pull-right" style="list-style-type: none;">
                                 <a id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                    <i class="fa fa-ellipsis-h fa-2x" aria-hidden="true"></i>
+                                    <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="text-align: center;">
