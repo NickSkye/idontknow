@@ -80,7 +80,7 @@
                                 {{--<img src="{{$info->profileimage}}" class="img-fluid img-there friend-page-image" alt="">--}}
                                 <div class=" profile-image-frends-page "
                                      style="background-image: url('{{$info->profileimage}}');"></div>
-                                <p>{{$info->name}}</p>
+                                <p style="margin-bottom: 0;">{{$info->name}}</p>
 
 
                                 {{--Under Profile pic left side--}}
