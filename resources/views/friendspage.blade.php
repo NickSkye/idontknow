@@ -92,8 +92,13 @@
                                             {{--@include('partials.useronline')--}}
                                             <p style="font-size: 10px; margin-bottom: 0;">last
                                                 active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
-                                            <p style="font-size: 10px;">and {{round($frendsloc->distance, 2)}} miles
+                                            @if(round($frendsloc->distance, 2) < 0.3)
+                                            <p style="font-size: 10px; color: gold;">and {{round($frendsloc->distance, 2)}} miles
                                                 from you </p>
+                                                @else
+                                                <p style="font-size: 10px;">and {{round($frendsloc->distance, 2)}} miles
+                                                    from you </p>
+                                            @endif
 
 
                                         </div>
