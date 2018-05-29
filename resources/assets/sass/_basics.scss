@@ -659,6 +659,7 @@ ul.tabs li.current{
         background: $secondary-color;
         color: $accent-color;
         display: block;
+        z-index: 3;
 
         transition: 0.5s transform ease-in-out;
     }

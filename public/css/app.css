@@ -661,6 +661,7 @@ ul.tabs li.current {
     background: #0b7dda;
     color: #F62E55;
     display: block;
+    z-index: 3;
     -webkit-transition: 0.5s -webkit-transform ease-in-out;
     transition: 0.5s -webkit-transform ease-in-out;
     transition: 0.5s transform ease-in-out;
