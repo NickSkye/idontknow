@@ -97,7 +97,7 @@
     </head>
     {{--@guest--}}
     <body style="background: url('/images/rainbowback.jpg');
-    background-size: cover; background-position: center top;">
+    background-size: cover;">
         {{--@endguest--}}
         {{--@auth--}}
         {{--<body>--}}
