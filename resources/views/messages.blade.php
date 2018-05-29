@@ -131,7 +131,7 @@
                                                     <div class=" profile-image-shout-page "
                                                          style="background-image: url('{{$mess->profileimage}}');"></div>
 
-                                            <p style="margin-left: 1rem;">Shout from {{$mess->from_username}} <br> {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
+                                            <p style="margin-left: 1rem;">Shout from {{$mess->from_username}} <br>received {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
                                         </button>
 
 
@@ -149,10 +149,10 @@
                                                 @if(Auth::user()->username === $oldmess->from_username)
                                                         <div class=" profile-image-shout-page old"
                                                              style="background-image: url('{{$oldmess->profileimage}}');"></div>
-                                                        <p style="margin-left: 1rem;">Shout to {{$oldmess->username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
+                                                        <p style="margin-left: 1rem;">Shout to {{$oldmess->username}} <br>seen {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
                                                         @elseif(Auth::user()->username === $oldmess->username)
                                                             <div class=" profile-image-shout-page old" style="background-image: url('{{$oldmess->profileimage}}');"></div>
-                                                            <p style="margin-left: 1rem;">Shout from {{$oldmess->from_username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
+                                                            <p style="margin-left: 1rem;">Shout from {{$oldmess->from_username}} <br>opened {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
                                                 @endif
 
 
