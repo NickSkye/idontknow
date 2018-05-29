@@ -133,7 +133,7 @@
                                                          style="background-image: url('{{$friend->profileimage}}');"></div>
                                                 @endif
                                                 @endforeach
-                                            <p>Shout from {{$mess->from_username}} at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
+                                            <p>Shout from {{$mess->from_username}} <br> {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
                                         </button>
 
 
@@ -158,7 +158,7 @@
                                                              {{--style="background-image: url('{{Auth::user()->profileimage}}');"></div>--}}
                                                     @endif
                                                 @endforeach
-                                                <p>Shout from {{$oldmess->from_username}} at: {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
+                                                <p>Shout from {{$oldmess->from_username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
                                             </div>
 
 
