@@ -150,7 +150,7 @@
 
                                                 @foreach($friends as $friend)
                                                     @if($friend->username === $oldmess->from_username)
-                                                        <div class=" profile-image-shout-page "
+                                                        <div class=" profile-image-shout-page old"
                                                              style="background-image: url('{{$friend->profileimage}}');"></div>
 
                                                         {{--@elseif(Auth::user()->username === $oldmess->from_username)--}}
