@@ -160,7 +160,7 @@
                                                     @if(Auth::user()->username === $oldmess->from_username)
                                                     <div class=" profile-image-shout-page "
                                                     style="background-image: url('{{Auth::user()->profileimage}}');"></div>
-                                                        <p style="margin-left: 1rem;">Shout from {{$oldmess->from_username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
+                                                        <p style="margin-left: 1rem;">Shout to {{$oldmess->username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
                                                     @endif
                                           <p>{{$oldmess->message}}</p>
                                             </div>
