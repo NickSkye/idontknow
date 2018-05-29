@@ -90,7 +90,7 @@
                             {{--friends posts--}}
                             <div class="row frend-area">
                                 @foreach($friends as $fr)
-                                {{--@foreach($messages as $mess)--}}
+                                    {{--@foreach($messages as $mess)--}}
                                     {{--MODAL START--}}
 
                                     <div class="modal fade" id="viewShout-{{$fr->username}}" tabindex="-1" role="dialog" aria-labelledby="viewshoutModalLabel-{{$fr->username}}" aria-hidden="true">
@@ -113,10 +113,10 @@
                                                         <p>Your friend {{$fr->username}} shouted:</p>
                                                         @foreach($messages as $mess)
                                                             @if($mess->from_username == $fr->username)
-                                                        <p>{{$mess->message}}</p>
-                                                        <p>at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
+                                                                <p>{{$mess->message}}</p>
+                                                                <p>at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
                                                             @endif
-                                                            @endforeach
+                                                        @endforeach
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
@@ -130,24 +130,23 @@
                                     {{--MODAL END--}}
                                     <div class="col-12">
 
-{{$messages}}
-                                            {{--@if(in_array($fr->username, (array) $messages))--}}
-                                        <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$fr->username}}" style="display: flex; align-items: center; padding: 0; background: yellow; color: black; width: 100%;">
+                                        @foreach($messages as $mess)
+                                            @if($mess->from_username == $fr->username)
+                                                {{--@if(in_array($fr->username, (array) $messages))--}}
+                                                <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$fr->username}}" style="display: flex; align-items: center; padding: 0; background: yellow; color: black; width: 100%;">
 
 
-                                            <div class=" profile-image-shout-page "
-                                                 style="background-image: url('{{$fr->profileimage}}');"></div>
+                                                    <div class=" profile-image-shout-page "
+                                                         style="background-image: url('{{$fr->profileimage}}');"></div>
 
-                                            <p style="margin-left: 1rem;">Shout from {{$fr->username}}
-                                                {{--<br>received {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}--}}
-                                            </p>
-                                        </button>
+                                                    <p style="margin-left: 1rem;">Shout from {{$fr->username}}
+                                                        {{--<br>received {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}--}}
+                                                    </p>
+                                                </button>
                                                 <hr>
 
-                                            {{--@endif--}}
-
-
-
+                                            @endif
+                                        @endforeach
 
 
                                     </div>
