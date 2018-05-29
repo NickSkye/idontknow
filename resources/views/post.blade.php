@@ -144,7 +144,7 @@
 
 
                                         @if (is_null($post->imagepath))
-                                            <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $post->description) !!}</p>
+                                            <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/', '<a href="$0">$0</a>', $post->description)) !!}</p>
                                             {{--<p class="post-data">views: {{$post->views}}</p>--}}
                                         @else
                                             <div class="col-lg-6">
