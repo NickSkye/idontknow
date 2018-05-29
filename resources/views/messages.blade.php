@@ -127,12 +127,10 @@
 
                                         <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}" style="display: flex; align-items: center; padding: 0;">
                                            
-                                            @foreach($friends as $friend)
-                                                @if($friend->username === $mess->from_username)
+
                                                     <div class=" profile-image-shout-page "
-                                                         style="background-image: url('{{$friend->profileimage}}');"></div>
-                                                @endif
-                                                @endforeach
+                                                         style="background-image: url('{{$mess->profileimage}}');"></div>
+
                                             <p style="margin-left: 1rem;">Shout from {{$mess->from_username}} <br> {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
                                         </button>
 
@@ -148,18 +146,14 @@
 
                                             <div   style="display: flex; align-items: center;">
 
-                                                @foreach($friends as $friend)
-                                                    @if($friend->username === $oldmess->from_username)
+
                                                         <div class=" profile-image-shout-page old"
-                                                             style="background-image: url('{{$friend->profileimage}}');"></div>
+                                                             style="background-image: url('{{$oldmess->profileimage}}');"></div>
                                                         <p style="margin-left: 1rem;">Shout from {{$oldmess->from_username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
                                                         {{--@elseif(Auth::user()->username === $oldmess->from_username)--}}
                                                             {{--<div class=" profile-image-shout-page old" style="background-image: url('{{$friend->profileimage}}');"></div>--}}
                                                             {{--<p style="margin-left: 1rem;">Shout to {{$oldmess->username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>--}}
-                                                        @endif
 
-
-                                                @endforeach
 
 
                                           <p>{{$oldmess->message}}</p>
