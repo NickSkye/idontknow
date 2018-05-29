@@ -95,17 +95,20 @@
                                     <div class="modal fade" id="viewShout-{{$mess->id}}" tabindex="-1" role="dialog" aria-labelledby="viewshoutModalLabel-{{$mess->id}}" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
-                                                <form action="/shouts/shoutseen" method="post">
-                                                    {{ csrf_field() }}
-                                                    <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
-                                                    <input type="hidden" name="from_user" value="{{$mess->from_username}}"/>
-                                                    <input type="hidden" name="latitude" value=""/>
-                                                    <input  type="hidden" name="longitude" value=""/>
+
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">Shout!</h5>
-                                                        <button type="submit" class="close" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
+                                                        <form action="/shouts/shoutseen" method="post">
+                                                            {{ csrf_field() }}
+                                                            <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
+                                                            <input type="hidden" name="from_user" value="{{$mess->from_username}}"/>
+                                                            <input type="hidden" name="latitude" value=""/>
+                                                            <input  type="hidden" name="longitude" value=""/>
+                                                            <button type="submit" class="close" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </form>
+
                                                     </div>
                                                     <div class="modal-body">
                                                         {{--@include('partials.viewshout')--}}
@@ -113,7 +116,13 @@
                                                         <p>{{$mess->message}}</p>
                                                         <p>at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
                                                     </div>
-
+                                                <div class="modal-footer">
+                                                <form action="/shouts/shoutseen" method="post">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
+                                                    <input type="hidden" name="from_user" value="{{$mess->from_username}}"/>
+                                                    <input type="hidden" name="latitude" value=""/>
+                                                    <input  type="hidden" name="longitude" value=""/>
                                                         <button type="submit" class="btn btn-secondary pull-left modal-button" >Close</button>
                                                 </form>
                                                 <form class="shoutbackform" action="/shouts/shoutback" method="post">
@@ -124,6 +133,7 @@
                                                     <input  type="hidden" name="longitude" value=""/>
                                                         <button type="submit" id="shout-back-{{$mess->id}}" class="btn btn-primary" >Shout Back!</button>
                                                 </form>
+                                                </div>
 
 
 
