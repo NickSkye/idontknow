@@ -145,7 +145,7 @@
 
                                         <div class="col-12">
 
-                                            <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}" style="display: flex; align-items: center;">
+                                            <button type="button" class="btn "  style="display: flex; align-items: center;">
 
                                                 @foreach($friends as $friend)
                                                     @if($friend->username === $oldmess->from_username)
