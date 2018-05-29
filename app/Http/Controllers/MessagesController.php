@@ -194,7 +194,7 @@ class MessagesController extends Controller
 
 
 
-        return response([$request->shoutid]);
+        return response([$request->shoutid, $request->from_user]);
 
 
     }

@@ -17,7 +17,7 @@
                     <input  type="hidden" name="longitude" value=""/>
                     <div class="col-12">
 
-                        <select name="sendtousername">
+                        <select id="sendtousername" name="sendtousername">
                             @foreach($friends as $friend)
                             <option value="{{$friend->followsusername}}">{{$friend->followsusername}}</option>
                             @endforeach
