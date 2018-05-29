@@ -40,6 +40,8 @@ class MessagesController extends Controller
 
 
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->orderBy('created_at', 'desc')->get();
+        $oldmessages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', true],])->orWhere('from_username', Auth::user()->username)->orderBy('updated_at', 'desc')->limit(50)->get();
+
         $friends  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 
        $hasfriends = $friends->isNotEmpty();
@@ -55,7 +57,7 @@ class MessagesController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
-        return view('messages', ['messages'=> $messages, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
+        return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
 
 
     }

@@ -141,6 +141,30 @@
                                     </div>
 
                                 @endforeach
+                                    @foreach($oldmessages as $oldmess)
+
+                                        <div class="col-12">
+
+                                            <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}" style="display: flex; align-items: center;">
+
+                                                @foreach($friends as $friend)
+                                                    @if($friend->username === $oldmess->from_username)
+                                                        <div class=" profile-image-shout-page "
+                                                             style="background-image: url('{{$friend->profileimage}}');"></div>
+
+                                                        @elseif(Auth::user()->username === $oldmess->from_username)
+                                                        <div class=" profile-image-shout-page "
+                                                             style="background-image: url('{{Auth::user()->profileimage}}');"></div>
+                                                    @endif
+                                                @endforeach
+                                                <p>Shout from {{$oldmess->from_username}} at: {{Carbon\Carbon::parse($oldmess->created_at)->format('d M Y g:i A')}}</p>
+                                            </button>
+
+
+                                            <hr>
+                                        </div>
+
+                                    @endforeach
                             </div>
 
                         </div>
