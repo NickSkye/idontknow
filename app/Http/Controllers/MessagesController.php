@@ -194,7 +194,7 @@ class MessagesController extends Controller
 
 
 
-        return response([$totalvote, $isred, $request->postid]);
+        return response([$request->shoutid]);
 
 
     }

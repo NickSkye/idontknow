@@ -113,11 +113,20 @@
                                                         <p>{{$mess->message}}</p>
                                                         <p>at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" id="shout-back-{{$mess->id}}" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
+
                                                         <button type="submit" class="btn btn-secondary pull-left modal-button" >Close</button>
-                                                    </div>
                                                 </form>
+                                                <form class="shoutbackform" action="/shouts/shoutback" method="post">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
+                                                    <input type="hidden" name="from_user" value="{{$mess->from_username}}"/>
+                                                    <input type="hidden" name="latitude" value=""/>
+                                                    <input  type="hidden" name="longitude" value=""/>
+                                                        <button type="submit" id="shout-back-{{$mess->id}}" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
+                                                </form>
+
+
+
                                             </div>
                                         </div>
                                     </div>
