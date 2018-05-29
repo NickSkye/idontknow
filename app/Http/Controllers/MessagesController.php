@@ -177,4 +177,25 @@ class MessagesController extends Controller
 
 
     }
+
+    public function shoutBack(Request $request)
+    {
+
+//        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
+//        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
+//        $theshout = DB::table('messages')->where('id', $request->shoutid)->get();
+        DB::table('messages')->where('id', $request->shoutid)->update(
+            ['seen' => true,'updated_at' => date('Y-m-d H:i:s')]
+        );
+
+
+//        $email = DB::table('users')->where('username', $request->from_user)->first();
+//        Mail::to($email)->send(new NotificationMail());
+
+
+
+        return response([$totalvote, $isred, $request->postid]);
+
+
+    }
 }

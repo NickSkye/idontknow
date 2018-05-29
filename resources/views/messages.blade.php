@@ -114,7 +114,7 @@
                                                         <p>at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
+                                                        <button type="submit" id="shout-back-{{$mess->id}}" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
                                                         <button type="submit" class="btn btn-secondary pull-left modal-button" >Close</button>
                                                     </div>
                                                 </form>
