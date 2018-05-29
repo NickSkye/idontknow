@@ -164,7 +164,7 @@
 
                                     <div class="col-12">
 
-                                        <div   style="display: flex; align-items: center; background-color: #F5F5F5;">
+                                        <div   style="display: flex; align-items: center; background-color: #F5F5F5; border-bottom: 1px solid lightgrey;">
 
 
                                             <div class=" profile-image-shout-page old"
@@ -187,7 +187,7 @@
 
                                     <div class="col-12">
 
-                                        <div   style="display: flex; align-items: center; background-color: #F5F5F5;">
+                                        <div   style="display: flex; align-items: center; background-color: #F5F5F5; border-bottom: 1px solid lightgrey;">
 
                                             @if(Auth::user()->username === $oldmess->from_username)
                                                 <div class=" profile-image-shout-page old"
