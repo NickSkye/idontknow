@@ -96,7 +96,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     @guest
-    <body style="background: url(https://images.pexels.com/photos/697243/pexels-photo-697243.jpeg?auto=compress&cs=tinysrgb&h=350);
+    <body style="background: url('/images/rainbowback.jpg');
     background-size: cover; background-position: center top;">
         @endguest
         @auth
