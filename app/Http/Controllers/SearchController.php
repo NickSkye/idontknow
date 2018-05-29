@@ -49,7 +49,7 @@ class SearchController extends Controller {
 
         $suggest = $this->peopleWithinFiveMiles();
 
-        $searchedusers = User::join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.email', 'LIKE', '%' . $request->input('query') . '%')->paginate(10);
+        $searchedusers = User::join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.email', 'LIKE', '%' . $request->input('query') . '%')->limit(81)->paginate(10);
 
         return view('results', ['now'=> $now, 'online_frends'=> $online_frends, 'suggest'=> $suggest])->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
     }
