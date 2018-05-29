@@ -41,6 +41,9 @@ class MessagesController extends Controller
 
         $messages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username' , 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.username', Auth::user()->username], ['seen', false],])->orderBy('messages.created_at', 'desc')->get();
 
+
+        $sentmessages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username' , 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.from_username', Auth::user()->username],['seen', false],])->orderBy('messages.created_at', 'desc')->limit(50)->get();
+
         $oldmessages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username' , 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.username', Auth::user()->username], ['seen', true],])->orWhere([['messages.from_username', Auth::user()->username],['seen', true],])->orderBy('messages.updated_at', 'desc')->limit(50)->get();
 
         $friends  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
@@ -58,7 +61,7 @@ class MessagesController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
-        return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages, 'me'=> $me, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
+        return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages,'sentmessages'=> $sentmessages, 'me'=> $me, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
 
 
     }

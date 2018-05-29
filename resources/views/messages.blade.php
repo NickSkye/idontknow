@@ -139,6 +139,29 @@
                                     </div>
 
                                 @endforeach
+                                    <hr>
+                                    @foreach($sentmessages as $sentmess)
+
+                                        <div class="col-12">
+
+                                            <div   style="display: flex; align-items: center;">
+
+
+                                                    <div class=" profile-image-shout-page old"
+                                                         style="background-image: url('{{$sentmess->profileimage}}');"></div>
+                                                    <p style="margin-left: 1rem;">Shout to {{$sentmess->username}} <br>sent {{Carbon\Carbon::parse($sentmess->updated_at)->diffForHumans()}}</p>
+
+
+
+
+                                                {{--<p>{{$oldmess->message}}</p>--}}
+                                            </div>
+
+
+                                            <hr>
+                                        </div>
+
+                                    @endforeach
                                 <hr>
                                     @foreach($oldmessages as $oldmess)
 
