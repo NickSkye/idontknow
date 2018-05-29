@@ -150,7 +150,7 @@
                                             <div class=" profile-image-shout-page "
                                                  style="background-image: url('{{$mess->profileimage}}');"></div>
 
-                                            <p style="margin-left: 1rem;">Shout from {{$mess->from_username}} <br>received {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
+                                            <p style="margin-left: 1rem; text-align: left;">Shout from {{$mess->from_username}} <br>received {{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</p>
                                             <span><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></span>
                                         </button>
 
