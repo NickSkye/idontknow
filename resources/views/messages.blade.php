@@ -170,7 +170,7 @@
                                             <div class=" profile-image-shout-page old"
                                                  style="background-image: url('{{$sentmess->profileimage}}');"></div>
                                             <p style="margin-left: 1rem;">Shout to {{$sentmess->username}} <br>sent {{Carbon\Carbon::parse($sentmess->updated_at)->diffForHumans()}}</p>
-<span><i class="fa fa-paper-plane-o fa-2x" aria-hidden="true"></i></span>
+<span style="right: 40px; position: absolute; color: #0b7dda;"><i class="fa fa-paper-plane-o fa-2x" aria-hidden="true"></i></span>
 
 
 
@@ -193,11 +193,11 @@
                                                 <div class=" profile-image-shout-page old"
                                                      style="background-image: url('{{$oldmess->profileimage}}');"></div>
                                                 <p style="margin-left: 1rem;">Shout to {{$oldmess->username}} <br>seen {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
-                                                <span><i class="fa fa-eye fa-2x" aria-hidden="true"></i></span>
+                                                <span style="right: 40px; position: absolute; color: #F62E55;"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></span>
                                             @elseif(Auth::user()->username === $oldmess->username)
                                                 <div class=" profile-image-shout-page old" style="background-image: url('{{$oldmess->profileimage}}');"></div>
                                                 <p style="margin-left: 1rem;">Shout from {{$oldmess->from_username}} <br>opened {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
-                                                <span><i class="fa fa-envelope-open-o fa-2x" aria-hidden="true"></i></span>
+                                                <span style="right: 40px; position: absolute; color: #70F3FF;"><i class="fa fa-envelope-open-o fa-2x" aria-hidden="true"></i></span>
                                             @endif
 
 
