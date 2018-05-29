@@ -125,7 +125,7 @@
                                     {{--MODAL END--}}
                                     <div class="col-12">
 
-                                        <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}" style="display: flex; align-items: center; padding: 0;">
+                                        <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}" style="display: flex; align-items: center; padding: 0; background: yellow; color: black; width: 100%;">
                                            
 
                                                     <div class=" profile-image-shout-page "
