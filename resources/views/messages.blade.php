@@ -152,12 +152,12 @@
                                                         <div class=" profile-image-shout-page "
                                                              style="background-image: url('{{$friend->profileimage}}');"></div>
 
-                                                        @elseif(Auth::user()->username === $oldmess->from_username)
-                                                        <div class=" profile-image-shout-page "
-                                                             style="background-image: url('{{Auth::user()->profileimage}}');"></div>
+                                                        {{--@elseif(Auth::user()->username === $oldmess->from_username)--}}
+                                                        {{--<div class=" profile-image-shout-page "--}}
+                                                             {{--style="background-image: url('{{Auth::user()->profileimage}}');"></div>--}}
                                                     @endif
                                                 @endforeach
-                                                <p>Shout from {{$oldmess->from_username}} at: {{Carbon\Carbon::parse($oldmess->created_at)->format('d M Y g:i A')}}</p>
+                                                <p>Shout from {{$oldmess->from_username}} at: {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
                                             </button>
 
 
