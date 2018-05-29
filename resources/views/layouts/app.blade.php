@@ -95,13 +95,13 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    @guest
+    {{--@guest--}}
     <body style="background: url('/images/rainbowback.jpg');
     background-size: cover; background-position: center top;">
-        @endguest
-        @auth
-        <body>
-        @endauth
+        {{--@endguest--}}
+        {{--@auth--}}
+        {{--<body>--}}
+        {{--@endauth--}}
 
         <div id="app">
             <div id="mobile-app-button" class="d-none mobile-app-div" >
