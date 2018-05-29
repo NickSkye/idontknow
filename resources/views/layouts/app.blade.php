@@ -97,8 +97,7 @@
     </head>
     @guest
     <body style="background: url(https://images.pexels.com/photos/697243/pexels-photo-697243.jpeg?auto=compress&cs=tinysrgb&h=350);
-    background-repeat: no-repeat;
-    background-size: cover;">
+    background-size: cover; background-position: center top;">
         @endguest
         @auth
         <body>
