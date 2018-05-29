@@ -157,7 +157,7 @@
 
 
 
-                                          <p>{{$oldmess->message}}</p>
+                                          {{--<p>{{$oldmess->message}}</p>--}}
                                             </div>
 
 
