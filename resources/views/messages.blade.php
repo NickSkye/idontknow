@@ -139,11 +139,12 @@
                                                 {{--<br>received {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}--}}
                                             </p>
                                         </button>
+                                                <hr>
                                             @endif
                                         @endforeach
 
 
-                                        <hr>
+
                                     </div>
 
                                 @endforeach
