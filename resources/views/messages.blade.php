@@ -122,7 +122,7 @@
                                                     <input type="hidden" name="from_user" value="{{$mess->from_username}}"/>
                                                     <input type="hidden" name="latitude" value=""/>
                                                     <input  type="hidden" name="longitude" value=""/>
-                                                        <button type="submit" id="shout-back-{{$mess->id}}" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#sendShout">Shout Back!</button>
+                                                        <button type="submit" id="shout-back-{{$mess->id}}" class="btn btn-primary" >Shout Back!</button>
                                                 </form>
 
 
