@@ -163,7 +163,7 @@ class MessagesController extends Controller
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         $theshout = DB::table('messages')->where('id', $request->shoutid)->get();
-        DB::table('messages')->where('from_username', $request->shoutid)->update(
+        DB::table('messages')->where('id', $request->shoutid)->update(
             ['seen' => true,'updated_at' => date('Y-m-d H:i:s')]
         );
 
