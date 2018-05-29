@@ -14273,8 +14273,9 @@ $(".shoutbackform").submit(function (event) {
         url: post_url,
         type: request_method,
         data: form_data
-    }).done(function (response) {//
-
+    }).done(function (response) {
+        //
+        $('#sendShout').modal('show');
         // $("#server-results").html(response[0]);
         // if(response[1]){
         //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
