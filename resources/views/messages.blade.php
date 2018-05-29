@@ -155,16 +155,16 @@
                                         </button>
 
 
-                                        <hr>
+                                        {{--<hr>--}}
                                     </div>
 
                                 @endforeach
-                                <hr>
+                                {{--<hr>--}}
                                 @foreach($sentmessages as $sentmess)
 
                                     <div class="col-12">
 
-                                        <div   style="display: flex; align-items: center;">
+                                        <div   style="display: flex; align-items: center; background-color: #F5F5F5;">
 
 
                                             <div class=" profile-image-shout-page old"
@@ -178,16 +178,16 @@
                                         </div>
 
 
-                                        <hr>
+                                        {{--<hr>--}}
                                     </div>
 
                                 @endforeach
-                                <hr>
+                                {{--<hr>--}}
                                 @foreach($oldmessages as $oldmess)
 
                                     <div class="col-12">
 
-                                        <div   style="display: flex; align-items: center;">
+                                        <div   style="display: flex; align-items: center; background-color: #F5F5F5;">
 
                                             @if(Auth::user()->username === $oldmess->from_username)
                                                 <div class=" profile-image-shout-page old"
@@ -206,7 +206,7 @@
                                         </div>
 
 
-                                        <hr>
+                                        {{--<hr>--}}
                                     </div>
 
                                 @endforeach
