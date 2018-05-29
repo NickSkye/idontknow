@@ -146,13 +146,14 @@
 
                                             <div   style="display: flex; align-items: center;">
 
-
+                                                @if(Auth::user()->username === $oldmess->from_username)
                                                         <div class=" profile-image-shout-page old"
                                                              style="background-image: url('{{$oldmess->profileimage}}');"></div>
-                                                        <p style="margin-left: 1rem;">Shout from {{$oldmess->from_username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
-                                                        {{--@elseif(Auth::user()->username === $oldmess->from_username)--}}
-                                                            {{--<div class=" profile-image-shout-page old" style="background-image: url('{{$friend->profileimage}}');"></div>--}}
-                                                            {{--<p style="margin-left: 1rem;">Shout to {{$oldmess->username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>--}}
+                                                        <p style="margin-left: 1rem;">Shout to {{$oldmess->username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
+                                                        @elseif(Auth::user()->username === $oldmess->username)
+                                                            <div class=" profile-image-shout-page old" style="background-image: url('{{$oldmess->profileimage}}');"></div>
+                                                            <p style="margin-left: 1rem;">Shout from {{$oldmess->from_username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
+                                                @endif
 
 
 
