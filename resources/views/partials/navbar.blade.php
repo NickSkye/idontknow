@@ -119,7 +119,7 @@
                 </div>
                 @else
                 <div class="header-button">
-                <a class="header-notification-button" href="/notification">
+                <a class="header-notification-button " href="/notification">
 
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 
