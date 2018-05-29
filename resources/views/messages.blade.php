@@ -141,11 +141,12 @@
                                     </div>
 
                                 @endforeach
+                                <hr>
                                     @foreach($oldmessages as $oldmess)
 
                                         <div class="col-12">
 
-                                            <button type="button" class="btn "  style="display: flex; align-items: center;">
+                                            <div   style="display: flex; align-items: center;">
 
                                                 @foreach($friends as $friend)
                                                     @if($friend->username === $oldmess->from_username)
@@ -158,7 +159,7 @@
                                                     @endif
                                                 @endforeach
                                                 <p>Shout from {{$oldmess->from_username}} at: {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
-                                            </button>
+                                            </div>
 
 
                                             <hr>
