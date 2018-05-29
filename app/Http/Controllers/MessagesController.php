@@ -52,12 +52,12 @@ class MessagesController extends Controller
 
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
-
+        $me = DB::table('users')->where('username', Auth::user()->username)->join('profileinfo', 'users.username', '=', 'profileinfo.username')->first();
 
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
-        return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
+        return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages, 'me'=> $me, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
 
 
     }
