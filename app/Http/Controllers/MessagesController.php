@@ -40,7 +40,7 @@ class MessagesController extends Controller
 
 
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->orderBy('created_at', 'desc')->get();
-        $oldmessages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', true],])->orWhere(['from_username', Auth::user()->username],['seen', true],)->orderBy('updated_at', 'desc')->limit(50)->get();
+        $oldmessages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', true],])->orWhere([['from_username', Auth::user()->username],['seen', true],])->orderBy('updated_at', 'desc')->limit(50)->get();
 
         $friends  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 
