@@ -144,14 +144,14 @@
                                     {{--MODAL END--}}
                                     <div class="col-12">
 
-                                        <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}" style="display: flex; align-items: center; padding: 0; background: yellow; color: black; width: 100%;">
+                                        <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$mess->id}}" style="display: flex; align-items: center; padding: 0; color: #F62E55; color: black; width: 100%;">
 
 
                                             <div class=" profile-image-shout-page "
                                                  style="background-image: url('{{$mess->profileimage}}');"></div>
 
                                             <p style="margin-left: 1rem; text-align: left;">Shout from {{$mess->from_username}} <br>received {{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</p>
-                                            <span><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></span>
+                                            <span style="right: 40px; position: absolute; color: #F62E55;"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></span>
                                         </button>
 
 
