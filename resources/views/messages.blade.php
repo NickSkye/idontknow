@@ -129,8 +129,8 @@
 
                                     {{--MODAL END--}}
                                     <div class="col-12">
-                                        @foreach($messages as $mess)
-                                            @if($mess->from_username == $fr->username)
+
+
                                         <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$fr->username}}" style="display: flex; align-items: center; padding: 0; background: yellow; color: black; width: 100%;">
 
 
@@ -142,8 +142,7 @@
                                             </p>
                                         </button>
                                                 <hr>
-                                            @endif
-                                        @endforeach
+                                           
 
 
 
