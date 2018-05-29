@@ -38,6 +38,7 @@
 
 .profile-image-shout-page.old {
   -webkit-filter: grayscale(100%);
+  filter: gray;
 }
 
 .frend-area .home-frends-images {
