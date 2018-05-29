@@ -406,6 +406,7 @@ $(".shoutbackform").submit(function(event){
         type: request_method,
         data : form_data
     }).done(function(response){ //
+        $('#viewShout-' + response[0]).modal('hide');
         $('#sendShout').modal('show');
         // $("#server-results").html(response[0]);
         // if(response[1]){
