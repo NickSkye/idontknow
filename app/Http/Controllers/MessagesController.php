@@ -52,7 +52,7 @@ class MessagesController extends Controller
 
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
-        $me = DB::table('users')->where('username', Auth::user()->username)->join('profileinfo', 'users.username', '=', 'profileinfo.username')->first();
+        $me = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', Auth::user()->username)->first();
 
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
