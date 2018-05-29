@@ -131,6 +131,7 @@
                                     <div class="col-12">
 
 
+                                            @if(in_array($fr->username, $messages))
                                         <button type="button" class="btn " data-toggle="modal" data-target="#viewShout-{{$fr->username}}" style="display: flex; align-items: center; padding: 0; background: yellow; color: black; width: 100%;">
 
 
@@ -142,7 +143,10 @@
                                             </p>
                                         </button>
                                                 <hr>
-                                           
+
+                                            @endif
+                                       
+
 
 
 
