@@ -112,8 +112,10 @@
                                                         {{--@include('partials.viewshout')--}}
                                                         <p>Your friend {{$fr->username}} shouted:</p>
                                                         @foreach($messages as $mess)
+                                                            @if($mess->from_username == $fr->username)
                                                         <p>{{$mess->message}}</p>
                                                         <p>at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
+                                                            @endif
                                                             @endforeach
                                                     </div>
                                                     <div class="modal-footer">
