@@ -158,7 +158,7 @@
                                                             <p style="margin-left: 1rem;">Shout to {{$oldmess->username}} <br> {{Carbon\Carbon::parse($oldmess->updated_at)->diffForHumans()}}</p>
                                                         @endif
 
-                                                    @endif
+                                               
                                                 @endforeach
 
 
