@@ -743,6 +743,7 @@ ul.tabs li.current {
   top: 5px;
   right: 5px;
   font-size: 10px;
+  color: black;
 }
 
 .report-form .report-button {
