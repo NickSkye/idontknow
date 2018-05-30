@@ -38,6 +38,31 @@
         </div>
 
 
+
+        {{--COPY MODAL--}}
+        <div class="modal fade" id="copyModal" tabindex="-1" role="dialog" aria-labelledby="copyModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="copyModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" value="https://frendgrid.com/post/{{$post->id}}" id="myInput">
+                        <button onclick="myFunction()">Copy text</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{--END COPY MODAL--}}
+
+
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
                 <div class="card">
@@ -210,7 +235,7 @@
                                             </div>
 
                                             <p class="post-data"><a data-toggle="collapse" href="#commentCollapse" role="button" aria-expanded="false" aria-controls="commentCollapse"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>{{$totalcomment}}</a></p>
-                                            <p class="post-data"><a href="#" ><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
+                                            <p class="post-data"><a data-toggle="modal" href="#copyModal"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
                                         </div>
                                             @endauth
