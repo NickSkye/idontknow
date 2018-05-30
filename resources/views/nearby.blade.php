@@ -47,6 +47,30 @@
                             <div class="row frend-area infinite-scroll">
                                 @foreach($allfriendsinfo as $friendspost)
 
+
+                                    {{--COPY MODAL--}}
+                                    <div class="modal fade" id="copyModal-{{$friendspost->id}}" tabindex="-1" role="dialog" aria-labelledby="copyModalLabel-{{$friendspost->id}}" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="copyModalLabel-{{$friendspost->id}}">Share Post</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <input type="text" value="https://frendgrid.com/post/{{$friendspost->id}}" id="myInput" style="width: 100%; text-align: center;">
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button onclick="myFunction()" class="btn btn-primary"><i class="fa fa-files-o fa-2x" aria-hidden="true"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{--END COPY MODAL--}}
+
                                     <div class="col-12 frend-post-col">
 
                                         <div class="frend-post-box activity-post">
@@ -118,7 +142,7 @@
                                                     </div>
 
                                                     <p class="post-data"><a data-toggle="collapse" href="#commentCollapse-{{$friendspost->id}}" role="button" aria-expanded="false" aria-controls="commentCollapse-{{$friendspost->id}}"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>{{$friendspost->comments}}</a></p>
-                                                    <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
+                                                    <p class="post-data"><a data-toggle="modal" href="#copyModal-{{$friendspost->id}}"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
                                                 </div>
 
