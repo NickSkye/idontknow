@@ -78,13 +78,13 @@
                                                 @if($loc->followsusername === $infos->followsusername)
                                                     <div class="nearness">
                                                 @if(round($loc->distance, 2) < 0.3)
-                                                <i class="fa fa-crosshairs fa-2x" aria-hidden="true" style="color: lime;"><span>{{round($loc->distance, 2)}}</span></i>
+                                                <span style="color: lime;">{{round($loc->distance, 2)}}</span>
                                                         @elseif(round($loc->distance, 2) < 1.0)
-                                                            <i class="fa fa-crosshairs fa-2x" aria-hidden="true" style="color: yellow;"><span>{{round($loc->distance, 2)}}</span></i>
+                                                            <span style="color: yellow;">{{round($loc->distance, 2)}}</span>
                                                     @elseif(round($loc->distance, 2) < 5.0)
-                                                    <i class="fa fa-crosshairs fa-2x" aria-hidden="true" style="color: orange;"><span>{{round($loc->distance, 2)}}</span></i>
+                                                   <span style="color: orange;">{{round($loc->distance, 2)}}</span>
                                                     @else
-                                                    <i class="fa fa-crosshairs fa-2x" aria-hidden="true" style="color: red;"><span>{{round($loc->distance, 2)}}</span></i>
+                                                    <span style="color: red;">{{round($loc->distance, 2)}}</span>
                                                 @endif
                                                         @endif
                                                         @endforeach

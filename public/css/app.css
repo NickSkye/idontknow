@@ -738,12 +738,12 @@ ul.tabs li.current {
   top: 5px;
 }
 
-.nearness i span {
+.nearness span {
   position: absolute;
   top: 5px;
   right: 5px;
   font-size: 10px;
-  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .report-form .report-button {
