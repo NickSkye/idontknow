@@ -45,8 +45,20 @@
                             <div class="row frend-area">
                                 @foreach($notifs as $notif)
                                     <div class="col-12">
-                                        {!! $notif->notification !!}
-                                        {{ $notif->created_at }}
+                                        @if($notif->type == "shout")
+                                            <a href="/shouts">You got a new shout from {{$notif->from_username}} {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
+                                            @elseif($notif->type == "comment")
+                                            <a href="/post/{{$notif->route}}">{{$notif->from_username}} commented " {{$notif->notification}} " on your post {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
+                                        @elseif($notif->type == "postmention")
+                                            <a href="/post/{{$notif->route}}">{{$notif->from_username}} mentioned you in their post: " {{$notif->notification}} " {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
+                                        @elseif($notif->type == "commentmention")
+                                            <a href="/post/{{$notif->route}}">{{$notif->from_username}} mentioned you in their comment: " {{$notif->notification}} " {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
+
+                                        @else
+                                            {!! $notif->notification !!} {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}
+                                            @endif
+
+
                                         <hr>
                                     </div>
                                 @endforeach
