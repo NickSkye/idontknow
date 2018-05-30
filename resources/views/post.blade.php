@@ -51,7 +51,11 @@
                                                                    aria-hidden="true"></i></a>
                             </div>
                             <div style="text-align: center;" class="center">
-
+                                @guest
+                                    <a href="https://frendgrid.com/register">Register here to comment and vote on this post</a>
+                                    @endguest
+                                
+                                
                             </div>
                             <div class="nav-item dropdown pull-right" style="list-style-type: none;">
                                 <a id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
