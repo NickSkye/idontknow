@@ -101,7 +101,7 @@ class CommentsController extends Controller
             foreach($thedescription[1] as $users){
                 try {
                     DB::table('notifications')->insert(
-                        ['username' => $users, 'notification' => '<a class="dropdown-item" href="/post/'.$this_post->id.'">'.' You got mentioned</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                        ['username' => $users, 'notification' => '<a class="dropdown-item" href="/post/'.$this_post->id.'">'.' You got mentioned</a>', 'from_username'=> Auth::user()->username, 'type' => 'post', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
                     );
                     $email = DB::table('users')->where('username', $users)->first();
 

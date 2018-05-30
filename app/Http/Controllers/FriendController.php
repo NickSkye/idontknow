@@ -106,7 +106,7 @@ class FriendController extends Controller
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 //        $user = DB::table('posts')->where('id', $request->post_id)->value('username');
         DB::table('notifications')->insert(
-            ['username' => $username, 'notification' => '<a class="dropdown-item" href="/users/' . Auth::user()->username . '">' . Auth::user()->username . ' added you as a friend</a>', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            ['username' => $username, 'notification' => '<a class="dropdown-item" href="/users/' . Auth::user()->username . '">' . Auth::user()->username . ' added you as a friend</a>', 'from_username'=> Auth::user()->username, 'type' => 'users', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
