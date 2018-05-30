@@ -738,6 +738,13 @@ ul.tabs li.current {
   top: 5px;
 }
 
+.nearness i span {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 10px;
+}
+
 .report-form .report-button {
   display: inline-block;
   font-weight: 400;
