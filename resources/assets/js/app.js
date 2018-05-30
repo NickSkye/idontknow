@@ -59,6 +59,10 @@ function getLocation(){
     }
 }
 
+(function(){
+    new Clipboard('#share-button');
+})();
+
 function showPosition(position) {
     var latilong = [position.coords.latitude, position.coords.longitude];
     var latlon = position.coords.latitude + "," + position.coords.longitude;
@@ -490,13 +494,7 @@ $(window).scroll(function () {
 
 
 
-function copytoclipboard(postid)
-    {
-        var copyText = "https://frendgrid.com/post/" + postid ;
-        // copyText.select();
-        copyText.execCommand("copy");
-        alert("Post link copied to clipboard");
-    }
+
 
 
 
