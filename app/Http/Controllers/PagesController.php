@@ -333,7 +333,7 @@ class PagesController extends Controller
         {
 
 
-            $post_location = $this->postLocation($post_id);
+//            $post_location = $this->postLocation($post_id);
 
             DB::table('posts')->where('id', $post_id)->increment('views');
             $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
@@ -345,7 +345,7 @@ class PagesController extends Controller
 $online_frends = [];
 
 
-            return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment, 'post_location'=> $post_location]);
+            return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment]);
 
         }
         else{
