@@ -732,6 +732,16 @@ ul.tabs li.current {
   font-size: 10px;
 }
 
+.nearness {
+  position: absolute;
+  right: 5px;
+  top: -3px;
+}
+
+.nearness i {
+  font-size: 10px;
+}
+
 .report-form .report-button {
   display: inline-block;
   font-weight: 400;

@@ -724,6 +724,17 @@ ul.tabs li.current{
     }
 
 }
+
+.nearness{
+
+    position: absolute;
+    right: 5px;
+    top: -3px;
+    i{
+        font-size: 10px;
+    }
+
+}
 .report-form {
     .report-button {
         display: inline-block;

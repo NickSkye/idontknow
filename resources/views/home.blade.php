@@ -74,6 +74,20 @@
                                                    @endforeach
                                            </div>
 
+                                            @foreach($frendsloc as $loc)
+                                                @if($loc->username === $infos->followsusername)
+                                                    <div class="nearness">
+                                                @if(round($frendsloc->distance, 2) < 1)
+                                                <i class="fa fa-bullseye " aria-hidden="true" style="color: orange;"></i>
+                                                    @elseif(round($frendsloc->distance, 2) < 0.3)
+                                                    <i class="fa fa-bullseye " aria-hidden="true" style="color: lime;"></i>
+                                                    @else
+                                                    <i class="fa fa-bullseye " aria-hidden="true" style="color: red;"></i>
+                                                @endif
+                                                        @endif
+                                                        @endforeach
+                                            </div>
+
                                             <div class="frend-box">
                                                 <p>{{$infos->followsusername}}</p>
                                             </div>
