@@ -93,7 +93,7 @@
                                             <p style="font-size: 10px; margin-bottom: 0;">last
                                                 active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
                                             @if(round($frendsloc->distance, 2) < 0.3)
-                                            <p style="font-size: 10px; color: gold; margin-bottom: 0;">and {{round($frendsloc->distance, 2)}} miles
+                                            <p style="font-size: 10px; color: lime; margin-bottom: 0;">and {{round($frendsloc->distance, 2)}} miles
                                                 from you </p>
                                                 <button type="button" class="hangout-button" data-toggle="modal"
                                                         data-target="#hangout">
