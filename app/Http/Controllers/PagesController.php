@@ -322,6 +322,8 @@ class PagesController extends Controller
 
         //$allcommentersinfo = [];
 
+        try{
+
         $post = DB::table('profileinfo')->join('posts', 'profileinfo.username', '=', 'posts.username')->where('posts.id', $post_id)->where('posts.deleted', false)->first();
 
         if(DB::table('post_votes')->where('post_id', $post_id)->exists()){
@@ -348,8 +350,8 @@ $online_frends = [];
             return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment]);
 
         }
-        else{
-            if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
+        else {
+            if (DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()) {
                 $post_vote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->first()->vote;
             }
 
@@ -365,8 +367,13 @@ $online_frends = [];
 
             $friends = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
 
-            return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment, 'post_location'=> $post_location, 'friends'=> $friends]);
+            return view('post', ['post' => $post, 'thecomments' => $thecomments, 'now' => $now, 'online_frends' => $online_frends, 'post_vote' => $post_vote, 'totalvote' => $totalvote, 'totalcomment' => $totalcomment, 'post_location' => $post_location, 'friends' => $friends]);
+        }
 
+
+        }
+        catch(\Exception $e){
+return redirect('/');
         }
 
 
