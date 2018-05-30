@@ -373,7 +373,7 @@ $online_frends = [];
 
         }
         catch(\Exception $e){
-return redirect('/');
+            return redirect('/')->with('error', 'Tagged user does not exist. Search or invite them to Join.');
         }
 
 
