@@ -68,7 +68,7 @@
 
 
 
-                                                    <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:?\/?\/?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0">$0</a>', $friendspost->description) )!!}</p>
+                                                    <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0">$0</a>', $friendspost->description) )!!}</p>
                                                     {{--<p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $friendspost->description) !!}</p>--}}
                                                     <a href="/post/{{$friendspost->id}}">
                                                         <img src="{{$friendspost->imagepath}}" class="img-fluid activity-image" alt="">
