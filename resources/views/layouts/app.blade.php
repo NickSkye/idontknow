@@ -25,6 +25,10 @@
         <link rel="canonical" href="https://frendgrid.com/"/>
         <meta name="dc.language" content="en">
         <meta http-equiv="Content-Language" content="en">
+        <meta property="og:image" content="/images/frendgriddark.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1024">
+        <meta property="og:image:height" content="1024">
 
         <link rel="publisher" href="https://intelliskye.com/"/>
         <meta name="robots" content="all"/>
