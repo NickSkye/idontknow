@@ -62,7 +62,7 @@ class HomeController extends Controller
             $location->longitude = 0;
         }
 
-        return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'), 'users.username as username')->join('follows', 'follows.username', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
+        return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'), 'follows.followsusername as followsusername')->join('follows', 'follows.username', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
     }
 
 

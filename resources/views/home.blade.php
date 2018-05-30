@@ -75,7 +75,7 @@
                                            </div>
 
                                             @foreach($frendsloc as $loc)
-                                                @if($loc->username === $infos->followsusername)
+                                                @if($loc->followsusername === $infos->followsusername)
                                                     <div class="nearness">
                                                 @if(round($loc->distance, 2) < 1)
                                                 <i class="fa fa-bullseye " aria-hidden="true" style="color: orange;"></i>
