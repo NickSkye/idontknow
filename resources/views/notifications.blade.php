@@ -56,9 +56,9 @@
 
 
                     </div>
-                    <div class="card-footer">
-                        <div>Activity Page will show a list of all friends recent activity</div>
-                    </div>
+                    {{--<div class="card-footer">--}}
+                        {{--<div>Activity Page will show a list of all friends recent activity</div>--}}
+                    {{--</div>--}}
                 </div>
             </div>
         </div>
