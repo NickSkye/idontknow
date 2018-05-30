@@ -19,8 +19,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <meta name=“description” content="Your friends at your fingertips"/>
-        <meta name=“keywords” content="social, media, social media, college, friends, near me, nearby, facebook, instagram"/>
+        <meta name="description" content="Your friends at your fingertips"/>
+        <meta name="keywords" content="social, media, social media, college, friends, near me, nearby, facebook, instagram"/>
         <meta name="author" content="Nicholas Skye Hoyt"/>
         <link rel="canonical" href="https://frendgrid.com/"/>
         <meta name="dc.language" content="en">
