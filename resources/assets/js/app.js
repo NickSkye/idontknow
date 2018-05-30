@@ -493,8 +493,8 @@ $(window).scroll(function () {
 function copytoclipboard(postid)
     {
         var copyText = "https://frendgrid.com/post/" + postid ;
-        copyText.select();
-        document.execCommand("copy");
+        // copyText.select();
+        copyText.execCommand("copy");
         alert("Post link copied to clipboard");
     }
 
