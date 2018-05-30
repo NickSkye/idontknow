@@ -254,8 +254,9 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
-
+@auth
                                             <a data-toggle="collapse" href="#commentCollapse" role="button" aria-expanded="false" aria-controls="commentCollapse"><p class="comment pull-right">reply</p></a>
+                                       @endauth
                                         </div>
                                     </div>
 
