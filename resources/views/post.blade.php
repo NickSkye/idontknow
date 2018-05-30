@@ -5,6 +5,15 @@
 @section('content')
     <div class="container">
 
+        <script>
+            function copytoclipboard(postid)
+            {
+                var copyText = "https://frendgrid.com/post/" + postid ;
+                copyText.select();
+                document.execCommand("copy");
+                alert("Post link copied to clipboard");
+            }
+        </script>
 
         <div class="modal fade" id="trashModal" tabindex="-1" role="dialog" aria-labelledby="trashModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

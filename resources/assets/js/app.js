@@ -488,12 +488,16 @@ $(window).scroll(function () {
 });
 
 
-function copytoclipboard(postid) {
-    var copyText = "https://frendgrid.com/post/" + postid ;
-    copyText.select();
-    document.execCommand("copy");
-    alert("Post link copied to clipboard");
-}
+
+
+function copytoclipboard(postid)
+    {
+        var copyText = "https://frendgrid.com/post/" + postid ;
+        copyText.select();
+        document.execCommand("copy");
+        alert("Post link copied to clipboard");
+    }
+
 
 
 // //Javascript
