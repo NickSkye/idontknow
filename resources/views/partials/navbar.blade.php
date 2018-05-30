@@ -30,12 +30,12 @@
 
                         <li class="nav-item dropdown">
                             @if (!$notifs->isEmpty())
-                                    <a href="/notification" >
+                                    <a class="nav-link" href="/notification" >
                                     <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: #F62E55;"></i>
 
                                 </a>
                             @else
-                                <a href="/notification" >
+                                <a class="nav-link" href="/notification" >
                                     <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
 
                                 </a>
@@ -185,12 +185,12 @@
 
                             <li class="nav-item dropdown">
                                 @if(!$notifs->isEmpty())
-                                    <a href="/notification">
+                                    <a class="nav-link" href="/notification">
                                         <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: #F62E55;"></i>
 
                                     </a>
                                 @else
-                                    <a href="/notification">
+                                    <a class="nav-link" href="/notification">
                                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
 
                                     </a>
@@ -198,7 +198,7 @@
 
                                 @else
 
-                                
+
                             </li>
 
                         @endif
