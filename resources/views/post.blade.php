@@ -161,7 +161,7 @@
 
                                                 <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0">$0</a>', $post->description) )!!}</p>
                                                 <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
-                                                    <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
+                                                    <img src="{{$post->imagepath}}" class="img-fluid" alt="image post" style="max-height: 500px;">
                                                 </button>
 
 
