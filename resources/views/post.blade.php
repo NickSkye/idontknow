@@ -5,14 +5,7 @@
 @section('content')
     <div class="container">
 
-        <script>
-            function myFunction() {
-                var copyText = document.getElementById("postid");
-                copyText.select();
-                document.execCommand("copy");
-                alert("Copied the text: " + copyText.value);
-            }
-        </script>
+
 
         <div class="modal fade" id="trashModal" tabindex="-1" role="dialog" aria-labelledby="trashModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -51,7 +44,7 @@
                     <div class="card-header" style="padding: 0; background-color: white; border-bottom: none;">
                         {{--@include('partials.friendsearch')--}}
 
-                        <input type="hidden" value="{{$post->id}}" id="postid">
+
 
                         <div class="header-controls">
                             <div class="pull-left left">
@@ -215,7 +208,7 @@
                                             </div>
 
                                             <p class="post-data"><a data-toggle="collapse" href="#commentCollapse" role="button" aria-expanded="false" aria-controls="commentCollapse"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>{{$totalcomment}}</a></p>
-                                            <p class="post-data"><button onclick="myFunction()"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></button></p>
+                                            <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
                                         </div>
                                             @endauth
