@@ -65,7 +65,7 @@
 
                             {{--friends posts--}}
                             <div class="row frend-area">
-<h1>Whoops! Looks like something went wrong. If you believe something is wrong with FrendGrid please <a href="/support">let us know here.</a></h1>
+                                <h1>Whoops! Looks like something went wrong.</h1><h4> If you believe something is wrong with FrendGrid please <a href="/support">let us know here.</a></h4>
                             </div>
 
                         </div>
