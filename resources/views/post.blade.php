@@ -144,14 +144,14 @@
 
 
                                         @if (is_null($post->imagepath))
-                                            @php($rep = preg_replace('/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0">$0</a>', $post->description))
+                                           
 
-                                            <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $rep )!!}</p>
+                                            <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0">$0</a>', $post->description) )!!}</p>
                                             {{--<p class="post-data">views: {{$post->views}}</p>--}}
                                         @else
                                             <div class="col-lg-6">
-                                                @php( $rep = preg_replace('/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/', '<a href="$0">$0</a>', $post->description))
-                                                <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $rep )!!}</p>
+
+                                                <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0">$0</a>', $post->description) )!!}</p>
                                                 <button type="button" class="btn " data-toggle="modal" data-target="#postModal">
                                                     <img src="{{$post->imagepath}}" class="img-fluid" alt="" style="max-height: 500px;">
                                                 </button>
