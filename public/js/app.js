@@ -136,10 +136,6 @@ function getLocation() {
     }
 }
 
-(function () {
-    new Clipboard('#share-button');
-})();
-
 function showPosition(position) {
     var latilong = [position.coords.latitude, position.coords.longitude];
     var latlon = position.coords.latitude + "," + position.coords.longitude;

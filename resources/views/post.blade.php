@@ -176,7 +176,7 @@
                                         <p class="post-views">views: {{$post->views}}</p>
                                         @auth
                                         <div class="post-meta">
-                                            <input id="postid" type="hidden" value="/posts/{{$post->id}}">
+
 
 
                                             <div class="post-data like-dislike-vote">
@@ -210,7 +210,7 @@
                                             </div>
 
                                             <p class="post-data"><a data-toggle="collapse" href="#commentCollapse" role="button" aria-expanded="false" aria-controls="commentCollapse"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>{{$totalcomment}}</a></p>
-                                            <p class="post-data"><a href="#" id="share-button" data-clipboard-target="#postid"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
+                                            <p class="post-data"><a href="#" ><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
                                         </div>
                                             @endauth
