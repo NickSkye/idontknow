@@ -144,8 +144,8 @@
 
 
                                         @if (is_null($post->imagepath))
-                                            {!! preg_replace('/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0">$0</a>', $post->description) !!}
-@php($rep = "hi")
+                                            @php($rep = preg_replace('/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0">$0</a>', $post->description))
+
                                             <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', $rep )!!}</p>
                                             {{--<p class="post-data">views: {{$post->views}}</p>--}}
                                         @else
