@@ -329,24 +329,45 @@ class PagesController extends Controller
         }
 
         $post_vote = 0;
+        if(Auth::guest())
+        {
 
-        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
-            $post_vote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->first()->vote;
+
+            $post_location = $this->postLocation($post_id);
+
+            DB::table('posts')->where('id', $post_id)->increment('views');
+            $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
+            $now = new \DateTime();
+
+            $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
+            $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
+
+$online_frends = [];
+
+
+            return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment, 'post_location'=> $post_location]);
+
         }
+        else{
+            if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
+                $post_vote = DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->first()->vote;
+            }
 
-        $post_location = $this->postLocation($post_id);
+            $post_location = $this->postLocation($post_id);
 
-        DB::table('posts')->where('id', $post_id)->increment('views');
-        $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
-        $now = new \DateTime();
-        $online_frends = $this->getFrendsOnline();
-        $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
-        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
-        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+            DB::table('posts')->where('id', $post_id)->increment('views');
+            $thecomments = DB::table('profileinfo')->join('comments', 'profileinfo.username', '=', 'comments.username')->where('post_id', $post_id)->orderBy('comments.created_at', 'asc')->paginate(10);
+            $now = new \DateTime();
+            $online_frends = $this->getFrendsOnline();
+            $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
+            $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
+            DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        $friends = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
+            $friends = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
 
-        return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment, 'post_location'=> $post_location, 'friends'=> $friends]);
+            return view('post', ['post'=> $post, 'thecomments' => $thecomments, 'now'=> $now, 'online_frends'=> $online_frends, 'post_vote'=> $post_vote, 'totalvote'=> $totalvote, 'totalcomment'=> $totalcomment, 'post_location'=> $post_location, 'friends'=> $friends]);
+
+        }
 
 
     }

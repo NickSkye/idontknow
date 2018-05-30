@@ -58,6 +58,7 @@
                                     <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
                                 </a>
 
+                                @auth
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="text-align: center;">
                                     @if($post->username === Auth::user()->username)
                                         <a style="color: red; width: 100%;" data-toggle="modal" href="#trashModal">
@@ -81,6 +82,7 @@
 
 
                                 </div>
+                                    @endauth
                             </div>
 
                         </div>
@@ -166,6 +168,7 @@
 
                                         {{--{{ $friend }}--}}
                                         <p class="post-views">views: {{$post->views}}</p>
+                                        @auth
                                         <div class="post-meta">
 
                                             <div class="post-data like-dislike-vote">
@@ -202,6 +205,7 @@
                                             <p class="post-data"><a href="#"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
 
                                         </div>
+                                            @endauth
 
                                     </div>
 
@@ -263,12 +267,14 @@
 
 
                     </div>
+                    @auth
                     <div class="card-footer">
                         <div class="collapse multi-collapse" id="commentCollapse">
                         <div style="position: fixed; bottom: 55px; background: white; width: 100%; margin-left: -20px; height: 80px; padding: 10px;"> @include('partials.commentfield')</div>
                         </div>
 
                     </div>
+                        @endauth
                 </div>
             </div>
         </div>
