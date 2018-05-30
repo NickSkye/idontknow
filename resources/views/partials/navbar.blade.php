@@ -30,29 +30,23 @@
 
                         <li class="nav-item dropdown">
                             @if (!$notifs->isEmpty())
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a href="/notification" >
                                     <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: #F62E55;"></i>
-                                    <span class="caret"></span>
+
                                 </a>
                             @else
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a href="/notification" >
                                     <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                    <span class="caret"></span>
+
                                 </a>
                             @endif
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="overflow-y: scroll; max-height: 400px;">
-                                @foreach($notifs as $notif)
-                                    {{--<a class="dropdown-item" href="/notifications/{{$notif->id}}">--}}
-                                    {!! $notif->notification !!}
-                                    {{--</a>--}}
-                                @endforeach
+
                                     <a class="dropdown-item" href="/notification">
                                         All Notifications
                                     </a>
-                                <a class="dropdown-item" href="/clear-notifications" style="background-color: #F62E55;">
-                                    Clear all notifications
-                                </a>
+
                             </div>
                         </li>
 
@@ -191,32 +185,20 @@
 
                             <li class="nav-item dropdown">
                                 @if(!$notifs->isEmpty())
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a href="/notification">
                                         <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: #F62E55;"></i>
-                                        <span class="caret"></span>
+
                                     </a>
                                 @else
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a href="/notification">
                                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                        <span class="caret"></span>
+
                                     </a>
                                 @endif
 
                                 @else
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="overflow-y: scroll; max-height: 400px;">
-                                    @foreach($notifs as $notif)
-                                        {{--<a class="dropdown-item" href="/notifications/{{$notif->id}}">--}}
-                                        {!! $notif->notification !!}
-                                        {{--</a>--}}
-                                    @endforeach
-                                    <a class="dropdown-item" href="/notification">
-                                        All Notifications
-                                    </a>
-                                        <a class="dropdown-item" href="/clear-notifications" style="background-color: #F62E55;">
-                                        Clear all notifications
-                                    </a>
-                                </div>
+                                
                             </li>
 
                         @endif
