@@ -144,7 +144,7 @@
 
 
                                         @if (is_null($post->imagepath))
-                                           
+
 
                                             <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0">$0</a>', $post->description) )!!}</p>
                                             {{--<p class="post-data">views: {{$post->views}}</p>--}}
