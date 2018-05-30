@@ -6,12 +6,11 @@
     <div class="container">
 
         <script>
-            function copytoclipboard(postid)
-            {
-                var copyText = "https://frendgrid.com/post/" + postid ;
-
-                copyText.execCommand("copy");
-                alert("Post link copied to clipboard");
+            function myFunction() {
+                var copyText = document.getElementById("postid");
+                copyText.select();
+                document.execCommand("copy");
+                alert("Copied the text: " + copyText.value);
             }
         </script>
 
@@ -52,7 +51,7 @@
                     <div class="card-header" style="padding: 0; background-color: white; border-bottom: none;">
                         {{--@include('partials.friendsearch')--}}
 
-
+                        <input type="hidden" value="{{$post->id}}" id="postid">
 
                         <div class="header-controls">
                             <div class="pull-left left">
@@ -216,7 +215,7 @@
                                             </div>
 
                                             <p class="post-data"><a data-toggle="collapse" href="#commentCollapse" role="button" aria-expanded="false" aria-controls="commentCollapse"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>{{$totalcomment}}</a></p>
-                                            <p class="post-data"><button onclick="copytoclipboard({{$post->id}})"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></button></p>
+                                            <p class="post-data"><button onclick="myFunction()"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></button></p>
 
                                         </div>
                                             @endauth
