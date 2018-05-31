@@ -97,7 +97,7 @@
                                             <div class="modal-content">
 
                                                     <div class="modal-header" style="border-bottom: none;">
-                                                        <h5>Shout!</h5>
+
                                                         <form action="/shouts/shoutseen" method="post">
                                                             {{ csrf_field() }}
                                                             <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
@@ -119,7 +119,7 @@
                                                         </div>
                                                         {{--@include('partials.viewshout')--}}
 
-                                                        <div>
+                                                        <div style="margin-left: 30px;">
                                                             <p>{{$mess->message}}</p>
                                                         </div>
 
