@@ -49,7 +49,7 @@
                                              style="background-image: url('{{$notif->profileimage}}');">
 
                                         </a>
-                                        <div style="margin-left: 30px;">
+                                        <div style="margin-left: 30px; margin-right: 40px;">
                                         @if($notif->type == "shout")
                                             <a href="/shouts">You got a new shout<br>from {{$notif->from_username}} {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
                                             @elseif($notif->type == "comment")

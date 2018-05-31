@@ -947,6 +947,13 @@ ul.tabs li.current {
   background-color: #F5F5F5;
 }
 
+.delete-notification-button {
+  background: #F62E55;
+  float: right;
+  border-radius: 4px;
+  padding: 3px 8px 3px 8px;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
