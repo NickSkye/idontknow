@@ -45,8 +45,8 @@
 
                             {{--friends posts--}}
                             <div class="row frend-area infinite-scroll">
-                               
-                                @foreach($allfriendsinfo->id as $friendspost)
+
+                                @foreach($allfriendsinfo as $friendspost)
 
 
                                     {{--COPY MODAL--}}
