@@ -317,6 +317,35 @@
                 </div>
             </div>
         </div>
+
+            @else
+            <div class="card">
+                <div class="card-header">
+
+
+
+                </div>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <div>
+
+                        {{--friends posts--}}
+                        <div class="row frend-area">
+                            <h1>Whoops! Looks like something went wrong.</h1><h4> If you believe something is wrong with FrendGrid please <a href="/support">let us know here.</a></h4>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="card-footer">
+                    @include('partials.footerlinks')
+                </div>
+            </div>
         @endif
     </div>
 @endsection
