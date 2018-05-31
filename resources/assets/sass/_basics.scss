@@ -355,9 +355,12 @@ a {
 }
 
 .shout-button {
+    display: block;
     background: $secondary-color;
     color: white;
-    float: right;
+    border-radius: 25px;
+    width: 75px;
+    height: 40px;
 }
 
 .upload-button {

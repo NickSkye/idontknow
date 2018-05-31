@@ -352,9 +352,12 @@ a p {
 }
 
 .shout-button {
+  display: block;
   background: #0b7dda;
   color: white;
-  float: right;
+  border-radius: 25px;
+  width: 75px;
+  height: 40px;
 }
 
 .upload-button {
