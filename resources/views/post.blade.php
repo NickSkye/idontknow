@@ -4,7 +4,7 @@
 <?php $page = 'post'; ?>
 @section('content')
     <div class="container">
-        @if (!is_null($post->imagepath))
+        @if (!is_null($post))
         <meta property="og:image" content="{{$post->imagepath}}">
         <meta property="og:image:type" content="image/png/jpeg">
         <meta property="og:image:width" content="1024">
