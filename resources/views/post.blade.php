@@ -9,7 +9,7 @@
         <meta property="og:image:type" content="image/png/jpeg">
         <meta property="og:image:width" content="1024">
         <meta property="og:image:height" content="1024">
-        @endif
+
 
 
         <div class="modal fade" id="trashModal" tabindex="-1" role="dialog" aria-labelledby="trashModalLabel" aria-hidden="true">
@@ -317,6 +317,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
 @endsection
 {{--THIS PAGE WILL BE AN INDIVIDUAL CLICKED ON POST WITH COMMENT SECTION AND VOTES--}}
