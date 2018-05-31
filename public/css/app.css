@@ -960,6 +960,7 @@ ul.tabs li.current {
   width: 40px;
   border: none;
   color: red;
+  background: transparent;
 }
 
 .permafooter {
