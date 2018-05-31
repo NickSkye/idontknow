@@ -423,7 +423,7 @@ $online_frends = [];
         $notifs = DB::table('notifications')->join('profileinfo', 'profileinfo.username', '=', 'notifications.from_username')->where([
             ['notifications.username', Auth::user()->username],
             ['notifications.seen', false],
-        ])->orderBy('created_at', 'desc')->get();
+        ])->orderBy('notifications.created_at', 'desc')->get();
 
 
         return view('notifications', ['notifs'=> $notifs, 'now'=> $now, 'online_frends'=> $online_frends]);
