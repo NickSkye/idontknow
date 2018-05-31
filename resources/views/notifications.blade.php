@@ -45,10 +45,10 @@
                             <div class="row frend-area">
                                 @foreach($notifs as $notif)
                                     <div class="col-12" style="display: flex; align-items: center;">
-                                        <div class=" profile-image-shout-page "
+                                        <a href="/users/{{$notif->from_username}}" class=" profile-image-shout-page "
                                              style="background-image: url('{{$notif->profileimage}}');">
 
-                                        </div>
+                                        </a>
                                         <div style="margin-left: 30px;">
                                         @if($notif->type == "shout")
                                             <a href="/shouts">You got a new shout from {{$notif->from_username}} {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
