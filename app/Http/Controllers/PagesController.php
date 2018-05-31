@@ -393,7 +393,7 @@ $online_frends = [];
         $closeusers =  DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->longitude.') ) + sin( radians('.$request->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 0.03)->join('profileinfo', 'profileinfo.username', '=', 'users.username')->where('users.username', '!=', Auth::user()->username)->orderBy('distance')->get();
 
         foreach($closeusers as $user){
-            DB::table('notifications')->updateOrCreate(
+            DB::table('notifications')->updateOrInsert(
                 ['username' => Auth::user()->username, 'notification' => 'bumped into', 'from_username' => $user->username, 'type' => 'bump', 'route' => $user->username, 'seen' => false, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
             );
         }
