@@ -36,7 +36,7 @@
 
     </div>
 </div>
-<link href="http://demo.expertphp.in/css/jquery.ui.autocomplete.css" rel="stylesheet">
+
 <script>
 $(document).ready(function() {
     src = "{{ route('searchajax') }}";
