@@ -58,6 +58,10 @@
                                             <a href="/post/{{$notif->route}}">{{$notif->from_username}} mentioned you in their post: " {{$notif->notification}} " {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
                                         @elseif($notif->type == "commentmention")
                                             <a href="/post/{{$notif->route}}">{{$notif->from_username}} mentioned you in their comment: " {{$notif->notification}} " {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
+                                            @elseif($notif->type == "frendadd")
+                                                <a href="/users/{{$notif->route}}">{{$notif->from_username}} {{$notif->notification}} {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
+                                            @elseif($notif->type == "bump")
+                                                <a href="/users/{{$notif->route}}">You {{$notif->notification}} {{$notif->from_username}} {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
 
                                         @else
                                             {!! $notif->notification !!} {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}

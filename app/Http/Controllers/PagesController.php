@@ -383,6 +383,22 @@ $online_frends = [];
 
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
 
+
+
+        if(is_null($request->latitude) or is_null($request->longitude)){
+            $request->latitude = 0;
+            $request->longitude = 0;
+        }
+
+        $closeusers =  DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->longitude.') ) + sin( radians('.$request->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 0.03)->join('profileinfo', 'profileinfo.username', '=', 'users.username')->orderBy('distance')->get();
+
+        foreach($closeusers as $user){
+            DB::table('notifications')->insert(
+                ['username' => Auth::user()->username, 'notification' => 'bumped into', 'from_username' => $user->username, 'type' => 'bump', 'route' => $user->username, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            );
+        }
+
+
     }
 
     public function deletepost($id)
