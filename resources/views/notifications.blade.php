@@ -44,7 +44,7 @@
                             {{--friends posts--}}
                             <div class="row frend-area">
                                 @foreach($notifs as $notif)
-                                    <div class="col-12" style="display: flex; align-items: center;">
+                                    <div class="col-12 notification-row" style="display: flex; align-items: center;">
                                         <a href="/users/{{$notif->from_username}}" class=" profile-image-shout-page "
                                              style="background-image: url('{{$notif->profileimage}}');">
 

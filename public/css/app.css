@@ -943,6 +943,10 @@ ul.tabs li.current {
   color: #222222;
 }
 
+.notification-row:nth-child(odd) {
+  background: lightgrey;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
