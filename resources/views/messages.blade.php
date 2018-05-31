@@ -97,7 +97,7 @@
                                             <div class="modal-content">
 
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">Shout!</h5>
+                                                        <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">Shout! from {{$mess->from_username}}</h5>
                                                         <form action="/shouts/shoutseen" method="post">
                                                             {{ csrf_field() }}
                                                             <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
@@ -112,7 +112,9 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         {{--@include('partials.viewshout')--}}
-                                                        <p>Your friend {{$mess->from_username}} shouted:</p>
+                                                        <div class=" profile-image-shout-page "
+                                                             style="background-image: url('{{$mess->profileimage}}');"></div>
+
                                                         <p>{{$mess->message}}</p>
                                                         <p>at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
                                                     </div>
