@@ -399,6 +399,12 @@ $online_frends = [];
                 );
             }
 
+            if(DB::table('notifications')->where(['username' => $user->username, 'notification' => 'bumped into', 'from_username' => Auth::user()->username, 'type' => 'bump', 'route' => Auth::user()->username, 'seen' => false])->doesntExist()) {
+                DB::table('notifications')->insert(
+                    ['username' => $user->username, 'notification' => 'bumped into', 'from_username' => Auth::user()->username, 'type' => 'bump', 'route' => Auth::user()->username, 'seen' => false, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                );
+            }
+
 
         }
 

@@ -947,8 +947,16 @@ ul.tabs li.current{
 }
 
 .delete-notification-button{
-    background: $accent-color;
     float: right;
     border-radius: 4px;
     padding: 3px 8px 3px 8px;
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    top: 0px;
+    bottom: 0px;
+    width: 40px;
+    border: none;
+    color: red;
 }
