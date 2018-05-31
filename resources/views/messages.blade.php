@@ -97,7 +97,7 @@
                                             <div class="modal-content">
 
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">Shout! from {{$mess->from_username}}</h5>
+                                                        <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">{{$mess->from_username}}  {{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</h5>
                                                         <form action="/shouts/shoutseen" method="post">
                                                             {{ csrf_field() }}
                                                             <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
@@ -110,13 +110,13 @@
                                                         </form>
 
                                                     </div>
-                                                    <div class="modal-body">
+                                                    <div class="modal-body" style="">
                                                         {{--@include('partials.viewshout')--}}
                                                         <div class=" profile-image-shout-page "
                                                              style="background-image: url('{{$mess->profileimage}}');"></div>
 
                                                         <p>{{$mess->message}}</p>
-                                                        <p>at: {{Carbon\Carbon::parse($mess->created_at)->format('d M Y g:i A')}}</p>
+                                                        <p>at: </p>
                                                     </div>
                                                 <div class="modal-footer">
                                                 <form action="/shouts/shoutseen" method="post">
