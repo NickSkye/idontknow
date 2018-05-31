@@ -58,6 +58,7 @@ Route::post('/activitycomment', 'CommentsController@addactivitycomment')->middle
 
 Route::post('/report-post/{id?}', 'PagesController@reportpost')->middleware('auth');
 Route::post('/report-comment/{id?}', 'PagesController@reportcomment')->middleware('auth');
+Route::post('/delete-notification/{id?}', 'PagesController@deletenotification')->middleware('auth');
 
 Route::post('s3-image-upload','S3ImageController@imageUploadPost')->middleware('auth');
 Route::post('s3-image-upload-profilepic','S3ImageController@imageUploadProfilePic')->middleware('auth');

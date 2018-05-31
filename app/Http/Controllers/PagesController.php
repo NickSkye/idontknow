@@ -441,6 +441,19 @@ $online_frends = [];
         return redirect("home")->with('status', 'Notifications cleared');
     }
 
+
+    public function deletenotification($id){
+
+        DB::table('notifications')->where([
+            ['username', Auth::user()->username],
+            ['id', $id],
+        ])->update(['seen' => true]);
+
+
+
+        return redirect("notification");
+    }
+
     public function about(){
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
