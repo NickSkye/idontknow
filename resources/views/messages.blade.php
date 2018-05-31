@@ -104,7 +104,7 @@
                                                             <input type="hidden" name="from_user" value="{{$mess->from_username}}"/>
                                                             <input type="hidden" name="latitude" value=""/>
                                                             <input  type="hidden" name="longitude" value=""/>
-                                                            <button type="submit" class="close" aria-label="Close">
+                                                            <button type="submit" class="close" style="position: absolute; right: 20px;" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </form>
