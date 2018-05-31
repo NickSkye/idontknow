@@ -97,7 +97,7 @@
                                             <div class="modal-content">
 
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">{{$mess->from_username}}  {{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</h5>
+                                                        <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">{{$mess->from_username}} </h5><p> {{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</p>
                                                         <form action="/shouts/shoutseen" method="post">
                                                             {{ csrf_field() }}
                                                             <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
