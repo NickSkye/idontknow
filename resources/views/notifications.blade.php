@@ -67,13 +67,11 @@
                                         <div class="delete-notification">
                                             <form action="/delete-notification/{{$notif->id}}" method="POST">
                                                 {{ csrf_field() }}
-                                                <div class="row">
-                                                    <div class="col-md-12">
+
                                                         <button type="submit" class="delete-post-button " style="cursor: pointer;" >
                                                             <i
                                                                     class="fa fa-trash"></i></button>
-                                                    </div>
-                                                </div>
+                                                    
                                             </form>
                                         </div>
 
