@@ -4,10 +4,12 @@
 <?php $page = 'post'; ?>
 @section('content')
     <div class="container">
+        @if (!is_null($post->imagepath))
         <meta property="og:image" content="{{$post->imagepath}}">
         <meta property="og:image:type" content="image/png/jpeg">
         <meta property="og:image:width" content="1024">
         <meta property="og:image:height" content="1024">
+        @endif
 
 
         <div class="modal fade" id="trashModal" tabindex="-1" role="dialog" aria-labelledby="trashModalLabel" aria-hidden="true">
