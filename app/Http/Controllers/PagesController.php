@@ -394,7 +394,7 @@ $online_frends = [];
 
         foreach($closeusers as $user){
             DB::table('notifications')->updateOrCreate(
-                ['username' => Auth::user()->username, 'notification' => 'bumped into', 'from_username' => $user->username, 'type' => 'bump', 'route' => $user->username, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                ['username' => Auth::user()->username, 'notification' => 'bumped into', 'from_username' => $user->username, 'type' => 'bump', 'route' => $user->username, 'seen' => false, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
             );
         }
 
