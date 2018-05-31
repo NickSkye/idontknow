@@ -110,15 +110,20 @@
                                                         </form>
 
                                                     </div>
-                                                    <div class="modal-body" style="">
+                                                    <div class="modal-body" style="display: flex;">
+                                                        <div>
                                                         <div class=" profile-image-shout-page "
                                                              style="background-image: url('{{$mess->profileimage}}');"></div>
-                                                        <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">{{$mess->from_username}} </h5><br><p> {{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</p>
+                                                        <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">{{$mess->from_username}} </h5>
+                                                        <p> {{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</p>
+                                                        </div>
                                                         {{--@include('partials.viewshout')--}}
 
+                                                        <div>
+                                                            <p>{{$mess->message}}</p>
+                                                        </div>
 
-                                                        <p>{{$mess->message}}</p>
-                                                        <p>at: </p>
+
                                                     </div>
                                                 <div class="modal-footer">
                                                 <form action="/shouts/shoutseen" method="post">
