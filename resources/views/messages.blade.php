@@ -110,12 +110,12 @@
                                                         </form>
 
                                                     </div>
-                                                    <div class="modal-body" style="display: flex;">
+                                                    <div class="modal-body" style="display: flex; align-items: center;">
                                                         <div>
                                                         <div class=" profile-image-shout-page "
                                                              style="background-image: url('{{$mess->profileimage}}');"></div>
                                                         <h5 class="modal-title" id="viewshoutModalLabel-{{$mess->id}}">{{$mess->from_username}} </h5>
-                                                        <p> {{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</p>
+                                                        <p style="font-size: 10px;"> {{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</p>
                                                         </div>
                                                         {{--@include('partials.viewshout')--}}
 
@@ -125,22 +125,22 @@
 
 
                                                     </div>
-                                                <div class="modal-footer">
-                                                <form action="/shouts/shoutseen" method="post">
+                                                <div class="modal-footer" style="padding: 0; border-top: none;">
+                                                <form action="/shouts/shoutseen" method="post" style="width: 50%;">
                                                     {{ csrf_field() }}
                                                     <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
                                                     <input type="hidden" name="from_user" value="{{$mess->from_username}}"/>
                                                     <input type="hidden" name="latitude" value=""/>
                                                     <input  type="hidden" name="longitude" value=""/>
-                                                        <button type="submit" class="btn btn-secondary pull-left modal-button" >Close</button>
+                                                        <button type="submit" class="btn btn-secondary pull-left modal-button" style="width: 100%;">Close</button>
                                                 </form>
-                                                <form class="shoutbackform" action="/shouts/shoutback" method="post">
+                                                <form class="shoutbackform" action="/shouts/shoutback" method="post" style="width: 50%;">
                                                     {{ csrf_field() }}
                                                     <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
                                                     <input type="hidden" name="from_user" value="{{$mess->from_username}}"/>
                                                     <input type="hidden" name="latitude" value=""/>
                                                     <input  type="hidden" name="longitude" value=""/>
-                                                        <button type="submit" id="shout-back-{{$mess->id}}" class="btn btn-primary" >Shout Back!</button>
+                                                        <button type="submit" id="shout-back-{{$mess->id}}" class="btn btn-primary" style="width: 100%;">Shout Back!</button>
                                                 </form>
                                                 </div>
 
