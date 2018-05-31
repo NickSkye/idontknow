@@ -694,14 +694,14 @@ ul.tabs li.current{
 }
 
 .shout-from-frend{
-    display: flex;
-    align-items: center;
-    padding: 0;
-    color: #F62E55;
-    width: 100%;
-    border-bottom: 1px solid lightgrey;
-    background: transparent;
-    border-radius: 0;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+    color: #F62E55 !important;
+    width: 100% !important;
+    border-bottom: 1px solid lightgrey !important;
+    background: transparent !important;
+    border-radius: 0 !important;
 }
 
 .online-frends{

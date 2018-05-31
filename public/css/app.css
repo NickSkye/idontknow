@@ -697,18 +697,18 @@ ul.tabs li.current {
 }
 
 .shout-from-frend {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0;
-  color: #F62E55;
-  width: 100%;
-  border-bottom: 1px solid lightgrey;
-  background: transparent;
-  border-radius: 0;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  padding: 0 !important;
+  color: #F62E55 !important;
+  width: 100% !important;
+  border-bottom: 1px solid lightgrey !important;
+  background: transparent !important;
+  border-radius: 0 !important;
 }
 
 .online-frends {
