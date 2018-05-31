@@ -420,7 +420,7 @@ $online_frends = [];
         $online_frends = $this->getFrendsOnline();
 //        $notifs = DB::table('notifications')->where('username', Auth::user()->username)->orderBy('created_at', 'asc')->get();
 //        $notifs = DB::table('notifications')->where('username', $id)->get();
-        $notifs = DB::table('notifications')->join('profileinfo', 'profileinfo.username', '=', 'notifications.from_username')->where([
+        $notifs = DB::table('notifications')->select('notifications.from_username as from_username', 'notifications.created_at as created_at', 'notifications.notification as notification', 'notifications.route as route', 'notifications.type as type', 'notifications.id as id', 'profileinfo.profileimage as profileimage')->leftJoin('profileinfo', 'profileinfo.username', '=', 'notifications.from_username')->where([
             ['notifications.username', Auth::user()->username],
             ['notifications.seen', false],
         ])->orderBy('notifications.created_at', 'desc')->get();
