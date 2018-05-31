@@ -945,3 +945,12 @@ ul.tabs li.current{
 .notification-row:nth-child(even) {
     background-color: #F5F5F5;
 }
+
+.delete-notification-button{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+}
