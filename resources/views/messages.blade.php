@@ -125,7 +125,7 @@
 
 
                                                     </div>
-                                                <div class="modal-footer" style="padding: 0; border-top: none;">
+                                                <div class="modal-footer" style="padding: 5px; border-top: none;">
                                                 <form action="/shouts/shoutseen" method="post" style="width: 50%;">
                                                     {{ csrf_field() }}
                                                     <input type="hidden" name="shoutid" value="{{$mess->id}}"/>
