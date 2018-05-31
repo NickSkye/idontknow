@@ -686,7 +686,13 @@ ul.tabs li.current {
   .shout-button {
     display: block;
     background: #0b7dda;
-    color: #F62E55;
+    color: white;
+    float: right;
+    display: block;
+    background: #0b7dda;
+    border-radius: 25px;
+    width: 75px;
+    height: 40px;
   }
 }
 

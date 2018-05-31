@@ -681,11 +681,18 @@ ul.tabs li.current{
     @media (min-width: 767px) {
         display: block;
         background: $secondary-color;
-        color: $accent-color;
+        color: white;
+        float: right;
+        display: block;
+        background: $secondary-color;
+        border-radius: 25px;
+        width: 75px;
+        height: 40px;
     }
     display: none;
 
 }
+
 
 .online-frends{
     @media (min-width: 767px){
