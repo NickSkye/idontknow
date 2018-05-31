@@ -63,6 +63,3 @@ Route::post('s3-image-upload','S3ImageController@imageUploadPost')->middleware('
 Route::post('s3-image-upload-profilepic','S3ImageController@imageUploadProfilePic')->middleware('auth');
 
 
-
-Route::get('searchajax',array('as'=>'searchajax','uses'=>'SearchController@autoComplete'));
-//TEST

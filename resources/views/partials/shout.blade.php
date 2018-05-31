@@ -1,26 +1,5 @@
 {{--start trial upload--}}
-<script>
-$(document).ready(function() {
-    src = "{{ route('searchajax') }}";
-    $("#search_text").autocomplete({
-        source: function(request, response) {
-            $.ajax({
-                url: src,
-                dataType: "json",
-                data: {
-                    term : request.term
-                },
-                success: function(data) {
-                    response(data);
 
-                }
-            });
-        },
-        minLength: 3,
-
-    });
-});
-</script>
 <div class="container">
     <div class="panel panel-primary">
 
@@ -37,12 +16,12 @@ $(document).ready(function() {
                     <input type="hidden" name="latitude" value=""/>
                     <input  type="hidden" name="longitude" value=""/>
                     <div class="col-12">
-                        {!! Form::text('search_text', null, array('placeholder' => 'Search Text','class' => 'form-control','id'=>'search_text')) !!}
-                        {{--<select id="sendtousername" name="sendtousername">--}}
-                            {{--@foreach($friends as $friend)--}}
-                            {{--<option value="{{$friend->followsusername}}">{{$friend->followsusername}}</option>--}}
-                            {{--@endforeach--}}
-                        {{--</select>--}}
+
+                        <select id="sendtousername" name="sendtousername">
+                            @foreach($friends as $friend)
+                            <option value="{{$friend->followsusername}}">{{$friend->followsusername}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="col-12">
                         <textarea rows="4" cols="40" class="shout-text" placeholder="Shout at your frend..." type="text" name="shout" style="width: 100%;" required></textarea>
