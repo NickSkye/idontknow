@@ -44,7 +44,10 @@
                             {{--friends posts--}}
                             <div class="row frend-area">
                                 @foreach($notifs as $notif)
-                                    <div class="col-12">
+                                    <div class="col-12" style="display: flex; align-items: center;">
+                                        <div class=" profile-image-shout-page "
+                                             style="background-image: url('{{$notif->profileimage}}');"></div>
+                                        <div>
                                         @if($notif->type == "shout")
                                             <a href="/shouts">You got a new shout from {{$notif->from_username}} {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
                                             @elseif($notif->type == "comment")
@@ -57,6 +60,7 @@
                                         @else
                                             {!! $notif->notification !!} {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}
                                             @endif
+                                        </div>
 
 
                                         <hr>
