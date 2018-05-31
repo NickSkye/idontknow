@@ -77,10 +77,12 @@ class SearchController extends Controller {
 
         foreach ($queries as $query)
         {
-            $results[] = [ 'id' => $query->id, 'value' => $query->first_name.' '.$query->last_name ];
+            $results[] = [ 'id' => $query->id, 'value' => $query->username.' '.$query->name ];
         }
         return Response::json($results);
     }
+
+
 
 
 
