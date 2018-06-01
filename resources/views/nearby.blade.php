@@ -41,7 +41,7 @@
                         <div>
 
 
-{{$allfriendsinfo}}
+{{$newtest}}
 
                             {{--friends posts--}}
                             <div class="row frend-area infinite-scroll">

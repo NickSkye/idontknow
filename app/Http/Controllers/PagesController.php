@@ -297,7 +297,7 @@ class PagesController extends Controller
 //                $query->where('follows.username', Auth::user()->username)
 //                    ->orWhere('posts.username', Auth::user()->username);
 //            })
-        $allfriendsinfo = $allfriendsinfo->merge($post_votes);
+        $newtest = $allfriendsinfo->merge($post_votes);
 
         $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
         $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
@@ -318,7 +318,7 @@ class PagesController extends Controller
 //        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('nearby', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'post_votes'=> $post_votes]);
+        return view('nearby', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'post_votes'=> $post_votes, 'newtest'=>$newtest]);
 
 
     }
