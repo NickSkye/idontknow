@@ -49,6 +49,11 @@
                                              style="background-image: url('{{$notif->profileimage}}');">
 
                                         </a>
+
+                                        <div class="notification-type">
+
+                                        </div>
+
                                         <div style="margin-left: 30px; margin-right: 40px;">
                                         @if($notif->type == "shout")
                                             <a href="/shouts">You got a new shout<br>from {{$notif->from_username}} {{ Carbon\Carbon::parse($notif->created_at)->diffForHumans() }}</a>
@@ -81,6 +86,43 @@
 
                                     </div>
                                 @endforeach
+                                    @foreach($oldnotifs as $oldnotif)
+
+
+                                        <div class="col-12 notification-row" style="display: flex; align-items: center; background-color: #F5F5F5; border-bottom: 1px solid lightgrey;">
+                                            <a href="/users/{{$oldnotif->from_username}}" class=" profile-image-shout-page "
+                                               style="background-image: url('{{$oldnotif->profileimage}}');">
+
+                                            </a>
+
+                                            <div class="notification-type">
+
+                                            </div>
+
+                                            <div style="margin-left: 30px; margin-right: 40px;">
+                                                @if($oldnotif->type == "shout")
+                                                    <a href="/shouts">You got a new shout<br>from {{$oldnotif->from_username}} {{ Carbon\Carbon::parse($oldnotif->created_at)->diffForHumans() }}</a>
+                                                @elseif($oldnotif->type == "comment")
+                                                    <a href="/post/{{$oldnotif->route}}">{{$oldnotif->from_username}} commented " {{$oldnotif->notification}} " on your post {{ Carbon\Carbon::parse($oldnotif->created_at)->diffForHumans() }}</a>
+                                                @elseif($oldnotif->type == "postmention")
+                                                    <a href="/post/{{$oldnotif->route}}">{{$oldnotif->from_username}} mentioned you in their post: " {{$oldnotif->notification}} " {{ Carbon\Carbon::parse($oldnotif->created_at)->diffForHumans() }}</a>
+                                                @elseif($oldnotif->type == "commentmention")
+                                                    <a href="/post/{{$oldnotif->route}}">{{$oldnotif->from_username}} mentioned you in their comment: " {{$oldnotif->notification}} " {{ Carbon\Carbon::parse($oldnotif->created_at)->diffForHumans() }}</a>
+                                                @elseif($notif->type == "frendadd")
+                                                    <a href="/users/{{$oldnotif->route}}">{{$oldnotif->from_username}} {{$oldnotif->notification}} {{ Carbon\Carbon::parse($oldnotif->created_at)->diffForHumans() }}</a>
+                                                @elseif($oldnotif->type == "bump")
+                                                    <a href="/users/{{$oldnotif->route}}">You {{$oldnotif->notification}} {{$oldnotif->from_username}} {{ Carbon\Carbon::parse($oldnotif->created_at)->diffForHumans() }}</a>
+
+                                                @else
+                                                    {!! $oldnotif->notification !!} {{ Carbon\Carbon::parse($oldnotif->created_at)->diffForHumans() }}
+                                                @endif
+                                            </div>
+
+
+
+                                        </div>
+
+                                    @endforeach
                             </div>
 
                         </div>

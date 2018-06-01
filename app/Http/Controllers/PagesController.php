@@ -460,8 +460,13 @@ $online_frends = [];
             ['notifications.seen', false],
         ])->orderBy('notifications.created_at', 'desc')->get();
 
+        $oldnotifs = DB::table('notifications')->select('notifications.from_username as from_username', 'notifications.created_at as created_at', 'notifications.notification as notification', 'notifications.route as route', 'notifications.type as type', 'notifications.id as id', 'profileinfo.profileimage as profileimage')->leftJoin('profileinfo', 'profileinfo.username', '=', 'notifications.from_username')->where([
+            ['notifications.username', Auth::user()->username],
+            ['notifications.seen', true],
+        ])->orderBy('notifications.created_at', 'desc')->get();
 
-        return view('notifications', ['notifs'=> $notifs, 'now'=> $now, 'online_frends'=> $online_frends]);
+
+        return view('notifications', ['notifs'=> $notifs, 'oldnotifs'=> $oldnotifs, 'now'=> $now, 'online_frends'=> $online_frends]);
     }
 
     public function clearnotifications(){
