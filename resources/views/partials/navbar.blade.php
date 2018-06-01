@@ -49,7 +49,11 @@
 
                             </div>
                         </li>
+@else
+                        <a class="nav-link" href="/notification" >
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
 
+                        </a>
                     @endif
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -200,7 +204,11 @@
 
 
                             </li>
+@else
+                            <a class="nav-link" href="/notification" >
+                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
 
+                            </a>
                         @endif
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
