@@ -9,7 +9,8 @@ $line-height-base: 1.6;
 
 //OLD COLORS
 //$main-color: #70F3FF;
-//$secondary-color: #0b7dda;
+//$secondary-color: #0b7dda; //blue
+//$secondary-color: rgb(255, 205, 0); //gold
 
 //NEW COLORS
 $nice-blue: rgba(0,155,255,1);
@@ -17,4 +18,5 @@ $lighter-nice-blue: rgba(0,180,255,1);
 $light-nice-blue: rgba(0,200,255,1);
 $accent-color: #F62E55;
 $main-color: rgba(0,200,255,1);
-$secondary-color: rgb(255, 205, 0);
+
+$secondary-color: rgba(230,240,255,1);
