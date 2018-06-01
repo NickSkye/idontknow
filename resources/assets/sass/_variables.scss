@@ -7,8 +7,14 @@ $font-family-sans-serif: Arial;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
-//COLORS
-$main-color: #70F3FF;
-$secondary-color: #0b7dda;
+//OLD COLORS
+//$main-color: #70F3FF;
+//$secondary-color: #0b7dda;
+
+//NEW COLORS
 $nice-blue: rgba(0,155,255,1);
+$lighter-nice-blue: rgba(0,180,255,1);
+$light-nice-blue: rgba(0,200,255,1);
 $accent-color: #F62E55;
+$main-color: rgba(0,200,255,1);
+$secondary-color: rgb(255, 205, 0);
