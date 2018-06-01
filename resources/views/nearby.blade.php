@@ -41,7 +41,7 @@
                         <div>
 
 
-{{$newtest}}
+
 
                             {{--friends posts--}}
                             <div class="row frend-area infinite-scroll">
@@ -108,16 +108,16 @@
                                                 <p class="post-views activity-post-views">views: {{$friendspost->views}}</p>
                                                 <div class="post-meta activity-meta">
 
-                                                    @foreach($post_votes as $pv)
-                                                        @if($pv->post_id == $friendspost->id)
+                                                    {{--@foreach($post_votes as $pv)--}}
+                                                        {{--@if($pv->post_id == $friendspost->id)--}}
                                                     <div class="post-data like-dislike-vote">
                                                         <form action="/like" method="post" id="like_form-{{$friendspost->id}}" class="activity-like-form">
                                                             {{ csrf_field() }}
-                                                            <input type="hidden" name="postid" value="{{$pv->post_id}}"/>
+                                                            <input type="hidden" name="postid" value="{{$friendspost->post_id}}"/>
                                                             {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                             <button class="post-data like like-{{$friendspost->id}}" type="submit" name="submit" value="" style="background: none; "/>
 
-                                                            @if($pv->vote == 1)
+                                                            @if($friendspost->vote == 1)
                                                                 <i class="fa fa-heart fa-2x " style="color: red;" aria-hidden="true"></i>
                                                             @else
                                                                 <i class="fa fa-heart-o fa-2x " aria-hidden="true"></i>
@@ -129,11 +129,11 @@
                                                         <div id="server-results-{{$friendspost->id}}" style="text-align: center;" class="">{{$friendspost->votes}}</div>
                                                         <form action="/dislike" method="post" id="dislike_form-{{$friendspost->id}}" class="activity-dislike-form">
                                                             {{ csrf_field() }}
-                                                            <input type="hidden" name="postid" value="{{$pv->post_id}}"/>
+                                                            <input type="hidden" name="postid" value="{{$friendspost->post_id}}"/>
                                                             {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                             <button class="post-data dislike dislike-{{$friendspost->id}}" type="submit" name="submit" value="" style="background: none; "/>
 
-                                                            @if($pv->vote == -1)
+                                                            @if($friendspost->vote == -1)
                                                                 <i class="fa fa-thumbs-down fa-2x " style="color: blue;" aria-hidden="true"></i>
                                                             @else
                                                                 <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
@@ -143,8 +143,8 @@
 
                                                         </form>
                                                     </div>
-                                                        @endif
-                                                    @endforeach
+                                                        {{--@endif--}}
+                                                    {{--@endforeach--}}
 
                                                     <p class="post-data"><a data-toggle="collapse" href="#commentCollapse-{{$friendspost->id}}" role="button" aria-expanded="false" aria-controls="commentCollapse-{{$friendspost->id}}"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>{{$friendspost->comments}}</a></p>
                                                     <p class="post-data"><a data-toggle="modal" href="#copyModal-{{$friendspost->id}}"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></a></p>
