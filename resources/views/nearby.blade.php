@@ -103,10 +103,11 @@
 
                                                 </div>
 
-
+                                                {{$post_votes}}
                                                 {{--TEST--}}
                                                 <p class="post-views activity-post-views">views: {{$friendspost->views}}</p>
                                                 <div class="post-meta activity-meta">
+
                                                     @foreach($post_votes as $pv)
                                                         @if($pv->post_id == $friendspost->id)
                                                     <div class="post-data like-dislike-vote">
