@@ -3,7 +3,7 @@
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{--{{ config('app.name', 'idontknow') }}--}}
-            <img src="/images/frendgridwhite.png" alt="FrendGrid" style="max-width: 45px;">
+            <img src="/images/frendgridnewiconredblue.png" alt="FrendGrid" style="max-width: 45px;">
 
         </a>
         @auth
@@ -95,7 +95,7 @@
         <div class="header-button">
             <a class=" logo-button" href="{{ url('/') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
-                <img src="/images/frendgridwhite.png" alt="FrendGrid" style="max-width: 45px;">
+                <img src="/images/frendgridnewiconredblue.png" alt="FrendGrid" style="max-width: 45px;">
 
             </a>
         </div>
@@ -162,7 +162,7 @@
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
-                <img src="/images/frendgridwhite.png" alt="FrendGrid" style="max-width: 45px;">
+                <img src="/images/frendgridnewiconredblue.png" alt="FrendGrid" style="max-width: 45px;">
 
             </a>
             @auth
