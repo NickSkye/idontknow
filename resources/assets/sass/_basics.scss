@@ -336,14 +336,14 @@
 }
 
 a {
-    color: $secondary-color;
+    color: rgba(0,180,255,1);
     p {
-        color: $secondary-color;
+        color: rgba(0,180,255,1);
     }
 }
 
 .comment-button {
-    background: $secondary-color;
+    background: rgba(0,180,255,1);
     color: white;
     float: right;
 }
@@ -356,7 +356,7 @@ a {
 
 .shout-button {
     display: block;
-    background: $secondary-color;
+    background: rgba(0,180,255,1);
     color: white;
     border-radius: 25px;
     width: 75px;
@@ -364,13 +364,13 @@ a {
 }
 
 .upload-button {
-    background: $secondary-color;
+    background: rgba(0,180,255,1);
     color: white;
     float: right;
 }
 
 .add-button {
-    background: $secondary-color;
+    background: rgba(0,180,255,1);
     color: white;
     float: right;
 }
@@ -382,7 +382,7 @@ a {
 }
 
 .invite-button {
-    background: $secondary-color;
+    background: rgba(0,180,255,1);
     color: white;
 
 }
@@ -644,7 +644,7 @@ ul.tabs li.current{
         width: 45px;
         height: 30px;
         padding: 3px;
-        background: $secondary-color;
+        background: rgba(0,180,255,1);
         color: $accent-color;
         display: block;
 
@@ -665,7 +665,7 @@ ul.tabs li.current{
         width: 90px;
         height: 60px;
         padding: 3px;
-        background: $secondary-color;
+        background: rgba(0,180,255,1);
         color: white;
         display: block;
         z-index: 3;
@@ -680,11 +680,10 @@ ul.tabs li.current{
 
     @media (min-width: 767px) {
         display: block;
-        background: $secondary-color;
+        background: rgba(0,180,255,1);
         color: white;
         float: right;
         display: block;
-        background: $secondary-color;
         border-radius: 25px;
         width: 75px;
         height: 40px;
@@ -823,7 +822,7 @@ ul.tabs li.current{
         width: 45px;
         height: 30px;
         padding: 3px;
-        background: $secondary-color;
+        background: rgba(0,180,255,1);
         color: $accent-color;
         display: block;
         text-align: right;
