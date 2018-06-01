@@ -33,7 +33,7 @@ class PagesController extends Controller
             $location->longitude = 0;
         }
 
-        return DB::table('posts')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( posts.latitude ) ) * cos( radians( posts.longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( posts.latitude ) ) ) ) AS distance'), 'posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'posts.votes as votes', 'posts.deleted as deleted', 'posts.comments as comments')
+        return DB::table('posts')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( posts.latitude ) ) * cos( radians( posts.longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( posts.latitude ) ) ) ) AS distance'), 'posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'posts.votes as votes', 'post_votes.post_id as post_id', 'post_votes.vote as vote', 'posts.deleted as deleted', 'posts.comments as comments')
             ->leftJoin('users', 'posts.username', '=', 'users.username')
             ->leftJoin('profileinfo', 'posts.username', '=', 'profileinfo.username')
             ->leftJoin('post_votes', function ($leftJoin) {
