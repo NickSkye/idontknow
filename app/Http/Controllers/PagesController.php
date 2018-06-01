@@ -297,6 +297,7 @@ class PagesController extends Controller
 //                $query->where('follows.username', Auth::user()->username)
 //                    ->orWhere('posts.username', Auth::user()->username);
 //            })
+        $allfriendsinfo = $allfriendsinfo->merge($post_votes);
 
         $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
         $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();

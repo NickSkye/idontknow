@@ -41,7 +41,7 @@
                         <div>
 
 
-
+{{$allfriendsinfo}}
 
                             {{--friends posts--}}
                             <div class="row frend-area infinite-scroll">
@@ -103,7 +103,7 @@
 
                                                 </div>
 
-                                                {{$post_votes}}
+                                                {{--{{$post_votes}}--}}
                                                 {{--TEST--}}
                                                 <p class="post-views activity-post-views">views: {{$friendspost->views}}</p>
                                                 <div class="post-meta activity-meta">
