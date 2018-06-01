@@ -113,7 +113,7 @@
                                                     <div class="post-data like-dislike-vote">
                                                         <form action="/like" method="post" id="like_form-{{$friendspost->id}}" class="activity-like-form">
                                                             {{ csrf_field() }}
-                                                            <input type="hidden" name="postid" value="{{$friendspost->post_id}}"/>
+                                                            <input type="hidden" name="postid" value="{{$friendspost->id}}"/>
                                                             {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                             <button class="post-data like like-{{$friendspost->id}}" type="submit" name="submit" value="" style="background: none; "/>
 
@@ -129,7 +129,7 @@
                                                         <div id="server-results-{{$friendspost->id}}" style="text-align: center;" class="">{{$friendspost->votes}}</div>
                                                         <form action="/dislike" method="post" id="dislike_form-{{$friendspost->id}}" class="activity-dislike-form">
                                                             {{ csrf_field() }}
-                                                            <input type="hidden" name="postid" value="{{$friendspost->post_id}}"/>
+                                                            <input type="hidden" name="postid" value="{{$friendspost->id}}"/>
                                                             {{--<label for="submit"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></label>--}}
                                                             <button class="post-data dislike dislike-{{$friendspost->id}}" type="submit" name="submit" value="" style="background: none; "/>
 
