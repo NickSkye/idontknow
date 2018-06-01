@@ -33,15 +33,14 @@ class PagesController extends Controller
             $location->longitude = 0;
         }
 
-        return DB::table('posts')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( posts.latitude ) ) * cos( radians( posts.longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( posts.latitude ) ) ) ) AS distance'), 'posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'post_votes.post_id as post_id', 'post_votes.vote as vote', 'posts.votes as votes', 'posts.deleted as deleted', 'posts.comments as comments')
+        return DB::table('posts')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( posts.latitude ) ) * cos( radians( posts.longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( posts.latitude ) ) ) ) AS distance'), 'posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'posts.votes as votes', 'posts.deleted as deleted', 'posts.comments as comments')
             ->leftJoin('users', 'posts.username', '=', 'users.username')
             ->leftJoin('profileinfo', 'posts.username', '=', 'profileinfo.username')
-            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
             ->where('deleted', false)
             ->orderBy('posts.created_at', 'desc')->orderBy('distance', 'asc')->distinct()->get();
 
 
-
+//            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
 
     }
 
@@ -291,7 +290,13 @@ class PagesController extends Controller
 //        TEST
         $allfriendsinfo = $this->nearbyPosts();
         $allfollowersinfo = $this->getFollowersInfoWithPosts();
-//        $allfriendsposts = [];
+         //'posts.updated_at'
+        $post_votes = DB::table('post_votes')->select('post_votes.post_id as post_id', 'post_votes.vote as vote')
+            ->where('username', Auth::user()->username)->get();
+//        $allfriendsposts = []; ->where(function ($query) {
+//                $query->where('follows.username', Auth::user()->username)
+//                    ->orWhere('posts.username', Auth::user()->username);
+//            })
 
         $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
         $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
@@ -312,7 +317,7 @@ class PagesController extends Controller
 //        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
-        return view('nearby', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
+        return view('nearby', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'post_votes'=> $post_votes]);
 
 
     }
