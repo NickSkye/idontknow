@@ -267,7 +267,7 @@
 
                         <div class="achievements-mobile">
                             @foreach($achievements as $achievement)
-                                <p>{{$achievement->achievement}}</p>
+                               {{$achievement->achievement}}
                                 @endforeach
 
                         </div>
