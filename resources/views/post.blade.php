@@ -309,7 +309,7 @@
                     @auth
                     <div class="card-footer">
                         <div class="collapse multi-collapse" id="commentCollapse">
-                        <div style="position: fixed; bottom: 55px; background: white; width: 100%; margin-left: -20px; height: 80px; padding: 10px;"> @include('partials.commentfield')</div>
+                        <div style="position: absolute; bottom: 30px; background: white; width: 100%; margin-left: -20px; height: 80px; padding: 10px;"> @include('partials.commentfield')</div>
                         </div>
 
                     </div>
