@@ -17,7 +17,7 @@
                         <input type="hidden" name="sendtousername" value="{{$info->username}}"/>
                     </div>
                     <div class="col-12">
-                        <textarea rows="4" cols="40" class="shout-text" placeholder="Shout at your frend..." type="text" name="shout" style="width: 100%;" required></textarea>
+                        <input  class="shout-text" placeholder="Shout at your frend..." type="text" name="shout" style="width: 100%;" required>
                     </div>
                     <div class="col-12" style="align-self: flex-end;">
                         <button type="submit" class="btn shout-button modal-button" style="float: right;"><i aria-hidden="true" class="fa fa-bullhorn fa-2x"></i></button>
