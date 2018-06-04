@@ -215,12 +215,11 @@
                                     <div class="row are-frends">
 
                                         <div class="col-xs-12 col-sm-10">
-                                            <div class="achievements">
-                                                @foreach($achievements as $achievement)
-                                                    {{$achievement->achievement}}
-                                                @endforeach
-
-                                            </div>
+                                            <a class="achievementcollapse followerCollapser followingCollapser" data-toggle="collapse"
+                                               href="#achievementCollapse" role="button" aria-expanded="false"
+                                               aria-controls="followerCollapse">
+                                                <p style="font-size: 14pt;">🏆</p>
+                                            </a>
 
                                             <button type="button" class="add-button" data-toggle="modal"
                                                     data-target="#sendShout">
@@ -278,8 +277,18 @@
                                 {{--@endforeach--}}
 
                         {{--</div>--}}
+                        {{--Achievements collapse--}}
+                        <div class="collapse" id="achievementCollapse">
+                            <div class="card card-body">
+                                followers
+                                <div class="row frend-area frends-frends-row multiple-items">
+                                    @foreach($achievements as $achievement)
+                                    {{$achievement->achievement}}
+                                    @endforeach
 
-
+                                </div>
+                            </div>
+                        </div>
                         {{--Friends followers--}}
                         <div class="collapse" id="followerCollapse">
                             <div class="card card-body">
