@@ -64,6 +64,15 @@
                                         <a href="/users/{{$sug->username}}" class="col-4 suggest-image" style="background-image: url('{{$sug->profileimage}}');">
                                             <div class="frend-box-name">
                                                 <p>{{$sug->name}}</p>
+                                                <form method="post" id="add_frend_form"
+                                                      action="/addfrend/{{$sug->username}}">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" name="{{$sug->username}}"
+                                                           value="{{$sug->username}}"/>
+                                                    <button class="btn btn-success add_frend_button" type="submit">
+                                                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                                    </button>
+                                                </form>
                                             </div>
                                             <div class="frend-box" style="height: 25%;">
                                                 <p>{{round($sug->distance, 1)}} miles</p>
@@ -75,7 +84,7 @@
 
                                 </div>
                                 </div>
-                               
+
                                 <h3>User Search Results:</h3>
                                 <hr>
                                 <br>
