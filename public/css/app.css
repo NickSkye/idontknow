@@ -412,14 +412,16 @@ a p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #F62E55;
-  color: #00c8ff;
+  background-color: lime;
+  color: black;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
   text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
 }
 
 .mobile-app-div a {

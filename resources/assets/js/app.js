@@ -119,6 +119,7 @@ $( document ).ready(function() {
 
     }
 
+
     if (!yetVisited) {
         // open popup
         getLocation();
