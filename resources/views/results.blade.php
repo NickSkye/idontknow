@@ -66,17 +66,17 @@
                                                 <p>{{$sug->name}}</p>
 
                                             </div>
-                                            <div class="add-suggested-frend">
-                                                <form method="post" id="add_frend_form"
-                                                      action="/addfrend/{{$sug->username}}">
-                                                    {{ csrf_field() }}
-                                                    <input type="hidden" name="{{$sug->username}}"
-                                                           value="{{$sug->username}}"/>
-                                                    <button class="btn btn-success add_frend_button" type="submit">
-                                                        <i class="fa fa-user-plus" aria-hidden="true"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
+                                            {{--<div class="add-suggested-frend">--}}
+                                                {{--<form method="post" id="add_frend_form"--}}
+                                                      {{--action="/addfrend/{{$sug->username}}">--}}
+                                                    {{--{{ csrf_field() }}--}}
+                                                    {{--<input type="hidden" name="{{$sug->username}}"--}}
+                                                           {{--value="{{$sug->username}}"/>--}}
+                                                    {{--<button class="btn btn-success add_frend_button" type="submit">--}}
+                                                        {{--<i class="fa fa-user-plus" aria-hidden="true"></i>--}}
+                                                    {{--</button>--}}
+                                                {{--</form>--}}
+                                            {{--</div>--}}
                                             <div class="frend-box" style="height: 25%;">
                                                 <p>{{round($sug->distance, 1)}} miles</p>
 
