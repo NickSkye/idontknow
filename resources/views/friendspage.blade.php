@@ -197,13 +197,18 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="achievements-box">
+
+
+
+                                <p>{{$info->aboutme}}</p>
+
+
+                                <div class="achievements-desktop">
 
 
                                 </div>
 
 
-                                <p>{{$info->aboutme}}</p>
                                 @if($arefriends)
                                     <div class="row are-frends">
 
@@ -256,6 +261,10 @@
                                 @endif
 
                             </div>
+                        </div>
+
+                        <div class="achievements-mobile">
+
                         </div>
 
 

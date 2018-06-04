@@ -994,6 +994,30 @@ ul.tabs li.current {
   bottom: 20px;
 }
 
+.achievements-desktop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .achievements-desktop {
+    display: none;
+  }
+}
+
+.achievements-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .achievements-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
