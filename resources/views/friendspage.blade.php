@@ -203,18 +203,25 @@
                                 <p>{{$info->aboutme}}</p>
 
 
-                                <div class="achievements-desktop">
-                                    @foreach($achievements as $achievement)
-                                        {{$achievement->achievement}}
-                                    @endforeach
+                                {{--<div class="achievements-desktop">--}}
+                                    {{--@foreach($achievements as $achievement)--}}
+                                        {{--{{$achievement->achievement}}--}}
+                                    {{--@endforeach--}}
 
-                                </div>
+                                {{--</div>--}}
 
 
                                 @if($arefriends)
                                     <div class="row are-frends">
 
                                         <div class="col-xs-12 col-sm-10">
+                                            <div class="achievements">
+                                                @foreach($achievements as $achievement)
+                                                    {{$achievement->achievement}}
+                                                @endforeach
+
+                                            </div>
+
                                             <button type="button" class="add-button" data-toggle="modal"
                                                     data-target="#sendShout">
                                                 Shout!
@@ -265,12 +272,12 @@
                             </div>
                         </div>
 
-                        <div class="achievements-mobile">
-                            @foreach($achievements as $achievement)
-                               {{$achievement->achievement}}
-                                @endforeach
+                        {{--<div class="achievements-mobile">--}}
+                            {{--@foreach($achievements as $achievement)--}}
+                               {{--{{$achievement->achievement}}--}}
+                                {{--@endforeach--}}
 
-                        </div>
+                        {{--</div>--}}
 
 
                         {{--Friends followers--}}
