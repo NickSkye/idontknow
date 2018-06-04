@@ -214,7 +214,7 @@
                                 @if($arefriends)
                                     <div class="row are-frends">
 
-                                        <div class="col-xs-12 col-sm-4">
+                                        <div class="col-xs-12 col-sm-10">
                                             <button type="button" class="add-button" data-toggle="modal"
                                                     data-target="#sendShout">
                                                 Shout!
