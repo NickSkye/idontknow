@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<?php $page = 'suggestions'; ?>
+<?php $page = 'support'; ?>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -27,31 +27,13 @@
                 {{--MODAL FOR SHOUTS--}}
 
 
-                <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
 
-                            </div>
-                            {{--<div class="modal-footer">--}}
-                            {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
-                            {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
-                            {{--</div>--}}
-                        </div>
-                    </div>
-                </div>
 
                 {{--END MODALS FOR SHOUTS--}}
 
                 <div class="card">
                     <div class="card-header">
-                        Suggestions
+                        Support
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -61,10 +43,24 @@
                         @endif
                         <div>
 
-                            {{--friends posts--}}
-                            <div class="row frend-area">
+                            <form action="/support-request" method="post">
+                                {{ csrf_field() }}
+                                <div class="row">
+                                    <div class="col-sm-12">
 
-                            </div>
+
+                                        <div class="form-group">
+                                            <label for="mess">Have any ideas for how we can make FrendGrid better? Let us know here and we may include your suggestion in ta future update</label>
+                                            <textarea class="form-control book-form" id="mess" name="mess" cols="30" rows="10">{{ old('mess') }}</textarea>
+                                        </div>
+
+
+                                        <button type="submit" class="btn upload-button modal-button" style="float: right;"><i aria-hidden="true" class="fa fa-share fa-2x"></i></button>
+
+                                    </div>
+
+                                </div>
+                            </form>
 
                         </div>
 
