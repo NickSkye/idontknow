@@ -267,7 +267,7 @@
 
                         <div class="achievements-mobile">
                             @foreach($achievements as $achievement)
-                                {{$achievement->achievement}}
+                                {{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}{{$achievement->achievement}}
                                 @endforeach
 
                         </div>
