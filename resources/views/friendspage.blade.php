@@ -283,7 +283,11 @@
                                 Achievements
                                 <div class="row frend-area frends-frends-row multiple-items">
                                     @foreach($achievements as $achievement)
-                                    {{$achievement->achievement}}
+                                        <div>
+                                            {{$achievement->achievement}}
+                                            {{$achievement->title}}
+                                        </div>
+
                                     @endforeach
 
                                 </div>
