@@ -121,7 +121,7 @@ class FriendController extends Controller
 
         $arefrends = true;
 //        return redirect("home")->with('status', 'friend added');
-        return response([$arefrends]);
+        return response([$arefrends, $username]);
     }
 
     public function remove($username)
