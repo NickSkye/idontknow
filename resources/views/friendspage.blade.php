@@ -280,7 +280,7 @@
                         {{--Achievements collapse--}}
                         <div class="collapse" id="achievementCollapse">
                             <div class="card card-body">
-                                followers
+                                Achievements
                                 <div class="row frend-area frends-frends-row multiple-items">
                                     @foreach($achievements as $achievement)
                                     {{$achievement->achievement}}
