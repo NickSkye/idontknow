@@ -76,7 +76,7 @@ class FriendController extends Controller
             $numposts = DB::table('posts')->where('username', $username)->where('deleted', false)->count();
             $numfollowing = DB::table('follows')->where('username', $username)->count();
             $frendsloc = $this->frendsLocation($username);
-            $achievements = DB::table('achievements')->where('username', Auth::user()->username)->get();
+            $achievements = DB::table('achievements')->where('username', $username)->get();
             //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
 
             foreach ($friends as $friend) {
