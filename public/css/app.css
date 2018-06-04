@@ -412,8 +412,8 @@ a p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: lime;
-  color: black;
+  background-color: yellow;
+  color: #00c8ff;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -422,6 +422,7 @@ a p {
   text-align: center;
   font-size: 12pt;
   font-weight: bold;
+  padding-top: 15px;
 }
 
 .mobile-app-div a {
