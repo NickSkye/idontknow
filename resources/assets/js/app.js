@@ -215,6 +215,10 @@ $(document).ready(function(){
     $(".followingCollapser").click(function() {  //use a class, since your ID gets mangled
         $('#followerCollapse').removeClass('show');      //add the class to the clicked element
     });
+    $(".achievementCollapser").click(function() {  //use a class, since your ID gets mangled
+        $('#followerCollapse').removeClass('show');      //add the class to the clicked element
+        $('#followingCollapse').removeClass('show');
+    });
 
     //online friends
     $(".toggle-online-frends").click(function() {  //use a class, since your ID gets mangled

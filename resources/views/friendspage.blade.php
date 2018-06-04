@@ -215,7 +215,7 @@
                                     <div class="row are-frends">
 
                                         <div class="col-xs-12 col-sm-10">
-                                            <a class="achievementcollapse followerCollapser followingCollapser" data-toggle="collapse"
+                                            <a class="achievementcollapse achievementCollapser" data-toggle="collapse"
                                                href="#achievementCollapse" role="button" aria-expanded="false"
                                                aria-controls="followerCollapse">
                                                 <p style="font-size: 14pt;">🏆</p>
