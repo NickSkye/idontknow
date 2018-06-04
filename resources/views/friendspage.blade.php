@@ -214,11 +214,11 @@
                                 @if($arefriends)
                                     <div class="row are-frends">
 
-                                        <div class="col-xs-12 col-sm-10">
+                                        <div class="col-xs-12 col-sm-10" style="display: flex;">
                                             <a class="achievementcollapse achievementCollapser" data-toggle="collapse"
                                                href="#achievementCollapse" role="button" aria-expanded="false"
-                                               aria-controls="followerCollapse">
-                                                <p style="font-size: 14pt;">🏆</p>
+                                               aria-controls="followerCollapse" style="font-size: 14pt;">
+                                               🏆
                                             </a>
 
                                             <button type="button" class="add-button" data-toggle="modal"
