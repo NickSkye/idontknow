@@ -210,10 +210,12 @@ $(document).ready(function(){
 
     $(".followerCollapser").click(function() {  //use a class, since your ID gets mangled
         $('#followingCollapse').removeClass('show');      //add the class to the clicked element
+        $('#achievementCollapse').removeClass('show');      //add the class to the clicked element
     });
 
     $(".followingCollapser").click(function() {  //use a class, since your ID gets mangled
         $('#followerCollapse').removeClass('show');      //add the class to the clicked element
+        $('#achievementCollapse').removeClass('show');      //add the class to the clicked element
     });
     $(".achievementCollapser").click(function() {  //use a class, since your ID gets mangled
         $('#followerCollapse').removeClass('show');      //add the class to the clicked element
