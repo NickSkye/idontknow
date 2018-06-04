@@ -76,13 +76,14 @@ class FriendController extends Controller
             $numposts = DB::table('posts')->where('username', $username)->where('deleted', false)->count();
             $numfollowing = DB::table('follows')->where('username', $username)->count();
             $frendsloc = $this->frendsLocation($username);
+            $achievements = DB::table('achievements')->where('username', Auth::user()->username)->get();
             //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
 
             foreach ($friends as $friend) {
                 if ($info->username === $friend->followsusername) {
                     $arefriends = true;
 
-                    return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'frendsloc' => $frendsloc]);
+                    return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'frendsloc' => $frendsloc, 'achievements' => $achievements]);
                 }
 
             }
