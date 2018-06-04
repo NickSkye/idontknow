@@ -53,8 +53,8 @@
                                 </div>
                             @endif
                             <div>
-                                {{$suggest}}
-@if(!is_null($suggest))
+
+@if(!empty($suggest))
                                 <h5>Suggested Frends</h5>
                                 <div class="infinite-scroll" style="overflow-x: scroll; overflow-y: hidden; width: 123%; margin-left: -41px; padding: 15px;">
                                 <div class="row frend-area" style="flex-wrap: nowrap;">
