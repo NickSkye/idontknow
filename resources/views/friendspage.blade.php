@@ -214,7 +214,7 @@
                                 @if($arefriends)
                                     <div class="row are-frends">
 
-                                        <div class="col-xs-12 col-sm-10" style="display: flex;">
+                                        <div class="col-xs-12 col-sm-10" style="display: flex; justify-content: space-around; align-items: center;">
                                             <a class="achievementcollapse achievementCollapser" data-toggle="collapse"
                                                href="#achievementCollapse" role="button" aria-expanded="false"
                                                aria-controls="followerCollapse" style="font-size: 14pt;">
