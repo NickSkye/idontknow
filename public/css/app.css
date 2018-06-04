@@ -982,6 +982,11 @@ ul.tabs li.current {
   background: transparent;
 }
 
+.add-suggested-frend {
+  position: absolute;
+  bottom: 20px;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;

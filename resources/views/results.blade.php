@@ -64,6 +64,9 @@
                                         <a href="/users/{{$sug->username}}" class="col-4 suggest-image" id="suggest-{{$sug->username}}" style="background-image: url('{{$sug->profileimage}}');">
                                             <div class="frend-box-name">
                                                 <p>{{$sug->name}}</p>
+
+                                            </div>
+                                            <div class="add-suggested-frend">
                                                 <form method="post" id="add_frend_form"
                                                       action="/addfrend/{{$sug->username}}">
                                                     {{ csrf_field() }}
