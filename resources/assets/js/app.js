@@ -109,7 +109,7 @@ $('#mobile-app-button').click(function(){
 $( document ).ready(function() {
     console.log( "You Found Me!" );
 
-        setInterval(function(){ sessionStorage.clear(); }, 180000);
+        // setInterval(function(){ sessionStorage.clear(); }, 180000);
 
     var yetVisited = sessionStorage['visited'];
     var hasVisited = localStorage['hasvisited'];
