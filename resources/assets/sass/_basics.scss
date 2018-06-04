@@ -995,6 +995,9 @@ ul.tabs li.current{
 
 .achievements-desktop{
     display: flex;
+    background-color: yellow;
+    width: 100%;
+    height: 60px;
 
 @media (max-width: 767px){
     display: none;
@@ -1005,5 +1008,8 @@ ul.tabs li.current{
     display: none;
     @media (max-width: 767px){
         display: flex;
+        background-color: yellow;
+        width: 100%;
+        height: 60px;
     }
 }
