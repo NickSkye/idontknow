@@ -53,10 +53,13 @@
                                 </div>
                             @endif
                             <div>
+
                                 <h5>Suggested Frends</h5>
                                 <div class="infinite-scroll" style="overflow-x: scroll; overflow-y: hidden; width: 123%; margin-left: -41px; padding: 15px;">
                                 <div class="row frend-area" style="flex-wrap: nowrap;">
+
                                 @foreach($suggest as $sug)
+
                                         <a href="/users/{{$sug->username}}" class="col-4 suggest-image" style="background-image: url('{{$sug->profileimage}}');">
                                             <div class="frend-box-name">
                                                 <p>{{$sug->name}}</p>
@@ -67,6 +70,8 @@
                                             </div>
                                         </a>
                                     @endforeach
+
+
                                 </div>
                                 </div>
                                 <h3>User Search Results:</h3>
