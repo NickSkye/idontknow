@@ -91,6 +91,12 @@ class HomeController extends Controller
 
         }
 
+        $friendscount = DB::table('follows')->where('username', Auth::user()->username)->count();
+        if($friendscount > 5){
+            DB::table('achievements')->firstOrCreate(['username'=> Auth::user()->username, 'achievement'=> '🤝', 'title'=> 'First 5 Frends']);
+        }
+
+
 
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         $now = new \DateTime();
