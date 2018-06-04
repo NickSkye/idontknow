@@ -370,6 +370,7 @@ a p {
   background: #00b4ff;
   color: white;
   float: right;
+  border-radius: 15px;
 }
 
 .hangout-button {
