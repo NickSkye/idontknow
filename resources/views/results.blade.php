@@ -53,6 +53,7 @@
                                 </div>
                             @endif
                             <div>
+                                {{$suggest}}
 @if(!is_null($suggest))
                                 <h5>Suggested Frends</h5>
                                 <div class="infinite-scroll" style="overflow-x: scroll; overflow-y: hidden; width: 123%; margin-left: -41px; padding: 15px;">
