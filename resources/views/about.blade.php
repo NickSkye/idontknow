@@ -63,10 +63,9 @@
                         @endif
                         <div>
 
-                            {{--friends posts--}}
-                            <div class="row frend-area">
-
-                            </div>
+                           <h2>About FrendGrid</h2>
+                            <br>
+                            <p>FrendGrid was created for those looking to keep up with their current friends and help you meet new friends around you. The idea is simple; while most social media sites are trying to get you to have virtual friends through their websites, FrendGrid is here to help you keep up with and inspire you to meet up with people in the real world as well as meet new friends based on the people around you in your everyday life. FrendGrid is always expanding and adding new features which can be learned about here as they happen.</p>
 
                         </div>
 
