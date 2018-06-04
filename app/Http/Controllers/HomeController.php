@@ -92,8 +92,10 @@ class HomeController extends Controller
         }
 
         $friendscount = DB::table('follows')->where('username', Auth::user()->username)->count();
-        if($friendscount > 5){
-            DB::table('achievements')->firstOrCreate(['username'=> Auth::user()->username, 'achievement'=> '🤝', 'title'=> 'First 5 Frends', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+        if($friendscount > 5) {
+            if (DB::table('achievements')->where('username', Auth::user()->username)->where('achievement', '🤝')->doesntExist()) {
+                DB::table('achievements')->insert(['username' => Auth::user()->username, 'achievement' => '🤝', 'title' => 'First 5 Frends', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+            }
         }
 
 
