@@ -106,7 +106,7 @@
                                                                    aria-hidden="true"></i></a>
                             </div>
                             <div style="text-align: center;" class="center">
-                                {{$generalinfo->username}}
+                                {{$generalinfo->username}} (you)
                             </div>
                             <div class="pull-right right">
                                 <li class="nav-item dropdown pull-right" style="list-style-type: none;">
