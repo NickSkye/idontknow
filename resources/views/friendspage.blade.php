@@ -282,9 +282,9 @@
                             <div class="card card-body text-center">
                                 Achievements
                                 <div class="row frend-area frends-frends-row multiple-items" >
-                                    <div style="overflow-x: scroll; overflow-y: hidden; width: 100%; height: 75px;">
+                                    <div style="display: flex; overflow-x: scroll; overflow-y: hidden; width: 100%; height: 75px;">
                                     @foreach($achievements as $achievement)
-                                        <div style="display: flex; flex-direction: column; align-items: center; width: 20%; min-width: 125px;">
+                                        <div style="width: 20%; min-width: 125px;">
                                             <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
                                             <p>{{$achievement->title}}</p>
                                         </div>
