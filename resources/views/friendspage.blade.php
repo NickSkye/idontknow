@@ -217,7 +217,7 @@
                                         <div class="col-xs-12 col-sm-10" style="display: flex; justify-content: space-around; align-items: center;">
                                             <a class="achievementcollapse achievementCollapser" data-toggle="collapse"
                                                href="#achievementCollapse" role="button" aria-expanded="false"
-                                               aria-controls="followerCollapse" style="font-size: 14pt;">
+                                               aria-controls="followerCollapse" style="font-size: 25pt;">
                                                🏆
                                             </a>
 
@@ -283,9 +283,9 @@
                                 Achievements
                                 <div class="row frend-area frends-frends-row multiple-items">
                                     @foreach($achievements as $achievement)
-                                        <div>
-                                            {{$achievement->achievement}}
-                                            {{$achievement->title}}
+                                        <div >
+                                            <p>{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
                                         </div>
 
                                     @endforeach
