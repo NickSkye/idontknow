@@ -69,9 +69,9 @@ function showPosition(position) {
       //  +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
     // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
     console.log( position.coords.latitude);
-    sessionStorage['latitude'] = position.coords.latitude;
-    sessionStorage['longitude'] = position.coords.longitude;
-    sessionStorage['visited'] = "yes";
+    sessionStorage.setItem('latitude', position.coords.latitude);
+    sessionStorage.setItem('longitude', position.coords.longitude);
+    sessionStorage.setItem('visited', "yes");
 
     $('input[name=latitude]').val(position.coords.latitude);
     $('input[name=longitude]').val(position.coords.longitude);
@@ -101,7 +101,7 @@ function showError(error) {
 }
 
 $('#mobile-app-button').click(function(){
-    localStorage['hasvisited'] = "yes";
+    localStorage.setItem('hasvisited', 'yes');
     window.location.href='https://www.frendgrid.com/about';
 })
 
@@ -111,8 +111,8 @@ $( document ).ready(function() {
 
         // setInterval(function(){ sessionStorage.clear(); }, 180000);
 
-    var yetVisited = sessionStorage['visited'];
-    var hasVisited = localStorage['hasvisited'];
+    var yetVisited = sessionStorage.getItem('visited');
+    var hasVisited = localStorage.getItem('hasvisited');
     if (!hasVisited){
         $('#mobile-app-button').addClass('d-block d-sm-block d-md-none')
         $('#mobile-app-button').removeClass('d-none')
@@ -139,8 +139,8 @@ $( document ).ready(function() {
 
     }
     else{
-        $('input[name=latitude]').val(sessionStorage['latitude']);
-        $('input[name=longitude]').val(sessionStorage['longitude']);
+        $('input[name=latitude]').val(sessionStorage.getItem('latitude'));
+        $('input[name=longitude]').val(sessionStorage.getItem('longitude'));
 
         $.ajax({
             url : '/update-location',
@@ -148,7 +148,7 @@ $( document ).ready(function() {
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            data : {latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude']}
+            data : {latitude: sessionStorage.getItem('latitude'), longitude: sessionStorage.getItem('longitude')}
         }).done(function(response){ //
 
         });
