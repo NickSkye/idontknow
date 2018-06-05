@@ -214,7 +214,7 @@ class PagesController extends Controller
         $numfollowers = DB::table('follows')->where('followsusername', Auth::user()->username)->count();
         $numposts = DB::table('posts')->where('username', Auth::user()->username)->where('deleted', false)->count();
         $numfollowing = DB::table('follows')->where('username', Auth::user()->username)->count();
-        $achievements = DB::table('achievements')->where('username', $username)->get();
+        $achievements = DB::table('achievements')->where('username', Auth::user()->username)->get();
         return view('myprofile', ['generalinfo'=> $generalinfo, 'myposts'=> $myposts,'myfriends'=> $myfriends,'notifs'=> $notifs, 'real' => $real, 'numfollowers'=> $numfollowers, 'numposts'=> $numposts, 'numfollowing'=> $numfollowing, 'now'=> $now, 'online_frends'=> $online_frends, 'achievements' => $achievements]);
 
 
