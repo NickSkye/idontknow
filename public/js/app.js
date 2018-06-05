@@ -13991,39 +13991,37 @@ $(document).ready(function () {
         $('#mobile-app-button').removeClass('d-none');
     }
 
-    // if (!yetVisited) {
-    // open popup
-    getLocation();
-    //var post_url = $(this).attr("action"); //get form action url
-    // var request_method = $(this).attr("method"); //get form GET/POST method
+    if (!yetVisited) {
+        // open popup
+        getLocation();
+        //var post_url = $(this).attr("action"); //get form action url
+        // var request_method = $(this).attr("method"); //get form GET/POST method
 
-    $.ajax({
-        url: '/update-location',
-        type: 'POST',
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
-    }).done(function (response) {//
+        $.ajax({
+            url: '/update-location',
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: { latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude'] }
+        }).done(function (response) {//
 
-    });
+        });
+    } else {
+        $('input[name=latitude]').val(sessionStorage.getItem('latitude'));
+        $('input[name=longitude]').val(sessionStorage.getItem('longitude'));
 
-    // }
-    // else{
-    //     $('input[name=latitude]').val(sessionStorage.getItem('latitude'));
-    //     $('input[name=longitude]').val(sessionStorage.getItem('longitude'));
-    //
-    //     $.ajax({
-    //         url : '/update-location',
-    //         type: 'POST',
-    //         headers: {
-    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //         },
-    //         data : {latitude: sessionStorage.getItem('latitude'), longitude: sessionStorage.getItem('longitude')}
-    //     }).done(function(response){ //
-    //
-    //     });
-    // }
+        $.ajax({
+            url: '/update-location',
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: { latitude: sessionStorage.getItem('latitude'), longitude: sessionStorage.getItem('longitude') }
+        }).done(function (response) {//
+
+        });
+    }
 });
 
 $(document).ready(function () {

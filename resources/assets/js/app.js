@@ -120,7 +120,7 @@ $( document ).ready(function() {
     }
 
 
-    // if (!yetVisited) {
+    if (!yetVisited) {
         // open popup
         getLocation();
         //var post_url = $(this).attr("action"); //get form action url
@@ -137,22 +137,22 @@ $( document ).ready(function() {
 
         });
 
-    // }
-    // else{
-    //     $('input[name=latitude]').val(sessionStorage.getItem('latitude'));
-    //     $('input[name=longitude]').val(sessionStorage.getItem('longitude'));
-    //
-    //     $.ajax({
-    //         url : '/update-location',
-    //         type: 'POST',
-    //         headers: {
-    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //         },
-    //         data : {latitude: sessionStorage.getItem('latitude'), longitude: sessionStorage.getItem('longitude')}
-    //     }).done(function(response){ //
-    //
-    //     });
-    // }
+    }
+    else{
+        $('input[name=latitude]').val(sessionStorage.getItem('latitude'));
+        $('input[name=longitude]').val(sessionStorage.getItem('longitude'));
+
+        $.ajax({
+            url : '/update-location',
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data : {latitude: sessionStorage.getItem('latitude'), longitude: sessionStorage.getItem('longitude')}
+        }).done(function(response){ //
+
+        });
+    }
 
 });
 
