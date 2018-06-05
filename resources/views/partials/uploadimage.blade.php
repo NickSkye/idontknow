@@ -16,6 +16,7 @@
                     <div class="col-12">
                         <input type="hidden" name="latitude" value=""/>
                         <input  type="hidden" name="longitude" value=""/>
+                        <img src="" id="profile-img-tag" style="width: 100%;" />
                         <textarea rows="4" cols="40" style="width: 100%;" placeholder="Whatcha thinkin about..." type="text" name="description" ></textarea>
                     </div>
                     <div class="col-6 offset-2 image-upload" style="align-self: flex-end;">
@@ -23,7 +24,7 @@
                             <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
                         </label>
                         <input id="file-input" type="file" name="image" />
-                        <img src="" id="profile-img-tag" width="200px" />
+
                     </div>
 
                     <div class="col-md-4" style="align-self: flex-end;">
