@@ -281,7 +281,8 @@
                         <div class="collapse" id="achievementCollapse">
                             <div class="card card-body text-center">
                                 Achievements
-                                <div class="row frend-area frends-frends-row multiple-items" style="overflow-x: scroll; overflow-y: hidden; width: 100%; height: 75px;">
+                                <div class="row frend-area frends-frends-row multiple-items" >
+                                    <div style="overflow-x: scroll; overflow-y: hidden; width: 100%; height: 75px;">
                                     @foreach($achievements as $achievement)
                                         <div style="display: flex; flex-direction: column; align-items: center; width: 20%; min-width: 125px;">
                                             <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
@@ -292,6 +293,7 @@
 
 
                                     @endforeach
+                                    </div>
 
                                 </div>
                             </div>
