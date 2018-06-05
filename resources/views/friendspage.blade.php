@@ -288,6 +288,60 @@
                                             <p>{{$achievement->title}}</p>
                                         </div>
 
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="margin-bottom: 0; font-size: 25pt;">{{$achievement->achievement}}</p>
+                                            <p>{{$achievement->title}}</p>
+                                        </div>
+
+
                                     @endforeach
 
                                 </div>
