@@ -283,8 +283,8 @@
                                 Achievements
                                 <div class="row frend-area frends-frends-row multiple-items">
                                     @foreach($achievements as $achievement)
-                                        <div >
-                                            <p>{{$achievement->achievement}}</p>
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <p style="padding-bottom: 0;">{{$achievement->achievement}}</p>
                                             <p>{{$achievement->title}}</p>
                                         </div>
 
