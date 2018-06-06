@@ -114,7 +114,7 @@ if ($request->hasFile('image')) {
     //
     $imageName = time().'.'.$request->image->getClientOriginalExtension();
     $image = $request->file('image');
-    $mime = $image->mime();
+    $mime = Image::make($image)->mime();
     $image = Image::make($image)->orientate();
     $image = $image->stream($mime, 90);
     $t = Storage::disk('s3')->put("posts/".$imageName, $image->__toString(), 'public');
