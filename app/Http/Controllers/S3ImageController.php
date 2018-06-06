@@ -114,11 +114,16 @@ if ($request->hasFile('image')) {
     //
     $imageName = time().'.'.$request->image->getClientOriginalExtension();
     $image = $request->file('image');
-    $mime = Image::make($image)->mime();
-    $image = Image::make($image)->orientate();
-    $image = $image->stream($mime, 90);
-    $t = Storage::disk('s3')->put("posts/".$imageName, $image->__toString(), 'public');
-    $imageName = Storage::disk('s3')->url("posts/".$imageName);
+   if($request->image->getClientOriginalExtension() == 'gif'){
+       $t = Storage::disk('s3')->put("posts/".$imageName, file_get_contents($image), 'public');
+       $imageName = Storage::disk('s3')->url("posts/".$imageName);
+   }
+   else {
+       $image = Image::make($image)->orientate();
+       $image = $image->stream();
+       $t = Storage::disk('s3')->put("posts/".$imageName, $image->__toString(), 'public');
+       $imageName = Storage::disk('s3')->url("posts/".$imageName);
+   }
 } else{
     $imageName = null;
 }
