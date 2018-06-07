@@ -98,7 +98,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     @guest
-    <body style="background: url('/images/rainbowback.jpg');
+    <body style="background: linear-gradient(to bottom right, red, yellow);
     background-size: cover;">
         @endguest
         @auth
