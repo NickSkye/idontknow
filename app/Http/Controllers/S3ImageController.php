@@ -175,17 +175,17 @@ if ($request->hasFile('image')) {
         }
 
         $postcount = DB::table('posts')->where('username', Auth::user()->username)->where('deleted', false)->count();
-        if($postcount > 5) {
+        if($postcount > 4) {
             if (DB::table('achievements')->where('username', Auth::user()->username)->where('title', 'First 5 Posts')->doesntExist()) {
                 DB::table('achievements')->insert(['username' => Auth::user()->username, 'achievement' => '✍️', 'title' => 'First 5 Posts', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
             }
         }
-        if($postcount > 25) {
+        if($postcount > 24) {
             if (DB::table('achievements')->where('username', Auth::user()->username)->where('title', '25 Posts')->doesntExist()) {
                 DB::table('achievements')->insert(['username' => Auth::user()->username, 'achievement' => '✍️', 'title' => '25 Posts', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
             }
         }
-        if($postcount > 100) {
+        if($postcount > 99) {
             if (DB::table('achievements')->where('username', Auth::user()->username)->where('title', '100 Posts')->doesntExist()) {
                 DB::table('achievements')->insert(['username' => Auth::user()->username, 'achievement' => '✍️', 'title' => '100 Posts', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
             }
