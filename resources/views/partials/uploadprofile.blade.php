@@ -79,6 +79,14 @@
 
                             </select>
                         </div>
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label for="use_loc">Receive E-mail Notifications?</label>
+                            <select name="use_loc">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+
+                            </select>
+                        </div>
 
                     </div>
                     {{--@endforeach--}}
