@@ -43,8 +43,8 @@
                                     {{--@endforeach--}}
                                 {{--</div>--}}
                             {{--</div>--}}
-                            @foreach($allwhoblocked->username as $awb)
-                                {{$awb}}
+                            @foreach($allwhoblocked as $awb)
+                                {{$awb->username}}
                                 @endforeach
                             <div id="tab-1" class="tab-content current">
                                 <div class="row frend-area">
