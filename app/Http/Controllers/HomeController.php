@@ -35,7 +35,10 @@ class HomeController extends Controller
     }
 
     public function getFollowingsInfo(){
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->leftJoin('blocked', function ($leftJoin) {
+            $leftJoin->on('users.username', '=', 'blocked.blockedusername')
+                ->where('blocked.username', Auth::user()->username);
+        })->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
 
         return $friends_info_full;
     }
