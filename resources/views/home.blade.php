@@ -97,7 +97,7 @@
                                     @endforeach
                                 </div>
                             </div>
-                            {{$allwhoblocked->username}}
+                            {{$allwhoblocked->toArray()}}
                             <div id="tab-2" class="tab-content">
                                 <div class="row frend-area">
 
