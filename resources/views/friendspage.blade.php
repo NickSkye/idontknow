@@ -120,6 +120,7 @@
                                             </a><br>
 
                                         @endif
+                                        {{$blocked}}
                                         @if($blocked)
                                                 <a style="color: lime; width: 100%;" data-toggle="modal" href="#unblockModal">
                                                     Un-Block User
