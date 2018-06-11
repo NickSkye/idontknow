@@ -117,7 +117,7 @@ class HomeController extends Controller
         //all people who you follows info
         $allfriendsinfo = $this->getFollowingsInfo();
         $allfollowersinfo = $this->getFollowersInfo();
-        $allwhoblocked = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get();
+        $allwhoblocked = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
 
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
