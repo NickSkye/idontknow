@@ -102,7 +102,7 @@
                                                                    aria-hidden="true"></i></a>
                             </div>
                             <div style="text-align: center;" class="center">
-                                @include('partials.useronline')
+                                @include('partials.useronline'){{$blocked}}
                             </div>
                             <div class="pull-right right">
                                 <li class="nav-item dropdown pull-right" style="list-style-type: none;">
@@ -120,7 +120,7 @@
                                             </a><br>
 
                                         @endif
-                                        {{$blocked}}
+
                                         @if($blocked)
                                                 <a style="color: lime; width: 100%;" data-toggle="modal" href="#unblockModal">
                                                     Un-Block User
