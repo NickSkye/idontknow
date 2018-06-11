@@ -77,19 +77,20 @@ class FriendController extends Controller
             $numfollowing = DB::table('follows')->where('username', $username)->count();
             $frendsloc = $this->frendsLocation($username);
             $achievements = DB::table('achievements')->where('username', $username)->get();
+            $blocked = DB::table('blocked')->where('username', Auth::user()->username)->where('username', $username)->exists();
             //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
 
             foreach ($friends as $friend) {
                 if ($info->username === $friend->followsusername) {
                     $arefriends = true;
 
-                    return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'frendsloc' => $frendsloc, 'achievements' => $achievements]);
+                    return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'frendsloc' => $frendsloc, 'achievements' => $achievements, 'blocked' => $blocked]);
                 }
 
             }
 
 
-            return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'achievements' => $achievements]);
+            return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'achievements' => $achievements, 'blocked' => $blocked]);
 
         }
         catch(\Exception $e){
@@ -138,5 +139,39 @@ class FriendController extends Controller
         $arefrends = false;
 //        return redirect("home")->with('status', 'friend added');
         return response([$arefrends]);
+    }
+
+
+    public function block($username)
+    {
+
+
+        DB::table('blocked')->insert(
+            ['username' => Auth::user()->username, 'blockedusername' => $username, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+        );
+
+
+        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+//        return redirect("home")->with('status', 'friend removed');
+
+//        return redirect("home")->with('status', 'friend added');
+        return redirect("home")->with('status', 'User Blocked: You can still see them but they cant see you');
+    }
+
+    public function unblock($username)
+    {
+
+
+        DB::table('blocked')->where('username', Auth::user()->username)->where('blockedusername', $username)->delete();
+
+
+
+        // $pages = Page::where('title', 'LIKE', "%$query%")->get();
+
+//        return redirect("home")->with('status', 'friend removed');
+
+//        return redirect("home")->with('status', 'friend added');
+        return redirect("home")->with('status', 'User Un-Blocked!');
     }
 }

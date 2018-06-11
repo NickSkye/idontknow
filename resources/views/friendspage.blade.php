@@ -32,6 +32,62 @@
             </div>
         </div>
 
+        <div class="modal fade" id="blockModal" tabindex="-1" role="dialog" aria-labelledby="blockModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="blockModalLabel">Remove Frend</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to block {{$info->username}}?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <form method="post" id="block_frend_form" action="/blockfrend/{{$info->username}}">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
+                            <button class="btn btn-warning" type="submit">
+                                <i class="fa fa-user-times fa-2x" aria-hidden="true"></i>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="unblockModal" tabindex="-1" role="dialog" aria-labelledby="unblockModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="unblockModalLabel">Remove Frend</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to un-block {{$info->username}}?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <form method="post" id="unblock_frend_form" action="/unblockfrend/{{$info->username}}">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="{{$info->username}}" value="{{$info->username}}"/>
+                            <button class="btn btn-warning" type="submit">
+                                <i class="fa fa-user-times fa-2x" aria-hidden="true"></i>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
@@ -64,6 +120,16 @@
                                             </a>
 
                                         @endif
+                                        @if($blocked)
+                                                <a style="color: lime; width: 100%;" data-toggle="modal" href="#unblockModal">
+                                                    Un-Block User
+                                                </a>
+                                            @else
+                                                <a style="color: red; width: 100%;" data-toggle="modal" href="#blockModal">
+                                                    Block User
+                                                </a>
+                                            @endif
+
 
 
                                     </div>

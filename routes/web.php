@@ -51,6 +51,8 @@ Route::post('/sendinvite', 'SearchController@sendinvite')->middleware('auth');
 Route::get('/search', 'SearchController@index')->middleware('auth');
 Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');
 Route::post('/removefrend/{username?}', 'FriendController@remove')->middleware('auth');
+Route::post('/blockfrend/{username?}', 'FriendController@block')->middleware('auth');
+Route::post('/unblockfrend/{username?}', 'FriendController@unblock')->middleware('auth');
 Route::post('/delete-post/{id?}', 'PagesController@deletepost')->middleware('auth');
 Route::get('/clear-notifications', 'PagesController@clearnotifications')->middleware('auth');
 Route::post('/comment', 'CommentsController@addcomment')->middleware('auth');
