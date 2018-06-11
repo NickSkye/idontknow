@@ -77,13 +77,13 @@ class FriendController extends Controller
             $numfollowing = DB::table('follows')->where('username', $username)->count();
             $frendsloc = $this->frendsLocation($username);
             $achievements = DB::table('achievements')->where('username', $username)->get();
-            $blocked = DB::table('blocked')->where('username', Auth::user()->username)->where('blockedusername', $username)->first();
-            if($blocked === null){
-                $blocked = false;
-            }
-            else{
-                $blocked = true;
-            }
+            $blocked = DB::table('blocked')->where('username', Auth::user()->username)->where('blockedusername', $username)->exists();
+//            if($blocked === null){
+//                $blocked = false;
+//            }
+//            else{
+//                $blocked = true;
+//            }
             //$friendsinfo = DB::table('profileinfo')->where('username', $username)->get();
 
             foreach ($friends as $friend) {
