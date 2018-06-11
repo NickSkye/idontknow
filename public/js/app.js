@@ -14287,8 +14287,9 @@ $("#block_frend_form").submit(function (event) {
         url: post_url,
         type: request_method,
         data: form_data
-    }).done(function (response) {//
-
+    }).done(function (response) {
+        //
+        $('#blockModal').modal('toggle');
     });
 });
 
@@ -14302,8 +14303,9 @@ $("#unblock_frend_form").submit(function (event) {
         url: post_url,
         type: request_method,
         data: form_data
-    }).done(function (response) {//
-
+    }).done(function (response) {
+        //
+        $('#unblockModal').modal('toggle');
     });
 });
 

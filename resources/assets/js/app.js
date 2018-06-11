@@ -422,7 +422,7 @@ $("#block_frend_form").submit(function(event){
         type: request_method,
         data : form_data
     }).done(function(response){ //
-
+        $('#blockModal').modal('toggle');
     });
 });
 
@@ -437,7 +437,7 @@ $("#unblock_frend_form").submit(function(event){
         type: request_method,
         data : form_data
     }).done(function(response){ //
-
+        $('#unblockModal').modal('toggle');
     });
 });
 
