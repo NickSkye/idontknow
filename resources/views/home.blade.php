@@ -97,7 +97,9 @@
                                     @endforeach
                                 </div>
                             </div>
-                            {{$allwhoblocked->toArray()}}
+                            @foreach($allwhoblocked as $awb)
+                            {{$awb}}
+                            @endforeach
                             <div id="tab-2" class="tab-content">
                                 <div class="row frend-area">
 
