@@ -104,7 +104,7 @@
                                 <div class="row frend-area">
 
                                     @foreach($allfollowersinfo as $followerinfos)
-
+                                        @if(!in_array($followerinfos->username, $allwhoblocked))
 
 
                                         <a href="/users/{{$followerinfos->username}}" class="col-4 home-frends-images" style="background-image: url('{{$followerinfos->profileimage}}');">
@@ -113,7 +113,7 @@
                                                 <p>{{$followerinfos->username}}</p>
                                             </div>
                                         </a>
-
+@endif
                                     @endforeach
                                 </div>
                             </div>
