@@ -43,14 +43,12 @@
                                     {{--@endforeach--}}
                                 {{--</div>--}}
                             {{--</div>--}}
-                            @foreach($allwhoblocked as $awb)
-                                {{$awb->username}}
-                                @endforeach
+
                             <div id="tab-1" class="tab-content current">
                                 <div class="row frend-area">
 
                                     @foreach($allfriendsinfo as $infos)
-                                        @if(!in_array($infos->followsusername, $allwhoblocked[1]))
+                                        @if(!in_array($infos->followsusername, $allwhoblocked))
                                         <a href="/users/{{$infos->followsusername}}" class="col-4 home-frends-images" style="background-image: url('{{$infos->profileimage}}');">
                                            <div class="online-status">
 
