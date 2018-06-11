@@ -47,7 +47,7 @@
                                 <div class="row frend-area">
 
                                     @foreach($allfriendsinfo as $infos)
-                                        @if(!in_array($infos->followsusername, $allwhoblocked))
+                                        @if(in_array($infos->followsusername, $allwhoblocked))
                                         <a href="/users/{{$infos->followsusername}}" class="col-4 home-frends-images" style="background-image: url('{{$infos->profileimage}}');">
                                            <div class="online-status">
 
