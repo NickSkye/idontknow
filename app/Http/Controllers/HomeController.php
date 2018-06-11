@@ -35,10 +35,7 @@ class HomeController extends Controller
     }
 
     public function getFollowingsInfo(){
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->leftJoin('blocked', function ($leftJoin) {
-            $leftJoin->on('users.username', '=', 'blocked.username')
-                ->where('blocked.blockedusername', Auth::user()->username);
-        })->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
 
         return $friends_info_full;
     }
@@ -120,11 +117,12 @@ class HomeController extends Controller
         //all people who you follows info
         $allfriendsinfo = $this->getFollowingsInfo();
         $allfollowersinfo = $this->getFollowersInfo();
+        $allwhoblocked = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get();
 
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
-            return view('home', ['allfriendsinfo' => $allfriendsinfo, 'frendsloc' => $frendsloc, 'notifs'=> $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
+            return view('home', ['allfriendsinfo' => $allfriendsinfo, 'frendsloc' => $frendsloc, 'notifs'=> $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'allwhoblocked' => $allwhoblocked]);
         }
     }
