@@ -79,14 +79,14 @@
 
                             </select>
                         </div>
-                        <div class="form-group" style="margin-top: 1rem;">
-                            <label for="use_loc">Allow us to use your location?</label>
-                            <select name="use_loc">
-                                <option value="1">Yes</option>
-                                <option value="0">No</option>
+                        {{--<div class="form-group" style="margin-top: 1rem;">--}}
+                            {{--<label for="use_loc">Allow us to use your location?</label>--}}
+                            {{--<select name="use_loc">--}}
+                                {{--<option value="1">Yes</option>--}}
+                                {{--<option value="0">No</option>--}}
 
-                            </select>
-                        </div>
+                            {{--</select>--}}
+                        {{--</div>--}}
 
                     </div>
                     {{--@endforeach--}}
