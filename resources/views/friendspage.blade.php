@@ -117,17 +117,17 @@
                                         @if($info->username != Auth::user()->username)
                                             <a style="color: red; width: 100%;" data-toggle="modal" href="#deleteModal">
                                                 Remove Frend
-                                            </a>
+                                            </a><br>
 
                                         @endif
                                         @if($blocked)
                                                 <a style="color: lime; width: 100%;" data-toggle="modal" href="#unblockModal">
                                                     Un-Block User
-                                                </a>
+                                                </a><br>
                                             @else
                                                 <a style="color: red; width: 100%;" data-toggle="modal" href="#blockModal">
                                                     Block User
-                                                </a>
+                                                </a><br>
                                             @endif
 
 
