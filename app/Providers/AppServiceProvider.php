@@ -15,9 +15,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $use_loc = DB::table('profileinfo')->select('use_loc')->where('username', Auth::user()->username)->first();
 
-        view()->share('use_location', $use_loc);
+
+
+
+        view()->composer('*', function ($view)
+        {
+            $use_loc = DB::table('profileinfo')->select('use_loc')->where('username', Auth::user()->username)->first();
+
+            //...with this variable
+
+            $view->with('use_location', $use_loc );
+        });
 
 
     }
