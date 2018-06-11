@@ -97,14 +97,12 @@
                                     @endforeach
                                 </div>
                             </div>
-                            @foreach($allwhoblocked as $awb)
-                            {{$awb->username}}
-                            @endforeach
+                           
                             <div id="tab-2" class="tab-content">
                                 <div class="row frend-area">
 
                                     @foreach($allfollowersinfo as $followerinfos)
-                                        @if(!in_array($followerinfos->username, $allwhoblocked))
+                                        @if(!in_array($followerinfos->username, $allwhoblocked->username))
 
 
                                         <a href="/users/{{$followerinfos->username}}" class="col-4 home-frends-images" style="background-image: url('{{$followerinfos->profileimage}}');">
