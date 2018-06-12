@@ -24,6 +24,11 @@ class PagesController extends Controller
         return $friends_online;
     }
 
+    public function currentuser(){
+
+        return Auth::user()->username;
+    }
+
     public function nearbyPosts() {
 
         $location = DB::table('users')->select('latitude', 'longitude')
@@ -431,6 +436,43 @@ $online_frends = [];
 
 
     }
+
+
+
+    public function updateLocationSwift($lat, $long){
+
+
+
+
+
+        if(!is_null($lat) and !is_null($long)){
+            DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
+
+            $closeusers =  DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$lat.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$long.') ) + sin( radians('.$lat.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 0.03)->join('profileinfo', 'profileinfo.username', '=', 'users.username')->where('users.username', '!=', Auth::user()->username)->orderBy('distance')->get();
+
+            foreach($closeusers as $user){
+                if(DB::table('notifications')->where(['username' => Auth::user()->username, 'notification' => 'bumped into', 'from_username' => $user->username, 'type' => 'bump', 'route' => $user->username, 'seen' => false])->doesntExist()) {
+                    DB::table('notifications')->insert(
+                        ['username' => Auth::user()->username, 'notification' => 'bumped into', 'from_username' => $user->username, 'type' => 'bump', 'route' => $user->username, 'seen' => false, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                    );
+                }
+
+                if(DB::table('notifications')->where(['username' => $user->username, 'notification' => 'bumped into', 'from_username' => Auth::user()->username, 'type' => 'bump', 'route' => Auth::user()->username, 'seen' => false])->doesntExist()) {
+                    DB::table('notifications')->insert(
+                        ['username' => $user->username, 'notification' => 'bumped into', 'from_username' => Auth::user()->username, 'type' => 'bump', 'route' => Auth::user()->username, 'seen' => false, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                    );
+                }
+
+
+            }
+        }
+
+
+
+
+    }
+
+
 
     public function deletepost($id)
     {

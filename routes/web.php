@@ -34,6 +34,8 @@ Route::get('/donate', 'PagesController@donate')->middleware('auth');
 Route::get('/legal', 'PagesController@legal')->middleware('auth');
 Route::get('/suggestions', 'PagesController@suggestions')->middleware('auth');
 Route::get('/support', 'PagesController@support')->middleware('auth');
+Route::get('/currentuser', 'PagesController@currentuser')->middleware('auth');
+Route::post('/update-location-swift/{lat?}/{long?}', 'PagesController@updateLocationSwift')->middleware('auth');
 Route::post('/support-request', 'PagesController@supportrequest')->middleware('auth');
 Route::post('/post/like', 'PagesController@like')->middleware('auth');
 Route::post('/post/dislike', 'PagesController@dislike')->middleware('auth');
@@ -57,6 +59,7 @@ Route::post('/delete-post/{id?}', 'PagesController@deletepost')->middleware('aut
 Route::get('/clear-notifications', 'PagesController@clearnotifications')->middleware('auth');
 Route::post('/comment', 'CommentsController@addcomment')->middleware('auth');
 Route::post('/activitycomment', 'CommentsController@addactivitycomment')->middleware('auth');
+
 
 Route::post('/report-post/{id?}', 'PagesController@reportpost')->middleware('auth');
 Route::post('/report-comment/{id?}', 'PagesController@reportcomment')->middleware('auth');
