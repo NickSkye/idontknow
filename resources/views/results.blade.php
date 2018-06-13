@@ -55,7 +55,9 @@
                             <div>
 
 
-                                <h5>Suggested Frends</h5>
+                                @if(($suggest->count() > 0))
+                                    <h5>Suggested Frends</h5>
+                                @endif
                                 <div class="infinite-scroll" style="overflow-x: scroll; overflow-y: hidden; width: 123%; margin-left: -41px; padding: 15px;">
                                 <div class="row frend-area" style="flex-wrap: nowrap;">
 
