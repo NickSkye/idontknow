@@ -52,6 +52,21 @@ class HomeController extends Controller
         return $friends_info_full;
     }
 
+    public function peopleWithinFiveMiles() {
+
+
+        $location = DB::table('users')->select('latitude', 'longitude')->where('username', Auth::user()->username)->first();
+        if(is_null($location->latitude) or is_null($location->longitude)){
+            $location->latitude = 0;
+            $location->longitude = 0;
+        }
+
+        return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->join('profileinfo', 'profileinfo.username', '=', 'users.username')
+            ->whereNotIn('users.username',function($query){
+                $query->select('follows.followsusername')->from('follows')->where('follows.username', Auth::user()->username);
+            })->orderBy('distance')->limit(18)->get();
+    }
+
 
     public function frendsLocation() {
 
@@ -119,6 +134,7 @@ class HomeController extends Controller
         $allfollowersinfo = $this->getFollowersInfo();
         $allwhoblocked = array();
         $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
+        $suggest = $this->peopleWithinFiveMiles();
         foreach($allwhoblockeds as $awb){
             array_push($allwhoblocked, $awb->username);
         }
@@ -126,6 +142,6 @@ class HomeController extends Controller
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
-            return view('home', ['allfriendsinfo' => $allfriendsinfo, 'frendsloc' => $frendsloc, 'notifs'=> $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'allwhoblocked' => $allwhoblocked]);
+            return view('home', ['allfriendsinfo' => $allfriendsinfo, 'frendsloc' => $frendsloc, 'notifs'=> $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'allwhoblocked' => $allwhoblocked, 'suggest' => $suggest]);
         }
     }
