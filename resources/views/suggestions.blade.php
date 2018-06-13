@@ -50,7 +50,7 @@
 
 
                                         <div class="form-group">
-                                            <label for="mess">Have any ideas for how we can make FrendGrid better? Let us know here and we may include your suggestion in ta future update</label>
+                                            <label for="mess">Have any ideas for how we can make FrendGrid better? Let us know here and we may include your suggestion in a future update</label>
                                             <textarea class="form-control book-form" id="mess" name="mess" cols="30" rows="10">{{ old('mess') }}</textarea>
                                         </div>
 
