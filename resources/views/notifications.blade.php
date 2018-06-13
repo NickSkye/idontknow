@@ -90,7 +90,7 @@
 
 
                                         <div class="col-12 notification-row" style="display: flex; align-items: center; background-color: #F5F5F5; border-bottom: 1px solid lightgrey;">
-                                            <a href="/users/{{$oldnotif->from_username}}" class=" profile-image-shout-page "
+                                            <a href="/users/{{$oldnotif->from_username}}" class=" profile-image-shout-page old"
                                                style="background-image: url('{{$oldnotif->profileimage}}');">
 
                                             </a>
