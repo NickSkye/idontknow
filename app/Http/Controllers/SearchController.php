@@ -64,6 +64,10 @@ class SearchController extends Controller {
     public function sendinvite(Request $request){
         $user = DB::table('users')->where('username', Auth::user()->username)->get();
 
+        if (DB::table('achievements')->where('username', Auth::user()->username)->where('title', 'Invited A Frend')->doesntExist()) {
+            DB::table('achievements')->insert(['username' => Auth::user()->username, 'achievement' => '💌', 'title' => 'Invited A Frend', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+        }
+
         Mail::to($request->email)->send(new Signup($user));
         return redirect('/')->with('status', 'invite sent');
     }
