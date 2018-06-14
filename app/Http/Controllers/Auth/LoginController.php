@@ -40,9 +40,9 @@ class LoginController extends Controller
         $this->username = $this->findUsername();
     }
 
-    public function findUsername(Request $request)
+    public function findUsername()
     {
-        $login = $request->input('email');
+        $login = request()->input('email');
 
         $fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
