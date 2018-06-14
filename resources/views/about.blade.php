@@ -68,7 +68,7 @@
                                 <h3>1. Setting up your profile</h3>
                                 <p>Go to your <a href="/settings">settings</a> and write a short bio about yourself, change your profile pic, and fill in whatever other info you want.</p>
                                 <h3>2. View Nearby Activity</h3>
-                                <p><a href="/nearby">Nearby Activity</a> can be a good place to start to see whats going on around you and can help you find frends to follow. This can be viewed from the activity button which is the second one from the left on the bottom and then clicking "Nearby Activity."</p>
+                                <p><a href="/nearby">Nearby Activity</a> can be a good place to start to see whats going on around you and can help you find frends to follow. This can be viewed from the activity button <i aria-hidden="true" class="fa fa-list"></i> which is the second one from the left on the bottom and then clicking "Nearby Activity."</p>
 
                                 <h3>3. Make Frends</h3>
                                 <p>FrendGrid is all about connecting with your friends in real life and making new friends based off people you are near or bump into everyday. Frends can be searched for with the search bar up top with the magnifying glass <i class="fa fa-search"></i> or they will be suggested to you on your
