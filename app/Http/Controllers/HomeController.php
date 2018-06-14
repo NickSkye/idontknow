@@ -64,7 +64,7 @@ class HomeController extends Controller
         return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->join('profileinfo', 'profileinfo.username', '=', 'users.username')
             ->whereNotIn('users.username',function($query){
                 $query->select('follows.followsusername')->from('follows')->where('follows.username', Auth::user()->username);
-            })->orderBy('distance')->limit(18)->get();
+            })->where('users.username', '!=', Auth::user()->username)->orderBy('distance')->limit(18)->get();
     }
 
 
