@@ -42,7 +42,7 @@ class LoginController extends Controller
 
     public function findUsername()
     {
-        $login = request()->input('login');
+        $login = request()->input('email');
 
         $fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
