@@ -48,7 +48,7 @@ class LoginController extends Controller
         DB::table('users')->where('username', $user->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         $noprofpic = DB::table('profileinfo')->where('username', $user->username)->where('profileimage', '/images/default-avatar.jpg')->exists();
         if($noprofpic){
-            return redirect()->intended('/about');
+            return redirect('/about');
         }else{
             return redirect()->intended($this->redirectPath());
         }
