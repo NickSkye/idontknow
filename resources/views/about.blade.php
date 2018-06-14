@@ -93,10 +93,15 @@
                                 <p>Creating a new posts for your frends to see can be done by clicking the bottom middle button <i aria-hidden="true" class="fa fa-plus"></i>. From there you can write whatever you want the world to see and include a picture if you want. You can mention frends with the @ symbol.</p>
                                 <br>
 
+                                <h3>7. Achievements</h3>
+                                <p>FrendGrid gives you different awards for many different achievements you accomplish. You can see all your achievements on
+                                    <a href="/me">your profile</a> by clicking the trophy 🏆. You can also view your frends achievements from their profile pages. New achievements are always being added!</p>
+                                <br>
+
                             </div>
                         <div>
 
-                           <h2>7. About FrendGrid</h2>
+                           <h2>8. About FrendGrid</h2>
                             <br>
                             <p>FrendGrid was created for those looking to keep up with their current friends and help you meet new friends around you. The idea is simple; while most social media sites are trying to get you to have virtual friends through their websites, FrendGrid is here to help you keep up with and inspire you to meet up with people in the real world as well as meet new friends based on the people around you in your everyday life. FrendGrid is always expanding and adding new features which can be learned about here as they happen.</p>
 
