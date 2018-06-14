@@ -38,6 +38,51 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+
+    /**
+     * Check either username or email.
+     * @return string
+     */
+    public function username()
+    {
+        $identity  = request()->get('email');
+        $fieldName = filter_var($identity, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        request()->merge([$fieldName => $identity]);
+        return $fieldName;
+    }
+    /**
+     * Validate the user login.
+     * @param Request $request
+     */
+    protected function validateLogin(Request $request)
+    {
+        $this->validate(
+            $request,
+            [
+                'identity' => 'required|string',
+                'password' => 'required|string',
+            ],
+            [
+                'identity.required' => 'Username or email is required',
+                'password.required' => 'Password is required',
+            ]
+        );
+    }
+    /**
+     * @param Request $request
+     * @throws ValidationException
+     */
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        $request->session()->put('login_error', trans('auth.failed'));
+        throw ValidationException::withMessages(
+            [
+                'error' => [trans('auth.failed')],
+            ]
+        );
+    }
+
+
     public function authenticated(Request $request, $user)
     {
         if (!$user->verified) {
