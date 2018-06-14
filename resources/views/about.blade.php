@@ -61,6 +61,30 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                            <div>
+                                <h1>Welcome to FrendGrid!</h1>
+                                <h2>How to use FrendGrid</h2>
+                                <br>
+                                <h3>1. Setting up your profile</h3>
+                                <p>Go to your <a href="/settings">settings</a> and write a short bio about yourself, change your profile pic, and fill in whatever other info you want.</p>
+                                <h3>2. View Nearby Activity</h3>
+                                <p><a href="/nearby">Nearby Activity</a> can be a good place to start to see whats going on around you and can help you find frends to follow. This can be viewed from the activity button which is the second one from the left on the bottom and then clicking "Nearby Activity."</p>
+
+                                <h3>3. Make Frends</h3>
+                                <p>FrendGrid is all about connecting with your friends in real life and making new friends based off people you are near or bump into everyday. Frends can be searched for with the search bar up top with the magnifying glass <i class="fa fa-search"></i> or they will be suggested to you on your
+                                    <a href="/">home screen.</a></p>
+
+                                <h3>4. Notifications</h3>
+                                <p>The <a href="/notification">Notifications Screen</a> is where you can view all current (colored) and past (greyed out) notifications. You can always access this screen from the exclamation point <i aria-hidden="true" class="fa fa-exclamation-circle" ></i> at the top of the screen. Here you can view if you've been mentioned in a post or comment, who you have bumped into, and if anyone has sent you a
+                                    <a href="/shouts">Shout!</a></p>
+
+                                <h3>5. Shouts</h3>
+                                <p><a href="/shouts">Shout!</a> is FrendGrids instant messaging that disappears after it is viewed. You can send shouts to anyone you are frends with by clicking the megaphone <i aria-hidden="true" class="fa fa-bullhorn "></i> and then selecting the person you wish to shout and then writing a brief message. You can also shout at a frend directly from their profile page.</p>
+
+                                <h3>6. Posts</h3>
+                                <p>Creating a new posts for your frends to see can be done by clicking the bottom middle button <i aria-hidden="true" class="fa fa-plus fa-2x"></i>. From there you can write whatever you want the world to see and include a picture if you want. You can mention frends with the @@ symbol.</p>
+
+                            </div>
                         <div>
 
                            <h2>About FrendGrid</h2>
