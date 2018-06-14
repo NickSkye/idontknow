@@ -98,7 +98,7 @@
                                 <div class="infinite-scroll">
                                     <div class="row frend-area">
                                     @foreach($searchedusers as $user)
-
+                                        @if($user->username != Auth::user()->username)
                                         <a href="/users/{{$user->username}}" class="col-12 col-sm-4 search-image" style="background-image: url('{{$user->profileimage}}');">
                                             <div class="frend-box-name">
                                                 <p>{{$user->name}}</p>
@@ -108,7 +108,7 @@
                                             </div>
                                         </a>
 
-
+                                        @endif
                                     @endforeach
                                     </div>
                                     {{ $searchedusers->links() }}
