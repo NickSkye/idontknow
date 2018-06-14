@@ -67,7 +67,7 @@
                                 <h2>How to use FrendGrid</h2>
                                 <br>
                                 <h3>1. Setting up your profile</h3>
-                                <p>Go to your <a href="/settings">settings</a> and write a short bio about yourself, change your profile pic, and fill in whatever other info you want.</p>
+                                <p>Go to your <a href="/settings">settings</a> and write a short bio about yourself, change your profile pic, and fill in whatever other info you want. You can always access the settings from the settings button <i aria-hidden="true" class="fa fa-bars"></i> on mobile or by clicking your name and then selecting settings from the dropdown on desktop.</p>
                                 <h3>2. View Nearby Activity</h3>
                                 <p><a href="/nearby">Nearby Activity</a> can be a good place to start to see whats going on around you and can help you find frends to follow. This can be viewed from the activity button <i aria-hidden="true" class="fa fa-list"></i> which is the second one from the left on the bottom and then clicking "Nearby Activity."</p>
                                 <br>
