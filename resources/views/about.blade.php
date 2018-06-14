@@ -98,10 +98,14 @@
                                     <a href="/me">your profile</a> by clicking the trophy 🏆. You can also view your frends achievements from their profile pages. New achievements are always being added!</p>
                                 <br>
 
+                                <h3>8. Home Page</h3>
+                                <p><a href="/">Your Home page</a> is where you can keep track of all your frends. in the top right of each frend's picture is how far away from you they are (in miles). On mobile, in the top left corner of your frends picture will be a colored dot representing how long ago they were online (green = currently online, orange = active within the past 5 minutes, red = not online). This can be viewed on desktop by clicking the blue and red arrow tab in the top right of the screen which will reveal a list of your online frends. Frends are ordered on this page based on when they were last online (top left being most recently online, bottom right being online longest ago). Frend suggestions are below your frend grid.</p>
+                                <br>
+
                             </div>
                         <div>
 
-                           <h2>8. About FrendGrid</h2>
+                           <h2>9. About FrendGrid</h2>
                             <br>
                             <p>FrendGrid was created for those looking to keep up with their current friends and help you meet new friends around you. The idea is simple; while most social media sites are trying to get you to have virtual friends through their websites, FrendGrid is here to help you keep up with and inspire you to meet up with people in the real world as well as meet new friends based on the people around you in your everyday life. FrendGrid is always expanding and adding new features which can be learned about here as they happen.</p>
 
