@@ -45,9 +45,9 @@ class LoginController extends Controller
      */
     public function username()
     {
-        $identity  = request()->get('email');
-        $fieldName = filter_var($identity, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-        request()->merge([$fieldName => $identity]);
+
+        $fieldName = filter_var('email', FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        request()->merge([$fieldName => 'email']);
         return $fieldName;
     }
     /**
@@ -59,11 +59,11 @@ class LoginController extends Controller
         $this->validate(
             $request,
             [
-                'identity' => 'required|string',
+                'email' => 'required|string',
                 'password' => 'required|string',
             ],
             [
-                'identity.required' => 'Username or email is required',
+                'email.required' => 'Username or email is required',
                 'password.required' => 'Password is required',
             ]
         );
