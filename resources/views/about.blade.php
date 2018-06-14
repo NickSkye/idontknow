@@ -82,7 +82,7 @@
                                 <p><a href="/shouts">Shout!</a> is FrendGrids instant messaging that disappears after it is viewed. You can send shouts to anyone you are frends with by clicking the megaphone <i aria-hidden="true" class="fa fa-bullhorn "></i> and then selecting the person you wish to shout and then writing a brief message. You can also shout at a frend directly from their profile page.</p>
 
                                 <h3>6. Posts</h3>
-                                <p>Creating a new posts for your frends to see can be done by clicking the bottom middle button <i aria-hidden="true" class="fa fa-plus fa-2x"></i>. From there you can write whatever you want the world to see and include a picture if you want. You can mention frends with the @@ symbol.</p>
+                                <p>Creating a new posts for your frends to see can be done by clicking the bottom middle button <i aria-hidden="true" class="fa fa-plus"></i>. From there you can write whatever you want the world to see and include a picture if you want. You can mention frends with the @ symbol.</p>
 
                             </div>
                         <div>
