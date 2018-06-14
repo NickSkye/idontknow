@@ -39,17 +39,6 @@ class LoginController extends Controller
     }
 
 
-    /**
-     * Check either username or email.
-     * @return string
-     */
-    public function username()
-    {
-
-
-        return 'username';
-    }
-
 
 
     public function authenticated(Request $request, $user)
