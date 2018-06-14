@@ -372,9 +372,9 @@ $("#add_frend_form").submit(function(event){
     }).done(function(response){ //
         $(".are-frends").removeClass('d-none');
         $(".arent-frends").addClass('d-none');
-        $('.add_frend_button').toggleClass("loading-button");     //add the class to the clicked element
-        $('.add_frend_button i.fa').toggleClass("fa-user-plus");     //add the class to the clicked element
-        $('.add_frend_button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        $('.add_frend_button').addClass("d-none");     //add the class to the clicked element
+        // $('.add_frend_button i.fa').toggleClass("fa-user-plus");     //add the class to the clicked element
+        // $('.add_frend_button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
         $("#suggest-" + response[1]).addClass('d-none');
         // if(response[1]){
         //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
