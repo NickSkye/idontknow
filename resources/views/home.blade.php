@@ -110,7 +110,7 @@
                                         <a href="/users/{{$followerinfos->username}}" class="col-4 home-frends-images" style="background-image: url('{{$followerinfos->profileimage}}');">
 
                                             <div class="frend-box">
-                                                <p>{{$followerinfos->username}}</p>
+                                                <p style="font-size: 0.8rem;">{{$followerinfos->username}}</p>
                                             </div>
                                         </a>
 @endif
@@ -128,7 +128,7 @@
 
                                         <a href="/users/{{$sug->username}}" class="col-4 suggest-image" id="suggest-{{$sug->username}}" style="background-image: url('{{$sug->profileimage}}');">
                                             <div class="frend-box-name">
-                                                <p>{{$sug->name}}</p>
+                                                <p style="font-size: 0.8rem;">{{$sug->name}}</p>
 
                                             </div>
                                             {{--<div class="add-suggested-frend">--}}
@@ -143,7 +143,7 @@
                                             {{--</form>--}}
                                             {{--</div>--}}
                                             <div class="frend-box" style="height: 25%;">
-                                                <p>{{round($sug->distance, 1)}} miles</p>
+                                                <p style="font-size: 0.8rem;">{{round($sug->distance, 1)}} miles</p>
 
                                             </div>
                                         </a>
