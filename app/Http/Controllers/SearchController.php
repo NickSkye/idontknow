@@ -32,7 +32,7 @@ class SearchController extends Controller {
         return DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->join('profileinfo', 'profileinfo.username', '=', 'users.username')
             ->whereNotIn('users.username',function($query){
             $query->select('follows.followsusername')->from('follows')->where('follows.username', Auth::user()->username);
-        })->orderBy('distance')->limit(18)->get();
+        })->where('users.username', '!=', Auth::user()->username)->orderBy('distance')->limit(18)->get();
     }
 
     public function index(Request $request)
@@ -52,7 +52,7 @@ class SearchController extends Controller {
 
         $suggest = $this->peopleWithinFiveMiles();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
-        $searchedusers = User::join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.email', 'LIKE', '%' . $request->input('query') . '%')->limit(81)->paginate(10);
+        $searchedusers = User::join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.email', 'LIKE', '%' . $request->input('query') . '%')->where('users.username', '!=', Auth::user()->username)->limit(81)->paginate(10);
 
         return view('results', ['now'=> $now, 'online_frends'=> $online_frends, 'suggest'=> $suggest, 'friends'=> $friends])->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
     }
