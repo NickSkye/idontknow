@@ -21,7 +21,7 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('Username or E-Mail') }}</label>
+                                <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('Username or email') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="text" class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('username') ?: old('email') }}" autofocus>
