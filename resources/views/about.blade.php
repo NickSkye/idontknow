@@ -62,7 +62,8 @@
                             </div>
                         @endif
                             <div>
-                                <h1>Welcome to FrendGrid!</h1>
+                                <h1 style="text-align: center;">Welcome to FrendGrid!</h1>
+                                <br><br>
                                 <h2>How to use FrendGrid</h2>
                                 <br>
                                 <h3>1. Setting up your profile</h3>
