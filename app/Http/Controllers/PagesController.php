@@ -362,7 +362,8 @@ class PagesController extends Controller
         foreach($allwhoblockeds as $awb){
             array_push($allwhoblocked, $awb->username);
         }
-        if(in_array(DB::table('posts')->select('username')->where('posts.id', $post_id)->first(), $allwhoblocked)){
+        $userblock = DB::table('posts')->where('posts.id', $post_id)->first();
+        if(in_array($userblock->username, $allwhoblocked)){
             return redirect('/search')->with('error', 'Tagged user does not exist. Search or invite them to Join.');
         }
 
