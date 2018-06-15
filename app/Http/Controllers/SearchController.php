@@ -47,7 +47,7 @@ class SearchController extends Controller {
 
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
-
+        $allwhoblocked = array();
         $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
         foreach($allwhoblockeds as $awb){
             array_push($allwhoblocked, $awb->username);
