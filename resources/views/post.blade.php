@@ -331,7 +331,7 @@
                                                                 {{ Form::hidden('post_id', $post->id) }}
                                                                 <input type="hidden" name="latitude" value=""/>
                                                                 <input  type="hidden" name="longitude" value=""/>
-                                                                <textarea rows="2" cols="40" placeholder="Comment on this post..." class="comment-field" type="text" name="comment" style="width: 100%;" required>@@{{$comment->username}}</textarea>
+                                                                <textarea rows="2" cols="40" placeholder="Comment on this post..." class="comment-field" type="text" name="comment" style="width: 100%;" required>{{@$comment->username}}</textarea>
                                                                 {{--<a href="#mentionModel" data-toggle="modal" style="position: absolute; top: 10px; right: 25px;"><i class="fa fa-at" aria-hidden="true"></i></a>--}}
                                                             </div>
                                                             <div class="col-3 " style="display: flex;">
