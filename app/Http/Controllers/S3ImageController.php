@@ -210,7 +210,7 @@ class S3ImageController extends Controller
         if (is_null($request->description)) {
             $request->description = " ";
 
-            if (!$request->hasFile('image')) {
+            if (!$request->hasFile('image') and is_null($request->image)) {
                 return redirect('/')->with('error', 'Post must either contain text or image');
             }
         }
@@ -235,22 +235,20 @@ class S3ImageController extends Controller
                 $t = Storage::disk('s3')->put("posts/".$imageName, $image->__toString(), 'public');
                 $imageName = Storage::disk('s3')->url("posts/".$imageName);
             }
-            DB::table('posts')->where('id', $request->id)->update(
-                ['imagepath' => $imageName, 'description' => $request->description, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'edited' => true, 'updated_at' => date('Y-m-d H:i:s')]
-            );
+
 
         }
         else {
-            DB::table('posts')->where('id', $request->id)->update(
-                ['description' => $request->description, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'edited' => true, 'updated_at' => date('Y-m-d H:i:s')]
-            );
+            $imageName = $request->image;
         }
 
 
 //upload post
 
 
-
+        DB::table('posts')->where('id', $request->id)->update(
+            ['imagepath' => $imageName, 'description' => $request->description, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'edited' => true, 'updated_at' => date('Y-m-d H:i:s')]
+        );
 
         //update location
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
