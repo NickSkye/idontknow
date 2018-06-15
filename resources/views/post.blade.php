@@ -320,34 +320,35 @@
                                             <a data-toggle="collapse" href="#commentCollapse" role="button" aria-expanded="false" aria-controls="commentCollapse"><p class="comment pull-right comment-from-{{$comment->username}}">reply</p></a>
                                        @endauth
                                         </div>
-                                        @auth
 
-                                            <div class="collapse multi-collapse" id="commentCollapse">
-                                                <div style="position: absolute; bottom: 30px; background: white; width: 100%; margin-left: -20px; height: 80px; padding: 10px;">
-                                                    <form action="{{ url('comment') }}" method="POST">
-                                                        {{ csrf_field() }}
-                                                        <div class="row">
-                                                            <div class="col-9">
-                                                                {{ Form::hidden('post_id', $post->id) }}
-                                                                <input type="hidden" name="latitude" value=""/>
-                                                                <input  type="hidden" name="longitude" value=""/>
-                                                                <textarea rows="2" cols="40" placeholder="Comment on this post..." class="comment-field" type="text" name="comment" style="width: 100%;" required>{{@$comment->username}}</textarea>
-                                                                {{--<a href="#mentionModel" data-toggle="modal" style="position: absolute; top: 10px; right: 25px;"><i class="fa fa-at" aria-hidden="true"></i></a>--}}
-                                                            </div>
-                                                            <div class="col-3 " style="display: flex;">
-                                                                <button type="submit" class="btn comment-button" style="height: 41px; align-self: flex-end;"><i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i></button>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-
-                                        @endauth
                                     </div>
 
 
                                 </div>
+                                @auth
+
+                                <div class="collapse multi-collapse" id="commentCollapse">
+                                    <div style="position: absolute; bottom: 30px; background: white; width: 100%; margin-left: -20px; height: 80px; padding: 10px;">
+                                        <form action="{{ url('comment') }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    {{ Form::hidden('post_id', $post->id) }}
+                                                    <input type="hidden" name="latitude" value=""/>
+                                                    <input  type="hidden" name="longitude" value=""/>
+                                                    <textarea rows="2" cols="40" placeholder="Comment on this post..." class="comment-field" type="text" name="comment" style="width: 100%;" required>{{@@$comment->username}}</textarea>
+                                                    {{--<a href="#mentionModel" data-toggle="modal" style="position: absolute; top: 10px; right: 25px;"><i class="fa fa-at" aria-hidden="true"></i></a>--}}
+                                                </div>
+                                                <div class="col-3 " style="display: flex;">
+                                                    <button type="submit" class="btn comment-button" style="height: 41px; align-self: flex-end;"><i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+
+                                @endauth
                                 <hr>
                             @endforeach
                             {{ $thecomments->links() }}
