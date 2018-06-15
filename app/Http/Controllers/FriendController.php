@@ -60,6 +60,15 @@ class FriendController extends Controller
     public function index($username)
     {
 //        $info = DB::table('users')->where('username', $username)->get();
+
+        $allwhoblocked = array();
+        $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
+        foreach($allwhoblockeds as $awb){
+            array_push($allwhoblocked, $awb->username);
+        }
+        if(!in_array($username, $allwhoblocked)){
+            return redirect('/search')->with('error', 'Tagged user does not exist. Search or invite them to Join.');
+        }
         try {
             $info = $this->getSpecificFriendsInfo($username);
             $arefriends = false;
