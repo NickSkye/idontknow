@@ -500,6 +500,14 @@ $(".activity-comment").submit(function(event){
 
 
 
+
+
+$(".frend-butt").click( function()
+    {
+        $('.comment-field').val($(this).val() + "test");
+    }
+);
+
 $(".frend-butt").click( function()
     {
         $('.comment-field').val($(this).val() + "test");
