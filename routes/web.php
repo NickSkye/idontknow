@@ -66,6 +66,7 @@ Route::post('/report-comment/{id?}', 'PagesController@reportcomment')->middlewar
 Route::post('/delete-notification/{id?}', 'PagesController@deletenotification')->middleware('auth');
 
 Route::post('s3-image-upload','S3ImageController@imageUploadPost')->middleware('auth');
+Route::post('s3-image-edit','S3ImageController@imageEditPost')->middleware('auth');
 Route::post('s3-image-upload-profilepic','S3ImageController@imageUploadProfilePic')->middleware('auth');
 
 

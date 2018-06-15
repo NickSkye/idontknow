@@ -43,6 +43,26 @@
         </div>
 
 
+        {{--EDIT MODAL--}}
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editModalLabel">Editing Post</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            @include('partials.editpost')
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        {{--END EDIT MODAL--}}
+
+
 
         {{--COPY MODAL--}}
         <div class="modal fade" id="copyModal" tabindex="-1" role="dialog" aria-labelledby="copyModalLabel" aria-hidden="true">
@@ -100,7 +120,9 @@
                                             Delete
                                         </a>
                                         <a class="dropdown-item" href="#">
-                                            {{ __('Edit') }}
+                                            <a style="color: black; width: 100%;" data-toggle="modal" href="#editModal">
+                                                Edit
+                                            </a>
                                         </a>
                                     @else
                                         <div class="">
