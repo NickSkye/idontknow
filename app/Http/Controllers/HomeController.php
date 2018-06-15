@@ -133,8 +133,9 @@ class HomeController extends Controller
         $allfriendsinfo = $this->getFollowingsInfo();
         $allfollowersinfo = $this->getFollowersInfo();
         $allwhoblocked = array();
-        $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
+
         $suggest = $this->peopleWithinFiveMiles();
+        $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
         foreach($allwhoblockeds as $awb){
             array_push($allwhoblocked, $awb->username);
         }
