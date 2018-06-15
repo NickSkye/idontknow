@@ -288,7 +288,7 @@ class S3ImageController extends Controller
 
 
 
-        return redirect('/me')->with(['generalinfo' => $generalinfo, 'mybio' => $mybio, 'myposts' => $myposts, 'myfriends' => $myfriends])->with('success', 'Image Uploaded successfully.')->with('path', $imageName);
+        return redirect('/me')->with(['generalinfo' => $generalinfo, 'mybio' => $mybio, 'myposts' => $myposts, 'myfriends' => $myfriends])->with('success', 'Image Uploaded successfully.');
 
 
     }
