@@ -297,8 +297,13 @@ class PagesController extends Controller
 //        $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
 //        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        $allwhoblocked = array();
+        $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
+        foreach($allwhoblockeds as $awb){
+            array_push($allwhoblocked, $awb->username);
+        }
 
-        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends]);
+        return view('activity', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'allwhoblocked' => $allwhoblocked]);
 
 
     }
@@ -336,8 +341,13 @@ class PagesController extends Controller
 //        $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
 //        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        $allwhoblocked = array();
+        $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
+        foreach($allwhoblockeds as $awb){
+            array_push($allwhoblocked, $awb->username);
+        }
 
-        return view('nearby', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'post_votes'=> $post_votes, 'newtest'=>$newtest]);
+        return view('nearby', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'post_votes'=> $post_votes, 'newtest'=>$newtest, 'allwhoblocked' => $allwhoblocked]);
 
 
     }

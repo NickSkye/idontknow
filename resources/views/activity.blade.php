@@ -185,6 +185,7 @@
                             {{--friends posts--}}
                             <div class="row frend-area infinite-scroll">
                                 @foreach($allfriendsinfo as $friendspost)
+                                    @if(!in_array($friendspost->username, $allwhoblocked))
 
                                     {{--COPY MODAL--}}
                                     <div class="modal fade" id="copyModal-{{$friendspost->id}}" tabindex="-1" role="dialog" aria-labelledby="copyModalLabel-{{$friendspost->id}}" aria-hidden="true">
@@ -317,7 +318,7 @@
                                     <hr>
 
 
-
+                                    @endif
                                 @endforeach
                                     {{--{{ $allfriendsinfo->links() }}--}}
                             </div>

@@ -47,6 +47,7 @@
                             <div class="row frend-area infinite-scroll">
 
                                 @foreach($allfriendsinfo as $friendspost)
+                                    @if(!in_array($friendspost->username, $allwhoblocked))
 
 
                                     {{--COPY MODAL--}}
@@ -184,7 +185,7 @@
                                     <hr>
 
 
-
+                                    @endif
                                 @endforeach
                                 {{--{{ $allfriendsinfo->links() }}--}}
                             </div>
