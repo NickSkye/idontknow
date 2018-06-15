@@ -175,7 +175,7 @@
                                             <a href="/users/{{$post->username}}">
                                                 <p>{{$post->username}}</p>
                                                 @auth
-                                                <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($post->created_at)->format('d M Y g:i A')}} about {{round($post_location->distance, 2)}} miles from you</p>
+                                                <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($post->created_at)->diffForHumans()}} about {{round($post_location->distance, 2)}} miles from you</p>
 @endauth
                                             </a>
                                         </div>
