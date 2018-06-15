@@ -510,7 +510,7 @@ $(".activity-comment").submit(function(event){
 
 $(".comment-from").click( function()
     {
-        $('.comment-field').val('@' + $('.comment-from').attr('class').split(' ').pop());
+        $('.comment-field').val('@' + $(this).attr('class').split(' ').pop());
     }
 );
 
