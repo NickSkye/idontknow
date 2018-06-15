@@ -356,15 +356,16 @@ class PagesController extends Controller
     {
 
         //$allcommentersinfo = [];
-
-        $allwhoblocked = array();
-        $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
-        foreach($allwhoblockeds as $awb){
-            array_push($allwhoblocked, $awb->username);
-        }
-        $userblock = DB::table('posts')->where('posts.id', $post_id)->first();
-        if(in_array($userblock->username, $allwhoblocked)){
-            return redirect('/search')->with('error', 'Tagged user does not exist. Search or invite them to Join.');
+        if(Auth::check()) {
+            $allwhoblocked = [];
+            $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
+            foreach ($allwhoblockeds as $awb) {
+                array_push($allwhoblocked, $awb->username);
+            }
+            $userblock = DB::table('posts')->where('posts.id', $post_id)->first();
+            if (in_array($userblock->username, $allwhoblocked)) {
+                return redirect('/search')->with('error', 'Tagged user does not exist. Search or invite them to Join.');
+            }
         }
 
         try{
