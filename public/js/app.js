@@ -14373,23 +14373,24 @@ $(".comment-from").click(function () {
     $('.comment-field').val('@' + $(this).attr('class').split(' ').pop());
 });
 
-var oldVal = "";
-$("textarea").on("change keyup paste", function () {
-    var currentVal = $(this).val();
-    // /@([\w\-]+)/', '<a href="/users/$1">$0</a>
-    if (currentVal.match(/@([\w\-]+)/)) {
-        $('.suggestionMentions').removeClass('d-none');
-    } else {
-        $('.suggestionMentions').addClass('d-none');
-    }
-    if (currentVal == oldVal) {
-        return; //check to prevent multiple simultaneous triggers
-    }
+// var oldVal = "";
+// $("textarea").on("change keyup paste", function() {
+//     var currentVal = $(this).val();
+//     // /@([\w\-]+)/', '<a href="/users/$1">$0</a>
+//     if(currentVal.match(/@([\w\-]+)/)){
+//         $('.suggestionMentions').removeClass('d-none');
+//     }else{
+//         $('.suggestionMentions').addClass('d-none');
+//     }
+//     if(currentVal == oldVal) {
+//         return; //check to prevent multiple simultaneous triggers
+//     }
+//
+//     oldVal = currentVal;
+//     //action to be performed on textarea changed
+//     // alert("changed!");
+// });
 
-    oldVal = currentVal;
-    //action to be performed on textarea changed
-    // alert("changed!");
-});
 
 $(window).scroll(function () {
     if ($(window).scrollTop() > 1000) {

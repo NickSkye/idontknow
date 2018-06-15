@@ -38,11 +38,11 @@
 
 
 
-<div class="suggestionMentions d-none" style="position: absolute; top: -205px;">
-    @foreach($friends as $friend)
-    <button id="frend-{{$friend->username}}" type="button" class="btn frend-butt"> {{$friend->followsusername}}</button><br>
-    @endforeach
-</div>
+{{--<div class="suggestionMentions d-none" style="position: absolute; top: -205px;">--}}
+    {{--@foreach($friends as $friend)--}}
+    {{--<button id="frend-{{$friend->username}}" type="button" class="btn frend-butt"> {{$friend->followsusername}}</button><br>--}}
+    {{--@endforeach--}}
+{{--</div>--}}
 
 
 <form action="{{ url('comment') }}" method="POST">
