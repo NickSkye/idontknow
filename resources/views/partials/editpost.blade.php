@@ -15,6 +15,7 @@
                     <div class="col-12 text-center">
                         <input type="hidden" name="latitude" value=""/>
                         <input  type="hidden" name="longitude" value=""/>
+                        <input  type="hidden" name="id" value="{{$post->id}}"/>
                         <img src="{{$post->imagepath}}" id="profile-img-tag" style="width: auto; max-height: 200px;" />
                         <textarea rows="4" cols="40" style="width: 100%;" placeholder="Whatcha thinkin about..." type="text" name="description" >{{$post->description}}</textarea>
                     </div>

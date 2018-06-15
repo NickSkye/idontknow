@@ -198,6 +198,9 @@
                                                 <p>{{$post->username}}</p>
                                                 @auth
                                                 <p style="font-size: 10pt;">shared: {{Carbon\Carbon::parse($post->created_at)->diffForHumans()}} about {{round($post_location->distance, 2)}} miles from you</p>
+                                                @if($post->edited)
+                                                <p style="font-size: 8pt;">edited: {{Carbon\Carbon::parse($post->updated_at)->diffForHumans()}}</p>
+                                                @endif
 @endauth
                                             </a>
                                         </div>

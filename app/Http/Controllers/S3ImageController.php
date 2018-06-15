@@ -242,13 +242,11 @@ class S3ImageController extends Controller
 
 
 //upload post
-        DB::table('posts')->insert(
-            ['username' => Auth::user()->username, 'imagepath' => $imageName, 'description' => $request->description, 'views' => 1, 'votes' => 1, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+        DB::table('posts')->where('id', $request->id)->update(
+            ['imagepath' => $imageName, 'description' => $request->description, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'edited' => true, 'updated_at' => date('Y-m-d H:i:s')]
         );
 
-        $post_id = DB::table('posts')->where('username', Auth::user()->username)->orderBy('id', 'desc')->first();
 
-        DB::table('post_votes')->insert(['username' => Auth::user()->username, 'post_id' => $post_id->id, 'vote' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
 
         //update location
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
@@ -267,7 +265,7 @@ class S3ImageController extends Controller
             foreach ($thedescription[1] as $users) {
                 try {
                     DB::table('notifications')->insert(
-                        ['username' => $users, 'notification' => $request->description, 'from_username' => Auth::user()->username, 'type' => 'postmention', 'route' => $post_id->id, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                        ['username' => $users, 'notification' => $request->description, 'from_username' => Auth::user()->username, 'type' => 'postmention', 'route' => $request->id, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
                     );
                     $email = DB::table('users')->where('username', $users)->first();
 
