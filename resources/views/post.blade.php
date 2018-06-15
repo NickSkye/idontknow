@@ -283,10 +283,10 @@
                             @auth
 
                                 <div class="collapse multi-collapse" id="commentCollapse">
-                                    <div style="position: absolute; bottom: 30px; background: white; width: 100%; margin-left: -20px; height: 80px; padding: 10px;"> @include('partials.commentfield')</div>
+                                    <div style=" background: white; width: 100%; height: 80px; padding: 10px;"> @include('partials.commentfield')</div>
                                 </div>
 
-                           
+
                             @endauth
                         <div class="comment-section infinite-scroll">
                             @foreach($thecomments as $comment)
