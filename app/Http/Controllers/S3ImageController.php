@@ -235,16 +235,20 @@ class S3ImageController extends Controller
                 $t = Storage::disk('s3')->put("posts/".$imageName, $image->__toString(), 'public');
                 $imageName = Storage::disk('s3')->url("posts/".$imageName);
             }
+            DB::table('posts')->where('id', $request->id)->update(
+                ['imagepath' => $imageName, 'description' => $request->description, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'edited' => true, 'updated_at' => date('Y-m-d H:i:s')]
+            );
+
         }
         else {
-            $imageName = null;
+            DB::table('posts')->where('id', $request->id)->update(
+                ['description' => $request->description, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'edited' => true, 'updated_at' => date('Y-m-d H:i:s')]
+            );
         }
 
 
 //upload post
-        DB::table('posts')->where('id', $request->id)->update(
-            ['imagepath' => $imageName, 'description' => $request->description, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'edited' => true, 'updated_at' => date('Y-m-d H:i:s')]
-        );
+
 
 
 
