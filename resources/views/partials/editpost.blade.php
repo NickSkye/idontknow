@@ -16,7 +16,7 @@
                         <input type="hidden" name="latitude" value=""/>
                         <input  type="hidden" name="longitude" value=""/>
                         <img src="{{$post->imagepath}}" id="profile-img-tag" style="width: auto; max-height: 200px;" />
-                        <textarea rows="4" cols="40" style="width: 100%;" placeholder="Whatcha thinkin about..." type="text" name="description" ></textarea>
+                        <textarea rows="4" cols="40" style="width: 100%;" placeholder="Whatcha thinkin about..." type="text" name="description" >{{$post->description}}</textarea>
                     </div>
                     <div class="col-6 offset-2 image-upload" style="align-self: flex-end;">
                         <label for="file-input" style="float: right; margin-bottom: 0; cursor: pointer;">
