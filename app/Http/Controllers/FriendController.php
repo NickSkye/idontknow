@@ -66,7 +66,7 @@ class FriendController extends Controller
         foreach($allwhoblockeds as $awb){
             array_push($allwhoblocked, $awb->username);
         }
-        if(!in_array($username, $allwhoblocked)){
+        if(in_array($username, $allwhoblocked)){
             return redirect('/search')->with('error', 'Tagged user does not exist. Search or invite them to Join.');
         }
         try {
