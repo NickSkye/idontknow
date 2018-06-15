@@ -535,17 +535,17 @@ $(".comment-from").click( function()
 
 
 
-$(window).scroll(function () {
-    if ($(window).scrollTop() > 1000) {
-        $('#commentCollapse').addClass('show');
-    }
-    else if($(window).scrollTop() < 200){
-        if(!$('.comment-field').val()){
-            $('#commentCollapse').removeClass('show');
-        }
-
-    }
-});
+// $(window).scroll(function () {
+//     if ($(window).scrollTop() > 1000) {
+//         $('#commentCollapse').addClass('show');
+//     }
+//     else if($(window).scrollTop() < 200){
+//         if(!$('.comment-field').val()){
+//             $('#commentCollapse').removeClass('show');
+//         }
+//
+//     }
+// });
 
 
 
