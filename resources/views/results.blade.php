@@ -101,7 +101,7 @@
                                     <div class="row frend-area">
                                     @foreach($searchedusers as $user)
                                         @if($user->username != Auth::user()->username)
-                                                @if(!in_array($sug->username, $allwhoblocked))
+                                                @if(!in_array($user->username, $allwhoblocked))
                                         <a href="/users/{{$user->username}}" class="col-12 col-sm-4 search-image" style="background-image: url('{{$user->profileimage}}');">
                                             <div class="frend-box-name">
                                                 <p>{{$user->name}}</p>
