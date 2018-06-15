@@ -511,9 +511,9 @@ $(".activity-comment").submit(function(event){
 $(".comment-from").click( function()
     {
         $('.comment-field').val('@' + $(this).attr('class').split(' ').pop());
-        $('html, body').animate({
-            scrollTop: $(".comment-field").offset().top -200
-        }, 1000);
+        // $('html, body').animate({
+        //     scrollTop: $(".comment-field").offset().top
+        // }, 1000);
     }
 );
 
