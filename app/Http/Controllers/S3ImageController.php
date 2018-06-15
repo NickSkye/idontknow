@@ -210,7 +210,7 @@ class S3ImageController extends Controller
         if (is_null($request->description)) {
             $request->description = " ";
 
-            if (!$request->hasFile('image') and is_null($request->image)) {
+            if (!$request->hasFile('image') and is_null($request->oldimage)) {
                 return redirect('/')->with('error', 'Post must either contain text or image');
             }
         }
@@ -239,7 +239,7 @@ class S3ImageController extends Controller
 
         }
         else {
-            $imageName = $request->image;
+            $imageName = $request->oldimage;
         }
 
 
