@@ -125,7 +125,7 @@
                                 <div class="row frend-area" style="flex-wrap: nowrap;">
 
                                     @foreach($suggest as $sug)
-                                        @if(!in_array($sug->susername, $allwhoblocked))
+                                        @if(!in_array($sug->username, $allwhoblocked))
 
                                         <a href="/users/{{$sug->username}}" class="col-4 suggest-image" id="suggest-{{$sug->username}}" style="background-image: url('{{$sug->profileimage}}');">
                                             <div class="frend-box-name">
