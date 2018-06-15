@@ -62,6 +62,7 @@
                                 <div class="row frend-area" style="flex-wrap: nowrap;">
 
                                 @foreach($suggest as $sug)
+                                        @if(!in_array($sug->username, $allwhoblocked))
 
                                         <a href="/users/{{$sug->username}}" class="col-4 suggest-image" id="suggest-{{$sug->username}}" style="background-image: url('{{$sug->profileimage}}');">
                                             <div class="frend-box-name">
@@ -84,6 +85,7 @@
 
                                             </div>
                                         </a>
+                                        @endif
                                     @endforeach
 
 
@@ -99,6 +101,7 @@
                                     <div class="row frend-area">
                                     @foreach($searchedusers as $user)
                                         @if($user->username != Auth::user()->username)
+                                                @if(!in_array($sug->username, $allwhoblocked))
                                         <a href="/users/{{$user->username}}" class="col-12 col-sm-4 search-image" style="background-image: url('{{$user->profileimage}}');">
                                             <div class="frend-box-name">
                                                 <p>{{$user->name}}</p>
@@ -109,6 +112,7 @@
                                         </a>
 
                                         @endif
+                                            @endif
                                     @endforeach
                                     </div>
                                     {{ $searchedusers->links() }}

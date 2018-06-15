@@ -48,13 +48,16 @@ class SearchController extends Controller {
         $now = new \DateTime();
         $online_frends = $this->getFrendsOnline();
 
-
+        $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
+        foreach($allwhoblockeds as $awb){
+            array_push($allwhoblocked, $awb->username);
+        }
 
         $suggest = $this->peopleWithinFiveMiles();
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         $searchedusers = User::join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.name', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.username', 'LIKE', '%' . $request->input('query') . '%')->orWhere('users.email', 'LIKE', '%' . $request->input('query') . '%')->limit(81)->paginate(10);
 
-        return view('results', ['now'=> $now, 'online_frends'=> $online_frends, 'suggest'=> $suggest, 'friends'=> $friends])->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
+        return view('results', ['now'=> $now, 'online_frends'=> $online_frends, 'suggest'=> $suggest, 'friends'=> $friends, 'allwhoblocked' => $allwhoblocked])->with('searchedusers', $searchedusers);//['searchedusers'=> $searchedusers]);
     }
 
 
