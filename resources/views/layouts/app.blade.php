@@ -107,11 +107,11 @@
         @endauth
 
         <div id="app">
-            <div id="mobile-app-button" class="d-none mobile-app-div" >
+            {{--<div id="mobile-app-button" class="d-none mobile-app-div" >--}}
 
-                    Download our Mobile App
+                    {{--Download our Mobile App--}}
 
-            </div>
+            {{--</div>--}}
 
 
             @include('partials.navbar')
