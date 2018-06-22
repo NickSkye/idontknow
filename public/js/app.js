@@ -13986,10 +13986,12 @@ $(document).ready(function () {
 
     var yetVisited = sessionStorage.getItem('visited');
     var hasVisited = localStorage.getItem('hasvisited');
-    if (!hasVisited) {
-        $('#mobile-app-button').addClass('d-block d-sm-block d-md-none');
-        $('#mobile-app-button').removeClass('d-none');
-    }
+    // if (!hasVisited){
+    //     $('#mobile-app-button').addClass('d-block d-sm-block d-md-none')
+    //     $('#mobile-app-button').removeClass('d-none')
+    //
+    // }
+
 
     if (!yetVisited) {
         // open popup
