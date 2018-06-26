@@ -1019,7 +1019,7 @@ ul.tabs li.current{
 }
 
 .rainbow-bg{
-    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background: linear-gradient(270deg, #ff0000, #ff7300, #ffcd00, #fffa00, #67ff00, #00ff58, #00ffdf, #00c5ff, #005fff, #1100ff, #6000ff, #ba00ff, #ff00d4);
     background-size: 1800% 1800%;
 
     -webkit-animation: rainbow 18s ease infinite;
@@ -1027,7 +1027,7 @@ ul.tabs li.current{
     -o-animation: rainbow 18s ease infinite;
     animation: rainbow 18s ease infinite;
 
-    
+
 }
 
 @-webkit-keyframes rainbow {
