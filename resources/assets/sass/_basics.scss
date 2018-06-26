@@ -1017,3 +1017,28 @@ ul.tabs li.current{
         align-items: center;
     }
 }
+
+.rainbow-bg{
+    background: linear-gradient(264deg, #ff0000, #ffa600, #feff00, #11ff00, #00f6ff, #0064ff, #3a00ff, #aa00ff, #ff00c2);
+    background-size: 1800% 1800%;
+
+    -webkit-animation: rainbowGrad 0s ease infinite;
+    -moz-animation: rainbowGrad 0s ease infinite;
+    animation: rainbowGrad 0s ease infinite;
+
+    @-webkit-keyframes rainbowGrad {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes rainbowGrad {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes rainbowGrad {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+}
