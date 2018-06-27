@@ -21,9 +21,11 @@
                 <div class="card-body">
                     <h2>Welcome to FrendGrid!</h2>
                     <br>
-                    <h4><i class="fa fa-globe" aria-hidden="true"></i>  Connect with the world around you in real life</h4>
-                    <h4><i class="fa fa-users" aria-hidden="true"></i>  Make new friends based off people around you</h4>
-                    <h4><i class="fa fa-newspaper-o" aria-hidden="true"></i>  Share your life and see all the exciting stuff going on around you!</h4>
+                    <h4><i class="fa fa-globe fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Connect with the world around you in real life</h4>
+                    <br>
+                    <h4><i class="fa fa-users fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Make new friends based off people around you</h4>
+                    <br>
+                    <h4><i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Share your life and see all the exciting stuff going on around you!</h4>
                     <br>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
