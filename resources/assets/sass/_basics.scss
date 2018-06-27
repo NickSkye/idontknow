@@ -1050,3 +1050,14 @@ ul.tabs li.current{
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
+
+#grad1 {
+    background: red;
+    background: -webkit-linear-gradient(left, red, orange , yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(right, red, orange, yellow, green, cyan, blue, violet);
+    background: -moz-linear-gradient(right, red, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, red, orange , yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}

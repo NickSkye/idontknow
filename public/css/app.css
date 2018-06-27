@@ -1069,6 +1069,14 @@ ul.tabs li.current {
   }
 }
 
+#grad1 {
+  background: red;
+  background: -webkit-gradient(linear, left top, right top, from(red), color-stop(orange), color-stop(yellow), color-stop(green), color-stop(cyan), color-stop(blue), to(violet));
+  background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
