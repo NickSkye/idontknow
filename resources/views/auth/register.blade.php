@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="card-body">
-                    <h2>Welcome to FrendGrid!</h2>
+                    <h2 style="text-align: center;">Welcome to FrendGrid!</h2>
                     <br>
                     <h5><i class="fa fa-globe fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Connect with the world around you in real life</h5>
                     <br>
