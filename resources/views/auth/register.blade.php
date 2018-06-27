@@ -20,7 +20,9 @@
 
                 <div class="card-body">
                     <h2>Welcome to FrendGrid!</h2>
-                    <p>FrendGrid was created to help you keep up with your current friends and help you meet new friends around you. While most social networks are trying to get you to have virtual friends through their websites, FrendGrid is here to help you get out there and meet up with people in the real world. FrendGrid is here to help you meet new friends based on the people around you in your everyday life. FrendGrid is always expanding and adding new features. </p>
+                    <h3>Connect with the world around you in real life</h3>
+                    <h3>Make new friends based off people around you</h3>
+                    <h3>Share your life and see all the exciting stuff going on around you!</h3>
                     <br>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
