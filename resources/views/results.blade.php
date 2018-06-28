@@ -97,7 +97,7 @@
                                 <br>
 
 
-                                <div class="infinite-scroll">
+                                <div class="">
                                     <div class="row frend-area">
                                     @foreach($searchedusers as $user)
                                         @if($user->username != Auth::user()->username)
