@@ -22,6 +22,17 @@ const app = new Vue({
     el: '#app'
 });
 
+$('#sugbox').on('mousewheel DOMMouseScroll', function(event){
+
+    var delta = Math.max(-1, Math.min(1, (event.originalEvent.wheelDelta || -event.originalEvent.detail)));
+
+    $(this).scrollLeft( $(this).scrollLeft() - ( delta * 40 ) );
+    event.preventDefault();
+
+});
+
+
+
 //Show image before upload
 function readURL(input) {
     if (input.files && input.files[0]) {
