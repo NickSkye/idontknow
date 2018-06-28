@@ -105,6 +105,7 @@
                         </div>
 
                     </form>
+                    <br>
                     <p>*Make sure to enable location services for the fullest experience</p>
                 </div>
             </div>
