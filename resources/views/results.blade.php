@@ -115,7 +115,7 @@
                                             @endif
                                     @endforeach
                                     </div>
-                                    {{ $searchedusers->links() }}
+                                    {{ $searchedusers->appends(Request::only('q'))->links() }}
                                 </div>
 
                             </div>
