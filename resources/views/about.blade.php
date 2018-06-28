@@ -65,7 +65,7 @@
                                 <h1 style="text-align: center;">Welcome to FrendGrid!</h1>
                                 <br><br>
 
-                                <a href="https://itunes.apple.com/us/app/frendgrid/id1384206860?ls=1&mt=8" target="_blank" class="visible-xs visible-sm"><img src="/images/app-store-logo.png" alt="" style="width: 200px;"></a>
+                                <a href="https://itunes.apple.com/us/app/frendgrid/id1384206860?ls=1&mt=8" target="_blank" class="visible-xs visible-sm"><img src="/images/app-store-logo.png" alt="" style="width: 150px;"></a>
                                 <p>*Or search FrendGrid on the App Store</p>
                                 <br><br>
                                 <h2>How to use FrendGrid</h2>
