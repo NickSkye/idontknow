@@ -107,6 +107,8 @@
                     </form>
                     <br>
                     <p>*Make sure to enable location services for the fullest experience</p>
+                    <br>
+                    <a href="https://itunes.apple.com/us/app/frendgrid/id1384206860?ls=1&mt=8" target="_blank" class="text-center"><img src="/images/app-store-logo.png" alt="" style="width: 200px;"></a>
                 </div>
             </div>
         </div>
