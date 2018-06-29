@@ -466,7 +466,6 @@ $(".shoutbackform").submit(function(event){
     }).done(function(response){ //
         $('#viewShout-' + response[0]).modal('hide');
         $('#sendShoutBack').modal('show');
-        alert(response[1]);
         $("#sendbacktousername").val(response[1]);
         // $("#server-results").html(response[0]);
         // if(response[1]){
