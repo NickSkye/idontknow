@@ -46,8 +46,9 @@ class MessagesController extends Controller
 
         $oldmessages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username' , 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.username', Auth::user()->username], ['seen', true],])->orWhere([['messages.from_username', Auth::user()->username],['seen', true],])->orderBy('messages.updated_at', 'desc')->limit(50)->get();
 
-        $friends  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
-
+        $friendss  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
+        $followers = DB::table('follows')->select('username')->where('followsusername', Auth::user()->username)->get();
+        $friends = $friendss->merge($followers);
        $hasfriends = $friends->isNotEmpty();
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
