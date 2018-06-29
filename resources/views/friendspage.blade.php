@@ -159,6 +159,7 @@
                                             {{--@include('partials.useronline')--}}
                                             <p style="font-size: 10px; margin-bottom: 0;">last
                                                 active: {{Carbon\Carbon::parse($info->updated_at)->diffForHumans()}}</p>
+                                            @if(!(($info->latitude == 0) and ($info->longitude == 0)))
                                             @if(round($frendsloc->distance, 2) < 0.3)
                                             <p style="font-size: 10px; color: lime; margin-bottom: 0;">and {{round($frendsloc->distance, 2)}} miles
                                                 from you </p>
@@ -168,7 +169,7 @@
                                                 </button>
                                                 @include('partials.hangout')
                                                 @else
-                                                @if(!(($info->latitude == 0) and ($info->longitude == 0)))
+
                                                 <p style="font-size: 10px;">and {{round($frendsloc->distance, 2)}} miles
                                                     from you </p>
                                                     @endif
