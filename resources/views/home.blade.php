@@ -82,9 +82,10 @@
 
                                             @foreach($frendsloc as $loc)
                                                 @if($loc->followsusername === $infos->followsusername)
-                                                    @if(!(($infos->latitude == 0) and ($infos->longitude == 0)))
+
 
                                                     <div class="nearness">
+                                                        @if(!(($infos->latitude == 0) and ($infos->longitude == 0)))
                                                 @if(round($loc->distance, 2) < 0.3)
                                                 <span style="color: lime;">{{round($loc->distance, 2)}}</span>
                                                         @elseif(round($loc->distance, 2) < 1.0)
@@ -94,6 +95,8 @@
                                                     @else
                                                     <span style="color: red;">{{round($loc->distance, 2)}}</span>
                                                 @endif
+                                                       
+
                                                         @endif
                                                     @endif
                                                         @endforeach
