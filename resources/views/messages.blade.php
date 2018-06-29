@@ -63,7 +63,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    @include('partials.shout')
+                                   
                                     {{--start trial upload--}}
 
                                     <div class="container">
