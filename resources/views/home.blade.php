@@ -4,6 +4,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-sm-12 no-padding">
+
+
+                @include('partials.invitemodal')
+
+
                 <div class="card">
                     {{--<div class="card-header">--}}
 
@@ -155,6 +160,14 @@
                                 </div>
                             </div>
 
+
+                        {{--HERE--}}
+                            <div class="text-center">
+                                <button type="button" class="btn invite-button" data-toggle="modal" data-target="#mailModal">
+                                    <p>Invite Frends!</p>
+                                </button>
+
+                            </div>
 
 
                     </div>
