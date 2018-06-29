@@ -47,10 +47,10 @@ class MessagesController extends Controller
         $oldmessages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username' , 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.username', Auth::user()->username], ['seen', true],])->orWhere([['messages.from_username', Auth::user()->username],['seen', true],])->orderBy('messages.updated_at', 'desc')->limit(50)->get();
 
 
-        $friendss  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
+        $friends  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 //        $friends = DB::table('follows')->select('username')->where('followsusername', Auth::user()->username)->union($friendss)->get();
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username);
-        $friends = DB::table('follows')->select(DB::raw('username as followsusername') )->where('followsusername', Auth::user()->username)->union($friends_info_full)->get();
+        $friends_info_full = DB::table('follows');
+        $friendstoshout = DB::table('follows')->select(DB::raw('username as followsusername, followsusername as username') )->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->orWhere('followsusername', Auth::user()->username)->get();
 
        $hasfriends = $friends->isNotEmpty();
         $notifs = DB::table('notifications')->where([
@@ -65,7 +65,7 @@ class MessagesController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
-        return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages,'sentmessages'=> $sentmessages, 'me'=> $me, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
+        return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages,'sentmessages'=> $sentmessages, 'me'=> $me, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends, 'friendstoshout' => $friendstoshout ]);
 
 
     }

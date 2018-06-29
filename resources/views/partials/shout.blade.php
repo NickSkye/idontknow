@@ -18,7 +18,7 @@
                     <div class="col-12">
 
                         <select id="sendtousername" name="sendtousername" style="width: 100%; height: 40px; font-size: 12pt; background-color: white; color: black; margin-bottom: 20px;">
-                            @foreach($friends as $friend)
+                            @foreach($friendstoshout as $friend)
                             <option value="{{$friend->followsusername}}">{{$friend->followsusername}}</option>
                             @endforeach
                         </select>
