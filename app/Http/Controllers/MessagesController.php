@@ -49,8 +49,8 @@ class MessagesController extends Controller
 
         $friends  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 //        $friends = DB::table('follows')->select('username')->where('followsusername', Auth::user()->username)->union($friendss)->get();
-        $friends_info_full = DB::table('follows');
-        $friendstoshout = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->orWhere('followsusername', Auth::user()->username)->get();
+
+//        $friendstoshout = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->orWhere('followsusername', Auth::user()->username)->get();
 
        $hasfriends = $friends->isNotEmpty();
         $notifs = DB::table('notifications')->where([
@@ -65,7 +65,7 @@ class MessagesController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
-        return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages,'sentmessages'=> $sentmessages, 'me'=> $me, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends, 'friendstoshout' => $friendstoshout ]);
+        return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages,'sentmessages'=> $sentmessages, 'me'=> $me, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
 
 
     }
