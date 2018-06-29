@@ -168,8 +168,10 @@
                                                 </button>
                                                 @include('partials.hangout')
                                                 @else
+                                                @if(!(($info->latitude == 0) and ($info->longitude == 0)))
                                                 <p style="font-size: 10px;">and {{round($frendsloc->distance, 2)}} miles
                                                     from you </p>
+                                                    @endif
                                             @endif
 
 

@@ -95,7 +95,7 @@
                                                     @else
                                                     <span style="color: red;">{{round($loc->distance, 2)}}</span>
                                                 @endif
-                                                       
+
 
                                                         @endif
                                                     @endif
