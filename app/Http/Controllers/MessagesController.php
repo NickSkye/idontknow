@@ -17,7 +17,7 @@ class MessagesController extends Controller
 {
 
     public function getFriendsInfo(){
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
+        $friends_info_full = DB::table('follows')->select('followsusername')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
 
         return $friends_info_full;
     }
@@ -49,6 +49,7 @@ class MessagesController extends Controller
         $friendss  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
         $followers = DB::table('follows')->select('username')->where('followsusername', Auth::user()->username)->get();
         $friends = $friendss->merge($followers);
+
        $hasfriends = $friends->isNotEmpty();
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
