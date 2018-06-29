@@ -467,7 +467,7 @@ $(".shoutbackform").submit(function(event){
         $('#viewShout-' + response[0]).modal('hide');
         $('#sendShoutBack').modal('show');
         alert(response[1]);
-        $("#sendtousername").val(response[1]);
+        $("#sendbacktousername").val(response[1]);
         // $("#server-results").html(response[0]);
         // if(response[1]){
         //     $("button.dislike").html('<i class="fa fa-thumbs-down fa-2x" style="color: blue;" aria-hidden="true"></i>');
