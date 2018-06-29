@@ -82,7 +82,7 @@
                                                         <input type="hidden" name="latitude" value=""/>
                                                         <input  type="hidden" name="longitude" value=""/>
                                                         <div class="col-12">
-                                                            <input  type="hidden" id="sendbacktousername" name="sendbacktousername" value=""/>
+                                                            <input  type="hidden" id="sendbacktousername" name="sendtousername" value=""/>
 
                                                         </div>
                                                         <div class="col-12">
