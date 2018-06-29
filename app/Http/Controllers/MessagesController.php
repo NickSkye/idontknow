@@ -50,7 +50,7 @@ class MessagesController extends Controller
         $friends  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 //        $friends = DB::table('follows')->select('username')->where('followsusername', Auth::user()->username)->union($friendss)->get();
         $friends_info_full = DB::table('follows');
-        $friendstoshout = DB::table('follows')->select(DB::raw('username as followsusername, followsusername as username') )->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->orWhere('followsusername', Auth::user()->username)->get();
+        $friendstoshout = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->orWhere('followsusername', Auth::user()->username)->get();
 
        $hasfriends = $friends->isNotEmpty();
         $notifs = DB::table('notifications')->where([
