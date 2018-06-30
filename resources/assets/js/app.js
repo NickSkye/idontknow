@@ -34,6 +34,9 @@ $('#sugbox').on('mousewheel DOMMouseScroll', function(event){
 if(sessionStorage.getItem('isApp') == "yes"){
     alert("working");
 }
+if(sessionStorage.getItem("isApp") === "yes"){
+    alert("working");
+}
 
 
 
