@@ -245,7 +245,11 @@ class PagesController extends Controller
             ->leftJoin('profileinfo', 'posts.username', '=', 'profileinfo.username')
             ->leftJoin('users', 'posts.username', '=', 'users.username')
             ->leftJoin('follows', 'posts.username', '=', 'follows.followsusername')
-            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
+//            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
+            ->leftJoin('post_votes', function ($leftJoin) {
+                $leftJoin->on('posts.id', '=', 'post_votes.post_id')
+                    ->where('post_votes.username', Auth::user()->username);
+            })
             ->where(function ($query) {
                 $query->where('follows.username', Auth::user()->username)
                     ->orWhere('posts.username', Auth::user()->username);
