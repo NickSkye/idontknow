@@ -31,6 +31,10 @@ $('#sugbox').on('mousewheel DOMMouseScroll', function(event){
 
 });
 
+if(sessionStorage.getItem('isApp') == "yes"){
+    alert("working");
+}
+
 
 
 //Show image before upload
