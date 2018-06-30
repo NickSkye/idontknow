@@ -38,6 +38,10 @@ if(sessionStorage.getItem("isApp") === "yes"){
     alert("working");
 }
 
+if(sessionStorage.getItem("isApp")){
+    alert("working");
+}
+
 
 
 //Show image before upload
