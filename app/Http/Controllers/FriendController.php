@@ -71,6 +71,7 @@ class FriendController extends Controller
         }
         try {
             $info = $this->getSpecificFriendsInfo($username);
+            $score = DB::table('users')->select('score')->where('username', Auth::user()->username)->first();
             $arefriends = false;
             // $pages = Page::where('title', 'LIKE', "%$query%")->get();
             $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
@@ -105,7 +106,7 @@ class FriendController extends Controller
             }
 
 
-            return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'achievements' => $achievements, 'blocked' => $blocked]);
+            return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'achievements' => $achievements, 'blocked' => $blocked, 'score' => $score]);
 
         }
         catch(\Exception $e){
