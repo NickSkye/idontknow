@@ -112,6 +112,7 @@ class MessagesController extends Controller
        if($getsemails->email_notifications){
            Mail::to($emails->email)->send(new NotificationMail());
        }
+        DB::table('users')->increment('score', 2);
 
 
         return redirect('/shouts')->with(['messages'=> $messages, 'friends'=>$friends, 'getsemails' => $getsemails])->with('message', 'Shout delivered!');
@@ -139,6 +140,7 @@ class MessagesController extends Controller
             Mail::to($emails->email)->send(new NotificationMail());
         }
 
+        DB::table('users')->increment('score', 2);
 
         return redirect()->back()->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
 
@@ -195,7 +197,7 @@ class MessagesController extends Controller
 
 //        $email = DB::table('users')->where('username', $request->from_user)->first();
 //        Mail::to($email)->send(new NotificationMail());
-
+        DB::table('users')->increment('score', 2);
 
 
         return response([$request->shoutid, $request->from_user]);

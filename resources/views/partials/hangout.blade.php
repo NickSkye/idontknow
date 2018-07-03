@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ url('s3-image-upload') }}" enctype="multipart/form-data" method="POST">
+                <form action="{{ url('s3-hangout') }}" enctype="multipart/form-data" method="POST">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-12">
