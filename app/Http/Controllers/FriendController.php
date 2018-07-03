@@ -71,7 +71,7 @@ class FriendController extends Controller
         }
         try {
             $info = $this->getSpecificFriendsInfo($username);
-            $score = DB::table('users')->select('score')->where('username', Auth::user()->username)->first();
+            $score = DB::table('users')->select('score')->where('username', $username)->first();
             $arefriends = false;
             // $pages = Page::where('title', 'LIKE', "%$query%")->get();
             $friends = DB::table('follows')->where('username', Auth::user()->username)->get();

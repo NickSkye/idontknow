@@ -198,9 +198,10 @@
                                                aria-controls="followerCollapse" style="font-size: 25pt;">
                                                 🏆
                                             </a>
-                                            <p>Score: {{$score->score}} points</p>
+
 
                                         </div>
+                                        <p>Score: {{$score->score}} points</p>
                                     </div>
 
 
