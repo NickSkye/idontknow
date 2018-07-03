@@ -290,7 +290,7 @@
                                                aria-controls="followerCollapse" style="font-size: 25pt;">
                                                🏆
                                             </a>
-                                            Score: {{$score->score}} points
+                                            <p>Score: {{$score->score}} points</p>
 
                                             <button type="button" class="add-button" data-toggle="modal"
                                                     data-target="#sendShout">
