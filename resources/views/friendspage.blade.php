@@ -290,7 +290,7 @@
                                                aria-controls="followerCollapse" style="font-size: 25pt;">
                                                🏆
                                             </a>
-                                            <p>Score: {{$score->score}} points</p>
+
 
                                             <button type="button" class="add-button" data-toggle="modal"
                                                     data-target="#sendShout">
@@ -320,6 +320,7 @@
                                             </div>
                                             {{--END SHOUT MODAL--}}
                                         </div>
+                                        <p>Score: {{$score->score}} points</p>
                                     </div>
                                     {{--<div class="arent-frends d-none">--}}
                                         {{--<p>{{$info->username}} is not your friend yet</p>--}}
