@@ -100,7 +100,7 @@ class FriendController extends Controller
                 if ($info->username === $friend->followsusername) {
                     $arefriends = true;
 
-                    return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'frendsloc' => $frendsloc, 'achievements' => $achievements, 'blocked' => $blocked]);
+                    return view('friendspage', ['info' => $info, 'arefriends' => $arefriends, 'friendsposts' => $friendsposts, 'numfollowers' => $numfollowers, 'numposts' => $numposts, 'numfollowing' => $numfollowing, 'allfriendsinfo' => $allfriendsinfo, 'allfollowersinfo' => $allfollowersinfo, 'now' => $now, 'online_frends' => $online_frends, 'frendsloc' => $frendsloc, 'achievements' => $achievements, 'blocked' => $blocked, 'score' => $score]);
                 }
 
             }
