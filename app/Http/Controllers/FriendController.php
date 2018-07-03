@@ -129,7 +129,7 @@ class FriendController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
         $email = DB::table('users')->where('username', $username)->first();
-        DB::table('users')->increment('score', 50);
+        DB::table('users')->where('username', Auth::user()->username)->increment('score', 50);
 
         $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $username)->first();
         if($getsemails->email_notifications){

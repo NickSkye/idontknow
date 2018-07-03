@@ -136,7 +136,7 @@ class S3ImageController extends Controller
         $post_id = DB::table('posts')->where('username', Auth::user()->username)->orderBy('id', 'desc')->first();
 
         DB::table('post_votes')->insert(['username' => Auth::user()->username, 'post_id' => $post_id->id, 'vote' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
-        DB::table('users')->increment('score', 10);
+        DB::table('users')->where('username', Auth::user()->username)->increment('score', 10);
         //update location
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
 
@@ -244,7 +244,7 @@ class S3ImageController extends Controller
         $post_id = DB::table('posts')->where('username', Auth::user()->username)->orderBy('id', 'desc')->first();
 
         DB::table('post_votes')->insert(['username' => Auth::user()->username, 'post_id' => $post_id->id, 'vote' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
-        DB::table('users')->increment('score', 50);
+        DB::table('users')->where('username', Auth::user()->username)->increment('score', 50);
         //update location
         DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
 
