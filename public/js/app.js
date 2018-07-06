@@ -13928,6 +13928,10 @@ if (sessionStorage.getItem("isApp")) {
     alert("working");
 }
 
+function test() {
+    alert("working");
+}
+
 //Show image before upload
 function readURL(input) {
     if (input.files && input.files[0]) {
