@@ -139,7 +139,7 @@ class FriendController extends Controller
 
         $arefrends = true;
 //        return redirect("home")->with('status', 'friend added');
-        return redirect()->back()->response([$arefrends, $username]);
+        return redirect()->back();
     }
 
     public function remove($username)
@@ -154,7 +154,7 @@ class FriendController extends Controller
 //        return redirect("home")->with('status', 'friend removed');
         $arefrends = false;
 //        return redirect("home")->with('status', 'friend added');
-        return redirect()->back()->response([$arefrends]);
+        return redirect()->back();
     }
 
 
