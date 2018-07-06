@@ -13917,6 +13917,17 @@ if (sessionStorage.getItem("isApp")) {
     alert("working");
 }
 
+if ($.cookie("isApp") == "yes") {
+    alert($.cookie("example"));
+}
+if (sessionStorage.getItem("isApp") === "yes") {
+    alert("working");
+}
+
+if (sessionStorage.getItem("isApp")) {
+    alert("working");
+}
+
 //Show image before upload
 function readURL(input) {
     if (input.files && input.files[0]) {
