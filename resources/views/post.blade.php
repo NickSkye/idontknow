@@ -166,6 +166,7 @@
 
                                 {{--POST MODAL--}}
                                 <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
