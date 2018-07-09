@@ -33,7 +33,7 @@
                         @auth<h4><a href="/activity">Frend Activity</a> |
                             <a href="/nearby" style="color: #f62e55">Nearby Activity</a></h4>@endauth
                         @guest
-                        <a href="https://frendgrid.com/register">Register here to comment and vote on this post</a>
+                        <a href="https://frendgrid.com/register">Register here to join FrendGrid!</a>
                         @endguest
                     </div>
                     <div class="card-body">
