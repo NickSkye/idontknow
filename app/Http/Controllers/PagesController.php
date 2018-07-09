@@ -55,9 +55,9 @@ class PagesController extends Controller
 
     public function nearbyPostsGuest() {
 
-        
 
-        return DB::table('posts')->select('posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'posts.votes as votes', 'post_votes.post_id as post_id', 'post_votes.vote as vote', 'posts.deleted as deleted', 'posts.comments as comments')
+
+        return DB::table('posts')->select('posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'posts.deleted as deleted', 'posts.comments as comments')
             ->leftJoin('users', 'posts.username', '=', 'users.username')
             ->leftJoin('profileinfo', 'posts.username', '=', 'profileinfo.username')
             ->where('deleted', false)
