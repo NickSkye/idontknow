@@ -55,12 +55,7 @@ class PagesController extends Controller
 
     public function nearbyPostsGuest() {
 
-        $location = DB::table('users')->select('latitude', 'longitude')
-            ->where('username', Auth::user()->username)->first();
-        if(is_null($location->latitude) or is_null($location->longitude)){
-            $location->latitude = 0;
-            $location->longitude = 0;
-        }
+        
 
         return DB::table('posts')->select('posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'posts.votes as votes', 'post_votes.post_id as post_id', 'post_votes.vote as vote', 'posts.deleted as deleted', 'posts.comments as comments')
             ->leftJoin('users', 'posts.username', '=', 'users.username')
