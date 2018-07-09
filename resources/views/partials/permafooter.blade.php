@@ -2,7 +2,7 @@
 
 
     <div class="footer-button">
-        <a href="/" class="home-button <?php if ($page == 'home') {
+        <a href="/home" class="home-button <?php if ($page == 'home') {
             echo 'on-page';
         } ?>" data-toggle="tooltip" data-placement="top" title="View your FrendGrid">
             <i class="fa fa-home fa-2x" aria-hidden="true"></i>

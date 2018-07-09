@@ -1,7 +1,7 @@
 @auth
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel hidden-on-small">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ url('/home') }}">
             {{--{{ config('app.name', 'idontknow') }}--}}
             <img src="/images/frendgriddark.png" alt="FrendGrid" style="max-width: 45px;">
 
@@ -26,7 +26,7 @@
                 <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                 <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                 @else
-                    @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home') or Request::is('settings'))
+                    @if(Request::is('activity') or Request::is('me') or Request::is('shouts') or Request::is('home') or Request::is('settings'))
 
                         <li class="nav-item dropdown">
                             @if (!$notifs->isEmpty())
@@ -61,7 +61,7 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/">
+                            <a class="dropdown-item" href="/home">
                                 {{ __('Home') }}
                             </a>
                             <a class="dropdown-item" href="/me">
@@ -93,7 +93,7 @@
 
 
         <div class="header-button">
-            <a class=" logo-button" href="{{ url('/') }}">
+            <a class=" logo-button" href="{{ url('/home') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 <img src="/images/frendgriddark.png" alt="FrendGrid" style="max-width: 45px;">
 
@@ -106,7 +106,7 @@
                 <i class="fa fa-search fa-2x" aria-hidden="true"></i>
             </a>
         </div>
-        @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home') or Request::is('settings'))
+        @if(Request::is('activity') or Request::is('me') or Request::is('shouts') or Request::is('home') or Request::is('settings'))
 
 
                 {{--{{ config('app.name', 'idontknow') }}--}}
@@ -160,7 +160,7 @@
 @guest
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel ">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ url('/home') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 <img src="/images/frendgriddark.png" alt="FrendGrid" style="max-width: 45px;">
 
@@ -185,7 +185,7 @@
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                     @else
-                        @if(Request::is('activity') or Request::is('/') or Request::is('me') or Request::is('shouts') or Request::is('home'))
+                        @if(Request::is('activity') or Request::is('me') or Request::is('shouts') or Request::is('home'))
 
                             <li class="nav-item dropdown">
                                 @if(!$notifs->isEmpty())
@@ -215,7 +215,7 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/">
+                                <a class="dropdown-item" href="/home">
                                     {{ __('Home') }}
                                 </a>
                                 <a class="dropdown-item" href="/me">
