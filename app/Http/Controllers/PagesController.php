@@ -45,7 +45,28 @@ class PagesController extends Controller
                 $leftJoin->on('posts.id', '=', 'post_votes.post_id')
                     ->where('post_votes.username', Auth::user()->username);
             })->where('deleted', false)
-            ->orderBy('posts.created_at', 'desc')->orderBy('distance', 'asc')->distinct()->get();
+            ->orderBy('distance', 'asc')->orderBy('posts.created_at', 'desc')->distinct()->get();
+
+
+//            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
+
+    }
+
+
+    public function nearbyPostsGuest() {
+
+        $location = DB::table('users')->select('latitude', 'longitude')
+            ->where('username', Auth::user()->username)->first();
+        if(is_null($location->latitude) or is_null($location->longitude)){
+            $location->latitude = 0;
+            $location->longitude = 0;
+        }
+
+        return DB::table('posts')->select('posts.username as username', 'profileinfo.profileimage as profileimage', 'posts.created_at as created_at', 'posts.description as description', 'posts.id as id', 'posts.imagepath as imagepath', 'posts.views as views', 'posts.votes as votes', 'post_votes.post_id as post_id', 'post_votes.vote as vote', 'posts.deleted as deleted', 'posts.comments as comments')
+            ->leftJoin('users', 'posts.username', '=', 'users.username')
+            ->leftJoin('profileinfo', 'posts.username', '=', 'profileinfo.username')
+            ->where('deleted', false)
+            ->orderBy('posts.created_at', 'desc')->distinct()->limit(100)->get();
 
 
 //            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
@@ -316,42 +337,40 @@ class PagesController extends Controller
     {
 
 //        TEST
-        $allfriendsinfo = $this->nearbyPosts();
-        $allfollowersinfo = $this->getFollowersInfoWithPosts();
-         //'posts.updated_at'
-        $post_votes = DB::table('post_votes')->select('post_votes.post_id as post_id', 'post_votes.vote as vote')
-            ->where('username', Auth::user()->username)->get();
-//        $allfriendsposts = []; ->where(function ($query) {
-//                $query->where('follows.username', Auth::user()->username)
-//                    ->orWhere('posts.username', Auth::user()->username);
-//            })
-        $newtest = $allfriendsinfo->merge($post_votes);
 
-        $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
-        $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
-        $notifs = DB::table('notifications')->where([
-            ['username', Auth::user()->username],
-            ['seen', false],
-        ])->get();
 
-        $now = new \DateTime();
-        $online_frends = $this->getFrendsOnline();
-//        $post_votes = 0;
 
-//        if(DB::table('post_votes')->where([['username', Auth::user()->username], ['post_id', $post_id],])->exists()){
-//            $post_votes = DB::table('post_votes')->where('username', Auth::user()->username)->get();
+        if(Auth::check()) {
+            $allfriendsinfo = $this->nearbyPosts();
+            $allfollowersinfo = $this->getFollowersInfoWithPosts();
+            $post_votes = DB::table('post_votes')->select('post_votes.post_id as post_id', 'post_votes.vote as vote')
+                ->where('username', Auth::user()->username)->get();
+            $newtest = $allfriendsinfo->merge($post_votes);
 
-//        }
-//        $totalvote = DB::table('post_votes')->where('post_id', $post_id)->sum('vote');
-//        $totalcomment = DB::table('comments')->where('post_id', $post_id)->count();
-        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        $allwhoblocked = array();
-        $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
-        foreach($allwhoblockeds as $awb){
-            array_push($allwhoblocked, $awb->username);
+            $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
+            $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
+            $notifs = DB::table('notifications')->where([
+                ['username', Auth::user()->username],
+                ['seen', false],
+            ])->get();
+
+            $now = new \DateTime();
+            $online_frends = $this->getFrendsOnline();
+            DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+            $allwhoblocked = array();
+            $allwhoblockeds = DB::table('blocked')->select('username')->where('blockedusername', Auth::user()->username)->get()->toArray();
+            foreach($allwhoblockeds as $awb){
+                array_push($allwhoblocked, $awb->username);
+            }
+            return view('nearby', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'post_votes'=> $post_votes, 'newtest'=>$newtest, 'allwhoblocked' => $allwhoblocked]);
+        } else{
+            $allfriendsinfo = $this->nearbyPostsGuest();
+            return view('nearby', ['allfriendsinfo' => $allfriendsinfo]);
         }
 
-        return view('nearby', ['generalinfo'=> $generalinfo, 'mybio'=> $mybio, 'allfriendsinfo' => $allfriendsinfo, 'notifs' => $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'post_votes'=> $post_votes, 'newtest'=>$newtest, 'allwhoblocked' => $allwhoblocked]);
+
+
+
 
 
     }
