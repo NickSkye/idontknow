@@ -245,6 +245,7 @@
 
 
                                 </div>
+                                    <hr>
                                 @endforeach
 
                                 @endguest
