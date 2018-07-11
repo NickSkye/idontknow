@@ -50,6 +50,21 @@ $("#file-input").change(function(){
     readURL(this);
 });
 
+
+//Show image before upload
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#upload-img-tag').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#file-input").change(function(){
+    readURL(this);
+});
 //Tooltip
 // $(function () {
 //     $('[data-toggle="tooltip"]').tooltip()
@@ -204,9 +219,9 @@ $(document).ready(function(){
 
     $(".shout-button").click(function() {  //use a class, since your ID gets mangled
         if ($(".shout-text").val()) {
-        $('.shout-button').toggleClass("loading-button");     //add the class to the clicked element
-        $('.shout-button i.fa').toggleClass("fa-bullhorn");     //add the class to the clicked element
-        $('.shout-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        $('.shout-button').hide();     //add the class to the clicked element
+        // $('.shout-button i.fa').toggleClass("fa-bullhorn");     //add the class to the clicked element
+        // $('.shout-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
        // $('.shout-button').prop("disabled",true);
         }
     });
