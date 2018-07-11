@@ -288,7 +288,7 @@
                                 <p>*Make sure to enable location services for the fullest experience</p>
 
 
-
+                            <div class="text-center"><h2>Here are some of the latest posts by users!</h2></div>
 
                             @foreach($allfriendsinfo as $friendspost)
                                 <div class="col-12 frend-post-col">
