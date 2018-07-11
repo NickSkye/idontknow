@@ -38,7 +38,7 @@
                         <p>Profile Picture</p>
 
                         <img src="{{ $profileinfo->profileimage }}" id="profile-img-tag" width="200px"/>
-                        <input id="file-input" type="file" name="image"/>
+                        <input id="prof-file-input" type="file" name="profimage"/>
                     </div>
                     <div class="col-xs-12 offset-sm-1 col-sm-7">
 

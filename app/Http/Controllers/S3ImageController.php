@@ -27,7 +27,7 @@ class S3ImageController extends Controller
     public function imageUploadProfilePic(Request $request)
     {
         $this->validate($request, [
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg', //|max:2048
+            'profimage' => 'image|mimes:jpeg,png,jpg,gif,svg', //|max:2048
         ]);
 
         if (is_null($request->aboutme)) {
@@ -35,9 +35,9 @@ class S3ImageController extends Controller
         }
 
 
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('profimage')) {
             $imageName = time().'.'.$request->image->getClientOriginalExtension();
-            $image = $request->file('image');
+            $image = $request->file('profimage');
             $image = Image::make($image)->orientate();
             $image = $image->stream();
             $t = Storage::disk('s3')->put("profilepics/".$imageName, $image->__toString(), 'public');

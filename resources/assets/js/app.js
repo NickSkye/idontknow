@@ -46,7 +46,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-$("#file-input").change(function(){
+$("#prof-file-input").change(function(){
     readURL(this);
 });
 
