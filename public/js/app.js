@@ -14133,13 +14133,13 @@ $(document).ready(function () {
         $('.groups-manager').removeClass('groups-closed');
     });
 
-    $(".copybutton").click(function () {
-        //use a class, since your ID gets mangled
-        var copyText = document.getElementById("myInput");
-        copyText.select();
-        document.execCommand("copy");
-        alert("Copied to clipboard: " + copyText.value);
-    });
+    // $(".copybutton").click(function() {  //use a class, since your ID gets mangled
+    //      var copyText = document.getElementById("myInput");
+    //     copyText.select();
+    //     document.execCommand("copy");
+    //     alert("Copied to clipboard: " + copyText.value);
+    // });
+
 
     //Slick
     //     $('.multiple-items').slick({

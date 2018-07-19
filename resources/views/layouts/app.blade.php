@@ -136,7 +136,7 @@
 
         <script>
         function myFunction() {
-            var copyText = document.getElementById("myInput");
+            var copyText = document.getElementById("copytext");
             copyText.select();
             document.execCommand("copy");
             alert("Copied to clipboard: " + copyText.value);
