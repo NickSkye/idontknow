@@ -267,7 +267,7 @@ $(document).ready(function(){
     });
 
     $(".copybutton").click(function() {  //use a class, since your ID gets mangled
-         var copyText = $(".copytext");
+         var copyText = $("#copytext");
         copyText.select();
         document.execCommand("copy");
         alert("Copied to clipboard: " + copyText.value);

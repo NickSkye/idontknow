@@ -75,7 +75,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <input type="text" value="https://frendgrid.com/post/{{$post->id}}"  class="copytext" style="width: 100%; text-align: center;">
+                        <input type="text" value="https://frendgrid.com/post/{{$post->id}}"  id="copytext" style="width: 100%; text-align: center;">
 
                     </div>
                     <div class="modal-footer">
