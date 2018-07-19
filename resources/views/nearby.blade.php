@@ -68,7 +68,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button class="btn copybutton btn-primary">
+                                                        <button onclick="myFunction()" class="btn copybutton btn-primary">
                                                             <i class="fa fa-files-o fa-2x" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
