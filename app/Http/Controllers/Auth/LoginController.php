@@ -62,6 +62,7 @@ class LoginController extends Controller
 
         DB::table('users')->where('username', $user->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         $noprofpic = DB::table('profileinfo')->where('username', $user->username)->where('profileimage', '/images/default-avatar.jpg')->exists();
+        setcookie('FG_User', $user->username, time() + (86400 * 30), "/");
         if($noprofpic){
             return redirect('/about');
         }else{
