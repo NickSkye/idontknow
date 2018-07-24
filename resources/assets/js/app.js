@@ -34,6 +34,9 @@ $('#sugbox').on('mousewheel DOMMouseScroll', function(event){
 
 
 
+FB.getLoginStatus(function(response) {
+    alert(response);
+});
 
 //Show image before upload
 function readURL(input) {

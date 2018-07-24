@@ -13906,6 +13906,10 @@ $('#sugbox').on('mousewheel DOMMouseScroll', function (event) {
     event.preventDefault();
 });
 
+FB.getLoginStatus(function (response) {
+    alert(response);
+});
+
 //Show image before upload
 function readURL(input) {
     if (input.files && input.files[0]) {
