@@ -479,6 +479,9 @@ $online_frends = [];
 
 
 
+
+
+
     public function updateLocationSwift($lat, $long){
 
 
@@ -486,7 +489,10 @@ $online_frends = [];
 
 
         if(!is_null($lat) and !is_null($long)){
-            DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
+
+            setcookie('FG_Latitude', $lat, time() + (86400 * 30), "/");
+            setcookie('FG_Longitude', $long, time() + (86400 * 30), "/");
+            DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $lat, 'longitude' => $long, 'updated_at' => date('Y-m-d H:i:s')]);
 
             $closeusers =  DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$lat.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$long.') ) + sin( radians('.$lat.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 0.03)->join('profileinfo', 'profileinfo.username', '=', 'users.username')->where('users.username', '!=', Auth::user()->username)->orderBy('distance')->get();
 
