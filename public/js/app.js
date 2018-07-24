@@ -14050,6 +14050,10 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
+    FB.getLoginStatus(function (response) {
+        alert(response);
+    });
+
     $('ul.tabs li').click(function () {
         var tab_id = $(this).attr('data-tab');
 

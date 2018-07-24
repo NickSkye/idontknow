@@ -143,9 +143,8 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
 
-            FB.getLoginStatus(function(response) {
-                alert(response);
-            });
+
+
         </script>
         @endauth
 
