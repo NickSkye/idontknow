@@ -132,6 +132,15 @@ class PagesController extends Controller
         return $frends;
     }
 
+    public function poll()
+    {
+
+
+        return view('poll');
+
+
+    }
+
 
     public function like(Request $request)
     {
