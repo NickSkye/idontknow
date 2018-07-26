@@ -33,7 +33,7 @@
                             @if (!$notifs->isEmpty())
                                     <a class="nav-link" href="/notification" >
                                     <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: #F62E55;"></i>
-                                        @if(isset($_COOKIE['FG_Notifications']))
+                                        @if($_COOKIE['FG_Notifications'] > 0)
                                             {{$_COOKIE['FG_Notifications']}}
                                         @endif
 
@@ -119,7 +119,7 @@
 
                     <a class="header-notification-button" href="/notification">
                         <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
-                        @if(isset($_COOKIE['FG_Notifications']))
+                        @if($_COOKIE['FG_Notifications'] > 0)
                             {{$_COOKIE['FG_Notifications']}}
                         @endif
 
