@@ -143,6 +143,15 @@ class HomeController extends Controller
             ['username', Auth::user()->username],
             ['seen', false],
         ])->get();
+
+            $notifcount = DB::table('notifications')->where([
+                ['username', Auth::user()->username],
+                ['seen', false],
+            ])->count();
+            setcookie("FG_Notifications", $notifcount, time() + (86400 * 30), "/");
+        $messagescount = DB::table('messages')->where([['messages.username', Auth::user()->username], ['seen', false],])->count();
+        setcookie('FG_Shoutcount', $messagescount, time() + (86400 * 30), "/");
+
             return view('home', ['allfriendsinfo' => $allfriendsinfo, 'frendsloc' => $frendsloc, 'notifs'=> $notifs, 'allfollowersinfo' => $allfollowersinfo, 'now'=> $now, 'online_frends'=> $online_frends, 'allwhoblocked' => $allwhoblocked, 'suggest' => $suggest]);
         }
     }
