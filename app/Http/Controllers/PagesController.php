@@ -559,6 +559,11 @@ $online_frends = [];
         DB::table('notifications')->where('id', $id)->update(
             ['seen' => true, 'updated_at' => date('Y-m-d H:i:s')]
         );
+        $notifcount = DB::table('notifications')->where([
+            ['username', Auth::user()->username],
+            ['seen', false],
+        ])->count();
+        setcookie("FG_Notifications", $notifcount, time() + (86400 * 30), "/");
         // $pages = Page::where('title', 'LIKE', "%$query%")->get();
 
         return view('notifications', ['notifs'=> $notifs, 'now'=> $now, 'online_frends'=> $online_frends]);
@@ -580,7 +585,11 @@ $online_frends = [];
             ['notifications.username', Auth::user()->username],
             ['notifications.seen', true],
         ])->orderBy('notifications.created_at', 'desc')->get();
-
+        $notifcount = DB::table('notifications')->where([
+            ['username', Auth::user()->username],
+            ['seen', false],
+        ])->count();
+        setcookie("FG_Notifications", $notifcount, time() + (86400 * 30), "/");
 
         return view('notifications', ['notifs'=> $notifs, 'oldnotifs'=> $oldnotifs, 'now'=> $now, 'online_frends'=> $online_frends]);
     }
