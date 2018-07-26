@@ -33,7 +33,7 @@
         } ?>" data-toggle="tooltip" data-placement="top" title="Send messages to friends that disappear once opened">
             <i class="fa fa-bullhorn fa-2x" aria-hidden="true"></i>
             @if(isset($_COOKIE['FG_Shoutcount']))
-                {{$_COOKIE[$cookie_name]}}
+                {{$_COOKIE['FG_Shoutcount']}}
             @endif
         </a>
     </div>
