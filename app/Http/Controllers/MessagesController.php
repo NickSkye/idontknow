@@ -41,8 +41,7 @@ class MessagesController extends Controller
 
         $messages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username' , 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.username', Auth::user()->username], ['seen', false],])->orderBy('messages.created_at', 'desc')->get();
 
-        $messagescount = DB::table('messages')->where([['messages.username', Auth::user()->username], ['seen', false],])->count();
-        setcookie('FG_Shoutcount', $messagescount, time() + (86400 * 30), "/");
+
 
         $sentmessages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username' , 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.from_username', Auth::user()->username],['seen', false],])->orderBy('messages.created_at', 'desc')->limit(50)->get();
 
@@ -65,7 +64,8 @@ class MessagesController extends Controller
         $me = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', Auth::user()->username)->first();
 
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-
+        $messagescount = DB::table('messages')->where([['messages.username', Auth::user()->username], ['seen', false],])->count();
+        setcookie('FG_Shoutcount', $messagescount, time() + (86400 * 30), "/");
 
         return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages,'sentmessages'=> $sentmessages, 'me'=> $me, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
 
