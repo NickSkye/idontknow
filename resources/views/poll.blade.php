@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.polllayout')
 <?php $page = 'poll'; ?>
 @section('content')
     <div class="container">
