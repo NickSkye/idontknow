@@ -31,10 +31,14 @@
         <a href="/shouts" class="me-button <?php if ($page == 'messages') {
             echo 'on-page';
         } ?>" data-toggle="tooltip" data-placement="top" title="Send messages to friends that disappear once opened">
+            @if(isset($_COOKIE['FG_Shoutcount']))
             @if($_COOKIE['FG_Shoutcount'] > 0)
             <i class="fa fa-bullhorn fa-2x" aria-hidden="true" style="color: #F62E55;"></i>
 
                 {{$_COOKIE['FG_Shoutcount']}}
+                @else
+                    <i class="fa fa-bullhorn fa-2x" aria-hidden="true"></i>
+                @endif
                 @else
                 <i class="fa fa-bullhorn fa-2x" aria-hidden="true"></i>
             @endif
