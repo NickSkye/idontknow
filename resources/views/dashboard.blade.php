@@ -32,6 +32,10 @@
 
                 <div class="card">
                     <div class="card-header">
+                        @if(isset($_COOKIE['FG_User']))
+                        <p>Hello $_COOKIE['FG_User']</p>
+                        @endif
+                        The current date and time is: 
                         <div id="datetime"></div>
 
 
