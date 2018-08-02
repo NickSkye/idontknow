@@ -150,6 +150,15 @@ class PagesController extends Controller
 
     }
 
+    public function apps()
+    {
+
+
+        return view('apps');
+
+
+    }
+
 
     public function like(Request $request)
     {
