@@ -31,6 +31,7 @@ Route::get('/shouts', 'MessagesController@messages')->middleware('auth');
 //footer legal pages
 Route::get('/about', 'PagesController@about')->middleware('auth');
 Route::get('/poll', 'PagesController@poll');
+Route::get('/dashboard', 'PagesController@dashboard');
 Route::get('/donate', 'PagesController@donate')->middleware('auth');
 Route::get('/legal', 'PagesController@legal')->middleware('auth');
 Route::get('/suggestions', 'PagesController@suggestions')->middleware('auth');

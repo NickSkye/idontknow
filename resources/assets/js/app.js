@@ -187,10 +187,11 @@ $( document ).ready(function() {
 
 $(document).ready(function(){
 
+    function doDate(){
+        $("#datetime").html(new Date($.now()));
 
-    // FB.getLoginStatus(function(response) {
-    //     //alert(response);
-    // });
+    }
+    setInterval(doDate, 1000);
 
     $('ul.tabs li').click(function(){
         var tab_id = $(this).attr('data-tab');
