@@ -66,6 +66,8 @@ function readURL(input) {
 $("#file-input").change(function(){
     readURL(this);
 });
+
+
 //Tooltip
 // $(function () {
 //     $('[data-toggle="tooltip"]').tooltip()
@@ -132,11 +134,17 @@ function showError(error) {
 $('#mobile-app-button').click(function(){
     localStorage.setItem('hasvisited', 'yes');
     window.location.href='https://www.frendgrid.com/about';
-})
+});
 
 
 $( document ).ready(function() {
-    console.log( "You Found Me!" );
+
+    $('.header-settings-button').click(function(){
+        $(".mobilemenu").addClass('menudown');
+    });
+
+    $(".header-settings-button").addClass('menudown');
+    console.log( "www.intelliskye.com" );
 
         // setInterval(function(){ sessionStorage.clear(); }, 180000);
 
