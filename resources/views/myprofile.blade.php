@@ -118,7 +118,9 @@
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown"
                                          style="text-align: center;">
-
+                                        <a href="/settings">
+                                            Settings
+                                        </a><br>
 
 
                                     </div>
