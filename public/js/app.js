@@ -13911,6 +13911,11 @@ $('.footer-button').on('touchstart mousedown', function (event) {
     $(this).css('background-color', '#25c5ff');
 });
 
+$('.footer-button').on('touchend mouseup', function (event) {
+
+    $(this).css('background-color', '');
+});
+
 //Show image before upload
 function readURL(input) {
     if (input.files && input.files[0]) {

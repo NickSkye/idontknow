@@ -37,6 +37,12 @@ $('.footer-button').on('touchstart mousedown', function(event){
 
 });
 
+$('.footer-button').on('touchend mouseup', function(event){
+
+    $(this).css('background-color', '');
+
+});
+
 
 
 
