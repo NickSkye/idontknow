@@ -14002,17 +14002,6 @@ $('#mobile-app-button').click(function () {
     window.location.href = 'https://www.frendgrid.com/about';
 });
 
-var lastScrollTop = 0;
-$(window).scroll(function () {
-    var st = $(this).scrollTop;
-    if (st > lastScrollTop) {
-        $(".navbar").removeClass('fixed-nav');
-    } else {
-        $(".navbar").addClass('fixed-nav');
-    }
-    lastScrollTop = st;
-});
-
 $(document).ready(function () {
 
     $('.header-settings-button, .mobilemenu').click(function () {
