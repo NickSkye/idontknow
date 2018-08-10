@@ -4,13 +4,15 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 75px;
+    height: 60px;
      // #34baf4;
     background-color: transparent;
     z-index: 3333;
     text-align: center;
     display: flex;
-
+    -webkit-box-shadow: 0px -2px 14px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -2px 14px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px -2px 14px 0px rgba(0,0,0,0.75);
     .footer-button{
         display: flex;
         width: calc(100% / 5);
@@ -43,7 +45,7 @@
             height: 100%;
             color: $secondary-color;
             i{
-                margin-top: 20px;
+                margin-top: 10px;
             }
         }
 
@@ -52,7 +54,7 @@
             height: 100%;
             color: $secondary-color;
             i{
-                margin-top: 20px;
+                margin-top: 10px;
             }
         }
 
@@ -61,7 +63,7 @@
             height: 100%;
             color: $secondary-color;
             i{
-                margin-top: 20px;
+                margin-top: 10px;
             }
         }
     }
