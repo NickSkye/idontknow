@@ -44,7 +44,7 @@ body {
 
 .profile-image-shout-page.old {
   -webkit-filter: grayscale(100%);
-  filter: gray;
+  filter: grayscale(100%);
 }
 
 .frend-area .home-frends-images {
@@ -11769,6 +11769,5 @@ html {
 
 html body {
   height: 100%;
-  overflow-x: hidden;
 }
 
