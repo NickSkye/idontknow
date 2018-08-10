@@ -137,6 +137,7 @@ $('#mobile-app-button').click(function(){
 });
 
 
+
 $( document ).ready(function() {
 
     $('.header-settings-button, .mobilemenu').click(function(){

@@ -703,7 +703,7 @@ ul.tabs li.current {
 }
 
 .mobilemenu {
-  position: fixed;
+  position: absolute;
   height: 100%;
   width: 100%;
   -webkit-transition: all 0.5s ease-in-out;
@@ -717,7 +717,6 @@ ul.tabs li.current {
   padding: 150px;
   margin-left: auto;
   margin-right: auto;
-  display: none;
 }
 
 .mobilemenu p a {
@@ -730,7 +729,6 @@ ul.tabs li.current {
 }
 
 .mobilemenu.menudown {
-  display: block;
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
   opacity: 1;
