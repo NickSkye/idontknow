@@ -1,9 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);body,
-html {
-  overflow: hidden;
-}
-
-.no-padding {
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.no-padding {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
