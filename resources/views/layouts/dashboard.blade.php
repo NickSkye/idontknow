@@ -164,7 +164,7 @@
 
 
             @include('partials.navbar')
-            @include('partials.mobilemenu)
+            @include('partials.mobilemenu')
 
             <div class="collapse visible-on-small frend-search-down" id="collapseExample" >
                 <div class="card card-body">
