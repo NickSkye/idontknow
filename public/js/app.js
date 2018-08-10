@@ -13908,7 +13908,7 @@ $('#sugbox').on('mousewheel DOMMouseScroll', function (event) {
 
 $('.footer-button').on('touchstart mousedown', function (event) {
 
-    $('.footer-button').css('background-color', 'red');
+    $(this).css('background-color', 'red');
 });
 
 //Show image before upload
