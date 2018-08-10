@@ -13908,7 +13908,7 @@ $('#sugbox').on('mousewheel DOMMouseScroll', function (event) {
 
 $('.footer-button').on('touchstart mousedown', function (event) {
 
-    $(this).css('background-color', '#25c5ff');
+    $(this).css('background-color', '#66ff00');
 });
 
 $('.footer-button').on('touchend mouseup', function (event) {
