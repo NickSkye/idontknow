@@ -19,9 +19,9 @@
                         <img src="" id="upload-img-tag" style="width: auto; max-height: 200px;" />
                         <textarea rows="4" cols="40" style="width: 100%;" placeholder="Whatcha thinkin about..." type="text" name="description" ></textarea>
                     </div>
-                    <div class="col-6 offset-2 image-upload" style="align-self: flex-end;">
+                    <div class="col-12 image-upload image-butt" >
                         <label for="file-input" style="float: right; margin-bottom: 0; cursor: pointer;">
-                            <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
+                            <i class="fa fa-camera fa-3x" aria-hidden="true"></i>
                         </label>
                         <input id="file-input" type="file" name="image" />
 
