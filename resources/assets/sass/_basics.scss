@@ -713,6 +713,7 @@ ul.tabs li.current{
     padding: 150px;
     margin-left: auto;
     margin-right: auto;
+    display:none;
     p{
         a{
             color: white;
@@ -725,6 +726,7 @@ ul.tabs li.current{
     }
 
     &.menudown{
+        display: block;
         transform: translateY(0%);
         opacity: 1;
     }
