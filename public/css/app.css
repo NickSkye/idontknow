@@ -1173,8 +1173,6 @@ ul.tabs li.current {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  border-top-left-radius: 999px;
-  border-top-right-radius: 999px;
   background-color: #00c8ff;
 }
 
