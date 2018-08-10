@@ -1149,7 +1149,7 @@ ul.tabs li.current {
   left: 0;
   right: 0;
   height: 55px;
-  background-color: #00c8ff;
+  background-color: transparent;
   z-index: 3333;
   text-align: center;
   display: -webkit-box;
@@ -1172,6 +1172,13 @@ ul.tabs li.current {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  background-color: #00c8ff;
+}
+
+.permafooter .footer-button:hover,
+.permafooter .footer-button:focus,
+.permafooter .footer-button:active {
+  background-color: #00A6DC;
 }
 
 .permafooter .footer-button .on-page {

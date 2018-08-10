@@ -5,7 +5,8 @@
     left: 0;
     right: 0;
     height: 55px;
-    background-color: $main-color; // #34baf4;
+     // #34baf4;
+    background-color: transparent;
     z-index: 3333;
     text-align: center;
     display: flex;
@@ -18,6 +19,10 @@
         align-items: center;
         justify-content: center;
         align-content: center;
+        background-color: $main-color;
+        &:hover, &:focus, &:active{
+            background-color: #00A6DC;
+        }
 
         .on-page{
             color: #ffcc00 !important;
