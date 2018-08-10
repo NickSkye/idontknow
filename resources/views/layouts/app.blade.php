@@ -154,7 +154,7 @@
 
         </script>
         @endauth
-        @include('partials.mobilemenu')
+
         <div id="app">
             {{--<div id="mobile-app-button" class="d-none mobile-app-div" >--}}
 
@@ -173,6 +173,7 @@
             </div>
 
             <main class="main py-4" >
+                @include('partials.mobilemenu')
                 @yield('content')
                 @include('partials.modals')
             </main>
