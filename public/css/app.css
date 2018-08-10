@@ -740,6 +740,10 @@ ul.tabs li.current {
   opacity: 1;
 }
 
+.post-button {
+  width: 100%;
+}
+
 .shout-from-frend {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
