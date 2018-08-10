@@ -154,7 +154,7 @@
 
         </script>
         @endauth
-        @include('partials.mobilemenu')
+
         <div id="app">
             {{--<div id="mobile-app-button" class="d-none mobile-app-div" >--}}
 
