@@ -132,6 +132,7 @@
         @endguest
         @auth
         <body>
+        @include('partials.mobilemenu')
         <script>
             window.fbAsyncInit = function() {
                 FB.init({
@@ -173,7 +174,7 @@
             </div>
 
             <main class="main py-4" >
-                @include('partials.mobilemenu')
+
                 @yield('content')
                 @include('partials.modals')
             </main>
