@@ -154,7 +154,7 @@
 
         </script>
         @endauth
-
+        @include('partials.mobilemenu')
         <div id="app">
             {{--<div id="mobile-app-button" class="d-none mobile-app-div" >--}}
 
@@ -164,7 +164,7 @@
 
 
             @include('partials.navbar')
-            @include('partials.mobilemenu')
+
 
             <div class="collapse visible-on-small frend-search-down" id="collapseExample" >
                 <div class="card card-body">
