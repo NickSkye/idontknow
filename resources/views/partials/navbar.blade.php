@@ -160,7 +160,7 @@
 
 
         <div class="header-button">
-            <a class="header-settings-button" href="/settings">
+            <a class="header-settings-button" href="#">
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 
