@@ -714,13 +714,14 @@ ul.tabs li.current {
   background-color: #00b4ff;
   color: white;
   z-index: 2;
-  padding: 100px;
+  padding: 150px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .mobilemenu p a {
   color: white;
+  font-size: 16pt;
 }
 
 .mobilemenu p a:hover {

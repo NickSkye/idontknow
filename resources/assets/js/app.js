@@ -139,7 +139,7 @@ $('#mobile-app-button').click(function(){
 
 $( document ).ready(function() {
 
-    $('.header-settings-button').click(function(){
+    $('.header-settings-button, .mobilemenu').click(function(){
         $(".mobilemenu").toggleClass('menudown');
         $(".header-settings-button > i").toggleClass('fa-bars');
         $(".header-settings-button > i").toggleClass('fa-times');
