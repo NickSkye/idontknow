@@ -14005,10 +14005,11 @@ $('#mobile-app-button').click(function () {
 $(document).ready(function () {
 
     $('.header-settings-button').click(function () {
-        $(".mobilemenu").addClass('menudown');
+        $(".mobilemenu").toggleClass('menudown');
+        $("header-settings-button > i").toggleClass('fa-bars');
+        $("header-settings-button > i").toggleClass('fa-times');
     });
 
-    $(".header-settings-button").addClass('menudown');
     console.log("www.intelliskye.com");
 
     // setInterval(function(){ sessionStorage.clear(); }, 180000);
