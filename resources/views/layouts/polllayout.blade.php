@@ -132,6 +132,7 @@
         @endguest
         @auth
         <body>
+        @include('partials.mobilemenu')
         <script>
             window.fbAsyncInit = function() {
                 FB.init({

@@ -91,9 +91,9 @@
             });
         } );
         </script>
-        <script src="linkify.min.js"></script>
-        <script src="linkify-jquery.min.js"></script>
-        <script src="dist/clipboard.min.js"></script>
+        {{--<script src="linkify.min.js"></script>--}}
+        {{--<script src="linkify-jquery.min.js"></script>--}}
+        {{--<script src="dist/clipboard.min.js"></script>--}}
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">

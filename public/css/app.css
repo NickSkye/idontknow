@@ -713,13 +713,14 @@ ul.tabs li.current {
   width: 100%;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
   opacity: 0;
   background-color: #00b4ff;
   color: white;
   z-index: 2;
-  padding: 150px;
+  padding-left: 150px;
+  padding-top: 150px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -734,8 +735,8 @@ ul.tabs li.current {
 }
 
 .mobilemenu.menudown {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
   opacity: 1;
 }
 
