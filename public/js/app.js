@@ -14004,6 +14004,17 @@ $('#mobile-app-button').click(function () {
 
 $(document).ready(function () {
 
+    var lastScrollTop = 0;
+    $(window).scroll(function (e) {
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop) {
+            $(".navbar").removeClass('fixed-nav');
+        } else {
+            $(".navbar").addClass('fixed-nav');
+        }
+        lastScrollTop = st;
+    });
+
     $('.header-settings-button, .mobilemenu').click(function () {
         $(".mobilemenu").toggleClass('menudown');
         $(".header-settings-button > i").toggleClass('fa-bars');
