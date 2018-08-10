@@ -25,6 +25,7 @@
         background-color: $main-color;
         &:hover, &:focus, &:active{
             background-color: #00A6DC;
+            height: 110%;
         }
 
         .on-page{

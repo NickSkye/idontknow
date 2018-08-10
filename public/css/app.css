@@ -1182,6 +1182,7 @@ ul.tabs li.current {
 .permafooter .footer-button:focus,
 .permafooter .footer-button:active {
   background-color: #00A6DC;
+  height: 110%;
 }
 
 .permafooter .footer-button .on-page {
