@@ -141,8 +141,8 @@ $( document ).ready(function() {
 
     $('.header-settings-button').click(function(){
         $(".mobilemenu").toggleClass('menudown');
-        $("header-settings-button > i").toggleClass('fa-bars');
-        $("header-settings-button > i").toggleClass('fa-times');
+        $(".header-settings-button > i").toggleClass('fa-bars');
+        $(".header-settings-button > i").toggleClass('fa-times');
     });
 
 
