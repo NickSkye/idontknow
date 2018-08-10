@@ -1,4 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.no-padding {
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);html,
+body {
+  overflow-x: hidden;
+}
+
+.no-padding {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
@@ -708,8 +713,8 @@ ul.tabs li.current {
   width: 100%;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
   opacity: 0;
   background-color: #00b4ff;
   color: white;
@@ -729,8 +734,8 @@ ul.tabs li.current {
 }
 
 .mobilemenu.menudown {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
   opacity: 1;
 }
 

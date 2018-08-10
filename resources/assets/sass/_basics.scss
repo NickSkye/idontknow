@@ -1,4 +1,6 @@
-
+html, body{
+    overflow-x: hidden;
+}
 .no-padding {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -705,7 +707,7 @@ ul.tabs li.current{
     height: 100%;
     width: 100%;
     transition: all 0.5s ease-in-out;
-    transform: translateY(-100%);
+    transform: translateX(100%);
     opacity: 0;
     background-color: rgba(0,180,255,1);
     color: white;
@@ -726,7 +728,7 @@ ul.tabs li.current{
 
     &.menudown{
 
-        transform: translateY(0%);
+        transform: translateX(0%);
         opacity: 1;
     }
 }
