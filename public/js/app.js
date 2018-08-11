@@ -14016,7 +14016,7 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
 
-        if ($(document).scrollTop > 100) {
+        if ($(window).scrollTop > 100) {
             $('.navbar').css('position', 'fixed');
             $('.navbar').css('top', '0');
         } else {
