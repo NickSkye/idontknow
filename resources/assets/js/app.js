@@ -149,7 +149,7 @@ $('#mobile-app-button').click(function(){
 });
 
 
-$(document).ready(function () {
+
 
 
     $(window).bind('scroll', function () {
@@ -175,7 +175,7 @@ $(document).ready(function () {
 
     });
 
-});
+
 
 
 
