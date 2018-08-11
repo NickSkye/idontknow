@@ -14014,7 +14014,7 @@ $('#mobile-app-button').click(function () {
 
 $(document).ready(function () {
 
-    $(window).scroll(function () {
+    $(window).on('scroll', function () {
 
         if ($(window).scrollTop > 100) {
             $('.navbar').css('position', 'fixed');
