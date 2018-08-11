@@ -152,26 +152,7 @@ $('#mobile-app-button').click(function(){
 
 
 
-    $(window).bind('scroll', function () {
-        if ($(window).scrollTop() > 100) {
-            setTimeout(
-                function () {
-                    $('.navbar').addClass('top-0');
-                }
-                , 10);
-            $('.navbar').addClass('fixed');
 
-
-            //document.getElementById("prrlogo").src="/images/prr-logo-icon.png";
-
-        } else if ($(window).scrollTop() < 100 && $(window).scrollTop() > 0) {
-            $('.navbar').removeClass('top-0');
-        } else {
-            $('.navbar').removeClass('fixed');
-        }
-
-
-    });
 
 
 

@@ -1391,6 +1391,13 @@ ul.tabs li.current {
   box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.75);
 }
 
+@media (max-width: 767px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+  }
+}
+
 /*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
