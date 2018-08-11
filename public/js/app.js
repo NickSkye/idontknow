@@ -14018,13 +14018,10 @@ $(window).bind('scroll', function () {
             $('.navbar').addClass('top-0');
         }, 10);
         $('.navbar').addClass('fixed');
-        $('.navbar').addClass('box-shadow');
 
         //document.getElementById("prrlogo").src="/images/prr-logo-icon.png";
     } else if ($(window).scrollTop() < 100 && $(window).scrollTop() > 0) {
         $('.navbar').removeClass('top-0');
-        $('.navbar').removeClass('box-shadow');
-        //document.getElementById("prrlogo").src="/images/prr-logo1.png";
     } else {
         $('.navbar').removeClass('fixed');
     }
