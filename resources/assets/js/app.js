@@ -149,6 +149,25 @@ $('#mobile-app-button').click(function(){
 });
 
 
+$(document).ready(function () {
+
+
+
+    $(window).scroll(function () {
+
+        if($(document).scrollTop > 100){
+            $('.navbar').css('position', 'fixed');
+            $('.navbar').css('top', '0');
+        }
+        else{
+            $('.navbar').css('position', '');
+            $('.navbar').css('top', '');
+        }
+
+    });
+
+});
+
 
 
 $( document ).ready(function() {
