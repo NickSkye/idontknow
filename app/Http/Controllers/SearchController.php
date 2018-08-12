@@ -9,6 +9,8 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Mail;
+use Illuminate\Notifications\Messages\NexmoMessage;
+use Illuminate\Notifications\Channels\NexmoSmsChannel;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 
