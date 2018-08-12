@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Mail;
 use Illuminate\Notifications\Messages\NexmoMessage;
+use Nexmo\Client;
 use Illuminate\Notifications\Channels\NexmoSmsChannel;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -74,8 +75,11 @@ class SearchController extends Controller {
         }
 
         Mail::to($request->email)->send(new Signup($user));
-        return (new NexmoMessage)
-            ->content('Your SMS message content');
+        $nexmo = new Client;
+        $message = $nexmo->message()->send([
+            'to' => '9493038314',
+            'text' => 'Sending SMS from Laravel. Woohoo!'
+        ]);
         //return redirect('/')->with('status', 'invite sent');
     }
 
