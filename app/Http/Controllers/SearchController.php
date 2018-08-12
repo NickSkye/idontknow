@@ -80,7 +80,8 @@ class SearchController extends Controller {
             'to' => '9493038314',
             'text' => 'Sending SMS from Laravel. Woohoo!'
         ]);
-        //return redirect('/')->with('status', 'invite sent');
+        Log::info('sent message: ' . $message['message-id']);
+        return redirect('/')->with('status', 'invite sent');
     }
 
 
