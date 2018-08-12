@@ -75,12 +75,12 @@ class SearchController extends Controller {
         }
 
         Mail::to($request->email)->send(new Signup($user));
-        $nexmo = new Client;
-        $message = $nexmo->message()->send([
-            'to' => '9493038314',
-            'text' => 'Sending SMS from Laravel. Woohoo!'
-        ]);
-        Log::info('sent message: ' . $message['message-id']);
+//        $nexmo = new Client;
+//        $message = $nexmo->message()->send([
+//            'to' => '9493038314',
+//            'text' => 'Sending SMS from Laravel. Woohoo!'
+//        ]);
+//        Log::info('sent message: ' . $message['message-id']);
         return redirect('/')->with('status', 'invite sent');
     }
 
