@@ -72,7 +72,9 @@ class SearchController extends Controller {
         }
 
         Mail::to($request->email)->send(new Signup($user));
-        return redirect('/')->with('status', 'invite sent');
+        return (new NexmoMessage)
+            ->content('Your SMS message content');
+        //return redirect('/')->with('status', 'invite sent');
     }
 
 
