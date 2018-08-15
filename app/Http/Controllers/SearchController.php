@@ -78,7 +78,7 @@ class SearchController extends Controller {
         Mail::to($request->email)->send(new Signup($user));
         Nexmo::message()->send([
             'to'   => '19493038314',
-            'from' => '19493038314',
+            'from' => '12017012132',
             'text' => 'Using the facade to send a message.'
         ]);
 //        $nexmo = new Client;
