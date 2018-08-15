@@ -21,9 +21,11 @@
                 <div class="card-body">
                     <h2 style="text-align: center;">Welcome to FrendGrid!</h2>
                     <br>
+                    <h5><i class="fa fa-location-arrow fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Your location is NEVER shared. Only a general radius is collected in order to see who is close while Protecting your Privacy.</h5>
+                    <br>
                     <h5><i class="fa fa-globe fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Connect with the world around you in real life</h5>
                     <br>
-                    <h5><i class="fa fa-users fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Make new friends based off people around you</h5>
+                    <h5><i class="fa fa-users fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Make new friends based off people around you (requires location to be enabled)</h5>
                     <br>
                     <h5><i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Share your life and see all the exciting stuff going on around you!</h5>
                     <br>
