@@ -51,7 +51,7 @@ Route::post('/shouts/send', 'MessagesController@shout')->middleware('auth');
 Route::post('/shouts/sendonpage', 'MessagesController@shoutonpage')->middleware('auth');
 Route::post('/shouts/shoutseen', 'MessagesController@shoutSeen')->middleware('auth');
 Route::post('/shouts/shoutback', 'MessagesController@shoutBack')->middleware('auth');
-Route::post('/sendinvite', 'SearchController@sendinvite')->middleware('auth');
+Route::get('/sendinvite', 'SearchController@sendinvite')->middleware('auth');
 
 Route::get('/search', 'SearchController@index')->middleware('auth');
 Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');
