@@ -81,7 +81,7 @@ class SearchController extends Controller {
         }
 
         if(is_numeric($request->email)){
-            if (preg_match('/^\d{10}$/', $request->email)) {
+            if (strlen($request->email) == 10) {
                 Nexmo::message()->send([
                     'to'   => $request->email,
                     'from' => '12017012132',
