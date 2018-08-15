@@ -75,12 +75,18 @@ class SearchController extends Controller {
             DB::table('achievements')->insert(['username' => Auth::user()->username, 'achievement' => '💌', 'title' => 'Invited A Frend', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
         }
 
-        Mail::to($request->email)->send(new Signup($user));
-        Nexmo::message()->send([
-            'to'   => '19493038314',
-            'from' => '12017012132',
-            'text' => 'Your friend ' .  Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today! https://frendgrid.com/register !!!'
-        ]);
+        if(is_numeric($request->email)){
+            Nexmo::message()->send([
+                'to'   => '19493038314',
+                'from' => '12017012132',
+                'text' => 'Your friend ' .  Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today! https://frendgrid.com/register !!!'
+            ]);
+        }
+        else{
+            Mail::to($request->email)->send(new Signup($user));
+        }
+
+
 //        $nexmo = new Client;
 //        $message = $nexmo->message()->send([
 //            'to' => '9493038314',
