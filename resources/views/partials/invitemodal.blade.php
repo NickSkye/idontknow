@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                {!! Form::label('email', 'Enter your Friends Phone Number or E-mail Address') !!}
+                                {!! Form::label('email', 'Enter your Friends Phone Number i.e. (xxxxxxxxxx) or E-mail Address i.e. (xxx@xxx.xxx)') !!}
                                 {!! Form::text('email', null, ['class' => 'form-control', 'required' => 'required']) !!}
                             </div>
 

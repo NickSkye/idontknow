@@ -81,11 +81,20 @@ class SearchController extends Controller {
         }
 
         if(is_numeric($request->email)){
-            Nexmo::message()->send([
-                'to'   => $request->email,
-                'from' => '12017012132',
-                'text' => 'Your friend ' .  Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
-            ]);
+            if (preg_match('/^\d{10}$/', $request->email)) {
+                Nexmo::message()->send([
+                    'to'   => $request->email,
+                    'from' => '12017012132',
+                    'text' => 'Your friend ' .  Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
+                ]);
+            } else {
+                Nexmo::message()->send([
+                    'to'   => '1' . $request->email,
+                    'from' => '12017012132',
+                    'text' => 'Your friend ' .  Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
+                ]);
+            }
+
         }
         else{
             Mail::to($request->email)->send(new Signup($user));
