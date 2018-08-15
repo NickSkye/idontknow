@@ -118,13 +118,13 @@ class MessagesController extends Controller
        }
         $user = DB::table('users')->where('username', Auth::user()->username)->get();
 
-        if ( !is_null($phonenum) ) {
+        if ( !is_null($phonenum->phonenumber) ) {
 
 
             Nexmo::message()->send([
-                'to' => $phonenum,
+                'to' => $phonenum->phonenumber,
                 'from' => '19493403561',
-                'text' => 'You have a new shout https://frendgrid.com/shouts !'
+                'text' => 'Your friend ' . Auth::user()->username . ' sent you a message https://frendgrid.com/shouts !'
             ]);
         }
         DB::table('users')->where('username', Auth::user()->username)->increment('score', 2);
