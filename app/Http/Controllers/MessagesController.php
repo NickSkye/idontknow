@@ -116,7 +116,7 @@ class MessagesController extends Controller
        }
         $user = DB::table('users')->where('username', Auth::user()->username)->get();
 
-        if ( !empty( $friends->phonenumber ) ) {
+        if ( !is_null($friends->phonenumber) ) {
 
 
             Nexmo::message()->send([
