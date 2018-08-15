@@ -69,6 +69,11 @@ class SearchController extends Controller {
 
 
     public function sendinvite(Request $request){
+        $this->validate($request, [
+            'email' => 'required',
+
+
+        ]);
         $user = DB::table('users')->where('username', Auth::user()->username)->get();
 
         if (DB::table('achievements')->where('username', Auth::user()->username)->where('title', 'Invited A Frend')->doesntExist()) {
