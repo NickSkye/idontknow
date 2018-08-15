@@ -60,7 +60,7 @@
                         {{--</div>--}}
 
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
+                            <label for="phone">Phone Number to receive text notifications</label>
                             <input type="text" class="form-control book-form" id="phone" name="phone" value="{{ $profileinfo->phonenumber }}">
                         </div>
 
