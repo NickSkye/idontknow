@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                {!! Form::label('email', 'E-mail Address') !!}
+                                {!! Form::label('email', 'Phone Number or E-mail Address') !!}
                                 {!! Form::text('email', null, ['class' => 'form-control']) !!}
                             </div>
 
