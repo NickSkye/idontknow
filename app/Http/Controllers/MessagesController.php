@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Mail;
-
+use Nexmo\Client;
+use Nexmo\Laravel\Facade\Nexmo;
 
 
 
