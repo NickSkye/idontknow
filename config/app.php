@@ -147,7 +147,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-
+        Nexmo\Laravel\NexmoServiceProvider::class,
         /*
          * Package Service Providers...
          */
