@@ -80,7 +80,7 @@ class SearchController extends Controller {
             DB::table('achievements')->insert(['username' => Auth::user()->username, 'achievement' => '💌', 'title' => 'Invited A Frend', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
         }
 
-        if(is_numeric($request->email)){
+//        if(is_numeric($request->email)){
             if (strlen($request->email) == 10) {
                 Nexmo::message()->send([
                     'to'   => $request->email,
@@ -95,10 +95,10 @@ class SearchController extends Controller {
                 ]);
             }
 
-        }
-        else{
+//        }
+//        else{
             Mail::to($request->email)->send(new Signup($user));
-        }
+//        }
 
 
 //        $nexmo = new Client;
