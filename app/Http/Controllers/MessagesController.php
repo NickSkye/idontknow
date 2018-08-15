@@ -124,7 +124,7 @@ class MessagesController extends Controller
             Nexmo::message()->send([
                 'to' => $phonenum,
                 'from' => '19493403561',
-                'text' => 'Your friend ' . Auth::user()->username . ' sent you a message https://frendgrid.com/shouts !'
+                'text' => 'You have a new shout https://frendgrid.com/shouts !'
             ]);
         }
         DB::table('users')->where('username', Auth::user()->username)->increment('score', 2);
