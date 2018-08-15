@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Mail;
 use Illuminate\Notifications\Messages\NexmoMessage;
 use Nexmo\Client;
+use Nexmo\Laravel\Facade\Nexmo;
 use Illuminate\Notifications\Channels\NexmoSmsChannel;
 use Symfony\Component\HttpFoundation\Session\Session;
 
