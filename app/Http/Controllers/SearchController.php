@@ -79,21 +79,21 @@ class SearchController extends Controller {
         if (DB::table('achievements')->where('username', Auth::user()->username)->where('title', 'Invited A Frend')->doesntExist()) {
             DB::table('achievements')->insert(['username' => Auth::user()->username, 'achievement' => '💌', 'title' => 'Invited A Frend', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
         }
-console.log(strlen($request->email));
-        if(is_numeric($request->email)) {
 
+        if(is_numeric($request->email)) {
+            if(strlen($request->email) >9){
                 Nexmo::message()->send([
                     'to' => $request->email,
                     'from' => '19493403561',
                     'text' => 'Your friend ' . Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
                 ]);
-//            } else {
-//                Nexmo::message()->send([
-//                    'to' => '1' . $request->email,
-//                    'from' => '19493403561',
-//                    'text' => 'Your friend ' . Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
-//                ]);
-//            }
+            } else {
+                Nexmo::message()->send([
+                    'to' => '1' . $request->email,
+                    'from' => '19493403561',
+                    'text' => 'Your friend ' . Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
+                ]);
+            }
 
         }
         else{
