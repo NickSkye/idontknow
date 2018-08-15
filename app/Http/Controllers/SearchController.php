@@ -79,7 +79,7 @@ class SearchController extends Controller {
         if (DB::table('achievements')->where('username', Auth::user()->username)->where('title', 'Invited A Frend')->doesntExist()) {
             DB::table('achievements')->insert(['username' => Auth::user()->username, 'achievement' => '💌', 'title' => 'Invited A Frend', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
         }
-
+console.log(strlen($request->email));
         if(is_numeric($request->email)) {
 
                 Nexmo::message()->send([
