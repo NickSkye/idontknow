@@ -89,7 +89,7 @@ class SearchController extends Controller {
                 ]);
             } else {
                 Nexmo::message()->send([
-                    'to' => 1 . $request->email,
+                    'to' => "1" . strval($request->email),
                     'from' => '19493403561',
                     'text' => 'Your friend ' . Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
                 ]);
