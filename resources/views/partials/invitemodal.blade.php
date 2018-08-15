@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ url('sendinvite') }}" method="get">
+                <form action="{{ url('sendinvite') }}" method="post">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-12">
