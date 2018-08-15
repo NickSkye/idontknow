@@ -97,7 +97,7 @@ class MessagesController extends Controller
         ]);
 
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->orderBy('created_at', 'desc')->get();
-        $phonenum = DB::table('users')->select('phonenumber')->where(['username', $request->sendtousername])->first();
+        $phonenum = DB::table('users')->select('phonenumber')->where('username', $request->sendtousername)->first();
         $friends = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 
         DB::table('messages')->insert(
