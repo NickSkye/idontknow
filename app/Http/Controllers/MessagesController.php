@@ -97,6 +97,7 @@ class MessagesController extends Controller
         ]);
 
         $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->orderBy('created_at', 'desc')->get();
+        $phonenum = DB::table('users')->select('phonenumber')->where(['username', $request->sendtousername])->first();
         $friends = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 
         DB::table('messages')->insert(
@@ -116,11 +117,11 @@ class MessagesController extends Controller
        }
         $user = DB::table('users')->where('username', Auth::user()->username)->get();
 
-        if ( !is_null($friends->phonenumber) ) {
+        if ( !is_null($phonenum) ) {
 
 
             Nexmo::message()->send([
-                'to' => $friends->phonenumber,
+                'to' => $phonenum,
                 'from' => '19493403561',
                 'text' => 'Your friend ' . Auth::user()->name . ' sent you a message https://frendgrid.com/shouts !'
             ]);
