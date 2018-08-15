@@ -119,22 +119,11 @@ class MessagesController extends Controller
         if ( !empty( $friends->phonenumber ) ) {
 
 
-        if(is_numeric($request->email)){
-            if (strlen($request->email) == 10) {
-                Nexmo::message()->send([
-                    'to'   => $request->email,
-                    'from' => '12017012132',
-                    'text' => 'Your friend ' .  Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
-                ]);
-            } else {
-                Nexmo::message()->send([
-                    'to'   => '1' . $request->email,
-                    'from' => '12017012132',
-                    'text' => 'Your friend ' .  Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
-                ]);
-            }
-
-        }
+            Nexmo::message()->send([
+                'to' => $friends->phonenumber,
+                'from' => '19493403561',
+                'text' => 'Your friend ' . Auth::user()->name . ' sent you a message https://frendgrid.com/shouts !'
+            ]);
         }
         DB::table('users')->where('username', Auth::user()->username)->increment('score', 2);
 
