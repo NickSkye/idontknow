@@ -82,7 +82,7 @@ class SearchController extends Controller {
 
         if(is_numeric($request->email)){
             Nexmo::message()->send([
-                'to'   => '19493038314',
+                'to'   => $request->email,
                 'from' => '12017012132',
                 'text' => 'Your friend ' .  Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today! https://frendgrid.com/register !!!'
             ]);
