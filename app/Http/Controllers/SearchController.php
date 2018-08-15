@@ -80,25 +80,25 @@ class SearchController extends Controller {
             DB::table('achievements')->insert(['username' => Auth::user()->username, 'achievement' => '💌', 'title' => 'Invited A Frend', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
         }
 
-//        if(is_numeric($request->email)){
+        if(is_numeric($request->email)) {
             if (strlen($request->email) == 10) {
                 Nexmo::message()->send([
-                    'to'   => $request->email,
+                    'to' => $request->email,
                     'from' => '12017012132',
-                    'text' => 'Your friend ' .  Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
+                    'text' => 'Your friend ' . Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
                 ]);
             } else {
                 Nexmo::message()->send([
-                    'to'   => '1' . $request->email,
+                    'to' => '1' . $request->email,
                     'from' => '12017012132',
-                    'text' => 'Your friend ' .  Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
+                    'text' => 'Your friend ' . Auth::user()->name . ' wants to be friends with you on FrendGrid! Join Today at https://frendgrid.com/register !!! or download the mobile app for iOS at https://goo.gl/ygEdQZ !!!'
                 ]);
             }
 
-//        }
-//        else{
+        }
+        else{
             Mail::to($request->email)->send(new Signup($user));
-//        }
+        }
 
 
 //        $nexmo = new Client;
