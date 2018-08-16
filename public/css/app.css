@@ -380,6 +380,12 @@ a p {
   float: right;
 }
 
+.loc-button {
+  background: #00b4ff;
+  color: white;
+  float: right;
+}
+
 .add-button {
   background: #00b4ff;
   color: white;

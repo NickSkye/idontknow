@@ -59,7 +59,7 @@ navigator.permissions.query({name:'geolocation'})
 $('#enableLoc').on('click', function(event){
 
     getLocation();
-
+    $('#enableLoc').css('display', 'hidden');
 });
 
 

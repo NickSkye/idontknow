@@ -81,7 +81,7 @@
                         </div>
                         <div class="form-group" style="margin-top: 1rem;">
 
-                            <a id="enableLoc" class="btn upload-button">Enable Location</a>
+                            <a id="enableLoc" class="btn loc-button">Enable Location</a>
                         </div>
                         {{--<div class="form-group" style="margin-top: 1rem;">--}}
                             {{--<label for="use_loc">Allow us to use your location?</label>--}}

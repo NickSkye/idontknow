@@ -13930,6 +13930,7 @@ navigator.permissions.query({ name: 'geolocation' }).then(function (permissionSt
 $('#enableLoc').on('click', function (event) {
 
     getLocation();
+    $('#enableLoc').css('display', 'hidden');
 });
 
 //Show image before upload
