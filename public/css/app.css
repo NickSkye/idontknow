@@ -384,6 +384,7 @@ a p {
   background: #00b4ff;
   color: white;
   float: right;
+  white-space: normal !important;
 }
 
 .add-button {
