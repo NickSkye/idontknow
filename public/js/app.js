@@ -13916,6 +13916,14 @@ $('.footer-button').on('touchend mouseup', function (event) {
     $(this).css('background-color', '');
 });
 
+navigator.permissions.query({ name: 'geolocation' }).then(function (permissionStatus) {
+    console.log('geolocation permission state is ', permissionStatus.state);
+
+    permissionStatus.onchange = function () {
+        console.log('geolocation permission state has changed to ', this.state);
+    };
+});
+
 //Show image before upload
 function readURL(input) {
     if (input.files && input.files[0]) {
