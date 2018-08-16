@@ -46,13 +46,21 @@ $('.footer-button').on('touchend mouseup', function(event){
 
 navigator.permissions.query({name:'geolocation'})
     .then(function(permissionStatus) {
+        if (permissionStatus.state == 'denied') {
+            $('#enableLoc').css('display', 'visible');
+        }
         console.log('geolocation permission state is ', permissionStatus.state);
 
         permissionStatus.onchange = function() {
             console.log('geolocation permission state has changed to ', this.state);
+            $('#enableLoc').css('display', 'hidden');
         };
     });
+$('#enableLoc').on('click', function(event){
 
+    getLocation();
+
+});
 
 
 //Show image before upload
