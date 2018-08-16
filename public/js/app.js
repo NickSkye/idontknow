@@ -13918,7 +13918,7 @@ $('.footer-button').on('touchend mouseup', function (event) {
 
 navigator.permissions.query({ name: 'geolocation' }).then(function (permissionStatus) {
     if (permissionStatus.state == 'denied' || permissionStatus.state == 'prompt') {
-        $('#enableLoc').css('display', 'visible');
+        $('#enableLoc').css('display', 'block');
     }
     console.log('geolocation permission state is ', permissionStatus.state);
 
