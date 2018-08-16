@@ -46,8 +46,13 @@ $('.footer-button').on('touchend mouseup', function(event){
 
 navigator.permissions.query({name:'geolocation'})
     .then(function(permissionStatus) {
-        if (permissionStatus.state == 'denied' || permissionStatus.state == 'prompt') {
+        if ( permissionStatus.state == 'prompt') {
             $('#enableLoc').css('display', 'block');
+        }
+        else if(permissionStatus.state == 'denied'){
+            $('#enableLoc').css('display', 'block');
+            $('#enableLoc').css('background-color', 'red');
+            $('#enableLoc').text("You have Denied use of location. To use location you must allow FrendGrid in your browser settings.")
         }
         console.log('geolocation permission state is ', permissionStatus.state);
 
