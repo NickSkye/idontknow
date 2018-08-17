@@ -43,9 +43,7 @@
                                         <input type="radio" name="distance" value="1000"> 1 Kilometer
                                         <input type="radio" name="distance" value="5000"> 5 Kilometers
                                     </div>
-                                    <div class="col-12">
-                                        <input class="shout-text" placeholder="Shout at your frend..." type="text" name="shout" style="width: 100%; margin-bottom: 20px;" required>
-                                    </div>
+
                                     <div class="col-12" style="align-self: flex-end;">
                                         <button type="submit" class="btn" style="float: right;">update</button>
                                     </div>
