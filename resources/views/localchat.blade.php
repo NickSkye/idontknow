@@ -66,14 +66,14 @@
                             {{--friends posts--}}
                         </div>
 
-                            <form action="{{ url('sendlocalchat') }}" method="POST">
+                            <form action="{{ url('sendlocalchat') }}" method="POST" id="sendlocalchat">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-9">
-                                        {{ Form::hidden('post_id', $post->id) }}
+
                                         <input type="hidden" name="latitude" value=""/>
                                         <input  type="hidden" name="longitude" value=""/>
-                                        <textarea rows="2" cols="40" placeholder="Comment on this post..." class="comment-field" type="text" name="comment" style="width: 100%;" required></textarea>
+                                        <textarea  placeholder="Chat with people around you..." class="chat-field" type="text" name="localchat" style="width: 100%;" required></textarea>
                                         {{--<a href="#mentionModel" data-toggle="modal" style="position: absolute; top: 10px; right: 25px;"><i class="fa fa-at" aria-hidden="true"></i></a>--}}
                                     </div>
                                     <div class="col-3 " style="display: flex;">
