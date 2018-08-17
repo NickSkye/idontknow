@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 <?php $page = 'localchat'; ?>
 @section('content')
     <div class="container">
