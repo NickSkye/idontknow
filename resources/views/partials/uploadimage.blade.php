@@ -16,7 +16,7 @@
                     <div class="col-12 text-center">
                         <input type="hidden" name="latitude" value=""/>
                         <input  type="hidden" name="longitude" value=""/>
-                        <img src="" id="upload-img-tag" style="width: auto; max-height: 200px;" />
+                        <img src="" id="upload-img-tag" style="width: auto; max-height: 100px;" />
                         <textarea rows="4" cols="40" style="width: 100%;" placeholder="Whatcha thinkin about..." type="text" name="description" ></textarea>
                     </div>
                     <div class="col-12 image-upload image-butt" >
