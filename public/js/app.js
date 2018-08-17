@@ -14137,9 +14137,9 @@ $(document).ready(function () {
 
     $(".upload-button").click(function () {
         //use a class, since your ID gets mangled
-        $('.upload-button').toggleClass("loading-button"); //add the class to the clicked element
-        $('.upload-button i.fa').toggleClass("fa-share"); //add the class to the clicked element
-        $('.upload-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
+        $('.upload-button').hide(); //add the class to the clicked element
+        // $('.upload-button i.fa').hide();     //add the class to the clicked element
+        //$('.upload-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
         //$('.upload-button').prop("disabled",true);
     });
 
