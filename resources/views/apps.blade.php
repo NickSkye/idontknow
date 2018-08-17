@@ -48,6 +48,7 @@
                         @endif
 
                             <a href="/dashboard">Dashboard App</a>
+                            <a href="/localchat">LocalChat App</a>
 
 
                     </div>
