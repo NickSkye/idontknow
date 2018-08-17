@@ -13916,30 +13916,6 @@ $('.footer-button').on('touchend mouseup', function (event) {
     $(this).css('background-color', '');
 });
 
-// navigator.permissions.query({name:'geolocation'})
-//     .then(function(permissionStatus) {
-//         if ( permissionStatus.state == 'prompt') {
-//             $('#enableLoc').css('display', 'block');
-//         }
-//         else if(permissionStatus.state == 'denied'){
-//             $('#enableLoc').css('display', 'block');
-//             $('#enableLoc').css('background-color', 'red');
-//             $('#enableLoc').text("You have Denied use of location. To use location you must allow FrendGrid in your browser settings.")
-//         }
-//         console.log('geolocation permission state is ', permissionStatus.state);
-//
-//         permissionStatus.onchange = function() {
-//             console.log('geolocation permission state has changed to ', this.state);
-//             $('#enableLoc').css('display', 'hidden');
-//         };
-//     });
-// $('#enableLoc').on('click', function(event){
-//
-//     getLocation();
-//     $('#enableLoc').css('display', 'hidden');
-// });
-
-
 //Show image before upload
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -14088,6 +14064,26 @@ $(document).ready(function () {
 
         });
     }
+    navigator.permissions.query({ name: 'geolocation' }).then(function (permissionStatus) {
+        if (permissionStatus.state == 'prompt') {
+            $('#enableLoc').css('display', 'block');
+        } else if (permissionStatus.state == 'denied') {
+            $('#enableLoc').css('display', 'block');
+            $('#enableLoc').css('background-color', 'red');
+            $('#enableLoc').text("You have Denied use of location. To use location you must allow FrendGrid in your browser settings.");
+        }
+        console.log('geolocation permission state is ', permissionStatus.state);
+
+        permissionStatus.onchange = function () {
+            console.log('geolocation permission state has changed to ', this.state);
+            $('#enableLoc').css('display', 'hidden');
+        };
+    });
+    $('#enableLoc').on('click', function (event) {
+
+        getLocation();
+        $('#enableLoc').css('display', 'hidden');
+    });
 });
 
 $(document).ready(function () {
