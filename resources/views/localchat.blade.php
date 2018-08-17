@@ -61,7 +61,7 @@
 
 
 
-                        <div>
+                        <div class="chat-box">
 
                             {{--friends posts--}}
                         </div>
