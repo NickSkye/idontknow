@@ -1416,6 +1416,10 @@ ul.tabs li.current {
   width: 100%;
 }
 
+.long-body {
+  min-height: 1000px;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
