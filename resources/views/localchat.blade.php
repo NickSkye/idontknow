@@ -68,7 +68,7 @@
 
                             <form action="{{ url('sendlocalchat') }}" method="POST" id="sendlocalchat">
                                 {{ csrf_field() }}
-                                <div class="row local-area">
+                                <div class="local-area">
                                     <div class="text-area">
 
                                         <input type="hidden" name="latitude" value=""/>
