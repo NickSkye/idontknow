@@ -1420,6 +1420,12 @@ ul.tabs li.current {
   height: 100%;
 }
 
+#sendlocalchat {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
 .send-chat-butt {
   height: 100%;
   width: 100%;
