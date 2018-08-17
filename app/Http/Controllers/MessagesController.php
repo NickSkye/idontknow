@@ -219,4 +219,10 @@ class MessagesController extends Controller
 
 
     }
+
+
+
+    public function localchat(){
+        return view('localchat');
+    }
 }
