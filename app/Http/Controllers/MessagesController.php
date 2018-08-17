@@ -225,4 +225,9 @@ class MessagesController extends Controller
     public function localchat(){
         return view('localchat');
     }
+
+    public function setdistance(Request $request){
+        $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$location->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$location->longitude.') ) + sin( radians('.$location->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->where('users.username', $frend)->join('profileinfo', 'profileinfo.username', '=', 'users.username')->get();
+
+    }
 }
