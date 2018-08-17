@@ -68,16 +68,16 @@
 
                             <form action="{{ url('sendlocalchat') }}" method="POST" id="sendlocalchat">
                                 {{ csrf_field() }}
-                                <div class="row">
-                                    <div class="col-9">
+                                <div class="row local-area">
+                                    <div class="text-area">
 
                                         <input type="hidden" name="latitude" value=""/>
                                         <input  type="hidden" name="longitude" value=""/>
                                         <textarea  placeholder="Chat with people around you..." class="chat-field" type="text" name="localchat" style="width: 100%;" required></textarea>
-                                        {{--<a href="#mentionModel" data-toggle="modal" style="position: absolute; top: 10px; right: 25px;"><i class="fa fa-at" aria-hidden="true"></i></a>--}}
+
                                     </div>
-                                    <div class="col-3 " style="display: flex;">
-                                        <button type="submit" class="btn comment-button" style="height: 41px; align-self: flex-end;"><i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i></button>
+                                    <div class="button-area " style="display: flex;">
+                                        <button type="submit" class="btn send-chat-butt" style="height: 41px; align-self: flex-end;"><i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i></button>
                                     </div>
                                 </div>
                             </form>
