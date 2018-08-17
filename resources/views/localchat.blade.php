@@ -39,8 +39,8 @@
                                     <input  type="hidden" name="longitude" value=""/>
                                     <div class="col-12">
 
-                                        <input type="radio" name="distance" value="100" checked> 100 Meters<br>
-                                        <input type="radio" name="distance" value="1000"> 1 Kilometer<br>
+                                        <input type="radio" name="distance" value="100" checked> 100 Meters
+                                        <input type="radio" name="distance" value="1000"> 1 Kilometer
                                         <input type="radio" name="distance" value="5000"> 5 Kilometers
                                     </div>
                                     <div class="col-12">
