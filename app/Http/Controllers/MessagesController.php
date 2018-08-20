@@ -232,13 +232,13 @@ class MessagesController extends Controller
     }
     public function sendlocalchat(Request $request){
         if(Auth::check()){
-            DB::table('localchats')->insert(['username'=> Auth::user()->username, 'message'=> $request->mess, 'latitude'=> $request->latitude, 'longitude'=> $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+            DB::table('localchats')->insert(['username'=> Auth::user()->username, 'message'=> $request->localchat, 'latitude'=> $request->latitude, 'longitude'=> $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
         }
         else{
-            DB::table('localchats')->insert(['username'=> 'Anon', 'message'=> $request->mess, 'latitude'=> $request->latitude, 'longitude'=> $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+            DB::table('localchats')->insert(['username'=> 'Anon', 'message'=> $request->localchat, 'latitude'=> $request->latitude, 'longitude'=> $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
         }
 
-        return response([$request->mess]);
+        return response([$request->localchat]);
 
     }
 }
