@@ -10,6 +10,13 @@
     overflow-x: hidden;
     overflow-y: scroll;
     text-wrap: normal;
+
+    .user-localchat{
+        text-align: right;
+    }
+    .other-localchat{
+        text-align: left;
+    }
 }
 
 .chat-field{
