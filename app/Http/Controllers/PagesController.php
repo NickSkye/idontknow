@@ -482,29 +482,40 @@ $online_frends = [];
 
 
 
+        if(Auth::check()){
+            if(!is_null($request->latitude) and !is_null($request->longitude)){
+                DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
+                setcookie('FG_Latitude', $request->latitude, time() + (86400 * 30), "/");
+                setcookie('FG_Longitude', $request->longitude, time() + (86400 * 30), "/");
+                $closeusers =  DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->longitude.') ) + sin( radians('.$request->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 0.03)->join('profileinfo', 'profileinfo.username', '=', 'users.username')->where('users.username', '!=', Auth::user()->username)->orderBy('distance')->get();
 
-        if(!is_null($request->latitude) and !is_null($request->longitude)){
-            DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
-            setcookie('FG_Latitude', $request->latitude, time() + (86400 * 30), "/");
-            setcookie('FG_Longitude', $request->longitude, time() + (86400 * 30), "/");
-            $closeusers =  DB::table('users')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->longitude.') ) + sin( radians('.$request->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 0.03)->join('profileinfo', 'profileinfo.username', '=', 'users.username')->where('users.username', '!=', Auth::user()->username)->orderBy('distance')->get();
+                foreach($closeusers as $user){
+                    if(DB::table('notifications')->where(['username' => Auth::user()->username, 'notification' => 'bumped into', 'from_username' => $user->username, 'type' => 'bump', 'route' => $user->username, 'seen' => false])->doesntExist()) {
+                        DB::table('notifications')->insert(
+                            ['username' => Auth::user()->username, 'notification' => 'bumped into', 'from_username' => $user->username, 'type' => 'bump', 'route' => $user->username, 'seen' => false, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                        );
+                    }
 
-            foreach($closeusers as $user){
-                if(DB::table('notifications')->where(['username' => Auth::user()->username, 'notification' => 'bumped into', 'from_username' => $user->username, 'type' => 'bump', 'route' => $user->username, 'seen' => false])->doesntExist()) {
-                    DB::table('notifications')->insert(
-                        ['username' => Auth::user()->username, 'notification' => 'bumped into', 'from_username' => $user->username, 'type' => 'bump', 'route' => $user->username, 'seen' => false, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
-                    );
+                    if(DB::table('notifications')->where(['username' => $user->username, 'notification' => 'bumped into', 'from_username' => Auth::user()->username, 'type' => 'bump', 'route' => Auth::user()->username, 'seen' => false])->doesntExist()) {
+                        DB::table('notifications')->insert(
+                            ['username' => $user->username, 'notification' => 'bumped into', 'from_username' => Auth::user()->username, 'type' => 'bump', 'route' => Auth::user()->username, 'seen' => false, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+                        );
+                    }
+
+
                 }
+            }
+        }
+        else{
+            if(!is_null($request->latitude) and !is_null($request->longitude)){
 
-                if(DB::table('notifications')->where(['username' => $user->username, 'notification' => 'bumped into', 'from_username' => Auth::user()->username, 'type' => 'bump', 'route' => Auth::user()->username, 'seen' => false])->doesntExist()) {
-                    DB::table('notifications')->insert(
-                        ['username' => $user->username, 'notification' => 'bumped into', 'from_username' => Auth::user()->username, 'type' => 'bump', 'route' => Auth::user()->username, 'seen' => false, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
-                    );
-                }
+                setcookie('FG_Latitude', $request->latitude, time() + (86400 * 30), "/");
+                setcookie('FG_Longitude', $request->longitude, time() + (86400 * 30), "/");
 
 
             }
         }
+
 
 
 
