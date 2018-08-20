@@ -73,8 +73,8 @@
                                 <div class="local-area">
                                     <div class="text-area">
 
-                                        <input type="hidden" name="latitude" value=""/>
-                                        <input  type="hidden" name="longitude" value=""/>
+                                        {{--<input type="hidden" name="latitude" value=""/>--}}
+                                        {{--<input  type="hidden" name="longitude" value=""/>--}}
                                         <textarea  placeholder="Chat with people around you..." class="chat-field" type="text" name="localchat" style="width: 100%;" required></textarea>
 
                                     </div>
