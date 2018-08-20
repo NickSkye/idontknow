@@ -420,9 +420,11 @@ a p {
   right: 0;
   background: rgba(0, 0, 0, 0.5);
   display: none;
+  z-index: 999;
 }
 
 .loader-bg .loader {
+  z-index: 999;
   display: none;
   position: absolute;
   top: 0;
