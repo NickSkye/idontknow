@@ -293,7 +293,7 @@ $(document).ready(function(){
         // $('.upload-button i.fa').hide();     //add the class to the clicked element
         //$('.upload-button i.fa').toggleClass("fa-spinner fa-pulse fa-fw");
         //$('.upload-button').prop("disabled",true);
-        $('.loader, loader-bg').css('display', 'block');
+        $('.loader, .loader-bg').css('display', 'block');
 
     });
 
