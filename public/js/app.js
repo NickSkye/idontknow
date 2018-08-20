@@ -14235,6 +14235,9 @@ $("#sendlocalchat").submit(function (event) {
     $.ajax({
         url: '/sendlocalchat',
         type: request_method,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
         data: form_data
     }).done(function (response) {
         //
