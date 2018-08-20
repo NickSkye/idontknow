@@ -235,7 +235,7 @@ class MessagesController extends Controller
             $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$longitude.') ) + sin( radians('.$latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', '100')->get();
         }
         else{
-            return view('register');
+            return redirect('/register');
         }
 
         return view('localchat', ['messages' => $messages]);
