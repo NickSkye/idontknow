@@ -223,8 +223,7 @@ class MessagesController extends Controller
 
 
     public function localchat(){
-        setcookie('FG_Latitude', $lat, time() + (86400 * 30), "/");
-        setcookie('FG_Longitude', $long, time() + (86400 * 30), "/");
+        
         if(isset($_COOKIE['FG_Latitude']) && isset($_COOKIE['FG_Longitude']))  {
             $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$_COOKIE['FG_Latitude'].') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$_COOKIE['FG_Longitude'].') ) + sin( radians('.$_COOKIE['FG_Latitude'].') ) * sin( radians( latitude ) ) ) ) AS distance'))->get();
         } else {
