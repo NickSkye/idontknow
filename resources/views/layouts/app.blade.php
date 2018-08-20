@@ -177,6 +177,9 @@
 
                 @yield('content')
                 @include('partials.modals')
+                <div class="loader-bg">
+                <div class="loader"></div>
+                </div>
             </main>
             @auth
                 @include('partials.onlinefrends')
