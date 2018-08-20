@@ -53,7 +53,7 @@ Route::post('/shouts/sendonpage', 'MessagesController@shoutonpage')->middleware(
 Route::post('/shouts/shoutseen', 'MessagesController@shoutSeen')->middleware('auth');
 Route::post('/shouts/shoutback', 'MessagesController@shoutBack')->middleware('auth');
 Route::post('/sendinvite', 'SearchController@sendinvite')->middleware('auth');
-Route::post('/localchatdistance', 'MessagesController@setdistance')->middleware('auth');
+Route::post('/localchatdistance', 'MessagesController@setdistance');
 Route::post('/sendlocalchat', 'MessagesController@sendlocalchat');
 
 Route::get('/search', 'SearchController@index')->middleware('auth');
