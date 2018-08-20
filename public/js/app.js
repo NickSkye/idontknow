@@ -14229,24 +14229,9 @@ $("#distancepicker").submit(function (event) {
 });
 //AJAX
 $("#sendlocalchat").submit(function (event) {
-    event.preventDefault(); //prevent default action
-    var post_url = $(this).attr("action"); //get form action url
-    var request_method = $(this).attr("method"); //get form GET/POST method
-    var form_data = $(this).serialize(); //Encode form elements for submission
 
-    $.ajax({
-        url: '/sendlocalchat',
-        type: request_method,
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        data: form_data
-    }).done(function (response) {
-        //
-
-        $('.chat-field').val('');
-        $('.loader, .loader-bg').css('display', '');
-    });
+    $('.chat-field').val('');
+    $('.loader, .loader-bg').css('display', '');
 });
 
 //AJAX
