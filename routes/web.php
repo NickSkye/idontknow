@@ -54,7 +54,7 @@ Route::post('/shouts/shoutseen', 'MessagesController@shoutSeen')->middleware('au
 Route::post('/shouts/shoutback', 'MessagesController@shoutBack')->middleware('auth');
 Route::post('/sendinvite', 'SearchController@sendinvite')->middleware('auth');
 Route::post('/localchatdistance', 'MessagesController@setdistance')->middleware('auth');
-Route::get('/sendlocalchat', 'MessagesController@sendlocalchat')->middleware('auth');
+Route::post('/sendlocalchat', 'MessagesController@sendlocalchat')->middleware('auth');
 
 Route::get('/search', 'SearchController@index')->middleware('auth');
 Route::post('/addfrend/{username?}', 'FriendController@add')->middleware('auth');

@@ -68,7 +68,7 @@
                                 @endforeach
                         </div>
 
-                            <form action="{{ url('sendlocalchat') }}" method="get" id="sendlocalchat">
+                            <form action="{{ url('sendlocalchat') }}" method="post" id="sendlocalchat">
                                 {{ csrf_field() }}
                                 <div class="local-area">
                                     <div class="text-area">
