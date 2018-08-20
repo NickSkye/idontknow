@@ -254,6 +254,6 @@ class MessagesController extends Controller
 
 //        return response([$request->localchat]);
         $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->$latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->$longitude.') ) + sin( radians('.$request->$latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $_COOKIE['FG_Latitude'])->get();
-        return redirect('localchat', ['messages' => $messages]);
+        return redirect('localchat')->with( ['messages' => $messages]);
     }
 }
