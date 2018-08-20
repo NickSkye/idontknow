@@ -50,7 +50,12 @@
                                             <input type="radio" name="distance" value="100" > 100 Meters
                                             <input type="radio" name="distance" value="1000"> 1 Kilometer
                                             <input type="radio" name="distance" value="5000" checked> 5 Kilometers
+                                            @else
+                                            <input type="radio" name="distance" value="100" checked> 100 Meters
+                                            <input type="radio" name="distance" value="1000"> 1 Kilometer
+                                            <input type="radio" name="distance" value="5000"> 5 Kilometers
                                             @endif
+
                                     </div>
 
                                     <div class="col-12" style="align-self: flex-end;">
