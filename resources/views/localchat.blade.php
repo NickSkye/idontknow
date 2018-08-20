@@ -76,7 +76,7 @@
 
 
                         <div class="chat-box">
-
+                            @if(Auth::check())
                             @foreach($messages as $mess)
 
                                 @if($mess->username === Auth::user()->username)
@@ -87,8 +87,11 @@
 
                                 @endforeach
 
-
-
+                            @else
+                                @foreach($messages as $mess)
+                                <p class="other-localchat">{{$mess->username}} - {{$mess->message}}</p>
+                                @endforeach
+                            @endif
                         </div>
 
                             <form action="{{ url('sendlocalchat') }}" method="post" id="sendlocalchat">
