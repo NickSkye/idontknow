@@ -64,7 +64,7 @@
                         <div class="chat-box">
 
                             @foreach($messages as $mess)
-                                {{$mess->message}}
+                                <p>{{$mess->username}} - {{$mess->message}}</p>
                                 @endforeach
                         </div>
 
