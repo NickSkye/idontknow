@@ -297,6 +297,12 @@ $(document).ready(function(){
 
     });
 
+    $(".send-chat-butt").click(function() {
+
+        $('.loader, .loader-bg').css('display', 'block');
+
+    });
+
 
     $(".followerCollapser").click(function() {  //use a class, since your ID gets mangled
         $('#followingCollapse').removeClass('show');      //add the class to the clicked element
@@ -388,14 +394,8 @@ $("#sendlocalchat").submit(function(event){
         data : form_data
     }).done(function(response){ //
 
-        $("#server-results-" + response[2]).html(response[0]);
-        if(response[1]){
-            $("button.like-" + response[2]).html('<i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>');
-            $("button.dislike-" + response[2]).html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
-        }
-        else{
-            $("button.like-" + response[2]).html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
-        }
+        $('.chat-field').val('');
+        $('.loader, .loader-bg').css('display', '');
 
 
     });
