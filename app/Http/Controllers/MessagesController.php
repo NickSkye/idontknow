@@ -223,18 +223,25 @@ class MessagesController extends Controller
 
 
     public function localchat(){
-
+        setcookie("FG_LocalChat_Distance", 100, time() + (86400 * 30), "/");
         if(isset($_COOKIE['FG_Latitude']) && isset($_COOKIE['FG_Longitude']))  {
-            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$_COOKIE['FG_Latitude'].') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$_COOKIE['FG_Longitude'].') ) + sin( radians('.$_COOKIE['FG_Latitude'].') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', '500')->get();
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$_COOKIE['FG_Latitude'].') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$_COOKIE['FG_Longitude'].') ) + sin( radians('.$_COOKIE['FG_Latitude'].') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', '100')->get();
         } else {
-            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->longitude.') ) + sin( radians('.$request->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->get();
+            $latitude = DB::table('users')->select('latitude')->where(['username', Auth::user()->username])->first;
+            $longitude = DB::table('users')->select('longitude')->where(['username', Auth::user()->username])->first;
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$longitude.') ) + sin( radians('.$latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', '100')->get();
         }
 
         return view('localchat', ['messages' => $messages]);
     }
 
     public function setdistance(Request $request){
-        $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->longitude.') ) + sin( radians('.$request->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->get();
+        setcookie("FG_LocalChat_Distance", $request->distance, time() + (86400 * 30), "/");
+        if(isset($_COOKIE['FG_Latitude']) && isset($_COOKIE['FG_Longitude']))  {
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$_COOKIE['FG_Latitude'].') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$_COOKIE['FG_Longitude'].') ) + sin( radians('.$_COOKIE['FG_Latitude'].') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $request->distance)->get();
+        } else {
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->longitude.') ) + sin( radians('.$request->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $request->distance)->get();
+        }
 
     }
     public function sendlocalchat(Request $request){
@@ -245,7 +252,8 @@ class MessagesController extends Controller
             DB::table('localchats')->insert(['username'=> 'Anon', 'message'=> $request->localchat, 'latitude'=> $request->latitude, 'longitude'=> $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
         }
 
-        return response([$request->localchat]);
-
+//        return response([$request->localchat]);
+        $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->$latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->$longitude.') ) + sin( radians('.$request->$latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $_COOKIE['FG_Latitude'])->get();
+        return view('localchat', ['messages' => $messages]);
     }
 }
