@@ -384,14 +384,14 @@ $("#distancepicker").submit(function(event){
     });
 });
 //AJAX
-$("#sendlocalchat").submit(function(event){
-
-        $('.chat-field').val('');
-        $('.loader, .loader-bg').css('display', '');
-
-
-
-});
+// $("#sendlocalchat").submit(function(event){
+//
+//
+//
+//
+//
+//
+// });
 
 //AJAX
 $(".activity-like-form").submit(function(event){
