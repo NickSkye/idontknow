@@ -38,7 +38,7 @@
                                     <input type="hidden" name="latitude" value=""/>
                                     <input  type="hidden" name="longitude" value=""/>
                                     <div class="col-12">
-                                        @if(!isset($_COOKIE["FG_LocalChat_Distance"]))
+                                        @if(!isset($_COOKIE["FG_LocalChat_Distance"]) || $_COOKIE["FG_LocalChat_Distance"] == 100)
                                             <input type="radio" name="distance" value="100" checked> 100 Meters
                                             <input type="radio" name="distance" value="1000"> 1 Kilometer
                                             <input type="radio" name="distance" value="5000"> 5 Kilometers
