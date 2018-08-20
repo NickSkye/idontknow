@@ -63,7 +63,9 @@
 
                         <div class="chat-box">
 
-                            {{--friends posts--}}
+                            @foreach($messages as $mess)
+                                {{$mess->message}}
+                                @endforeach
                         </div>
 
                             <form action="{{ url('sendlocalchat') }}" method="POST" id="sendlocalchat">
