@@ -40,7 +40,7 @@
                                 <div class="row">
                                     <input type="hidden" name="latitude" value=""/>
                                     <input  type="hidden" name="longitude" value=""/>
-                                    <div class="col-12">
+                                    <div class="col-8">
                                         @if(!isset($_COOKIE["FG_LocalChat_Distance"]) || $_COOKIE["FG_LocalChat_Distance"] == 100)
                                             <input type="radio" name="distance" value="100" checked> 100 Meters
                                             <input type="radio" name="distance" value="1000"> 1 Kilometer
@@ -61,7 +61,7 @@
 
                                     </div>
 
-                                    <div class="col-12" style="align-self: flex-end;">
+                                    <div class="col-4" style="align-self: flex-end;">
                                         <button type="submit" class="btn" style="float: right;">update</button>
                                     </div>
                                 </div>
