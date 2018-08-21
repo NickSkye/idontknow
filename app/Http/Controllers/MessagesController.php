@@ -241,7 +241,7 @@ class MessagesController extends Controller
             return redirect('/register');
         }
 
-        return view('localchat', ['messages' => $messages, 'position' => $position]);
+        return view('localchat', ['messages' => $messages]);
     }
 
     public function setdistance(Request $request){

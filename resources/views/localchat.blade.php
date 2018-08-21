@@ -33,7 +33,7 @@
                     <div class="card-header">
                         <div class="row">
 
-                                {{$position}}
+
 
                             <form action="{{ url('localchatdistance') }}"  method="POST" id="distancepicker">
                                 {{ csrf_field() }}
