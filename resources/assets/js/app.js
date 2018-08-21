@@ -361,30 +361,23 @@ $(document).ready(function(){
 });
 
 //AJAX
-$("#distancepicker").submit(function(event){
-    event.preventDefault(); //prevent default action
-    var post_url = $(this).attr("action"); //get form action url
-    var request_method = $(this).attr("method"); //get form GET/POST method
-    var form_data = $(this).serialize(); //Encode form elements for submission
-
-    $.ajax({
-        url : '/localchatdistance',
-        type: request_method,
-        data : form_data
-    }).done(function(response){ //
-
-        $("#server-results-" + response[2]).html(response[0]);
-        if(response[1]){
-            $("button.like-" + response[2]).html('<i class="fa fa-heart fa-2x" style="color: red;" aria-hidden="true"></i>');
-            $("button.dislike-" + response[2]).html('<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>');
-        }
-        else{
-            $("button.like-" + response[2]).html('<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>');
-        }
-
-
-    });
-});
+// $("#distancepicker").submit(function(event){
+//     event.preventDefault(); //prevent default action
+//     var post_url = $(this).attr("action"); //get form action url
+//     var request_method = $(this).attr("method"); //get form GET/POST method
+//     var form_data = $(this).serialize(); //Encode form elements for submission
+//
+//     $.ajax({
+//         url : '/localchatdistance',
+//         type: request_method,
+//         data : form_data
+//     }).done(function(response){ //
+//
+//
+//
+//
+//     });
+// });
 //AJAX
 // $("#sendlocalchat").submit(function(event){
 //
