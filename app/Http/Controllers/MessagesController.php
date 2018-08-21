@@ -19,20 +19,23 @@ use Illuminate\Mail\Mailer;
 class MessagesController extends Controller
 {
 
-    public function getFriendsInfo(){
+    public function getFriendsInfo()
+    {
         $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->get();
 
         return $friends_info_full;
     }
 
-    public function getSpecificFriendsInfo($friendsusername){
+    public function getSpecificFriendsInfo($friendsusername)
+    {
         $friends_info_full = DB::table('users')->join('profileinfo', 'users.username', '=', 'profileinfo.username')->where('users.username', $friendsusername)->first();
 
         return $friends_info_full;
     }
 
 
-    public function getFrendsOnline(){
+    public function getFrendsOnline()
+    {
         $friends_online = DB::table('follows')->join('users', 'follows.followsusername', '=', 'users.username')->select('users.updated_at', 'users.username')->where('follows.username', Auth::user()->username)->orderBy('users.updated_at', 'desc')->get();
         return $friends_online;
     }
@@ -42,21 +45,20 @@ class MessagesController extends Controller
     {
 
 
-        $messages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username' , 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.username', Auth::user()->username], ['seen', false],])->orderBy('messages.created_at', 'desc')->get();
+        $messages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username', 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.username', Auth::user()->username], ['seen', false],])->orderBy('messages.created_at', 'desc')->get();
 
 
+        $sentmessages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username', 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.from_username', Auth::user()->username], ['seen', false],])->orderBy('messages.created_at', 'desc')->limit(50)->get();
 
-        $sentmessages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username' , 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.from_username', Auth::user()->username],['seen', false],])->orderBy('messages.created_at', 'desc')->limit(50)->get();
-
-        $oldmessages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username' , 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.username', Auth::user()->username], ['seen', true],])->orWhere([['messages.from_username', Auth::user()->username],['seen', true],])->orderBy('messages.updated_at', 'desc')->limit(50)->get();
+        $oldmessages = DB::table('messages')->select('messages.id as id', 'messages.from_username as from_username', 'messages.username as username', 'messages.message as message', 'messages.created_at as created_at', 'messages.updated_at as updated_at', 'profileinfo.profileimage as profileimage')->join('profileinfo', 'messages.from_username', '=', 'profileinfo.username')->join('users', 'messages.from_username', '=', 'users.username')->where([['messages.username', Auth::user()->username], ['seen', true],])->orWhere([['messages.from_username', Auth::user()->username], ['seen', true],])->orderBy('messages.updated_at', 'desc')->limit(50)->get();
 
 
-        $friends  = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
+        $friends = $this->getFriendsInfo(); //DB::table('follows')->where('username', Auth::user()->username)->get();
 //        $friends = DB::table('follows')->select('username')->where('followsusername', Auth::user()->username)->union($friendss)->get();
 
 //        $friendstoshout = DB::table('follows')->join('profileinfo', 'follows.followsusername', '=', 'profileinfo.username')->join('users', 'follows.followsusername', '=', 'users.username')->where('follows.username', Auth::user()->username)->orWhere('followsusername', Auth::user()->username)->get();
 
-       $hasfriends = $friends->isNotEmpty();
+        $hasfriends = $friends->isNotEmpty();
         $notifs = DB::table('notifications')->where([
             ['username', Auth::user()->username],
             ['seen', false],
@@ -70,24 +72,24 @@ class MessagesController extends Controller
         $messagescount = DB::table('messages')->where([['messages.username', Auth::user()->username], ['seen', false],])->count();
         setcookie('FG_Shoutcount', $messagescount, time() + (86400 * 30), "/");
 
-        return view('messages', ['messages'=> $messages, 'oldmessages'=> $oldmessages,'sentmessages'=> $sentmessages, 'me'=> $me, 'friends'=>$friends, 'hasfriends'=>$hasfriends, 'notifs'=>$notifs, 'now'=> $now, 'online_frends'=> $online_frends ]);
+        return view('messages', ['messages' => $messages, 'oldmessages' => $oldmessages, 'sentmessages' => $sentmessages, 'me' => $me, 'friends' => $friends, 'hasfriends' => $hasfriends, 'notifs' => $notifs, 'now' => $now, 'online_frends' => $online_frends]);
 
 
     }
 
-    public function autocomplete(){
+    public function autocomplete()
+    {
         $term = Input::get('term');
 
         $results = array();
 
         $queries = DB::table('users')
-            ->where('name', 'LIKE', '%'.$term.'%')
-            ->orWhere('username', 'LIKE', '%'.$term.'%')
+            ->where('name', 'LIKE', '%' . $term . '%')
+            ->orWhere('username', 'LIKE', '%' . $term . '%')
             ->take(5)->get();
 
-        foreach ($queries as $query)
-        {
-            $results[] = [ 'id' => $query->id, 'value' => $query->first_name.' '.$query->last_name ];
+        foreach ($queries as $query) {
+            $results[] = ['id' => $query->id, 'value' => $query->first_name . ' ' . $query->last_name];
         }
         return Response::json($results);
     }
@@ -115,12 +117,12 @@ class MessagesController extends Controller
         $emails = $this->getSpecificFriendsInfo($request->sendtousername);
 
         $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $request->sendtousername)->first();
-       if($getsemails->email_notifications){
-           Mail::to($emails->email)->send(new NotificationMail());
-       }
+        if ($getsemails->email_notifications) {
+            Mail::to($emails->email)->send(new NotificationMail());
+        }
         $user = DB::table('users')->where('username', Auth::user()->username)->get();
 
-        if ( !is_null($phonenum->phonenumber) ) {
+        if (!is_null($phonenum->phonenumber)) {
 
 
             Nexmo::message()->send([
@@ -132,7 +134,7 @@ class MessagesController extends Controller
         DB::table('users')->where('username', Auth::user()->username)->increment('score', 2);
 
 
-        return redirect('/shouts')->with(['messages'=> $messages, 'friends'=>$friends, 'getsemails' => $getsemails])->with('message', 'Shout delivered!');
+        return redirect('/shouts')->with(['messages' => $messages, 'friends' => $friends, 'getsemails' => $getsemails])->with('message', 'Shout delivered!');
 
 
     }
@@ -153,13 +155,13 @@ class MessagesController extends Controller
         $emails = $this->getSpecificFriendsInfo($request->sendtousername);
 
         $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $request->sendtousername)->first();
-        if($getsemails->email_notifications){
+        if ($getsemails->email_notifications) {
             Mail::to($emails->email)->send(new NotificationMail());
         }
 
         DB::table('users')->where('username', Auth::user()->username)->increment('score', 2);
 
-        return redirect()->back()->with(['messages'=> $messages, 'friends'=>$friends])->with('message', 'Shout delivered!');
+        return redirect()->back()->with(['messages' => $messages, 'friends' => $friends])->with('message', 'Shout delivered!');
 
 
     }
@@ -170,12 +172,11 @@ class MessagesController extends Controller
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         $theshout = DB::table('messages')->where('id', $request->shoutid)->get();
         DB::table('messages')->where('id', $request->shoutid)->update(
-            ['seen' => true,'updated_at' => date('Y-m-d H:i:s')]
+            ['seen' => true, 'updated_at' => date('Y-m-d H:i:s')]
         );
 
 
-
-        return view('messages', ['theshout'=> $theshout, 'messages'=> $messages, 'friends'=>$friends]);
+        return view('messages', ['theshout' => $theshout, 'messages' => $messages, 'friends' => $friends]);
 
 
     }
@@ -187,7 +188,7 @@ class MessagesController extends Controller
         $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
         $theshout = DB::table('messages')->where('id', $request->shoutid)->get();
         DB::table('messages')->where('id', $request->shoutid)->update(
-            ['seen' => true,'updated_at' => date('Y-m-d H:i:s')]
+            ['seen' => true, 'updated_at' => date('Y-m-d H:i:s')]
         );
 
 
@@ -195,8 +196,7 @@ class MessagesController extends Controller
 //        Mail::to($email)->send(new NotificationMail());
 
 
-
-        return redirect('/shouts')->with(['theshout'=> $theshout, 'messages'=> $messages, 'friends'=>$friends]);
+        return redirect('/shouts')->with(['theshout' => $theshout, 'messages' => $messages, 'friends' => $friends]);
 
 
     }
@@ -208,7 +208,7 @@ class MessagesController extends Controller
 //        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
 //        $theshout = DB::table('messages')->where('id', $request->shoutid)->get();
         DB::table('messages')->where('id', $request->shoutid)->update(
-            ['seen' => true,'updated_at' => date('Y-m-d H:i:s')]
+            ['seen' => true, 'updated_at' => date('Y-m-d H:i:s')]
         );
 
 
@@ -223,46 +223,49 @@ class MessagesController extends Controller
     }
 
 
+    public function localchat()
+    {
 
-    public function localchat(){
-
-        if(!isset($_COOKIE["FG_LocalChat_Distance"])) {
+        if (!isset($_COOKIE["FG_LocalChat_Distance"])) {
             setcookie("FG_LocalChat_Distance", 100, time() + (86400 * 30), "/");
         }
 
-        if(isset($_COOKIE['FG_Latitude']) && isset($_COOKIE['FG_Longitude']))  {
-            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$_COOKIE['FG_Latitude'].') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$_COOKIE['FG_Longitude'].') ) + sin( radians('.$_COOKIE['FG_Latitude'].') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', '100')->get();
-        } else if(Auth::check()){
+        if (isset($_COOKIE['FG_Latitude']) && isset($_COOKIE['FG_Longitude'])) {
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians(' . $_COOKIE['FG_Latitude'] . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $_COOKIE['FG_Longitude'] . ') ) + sin( radians(' . $_COOKIE['FG_Latitude'] . ') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', '100')->get();
+        } else if (Auth::check()) {
             $latitude = DB::table('users')->select('latitude')->where(['username', Auth::user()->username])->first;
             $longitude = DB::table('users')->select('longitude')->where(['username', Auth::user()->username])->first;
-            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$longitude.') ) + sin( radians('.$latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', '100')->get();
-        }
-        else{
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians(' . $latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude . ') ) + sin( radians(' . $latitude . ') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', '100')->get();
+        } else {
             return redirect('/register');
         }
 
         return view('localchat', ['messages' => $messages]);
     }
 
-    public function setdistance(Request $request){
+
+    public function setdistance(Request $request)
+    {
         setcookie("FG_LocalChat_Distance", $request->distance, time() + (86400 * 30), "/");
-        if(isset($_COOKIE['FG_Latitude']) && isset($_COOKIE['FG_Longitude']))  {
-            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$_COOKIE['FG_Latitude'].') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$_COOKIE['FG_Longitude'].') ) + sin( radians('.$_COOKIE['FG_Latitude'].') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $request->distance)->get();
+        if (isset($_COOKIE['FG_Latitude']) && isset($_COOKIE['FG_Longitude'])) {
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians(' . $_COOKIE['FG_Latitude'] . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $_COOKIE['FG_Longitude'] . ') ) + sin( radians(' . $_COOKIE['FG_Latitude'] . ') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $request->distance)->get();
         } else {
-            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->longitude.') ) + sin( radians('.$request->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $request->distance)->get();
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians(' . $request->latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $request->longitude . ') ) + sin( radians(' . $request->latitude . ') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $request->distance)->get();
         }
 
     }
-    public function sendlocalchat(Request $request){
-        if(Auth::check()){
-            DB::table('localchats')->insert(['username'=> Auth::user()->username, 'message'=> $request->localchat, 'latitude'=> $request->latitude, 'longitude'=> $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
-        }
-        else{
-            DB::table('localchats')->insert(['username'=> 'Anon', 'message'=> $request->localchat, 'latitude'=> $request->latitude, 'longitude'=> $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+
+
+    public function sendlocalchat(Request $request)
+    {
+        if (Auth::check()) {
+            DB::table('localchats')->insert(['username' => Auth::user()->username, 'message' => $request->localchat, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+        } else {
+            DB::table('localchats')->insert(['username' => 'Anon', 'message' => $request->localchat, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
         }
 
 //        return response([$request->localchat]);
-        $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$request->latitude.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$request->longitude.') ) + sin( radians('.$request->latitude.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $_COOKIE['FG_Latitude'])->get();
-        return redirect('/localchat')->with( ['messages' => $messages]);
+        $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians(' . $request->latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $request->longitude . ') ) + sin( radians(' . $request->latitude . ') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $_COOKIE['FG_LocalChat_Distance'])->get();
+        return redirect('/localchat')->with(['messages' => $messages]);
     }
 }
