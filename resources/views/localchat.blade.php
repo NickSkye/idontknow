@@ -32,9 +32,9 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            @foreach($position as $p)
-                                {{$p}}
-                                @endforeach
+                         
+                                {{$position}}
+
                             <form action="{{ url('localchatdistance') }}"  method="POST" id="distancepicker">
                                 {{ csrf_field() }}
                                 <div class="row">
