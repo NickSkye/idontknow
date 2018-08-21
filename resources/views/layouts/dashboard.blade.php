@@ -176,6 +176,9 @@
             <main class="main py-4" >
                 @yield('content')
                 @include('partials.modals')
+                <div class="loader-bg">
+                    <div class="loader"></div>
+                </div>
             </main>
             @auth
                
