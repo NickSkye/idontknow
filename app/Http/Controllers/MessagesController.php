@@ -223,6 +223,7 @@ class MessagesController extends Controller
 
 
     public function localchat(){
+        $position = Location::get();
         if(!isset($_COOKIE["FG_LocalChat_Distance"])) {
             setcookie("FG_LocalChat_Distance", 100, time() + (86400 * 30), "/");
         }
@@ -238,7 +239,7 @@ class MessagesController extends Controller
             return redirect('/register');
         }
 
-        return view('localchat', ['messages' => $messages]);
+        return view('localchat', ['messages' => $messages, 'position' => $position]);
     }
 
     public function setdistance(Request $request){
