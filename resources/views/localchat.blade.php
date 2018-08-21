@@ -32,33 +32,36 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
+
+
+
                             <form action="{{ url('localchatdistance') }}"  method="POST" id="distancepicker">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <input type="hidden" name="latitude" value=""/>
                                     <input  type="hidden" name="longitude" value=""/>
-                                    <div class="col-12">
-                                        @if(!isset($_COOKIE["FG_LocalChat_Distance"]) || $_COOKIE["FG_LocalChat_Distance"] == 100)
-                                            <input type="radio" name="distance" value="100" checked> 100 Meters
-                                            <input type="radio" name="distance" value="1000"> 1 Kilometer
-                                            <input type="radio" name="distance" value="5000"> 5 Kilometers
-                                        @elseif($_COOKIE["FG_LocalChat_Distance"] == 1000)
-                                            <input type="radio" name="distance" value="100" > 100 Meters
-                                            <input type="radio" name="distance" value="1000" checked> 1 Kilometer
-                                            <input type="radio" name="distance" value="5000"> 5 Kilometers
-                                        @elseif($_COOKIE["FG_LocalChat_Distance"] == 5000)
-                                            <input type="radio" name="distance" value="100" > 100 Meters
-                                            <input type="radio" name="distance" value="1000"> 1 Kilometer
-                                            <input type="radio" name="distance" value="5000" checked> 5 Kilometers
+                                    <div class="col-10">
+                                        @if(!isset($_COOKIE["FG_LocalChat_Distance"]) || $_COOKIE["FG_LocalChat_Distance"] == 0.1)
+                                            <input type="radio" name="distance" value="0.1" checked> 100 Meters
+                                            <input type="radio" name="distance" value="1"> 1 Kilometer
+                                            <input type="radio" name="distance" value="5"> 5 Kilometers
+                                        @elseif($_COOKIE["FG_LocalChat_Distance"] == 1)
+                                            <input type="radio" name="distance" value="0.1" > 100 Meters
+                                            <input type="radio" name="distance" value="1" checked> 1 Kilometer
+                                            <input type="radio" name="distance" value="5"> 5 Kilometers
+                                        @elseif($_COOKIE["FG_LocalChat_Distance"] == 5)
+                                            <input type="radio" name="distance" value="0.1" > 100 Meters
+                                            <input type="radio" name="distance" value="1"> 1 Kilometer
+                                            <input type="radio" name="distance" value="5" checked> 5 Kilometers
                                             @else
-                                            <input type="radio" name="distance" value="100" checked> 100 Meters
-                                            <input type="radio" name="distance" value="1000"> 1 Kilometer
-                                            <input type="radio" name="distance" value="5000"> 5 Kilometers
+                                            <input type="radio" name="distance" value="0.1" checked> 100 Meters
+                                            <input type="radio" name="distance" value="1"> 1 Kilometer
+                                            <input type="radio" name="distance" value="5"> 5 Kilometers
                                             @endif
 
                                     </div>
 
-                                    <div class="col-12" style="align-self: flex-end;">
+                                    <div class="col-2" style="align-self: flex-end;">
                                         <button type="submit" class="btn" style="float: right;">update</button>
                                     </div>
                                 </div>

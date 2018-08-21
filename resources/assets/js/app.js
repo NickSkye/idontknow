@@ -241,8 +241,8 @@ $( document ).ready(function() {
 
 $(document).ready(function(){
 
-    $('.chat-box').scrollTop($('.chat-box')[0].scrollHeight);
-    $(document).scrollTop($('.chat-field')[0].scrollHeight);
+
+    // $(document).scrollTop($('.chat-field')[0].scrollHeight);
 
     function doDate(){
         $("#datetime").html(new Date($.now()));
@@ -355,7 +355,8 @@ $(document).ready(function(){
 //         swipe: true
 //
 //     });
-
+    $('.chat-box').scrollTop($('.chat-box')[0].scrollHeight);
+    $(".chat-box").get(0).scrollIntoView(false);
 
 });
 
