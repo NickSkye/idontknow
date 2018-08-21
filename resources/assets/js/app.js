@@ -361,23 +361,23 @@ $(document).ready(function(){
 });
 
 //AJAX
-// $("#distancepicker").submit(function(event){
-//     event.preventDefault(); //prevent default action
-//     var post_url = $(this).attr("action"); //get form action url
-//     var request_method = $(this).attr("method"); //get form GET/POST method
-//     var form_data = $(this).serialize(); //Encode form elements for submission
-//
-//     $.ajax({
-//         url : '/localchatdistance',
-//         type: request_method,
-//         data : form_data
-//     }).done(function(response){ //
-//
-//
-//
-//
-//     });
-// });
+$("#distancepicker").submit(function(event){
+    event.preventDefault(); //prevent default action
+    var post_url = $(this).attr("action"); //get form action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = $(this).serialize(); //Encode form elements for submission
+
+    $.ajax({
+        url : '/localchatdistance',
+        type: request_method,
+        data : form_data
+    }).done(function(response){ //
+
+        window.location = "https://frendgrid.com/localchatdistance";
+
+
+    });
+});
 //AJAX
 // $("#sendlocalchat").submit(function(event){
 //
