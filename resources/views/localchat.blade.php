@@ -32,7 +32,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                         
+
                                 {{$position}}
 
                             <form action="{{ url('localchatdistance') }}"  method="POST" id="distancepicker">

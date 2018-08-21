@@ -225,8 +225,7 @@ class MessagesController extends Controller
 
 
     public function localchat(){
-        $position = new Location();
-        $position = $position->get()->latitude;
+
         if(!isset($_COOKIE["FG_LocalChat_Distance"])) {
             setcookie("FG_LocalChat_Distance", 100, time() + (86400 * 30), "/");
         }
