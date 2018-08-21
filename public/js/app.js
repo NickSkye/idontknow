@@ -14202,7 +14202,7 @@ $(document).ready(function () {
     //
     //     });
     $('.chat-box').scrollTop($('.chat-box')[0].scrollHeight);
-    $(".chat-field").get(0).scrollIntoView();
+    $(".chat-box").get(0).scrollIntoView();
 });
 
 //AJAX
