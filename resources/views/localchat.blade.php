@@ -116,7 +116,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <div>Shouts get deleted once viewed</div>
+                        <div>Chat with people around you!</div>
                     </div>
 
 
