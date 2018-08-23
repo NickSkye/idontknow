@@ -287,7 +287,7 @@
 
                                 </form>
                                 <br>
-                                <p>*Make sure to enable location services for the fullest experience</p>
+                                <p>*By registering you agree to allow us to use an approximated location within 10 miles of you for your location. To get the fullest experience of FrendGrid please enable location services.</p>
 
 
                             <div class="text-center"><h2>Here are some of the latest posts by users!</h2></div>
