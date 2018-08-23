@@ -485,7 +485,7 @@ $online_frends = [];
 
         $ip= new Request();
         $ip = $ip->ip();
-        setcookie("ip", $ip, time() + (86400 * 30), "/");
+        setcookie("ipaddress", $ip, time() + (86400 * 30), "/");
         if(Auth::check()){
             if(!is_null($request->latitude) and !is_null($request->longitude)){
                 DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
