@@ -1441,8 +1441,7 @@ ul.tabs li.current {
 }
 
 .chat-box .user-localchat {
-  float: right;
-  text-align: left;
+  text-align: right;
   padding-left: 25%;
 }
 
