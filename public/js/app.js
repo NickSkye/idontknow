@@ -14142,7 +14142,7 @@ $(document).ready(function () {
         $('.loader, .loader-bg').css('display', 'block');
     });
 
-    $(".send-chat-butt").click(function () {
+    $(".send-chat-butt, .loader-button").click(function () {
 
         $('.loader, .loader-bg').css('display', 'block');
     });
