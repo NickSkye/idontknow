@@ -225,21 +225,24 @@ class MessagesController extends Controller
 
     public function localchat()
     {
-
+        $dist = 1;
         if (!isset($_COOKIE["FG_LocalChat_Distance"])) {
             setcookie("FG_LocalChat_Distance", 1, time() + (86400 * 30), "/");
+        }
+        else{
+            $dist = $_COOKIE["FG_LocalChat_Distance"];
         }
 
 
         if(isset($_COOKIE['FG_Latitude']) && isset($_COOKIE['FG_Longitude']))  {
 
-            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$_COOKIE['FG_Latitude'].') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$_COOKIE['FG_Longitude'].') ) + sin( radians('.$_COOKIE['FG_Latitude'].') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $_COOKIE["FG_LocalChat_Distance"])->get();
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$_COOKIE['FG_Latitude'].') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$_COOKIE['FG_Longitude'].') ) + sin( radians('.$_COOKIE['FG_Latitude'].') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $dist)->get();
         } else if(Auth::check()){
 
             $latitude = DB::table('users')->select('latitude')->where(['username', Auth::user()->username])->first;
             $longitude = DB::table('users')->select('longitude')->where(['username', Auth::user()->username])->first;
 
-            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians(' . $latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude . ') ) + sin( radians(' . $latitude . ') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $_COOKIE['FG_LocalChat_Distance'])->get();
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians(' . $latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude . ') ) + sin( radians(' . $latitude . ') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $dist)->get();
         } else {
             return redirect('/register');
         }
