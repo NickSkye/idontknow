@@ -27,7 +27,7 @@
         background-color: $main-color;
         &:hover, &:focus, &:active{
             background-color: $hovercolor;
-            border: 3px solid #ffcc00;
+            border: 3px solid $border-color;
         }
 
         .on-page{

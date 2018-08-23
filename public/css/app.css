@@ -1225,8 +1225,8 @@ ul.tabs li.current {
 .permafooter .footer-button:hover,
 .permafooter .footer-button:focus,
 .permafooter .footer-button:active {
-  background-color: grey;
-  border: 3px solid #ffcc00;
+  background-color: #f0f8ff;
+  border: 3px solid rgba(0, 100, 150, 0.7);
 }
 
 .permafooter .footer-button .on-page {
@@ -8454,23 +8454,23 @@ button.bg-dark:focus {
 }
 
 .border {
-  border: 1px solid #dee2e6 !important;
+  border: 1px solid rgba(0, 100, 150, 0.7) !important;
 }
 
 .border-top {
-  border-top: 1px solid #dee2e6 !important;
+  border-top: 1px solid rgba(0, 100, 150, 0.7) !important;
 }
 
 .border-right {
-  border-right: 1px solid #dee2e6 !important;
+  border-right: 1px solid rgba(0, 100, 150, 0.7) !important;
 }
 
 .border-bottom {
-  border-bottom: 1px solid #dee2e6 !important;
+  border-bottom: 1px solid rgba(0, 100, 150, 0.7) !important;
 }
 
 .border-left {
-  border-left: 1px solid #dee2e6 !important;
+  border-left: 1px solid rgba(0, 100, 150, 0.7) !important;
 }
 
 .border-0 {
