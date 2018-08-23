@@ -508,8 +508,8 @@ $online_frends = [];
             }
             else{
                 $position = new Location();
-                $latitude = $position->get()->latitude;
-                $longitude = $position->get()->longitude;
+                $latitude = $position->getAttribute('latitude');
+                $longitude = $position->getAttribute('longitude');
 
 
 
@@ -549,8 +549,8 @@ $online_frends = [];
             }
             else{
                 $position = new Location();
-                $latitude = $position->get()->latitude;
-                $longitude = $position->get()->longitude;
+                $latitude = $position->getAttribute('latitude');
+                $longitude = $position->getAttribute('longitude');
                 setcookie('FG_Latitude', $latitude, time() + (86400 * 30), "/");
                 setcookie('FG_Longitude', $longitude, time() + (86400 * 30), "/");
             }
