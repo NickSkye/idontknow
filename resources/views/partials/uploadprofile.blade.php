@@ -95,7 +95,7 @@
                     </div>
                     {{--@endforeach--}}
                     <div class="col-md-12" style="margin-top: 50px;">
-                        <button type="submit" class="btn upload-button">Save Changes</button>
+                        <button type="submit" class="btn upload-button loader-button">Save Changes</button>
                     </div>
                 </div>
             </form>
