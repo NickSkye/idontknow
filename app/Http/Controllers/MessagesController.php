@@ -267,7 +267,13 @@ class MessagesController extends Controller
         if (Auth::check()) {
             DB::table('localchats')->insert(['username' => Auth::user()->username, 'message' => $request->localchat, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
         } else {
-            DB::table('localchats')->insert(['username' => 'Anon', 'message' => $request->localchat, 'latitude' => $request->latitude, 'longitude' => $request->longitude, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+            if (isset($_COOKIE['FG_Latitude']) && isset($_COOKIE['FG_Longitude'])) {
+                DB::table('localchats')->insert(['username' => 'Anon', 'message' => $request->localchat, 'latitude' => $_COOKIE['FG_Latitude'], 'longitude' => $_COOKIE['FG_Longitude'], 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+            }
+            else{
+                return redirect('/register');
+            }
+
         }
 
 //        return response([$request->localchat]);
