@@ -483,8 +483,8 @@ $online_frends = [];
 
 
 
-        $ip= new Request();
-        $ip = $ip->ip();
+        $ip= request()->ip();
+//        $ip = $ip->ip();
         setcookie("ipaddress", $ip, time() + (86400 * 30), "/");
         if(Auth::check()){
             if(!is_null($request->latitude) and !is_null($request->longitude)){
