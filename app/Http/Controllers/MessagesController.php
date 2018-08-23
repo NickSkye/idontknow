@@ -242,7 +242,7 @@ class MessagesController extends Controller
             $latitude = DB::table('users')->select('latitude')->where('username', Auth::user()->username)->first();
             $longitude = DB::table('users')->select('longitude')->where('username', Auth::user()->username)->first();
 
-            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians(' . $latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude . ') ) + sin( radians(' . $latitude . ') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $dist)->get();
+            $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians(' . $latitude->latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude->longitude . ') ) + sin( radians(' . $latitude->latitude . ') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $dist)->get();
         } else {
             return redirect('/register');
         }
