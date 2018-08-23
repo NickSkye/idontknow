@@ -10,7 +10,9 @@ use Mail;
 use App\Mail\ReportForm;
 use App\Mail\ReportCommentForm;
 use App\Mail\SupportMail;
-use Torann\GeoIP\Location;
+use Illuminate\Support\Fluent;
+use Stevebauman\Location\Position;
+use Stevebauman\Location\Drivers\Driver;
 
 
 
@@ -482,7 +484,8 @@ $online_frends = [];
 
 
 
-
+        $ip= new Request();
+        $ip = $ip->ip();
         if(Auth::check()){
             if(!is_null($request->latitude) and !is_null($request->longitude)){
                 DB::table('users')->where('username', Auth::user()->username)->update(['latitude' => $request->latitude, 'longitude' => $request->longitude, 'updated_at' => date('Y-m-d H:i:s')]);
@@ -508,8 +511,8 @@ $online_frends = [];
             }
             else{
                 $position = new Location();
-                $latitude = $position->getAttribute('latitude');
-                $longitude = $position->getAttribute('longitude');
+                $latitude = $position->get($ip)->latitude;
+                $longitude = $position->get($ip)->longitude;
 
 
 
@@ -549,8 +552,8 @@ $online_frends = [];
             }
             else{
                 $position = new Location();
-                $latitude = $position->getAttribute('latitude');
-                $longitude = $position->getAttribute('longitude');
+                $latitude = $position->get($ip)->latitude;
+                $longitude = $position->get($ip)->longitude;
                 setcookie('FG_Latitude', $latitude, time() + (86400 * 30), "/");
                 setcookie('FG_Longitude', $longitude, time() + (86400 * 30), "/");
             }
