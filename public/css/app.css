@@ -1230,20 +1230,20 @@ ul.tabs li.current {
 }
 
 .permafooter .footer-button .on-page {
-  color: black !important;
+  color: #96c5f7 !important;
 }
 
 .permafooter .footer-button .upload-post-button {
   background-color: transparent;
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .permafooter .footer-button .me-button {
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .permafooter .footer-button .me-button i {
@@ -1253,7 +1253,7 @@ ul.tabs li.current {
 .permafooter .footer-button .home-button {
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .permafooter .footer-button .home-button i {
@@ -1263,7 +1263,7 @@ ul.tabs li.current {
 .permafooter .footer-button .list-button {
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .permafooter .footer-button .list-button i {
@@ -1349,13 +1349,13 @@ ul.tabs li.current {
   background-color: transparent;
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .mobile-navbar .header-button .me-button {
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .mobile-navbar .header-button .me-button i {
@@ -1365,7 +1365,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .home-button {
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .mobile-navbar .header-button .home-button i {
@@ -1375,7 +1375,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .list-button {
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .mobile-navbar .header-button .list-button i {
@@ -1385,7 +1385,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .logo-button {
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
   margin-top: 5px;
 }
 
@@ -1396,7 +1396,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .header-search-button {
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .mobile-navbar .header-button .header-search-button i {
@@ -1405,7 +1405,7 @@ ul.tabs li.current {
 
 .mobile-navbar .header-button .header-notification-button {
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .mobile-navbar .header-button .header-notification-button i {
@@ -1415,7 +1415,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .header-settings-button {
   width: 100%;
   height: 100%;
-  color: #5987b6;
+  color: black;
 }
 
 .mobile-navbar .header-button .header-settings-button i {
