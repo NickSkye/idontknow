@@ -1434,10 +1434,11 @@ ul.tabs li.current {
   margin-left: auto;
   margin-right: auto;
   height: 400px;
-  background-color: #F0EAD6;
+  background-color: white;
   overflow-x: hidden;
   overflow-y: scroll;
   text-wrap: normal;
+  border: 1px solid black;
 }
 
 .chat-box .user-localchat {
