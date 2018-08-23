@@ -33,7 +33,7 @@ $('#sugbox').on('mousewheel DOMMouseScroll', function(event){
 
 $('.footer-button').on('touchstart mousedown', function(event){
 
-    $(this).css('background-color', '#66ff00');
+    $(this).css('background-color', '#bde0ff');
 
 });
 
