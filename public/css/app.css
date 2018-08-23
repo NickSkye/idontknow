@@ -290,7 +290,7 @@ body {
 }
 
 .center-top-search .send:hover {
-  color: #00c8ff;
+  color: white;
 }
 
 .center-top-search .send:active {
@@ -298,23 +298,23 @@ body {
 }
 
 .center-top-search input:focus ~ .send {
-  color: #00c8ff !important;
+  color: white !important;
 }
 
 .center-top-search:focus .send {
-  color: #00c8ff !important;
+  color: white !important;
 }
 
 .center-top-search #query:active .send {
-  color: #00c8ff !important;
+  color: white !important;
 }
 
 .center-top-search #query:hover .send {
-  color: #00c8ff !important;
+  color: white !important;
 }
 
 .center-top-search .form-control:focus .send {
-  color: #00c8ff !important;
+  color: white !important;
 }
 
 #app {
@@ -459,7 +459,7 @@ a p {
   display: -ms-flexbox;
   display: flex;
   background-color: yellow;
-  color: #00c8ff;
+  color: white;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -611,7 +611,7 @@ ul.tabs li.current {
   position: relative;
   width: 32.7%;
   overflow: hidden;
-  background: #00c8ff;
+  background: white;
   margin: 0.3%;
   -webkit-box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
   box-shadow: 0px 0px 17px -2px rgba(11, 125, 218, 0.2);
@@ -1219,7 +1219,7 @@ ul.tabs li.current {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background-color: #00c8ff;
+  background-color: white;
 }
 
 .permafooter .footer-button:hover,
@@ -1237,13 +1237,13 @@ ul.tabs li.current {
   background-color: transparent;
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .permafooter .footer-button .me-button {
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .permafooter .footer-button .me-button i {
@@ -1253,7 +1253,7 @@ ul.tabs li.current {
 .permafooter .footer-button .home-button {
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .permafooter .footer-button .home-button i {
@@ -1263,7 +1263,7 @@ ul.tabs li.current {
 .permafooter .footer-button .list-button {
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .permafooter .footer-button .list-button i {
@@ -1315,7 +1315,7 @@ ul.tabs li.current {
   left: 0;
   right: 0;
   height: 55px;
-  background-color: #00c8ff;
+  background-color: white;
   z-index: 3333;
   text-align: center;
   display: -webkit-box;
@@ -1349,13 +1349,13 @@ ul.tabs li.current {
   background-color: transparent;
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .mobile-navbar .header-button .me-button {
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .mobile-navbar .header-button .me-button i {
@@ -1365,7 +1365,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .home-button {
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .mobile-navbar .header-button .home-button i {
@@ -1375,7 +1375,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .list-button {
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .mobile-navbar .header-button .list-button i {
@@ -1385,7 +1385,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .logo-button {
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
   margin-top: 5px;
 }
 
@@ -1396,7 +1396,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .header-search-button {
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .mobile-navbar .header-button .header-search-button i {
@@ -1405,7 +1405,7 @@ ul.tabs li.current {
 
 .mobile-navbar .header-button .header-notification-button {
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .mobile-navbar .header-button .header-notification-button i {
@@ -1415,7 +1415,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .header-settings-button {
   width: 100%;
   height: 100%;
-  color: #e6f0ff;
+  color: black;
 }
 
 .mobile-navbar .header-button .header-settings-button i {
@@ -11918,7 +11918,7 @@ a.text-dark:focus {
 }
 
 .navbar-laravel {
-  background-color: #00c8ff;
+  background-color: white;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
