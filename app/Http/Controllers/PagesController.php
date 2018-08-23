@@ -510,8 +510,8 @@ $online_frends = [];
             }
             else{
                 $position = new Location();
-                $latitude = $position->get($ip);
-                $longitude = $position->get($ip);
+                $latitude = $position->get($ip)->latitude;
+                $longitude = $position->get($ip)->longitude;
 
 
 
@@ -551,8 +551,8 @@ $online_frends = [];
             }
             else{
                 $position = new Location();
-                $latitude = $position->get($ip);
-                $longitude = $position->get($ip);
+                $latitude = $position->get($ip)->latitude;
+                $longitude = $position->get($ip)->longitude;
                 setcookie('FG_Latitude', $latitude, time() + (86400 * 30), "/");
                 setcookie('FG_Longitude', $longitude, time() + (86400 * 30), "/");
             }
