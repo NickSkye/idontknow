@@ -239,8 +239,8 @@ class MessagesController extends Controller
             $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians('.$_COOKIE['FG_Latitude'].') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$_COOKIE['FG_Longitude'].') ) + sin( radians('.$_COOKIE['FG_Latitude'].') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $dist)->get();
         } else if(Auth::check()){
 
-            $latitude = DB::table('users')->select('latitude')->where(['username', Auth::user()->username])->first;
-            $longitude = DB::table('users')->select('longitude')->where(['username', Auth::user()->username])->first;
+            $latitude = DB::table('users')->select('latitude')->where(['username', Auth::user()->username])->first();
+            $longitude = DB::table('users')->select('longitude')->where(['username', Auth::user()->username])->first();
 
             $messages = DB::table('localchats')->select(DB::raw('*, ( 6367 * acos( cos( radians(' . $latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude . ') ) + sin( radians(' . $latitude . ') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<=', $dist)->get();
         } else {
