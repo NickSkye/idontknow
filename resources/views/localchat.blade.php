@@ -83,16 +83,16 @@
                             @foreach($messages as $mess)
 
                                 @if($mess->username === Auth::user()->username)
-                                <p class="user-localchat">{{$mess->message}}</p>
+                                <div class="user-localchat"><p>{{$mess->message}}</p></div>
                                 @else
-                                    <p class="other-localchat">{{$mess->username}} - {{$mess->message}}</p>
+                                    <div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
                                     @endif
 
                                 @endforeach
 
                             @else
                                 @foreach($messages as $mess)
-                                <p class="other-localchat">{{$mess->username}} - {{$mess->message}}</p>
+                                <div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
                                 @endforeach
                             @endif
                         </div>
