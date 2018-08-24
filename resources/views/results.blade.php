@@ -19,7 +19,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        {!! Form::label('email', 'E-mail Address') !!}
+                                        {!! Form::label('email', 'Enter your Friends Phone Number (in the format 1xxxxxxxxxx for US numbers) or E-mail Address') !!}
                                         {!! Form::text('email', null, ['class' => 'form-control']) !!}
                                     </div>
 
