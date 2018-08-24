@@ -27,32 +27,13 @@
                 {{--MODAL FOR SHOUTS--}}
 
 
-                <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="sendshoutModalLabel">Watch Ad Video = Donate to Charity</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                At FrendGrid we believe giving back is the best way to show who we are. That's why we give 40% of every cent earned from watching ads on this page to charity.
 
-                            </div>
-                            {{--<div class="modal-footer">--}}
-                            {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
-                            {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
-                            {{--</div>--}}
-                        </div>
-                    </div>
-                </div>
 
                 {{--END MODALS FOR SHOUTS--}}
 
                 <div class="card">
                     <div class="card-header">
-                        Donate
+                        Watch Ad Video = Donate to Charity
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -64,7 +45,7 @@
 
                             {{--friends posts--}}
                             <div class="row frend-area">
-
+                                At FrendGrid we believe giving back is the best way to show who we are. That's why we give 40% of every cent earned from watching ads on this page to charity.
                             </div>
 
                         </div>
