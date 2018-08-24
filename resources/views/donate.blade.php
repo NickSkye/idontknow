@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.donate')
 <?php $page = 'donate'; ?>
 @section('content')
     <div class="container">
