@@ -700,9 +700,9 @@ $online_frends = [];
 
     public function donate(){
         $now = new \DateTime();
-        $online_frends = $this->getFrendsOnline();
+//        $online_frends = $this->getFrendsOnline();
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('donate', ['now'=> $now, 'online_frends'=> $online_frends]);
+        return view('donate', ['now'=> $now]);
     }
 
     public function legal(){
