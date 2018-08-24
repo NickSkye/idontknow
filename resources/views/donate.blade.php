@@ -31,12 +31,13 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
+                                <h5 class="modal-title" id="sendshoutModalLabel">Watch Ad Video = Donate to Charity</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
+                                At FrendGrid we believe giving back is the best way to show who we are. That's why we give 40% of every cent earned from watching ads on this page to charity.
 
                             </div>
                             {{--<div class="modal-footer">--}}
