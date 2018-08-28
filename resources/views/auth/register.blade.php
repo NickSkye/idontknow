@@ -108,7 +108,7 @@
 
                     </form>
                     <br>
-                    <p>*By registering you agree to allow us to use an approximated location within 10 miles of you for your location. To get the fullest experience of FrendGrid please enable location services.</p>
+                    <p>*By default we use use a location within 15 miles of you as your location. To get the fullest experience of FrendGrid please enable location services to use your precise location.</p>
 
                 </div>
             </div>
