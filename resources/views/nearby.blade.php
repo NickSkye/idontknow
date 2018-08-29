@@ -202,7 +202,9 @@
                                 <br>
                                 <h5><i class="fa fa-location-arrow fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Your location is NEVER shared with anyone. Only a general radius is used in order to see who is close while Protecting your Privacy.</h5>
                                 <br>
-                                <h5><i class="fa fa-globe fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Connect with the world around you in real life</h5>
+                                <h5><i class="fa fa-globe fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;For Each new user we plant a tree!</h5>
+                                <br>
+                                <h5><i class="fa fa-money fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;We Donate a percentage of all ad revenue to Charity!</h5>
                                 <br>
                                 <h5><i class="fa fa-users fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Make new friends based off people around you</h5>
                                 <br>
