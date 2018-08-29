@@ -48,9 +48,6 @@
 
 
 
-                        <div class="chat-box">
-
-                        </div>
 
 
 
