@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-<?php $page = 'dashboard'; ?>
+<?php $page = 'aroundme'; ?>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -24,38 +24,43 @@
                     {{--<img src="{{ Session::get('path') }}">--}}
                 @endif
 
-                {{--MODAL FOR SHOUTS--}}
 
 
 
-                {{--END MODALS FOR SHOUTS--}}
+
 
                 <div class="card">
                     <div class="card-header">
-                        @if(isset($_COOKIE['FG_User']))
-                            Hello {{$_COOKIE['FG_User']}}
-                        @endif
-                        The current date and time is:
-                        <div id="datetime"></div>
+                        <div class="row">
 
 
+
+
+                        </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body long-body">
                         @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}
                             </div>
                         @endif
 
-                        <p><a href="/localchat">LocalChat App</a></p>
-                        <p><a href="/aroundme">AroundMe App</a></p>
+
+
+
+                        <div class="chat-box">
+
+                        </div>
 
 
 
                     </div>
                     <div class="card-footer">
-                        @include('partials.footerlinks')
+                        <div>Chat with people around you!</div>
                     </div>
+
+
+
                 </div>
             </div>
         </div>
