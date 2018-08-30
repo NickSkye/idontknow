@@ -49,13 +49,11 @@
                             <div class="row frend-area">
 
 
-                                        <a href="/localchat" class="col-4 home-frends-images">LocalChat App</a>
-                                        <a href="/localchat" class="col-4 home-frends-images">LocalChat App</a>
-                                        <a href="/localchat" class="col-4 home-frends-images">LocalChat App</a>
+                                        <a href="/localchat" class="col-4 dashboard-app-images">LocalChat App</a>
+                                        <a href="/aroundme" class="col-4 dashboard-app-images">AroundMe App</a>
+                                        <a href="/donate" class="col-4 dashboard-app-images">Donate to Charity (it's free)</a>
 
 
-                        <p><a href="/aroundme">AroundMe App</a></p>
-                        <p><a href="/donate">Donate to Charity (it's free)</a></p>
 
 
 
