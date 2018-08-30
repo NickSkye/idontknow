@@ -49,6 +49,7 @@
 
                         <p><a href="/localchat">LocalChat App</a></p>
                         <p><a href="/aroundme">AroundMe App</a></p>
+                        <p><a href="/donate">Donate to Charity (it's free)</a></p>
 
 
 
