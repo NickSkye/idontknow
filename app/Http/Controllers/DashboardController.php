@@ -36,7 +36,7 @@ class DashboardController extends Controller
 
 
 //        $response = $client->request('GET', 'https://api.yelp.com/v3/businesses/search');
-            $request = $client->getRequest('GET', '/v3/businesses/search?latitude=' .$lat. '&longitude=' .$long. '&radius=5000&categories=Restaurants'); //location=92625&term=burrito
+            $request = $client->getRequest('GET', '/v3/businesses/search?latitude=' .$lat. '&longitude=' .$long. '&radius=5000'); //location=92625&term=burrito
 
 // Send that request
             $response = $client->getResponse($request);
