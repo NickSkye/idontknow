@@ -45,9 +45,13 @@
                             </div>
                         @endif
 
+                            <div class="row frend-area">
+
+
 
                         @foreach($responses->businesses as $resp)
-                            <p><a href="{{$resp->url}}" target="_blank">{{$resp->name}} - {{round($resp->distance/1000, 2)}} kilometers from you</a></p>
+                                    <a href="{{$resp->url}}" target="_blank" class="col-4 home-frends-images" style="background-image: url('{{$resp->image_url}}');"></a>
+                            {{--<p><a >{{$resp->name}} - {{round($resp->distance/1000, 2)}} kilometers from you</a></p>--}}
                             @endforeach
 
 
