@@ -46,8 +46,14 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                            <div class="row frend-area">
 
-                        <p><a href="/localchat">LocalChat App</a></p>
+
+                                        <a href="/localchat" class="col-4 home-frends-images">LocalChat App</a>
+                                        <a href="/localchat" class="col-4 home-frends-images">LocalChat App</a>
+                                        <a href="/localchat" class="col-4 home-frends-images">LocalChat App</a>
+
+
                         <p><a href="/aroundme">AroundMe App</a></p>
                         <p><a href="/donate">Donate to Charity (it's free)</a></p>
 
