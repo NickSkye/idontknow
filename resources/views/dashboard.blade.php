@@ -38,7 +38,6 @@
                             @else
                             <h2>Dashboard</h2>
                         @endif
-                        The current date and time is:
                         <div id="datetime"></div>
 
 
