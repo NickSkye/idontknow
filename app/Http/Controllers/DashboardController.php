@@ -22,7 +22,7 @@ class DashboardController extends Controller
 
         if(isset($_COOKIE['FG_Latitude']) && isset($_COOKIE['FG_Longitude']))  {
             $lat= $_COOKIE['FG_Latitude'];
-            $long = isset($_COOKIE['FG_Longitude'];
+            $long = $_COOKIE['FG_Longitude'];
             $options = array(
 
                 'apiHost' => 'api.yelp.com', // Optional, default 'api.yelp.com',
