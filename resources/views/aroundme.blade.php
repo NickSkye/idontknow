@@ -65,7 +65,7 @@
 
 
 
-                                            @endforeach
+                                            
                                         </div>
                                         <div class="frend-box">
                                             <p>{{$resp->name}}</p>
