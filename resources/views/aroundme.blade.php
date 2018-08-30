@@ -51,6 +51,22 @@
 
                         @foreach($responses->businesses as $resp)
                                     <a href="{{$resp->url}}" target="_blank" class="col-4 home-frends-images" style="background-image: url('{{$resp->image_url}}');">
+                                        <div class="nearness">
+
+                                                @if(round($resp->distance/1000, 2) < 0.3)
+                                                    <span style="color: lime;">{{round($resp->distance/1000, 2)}}</span>
+                                                @elseif(round($resp->distance/1000, 2) < 1.0)
+                                                    <span style="color: yellow;">{{round($resp->distance/1000, 2)}}</span>
+                                                @elseif(round($resp->distance/1000, 2) < 5.0)
+                                                    <span style="color: orange;">{{round($resp->distance/1000, 2)}}</span>
+                                                @else
+                                                    <span style="color: red;">{{round($resp->distance/1000, 2)}}</span>
+                                                @endif
+
+
+
+                                            @endforeach
+                                        </div>
                                         <div class="frend-box">
                                             <p>{{$resp->name}}</p>
                                         </div>
