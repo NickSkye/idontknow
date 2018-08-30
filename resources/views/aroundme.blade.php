@@ -47,7 +47,7 @@
 
 
                         @foreach($responses->businesses as $resp)
-                            <p><a href="{{$resp->url}}" target="_blank">{{$resp->name}} - {{$resp->distance/1000}} kilometers from you</a></p>
+                            <p><a href="{{$resp->url}}" target="_blank">{{$resp->name}} - {{round($resp->distance/1000, 2)}} kilometers from you</a></p>
                             @endforeach
 
 
