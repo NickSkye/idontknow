@@ -21,16 +21,17 @@
                 <div class="card-body">
                     <h2 style="text-align: center;">Welcome to FrendGrid!</h2>
                     <br>
+                    <h5><i class="fa fa-users fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Make new friends based off people around you</h5>
+                    <br>
+                    <h5><i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Share your life and see all the exciting stuff going on around you!</h5>
+                    <br>
                     <h5><i class="fa fa-location-arrow fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Your location is NEVER shared. Only a general radius is used in order to see who is close while Protecting your Privacy.</h5>
                     <br>
                     <h5><i class="fa fa-globe fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;For Each new user we plant a tree!</h5>
                     <br>
                     <h5><i class="fa fa-money fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;We Donate a percentage of all ad revenue to Charity!</h5>
                     <br>
-                    <h5><i class="fa fa-users fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Make new friends based off people around you</h5>
-                    <br>
-                    <h5><i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Share your life and see all the exciting stuff going on around you!</h5>
-                    <br>
+
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
