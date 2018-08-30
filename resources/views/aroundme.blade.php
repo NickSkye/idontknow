@@ -47,7 +47,7 @@
 
 
                         @foreach($responses->businesses as $resp)
-                            <p>{{$resp->name}}</p>
+                            <p><a href="{{$resp->url}}" target="_blank">{{$resp->name}} - {{$resp->distance}}</a></p>
                             @endforeach
 
 
