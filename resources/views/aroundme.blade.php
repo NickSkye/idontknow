@@ -35,7 +35,7 @@
 
 
                         <h3>Local Places to Check Out!</h3>
-                            <span><img src="/images/yelp.png" alt="yelp" width="300px"></span>
+                            <span><a href="https://www.yelp.com/" target="_blank"><img src="/images/yelp.png" alt="yelp" width="300px"></a></span>
 
                         </div>
                     </div>
