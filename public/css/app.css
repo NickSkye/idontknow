@@ -1187,6 +1187,23 @@ ul.tabs li.current {
   background-size: cover;
 }
 
+.around-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 990px) {
+  .around-center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .permafooter {
   position: fixed;
   width: 100%;

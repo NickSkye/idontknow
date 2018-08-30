@@ -31,11 +31,11 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
+                        <div class="row around-center" style="">
 
 
                         <h3>Local Places to Check Out!</h3>
-                            <span><img src="/images/yelp.png" alt="yelp" width="150px"></span>
+                            <span><img src="/images/yelp.png" alt="yelp" width="300px"></span>
 
                         </div>
                     </div>
