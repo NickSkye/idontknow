@@ -46,7 +46,7 @@ class DashboardController extends Controller
 
 
 
-        return view('register');
+        return redirect('/register');
 
 
     }
