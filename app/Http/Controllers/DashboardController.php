@@ -47,6 +47,6 @@ class DashboardController extends Controller
 
 
 
-        return view('aroundme',['responses' => $response]);
+        return view('aroundme',['responses' => json_decode($response)]);
     }
 }
