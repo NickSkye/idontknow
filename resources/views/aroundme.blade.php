@@ -50,7 +50,7 @@
 
 
                         @foreach($responses->businesses as $resp)
-                            @if($resp->open_now)
+                            {{--@if($resp->open_now)--}}
                                     <a href="{{$resp->url}}" target="_blank" class="col-4 home-frends-images" style="background-image: url('{{$resp->image_url}}');">
                                         <div class="nearness">
 
@@ -72,7 +72,7 @@
                                             <p>{{$resp->name}}</p>
                                         </div>
                                     </a>
-                                    @endif
+                                    {{--@endif--}}
                             {{--<p><a >{{$resp->name}} - {{round($resp->distance/1000, 2)}} kilometers from you</a></p>--}}
                             @endforeach
 
