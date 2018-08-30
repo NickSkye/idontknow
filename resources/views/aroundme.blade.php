@@ -47,7 +47,7 @@
 
                         {{--{{$responses->businesses}}--}}
                         @foreach($responses as $resp['businesses'])
-                            {{$resp}}
+                            {{$resp->name}}
                             @endforeach
 
 
