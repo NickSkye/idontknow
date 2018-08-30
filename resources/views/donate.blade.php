@@ -51,7 +51,7 @@
                             </div>
                             <div class="row frend-area">
                                 <video width="400" controls>
-                                    
+
                                     Your browser does not support HTML5 video.
                                 </video>
                             </div>
