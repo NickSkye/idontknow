@@ -13,7 +13,6 @@ use Stevebauman\Location\Position;
 use Stevebauman\Location\Drivers\Driver;
 use Stevebauman\Location\Location;
 use Stevenmaguire\OAuth2\Client\Provider;
-use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 class DashboardController extends Controller
 {
