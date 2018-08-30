@@ -47,6 +47,6 @@ class DashboardController extends Controller
 
 
 
-        return view('aroundme')->with(compact('responses', $response->getBody()));
+        return view('aroundme')->with('responses', $response->getBody());
     }
 }
