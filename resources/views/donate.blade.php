@@ -49,6 +49,12 @@
                                 <p>At FrendGrid we believe giving back is the best way to show who we are. That's why we give 40% of every dollar earned from watching ads on this page to charity and plant a tree or pick up a piece of trash off the beach for every user you recommend that signs up. For each video you watch and each second you are on this page you are generating ad revenue which will be used to help different charities whether it be feeding the homeless or helping out an animal shelter.</p>
                                 <p>The money you generate will show as awards under your profile. Finally feel good for being on social media because you are making the world a better place.</p>
                             </div>
+                            <div class="row frend-area">
+                                <video width="400" controls>
+                                    
+                                    Your browser does not support HTML5 video.
+                                </video>
+                            </div>
 
                         </div>
 
