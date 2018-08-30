@@ -45,7 +45,7 @@
                             </div>
                         @endif
 
-                        {{$responses}}
+                        {{$responses->businesses}}
                         @foreach($responses as $resp)
                             {{$resp}}
                             @endforeach
