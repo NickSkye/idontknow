@@ -45,6 +45,9 @@
                             </div>
                         @endif
 
+                        @foreach($responses as $resp)
+                            {{$resp}}
+                            @endforeach
 
 
 
