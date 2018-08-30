@@ -34,7 +34,7 @@
                         <div class="row">
 
 
-                        <h2>Local Places to Check Out!</h2>
+                        <h3>Local Places to Check Out!</h3>
 
                         </div>
                     </div>
@@ -65,7 +65,7 @@
 
 
 
-                                            
+
                                         </div>
                                         <div class="frend-box">
                                             <p>{{$resp->name}}</p>
