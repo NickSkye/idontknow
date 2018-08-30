@@ -201,6 +201,7 @@
                     @guest
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                        <li><a class="nav-link" href="/dashboard">{{ __('Dashboard') }}</a></li>
                     <li><a class="nav-link" href="/nearby">{{ __('Activity') }}</a></li>
                     @else
                         @if(Request::is('activity') or Request::is('me') or Request::is('shouts') or Request::is('home'))

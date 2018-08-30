@@ -32,10 +32,12 @@
 
                 <div class="card">
                     <div class="card-header">
+
                         @if(isset($_COOKIE['FG_User']))
-                            Hello {{$_COOKIE['FG_User']}}
+                            <h2>{{$_COOKIE['FG_User']}}'s Dashboard</h2>
+                            @else
+                            <h2>Dashboard</h2>
                         @endif
-                        The current date and time is:
                         <div id="datetime"></div>
 
 
@@ -46,9 +48,14 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                            <div class="row frend-area">
 
-                        <p><a href="/localchat">LocalChat App</a></p>
-                        <p><a href="/aroundme">AroundMe App</a></p>
+
+                                        <a href="/localchat" class="col-4 dashboard-app-images">LocalChat</a>
+                                        <a href="/aroundme" class="col-4 dashboard-app-images">AroundMe</a>
+                                        <a href="/donate" class="col-4 dashboard-app-images">Charity</a>
+
+
 
 
 

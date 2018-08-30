@@ -16,6 +16,7 @@
         "nexmo/client": "^1.4",
         "nexmo/laravel": "^1.1",
         "stevebauman/location": "^3.0",
+        "stevenmaguire/yelp-php": "^2.1",
         "torann/geoip": "^1.0"
     },
     "require-dev": {
