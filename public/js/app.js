@@ -13899,7 +13899,7 @@ var app = new Vue({
 });
 
 $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
+    if ($(window).scrollTop() > 100) {
         // this refers to window
 
         $('.main').addClass('margin-top-55');
