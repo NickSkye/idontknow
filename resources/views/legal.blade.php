@@ -200,7 +200,7 @@
                                 <p>Address: 1664 Marguerite Ave. Corona del Mar</p>
                                 <p>Email: Nickskye7@gmail.com</p>
 
-                                <p><a href="https://termsofusegenerator.net">This Terms of Use page was created at World's Free Terms Of Use Generator.</a></p>                                  </div>
+                                                         </div>
 
                         </div>
 
