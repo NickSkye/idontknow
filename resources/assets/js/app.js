@@ -22,7 +22,23 @@ const app = new Vue({
     el: '#app'
 });
 
+$(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 100) {
 
+        $('.main').addClass('margin-top-55');
+        $('.navbar').addClass('fixednav');
+        $('.frend-search-down').addClass('margin-top-55');
+
+
+
+        //document.getElementById("prrlogo").src="/images/prr-logo-icon.png";
+
+    } else {
+        $('.navbar').removeClass('fixednav');
+        $('.main').removeClass('margin-top-55');
+        $('.frend-search-down').removeClass('margin-top-55');
+    }
+});
 
 window.setInterval(function(){
     /// call your function here
@@ -175,23 +191,7 @@ $('#mobile-app-button').click(function(){
 
 $( document ).ready(function() {
 
-    $(window).bind('scroll', function () {
-        if ($(window).scrollTop() > 100) {
 
-                    $('.main').addClass('margin-top-55');
-                    $('.navbar').addClass('fixednav');
-                    $('.frend-search-down').addClass('margin-top-55');
-
-
-
-            //document.getElementById("prrlogo").src="/images/prr-logo-icon.png";
-
-        } else {
-            $('.navbar').removeClass('fixednav');
-            $('.main').removeClass('margin-top-55');
-            $('.frend-search-down').removeClass('margin-top-55');
-        }
-    });
 
     // $(window).scroll(function() {
     //     if ($(window).scrollTop() > 100) {
