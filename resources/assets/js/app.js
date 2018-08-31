@@ -22,6 +22,20 @@ const app = new Vue({
     el: '#app'
 });
 
+window.setInterval(function(){
+    /// call your function here
+    $.ajax({
+        url : '/update-location',
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data : {latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude']}
+    }).done(function(response){ //
+
+    });
+}, 30000);
+
 $('#sugbox').on('mousewheel DOMMouseScroll', function(event){
 
     var delta = Math.max(-1, Math.min(1, (event.originalEvent.wheelDelta || -event.originalEvent.detail)));
@@ -159,19 +173,7 @@ $('#mobile-app-button').click(function(){
 
 $( document ).ready(function() {
 
-    window.setInterval(function(){
-        /// call your function here
-        $.ajax({
-            url : '/update-location',
-            type: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            data : {latitude: sessionStorage['latitude'], longitude: sessionStorage['longitude']}
-        }).done(function(response){ //
 
-        });
-    }, 30000);
 
 
     $('.header-settings-button, .mobilemenu').click(function(){
