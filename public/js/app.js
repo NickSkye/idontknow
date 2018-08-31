@@ -14028,19 +14028,32 @@ $('#mobile-app-button').click(function () {
 
 $(document).ready(function () {
 
-    $(window).scroll(function () {
+    $(window).bind('scroll', function () {
         if ($(window).scrollTop() > 100) {
-            // this refers to window
+            setTimeout(function () {
+                $('.main').addClass('margin-top-55');
+                $('.navbar').addClass('fixednav');
+                $('.frend-search-down').addClass('margin-top-55');
+            }, 10);
 
-            $('.main').addClass('margin-top-55');
-            $('.navbar').addClass('fixednav');
-            $('.frend-search-down').addClass('margin-top-55');
+            //document.getElementById("prrlogo").src="/images/prr-logo-icon.png";
         } else {
             $('.navbar').removeClass('fixednav');
             $('.main').removeClass('margin-top-55');
             $('.frend-search-down').removeClass('margin-top-55');
         }
     });
+
+    // $(window).scroll(function() {
+    //     if ($(window).scrollTop() > 100) {
+    //
+    //
+    //     }
+    //     else{
+    //
+    //     }
+    // });
+
 
     $('.header-settings-button, .mobilemenu').click(function () {
         $(".mobilemenu").toggleClass('menudown');
