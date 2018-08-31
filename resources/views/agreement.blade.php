@@ -145,6 +145,8 @@
                         </div>
 
 
+                            <a href="/legal">Terms of Use</a>
+
                         
 
 
