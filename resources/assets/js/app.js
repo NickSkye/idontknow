@@ -398,7 +398,7 @@ $(document).ready(function(){
 //         swipe: true
 //
 //     });
-    $('.chat-box').scrollTop($('.chat-box').scrollHeight);
+    $('.chat-box').scrollTop($('.chat-box')[0].scrollHeight);
     $(".chat-box").get(0).scrollIntoView(false);
 
 });
