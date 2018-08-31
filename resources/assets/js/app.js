@@ -163,7 +163,7 @@ window.setInterval(function(){
     }).done(function(response){ //
 
     });
-}, 300000);
+}, 30000);
 
 
 
