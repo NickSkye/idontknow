@@ -40,13 +40,14 @@ class DashboardController extends Controller
 
 // Send that request
             $response = $client->getResponse($request);
+            return view('aroundme',['responses' => json_decode($response->getBody())]);
         }
 
 
 
 
+        return redirect('/register');
 
 
-        return view('aroundme',['responses' => json_decode($response->getBody())]);
     }
 }

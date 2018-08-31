@@ -69,7 +69,7 @@
 
 
                                         </div>
-                                        <div class="frend-box">
+                                        <div class="frend-box frend-box-around">
                                             <p>{{$resp->name}}</p>
                                         </div>
                                     </a>
