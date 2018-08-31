@@ -11,11 +11,16 @@ html, body{
 }
 
 .main{
+    margin-top: 55px;
     &.py-4{
         @media(max-width: 767px){
             padding-top: 0 !important;
         }
     }
+}
+
+.frend-search-down{
+    margin-top: 55px;
 }
 
 
