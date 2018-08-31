@@ -14030,11 +14030,10 @@ $(document).ready(function () {
 
     $(window).bind('scroll', function () {
         if ($(window).scrollTop() > 100) {
-            setTimeout(function () {
-                $('.main').addClass('margin-top-55');
-                $('.navbar').addClass('fixednav');
-                $('.frend-search-down').addClass('margin-top-55');
-            }, 10);
+
+            $('.main').addClass('margin-top-55');
+            $('.navbar').addClass('fixednav');
+            $('.frend-search-down').addClass('margin-top-55');
 
             //document.getElementById("prrlogo").src="/images/prr-logo-icon.png";
         } else {
