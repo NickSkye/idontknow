@@ -13,17 +13,13 @@ body {
   overflow-x: scroll;
 }
 
-.main {
-  margin-top: 55px;
-}
-
 @media (max-width: 767px) {
   .main.py-4 {
     padding-top: 0 !important;
   }
 }
 
-.frend-search-down {
+.margin-top-55 {
   margin-top: 55px;
 }
 
@@ -1511,10 +1507,13 @@ ul.tabs li.current {
 .navbar {
   -webkit-box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.75);
+  z-index: 3333;
+}
+
+.fixednav {
   position: fixed !important;
   width: 100%;
   top: 0;
-  z-index: 3333;
 }
 
 .chat-box {

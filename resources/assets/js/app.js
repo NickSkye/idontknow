@@ -22,6 +22,20 @@ const app = new Vue({
     el: '#app'
 });
 
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 100) { // this refers to window
+
+        $('.main').addClass('margin-top-55');
+        $('.navbar').addClass('fixednav');
+        $('.frend-search-down').addClass('margin-top-55');
+    }
+    else{
+        $('.navbar').removeClass('fixednav');
+        $('.main').removeClass('margin-top-55');
+        $('.frend-search-down').removeClass('margin-top-55');
+    }
+});
+
 window.setInterval(function(){
     /// call your function here
     $.ajax({

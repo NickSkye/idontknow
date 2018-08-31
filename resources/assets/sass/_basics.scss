@@ -11,7 +11,7 @@ html, body{
 }
 
 .main{
-    margin-top: 55px;
+    //margin-top: 55px;
     &.py-4{
         @media(max-width: 767px){
             padding-top: 0 !important;
@@ -20,9 +20,12 @@ html, body{
 }
 
 .frend-search-down{
-    margin-top: 55px;
+    //margin-top: 55px;
 }
 
+.margin-top-55{
+    margin-top: 55px;
+}
 
 .profile-image-frends-page{
     max-width: 75%;
