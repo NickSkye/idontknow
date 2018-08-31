@@ -697,6 +697,12 @@ $online_frends = [];
         DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         return view('about', ['now'=> $now, 'online_frends'=> $online_frends]);
     }
+    public function agreement(){
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        return view('agreement', ['now'=> $now, 'online_frends'=> $online_frends]);
+    }
 
     public function donate(){
         $now = new \DateTime();

@@ -32,6 +32,7 @@ Route::get('/aroundme', 'DashboardController@aroundme');
 
 //footer legal pages
 Route::get('/about', 'PagesController@about')->middleware('auth');
+Route::get('/eula', 'PagesController@agreement')->middleware('auth');
 Route::get('/poll', 'PagesController@poll');
 Route::get('/dashboard', 'PagesController@dashboard');
 Route::get('/apps', 'PagesController@apps');
