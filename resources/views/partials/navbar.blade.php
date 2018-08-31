@@ -1,7 +1,7 @@
 @auth
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel hidden-on-small">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/home') }}">
+        <a class="navbar-brand" href="{{ url('/dashboard') }}">
             {{--{{ config('app.name', 'idontknow') }}--}}
             <img src="/images/frendgriddark.png" alt="FrendGrid" style="max-width: 45px;">
 
@@ -105,7 +105,7 @@
 
 
         <div class="header-button">
-            <a class=" logo-button" href="{{ url('/home') }}">
+            <a class=" logo-button" href="{{ url('/dashboard') }}">
                 {{--{{ config('app.name', 'idontknow') }}--}}
                 <img src="/images/frendgriddark.png" alt="FrendGrid" style="max-width: 45px;">
 
@@ -234,7 +234,7 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/home">
+                                <a class="dropdown-item" href="/dashboard">
                                     {{ __('Home') }}
                                 </a>
                                 <a class="dropdown-item" href="/me">
