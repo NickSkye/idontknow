@@ -177,7 +177,7 @@ $( document ).ready(function() {
 
     $(window).bind('scroll', function () {
         if ($(window).scrollTop() > 100) {
-           
+
                     $('.main').addClass('margin-top-55');
                     $('.navbar').addClass('fixednav');
                     $('.frend-search-down').addClass('margin-top-55');
@@ -398,7 +398,7 @@ $(document).ready(function(){
 //         swipe: true
 //
 //     });
-    $('.chat-box').scrollTop($('.chat-box')[0].scrollHeight);
+    $('.chat-box').scrollTop($('.chat-box').scrollHeight);
     $(".chat-box").get(0).scrollIntoView(false);
 
 });
