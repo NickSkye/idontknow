@@ -31,13 +31,13 @@ Route::get('/localchat', 'MessagesController@localchat');
 Route::get('/aroundme', 'DashboardController@aroundme');
 
 //footer legal pages
-Route::get('/about', 'PagesController@about')->middleware('auth');
-Route::get('/eula', 'PagesController@agreement')->middleware('auth');
+Route::get('/about', 'PagesController@about');
+Route::get('/eula', 'PagesController@agreement');
 Route::get('/poll', 'PagesController@poll');
 Route::get('/dashboard', 'PagesController@dashboard');
 Route::get('/apps', 'PagesController@apps');
 Route::get('/donate', 'PagesController@donate');
-Route::get('/legal', 'PagesController@legal')->middleware('auth');
+Route::get('/legal', 'PagesController@legal');
 Route::get('/suggestions', 'PagesController@suggestions')->middleware('auth');
 Route::get('/support', 'PagesController@support')->middleware('auth');
 Route::get('/currentuser', 'PagesController@currentuser')->middleware('auth');
