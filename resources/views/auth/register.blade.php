@@ -102,7 +102,13 @@
                         </div>
 
                         <div class="form-group row">
-                            <input type="checkbox" class="form-control" name="terms" value="1" /> <a href="/legal">I agree to the terms and conditions.</a>
+                            <div class="col-md-4">
+                                <input type="checkbox" class="form-control" name="terms" value="1" />
+                            </div>
+                            <div class="col-md-6">
+                                <a href="/legal">I agree to the terms and conditions.</a>
+                            </div>
+
                         </div>
 
                         <div class="form-group row mb-0">
