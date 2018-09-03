@@ -279,6 +279,9 @@
                                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <input type="checkbox" class="form-control" name="terms" value="1" /> <a href="/legal">I agree to the terms and conditions.</a>
+                                    </div>
 
                                     <div class="form-group row mb-0">
                                         <div class="col-md-6 offset-md-4">
