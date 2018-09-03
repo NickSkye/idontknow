@@ -692,30 +692,30 @@ $online_frends = [];
     }
 
     public function about(){
-        $now = new \DateTime();
-        $online_frends = $this->getFrendsOnline();
-        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('about', ['now'=> $now, 'online_frends'=> $online_frends]);
+//        $now = new \DateTime();
+//        $online_frends = $this->getFrendsOnline();
+//        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        return view('about');
     }
     public function agreement(){
-        $now = new \DateTime();
-        $online_frends = $this->getFrendsOnline();
-        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('agreement', ['now'=> $now, 'online_frends'=> $online_frends]);
+//        $now = new \DateTime();
+//        $online_frends = $this->getFrendsOnline();
+//        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        return view('agreement');
     }
 
     public function donate(){
-        $now = new \DateTime();
+//        $now = new \DateTime();
 //        $online_frends = $this->getFrendsOnline();
 //        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('donate', ['now'=> $now]);
+        return view('donate');
     }
 
     public function legal(){
-        $now = new \DateTime();
-        $online_frends = $this->getFrendsOnline();
-        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('legal', ['now'=> $now, 'online_frends'=> $online_frends]);
+//        $now = new \DateTime();
+//        $online_frends = $this->getFrendsOnline();
+//        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        return view('legal');
     }
 
     public function suggestions(){
