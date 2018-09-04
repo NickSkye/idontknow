@@ -677,7 +677,7 @@ ul.tabs li.current{
     right: 0;
     color: white;
     padding: 5px;
-    overflow-y: scroll;
+    overflow-y: auto;
     @media (min-width: 767px){
         padding: 25px;
     }
