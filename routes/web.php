@@ -29,6 +29,8 @@ Route::get('/notification', 'PagesController@allnotifications')->middleware('aut
 Route::get('/shouts', 'MessagesController@messages')->middleware('auth');
 Route::get('/localchat', 'MessagesController@localchat');
 Route::get('/aroundme', 'DashboardController@aroundme');
+Route::get('/topics', 'DashboardController@topics');
+Route::get('/topicchat/{id?}', 'DashboardController@topicchat');
 
 //footer legal pages
 Route::get('/about', 'PagesController@about');

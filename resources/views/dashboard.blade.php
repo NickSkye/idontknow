@@ -53,6 +53,7 @@
 
                                         <a href="/localchat" class="col-4 dashboard-app-images">LocalChat</a>
                                         <a href="/aroundme" class="col-4 dashboard-app-images">AroundMe</a>
+                                        <a href="/topics" class="col-4 dashboard-app-images">TopicChat</a>
                                         <a href="/donate" class="col-4 dashboard-app-images">Charity</a>
 
 

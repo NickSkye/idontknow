@@ -50,4 +50,11 @@ class DashboardController extends Controller
 
 
     }
+
+    public function topics(){
+//        $now = new \DateTime();
+//        $online_frends = $this->getFrendsOnline();
+//        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
+        return view('topics');
+    }
 }
