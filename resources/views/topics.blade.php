@@ -49,22 +49,22 @@
 
 
                         <div class="chat-box">
-                            @if(Auth::check())
-                            @foreach($messages as $mess)
+                            {{--@if(Auth::check())--}}
+                            {{--@foreach($messages as $mess)--}}
 
-                                @if($mess->username === Auth::user()->username)
-                                <div class="user-localchat"><p>{{$mess->message}}</p></div>
-                                @else
-                                    <div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
-                                    @endif
+                                {{--@if($mess->username === Auth::user()->username)--}}
+                                {{--<div class="user-localchat"><p>{{$mess->message}}</p></div>--}}
+                                {{--@else--}}
+                                    {{--<div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>--}}
+                                    {{--@endif--}}
 
-                                @endforeach
+                                {{--@endforeach--}}
 
-                            @else
-                                @foreach($messages as $mess)
-                                <div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
-                                @endforeach
-                            @endif
+                            {{--@else--}}
+                                {{--@foreach($messages as $mess)--}}
+                                {{--<div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>--}}
+                                {{--@endforeach--}}
+                            {{--@endif--}}
                         </div>
 
                             <form action="{{ url('sendlocalchat') }}" method="post" id="sendlocalchat">
