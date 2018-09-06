@@ -93,7 +93,7 @@
 
                         </div>
                     </div>
-                    <div class="card-body long-body no-padding">
+                    <div class="card-body long-body no-padding-complete">
                         @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}

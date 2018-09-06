@@ -8,6 +8,10 @@ body {
   padding-right: 0 !important;
 }
 
+.no-padding-complete {
+  padding: 0 !important;
+}
+
 .frends-frends-row {
   max-height: 150px;
   overflow-x: scroll;
