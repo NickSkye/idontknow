@@ -1571,6 +1571,12 @@ ul.tabs li.current {
   width: 95%;
 }
 
+#sendtopicchat {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
 .send-chat-butt {
   height: 100%;
   width: 100%;
