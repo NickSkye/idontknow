@@ -110,7 +110,7 @@
                             @foreach($topics as $topic)
                                 <tr>
                                     <td>star</td>
-                                    <td>{{$topic->topic}}</td>
+                                    <td><a href="/topicchat/{{$topic->id}}">{{$topic->topic}}</a></td>
                                     <td>{{Carbon\Carbon::parse($topic->created_at)->diffForHumans()}}</td>
                                 </tr>
                             @endforeach
