@@ -36,7 +36,7 @@ class S3ImageController extends Controller
 
 
         if ($request->hasFile('profimage')) {
-            $imageName = time().'.'.$request->image->getClientOriginalExtension();
+            $imageName = time().'.'.$request->profimage->getClientOriginalExtension();
             $image = $request->file('profimage');
             $image = Image::make($image)->orientate();
             $image = $image->stream();
@@ -95,7 +95,7 @@ class S3ImageController extends Controller
 
 
         if ($request->hasFile('profimage')) {
-            $imageName = time().'.'.$request->image->getClientOriginalExtension();
+            $imageName = time().'.'.$request->profimage->getClientOriginalExtension();
             $image = $request->file('profimage');
             $image = Image::make($image)->orientate();
             $image = $image->stream();
