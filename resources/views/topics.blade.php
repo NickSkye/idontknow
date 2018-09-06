@@ -53,7 +53,7 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <input class="shout-text" placeholder="New Topic..." type="text" name="topicname" style="width: 100%; margin-bottom: 20px;" required>
-                                                        <input class="shout-text" placeholder="Quick Description of Topic..." type="text" name="description" style="width: 100%; margin-bottom: 20px;" required>
+                                                        <input class="shout-text" placeholder="Quick Description of Topic..." type="text" name="description" style="width: 100%; margin-bottom: 20px;">
                                                     </div>
                                                     <div class="col-12" style="align-self: flex-end;">
                                                         <button type="submit" class="btn shout-button modal-button loader-button" style="float: right;">
