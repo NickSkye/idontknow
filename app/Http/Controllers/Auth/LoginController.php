@@ -64,7 +64,7 @@ class LoginController extends Controller
         $noprofpic = DB::table('profileinfo')->where('username', $user->username)->where('profileimage', '/images/default-avatar.jpg')->exists();
         setcookie('FG_User', $user->username, time() + (86400 * 30), "/");
         if($noprofpic){
-            return redirect('/about');
+            return redirect('/newUserAbout');
         }else{
             return redirect()->intended($this->redirectPath());
         }
