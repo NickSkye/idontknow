@@ -701,7 +701,8 @@ $online_frends = [];
 //        $now = new \DateTime();
 //        $online_frends = $this->getFrendsOnline();
 //        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
-        return view('newUserAbout');
+        $profileinfo = $this->getMySettingsInfo();
+        return view('newUserAbout', ['profileinfo' => $profileinfo]);
     }
     public function agreement(){
 //        $now = new \DateTime();
