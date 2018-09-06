@@ -34,6 +34,7 @@ Route::get('/topicchat/{id?}', 'DashboardController@topicchat');
 
 //footer legal pages
 Route::get('/about', 'PagesController@about');
+Route::get('/newUserAbout', 'PagesController@newUserAbout')->middleware('auth');
 Route::get('/browser', 'DashboardController@browser');
 Route::get('/eula', 'PagesController@agreement');
 Route::get('/poll', 'PagesController@poll');
@@ -82,5 +83,6 @@ Route::post('s3-image-upload','S3ImageController@imageUploadPost')->middleware('
 Route::post('s3-hangout','S3ImageController@hangout')->middleware('auth');
 Route::post('s3-image-edit','S3ImageController@imageEditPost')->middleware('auth');
 Route::post('s3-image-upload-profilepic','S3ImageController@imageUploadProfilePic')->middleware('auth');
+Route::post('first-image-upload-profilepic','S3ImageController@firstUploadProfilePic')->middleware('auth');
 
 
