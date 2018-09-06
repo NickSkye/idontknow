@@ -64,14 +64,14 @@ class DashboardController extends Controller
         if(str_word_count($request->topicname) > 1 ){
             return redirect()->back()->with('status', 'Topic Names can only be One (1) word. Use CamelCasing for multi-word topics.');
         }
-        try {
-            if (!preg_match('regex:/^[\w-]*$/', $request->topicname, $match)) {
-                return redirect()->back()->with('status', 'Topic Names must only contain alpha numeric values.');
-            }
-        }
-        catch(\Exception $e){
-            return redirect()->back()->with('status', 'Topic Names must only contain alpha numeric values.');
-        }
+//        try {
+//            if (!preg_match('regex:/^[\w-]*$/', $request->topicname, $match)) {
+//                return redirect()->back()->with('status', 'Topic Names must only contain alpha numeric values.');
+//            }
+//        }
+//        catch(\Exception $e){
+//            return redirect()->back()->with('status', 'Topic Names must only contain alpha numeric values.');
+//        }
 
 
         DB::table('topics')->insert(
