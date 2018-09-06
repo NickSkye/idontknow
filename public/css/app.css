@@ -1646,7 +1646,7 @@ ul.tabs li.current {
 }
 
 .topic-table tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #f0f8ff;
 }
 
 .topic-table td,
