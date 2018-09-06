@@ -2,7 +2,7 @@
     border-collapse: collapse;
     width: 100%;
     tr:nth-child(even) {
-        background-color: #ff0000;
+        background-color: rgba(30,100,150,0.8);
 
     }
     td, th {
@@ -10,12 +10,17 @@
         text-align: left;
         padding: 8px;
 
-        &:nth-child(odd){
+        &:nth-child(1){
             width: 15%;
+            text-align: left;
         }
-        &:nth-child(even){
+        &:nth-child(2){
             width: 70%;
-            text-align: center
+            text-align: center;
+        }
+        &:nth-child(3){
+            width: 15%;
+            text-align: right;
         }
     }
 
