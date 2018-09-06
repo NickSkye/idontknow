@@ -102,10 +102,10 @@
                         </div>
 
                         <div class="form-group row " style="align-items: center;">
-                            <div class="col-md-4">
+                            <div class="col-xs-4">
                                 <input type="checkbox" class="pull-right " name="terms" value="1" required>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-xs-6">
                                 <a href="/legal">I agree to the terms and conditions.</a>
                             </div>
 
