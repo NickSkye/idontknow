@@ -80,7 +80,7 @@ $('.footer-button').on('touchend mouseup', function(event){
 
 
 //Show image before upload
-function readURL(input) {
+function readProfURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
@@ -91,7 +91,7 @@ function readURL(input) {
     }
 }
 $("#prof-file-input").change(function(){
-    readURL(this);
+    readProfURL(this);
 });
 
 
