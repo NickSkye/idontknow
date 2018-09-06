@@ -25,71 +25,70 @@
                 @endif
 
 
-
-                    <div class="modal fade" id="addTopic" tabindex="-1" role="dialog" aria-labelledby="addTopicModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="addTopicModalLabel">Shout!</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    {{--start trial upload--}}
-
-                                    <div class="container">
-                                        <div class="panel panel-primary">
-
-
-
-                                            <div class="panel-body">
-
-
-
-
-                                                <form action="{{ url('addTopic') }}"  method="POST">
-                                                    {{ csrf_field() }}
-                                                    <div class="row">
-                                                        <div class="col-12">
-
-
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <input class="shout-text" placeholder="New Topic..." type="text" name="topicname" style="width: 100%; margin-bottom: 20px;" required>
-                                                            <input class="shout-text" placeholder="Quick Description of Topic..." type="text" name="description" style="width: 100%; margin-bottom: 20px;" required>
-                                                        </div>
-                                                        <div class="col-12" style="align-self: flex-end;">
-                                                            <button type="submit" class="btn shout-button modal-button loader-button" style="float: right;"><i aria-hidden="true" class="fa fa-plus fa-2x"></i></button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                </div>
-                                {{--<div class="modal-footer">--}}
-                                {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
-                                {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
-                                {{--</div>--}}
+                <div class="modal fade" id="addTopic" tabindex="-1" role="dialog" aria-labelledby="addTopicModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addTopicModalLabel">Shout!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
+                            <div class="modal-body">
+                                {{--start trial upload--}}
+
+                                <div class="container">
+                                    <div class="panel panel-primary">
+
+
+                                        <div class="panel-body">
+
+
+                                            <form action="{{ url('addTopic') }}" method="POST">
+                                                {{ csrf_field() }}
+                                                <div class="row">
+                                                    <div class="col-12">
+
+
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <input class="shout-text" placeholder="New Topic..." type="text" name="topicname" style="width: 100%; margin-bottom: 20px;" required>
+                                                        <input class="shout-text" placeholder="Quick Description of Topic..." type="text" name="description" style="width: 100%; margin-bottom: 20px;" required>
+                                                    </div>
+                                                    <div class="col-12" style="align-self: flex-end;">
+                                                        <button type="submit" class="btn shout-button modal-button loader-button" style="float: right;">
+                                                            <i aria-hidden="true" class="fa fa-plus fa-2x"></i></button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            {{--<div class="modal-footer">--}}
+                            {{--<button type="button" class="btn btn-primary">Shout Back!</button>--}}
+                            {{--<button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
+                </div>
 
 
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <h3>Topic Chat</h3>
+                            <div class="col-6"><h3>Topic Chat</h3></div>
+                            <div class="col-6">
+                                <a href="#" data-toggle="modal" data-target="#addTopic"><i aria-hidden="true" class="fa fa-plus fa-2x"></i></a>
 
-                            <a href="#" data-toggle="modal" data-target="#addTopic">+</a>
+                            </div>
+
+
+
 
 
                         </div>
@@ -102,34 +101,28 @@
                         @endif
 
 
-
-
-                            <table class="topic-table">
+                        <table class="topic-table">
+                            <tr>
+                                <th>Favorite</th>
+                                <th>Topic</th>
+                                <th>Created</th>
+                            </tr>
+                            @foreach($topics as $topic)
                                 <tr>
-                                    <th>Favorite</th>
-                                    <th>Topic</th>
-                                    <th>Created</th>
+                                    <td>star</td>
+                                    <td>{{$topic->topic}}</td>
+                                    <td>{{Carbon\Carbon::parse($topic->created_at)->diffForHumans()}}</td>
                                 </tr>
-                                @foreach($topics as $topic)
-                                    <tr>
-                                        <td>star</td>
-                                        <td>{{$topic->topic}}</td>
-                                        <td>{{Carbon\Carbon::parse($topic->created_at)->diffForHumans()}}</td>
-                                    </tr>
-                                    @endforeach
+                            @endforeach
 
 
-                            </table>
-
-
-
+                        </table>
 
 
                     </div>
                     <div class="card-footer">
                         <div>Chat with people around you!</div>
                     </div>
-
 
 
                 </div>
