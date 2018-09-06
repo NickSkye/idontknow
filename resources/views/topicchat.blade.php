@@ -67,11 +67,12 @@
                             @endif
                         </div>
 
-                            <form action="{{ url('sendtopicchat') }}" method="post" id="sendtopicchat">
+                            <form action="{{ url('sendTopicChat') }}" method="post" id="sendtopicchat">
                                 {{ csrf_field() }}
                                 <div class="local-area">
                                     <div class="text-area">
-
+                                        <input type="hidden" name="id" value="{{$id}}"/>
+                                        <input type="hidden" name="topic" value="{{$topicname->topic}}"/>
                                         <textarea  placeholder="Chat..." class="chat-field" type="text" name="topicchat" style="width: 100%;" required></textarea>
 
                                     </div>

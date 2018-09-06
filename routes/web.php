@@ -51,6 +51,7 @@ Route::post('/like', 'PagesController@like')->middleware('auth');
 Route::post('/dislike', 'PagesController@dislike')->middleware('auth');
 Route::post('/update-location', 'PagesController@updatelocation');
 Route::post('/addTopic', 'DashboardController@addTopic');
+Route::post('/sendTopicChat', 'DashboardController@sendTopicChat');
 
 Route::post('/shouts/send', 'MessagesController@shout')->middleware('auth');
 

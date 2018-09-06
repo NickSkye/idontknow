@@ -83,6 +83,27 @@ class DashboardController extends Controller
 //        $online_frends = $this->getFrendsOnline();
         $topicchats = DB::table('topicchat')->where('topic_id', $id)->get();
         $topicname = DB::table('topics')->where('id', $id)->first();
-        return view('topicchat', ['topicchats' => $topicchats, 'topicname' => $topicname]);
+        return view('topicchat', ['topicchats' => $topicchats, 'topicname' => $topicname, 'id' => $id]);
+    }
+
+
+    public function sendTopicChat(Request $request)
+    {
+
+
+        DB::table('topicchat')->insert(
+            ['topic_id' => $request->id, 'topic' => $request->topicname, 'username' => Auth::user()->username, 'message' => $request->topicchat, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+        );
+
+
+
+
+
+
+        DB::table('users')->where('username', Auth::user()->username)->increment('score', 2);
+
+        return redirect()->back();
+
+
     }
 }
