@@ -82,7 +82,7 @@ class DashboardController extends Controller
 //        $now = new \DateTime();
 //        $online_frends = $this->getFrendsOnline();
         $topicchats = DB::table('topicchat')->where('topic_id', $id)->get();
-        $topicname = DB::table('topicchat')->where('topic_id', $id)->first()->topic;
+        $topicname = DB::table('topics')->where('id', $id)->first();
         return view('topicchat', ['topicchats' => $topicchats, 'topicname' => $topicname]);
     }
 }
