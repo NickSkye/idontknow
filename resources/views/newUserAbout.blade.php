@@ -36,7 +36,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h3 class="modal-title" id="firstModalLabel">Upload a profile picture so you stand out!</h3>
-                                   
+
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -48,8 +48,7 @@
                                             {{--@foreach($profileinfo as $prof)--}}
                                             <input type="hidden" name="latitude" value=""/>
                                             <input type="hidden" name="longitude" value=""/>
-                                            <div class="col-xs-12 col-sm-4">
-                                                <p>Profile Picture</p>
+                                            <div class="col-xs-12 col-sm-4 text-center">
 
                                                 <img src="{{ $profileinfo->profileimage }}" id="profile-img-tag" width="200px"/>
                                                 <input id="prof-file-input" type="file" name="profimage"/>
