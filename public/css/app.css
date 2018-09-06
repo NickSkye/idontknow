@@ -1611,10 +1611,21 @@ ul.tabs li.current {
   background-color: #ff0000;
 }
 
-.topic-table tr:nth-child(even) td,
-.topic-table tr:nth-child(even) th {
+.topic-table td,
+.topic-table th {
   text-align: left;
   padding: 8px;
+}
+
+.topic-table td:nth-child(odd),
+.topic-table th:nth-child(odd) {
+  width: 15%;
+}
+
+.topic-table td:nth-child(even),
+.topic-table th:nth-child(even) {
+  width: 70%;
+  text-align: center;
 }
 
 /*!

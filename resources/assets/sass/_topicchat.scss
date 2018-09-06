@@ -4,11 +4,18 @@
     tr:nth-child(even) {
         background-color: #ff0000;
 
+    }
+    td, th {
 
-        td, th {
+        text-align: left;
+        padding: 8px;
 
-            text-align: left;
-            padding: 8px;
+        &:nth-child(odd){
+            width: 15%;
+        }
+        &:nth-child(even){
+            width: 70%;
+            text-align: center
         }
     }
 
