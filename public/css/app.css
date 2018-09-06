@@ -1545,6 +1545,15 @@ ul.tabs li.current {
   overflow-x: hidden;
   overflow-y: auto;
   text-wrap: normal;
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 575px) {
+  .chat-box {
+    border-left: none;
+    border-right: none;
+  }
 }
 
 .chat-box .user-localchat {

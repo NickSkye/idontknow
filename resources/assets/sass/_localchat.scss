@@ -12,6 +12,13 @@
     overflow-y: auto; //scroll
     text-wrap: normal;
     //border: 1px solid black;
+    border-left: 1px solid rgba(0, 0, 0, 0.4);
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    @media (max-width: 575px){
+        border-left: none;
+        border-right: none;
+    }
+
 
     .user-localchat{
 
