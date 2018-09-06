@@ -33,6 +33,7 @@
                     <div class="card-header">
                         <div >
                             <div>
+                                <h5><i class="fa fa-chevron-left" aria-hidden="true"></i> back</h5>
                                 <h3>{{$topicname->topic}} Chat</h3>
                             </div>
 
