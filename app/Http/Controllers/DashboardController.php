@@ -68,9 +68,6 @@ class DashboardController extends Controller
 
 
 
-
-
-
         DB::table('users')->where('username', Auth::user()->username)->increment('score', 50);
 
         return redirect()->back()->with('message', 'New Topic Created!');
