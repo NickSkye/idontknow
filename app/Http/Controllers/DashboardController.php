@@ -61,6 +61,13 @@ class DashboardController extends Controller
     public function addTopic(Request $request)
     {
 
+        if(str_word_count($request->topicname) > 1 ){
+            return redirect()->back()->with('message', 'Topic Names can only be One (1) word. Use CamelCasing for multi-word topics.');
+        }
+        if(!preg_match('regex:/^[\w-]*$/', $request->topicname, $match)){
+            return redirect()->back()->with('message', 'Topic Names must only contain alpha numeric values.');
+        }
+
 
         DB::table('topics')->insert(
             ['topic' => $request->topicname, 'created_by' => Auth::user()->username, 'description' => $request->description, 'num_currently_active' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
