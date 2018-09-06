@@ -111,18 +111,18 @@ class S3ImageController extends Controller
             }
         }
 
-//
-//
-//        $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
-//        $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
-//        $myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
-//        $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
-//
-//
-//        $now = new \DateTime();
-//        $online_frends = $this->getFrendsOnline();
 
-        return view('newUserAbout');
+
+        $generalinfo = DB::table('users')->where('username', Auth::user()->username)->get();
+        $mybio = DB::table('profileinfo')->where('username', Auth::user()->username)->get();
+        $myposts = DB::table('posts')->where('username', Auth::user()->username)->get();
+        $myfriends = DB::table('follows')->where('username', Auth::user()->username)->get();
+
+
+        $now = new \DateTime();
+        $online_frends = $this->getFrendsOnline();
+
+        return redirect('/me')->with(['generalinfo' => $generalinfo, 'mybio' => $mybio, 'myposts' => $myposts, 'myfriends' => $myfriends])->with('success', 'Profile Updated successfully.');
     }
 
     /**
