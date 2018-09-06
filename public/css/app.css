@@ -1602,6 +1602,21 @@ ul.tabs li.current {
   height: 100%;
 }
 
+.topic-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.topic-table tr:nth-child(even) {
+  background-color: #ff0000;
+}
+
+.topic-table tr:nth-child(even) td,
+.topic-table tr:nth-child(even) th {
+  text-align: left;
+  padding: 8px;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

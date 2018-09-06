@@ -48,40 +48,22 @@
 
 
 
-                        <div class="chat-box">
-                            {{--@if(Auth::check())--}}
-                            {{--@foreach($messages as $mess)--}}
+                            <table class="topic-table">
+                                <tr>
+                                    <th>Favorite</th>
+                                    <th>Topic</th>
+                                    <th>Created</th>
+                                </tr>
+                                <tr>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                    <td>Germany</td>
+                                </tr>
 
-                                {{--@if($mess->username === Auth::user()->username)--}}
-                                {{--<div class="user-localchat"><p>{{$mess->message}}</p></div>--}}
-                                {{--@else--}}
-                                    {{--<div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>--}}
-                                    {{--@endif--}}
+                            </table>
 
-                                {{--@endforeach--}}
 
-                            {{--@else--}}
-                                {{--@foreach($messages as $mess)--}}
-                                {{--<div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>--}}
-                                {{--@endforeach--}}
-                            {{--@endif--}}
-                        </div>
 
-                            <form action="{{ url('sendlocalchat') }}" method="post" id="sendlocalchat">
-                                {{ csrf_field() }}
-                                <div class="local-area">
-                                    <div class="text-area">
-
-                                        <input type="hidden" name="latitude" value=""/>
-                                        <input  type="hidden" name="longitude" value=""/>
-                                        <textarea  placeholder="Chat with people around you..." class="chat-field" type="text" name="localchat" style="width: 100%;" required></textarea>
-
-                                    </div>
-                                    <div class="button-area " style="display: flex;">
-                                        <button type="submit" class="btn send-chat-butt" style="height: 41px; align-self: flex-end;"><i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-                            </form>
 
 
                     </div>

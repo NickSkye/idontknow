@@ -1,0 +1,15 @@
+.topic-table{
+    border-collapse: collapse;
+    width: 100%;
+    tr:nth-child(even) {
+        background-color: #ff0000;
+
+
+        td, th {
+
+            text-align: left;
+            padding: 8px;
+        }
+    }
+
+}
