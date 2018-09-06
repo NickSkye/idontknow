@@ -96,11 +96,13 @@
                     <div class="card-body long-body no-padding-complete">
                         @if (session('status'))
                             <div class="alert alert-danger">
+                                <a class="close" data-dismiss="alert">×</a>
                                 {{ session('status') }}
                             </div>
                         @endif
                             @if (session('message'))
                                 <div class="alert alert-success">
+                                    <a class="close" data-dismiss="alert">×</a>
                                     {{ session('message') }}
                                 </div>
                             @endif
