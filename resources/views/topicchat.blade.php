@@ -32,7 +32,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <h3>{{$topicname->topic}} Chat</h3>
+                            <div>
+                                <h3>{{$topicname->topic}} Chat</h3>
+                            </div>
+
                             <div class="topicdescription">
                                 <p>{{$topicname->description}}</p>
                             </div>
