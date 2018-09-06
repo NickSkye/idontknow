@@ -349,6 +349,13 @@ $(document).ready(function(){
 
     });
 
+    $(".topicchatbutton").click(function() {
+        if($('.topicdescription').val() && $('.topicname').val()) {
+            $('.loader, .loader-bg').css('display', 'block');
+        }
+
+    });
+
 
     $(".followerCollapser").click(function() {  //use a class, since your ID gets mangled
         $('#followingCollapse').removeClass('show');      //add the class to the clicked element

@@ -52,11 +52,11 @@
 
                                                     </div>
                                                     <div class="col-12">
-                                                        <input class="shout-text" placeholder="New Topic..." type="text" name="topicname" style="width: 100%; margin-bottom: 20px;" required>
-                                                        <input class="shout-text" placeholder="Quick Description of Topic..." type="text" name="description" style="width: 100%; margin-bottom: 20px;">
+                                                        <input class="shout-text topicname" placeholder="New Topic..." type="text" name="topicname" style="width: 100%; margin-bottom: 20px;" required>
+                                                        <input class="shout-text topicdescription" placeholder="Quick Description of Topic..." type="text" name="description" style="width: 100%; margin-bottom: 20px;" required>
                                                     </div>
                                                     <div class="col-12" style="align-self: flex-end;">
-                                                        <button type="submit" class="btn shout-button modal-button loader-button" style="float: right;">
+                                                        <button type="submit" class="btn shout-button modal-button topicchatbutton" style="float: right;">
                                                             <i aria-hidden="true" class="fa fa-plus fa-2x"></i></button>
                                                     </div>
                                                 </div>
