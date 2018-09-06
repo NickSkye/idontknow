@@ -31,7 +31,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
+                        <div >
                             <div>
                                 <h3>{{$topicname->topic}} Chat</h3>
                             </div>
