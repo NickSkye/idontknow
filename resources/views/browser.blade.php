@@ -47,7 +47,7 @@
                         @endif
                             <div class="row frend-area">
 
-                                <iframe src="https://www.google.com/"></iframe>
+                                <iframe src="https://www.bing.com/"></iframe>
 
 
 
