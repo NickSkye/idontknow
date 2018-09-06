@@ -57,7 +57,7 @@
                                                     </div>
                                                     <div class="col-12" style="align-self: flex-end;">
                                                         <button type="submit" class="btn  modal-button topicchatbutton" style="float: right;">
-                                                            <i aria-hidden="true" class="fa fa-plus fa-2x"></i></button>
+                                                            Create</button>
                                                     </div>
                                                 </div>
                                             </form>
