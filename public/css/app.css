@@ -1259,7 +1259,8 @@ ul.tabs li.current {
 }
 
 .skybg {
-  background-image: url("/images/4487-light-blue-blurry-background.jpg");
+  background: -webkit-gradient(linear, left bottom, left top, from(red), color-stop(51%, #1fc8db), color-stop(75%, #2cb5e8), to(#FF0035));
+  background: linear-gradient(to top, red 0%, #1fc8db 51%, #2cb5e8 75%, #FF0035);
   background-size: cover;
 }
 
