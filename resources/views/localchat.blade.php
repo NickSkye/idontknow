@@ -85,14 +85,14 @@
                                 @if($mess->username === Auth::user()->username)
                                 <div class="user-localchat"><p>{{$mess->message}}</p></div>
                                 @else
-                                    <div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
+                                    <div class="other-localchat"><p><a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {{$mess->message}}</p></div>
                                     @endif
 
                                 @endforeach
 
                             @else
                                 @foreach($messages as $mess)
-                                <div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
+                                <div class="other-localchat"><p><a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {{$mess->message}}</p></div>
                                 @endforeach
                             @endif
                         </div>

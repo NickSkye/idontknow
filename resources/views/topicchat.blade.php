@@ -61,14 +61,14 @@
                                 @if($mess->username === Auth::user()->username)
                                 <div class="user-topicchat"><p>{{$mess->message}}</p></div>
                                 @else
-                                    <div class="other-topicchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
+                                    <div class="other-topicchat"><p><a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {{$mess->message}}</p></div>
                                     @endif
 
                                 @endforeach
 
                             @else
                                 @foreach($topicchats as $mess)
-                                <div class="other-topicchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
+                                <div class="other-topicchat"><p><a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {{$mess->message}}</p></div>
                                 @endforeach
                             @endif
                         </div>
