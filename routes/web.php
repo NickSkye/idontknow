@@ -34,6 +34,7 @@ Route::get('/topicchat/{id?}', 'DashboardController@topicchat');
 
 //footer legal pages
 Route::get('/about', 'PagesController@about');
+Route::get('/browser', 'DashboardController@browser');
 Route::get('/eula', 'PagesController@agreement');
 Route::get('/poll', 'PagesController@poll');
 Route::get('/dashboard', 'PagesController@dashboard');

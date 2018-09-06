@@ -51,6 +51,11 @@ class DashboardController extends Controller
 
     }
 
+    public function browser(){
+
+        return view('browser');
+    }
+
     public function topics(){
 //        $now = new \DateTime();
 //        $online_frends = $this->getFrendsOnline();

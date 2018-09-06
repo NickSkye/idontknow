@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-<?php $page = 'dashboard'; ?>
+<?php $page = 'browser'; ?>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -33,12 +33,9 @@
                 <div class="card">
                     <div class="card-header">
 
-                        @if(isset($_COOKIE['FG_User']))
-                            <h2>{{$_COOKIE['FG_User']}}'s Dashboard</h2>
-                            @else
-                            <h2>Dashboard</h2>
-                        @endif
-                        <div id="datetime"></div>
+
+                            <h2>Browser</h2>
+
 
 
                     </div>
@@ -50,12 +47,7 @@
                         @endif
                             <div class="row frend-area">
 
-
-                                        <a href="/localchat" class="col-4 dashboard-app-images">LocalChat</a>
-                                        <a href="/aroundme" class="col-4 dashboard-app-images">AroundMe</a>
-                                        <a href="/topics" class="col-4 dashboard-app-images">TopicChat</a>
-                                        <a href="/donate" class="col-4 dashboard-app-images">Charity</a>
-                                        <a href="/browser" class="col-4 dashboard-app-images">Browser</a>
+                                <iframe src="https://www.google.com/"></iframe>
 
 
 
