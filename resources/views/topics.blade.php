@@ -83,7 +83,7 @@
                         <div class="row">
                             <div class="col-6"><h3>Topic Chat</h3></div>
                             <div class="col-6">
-                                <a href="#" data-toggle="modal" data-target="#addTopic"><i aria-hidden="true" class="fa fa-plus fa-2x"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#addTopic" style="float: right;"><i aria-hidden="true" class="fa fa-plus fa-2x"></i></a>
 
                             </div>
 
