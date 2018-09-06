@@ -50,31 +50,29 @@
 
                         <div class="chat-box">
                             @if(Auth::check())
-                            @foreach($messages as $mess)
+                            @foreach($topicchats as $mess)
 
                                 @if($mess->username === Auth::user()->username)
-                                <div class="user-localchat"><p>{{$mess->message}}</p></div>
+                                <div class="user-topicchat"><p>{{$mess->message}}</p></div>
                                 @else
-                                    <div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
+                                    <div class="other-topicchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
                                     @endif
 
                                 @endforeach
 
                             @else
-                                @foreach($messages as $mess)
-                                <div class="other-localchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
+                                @foreach($topicchats as $mess)
+                                <div class="other-topicchat"><p>{{$mess->username}} - {{$mess->message}}</p></div>
                                 @endforeach
                             @endif
                         </div>
 
-                            <form action="{{ url('sendlocalchat') }}" method="post" id="sendlocalchat">
+                            <form action="{{ url('sendtopicchat') }}" method="post" id="sendtopicchat">
                                 {{ csrf_field() }}
                                 <div class="local-area">
                                     <div class="text-area">
 
-                                        <input type="hidden" name="latitude" value=""/>
-                                        <input  type="hidden" name="longitude" value=""/>
-                                        <textarea  placeholder="Chat with people around you..." class="chat-field" type="text" name="localchat" style="width: 100%;" required></textarea>
+                                        <textarea  placeholder="Chat..." class="chat-field" type="text" name="topicchat" style="width: 100%;" required></textarea>
 
                                     </div>
                                     <div class="button-area " style="display: flex;">
