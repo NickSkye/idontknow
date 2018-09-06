@@ -100,16 +100,23 @@ class DashboardController extends Controller
     {
 
 
-        DB::table('topicchat')->insert(
-            ['topic_id' => $request->id, 'topic' => $request->topicname, 'username' => Auth::user()->username, 'message' => $request->topicchat, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
-        );
+        if (Auth::check()) {
+            DB::table('topicchat')->insert(
+                ['topic_id' => $request->id, 'topic' => $request->topicname, 'username' => Auth::user()->username, 'message' => $request->topicchat, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            );
+            DB::table('users')->where('username', Auth::user()->username)->increment('score', 2);
+        } else{
+            DB::table('topicchat')->insert(
+                ['topic_id' => $request->id, 'topic' => $request->topicname, 'username' => 'Anon', 'message' => $request->topicchat, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            );
+        }
 
 
 
 
 
 
-        DB::table('users')->where('username', Auth::user()->username)->increment('score', 2);
+
 
         return redirect()->back();
 

@@ -24,7 +24,7 @@
                     {{--<img src="{{ Session::get('path') }}">--}}
                 @endif
 
-
+        @auth
                 <div class="modal fade" id="addTopic" tabindex="-1" role="dialog" aria-labelledby="addTopicModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -76,16 +76,18 @@
                         </div>
                     </div>
                 </div>
-
+@endauth
 
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
                             <div class="col-6"><h3>Topic Chat</h3></div>
+                            @auth
                             <div class="col-6">
                                 <a href="#" data-toggle="modal" data-target="#addTopic" style="float: right;"><i aria-hidden="true" class="fa fa-plus fa-2x"></i></a>
 
                             </div>
+                            @endauth
 
 
 
