@@ -33,6 +33,9 @@
                     <div class="card-header">
                         <div class="row">
                             <h3>{{$topicname->topic}} Chat</h3>
+                            <div class="topicdescription">
+                                <p>{{$topicname->description}}</p>
+                            </div>
 
 
 
