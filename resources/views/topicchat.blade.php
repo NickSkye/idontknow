@@ -37,7 +37,7 @@
                                 <h3 class="text-center">{{$topicname->topic}} Chat</h3>
                             </div>
 
-                            <div class="topicdescription">
+                            <div class="topicdescription text-center">
                                 <p>{{$topicname->description}}</p>
                             </div>
 
