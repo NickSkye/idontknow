@@ -26,11 +26,11 @@
 
 
 
-                    <div class="modal fade" id="sendShout" tabindex="-1" role="dialog" aria-labelledby="sendshoutModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="addTopic" tabindex="-1" role="dialog" aria-labelledby="addTopicModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="sendshoutModalLabel">Shout!</h5>
+                                    <h5 class="modal-title" id="addTopicModalLabel">Shout!</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -57,6 +57,7 @@
                                                         </div>
                                                         <div class="col-12">
                                                             <input class="shout-text" placeholder="New Topic..." type="text" name="topicname" style="width: 100%; margin-bottom: 20px;" required>
+                                                            <input class="shout-text" placeholder="Quick Description of Topic..." type="text" name="description" style="width: 100%; margin-bottom: 20px;" required>
                                                         </div>
                                                         <div class="col-12" style="align-self: flex-end;">
                                                             <button type="submit" class="btn shout-button modal-button loader-button" style="float: right;"><i aria-hidden="true" class="fa fa-plus fa-2x"></i></button>
@@ -88,6 +89,7 @@
                         <div class="row">
                             <h3>Topic Chat</h3>
 
+                            <a href="#" data-toggle="modal" data-target="#addTopic">+</a>
 
 
                         </div>

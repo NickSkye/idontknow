@@ -61,26 +61,19 @@ class DashboardController extends Controller
     public function addTopic(Request $request)
     {
 
-        $messages = DB::table('messages')->where([['username', Auth::user()->username], ['seen', false],])->get();
-        $friends = DB::table('follows')->where('username', Auth::user()->username)->get();
 
-        DB::table('messages')->insert(
-            ['username' => $request->sendtousername, 'from_username' => Auth::user()->username, 'message' => $request->shout, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
-        );
-        DB::table('notifications')->insert(
-            ['username' => $request->sendtousername, 'notification' => 'shout', 'from_username' => Auth::user()->username, 'type' => 'shout', 'route' => '', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+        DB::table('topics')->insert(
+            ['topic' => $request->topicname, 'created_by' => Auth::user()->username, 'description' => $request->description, 'num_currently_active' => 0, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         );
 
-        $emails = $this->getSpecificFriendsInfo($request->sendtousername);
 
-        $getsemails = DB::table('profileinfo')->select('email_notifications')->where('username', $request->sendtousername)->first();
-        if ($getsemails->email_notifications) {
-            Mail::to($emails->email)->send(new NotificationMail());
-        }
 
-        DB::table('users')->where('username', Auth::user()->username)->increment('score', 2);
 
-        return redirect()->back()->with(['messages' => $messages, 'friends' => $friends])->with('message', 'Shout delivered!');
+
+
+        DB::table('users')->where('username', Auth::user()->username)->increment('score', 50);
+
+        return redirect()->back()->with('message', 'New Topic Created!');
 
 
     }
