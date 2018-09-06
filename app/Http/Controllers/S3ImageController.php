@@ -107,7 +107,9 @@ class S3ImageController extends Controller
                 );
             }
             else {
-                return view('newUserAbout');
+                $profileinfo = $this->getMySettingsInfo();
+                $online_frends = $this->getFrendsOnline();
+                return view('newUserAbout', ['profileinfo' => $profileinfo, 'online_frends' => $online_frends]);
             }
         }
 
