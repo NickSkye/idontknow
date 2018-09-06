@@ -62,10 +62,10 @@ class DashboardController extends Controller
     {
 
         if(str_word_count($request->topicname) > 1 ){
-            return redirect()->back()->with('message', 'Topic Names can only be One (1) word. Use CamelCasing for multi-word topics.');
+            return redirect()->back()->with('status', 'Topic Names can only be One (1) word. Use CamelCasing for multi-word topics.');
         }
         if(!preg_match('regex:/^[\w-]*$/', $request->topicname, $match)){
-            return redirect()->back()->with('message', 'Topic Names must only contain alpha numeric values.');
+            return redirect()->back()->with('status', 'Topic Names must only contain alpha numeric values.');
         }
 
 

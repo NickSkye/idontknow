@@ -95,10 +95,15 @@
                     </div>
                     <div class="card-body long-body no-padding-complete">
                         @if (session('status'))
-                            <div class="alert alert-success">
+                            <div class="alert alert-danger">
                                 {{ session('status') }}
                             </div>
                         @endif
+                            @if (session('message'))
+                                <div class="alert alert-success">
+                                    {{ session('message') }}
+                                </div>
+                            @endif
 
 
                         <table class="topic-table">
