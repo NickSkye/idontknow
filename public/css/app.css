@@ -1607,8 +1607,12 @@ ul.tabs li.current {
   width: 100%;
 }
 
+.topic-table tr {
+  border: 1px solid black;
+}
+
 .topic-table tr:nth-child(even) {
-  background-color: rgba(30, 100, 150, 0.8);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .topic-table td,

@@ -1,8 +1,11 @@
 .topic-table{
     border-collapse: collapse;
     width: 100%;
+    tr{
+        border: 1px solid black;
+    }
     tr:nth-child(even) {
-        background-color: rgba(30,100,150,0.8);
+        background-color: rgba(0,0,0,0.1);
 
     }
     td, th {
