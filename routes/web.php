@@ -50,9 +50,10 @@ Route::post('/post/dislike', 'PagesController@dislike')->middleware('auth');
 Route::post('/like', 'PagesController@like')->middleware('auth');
 Route::post('/dislike', 'PagesController@dislike')->middleware('auth');
 Route::post('/update-location', 'PagesController@updatelocation');
-
+Route::post('/addTopic', 'DashboardController@addTopic');
 
 Route::post('/shouts/send', 'MessagesController@shout')->middleware('auth');
+
 Route::post('/shouts/sendonpage', 'MessagesController@shoutonpage')->middleware('auth');
 Route::post('/shouts/shoutseen', 'MessagesController@shoutSeen')->middleware('auth');
 Route::post('/shouts/shoutback', 'MessagesController@shoutBack')->middleware('auth');
