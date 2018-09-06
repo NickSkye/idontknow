@@ -72,7 +72,7 @@
                                 <div class="local-area">
                                     <div class="text-area">
                                         <input type="hidden" name="id" value="{{$id}}"/>
-                                        <input type="hidden" name="topic" value="{{$topicname->topic}}"/>
+                                        <input type="hidden" name="topicname" value="{{$topicname->topic}}"/>
                                         <textarea  placeholder="Chat..." class="chat-field" type="text" name="topicchat" style="width: 100%;" required></textarea>
 
                                     </div>
