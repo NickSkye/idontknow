@@ -1281,6 +1281,11 @@ ul.tabs li.current {
   }
 }
 
+.browser {
+  width: 100%;
+  min-height: 900px;
+}
+
 .permafooter {
   position: fixed;
   width: 100%;
