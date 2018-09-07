@@ -47,7 +47,7 @@ class PagesController extends Controller
                 $leftJoin->on('posts.id', '=', 'post_votes.post_id')
                     ->where('post_votes.username', Auth::user()->username);
             })->where('deleted', false)
-            ->orderBy('distance', 'asc')->orderBy('posts.created_at', 'desc')->distinct()->simplePaginate(15);
+            ->orderBy('distance', 'asc')->orderBy('posts.created_at', 'desc')->distinct()->simplePaginate(20);
 
 
 //            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
@@ -63,7 +63,7 @@ class PagesController extends Controller
             ->leftJoin('users', 'posts.username', '=', 'users.username')
             ->leftJoin('profileinfo', 'posts.username', '=', 'profileinfo.username')
             ->where('deleted', false)
-            ->orderBy('posts.created_at', 'desc')->distinct()->limit(100)->simplePaginate(15);
+            ->orderBy('posts.created_at', 'desc')->distinct()->limit(100)->simplePaginate(20);
 
 
 //            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
@@ -299,7 +299,7 @@ class PagesController extends Controller
                 $query->where('follows.username', Auth::user()->username)
                     ->orWhere('posts.username', Auth::user()->username);
             })->where('deleted', false)
-            ->orderBy('posts.created_at', 'desc')->distinct()->get(); //'posts.updated_at'
+            ->orderBy('posts.created_at', 'desc')->distinct()->simplePaginate(20); //'posts.updated_at'
 
 
 
@@ -315,7 +315,7 @@ class PagesController extends Controller
 
 //        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
 
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.username', '=', 'profileinfo.username')->join('users', 'follows.username', '=', 'users.username')->join('posts', 'follows.username', '=', 'posts.username')->where('follows.followsusername', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->get(); //'posts.updated_at'
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.username', '=', 'profileinfo.username')->join('users', 'follows.username', '=', 'users.username')->join('posts', 'follows.username', '=', 'posts.username')->where('follows.followsusername', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->simplePaginate(20); //'posts.updated_at'
 
         return $friends_info_full;
     }
