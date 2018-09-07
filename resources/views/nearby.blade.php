@@ -359,6 +359,7 @@
 
                                 {{--{{ $allfriendsinfo->links() }}--}}
                             </div>
+                            {{ $friendspost->links() }}
 
                         </div>
 
