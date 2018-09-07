@@ -163,7 +163,7 @@ class S3ImageController extends Controller
             }
             else {
                 $image = Image::make($image)->orientate();
-                $image->fit(200);
+                $image->save(60);
                 $image = $image->stream();
                 $t = Storage::disk('s3')->put("posts/".$imageName, $image->__toString(), 'public');
                 $imageName = Storage::disk('s3')->url("posts/".$imageName);
