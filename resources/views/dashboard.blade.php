@@ -86,7 +86,7 @@
 
 
 
-                                        <a href="/browser" class="">Browser</a>
+                                      
 
 
 
