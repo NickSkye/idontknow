@@ -47,7 +47,7 @@ class PagesController extends Controller
                 $leftJoin->on('posts.id', '=', 'post_votes.post_id')
                     ->where('post_votes.username', Auth::user()->username);
             })->where('deleted', false)
-            ->orderBy('distance', 'asc')->orderBy('posts.created_at', 'desc')->distinct()->simplePaginate(15);
+            ->orderBy('distance', 'asc')->orderBy('posts.created_at', 'desc')->distinct()->paginate(15);
 
 
 //            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
@@ -63,7 +63,7 @@ class PagesController extends Controller
             ->leftJoin('users', 'posts.username', '=', 'users.username')
             ->leftJoin('profileinfo', 'posts.username', '=', 'profileinfo.username')
             ->where('deleted', false)
-            ->orderBy('posts.created_at', 'desc')->distinct()->limit(100)->simplePaginate(15);
+            ->orderBy('posts.created_at', 'desc')->distinct()->limit(100)->paginate(15);
 
 
 //            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
