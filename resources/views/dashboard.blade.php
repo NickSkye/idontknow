@@ -49,7 +49,7 @@
                             </div>
                         @endif
                             <div class="row frend-area">
-                                <table style="width:100%">
+                                <table style="width:100%" class="dashboard-table">
                                     <tr>
                                         <th>App</th>
                                         <th>description</th>
@@ -86,7 +86,7 @@
 
 
 
-                                      
+
 
 
 

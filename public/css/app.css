@@ -1673,6 +1673,37 @@ ul.tabs li.current {
   text-align: right;
 }
 
+.dashboard-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dashboard-table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.dashboard-table tr:nth-child(even) {
+  background-color: #f0f8ff;
+}
+
+.dashboard-table td,
+.dashboard-table th {
+  text-align: left;
+  padding: 20px;
+}
+
+.dashboard-table td:nth-child(1),
+.dashboard-table th:nth-child(1) {
+  width: 30%;
+  text-align: left;
+}
+
+.dashboard-table td:nth-child(2),
+.dashboard-table th:nth-child(2) {
+  width: 70%;
+  text-align: center;
+}
+
 /*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

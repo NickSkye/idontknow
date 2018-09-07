@@ -120,3 +120,30 @@
     }
 
 }
+
+.dashboard-table{
+    border-collapse: collapse;
+    width: 100%;
+    tr{
+        border-bottom: 1px solid rgba(0,0,0,0.4);
+    }
+    tr:nth-child(even) {
+        background-color: #f0f8ff;
+
+    }
+    td, th {
+
+        text-align: left;
+        padding: 20px;
+
+        &:nth-child(1){
+            width: 30%;
+            text-align: left;
+        }
+        &:nth-child(2){
+            width: 70%;
+            text-align: center;
+        }
+
+    }
+}
