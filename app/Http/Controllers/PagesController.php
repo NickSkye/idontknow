@@ -698,12 +698,12 @@ $online_frends = [];
         return view('about');
     }
     public function newUserAbout(){
-//        $now = new \DateTime();
+        $now = new \DateTime();
 //        $online_frends = $this->getFrendsOnline();
 //        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         $profileinfo = $this->getMySettingsInfo();
         $online_frends = $this->getFrendsOnline();
-        return view('newUserAbout', ['profileinfo' => $profileinfo, 'online_frends' => $online_frends]);
+        return view('newUserAbout', ['profileinfo' => $profileinfo, 'online_frends' => $online_frends, 'now' => $now]);
     }
     public function agreement(){
 //        $now = new \DateTime();
