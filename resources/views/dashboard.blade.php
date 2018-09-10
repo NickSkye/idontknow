@@ -49,13 +49,44 @@
                             </div>
                         @endif
                             <div class="row frend-area">
+                                <table style="width:100%" class="dashboard-table">
+                                    <tr>
+                                        <th>App</th>
+                                        <th>description</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/localchat" class="">LocalChat</a></td>
+                                        <td>Chat with everyone within up to 5km of you</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/aroundme" class="">AroundMe</a></td>
+                                        <td>View the most popular places to hangout around you</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/topics" class="">TopicChat</a></td>
+                                        <td>Chat with people with similar interests sorted by topics</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#" class="">Charity</a></td>
+                                        <td>In the works</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/browser" class="">Browser</a></td>
+                                        <td>For when you need to access a site but cannot access it directly</td>
+
+                                    </tr>
+                                </table>
 
 
-                                        <a href="/localchat" class="col-4 dashboard-app-images">LocalChat</a>
-                                        <a href="/aroundme" class="col-4 dashboard-app-images">AroundMe</a>
-                                        <a href="/topics" class="col-4 dashboard-app-images">TopicChat</a>
-                                        <a href="/donate" class="col-4 dashboard-app-images">Charity</a>
-                                        <a href="/browser" class="col-4 dashboard-app-images">Browser</a>
+
+
+
+
 
 
 

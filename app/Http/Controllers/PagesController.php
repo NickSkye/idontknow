@@ -32,6 +32,7 @@ class PagesController extends Controller
     }
 
     public function nearbyPosts() {
+        //posts within 1 kilometer
 
         $location = DB::table('users')->select('latitude', 'longitude')
             ->where('username', Auth::user()->username)->first();
@@ -46,8 +47,8 @@ class PagesController extends Controller
             ->leftJoin('post_votes', function ($leftJoin) {
                 $leftJoin->on('posts.id', '=', 'post_votes.post_id')
                     ->where('post_votes.username', Auth::user()->username);
-            })->where('deleted', false)
-            ->orderBy('distance', 'asc')->orderBy('posts.created_at', 'desc')->distinct()->get();
+            })->having('distance', '<=', 1)->where('deleted', false)
+            ->orderBy('distance', 'asc')->orderBy('posts.created_at', 'desc')->distinct()->simplePaginate(20);
 
 
 //            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
@@ -63,7 +64,7 @@ class PagesController extends Controller
             ->leftJoin('users', 'posts.username', '=', 'users.username')
             ->leftJoin('profileinfo', 'posts.username', '=', 'profileinfo.username')
             ->where('deleted', false)
-            ->orderBy('posts.created_at', 'desc')->distinct()->limit(100)->get();
+            ->orderBy('posts.created_at', 'desc')->distinct()->limit(100)->simplePaginate(20);
 
 
 //            ->leftJoin('post_votes', 'posts.id', '=', 'post_votes.post_id')
@@ -299,7 +300,7 @@ class PagesController extends Controller
                 $query->where('follows.username', Auth::user()->username)
                     ->orWhere('posts.username', Auth::user()->username);
             })->where('deleted', false)
-            ->orderBy('posts.created_at', 'desc')->distinct()->get(); //'posts.updated_at'
+            ->orderBy('posts.created_at', 'desc')->distinct()->simplePaginate(20); //'posts.updated_at'
 
 
 
@@ -315,7 +316,7 @@ class PagesController extends Controller
 
 //        $selfincluded = DB::table('posts')->where('username',  Auth::user()->username)->get();
 
-        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.username', '=', 'profileinfo.username')->join('users', 'follows.username', '=', 'users.username')->join('posts', 'follows.username', '=', 'posts.username')->where('follows.followsusername', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->get(); //'posts.updated_at'
+        $friends_info_full = DB::table('follows')->join('profileinfo', 'follows.username', '=', 'profileinfo.username')->join('users', 'follows.username', '=', 'users.username')->join('posts', 'follows.username', '=', 'posts.username')->where('follows.followsusername', Auth::user()->username)->where('deleted', false)->orderBy('posts.created_at', 'desc')->simplePaginate(20); //'posts.updated_at'
 
         return $friends_info_full;
     }
@@ -698,12 +699,12 @@ $online_frends = [];
         return view('about');
     }
     public function newUserAbout(){
-//        $now = new \DateTime();
+        $now = new \DateTime();
 //        $online_frends = $this->getFrendsOnline();
 //        DB::table('users')->where('username', Auth::user()->username)->update(['updated_at' => date('Y-m-d H:i:s')]);
         $profileinfo = $this->getMySettingsInfo();
         $online_frends = $this->getFrendsOnline();
-        return view('newUserAbout', ['profileinfo' => $profileinfo, 'online_frends' => $online_frends]);
+        return view('newUserAbout', ['profileinfo' => $profileinfo, 'online_frends' => $online_frends, 'now' => $now]);
     }
     public function agreement(){
 //        $now = new \DateTime();

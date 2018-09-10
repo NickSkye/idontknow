@@ -489,7 +489,7 @@ a p {
 }
 
 .loader-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -1673,8 +1673,39 @@ ul.tabs li.current {
   text-align: right;
 }
 
+.dashboard-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dashboard-table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.dashboard-table tr:nth-child(even) {
+  background-color: #f0f8ff;
+}
+
+.dashboard-table td,
+.dashboard-table th {
+  text-align: left;
+  padding: 20px;
+}
+
+.dashboard-table td:nth-child(1),
+.dashboard-table th:nth-child(1) {
+  width: 30%;
+  text-align: left;
+}
+
+.dashboard-table td:nth-child(2),
+.dashboard-table th:nth-child(2) {
+  width: 70%;
+  text-align: center;
+}
+
 /*!
- * Bootstrap v4.1.0 (https://getbootstrap.com/)
+ * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -1724,7 +1755,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @-ms-viewport {
@@ -1733,7 +1764,6 @@ html {
 
 article,
 aside,
-dialog,
 figcaption,
 figure,
 footer,
@@ -1884,7 +1914,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 1em;
 }
 
@@ -2214,13 +2244,6 @@ mark,
 .figure-caption {
   font-size: 90%;
   color: #6c757d;
-}
-
-code,
-kbd,
-pre,
-samp {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 code {
@@ -4189,6 +4212,13 @@ select.form-control-lg:not([size]):not([multiple]),
   display: block;
 }
 
+.was-validated .form-control-file:valid ~ .valid-feedback,
+.was-validated .form-control-file:valid ~ .valid-tooltip,
+.form-control-file.is-valid ~ .valid-feedback,
+.form-control-file.is-valid ~ .valid-tooltip {
+  display: block;
+}
+
 .was-validated .form-check-input:valid ~ .form-check-label,
 .form-check-input.is-valid ~ .form-check-label {
   color: #28a745;
@@ -4303,6 +4333,13 @@ select.form-control-lg:not([size]):not([multiple]),
 .custom-select:invalid ~ .invalid-tooltip,
 .custom-select.is-invalid ~ .invalid-feedback,
 .custom-select.is-invalid ~ .invalid-tooltip {
+  display: block;
+}
+
+.was-validated .form-control-file:invalid ~ .invalid-feedback,
+.was-validated .form-control-file:invalid ~ .invalid-tooltip,
+.form-control-file.is-invalid ~ .invalid-feedback,
+.form-control-file.is-invalid ~ .invalid-tooltip {
   display: block;
 }
 
@@ -5690,8 +5727,7 @@ input[type="button"].btn-block {
   border-bottom-right-radius: 0;
 }
 
-.input-group > .custom-file:not(:first-child) .custom-file-label,
-.input-group > .custom-file:not(:first-child) .custom-file-label::after {
+.input-group > .custom-file:not(:first-child) .custom-file-label {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -5817,13 +5853,14 @@ input[type="button"].btn-block {
 }
 
 .custom-control-label {
+  position: relative;
   margin-bottom: 0;
 }
 
 .custom-control-label::before {
   position: absolute;
   top: 0.3rem;
-  left: 0;
+  left: -1.5rem;
   display: block;
   width: 1rem;
   height: 1rem;
@@ -5839,7 +5876,7 @@ input[type="button"].btn-block {
 .custom-control-label::after {
   position: absolute;
   top: 0.3rem;
-  left: 0;
+  left: -1.5rem;
   display: block;
   width: 1rem;
   height: 1rem;
@@ -6005,7 +6042,7 @@ input[type="button"].btn-block {
   bottom: 0;
   z-index: 3;
   display: block;
-  height: calc(calc(2.19rem + 2px) - 1px * 2);
+  height: 2.19rem;
   padding: 0.375rem 0.75rem;
   line-height: 1.6;
   color: #495057;
@@ -8463,6 +8500,7 @@ button.close {
   margin-right: 3px;
   margin-left: 3px;
   text-indent: -999px;
+  cursor: pointer;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -12060,6 +12098,22 @@ a.text-dark:focus {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #dee2e6 !important;
+  }
+
+  .table-dark {
+    color: inherit;
+  }
+
+  .table-dark th,
+  .table-dark td,
+  .table-dark thead th,
+  .table-dark tbody + tbody {
+    border-color: #dee2e6;
+  }
+
+  .table .thead-dark th {
+    color: inherit;
+    border-color: #dee2e6;
   }
 }
 

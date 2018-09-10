@@ -21,6 +21,8 @@
                 <div class="card-body">
                     <h2 style="text-align: center;">Welcome to FrendGrid!</h2>
                     <br>
+                    <h4>Home to {{$usernum}} users</h4>
+                    <h4>Creating over {{$postnum}} posts</h4>
                     <h5><i class="fa fa-users fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Make new friends based off people around you</h5>
                     <br>
                     <h5><i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Share your life and see all the exciting stuff going on around you!</h5>
@@ -106,7 +108,7 @@
                                 <input type="checkbox" class="pull-right " name="terms" value="1" required>
                             </div>
                             <div class="col-10 col-sm-6">
-                                <a href="/legal">I agree to the terms and conditions.</a>
+                                <a href="/legal" target="_blank">I agree to the terms and conditions.</a>
                             </div>
 
                         </div>

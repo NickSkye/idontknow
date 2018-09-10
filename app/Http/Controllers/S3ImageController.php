@@ -39,7 +39,7 @@ class S3ImageController extends Controller
             $imageName = time().'.'.$request->profimage->getClientOriginalExtension();
             $image = $request->file('profimage');
             $image = Image::make($image)->orientate();
-            $image = $image->stream();
+            $image = $image->stream(null, 50);
             $t = Storage::disk('s3')->put("profilepics/".$imageName, $image->__toString(), 'public');
             $imageName = Storage::disk('s3')->url("profilepics/".$imageName);
             if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
@@ -98,7 +98,7 @@ class S3ImageController extends Controller
             $imageName = time().'.'.$request->profimage->getClientOriginalExtension();
             $image = $request->file('profimage');
             $image = Image::make($image)->orientate();
-            $image = $image->stream();
+            $image = $image->stream(null, 50);
             $t = Storage::disk('s3')->put("profilepics/".$imageName, $image->__toString(), 'public');
             $imageName = Storage::disk('s3')->url("profilepics/".$imageName);
             if (DB::table('profileinfo')->where('username', '=', Auth::user()->username)->exists()) {
@@ -163,7 +163,9 @@ class S3ImageController extends Controller
             }
             else {
                 $image = Image::make($image)->orientate();
-                $image = $image->stream();
+
+                $image = $image->stream(null, 50);
+
                 $t = Storage::disk('s3')->put("posts/".$imageName, $image->__toString(), 'public');
                 $imageName = Storage::disk('s3')->url("posts/".$imageName);
             }
