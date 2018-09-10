@@ -32,6 +32,7 @@ class PagesController extends Controller
     }
 
     public function nearbyPosts() {
+        //posts within 1 kilometer
 
         $location = DB::table('users')->select('latitude', 'longitude')
             ->where('username', Auth::user()->username)->first();
@@ -46,7 +47,7 @@ class PagesController extends Controller
             ->leftJoin('post_votes', function ($leftJoin) {
                 $leftJoin->on('posts.id', '=', 'post_votes.post_id')
                     ->where('post_votes.username', Auth::user()->username);
-            })->where('deleted', false)
+            })->having('distance', '<=', 1)->where('deleted', false)
             ->orderBy('distance', 'asc')->orderBy('posts.created_at', 'desc')->distinct()->simplePaginate(20);
 
 
