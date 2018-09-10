@@ -47,6 +47,13 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+
+    public function showRegistrationForm()
+    {
+        $usernum = DB::table('users')->count();
+        return view('auth.register', ['usernum' => $usernum]);
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
