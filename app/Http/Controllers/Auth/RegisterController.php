@@ -51,7 +51,8 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $usernum = DB::table('users')->count();
-        return view('auth.register', ['usernum' => $usernum]);
+        $postnum = DB::table('posts')->count();
+        return view('auth.register', ['usernum' => $usernum, 'postnum' => $postnum]);
     }
 
     /**
