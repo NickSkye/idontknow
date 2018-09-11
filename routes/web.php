@@ -17,7 +17,7 @@ Auth::routes();
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'PagesController@nearby');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('users/{username?}', 'FriendController@index')->middleware('auth');
 Route::get('/settings', 'PagesController@settings')->middleware('auth');
 Route::get('/me', 'PagesController@myprofile')->middleware('auth');
