@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="topicdescription text-center">
-                                <p>{{$topicname->created_at}}</p>
+                                <p>Topic Created: {{Carbon\Carbon::parse($topicname->created_at)->diffForHumans()}}</p>
                             </div>
                             <div class="topicdescription text-center">
                                 <p>{{$topicname->description}}</p>
