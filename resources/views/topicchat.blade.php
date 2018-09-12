@@ -53,28 +53,28 @@
 
 
                         <div class="chat-box">
-                            @if(Auth::check())
+                            {{--@if(Auth::check())--}}
                                 @foreach($topicchats as $mess)
 
-                                    @if($mess->username === Auth::user()->username)
-                                        <div class="user-topicchat">
-                                            <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}</p>
-                                        </div>
-                                    @else
+                                    {{--@if($mess->username === Auth::user()->username)--}}
+                                        {{--<div class="user-topicchat">--}}
+                                            {{--<p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}</p>--}}
+                                        {{--</div>--}}
+                                    {{--@else--}}
                                         <div class="other-topicchat"><p>
-                                                <a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}
+                                                <a href="/users/{{$mess->username}}" style="font-size: 12pt;">{{$mess->username}}</a><br> {!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}
                                             </p></div>
-                                    @endif
+                                    {{--@endif--}}
 
                                 @endforeach
 
-                            @else
-                                @foreach($topicchats as $mess)
-                                    <div class="other-topicchat"><p>
-                                            <a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}
-                                        </p></div>
-                                @endforeach
-                            @endif
+                            {{--@else--}}
+                                {{--@foreach($topicchats as $mess)--}}
+                                    {{--<div class="other-topicchat"><p>--}}
+                                            {{--<a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}--}}
+                                        {{--</p></div>--}}
+                                {{--@endforeach--}}
+                            {{--@endif--}}
                                 <div id="chatupdate-results"></div>
 
 
