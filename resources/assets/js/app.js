@@ -302,7 +302,7 @@ $(document).ready(function(){
            console.log(response[0][0]);
 
             $.each(response[0], function(k, v) {
-                updated += '<div class="other-topicchat"><p><a href="/users/"' + v["username"] + ' style="font-size: 12pt;">' + v["username"] + '</a> <span style="font-size: 8pt;">{{Carbon\Carbon::parse(' + v[created_at] + ')->diffForHumans()}}</span><br> ' + v["message"] + ' </p></div>'
+                updated += '<div class="other-topicchat"><p><a href="/users/"' + v["username"] + ' style="font-size: 12pt;">' + v["username"] + '</a> <span style="font-size: 8pt;">{{Carbon\Carbon::parse(' + v["created_at"] + ')->diffForHumans()}}</span><br> ' + v["message"] + ' </p></div>'
                     });
 
             $("#chatupdate-results").html(updated);
