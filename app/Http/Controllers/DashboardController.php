@@ -128,7 +128,7 @@ class DashboardController extends Controller
 
 
 
-
+        DB::table('topics')->where('id', $request->id)->update(['updated_at' => date('Y-m-d H:i:s')]);
 
 
 

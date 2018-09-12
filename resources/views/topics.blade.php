@@ -114,13 +114,13 @@
                             <tr>
                                 <th>Favorite</th>
                                 <th>Topic</th>
-                                <th>Created</th>
+                                <th>Last Activity</th>
                             </tr>
                             @foreach($topics as $topic)
                                 <tr>
                                     <td>star</td>
                                     <td><a href="/topicchat/{{$topic->id}}">{{$topic->topic}}</a></td>
-                                    <td>{{Carbon\Carbon::parse($topic->created_at)->diffForHumans()}}</td>
+                                    <td>{{Carbon\Carbon::parse($topic->updated_at)->diffForHumans()}}</td>
                                 </tr>
                             @endforeach
 

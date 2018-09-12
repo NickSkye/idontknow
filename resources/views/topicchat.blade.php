@@ -35,6 +35,9 @@
                             </div>
 
                             <div class="topicdescription text-center">
+                                <p>{{$topicname->created_at}}</p>
+                            </div>
+                            <div class="topicdescription text-center">
                                 <p>{{$topicname->description}}</p>
                             </div>
 
