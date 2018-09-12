@@ -105,7 +105,8 @@ class DashboardController extends Controller
 //        $online_frends = $this->getFrendsOnline();
         $topicchats = DB::table('topicchat')->get();
 
-        return view('topicchat', ['topicchats' => $topicchats]);
+        return response([$topicchats]);
+        
     }
 
 
