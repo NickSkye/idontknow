@@ -25,22 +25,18 @@
                 @endif
 
 
-
-
-
-
                 <div class="card">
                     <div class="card-header">
-                        <div >
+                        <div>
                             <div>
-                                <a href="/topics"><h5><i class="fa fa-chevron-left" aria-hidden="true"></i> back</h5></a>
+                                <a href="/topics"><h5><i class="fa fa-chevron-left" aria-hidden="true"></i> back</h5>
+                                </a>
                                 <h3 class="text-center">{{$topicname->topic}} Chat</h3>
                             </div>
 
                             <div class="topicdescription text-center">
                                 <p>{{$topicname->description}}</p>
                             </div>
-
 
 
                         </div>
@@ -53,48 +49,55 @@
                         @endif
 
 
-
-
                         <div class="chat-box">
                             @if(Auth::check())
-                            @foreach($topicchats as $mess)
+                                @foreach($topicchats as $mess)
 
-                                @if($mess->username === Auth::user()->username)
-                                <div class="user-topicchat"><p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}</p></div>
-                                @else
-                                    <div class="other-topicchat"><p><a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}</p></div>
+                                    @if($mess->username === Auth::user()->username)
+                                        <div class="user-topicchat">
+                                            <p>{!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}</p>
+                                        </div>
+                                    @else
+                                        <div class="other-topicchat"><p>
+                                                <a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}
+                                            </p></div>
                                     @endif
 
                                 @endforeach
 
                             @else
                                 @foreach($topicchats as $mess)
-                                <div class="other-topicchat"><p><a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}</p></div>
+                                    <div class="other-topicchat"><p>
+                                            <a href="/users/{{$mess->username}}">{{$mess->username}}</a> - {!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}
+                                        </p></div>
                                 @endforeach
                             @endif
+                                <div id="chatupdate-results"></div>
+
+
                         </div>
 
-                            <form action="{{ url('sendTopicChat') }}" method="post" id="sendtopicchat">
-                                {{ csrf_field() }}
-                                <div class="local-area">
-                                    <div class="text-area">
-                                        <input type="hidden" name="id" value="{{$id}}"/>
-                                        <input type="hidden" name="topicname" value="{{$topicname->topic}}"/>
-                                        <textarea  placeholder="Chat..." class="chat-field" type="text" name="topicchat" style="width: 100%;" required></textarea>
+                        <form action="{{ url('sendTopicChat') }}" method="post" id="sendtopicchat">
+                            {{ csrf_field() }}
+                            <div class="local-area">
+                                <div class="text-area">
+                                    <input type="hidden" name="id" value="{{$id}}"/>
+                                    <input type="hidden" name="topicname" value="{{$topicname->topic}}"/>
+                                    <textarea placeholder="Chat..." class="chat-field" type="text" name="topicchat" style="width: 100%;" required></textarea>
 
-                                    </div>
-                                    <div class="button-area " style="display: flex;">
-                                        <button type="submit" class="btn send-chat-butt" style="height: 41px; align-self: flex-end;"><i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i></button>
-                                    </div>
                                 </div>
-                            </form>
+                                <div class="button-area " style="display: flex;">
+                                    <button type="submit" class="btn send-chat-butt" style="height: 41px; align-self: flex-end;">
+                                        <i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </form>
 
 
                     </div>
                     <div class="card-footer">
                         <div>Chat with people around you!</div>
                     </div>
-
 
 
                 </div>

@@ -100,6 +100,14 @@ class DashboardController extends Controller
         return view('topicchat', ['topicchats' => $topicchats, 'topicname' => $topicname, 'id' => $id]);
     }
 
+    public function updatechat(){
+//        $now = new \DateTime();
+//        $online_frends = $this->getFrendsOnline();
+        $topicchats = DB::table('topicchat')->get();
+
+        return view('topicchat', ['topicchats' => $topicchats]);
+    }
+
 
     public function sendTopicChat(Request $request)
     {
