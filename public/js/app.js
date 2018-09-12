@@ -14153,7 +14153,7 @@ $(document).ready(function () {
 
     if (window.location.href.indexOf("topicchat") > -1) {
 
-        setInterval(updatechat, 30000);
+        setInterval(updatechat, 15000);
     }
 
     function doDate() {
