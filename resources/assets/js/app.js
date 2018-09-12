@@ -302,8 +302,8 @@ $(document).ready(function(){
            console.log(response[0][0]);
 
             $.each(response[0], function(k, v) {
-                updated += v['message'];
-            });
+                updated += '<div class="other-topicchat"><p><a href="/users/"' + v["username"] + '>' + v["username"] + '</a> - ' + v["message"] + ' </p></div>'
+                    });
 
             $("#chatupdate-results").html(updated);
 
