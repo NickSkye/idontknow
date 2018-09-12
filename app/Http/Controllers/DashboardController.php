@@ -106,7 +106,7 @@ class DashboardController extends Controller
         $topicchats = DB::table('topicchat')->get();
 
         return response([$topicchats]);
-        
+
     }
 
 

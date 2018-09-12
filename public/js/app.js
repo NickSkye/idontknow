@@ -14137,7 +14137,7 @@ $(document).ready(function () {
 
         $.ajax({
             url: '/updatechat',
-            type: GET,
+            type: POST,
             data: form_data
         }).done(function (response) {
             //
