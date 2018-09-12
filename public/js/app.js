@@ -14142,7 +14142,7 @@ $(document).ready(function () {
         }).done(function (response) {
             //
 
-            var updated = "What You May Have Missed: <br> ";
+            var updated = "What You May Have Missed: <br><br> ";
             console.log(response[0][0]);
 
             $.each(response[0], function (k, v) {
