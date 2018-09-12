@@ -299,6 +299,7 @@ $(document).ready(function(){
         }).done(function(response){ //
 
             var updated = "test ";
+            alert(response);
             $.each(response.d, function(k, v) {
                 updated += k;
             });

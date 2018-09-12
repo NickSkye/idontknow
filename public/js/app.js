@@ -14143,6 +14143,7 @@ $(document).ready(function () {
             //
 
             var updated = "test ";
+            alert(response);
             $.each(response.d, function (k, v) {
                 updated += k;
             });
