@@ -294,7 +294,7 @@ $(document).ready(function(){
 
         $.ajax({
             url : '/updatechat',
-            type: POST,
+            type: 'post',
             data : form_data
         }).done(function(response){ //
 

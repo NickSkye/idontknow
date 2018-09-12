@@ -30,7 +30,7 @@ Route::get('/shouts', 'MessagesController@messages')->middleware('auth');
 Route::get('/localchat', 'MessagesController@localchat');
 Route::get('/aroundme', 'DashboardController@aroundme');
 Route::get('/topics', 'DashboardController@topics');
-Route::POST('/updatechat', 'DashboardController@updatechat');
+Route::post('/updatechat', 'DashboardController@updatechat');
 Route::get('/topicchat/{id?}', 'DashboardController@topicchat');
 
 //footer legal pages
