@@ -14142,9 +14142,9 @@ $(document).ready(function () {
         }).done(function (response) {
             //
 
-            var updated = "";
+            var updated = "test ";
             $.each(response.d, function (k, v) {
-                updated += v;
+                updated += k;
             });
 
             $("#chatupdate-results").html(updated);
