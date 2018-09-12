@@ -29,7 +29,7 @@
                     <div class="card-header">
                         <div>
                             <div>
-                                <a href="/topics"><h5><i class="fa fa-chevron-left" aria-hidden="true"></i> back</h5>
+                                <a href="/topics"><h5><i class="fa fa-chevron-left" aria-hidden="true"></i> more topics</h5>
                                 </a>
                                 <h3 class="text-center">{{$topicname->topic}} Chat</h3>
                             </div>
