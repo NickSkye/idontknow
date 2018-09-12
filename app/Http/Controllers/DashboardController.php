@@ -59,7 +59,7 @@ class DashboardController extends Controller
     public function topics(){
 //        $now = new \DateTime();
 //        $online_frends = $this->getFrendsOnline();
-        $topics = DB::table('topics')->where('deleted', false)->get();
+        $topics = DB::table('topics')->where('deleted', false)->orderBy('updated_at', 'desc')->get();
         return view('topics', ['topics' => $topics]);
     }
 
