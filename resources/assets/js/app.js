@@ -287,20 +287,20 @@ $(document).ready(function(){
 
     // $(document).scrollTop($('.chat-field')[0].scrollHeight);
 
-    function updatechat(){
+    function updatechat(id){
         // var post_url = $(this).attr("action"); //get form action url
         // var request_method = $(this).attr("method"); //get form GET/POST method
         // var form_data = $(this).serialize(); //Encode form elements for submission
 
         $.ajax({
-            url : '/updatechat',
+            url : '/updatechat/' + id,
             type: 'get',
 
         }).done(function(response){ //
 
             var updated = "test ";
            console.log(response[0]);
-           console.log(response[1]);
+
             $.each(response.d, function(k, v) {
                 updated += k;
             });
@@ -314,8 +314,8 @@ $(document).ready(function(){
 
     if (window.location.href.indexOf("topicchat") > -1) {
 
-
-        setInterval(updatechat, 15000);
+        console.log($(location).attr("href").split('/').pop());
+        setInterval(function() { updatechat(id); }, 15000);
 
 
     }
