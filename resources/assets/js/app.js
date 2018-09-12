@@ -302,7 +302,7 @@ $(document).ready(function(){
            console.log(response[0][0]);
 
             $.each(response[0], function(k, v) {
-                updated += v;
+                updated += v['message'];
             });
 
             $("#chatupdate-results").html(updated);
