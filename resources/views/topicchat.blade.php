@@ -62,7 +62,7 @@
                                         {{--</div>--}}
                                     {{--@else--}}
                                         <div class="other-topicchat"><p>
-                                                <a href="/users/{{$mess->username}}" style="font-size: 12pt;">{{$mess->username}}</a> <span style="font-size: 8pt;">{{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</span><br> {!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}
+                                                <a href="/users/{{$mess->username}}" style="font-size: 14pt;">{{$mess->username}}</a> <span style="font-size: 8pt;">{{Carbon\Carbon::parse($mess->created_at)->diffForHumans()}}</span><br> {!! preg_replace('/@([\w\-]+)/', '<a href="/users/$1">$0</a>', preg_replace('/(http|https|ftp|ftps|www)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '<a href="$0" target="_blank">$0</a>', $mess->message) )!!}
                                             </p></div>
                                     {{--@endif--}}
 
