@@ -299,10 +299,10 @@ $(document).ready(function(){
         }).done(function(response){ //
 
             var updated = "test ";
-           console.log(response[0]);
+           console.log(response[0][0]);
 
-            $.each(response.d, function(k, v) {
-                updated += k;
+            $.each(response[0], function(k, v) {
+                updated += v;
             });
 
             $("#chatupdate-results").html(updated);
