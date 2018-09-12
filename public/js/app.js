@@ -14150,8 +14150,9 @@ $(document).ready(function () {
             });
 
             $("#chatupdate-results").html(updated);
-            $('.chat-box').scrollTop($('.chat-box')[0].scrollHeight);
-            $(".chat-box").get(0).scrollIntoView(false);
+            // $('.chat-box').scrollTop($('.chat-box')[0].scrollHeight);
+            // $(".chat-box").get(0).scrollIntoView(false);
+
         });
     }
 
