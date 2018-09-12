@@ -14154,8 +14154,8 @@ $(document).ready(function () {
     }
 
     if (window.location.href.indexOf("topicchat") > -1) {
-
-        console.log($(location).attr("href").split('/').pop());
+        var id = $(location).attr("href").split('/').pop();
+        console.log(id);
         setInterval(function () {
             updatechat(id);
         }, 15000);
