@@ -20,7 +20,7 @@ class RedirectIfAuthenticated
         if (!Auth::guard($guard)->check()) {
             return redirect('/register'); // redirect to your specific page which is public for all
         }
-        if (Auth::guard($guard)->check()) {
+        else if (Auth::guard($guard)->check()) {
             return redirect('/home');
         }
 
