@@ -208,7 +208,7 @@
                                 <br>
                                 <h5><i class="fa fa-globe fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;For Each new user we plant a tree!</h5>
                                 <br>
-                                
+
 
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
