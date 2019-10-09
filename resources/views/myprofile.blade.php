@@ -96,7 +96,7 @@
                         {{--info about friend--}}
 
                     {{--</div>--}}
-                    <div class="card-header" style="padding: 0; background-color: white;">
+                    <div class="card-header" style="padding: 0; background-color: black; color: white;">
                         {{--@include('partials.friendsearch')--}}
 
 
