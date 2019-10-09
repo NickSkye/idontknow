@@ -1526,6 +1526,10 @@ ul.tabs li.current {
   z-index: 3333;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
 .fixednav {
   position: fixed !important;
   width: 100%;

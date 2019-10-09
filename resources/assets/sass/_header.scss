@@ -108,6 +108,13 @@
   //  top: 0;
   //}
 }
+.navbar-light{
+  .navbar-nav{
+    .nav-link {
+      color: $secondary-color;
+    }
+  }
+}
 
 .fixednav{
   position: fixed !important;
