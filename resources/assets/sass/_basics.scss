@@ -1044,9 +1044,7 @@ ul.tabs li.current{
     justify-content: center;
     height: 55px;
     background: $main-color;
-    -webkit-box-shadow: 0px 5px 19px -5px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 5px 19px -5px rgba(0,0,0,0.25);
-    box-shadow: 0px 5px 19px -5px rgba(0,0,0,0.25);
+    box-shadow: 0px 5px 19px -5px rgba(250,250,250,0.9);
     color: $secondary-color;
 
     .left{
