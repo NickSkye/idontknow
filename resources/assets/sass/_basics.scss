@@ -421,6 +421,12 @@ a {
     float: right;
 }
 
+.card {
+    background: $main-color !important;
+    background-color: $main-color !important;
+    color: $secondary-color !important;
+}
+
 .shout-button {
     display: block;
     background: rgba(0,180,255,1);
@@ -618,7 +624,7 @@ ul.tabs{
 }
 ul.tabs li{
     background: none;
-    color: #222;
+    color: $secondary-color;
     display: inline-block;
     padding: 10px 15px;
     cursor: pointer;

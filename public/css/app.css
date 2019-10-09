@@ -441,6 +441,12 @@ a p {
   float: right;
 }
 
+.card {
+  background: black !important;
+  background-color: black !important;
+  color: white !important;
+}
+
 .shout-button {
   display: block;
   background: #00b4ff;
@@ -648,7 +654,7 @@ ul.tabs {
 
 ul.tabs li {
   background: none;
-  color: #222;
+  color: white;
   display: inline-block;
   padding: 10px 15px;
   cursor: pointer;
