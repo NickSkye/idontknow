@@ -366,7 +366,7 @@ body {
 }
 
 .center-top-search .send:hover {
-  color: white;
+  color: black;
 }
 
 .center-top-search .send:active {
@@ -374,23 +374,23 @@ body {
 }
 
 .center-top-search input:focus ~ .send {
-  color: white !important;
+  color: black !important;
 }
 
 .center-top-search:focus .send {
-  color: white !important;
+  color: black !important;
 }
 
 .center-top-search #query:active .send {
-  color: white !important;
+  color: black !important;
 }
 
 .center-top-search #query:hover .send {
-  color: white !important;
+  color: black !important;
 }
 
 .center-top-search .form-control:focus .send {
-  color: white !important;
+  color: black !important;
 }
 
 #app {
@@ -535,7 +535,7 @@ a p {
   display: -ms-flexbox;
   display: flex;
   background-color: yellow;
-  color: white;
+  color: black;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1259,8 +1259,7 @@ ul.tabs li.current {
 }
 
 .skybg {
-  background: -webkit-gradient(linear, left bottom, left top, from(red), color-stop(51%, #1fc8db), color-stop(75%, #2cb5e8), to(#FF0035));
-  background: linear-gradient(to top, red 0%, #1fc8db 51%, #2cb5e8 75%, #FF0035);
+  background: black;
   background-size: cover;
 }
 
@@ -1318,7 +1317,7 @@ ul.tabs li.current {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background-color: white;
+  background-color: black;
 }
 
 .permafooter .footer-button:hover,
@@ -1336,13 +1335,13 @@ ul.tabs li.current {
   background-color: transparent;
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .permafooter .footer-button .me-button {
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .permafooter .footer-button .me-button i {
@@ -1352,7 +1351,7 @@ ul.tabs li.current {
 .permafooter .footer-button .home-button {
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .permafooter .footer-button .home-button i {
@@ -1362,7 +1361,7 @@ ul.tabs li.current {
 .permafooter .footer-button .list-button {
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .permafooter .footer-button .list-button i {
@@ -1414,7 +1413,7 @@ ul.tabs li.current {
   left: 0;
   right: 0;
   height: 55px;
-  background-color: white;
+  background-color: black;
   z-index: 3333;
   text-align: center;
   display: -webkit-box;
@@ -1448,13 +1447,13 @@ ul.tabs li.current {
   background-color: transparent;
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .mobile-navbar .header-button .me-button {
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .mobile-navbar .header-button .me-button i {
@@ -1464,7 +1463,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .home-button {
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .mobile-navbar .header-button .home-button i {
@@ -1474,7 +1473,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .list-button {
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .mobile-navbar .header-button .list-button i {
@@ -1484,7 +1483,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .logo-button {
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
   margin-top: 5px;
 }
 
@@ -1495,7 +1494,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .header-search-button {
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .mobile-navbar .header-button .header-search-button i {
@@ -1504,7 +1503,7 @@ ul.tabs li.current {
 
 .mobile-navbar .header-button .header-notification-button {
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .mobile-navbar .header-button .header-notification-button i {
@@ -1514,7 +1513,7 @@ ul.tabs li.current {
 .mobile-navbar .header-button .header-settings-button {
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 .mobile-navbar .header-button .header-settings-button i {
@@ -1784,7 +1783,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f0faff;
+  background-color: black;
 }
 
 [tabindex="-1"]:focus {
@@ -2226,7 +2225,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f0faff;
+  background-color: black;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -3656,7 +3655,7 @@ pre code {
 }
 
 .table .table {
-  background-color: #f0faff;
+  background-color: black;
 }
 
 .table-sm th,
@@ -3829,7 +3828,7 @@ pre code {
 }
 
 .table .thead-dark th {
-  color: #f0faff;
+  color: black;
   background-color: #212529;
   border-color: #32383e;
 }
@@ -3841,7 +3840,7 @@ pre code {
 }
 
 .table-dark {
-  color: #f0faff;
+  color: black;
   background-color: #212529;
 }
 
@@ -4256,8 +4255,8 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .was-validated .custom-control-input:valid:focus ~ .custom-control-label::before,
 .custom-control-input.is-valid:focus ~ .custom-control-label::before {
-  -webkit-box-shadow: 0 0 0 1px #f0faff, 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
-          box-shadow: 0 0 0 1px #f0faff, 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+  -webkit-box-shadow: 0 0 0 1px black, 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+          box-shadow: 0 0 0 1px black, 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
 
 .was-validated .custom-file-input:valid ~ .custom-file-label,
@@ -4373,8 +4372,8 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before,
 .custom-control-input.is-invalid:focus ~ .custom-control-label::before {
-  -webkit-box-shadow: 0 0 0 1px #f0faff, 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-          box-shadow: 0 0 0 1px #f0faff, 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+  -webkit-box-shadow: 0 0 0 1px black, 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+          box-shadow: 0 0 0 1px black, 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
 .was-validated .custom-file-input:invalid ~ .custom-file-label,
@@ -5830,8 +5829,8 @@ input[type="button"].btn-block {
 }
 
 .custom-control-input:focus ~ .custom-control-label::before {
-  -webkit-box-shadow: 0 0 0 1px #f0faff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-          box-shadow: 0 0 0 1px #f0faff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  -webkit-box-shadow: 0 0 0 1px black, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+          box-shadow: 0 0 0 1px black, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-control-input:active ~ .custom-control-label::before {
@@ -6076,8 +6075,8 @@ input[type="button"].btn-block {
 
 .custom-range::-webkit-slider-thumb:focus {
   outline: none;
-  -webkit-box-shadow: 0 0 0 1px #f0faff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-          box-shadow: 0 0 0 1px #f0faff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  -webkit-box-shadow: 0 0 0 1px black, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+          box-shadow: 0 0 0 1px black, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-range::-webkit-slider-thumb:active {
@@ -6106,7 +6105,7 @@ input[type="button"].btn-block {
 
 .custom-range::-moz-range-thumb:focus {
   outline: none;
-  box-shadow: 0 0 0 1px #f0faff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 1px black, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-range::-moz-range-thumb:active {
@@ -6134,7 +6133,7 @@ input[type="button"].btn-block {
 
 .custom-range::-ms-thumb:focus {
   outline: none;
-  box-shadow: 0 0 0 1px #f0faff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 1px black, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-range::-ms-thumb:active {
@@ -6215,8 +6214,8 @@ input[type="button"].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #f0faff;
-  border-color: #dee2e6 #dee2e6 #f0faff;
+  background-color: black;
+  border-color: #dee2e6 #dee2e6 black;
 }
 
 .nav-tabs .dropdown-menu {
@@ -12095,7 +12094,7 @@ a.text-dark:focus {
 }
 
 .navbar-laravel {
-  background-color: white;
+  background-color: black;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
