@@ -417,6 +417,18 @@ body {
   color: white !important;
 }
 
+.card-body p {
+  color: white !important;
+}
+
+.card-body a {
+  color: #00b4ff;
+}
+
+.card-body a p {
+  color: #00b4ff;
+}
+
 .top-0 {
   top: 0;
 }

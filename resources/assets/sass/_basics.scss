@@ -397,6 +397,15 @@ html, body{
 
 .card-body {
     color: white !important;
+    p {
+        color: white !important;
+    }
+    a {
+        color: rgba(0,180,255,1);
+        p {
+            color: rgba(0,180,255,1);
+        }
+    }
 }
 
 .top-0 {
