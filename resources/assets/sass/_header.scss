@@ -109,6 +109,9 @@
   //}
 }
 .navbar-light{
+  .navbar-toggle-icon {
+    background-color: white;
+  }
   .navbar-nav{
     .nav-link {
       color: $secondary-color !important;
